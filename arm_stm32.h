@@ -1,6 +1,6 @@
 /*!\file arm_stm32.h
 ** \author SMFSW
-** \version v0.3
+** \version v0.4
 ** \date 2017
 ** \copyright MIT (c) 2017, SMFSW
 ** \brief ARM common macros for STM32
