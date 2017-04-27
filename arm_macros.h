@@ -1,6 +1,6 @@
 /*!\file arm_macros.h
 ** \author SMFSW
-** \version v0.5
+** \version v0.7
 ** \date 2017
 ** \copyright MIT (c) 2017, SMFSW
 ** \brief ARM common macros
@@ -82,6 +82,34 @@
 
 #define Def1Third			((float) (1.0f / 3.0f))
 #define Def2Third			((float) (2.0f / 3.0f))
+
+
+/*!\brief Checks if val given as parameter is in tolerance
+** \param[in] val - Value to check
+** \param[in] ref - Reference value
+** \param[in] tolerance - Tolerance on reference value
+** \return True if val is inTolerance
+**/
+inline bool __attribute__((__always_inline__)) inTolerance(int16_t val, int16_t ref, int16_t tolerance)
+{
+	tolerance = min(100, max(0, tolerance));
+	register uint16_t margin = (uint16_t) (ref * ((float) tolerance / 100.0f));
+
+	if ((val <= (int16_t) (ref + margin)) && (val >= (int16_t) (ref - margin)))		{ return true; }
+	else																			{ return false; }
+}
+
+/*!\brief Checks if val given as parameter is in range
+** \param[in] val - Value to check
+** \param[in] low - Low range boundary
+** \param[in] high - High range boundary
+** \return True if val is inRange
+**/
+inline bool __attribute__((__always_inline__)) inRange(int16_t val, int16_t low, int16_t high)
+{
+	if ((val <= high) && (val >= low))	{ return true; }
+	else								{ return false; }
+}
 
 
 /****************************************************************/
