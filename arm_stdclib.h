@@ -1,6 +1,6 @@
 /*!\file arm_stdclib.h
 ** \author SMFSW
-** \version v0.6
+** \version v0.8
 ** \date 2017
 ** \copyright MIT (c) 2017, SMFSW
 ** \brief ARM common standard c library wrapper macros

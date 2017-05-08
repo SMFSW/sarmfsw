@@ -1,6 +1,6 @@
 /*!\file arm_typedefs.h
 ** \author SMFSW
-** \version v0.4
+** \version v0.8
 ** \date 2017
 ** \copyright MIT (c) 2017, SMFSW
 ** \brief ARM common typedefs
@@ -14,7 +14,6 @@
 #include <stdbool.h>
 
 
-
 typedef char		CHAR;		//!< Char typedef (8bits)
 typedef	uint8_t		BYTE;		//!< Unsigned Byte typedef (8bits)
 typedef	uint16_t	WORD;		//!< Unsigned Word typedef (16bits)
@@ -26,14 +25,22 @@ typedef	int32_t		SDWORD;		//!< Signed dWord typedef (32bits)
 typedef	int64_t		SLWORD;		//!< Signed lWord typedef (64bits)
 
 
-
-/*!\enum EnumState
+/*!\enum eState
 ** \brief Activation state On, Off
 **/
-typedef enum EnumState{
-	Off = 0U,
-	On = 1U
+typedef enum eState{
+	Off = 0U,	//!< Off / Clear
+	On = 1U		//!< On / Set
 } eState;
+
+/*!\enum eEdge
+** \brief Signal Edges
+**/
+typedef enum eEdge {
+	NoEdge = 0,	//!< No change
+	Rising,		//!< Rising edge
+	Falling		//!< Falling edge
+} eEdge;
 
 
 /*!\struct StructBitfield8
@@ -252,19 +259,6 @@ typedef union UnionLWord{
 	} Bytes;
 	sBitfield64		Bits;		//!< Bits
 } uLWord;
-
-
-
-/*!\enum EnumTypeTarget
-** \brief Enum SoftwareTarget
-**/
-typedef enum EnumTypeTarget{
-	DefSpecialTarget = 0,		//!< Target Special (same as debug, without compilation warnings from xpe file)
-	DefDebugTarget,				//!< Target Debug (default)
-	DefReleaseTarget,			//!< Target Release (No debug information)
-	DefFUBARTarget,				//!< Target FUBAR (shall be used only for stress/testing purposes)
-	DefUnknownTarget = 0xFF		//!< Target Unknown (should never happen!)
-}TypeTarget;
 
 
 /****************************************************************/
