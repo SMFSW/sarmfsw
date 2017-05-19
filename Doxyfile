@@ -2046,17 +2046,14 @@ PREDEFINED             = DOXY=1 \
                          WEAK__ \
                          INLINE__ \
                          __INLINE=inline \
-                         __STATIC_INLINE=static \
-                         inline \
+                         "__STATIC_INLINE=static inline" \
                          __WEAK \
                          __IO=volatile \
                          __O=volatile \
-                         __I=volatile \
-                         const \
+                         "__I=volatile const" \
                          __IOM=volatile \
                          __OM=volatile \
-                         __IM=volatile \
-                         const
+                         "__IM=volatile const"
 
 # If the MACRO_EXPANSION and EXPAND_ONLY_PREDEF tags are set to YES then this
 # tag can be used to specify a list of macro names that should be expanded. The
