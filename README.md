@@ -12,5 +12,5 @@ Doxygen generated documentation can be found in "sarmfsw_vXXX.pdf"
 ## Release Notes
 Detailed changes will come after v1.0 release
 
-- v0.8: current
+- v0.9: current
   - Still in beta for some time

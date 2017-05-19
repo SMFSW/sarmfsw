@@ -1,6 +1,6 @@
 /*!\file arm_macros.h
 ** \author SMFSW
-** \version v0.8
+** \version v0.9
 ** \date 2017
 ** \copyright MIT (c) 2017, SMFSW
 ** \brief ARM common macros
@@ -81,9 +81,20 @@
 #define	SWAP_DWORD(a, b)	{ DWORD c; c=(a); a=(b); b=c; }	//!< Swap DWORDs \b a \& \b b
 
 
-#define SWAP_END16B(w)		((WORD) ((((WORD) (w) & 0x00FFU) * 0x100) | (((WORD) (w) & 0xFF00U) / 0x100)))										//!< Swap 16bits endian
-//!\warning SWAP_END32B needs some testing
-#define SWAP_END32B(d)		((DWORD) ((SWAP_END16B((DWORD) (d) & 0xFFFFUL) * 0x10000) | (SWAP_END16B((DWORD) (d) & 0xFFFF0000U) / 0x10000)))	//!< Swap 32bits endian
+/*!\brief Swap endians of the contents of a 16b value
+** \param[in] w - 16b value
+** \return Swapped value
+**/
+inline uint16_t INLINE__ SWAP_END16B(uint16_t w) {
+	return (uint16_t) ((((w) & 0xFFU) * 0x100) | (((w) & 0xFF00U) / 0x100)); }
+
+/*!\brief Swap endians of the contents of a 32b value
+** \param[in] d - 32b value
+** \return Swapped value
+**/
+inline uint32_t INLINE__ SWAP_END32B(uint32_t d) {
+	return (uint32_t) ((SWAP_END16B((d) & 0xFFFFUL) * 0x10000) | SWAP_END16B(((d) & 0xFFFF0000UL) / 0x10000)); }
+
 
 /*!\brief Swap endians of a 16b tab
 ** \param[in] tab - tab of 16b values
