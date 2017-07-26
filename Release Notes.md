@@ -1,20 +1,4 @@
-# sarmfsw
-ARM based common headers (yet oriented stm32)
-
-Basic yet useful macros for any ARM CMSIS based project
-
-
-## Documentation
-
-Doxygen generated documentation can be found in "sarmfsw_vXXX.pdf"
-
-
-## Release Notes
-
-See [release notes](https://github.com/SMFSW/sarmfsw/ReleaseNotes.md)
-
-
-## License
+# sarmfsw (release notes)
 
 The MIT License (MIT)
 
@@ -35,3 +19,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+## v1.0
+
+* arm_cmsis: added generic define for all families 
+* STM\_CONF\_HEADER() include hal header file instead of hal conf directly (more HAL access)
+* Added macro SZ_OBJ to compute number of elements of an object following its type
+* Renamed macro OFFSETOF, now OFFSET_OF
+
+
+## v0.9 and below
+
+* initial commit and beta versions

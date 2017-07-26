@@ -1,6 +1,5 @@
 /*!\file arm_macros.h
 ** \author SMFSW
-** \version v0.9
 ** \date 2017
 ** \copyright MIT (c) 2017, SMFSW
 ** \brief ARM common macros
@@ -33,7 +32,8 @@
 #define TPSSUP_MS(v, t)		((DWORD) (HAL_GetTick() - (DWORD) (v)) > (DWORD) (t))	//!< Tests if \b v (a HStart variable) has reached time lapse stated in \b t (ms)
 #define TPSINF_MS(v, t)		((DWORD) (HAL_GetTick() - (DWORD) (v)) < (DWORD) (t))	//!< Tests if \b v (a HStart variable) has not reached time lapse stated in \b t (ms)
 
-#define OFFSETOF(typ, mbr)	((size_t) & (((typ*)0)->mbr))	//!< Computes the offset member \b mbr from struct \b typ
+#define OFFSET_OF(typ, mbr)	((size_t) & (((typ*)0)->mbr))	//!< Computes the offset member \b mbr from struct \b typ
+#define SZ_OBJ(obj, typ)	(sizeof(obj) / sizeof(typ))		//!< Computes the number of elements of \b obj following \b typ
 
 //! \warning No possible nesting, use \a XCAT in this case
 #define	CAT(a, b)			a##b			//!< Preprocessor Name concatenation

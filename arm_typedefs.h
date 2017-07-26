@@ -1,6 +1,5 @@
 /*!\file arm_typedefs.h
 ** \author SMFSW
-** \version v0.9
 ** \date 2017
 ** \copyright MIT (c) 2017, SMFSW
 ** \brief ARM common typedefs
