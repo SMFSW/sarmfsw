@@ -23,10 +23,11 @@ SOFTWARE.
 
 ## v1.0
 
-* arm_cmsis: added generic define for all families 
+* arm_cmsis: added generic define for all families
 * STM\_CONF\_HEADER() include hal header file instead of hal conf directly (more HAL access)
 * Added macro SZ_OBJ to compute number of elements of an object following its type
 * Renamed macro OFFSETOF, now OFFSET_OF
+* arm_cmsis: added macros to enable/disable interrupts
 
 
 ## v0.9 and below
