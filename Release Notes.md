@@ -28,7 +28,7 @@ SOFTWARE.
 * Added macro SZ_OBJ to compute number of elements of an object following its type
 * Renamed macro OFFSETOF, now OFFSET_OF
 * arm_cmsis: added macros to enable/disable interrupts
-
+* arm_macros: removed space after & in OFFSET_OF macro (causing issues compiling with gcc)
 
 ## v0.9 and below
 
