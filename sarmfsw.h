@@ -16,6 +16,10 @@
 
 #include "arm_cmsis.h"			// HAL & Drivers depending platform
 
+#include CMSIS_INC				// CMSIS includes
+#include CMSIS_CFG				// HAL configuration includes
+
+#include "arm_inlines.h"		// Common inlines (at the end as some needs to access HAL)
 
 /*!\enum FW_target
 ** \brief Firmware target types

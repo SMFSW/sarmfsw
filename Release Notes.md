@@ -26,9 +26,12 @@ SOFTWARE.
 * arm_cmsis: added generic define for all families
 * STM\_CONF\_HEADER() include hal header file instead of hal conf directly (more HAL access)
 * Added macro SZ_OBJ to compute number of elements of an object following its type
-* Renamed macro OFFSETOF, now OFFSET_OF
 * arm_cmsis: added macros to enable/disable interrupts
-* arm_macros: removed space after & in OFFSET_OF macro (causing issues compiling with gcc)
+* arm_macros: Renamed macro OFFSETOF, now OFFSET_OF & removed space after & in OFFSET_OF macro (causing issues compiling with gcc)
+* arm_macros: Some refactoring and bool returning inlines optimization
+* sarmfsw: includes CMSIS & HAL header files by default
+* arm_inlines: Added file for inlines, as some needs to access to HAL (included after arm_cmsis)
+* arm_inlines: inRange & inTolerance now using int32_t
 
 ## v0.9 and below
 

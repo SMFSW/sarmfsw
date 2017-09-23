@@ -29,13 +29,10 @@
 #define BYTE_TO_PERC(b)		((BYTE) (((b) * 100) / 255))						//!< Converts a BYTE \b b (0-255) to percent (0-100)
 #define PERC_TO_BYTE(p)		((BYTE) (((p) > 100 ? 100 : (p)) * 255 / 100))		//!< Converts a BYTE \b p percentage (0-100) to BYTE (0-255) with max checking
 
-#define TPSSUP_MS(v, t)		((DWORD) (HAL_GetTick() - (DWORD) (v)) > (DWORD) (t))	//!< Tests if \b v (a HStart variable) has reached time lapse stated in \b t (ms)
-#define TPSINF_MS(v, t)		((DWORD) (HAL_GetTick() - (DWORD) (v)) < (DWORD) (t))	//!< Tests if \b v (a HStart variable) has not reached time lapse stated in \b t (ms)
-
 #define OFFSET_OF(typ, mbr)	((size_t) &(((typ*)0)->mbr))	//!< Computes the offset member \b mbr from struct \b typ
 #define SZ_OBJ(obj, typ)	(sizeof(obj) / sizeof(typ))		//!< Computes the number of elements of \b obj following \b typ
 
-//! \warning No possible nesting, use \a XCAT in this case
+//! \warning No nesting possible, use \a XCAT in this case
 #define	CAT(a, b)			a##b			//!< Preprocessor Name concatenation
 #define XCAT(a, b)			CAT(a, b)		//!< Preprocessor Name concatenation (possible nesting)
 
@@ -67,76 +64,10 @@
 #define DEGREE_TO_FLOAT(d)	((float) (((d) > 360.0f ? 360.0f : (d)) / 360.0f))
 #define FLOAT_TO_DEGREE(f)	((float) ((((f) > 1.0f ? 1.0f : (f)) < 0.0f ? 0.0f : (f)) * 360.0f))
 
-//!\warning conversion output shall not exceed 16bits (input shall strictly be unsigned 8bits)
-//!\warning nb shall be in range 0-8 (note that using 0 doesn't change val)
-#define conv8upto16Bits(val, nb)	((WORD) ((WORD) ((val) << (nb)) + (WORD) ((val) & (0xFF >> (8-(nb))))))			//!< converts \b val (8bits) to \b 8+nb bits (nb must be comprised between 0 \& 8 bits)
 
-//!\warning conversion output shall not exceed 32bits (input shall strictly be unsigned 16bits)
-//!\warning nb shall be in range 0-16 (note that using 0 doesn't change val)
-#define conv16upto32Bits(val, nb)	((DWORD) ((DWORD) ((val) << (nb)) + (DWORD) ((val) & (0xFFFF >> (16-(nb))))))	//!< converts \b val (16bits) to \b 16+nb bits (nb must be comprised between 0 \& 16 bits)
-
-
-#define	SWAP_BYTE(a, b)		{ BYTE c; c=(a); a=(b); b=c; }	//!< Swap BYTEs \b a \& \b b
-#define	SWAP_WORD(a, b)		{ WORD c; c=(a); a=(b); b=c; }	//!< Swap WORDs \b a \& \b b
-#define	SWAP_DWORD(a, b)	{ DWORD c; c=(a); a=(b); b=c; }	//!< Swap DWORDs \b a \& \b b
-
-
-/*!\brief Swap endians of the contents of a 16b value
-** \param[in] w - 16b value
-** \return Swapped value
-**/
-inline uint16_t INLINE__ SWAP_END16B(uint16_t w) {
-	return (uint16_t) ((((w) & 0xFFU) * 0x100) | (((w) & 0xFF00U) / 0x100)); }
-
-/*!\brief Swap endians of the contents of a 32b value
-** \param[in] d - 32b value
-** \return Swapped value
-**/
-inline uint32_t INLINE__ SWAP_END32B(uint32_t d) {
-	return (uint32_t) ((SWAP_END16B((d) & 0xFFFFUL) * 0x10000) | SWAP_END16B(((d) & 0xFFFF0000UL) / 0x10000)); }
-
-
-/*!\brief Swap endians of a 16b tab
-** \param[in] tab - tab of 16b values
-** \param[in] nb - nb of values in tab
-**/
-inline void INLINE__ SWAP_END16B_TAB(uint16_t tab[], uint16_t nb) {
-	for (int i = 0 ; i < nb ; i++)	tab[i] = SWAP_END16B(tab[i]); }
-
-/*!\brief Swap endians of a 32b tab
-** \param[in] tab - tab of 32b values
-** \param[in] nb - nb of values in tab
-**/
-inline void INLINE__ SWAP_END32B_TAB(uint32_t tab[], uint16_t nb) {
-	for (int i = 0 ; i < nb ; i++)	tab[i] = SWAP_END32B(tab[i]); }
-
-
-/*!\brief Checks if val given as parameter is in tolerance
-** \param[in] val - Value to check
-** \param[in] ref - Reference value
-** \param[in] tolerance - Tolerance on reference value
-** \return True if val is inTolerance
-**/
-inline bool INLINE__ inTolerance(int16_t val, int16_t ref, int16_t tolerance)
-{
-	tolerance = min(100, max(0, tolerance));
-	register uint16_t margin = (uint16_t) (ref * ((float) tolerance / 100.0f));
-
-	if ((val <= (int16_t) (ref + margin)) && (val >= (int16_t) (ref - margin))) return true;
-	return false;
-}
-
-/*!\brief Checks if val given as parameter is in range
-** \param[in] val - Value to check
-** \param[in] low - Low range boundary
-** \param[in] high - High range boundary
-** \return True if val is inRange
-**/
-inline bool INLINE__ inRange(int16_t val, int16_t low, int16_t high)
-{
-	if ((val <= high) && (val >= low)) return true;
-	return false;
-}
+#define	SWAP_BYTE(a, b)		{ BYTE c; c = a; a = b; b = c; }	//!< Swap BYTEs \b a \& \b b
+#define	SWAP_WORD(a, b)		{ WORD c; c = a; a = b; b = c; }	//!< Swap WORDs \b a \& \b b
+#define	SWAP_DWORD(a, b)	{ DWORD c; c = a; a = b; b = c; }	//!< Swap DWORDs \b a \& \b b
 
 
 /****************************************************************/
