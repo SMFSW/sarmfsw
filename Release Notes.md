@@ -26,7 +26,7 @@ SOFTWARE.
 * arm_cmsis: updated latest chips references for STMicro
 * arm_cmsis: platform CMSIS includes & HAL config included from there
 * arm_hal_peripheral: added to include used peripherals
-* arm_hal_peripheral: removed dma.h & dma2d.h inclusions (always true, but no generation of file when not used)
+* arm_hal_peripheral: reworked all peripheral includes
 * arm_chip_xx: Families divided into files with respective fam name
 * refactoring names of platform header files
 * added precomp error when not detecting using HAL

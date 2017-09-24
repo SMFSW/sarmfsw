@@ -14,6 +14,8 @@
 /*** Import of enabled peripheral modules ***/
 #if defined(STM_FAMILY)
 
+#if defined(HAL_MODULE_ENABLED)
+
 	#ifdef HAL_ADC_MODULE_ENABLED
 		#include "adc.h"
 	#endif /* HAL_ADC_MODULE_ENABLED */
@@ -55,16 +57,14 @@
 //	#endif /* HAL_DMA2D_MODULE_ENABLED */
 
 	#ifdef HAL_ETH_MODULE_ENABLED
-		#include "eth.h"
+		#include "ethernetif.h"
+		#include "lwip.h"
+		#include "lwipopts.h"
 	#endif /* HAL_ETH_MODULE_ENABLED */
 
 	#ifdef HAL_FDCAN_MODULE_ENABLED
 		#include "fdcan.h"
 	#endif /* HAL_FDCAN_MODULE_ENABLED */
-
-	#ifdef HAL_FLASH_MODULE_ENABLED
-		#include "flash.h"
-	#endif /* HAL_FLASH_MODULE_ENABLED */
 
 	#ifdef HAL_GPIO_MODULE_ENABLED
 		#include "gpio.h"
@@ -103,7 +103,9 @@
 	#endif /* HAL_IWDG_MODULE_ENABLED */
 
 	#ifdef HAL_JPEG_MODULE_ENABLED
-		#include "jpeg.h"
+		#include "libjpeg.h"
+		#include "jconfig.h"
+		#include "jmorecfg.h"
 	#endif /* HAL_JPEG_MODULE_ENABLED */
 
 	#ifdef HAL_LPTIM_MODULE_ENABLED
@@ -141,10 +143,6 @@
 	#ifdef HAL_PCCARD_MODULE_ENABLED
 		#include "pccard.h"
 	#endif /* HAL_PCCARD_MODULE_ENABLED */ 
-
-	#ifdef HAL_PCD_MODULE_ENABLED
-		#include "pcd.h"
-	#endif /* HAL_PCD_MODULE_ENABLED */
 
 	#ifdef HAL_QSPI_MODULE_ENABLED
 		#include "qspi.h"
@@ -213,6 +211,8 @@
 	#ifdef HAL_WWDG_MODULE_ENABLED
 		#include "wwdg.h"
 	#endif /* HAL_WWDG_MODULE_ENABLED */
+
+#endif
 
 #elif defined(SAM_FAMILY)
 
