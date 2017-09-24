@@ -21,6 +21,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+## v1.1
+
+* arm_cmsis: updated latest chips references for STMicro
+* arm_cmsis: platform CMSIS includes & HAL config included from there
+* arm_hal_peripheral: added to include used peripherals
+* arm_chip_xx: Families divided into files with respective fam name
+* refactoring names of platform header files
+* added precomp error when not detecting using HAL
+
 ## v1.0
 
 * arm_cmsis: added generic define for all families

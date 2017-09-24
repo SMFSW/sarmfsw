@@ -10,7 +10,6 @@
 
 #include "arm_attributes.h"		// Attributes depending compiler
 #include "arm_cmsis.h"			// HAL & Drivers depending platform
-#include CMSIS_INC				// CMSIS includes
 /****************************************************************/
 
 

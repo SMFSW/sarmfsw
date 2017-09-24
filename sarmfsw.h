@@ -15,9 +15,7 @@
 #include "arm_stdclib.h"		// Common standard c library wrapper macros
 
 #include "arm_cmsis.h"			// HAL & Drivers depending platform
-
-#include CMSIS_INC				// CMSIS includes
-#include CMSIS_CFG				// HAL configuration includes
+#include "arm_hal_peripheral.h"	// HAL peripherals includes
 
 #include "arm_inlines.h"		// Common inlines (at the end as some needs to access HAL)
 
