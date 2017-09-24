@@ -46,13 +46,13 @@
 		#include "dcmi.h"
 	#endif /* HAL_DCMI_MODULE_ENABLED */
 
-	#ifdef HAL_DMA_MODULE_ENABLED
-		#include "dma.h"
-	#endif /* HAL_DMA_MODULE_ENABLED */
+//	#ifdef HAL_DMA_MODULE_ENABLED
+//		#include "dma.h"
+//	#endif /* HAL_DMA_MODULE_ENABLED */
 
-	#ifdef HAL_DMA2D_MODULE_ENABLED
-		#include "dma2d.h"
-	#endif /* HAL_DMA2D_MODULE_ENABLED */
+//	#ifdef HAL_DMA2D_MODULE_ENABLED
+//		#include "dma2d.h"
+//	#endif /* HAL_DMA2D_MODULE_ENABLED */
 
 	#ifdef HAL_ETH_MODULE_ENABLED
 		#include "eth.h"
