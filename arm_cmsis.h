@@ -129,7 +129,7 @@
 
 /*** GLOBAL CMSIS & HAL includes ***/
 #include ARM_CMSIS_INC	// CMSIS includes
-#include ARM_HAL_CFG	// HAL configuration includes
+// #include ARM_HAL_CFG	// HAL configuration includes (already included by ARM_CMSIS_INC)
 
 
 /****************************************************************/

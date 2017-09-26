@@ -56,11 +56,9 @@
 //		#include "dma2d.h"
 //	#endif /* HAL_DMA2D_MODULE_ENABLED */
 
-	#ifdef HAL_ETH_MODULE_ENABLED
-		#include "ethernetif.h"
-		#include "lwip.h"
-		#include "lwipopts.h"
-	#endif /* HAL_ETH_MODULE_ENABLED */
+//	#ifdef HAL_ETH_MODULE_ENABLED
+//		#include "eth.h"
+//	#endif /* HAL_ETH_MODULE_ENABLED */
 
 	#ifdef HAL_FDCAN_MODULE_ENABLED
 		#include "fdcan.h"
