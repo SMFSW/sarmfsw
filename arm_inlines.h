@@ -18,7 +18,7 @@
 ** \param[in] time - time lapse (in ms)
 ** \return true if time elapsed
 **/
-__INLINE bool INLINE__ TPSSUP_MS(uint32_t val, uint32_t time) {
+__INLINE bool INLINE__ TPSSUP_MS(DWORD val, DWORD time) {
 	return ((DWORD) (HAL_GetTick() - (DWORD) (val)) > (DWORD) (time)); }
 
 /*!\brief Tests if stored time value has not reached time lapse in ms
@@ -26,7 +26,7 @@ __INLINE bool INLINE__ TPSSUP_MS(uint32_t val, uint32_t time) {
 ** \param[in] time - time lapse (in ms)
 ** \return true if time not elapsed
 **/
-__INLINE bool INLINE__ TPSINF_MS(uint32_t val, uint32_t time) {
+__INLINE bool INLINE__ TPSINF_MS(DWORD val, DWORD time) {
 	return ((DWORD) (HAL_GetTick() - (DWORD) (val)) < (DWORD) (time)); }
 
 
@@ -37,7 +37,7 @@ __INLINE bool INLINE__ TPSINF_MS(uint32_t val, uint32_t time) {
 ** \param[in] nb - number of bits to add (8bits max)
 ** \return Converted value
 **/
-__INLINE uint16_t INLINE__ conv8upto16Bits(uint8_t val, uint8_t nb) {
+__INLINE WORD INLINE__ conv8upto16Bits(BYTE val, BYTE nb) {
 	return ((WORD) ((WORD) ((val) << (nb)) + (WORD) ((val) & (0xFF >> (8-(nb)))))); }
 
 
@@ -48,7 +48,7 @@ __INLINE uint16_t INLINE__ conv8upto16Bits(uint8_t val, uint8_t nb) {
 ** \param[in] nb - number of bits to add (16bits max)
 ** \return Converted value
 **/
-__INLINE uint32_t INLINE__ conv16upto32Bits(uint16_t val, uint8_t nb) {
+__INLINE DWORD INLINE__ conv16upto32Bits(WORD val, BYTE nb) {
 	return ((DWORD) ((DWORD) ((val) << (nb)) + (DWORD) ((val) & (0xFFFF >> (16-(nb)))))); }
 
 
@@ -56,29 +56,29 @@ __INLINE uint32_t INLINE__ conv16upto32Bits(uint16_t val, uint8_t nb) {
 ** \param[in] w - 16b value
 ** \return Swapped value
 **/
-__INLINE uint16_t INLINE__ SWAP_END16B(uint16_t w) {
-	return (uint16_t) ((((w) & 0xFFU) * 0x100) | (((w) & 0xFF00U) / 0x100)); }
+__INLINE WORD INLINE__ SWAP_END16B(WORD w) {
+	return (WORD) (LSHIFT(((w) & 0xFFU), 8) | RSHIFT(((w) & 0xFF00U), 8)); }
 
 /*!\brief Swap endians of the contents of a 32b value
 ** \param[in] d - 32b value
 ** \return Swapped value
 **/
-__INLINE uint32_t INLINE__ SWAP_END32B(uint32_t d) {
-	return (uint32_t) ((SWAP_END16B((d) & 0xFFFFUL) * 0x10000) | SWAP_END16B(((d) & 0xFFFF0000UL) / 0x10000)); }
+__INLINE DWORD INLINE__ SWAP_END32B(DWORD d) {
+	return (DWORD) (LSHIFT(SWAP_END16B((d) & 0xFFFFUL), 16) | SWAP_END16B(RSHIFT(((d) & 0xFFFF0000UL), 16))); }
 
 
 /*!\brief Swap endians of a 16b tab
 ** \param[in] tab - tab of 16b values
 ** \param[in] nb - nb of values in tab
 **/
-__INLINE void INLINE__ SWAP_END16B_TAB(uint16_t tab[], uint16_t nb) {
+__INLINE void INLINE__ SWAP_END16B_TAB(WORD tab[], WORD nb) {
 	for (int i = 0 ; i < nb ; i++)	tab[i] = SWAP_END16B(tab[i]); }
 
 /*!\brief Swap endians of a 32b tab
 ** \param[in] tab - tab of 32b values
 ** \param[in] nb - nb of values in tab
 **/
-__INLINE void INLINE__ SWAP_END32B_TAB(uint32_t tab[], uint16_t nb) {
+__INLINE void INLINE__ SWAP_END32B_TAB(DWORD tab[], WORD nb) {
 	for (int i = 0 ; i < nb ; i++)	tab[i] = SWAP_END32B(tab[i]); }
 
 
@@ -88,12 +88,12 @@ __INLINE void INLINE__ SWAP_END32B_TAB(uint32_t tab[], uint16_t nb) {
 ** \param[in] tolerance - Tolerance on reference value (in percent)
 ** \return true if val is inTolerance
 **/
-__INLINE bool INLINE__ inTolerance(int32_t val, int32_t ref, int32_t tolerance)
+__INLINE bool INLINE__ inTolerance(SDWORD val, SDWORD ref, SDWORD tolerance)
 {
 	tolerance = min(100, max(0, tolerance));
-	register uint32_t margin = (uint32_t) (ref * ((float) tolerance / 100.0f));
+	register DWORD margin = (DWORD) (ref * ((float) tolerance / 100.0f));
 
-	return ((val <= (int32_t) (ref + margin)) && (val >= (int32_t) (ref - margin)));
+	return ((val <= (SDWORD) (ref + margin)) && (val >= (SDWORD) (ref - margin)));
 }
 
 /*!\brief Checks if val given as parameter is in range
@@ -102,7 +102,7 @@ __INLINE bool INLINE__ inTolerance(int32_t val, int32_t ref, int32_t tolerance)
 ** \param[in] high - High range boundary
 ** \return true if val is inRange
 **/
-__INLINE bool INLINE__ inRange(int32_t val, int32_t low, int32_t high) {
+__INLINE bool INLINE__ inRange(SDWORD val, SDWORD low, SDWORD high) {
 	return ((val <= high) && (val >= low)); }
 
 

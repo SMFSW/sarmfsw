@@ -19,18 +19,24 @@
 #define	charNUL				'\0'			//!< Null Char
 
 
-#define MAKEWORD(b1, b2)	((WORD) (((BYTE) (b1)) | ((WORD) ((BYTE) (b2))) * 0x100))		//!< Make WORD from \b b1 and \b b2 with \b b1 as LSB
-#define MAKELONG(w1, w2)	((DWORD) (((WORD) (w1)) | ((DWORD) ((WORD) (w2))) * 0x10000))	//!< Make LONG from \b w1 and \b w2 with \b w1 as LSB
+//!\warning this macro is optimized only when used with \b b with a static value
+#define LSHIFT(v, b)		(v * (1UL << b))												//!< Shift \b v \b b bits left
+//!\warning this macro is optimized only when used with \b b with a static value
+#define RSHIFT(v, b)		(v / (1UL << b))												//!< Shift \b v \b b bits right
+
+#define MAKEWORD(b1, b2)	((WORD) (((BYTE) (b1)) | LSHIFT(((WORD) ((BYTE) (b2))), 8)))	//!< Make WORD from \b b1 and \b b2 with \b b1 as LSB
+#define MAKELONG(w1, w2)	((DWORD) (((WORD) (w1)) | LSHIFT(((DWORD) ((WORD) (w2))), 16)))	//!< Make LONG from \b w1 and \b w2 with \b w1 as LSB
+
 #define LOWORD(l)			((WORD) (l))													//!< Get WORD LSW from LONG \b l
-#define HIWORD(l)			((WORD) ((DWORD) (l) / 0x10000))								//!< Get WORD MSW from LONG \b l
+#define HIWORD(l)			((WORD) RSHIFT((DWORD) (l), 16))								//!< Get WORD MSW from LONG \b l
 #define LOBYTE(w)			((BYTE) (w))													//!< Get BYTE LSB from WORD \b w
-#define HIBYTE(w)			((BYTE) ((WORD) (w) / 0x100))									//!< Get BYTE MSB from WORD \b w
+#define HIBYTE(w)			((BYTE) RSHIFT((WORD) (w), 8))									//!< Get BYTE MSB from WORD \b w
 
 #define BYTE_TO_PERC(b)		((BYTE) (((b) * 100) / 255))						//!< Converts a BYTE \b b (0-255) to percent (0-100)
 #define PERC_TO_BYTE(p)		((BYTE) (((p) > 100 ? 100 : (p)) * 255 / 100))		//!< Converts a BYTE \b p percentage (0-100) to BYTE (0-255) with max checking
 
-#define OFFSET_OF(typ, mbr)	((size_t) &(((typ*)0)->mbr))	//!< Computes the offset member \b mbr from struct \b typ
-#define SZ_OBJ(obj, typ)	(sizeof(obj) / sizeof(typ))		//!< Computes the number of elements of \b obj following \b typ
+#define OFFSET_OF(typ, mbr)	((size_t) &(((typ*)0)->mbr))				//!< Computes the offset member \b mbr from struct \b typ
+#define SZ_OBJ(obj, typ)	((size_t) (sizeof(obj) / sizeof(typ)))		//!< Computes the number of elements of \b obj following \b typ
 
 //! \warning No nesting possible, use \a XCAT in this case
 #define	CAT(a, b)			a##b			//!< Preprocessor Name concatenation

@@ -23,6 +23,8 @@ SOFTWARE.
 
 ## v1.1
 
+* arm_macros: added RSHIFT, LSHIFT & refactoring
+* arm_inlines: refactoring
 * arm_cmsis: updated latest chips references for STMicro
 * arm_cmsis: platform CMSIS includes & HAL config included from there
 * arm_cmsis: removed including HAL config (already included from CMSIS includes)
@@ -30,7 +32,6 @@ SOFTWARE.
 * arm_hal_peripheral: reworked all peripheral includes
 * arm_chip_xx: Families divided into files with respective fam name
 * refactoring names of platform header files
-* added precomp error when not detecting using HAL
 
 ## v1.0
 
