@@ -20,17 +20,17 @@
 
 
 //!\warning this macro is optimized only when used with \b b with a static value
-#define LSHIFT(v, b)		(v * (1UL << b))												//!< Shift \b v \b b bits left
+#define LSHIFT(v, b)		((v) * (1 << b))													//!< Shift \b v \b b bits left
 //!\warning this macro is optimized only when used with \b b with a static value
-#define RSHIFT(v, b)		(v / (1UL << b))												//!< Shift \b v \b b bits right
+#define RSHIFT(v, b)		((v) / (1 << b))													//!< Shift \b v \b b bits right
 
-#define MAKEWORD(b1, b2)	((WORD) (((BYTE) (b1)) | LSHIFT(((WORD) ((BYTE) (b2))), 8)))	//!< Make WORD from \b b1 and \b b2 with \b b1 as LSB
-#define MAKELONG(w1, w2)	((DWORD) (((WORD) (w1)) | LSHIFT(((DWORD) ((WORD) (w2))), 16)))	//!< Make LONG from \b w1 and \b w2 with \b w1 as LSB
+#define MAKEWORD(lsb, msb)	((WORD) (((BYTE) (lsb)) | LSHIFT(((WORD) ((BYTE) (msb))), 8)))		//!< Make WORD from \b b1 and \b b2 with \b b1 as LSB
+#define MAKELONG(lsw, msw)	((DWORD) (((WORD) (lsw)) | LSHIFT(((DWORD) ((WORD) (msw))), 16)))	//!< Make LONG from \b w1 and \b w2 with \b w1 as LSB
 
-#define LOWORD(l)			((WORD) (l))													//!< Get WORD LSW from LONG \b l
-#define HIWORD(l)			((WORD) RSHIFT((DWORD) (l), 16))								//!< Get WORD MSW from LONG \b l
-#define LOBYTE(w)			((BYTE) (w))													//!< Get BYTE LSB from WORD \b w
-#define HIBYTE(w)			((BYTE) RSHIFT((WORD) (w), 8))									//!< Get BYTE MSB from WORD \b w
+#define LOWORD(l)			((WORD) (l))														//!< Get WORD LSW from LONG \b l
+#define HIWORD(l)			((WORD) RSHIFT((DWORD) (l), 16))									//!< Get WORD MSW from LONG \b l
+#define LOBYTE(w)			((BYTE) (w))														//!< Get BYTE LSB from WORD \b w
+#define HIBYTE(w)			((BYTE) RSHIFT((WORD) (w), 8))										//!< Get BYTE MSB from WORD \b w
 
 #define BYTE_TO_PERC(b)		((BYTE) (((b) * 100) / 255))						//!< Converts a BYTE \b b (0-255) to percent (0-100)
 #define PERC_TO_BYTE(p)		((BYTE) (((p) > 100 ? 100 : (p)) * 255 / 100))		//!< Converts a BYTE \b p percentage (0-100) to BYTE (0-255) with max checking
