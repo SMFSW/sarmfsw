@@ -20,12 +20,16 @@
 
 
 //!\warning this macro is optimized only when used with \b b with a static value
-#define LSHIFT(v, b)		((v) * (1 << b))													//!< Shift \b v \b b bits left
+#define LSHIFT(v, b)		((v) * (1 << b))													//!< Shift \b v \b b bits left (up to 31b)
 //!\warning this macro is optimized only when used with \b b with a static value
-#define RSHIFT(v, b)		((v) / (1 << b))													//!< Shift \b v \b b bits right
+#define RSHIFT(v, b)		((v) / (1 << b))													//!< Shift \b v \b b bits right (up to 31b)
+//!\warning this macro is optimized only when used with \b b with a static value
+#define LSHIFT_L(v, b)		((v) * ((LWORD) 1 << b))											//!< Shift \b v \b b bits left (up to 63b)
+//!\warning this macro is optimized only when used with \b b with a static value
+#define RSHIFT_L(v, b)		((v) / ((LWORD) 1 << b))											//!< Shift \b v \b b bits right (up to 63b)
 
-#define MAKEWORD(lsb, msb)	((WORD) (((BYTE) (lsb)) | LSHIFT(((WORD) ((BYTE) (msb))), 8)))		//!< Make WORD from \b b1 and \b b2 with \b b1 as LSB
-#define MAKELONG(lsw, msw)	((DWORD) (((WORD) (lsw)) | LSHIFT(((DWORD) ((WORD) (msw))), 16)))	//!< Make LONG from \b w1 and \b w2 with \b w1 as LSB
+#define MAKEWORD(lsb, msb)	((WORD) (((BYTE) (lsb)) | LSHIFT(((WORD) ((BYTE) (msb))), 8)))		//!< Make WORD from \b lsb and \b msb
+#define MAKELONG(lsw, msw)	((DWORD) (((WORD) (lsw)) | LSHIFT(((DWORD) ((WORD) (msw))), 16)))	//!< Make LONG from \b lsw and \b msw
 
 #define LOWORD(l)			((WORD) (l))														//!< Get WORD LSW from LONG \b l
 #define HIWORD(l)			((WORD) RSHIFT((DWORD) (l), 16))									//!< Get WORD MSW from LONG \b l
@@ -64,11 +68,11 @@
 
 #define Pi					3.141593f		//!< Approximate Pi calculation (4 * atan(1))
 
-#define RADIAN_TO_FLOAT(r)	((float) (((r) > 2*Pi ? 2*Pi : (r)) / 2*Pi))
-#define FLOAT_TO_RADIAN(f)	((float) ((((f) > 1.0f ? 1.0f : (f)) < 0.0f ? 0.0f : (f)) * 2*Pi)
+#define RAD_TO_FLOAT(r)		((float) (((r) > 2*Pi ? 2*Pi : (r)) / 2*Pi))
+#define FLOAT_TO_RAD(f)		((float) ((((f) > 1.0f ? 1.0f : (f)) < 0.0f ? 0.0f : (f)) * 2*Pi)
 
-#define DEGREE_TO_FLOAT(d)	((float) (((d) > 360.0f ? 360.0f : (d)) / 360.0f))
-#define FLOAT_TO_DEGREE(f)	((float) ((((f) > 1.0f ? 1.0f : (f)) < 0.0f ? 0.0f : (f)) * 360.0f))
+#define DEG_TO_FLOAT(d)		((float) (((d) > 360.0f ? 360.0f : (d)) / 360.0f))
+#define FLOAT_TO_DEG(f)		((float) ((((f) > 1.0f ? 1.0f : (f)) < 0.0f ? 0.0f : (f)) * 360.0f))
 
 
 #define	SWAP_BYTE(a, b)		{ BYTE c; c = a; a = b; b = c; }	//!< Swap BYTEs \b a \& \b b
