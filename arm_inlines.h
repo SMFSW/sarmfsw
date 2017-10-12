@@ -132,7 +132,6 @@ __INLINE DWORD SWAP_END32B(DWORD d) {
 ** \return Swapped value
 **/
 __INLINE LWORD SWAP_END64B(LWORD l) {
-	//!\warning need to be tested
 	return (LWORD) (LSHIFT_L(SWAP_END32B(l & 0xFFFFFFFF), 32) | SWAP_END32B(RSHIFT_L((l & 0xFFFFFFFF00000000), 32))); }
 
 

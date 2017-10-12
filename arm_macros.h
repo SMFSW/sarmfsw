@@ -20,13 +20,13 @@
 
 
 //!\warning this macro is optimized only when used with \b b with a static value
-#define LSHIFT(v, b)		((v) * (1 << b))													//!< Shift \b v \b b bits left (up to 31b)
+#define LSHIFT(v, b)		((v) * (1 << b))											//!< Shift \b v \b b bits left (up to 31b)
 //!\warning this macro is optimized only when used with \b b with a static value
-#define RSHIFT(v, b)		((v) / (1 << b))													//!< Shift \b v \b b bits right (up to 31b)
+#define RSHIFT(v, b)		((v) / (1 << b))											//!< Shift \b v \b b bits right (up to 31b)
 //!\warning this macro is optimized only when used with \b b with a static value
-#define LSHIFT_L(v, b)		((v) * ((LWORD) 1 << b))											//!< Shift \b v \b b bits left (up to 63b)
+#define LSHIFT_L(v, b)		((v) * (1LL << b))											//!< Shift \b v \b b bits left (up to 63b)
 //!\warning this macro is optimized only when used with \b b with a static value
-#define RSHIFT_L(v, b)		((v) / ((LWORD) 1 << b))											//!< Shift \b v \b b bits right (up to 63b)
+#define RSHIFT_L(v, b)		((v) / (1LL << b))											//!< Shift \b v \b b bits right (up to 63b)
 
 #define MAKEWORD(lsb, msb)	((WORD) (((BYTE) (lsb)) | LSHIFT(((WORD) ((BYTE) (msb))), 8)))		//!< Make WORD from \b lsb and \b msb
 #define MAKELONG(lsw, msw)	((DWORD) (((WORD) (lsw)) | LSHIFT(((DWORD) ((WORD) (msw))), 16)))	//!< Make LONG from \b lsw and \b msw
@@ -35,9 +35,6 @@
 #define HIWORD(l)			((WORD) RSHIFT((DWORD) (l), 16))									//!< Get WORD MSW from LONG \b l
 #define LOBYTE(w)			((BYTE) (w))														//!< Get BYTE LSB from WORD \b w
 #define HIBYTE(w)			((BYTE) RSHIFT((WORD) (w), 8))										//!< Get BYTE MSB from WORD \b w
-
-#define BYTE_TO_PERC(b)		((BYTE) (((b) * 100) / 255))						//!< Converts a BYTE \b b (0-255) to percent (0-100)
-#define PERC_TO_BYTE(p)		((BYTE) (((p) > 100 ? 100 : (p)) * 255 / 100))		//!< Converts a BYTE \b p percentage (0-100) to BYTE (0-255) with max checking
 
 #define OFFSET_OF(typ, mbr)	((size_t) &(((typ*)0)->mbr))				//!< Computes the offset member \b mbr from struct \b typ
 #define SZ_OBJ(obj, typ)	((size_t) (sizeof(obj) / sizeof(typ)))		//!< Computes the number of elements of \b obj following \b typ
@@ -67,6 +64,9 @@
 #define TwoThird			((float) (2.0 / 3.0))		//!< 2/3 approximation
 
 #define Pi					3.141593f		//!< Approximate Pi calculation (4 * atan(1))
+
+#define BYTE_TO_PERC(b)		((BYTE) (((b) * 100) / 255))						//!< Converts a BYTE \b b (0-255) to percent (0-100)
+#define PERC_TO_BYTE(p)		((BYTE) (((p) > 100 ? 100 : (p)) * 255 / 100))		//!< Converts a BYTE \b p percentage (0-100) to BYTE (0-255) with max checking
 
 #define RAD_TO_FLOAT(r)		((float) (((r) > 2*Pi ? 2*Pi : (r)) / 2*Pi))
 #define FLOAT_TO_RAD(f)		((float) ((((f) > 1.0f ? 1.0f : (f)) < 0.0f ? 0.0f : (f)) * 2*Pi)
