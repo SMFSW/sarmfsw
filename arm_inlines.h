@@ -34,15 +34,51 @@ __INLINE bool INLINE__ TPSINF_MS(DWORD val, DWORD time) {
 	return ((DWORD) (HAL_GetTick() - (DWORD) (val)) < (DWORD) (time)); }
 
 
-/*******************************/
-/***  GRAY CODE CONVERSIONS  ***/
-/*******************************/
+/*************************************************/
+/***  HEX, ASCII, BCD & GRAY CODE CONVERSIONS  ***/
+/*************************************************/
+
+/*!\brief Converts hexadecimal value to BCD
+** \param[in] hex - Hexadecimal value to convert
+** \return BCD value
+**/
+__INLINE BYTE HexToBCD(BYTE hex) {
+	return LSHIFT((hex / 10), 4) | (hex % 10); }
+
+/*!\brief Converts BCD value to hexadecimal
+** \param[in] bcd - BCD value to convert
+** \return Hexadecimal value
+**/
+__INLINE BYTE BCDToHex(BYTE bcd) {
+	return (RSHIFT((bcd & 0xF0), 4) * 10) + (bcd & 0x0F); }
+
+
+/*!\brief Converts hexadecimal value to ASCII
+** \param[in] hex - Hexadecimal value to convert
+** \return ASCII char
+**/
+__INLINE CHAR INLINE__ HexToASCII(BYTE hex) {
+	hex &= 0x0F;
+	return (hex < 0x0A ? 0x30 : 0x37) + hex; }
+
+/*!\brief Converts ASCII char to hexadecimal
+** \param[in] ascii - ASCII char to convert
+** \return Hexadecimal value
+**/
+__INLINE SBYTE ASCIIToHex(CHAR ascii)
+{
+	if ((ascii >= '0') && (ascii <= '9'))			{ return ascii - 0x30; }
+	else if ((ascii >= 'A') && (ascii <= 'F'))		{ return ascii - 0x37; }
+	else if ((ascii >= 'a') && (ascii <= 'f'))		{ return ascii - 0x47; }
+	else											{ return -1; }
+}
+
 
 /*!\brief Convert binary value to gray code
 ** \param[in] bin - binary value
 ** \return Converted value (gray code)
 **/
-__INLINE DWORD bin2gray(DWORD bin) {
+__INLINE DWORD INLINE__ bin2gray(DWORD bin) {
 	return RSHIFT(bin, 1) ^ bin; }
 
 /*!\brief Convert gray code to binary value
@@ -51,7 +87,7 @@ __INLINE DWORD bin2gray(DWORD bin) {
 **/
 __INLINE DWORD gray2bin(DWORD gray)
 {
-	int bits = 32;
+	SWORD bits = 32;
 	DWORD tmp = gray;
 	
 	while ((bits >>= 1) > 0)	{ tmp ^= (tmp >> bits); }
@@ -132,7 +168,7 @@ __INLINE DWORD SWAP_END32B(DWORD d) {
 ** \return Swapped value
 **/
 __INLINE LWORD SWAP_END64B(LWORD l) {
-	return (LWORD) (LSHIFT_L(SWAP_END32B(l & 0xFFFFFFFF), 32) | SWAP_END32B(RSHIFT_L((l & 0xFFFFFFFF00000000), 32))); }
+	return (LWORD) (LSHIFT64(SWAP_END32B(l & 0xFFFFFFFF), 32) | SWAP_END32B(RSHIFT64((l & 0xFFFFFFFF00000000), 32))); }
 
 
 /*!\brief Swap endians of a 16b tab
@@ -140,21 +176,21 @@ __INLINE LWORD SWAP_END64B(LWORD l) {
 ** \param[in] nb - nb of values in tab
 **/
 __INLINE void INLINE__ SWAP_END16B_TAB(WORD tab[], WORD nb) {
-	for (int i = 0 ; i < nb ; i++)	tab[i] = SWAP_END16B(tab[i]); }
+	for (unsigned int i = 0 ; i < nb ; i++)	tab[i] = SWAP_END16B(tab[i]); }
 
 /*!\brief Swap endians of a 32b tab
 ** \param[in] tab - tab of 32b values
 ** \param[in] nb - nb of values in tab
 **/
 __INLINE void INLINE__ SWAP_END32B_TAB(DWORD tab[], WORD nb) {
-	for (int i = 0 ; i < nb ; i++)	tab[i] = SWAP_END32B(tab[i]); }
+	for (unsigned int i = 0 ; i < nb ; i++)	tab[i] = SWAP_END32B(tab[i]); }
 
 /*!\brief Swap endians of a 64b tab
 ** \param[in] tab - tab of 64b values
 ** \param[in] nb - nb of values in tab
 **/
 __INLINE void INLINE__ SWAP_END64B_TAB(LWORD tab[], WORD nb) {
-	for (int i = 0 ; i < nb ; i++)	tab[i] = SWAP_END64B(tab[i]); }
+	for (unsigned int i = 0 ; i < nb ; i++)	tab[i] = SWAP_END64B(tab[i]); }
 
 
 /************************/
@@ -167,10 +203,10 @@ __INLINE void INLINE__ SWAP_END64B_TAB(LWORD tab[], WORD nb) {
 ** \param[in] tolerance - Tolerance on reference value (in percent)
 ** \return true if val is inTolerance
 **/
-__INLINE bool inTolerance(SDWORD val, SDWORD ref, SDWORD tolerance)
+__INLINE bool inTolerance(SDWORD val, SDWORD ref, float tolerance)
 {
-	tolerance = min(100, max(0, tolerance));
-	DWORD margin = (DWORD) (ref * ((float) tolerance / 100.0f));
+	tolerance = min(100.0f, max(0.0f, tolerance));
+	DWORD margin = (DWORD) (ref * (tolerance / 100.0f));
 	return ((val <= (SDWORD) (ref + margin)) && (val >= (SDWORD) (ref - margin)));
 }
 

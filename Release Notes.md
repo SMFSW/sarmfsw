@@ -24,8 +24,9 @@ SOFTWARE.
 ## v1.1
 
 * arm_macros: added shifting macros & refactoring
-* arm_inlines: refactoring & addded some inlines for 64b and gray code
+* arm_inlines: refactoring & addded some inlines for 64b and bcd, ascii & gray code
 * arm_inlines: removed some always inline qualifiers for some inlines producing lots of instructions
+* arm_inlines: inTolerance tolerance param is now float for higher accuracy when needed
 * arm_cmsis: updated latest chips references for STMicro
 * arm_cmsis: platform CMSIS includes & HAL config included from there
 * arm_cmsis: removed including HAL config (already included from CMSIS includes)

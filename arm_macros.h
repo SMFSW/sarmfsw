@@ -24,9 +24,9 @@
 //!\warning this macro is optimized only when used with \b b with a static value
 #define RSHIFT(v, b)		((v) / (1 << b))											//!< Shift \b v \b b bits right (up to 31b)
 //!\warning this macro is optimized only when used with \b b with a static value
-#define LSHIFT_L(v, b)		((v) * (1LL << b))											//!< Shift \b v \b b bits left (up to 63b)
+#define LSHIFT64(v, b)		((v) * (1LL << b))											//!< Shift \b v \b b bits left (up to 63b)
 //!\warning this macro is optimized only when used with \b b with a static value
-#define RSHIFT_L(v, b)		((v) / (1LL << b))											//!< Shift \b v \b b bits right (up to 63b)
+#define RSHIFT64(v, b)		((v) / (1LL << b))											//!< Shift \b v \b b bits right (up to 63b)
 
 #define MAKEWORD(lsb, msb)	((WORD) (((BYTE) (lsb)) | LSHIFT(((WORD) ((BYTE) (msb))), 8)))		//!< Make WORD from \b lsb and \b msb
 #define MAKELONG(lsw, msw)	((DWORD) (((WORD) (lsw)) | LSHIFT(((DWORD) ((WORD) (msw))), 16)))	//!< Make LONG from \b lsw and \b msw
