@@ -17,9 +17,16 @@
 #define ARM_HAL_CFG			STM_CONF_HEADER(STM_FAMILY)			//!< Alias for STM32 HAL config include
 
 
+/*** GPIO name wrapper (from CubeMX pin names) ***/
 #define	port(mnem)			XCAT(mnem, _GPIO_Port)				//!< Wrapper for PORT Alias
 #define	pin(mnem)			XCAT(mnem, _Pin)					//!< Wrapper for PIN Alias
 #define	gpio(mnem)			port(mnem), pin(mnem)				//!< Wrapper for PORT/PIN Alias (when using HAL_GPIO_ReadPin for example)
+
+/*** TIM PWM name wrapper ***/
+#define	tim(mnem)			XCAT(mnem, _Tim)					//!< Wrapper for TIM Alias
+#define	chan(mnem)			XCAT(mnem, _Chan)					//!< Wrapper for TIM Channel Alias
+#define	pwm(mnem)			tim(mnem), chan(mnem)				//!< Wrapper for TIM/CHAN Alias (when using HAL_TIM_PWM_Start for example)
+//!\note You would have to define mnemonic _Tim/_Chan corresponding to what's defined in CubeMX as Port/Pin (for consistency)
 
 
 /****************************************************************/
