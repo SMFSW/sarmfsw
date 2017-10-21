@@ -33,6 +33,7 @@ SOFTWARE.
 * arm_hal_peripheral: added to include used peripherals
 * arm_hal_peripheral: reworked all peripheral includes
 * arm_chip_stm32: added wrapper for PWM tim/channels
+* arm_chip_stm32: refactored wrappers for TIM & GPIO names to what's mentioned here
 * arm_chip_xx: Families divided into files with respective fam name
 * refactoring names of platform header files
 
