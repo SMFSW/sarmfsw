@@ -164,7 +164,7 @@ __INLINE DWORD SWAP_END32B(DWORD d) {
 	return (DWORD) (LSHIFT(SWAP_END16B(d & 0xFFFF), 16) | SWAP_END16B(RSHIFT((d & 0xFFFF0000), 16))); }
 
 /*!\brief Swap endians of the contents of a 64b value
-** \param[in] d - 64b value
+** \param[in] l - 64b value
 ** \return Swapped value
 **/
 __INLINE LWORD SWAP_END64B(LWORD l) {
