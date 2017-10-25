@@ -5,8 +5,8 @@
 ** \brief ARM common gcc attributes
 */
 /****************************************************************/
-#ifndef __ARM_ATTRIB_H
-	#define __ARM_ATTRIB_H
+#ifndef __ARM_ATTRIBUTES_H
+	#define __ARM_ATTRIBUTES_H
 /****************************************************************/
 
 #define		INLINE__			__attribute__((always_inline))	//!< \b Inline attribute for gcc
@@ -14,5 +14,5 @@
 #define		PACK__				__attribute__((__packed__))		//!< \b Packed attribute for gcc
 
 /****************************************************************/
-#endif /* __ARM_ATTRIB_H */
+#endif /* __ARM_ATTRIBUTES_H */
 /****************************************************************/

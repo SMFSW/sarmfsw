@@ -17,6 +17,8 @@
 #include "arm_cmsis.h"			// HAL & Drivers depending platform
 #include "arm_hal_peripheral.h"	// HAL peripherals includes
 
+#include "arm_errors.h"			// Common errors
+
 #include "arm_inlines.h"		// Common inlines (at the end as some needs to access HAL)
 
 /*!\enum FW_target
