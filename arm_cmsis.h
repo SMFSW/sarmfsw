@@ -117,6 +117,8 @@
 // #elif defined(xxx_FAMILY)
 	// For other ARM vendor families
 	// #include "arm_fam_xxx.h"
+
+	#define HALTicks	HAL_GetTick	//!< Alias for HAL get ticks function
 #else
 	#error "You will have to define your own CMSIS_INC & CMSIS_CFG file names with <> around manually (for specified vendor chip before including sarmfsw.h)."
 #endif

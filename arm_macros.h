@@ -9,8 +9,6 @@
 	#define __ARM_MACROS_H
 /****************************************************************/
 
-#include "arm_typedefs.h"
-
 
 #define	Undefined			-1				//!< Undefined value
 

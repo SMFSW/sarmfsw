@@ -27,6 +27,7 @@ SOFTWARE.
 * arm_inlines: refactoring & addded some inlines for 64b and bcd, ascii & gray code
 * arm_inlines: removed some always inline qualifiers for some inlines producing lots of instructions
 * arm_inlines: inTolerance tolerance param is now float for higher accuracy when needed
+* arm_inlines: using an alias defined in arm_hal_peripheral.h for GetTicks call
 * arm_cmsis: updated latest chips references for STMicro
 * arm_cmsis: platform CMSIS includes & HAL config included from there
 * arm_cmsis: removed including HAL config (already included from CMSIS includes)
@@ -36,7 +37,9 @@ SOFTWARE.
 * arm_chip_stm32: refactored wrappers for TIM & GPIO names to what's mentioned here
 * arm_chip_xx: Families divided into files with respective fam name
 * arm_errors: added to sarmfsw
-* refactoring names of platform header files
+* arm_attributes: renamed WEAK__ to __WEAK
+* refactored includes order and where some declarations are done through files
+* refactored names of platform header files
 
 ## v1.0
 

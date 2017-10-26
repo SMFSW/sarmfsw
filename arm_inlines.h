@@ -10,6 +10,7 @@
 
 #include "arm_attributes.h"		// Attributes depending compiler
 #include "arm_cmsis.h"			// HAL & Drivers depending platform
+#include "arm_hal_peripheral.h"	// HAL peripherals includes
 /****************************************************************/
 
 
@@ -23,7 +24,7 @@
 ** \return true if time elapsed
 **/
 __INLINE bool INLINE__ TPSSUP_MS(DWORD val, DWORD time) {
-	return ((DWORD) (HAL_GetTick() - (DWORD) (val)) > (DWORD) (time)); }
+	return ((DWORD) (HALTicks() - (DWORD) (val)) > (DWORD) (time)); }
 
 /*!\brief Tests if stored time value has not reached time lapse in ms
 ** \param[in] val - stored time value
@@ -31,7 +32,7 @@ __INLINE bool INLINE__ TPSSUP_MS(DWORD val, DWORD time) {
 ** \return true if time not elapsed
 **/
 __INLINE bool INLINE__ TPSINF_MS(DWORD val, DWORD time) {
-	return ((DWORD) (HAL_GetTick() - (DWORD) (val)) < (DWORD) (time)); }
+	return ((DWORD) (HALTicks() - (DWORD) (val)) < (DWORD) (time)); }
 
 
 /*************************************************/
@@ -39,18 +40,24 @@ __INLINE bool INLINE__ TPSINF_MS(DWORD val, DWORD time) {
 /*************************************************/
 
 /*!\brief Converts hexadecimal value to BCD
+** \note Returns 0xFF if Hex value can't be represented on a BCD BYTE
 ** \param[in] hex - Hexadecimal value to convert
 ** \return BCD value
 **/
 __INLINE BYTE HexToBCD(BYTE hex) {
+	if (hex > 99)	{ return 0xFF; }
 	return LSHIFT((hex / 10), 4) | (hex % 10); }
 
 /*!\brief Converts BCD value to hexadecimal
+** \note Returns 0xFF if BCD value is inconsistent
 ** \param[in] bcd - BCD value to convert
 ** \return Hexadecimal value
 **/
 __INLINE BYTE BCDToHex(BYTE bcd) {
-	return (RSHIFT((bcd & 0xF0), 4) * 10) + (bcd & 0x0F); }
+	uint8_t	ms = RSHIFT(bcd & 0xF0, 4);
+	uint8_t	ls = bcd & 0x0F;
+	if ((ms > 9) || (ls > 9))	{ return 0xFF; }
+	return (uint8_t) ((ms * 10) + ls); }
 
 
 /*!\brief Converts hexadecimal value to ASCII

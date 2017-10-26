@@ -56,20 +56,6 @@ typedef enum FctERR {
 } FctERR;
 
 
-/*!\brief Convert HAL_StatusTypeDef to FctERR
-** \param[in] status - HAL_StatusTypeDef status
-** \return FctERR status
-**/
-__INLINE FctERR HALERRtoFCTERR(HAL_StatusTypeDef status)
-{
-	if		(status == HAL_OK)			return ERR_OK;
-	else if (status == HAL_ERROR)		return ERR_FAULT;
-	else if (status == HAL_BUSY)		return ERR_BUSY;
-	else if (status == HAL_TIMEOUT)		return ERR_TIMEOUT;
-	else 								return ERR_FAULT;
-}
-
-
 /****************************************************************/
 #endif /* __ARM_ERROR_H */
 /****************************************************************/
