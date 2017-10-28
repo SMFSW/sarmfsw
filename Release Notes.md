@@ -38,6 +38,8 @@ SOFTWARE.
 * arm_chip_xx: Families divided into files with respective fam name
 * arm_errors: added to sarmfsw
 * arm_attributes: renamed WEAK__ to __WEAK
+* arm_attributes: added various compiler attributes definition
+* added missing includes in some headers (to be able to import them as standalone)
 * refactored includes order and where some declarations are done through files
 * refactored names of platform header files
 

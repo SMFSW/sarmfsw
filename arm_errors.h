@@ -1,4 +1,4 @@
-/*!\file FctERR.h
+/*!\file arm_errors.h
 ** \author SMFSW
 ** \date 2017
 ** \copyright MIT (c) 2017, SMFSW

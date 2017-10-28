@@ -7,6 +7,8 @@
 /****************************************************************/
 #ifndef __ARM_MACROS_H
 	#define __ARM_MACROS_H
+
+#include "arm_typedefs.h"		// Common typedefs
 /****************************************************************/
 
 
@@ -73,9 +75,9 @@
 #define FLOAT_TO_DEG(f)		((float) ((((f) > 1.0f ? 1.0f : (f)) < 0.0f ? 0.0f : (f)) * 360.0f))
 
 
-#define	SWAP_BYTE(a, b)		{ BYTE c; c = a; a = b; b = c; }	//!< Swap BYTEs \b a \& \b b
-#define	SWAP_WORD(a, b)		{ WORD c; c = a; a = b; b = c; }	//!< Swap WORDs \b a \& \b b
-#define	SWAP_DWORD(a, b)	{ DWORD c; c = a; a = b; b = c; }	//!< Swap DWORDs \b a \& \b b
+#define	SWAP_BYTE(a, b)		{ BYTE c = a; a = b; b = c; }	//!< Swap BYTEs \b a \& \b b
+#define	SWAP_WORD(a, b)		{ WORD c = a; a = b; b = c; }	//!< Swap WORDs \b a \& \b b
+#define	SWAP_DWORD(a, b)	{ DWORD c = a; a = b; b = c; }	//!< Swap DWORDs \b a \& \b b
 
 
 /****************************************************************/

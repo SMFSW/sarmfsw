@@ -10,8 +10,10 @@
 /****************************************************************/
 
 #include "arm_attributes.h"		// Common attributes depending compiler
+
 #include "arm_typedefs.h"		// Common typedefs
 #include "arm_errors.h"			// Common errors
+
 #include "arm_macros.h"			// Common macros
 #include "arm_stdclib.h"		// Common standard c library wrapper macros
 
@@ -28,7 +30,7 @@ typedef enum PACK__ FW_target{
 	DefDebugTarget,				//!< Debug FW target (default)
 	DefReleaseTarget,			//!< Release FW target (No debug information)
 	DefFUBARTarget,				//!< FUBAR FW target (shall be used only for stress/testing purposes)
-	DefUnknownTarget = 0xFF		//!< Unknown FW target (should never happen!)
+	DefUnknownTarget = 0xFF		//!< Unknown FW target
 } FW_target;
 
 
