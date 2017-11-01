@@ -230,6 +230,7 @@ TAB_SIZE               = 4
 
 ALIASES                = "issue=\xrefitem issue \"Issue\" \"Issues List\"" \
                          "isr=\xrefitem isr \"Interrupt\" \"ISR List\"" \
+                         "weak=\xrefitem isr \"Weak Functions\" \"Weak Functions List\"" \
                          "attribute=\xrefitem attribute \"GCC Attributes\" \"GCC Attributes List\""
 
 # This tag can be used to specify a number of word-keyword mappings (TCL only).
@@ -2051,11 +2052,11 @@ INCLUDE_FILE_PATTERNS  = *.h
 # This tag requires that the tag ENABLE_PREPROCESSING is set to YES.
 
 PREDEFINED             = DOXY=1 \
+                         __WEAK \
                          PACK__ \
                          INLINE__ \
                          __INLINE=inline \
                          "__STATIC_INLINE=static inline" \
-                         __WEAK \
                          __IO=volatile \
                          __O=volatile \
                          "__I=volatile const" \

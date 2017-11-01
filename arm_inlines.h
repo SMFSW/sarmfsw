@@ -230,6 +230,26 @@ __INLINE bool INLINE__ inRange(SDWORD val, SDWORD low, SDWORD high) {
 	return ((val <= high) && (val >= low)); }
 
 
+/************************/
+/***  FLOATING POINT  ***/
+/************************/
+
+/*!\brief Get floating point number decimal part
+** \note in need to print floats, add '-u _printf_float' in Linker options
+** \warning enabling floating point support from linker seems to fubar printing long variables
+** \param[in] f - floating point value
+** \param[in] nb - Number of decimal to get after floating point
+** \return nb decimal part as integer
+**/
+__INLINE int32_t get_fp_dec(float f, uint8_t nb)
+{
+	int32_t mul = 1;
+	f -= (int32_t) f;
+	while(nb-- != 0)	{ mul *= 10; }
+	return (int32_t) (f * mul);
+}
+
+
 /****************************************************************/
 #endif /* __ARM_INLINES_H */
 /****************************************************************/

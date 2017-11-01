@@ -28,6 +28,7 @@ SOFTWARE.
 * arm_inlines: removed some always inline qualifiers for some inlines producing lots of instructions
 * arm_inlines: inTolerance tolerance param is now float for higher accuracy when needed
 * arm_inlines: using an alias defined in arm_hal_peripheral.h for GetTicks call
+* arm_inlines: added get_fp_dec (formerly in HARMcksL)
 * arm_cmsis: updated latest chips references for STMicro
 * arm_cmsis: platform CMSIS includes & HAL config included from there
 * arm_cmsis: removed including HAL config (already included from CMSIS includes)
