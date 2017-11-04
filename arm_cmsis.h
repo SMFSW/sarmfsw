@@ -96,6 +96,17 @@
 		#define STM_FAMILY	l4		//!< STM32 family (l4) for name concatenation
 	#endif
 /*** Atmel SAM Families ***/
+#elif	defined(__SAMC21E15A__) || defined(__ATSAMC21E15A__) || defined(__SAMC21E16A__) || defined(__ATSAMC21E16A__) ||		\
+		defined(__SAMC21E17A__) || defined(__ATSAMC21E17A__) || defined(__SAMC21E18A__) || defined(__ATSAMC21E18A__) ||		\
+		defined(__SAMC21G15A__) || defined(__ATSAMC21G15A__) || defined(__SAMC21G16A__) || defined(__ATSAMC21G16A__) ||		\
+		defined(__SAMC21G17A__) || defined(__ATSAMC21G17A__) || defined(__SAMC21G18A__) || defined(__ATSAMC21G18A__) ||		\
+		defined(__SAMC21J15A__) || defined(__ATSAMC21J15A__) || defined(__SAMC21J16A__) || defined(__ATSAMC21J16A__) ||		\
+		defined(__SAMC21J17A__) || defined(__ATSAMC21J17A__) || defined(__SAMC21J17AU__) || defined(__ATSAMC21J17AU__) ||	\
+		defined(__SAMC21J18A__) || defined(__ATSAMC21J18A__) || defined(__SAMC21J18AU__) || defined(__ATSAMC21J18AU__)
+	#define SAMC21					//!< SAMC21 family generic define
+	#if !defined(SAM_FAMILY)
+		#define SAM_FAMILY	c21		//!< SAM family (c21) for name concatenation
+	#endif
 /* #elif SAM_FAMILIES
 	#define SAMxxxx					//!< SAMxxxx family generic define
 	#if !defined(SAM_FAMILY)
@@ -110,19 +121,23 @@
 #if defined(STM_FAMILY)
 	/*** Defines for STMicro STM32 families ***/
 	#include "arm_chip_stm32.h"
+	#include "main.h"
+
+	#if !defined(USE_HAL_DRIVER)
+		#error "This library is intended to be used with chip vendor supplied HAL, please enable it!"
+	#endif
+
 #elif defined(SAM_FAMILY)
 	/*** Defines for Atmel SAM families ***/
 	#include "arm_chip_sam.h"
+	#include "atmel_start_pins.h"
+
 // #elif defined(xxx_FAMILY)
 	// For other ARM vendor families
 	// #include "arm_fam_xxx.h"
+
 #else
 	#error "You will have to define your own CMSIS_INC & CMSIS_CFG file names with <> around manually (for specified vendor chip before including sarmfsw.h)."
-#endif
-
-
-#if !defined(USE_HAL_DRIVER)
-	#error "This library is intended to be used with chip vendor supplied HAL, please enable it!"
 #endif
 
 

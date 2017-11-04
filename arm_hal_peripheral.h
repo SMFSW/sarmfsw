@@ -225,11 +225,11 @@
 		**/
 		__INLINE FctERR HALERRtoFCTERR(HAL_StatusTypeDef status)
 		{
-			if		(status == HAL_OK)			return ERR_OK;
-			else if (status == HAL_ERROR)		return ERR_FAULT;
-			else if (status == HAL_BUSY)		return ERR_BUSY;
-			else if (status == HAL_TIMEOUT)		return ERR_TIMEOUT;
-			else 								return ERR_FAULT;
+			if		(status == HAL_OK)			return ERROR_OK;
+			else if (status == HAL_ERROR)		return ERROR_FAULT;
+			else if (status == HAL_BUSY)		return ERROR_BUSY;
+			else if (status == HAL_TIMEOUT)		return ERROR_TIMEOUT;
+			else 								return ERROR_FAULT;
 		}
 
 	#endif
@@ -237,10 +237,12 @@
 #elif defined(SAM_FAMILY)
 
 	// TODO: add SAM families HAL config includes
+	#include "hpl_time_measure.h"
+
 	/******************/
 	/*** HAL MACROS ***/
 	/******************/
-	#define HALTicks	HAL_GetTick	//!< Alias for HAL get ticks function
+	#define HALTicks()	_system_time_get(0)	//!< Alias for HAL get ticks function
 
 #endif
 

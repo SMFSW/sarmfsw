@@ -10,8 +10,8 @@
 /****************************************************************/
 
 
-#define SAM_HEADER(f)		//XCAT(<sam, XCAT(f, xx.h>))		//!< concatenate <sam(f)xx.h> name following sam family \b f
-#define SAM_CONF_HEADER(f)	//XCAT(<sam, XCAT(f, xx_hal.h>))	//!< concatenate <sam(f)xx_hal.h> name following sam family \b f
+#define SAM_HEADER(f)		XCAT(<sam, f).h>					//!< concatenate <sam(f).h> name following sam family \b f
+#define SAM_CONF_HEADER(f)	XCAT(<sam, f).h>					//!< concatenate <sam(f).h> name following sam family \b f
 
 #define ARM_CMSIS_INC		SAM_HEADER(SAM_FAMILY)				//!< Alias for SAM CMSIS include
 #define ARM_HAL_CFG			SAM_CONF_HEADER(SAM_FAMILY)			//!< Alias for SAM HAL config include

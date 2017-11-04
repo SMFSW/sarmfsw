@@ -36,8 +36,9 @@ SOFTWARE.
 * arm_hal_peripheral: reworked all peripheral includes
 * arm_chip_stm32: added wrapper for PWM tim/channels
 * arm_chip_stm32: refactored wrappers for TIM & GPIO names to what's mentioned here
+* arm_chip_sam: added support for SAMC21 family (other families to come)
 * arm_chip_xx: Families divided into files with respective fam name
-* arm_errors: added to sarmfsw
+* arm_errors: added to sarmfsw & refactored ERR_xx to ERROR_xx
 * arm_attributes: renamed WEAK__ to __WEAK
 * arm_attributes: added various compiler attributes definition
 * added missing includes in some headers (to be able to import them as standalone)
