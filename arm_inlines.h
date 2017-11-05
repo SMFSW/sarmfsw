@@ -8,6 +8,10 @@
 #ifndef __ARM_INLINES_H
 	#define __ARM_INLINES_H
 
+#ifdef __cplusplus
+	extern "C" {
+#endif
+
 #include "arm_attributes.h"		// Attributes depending compiler
 #include "arm_typedefs.h"		// Common typedefs
 #include "arm_errors.h"			// Common errors
@@ -251,5 +255,9 @@ __INLINE int32_t get_fp_dec(float f, uint8_t nb)
 
 
 /****************************************************************/
+#ifdef __cplusplus
+	}
+#endif
+
 #endif /* __ARM_INLINES_H */
 /****************************************************************/

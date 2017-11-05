@@ -8,6 +8,10 @@
 #ifndef __ARM_MACROS_H
 	#define __ARM_MACROS_H
 
+#ifdef __cplusplus
+	extern "C" {
+#endif
+
 #include "arm_typedefs.h"		// Common typedefs
 /****************************************************************/
 
@@ -40,8 +44,8 @@
 #define SZ_OBJ(obj, typ)	((size_t) (sizeof(obj) / sizeof(typ)))		//!< Computes the number of elements of \b obj following \b typ
 
 //! \warning No nesting possible, use \a XCAT in this case
-#define	CAT(a, b)			a##b			//!< Preprocessor Name concatenation
-#define XCAT(a, b)			CAT(a, b)		//!< Preprocessor Name concatenation (possible nesting)
+#define	CAT(a, b)			a##b			//!< Preprocessor Name catenation
+#define XCAT(a, b)			CAT(a, b)		//!< Preprocessor Name catenation (possible nesting)
 
 #define STR(s)				("" #s)			//!< Stringify an expression
 
@@ -81,5 +85,9 @@
 
 
 /****************************************************************/
+#ifdef __cplusplus
+	}
+#endif
+
 #endif /* __ARM_MACROS_H */
 /****************************************************************/

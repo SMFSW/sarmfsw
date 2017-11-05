@@ -7,6 +7,10 @@
 /****************************************************************/
 #ifndef __SARMFSW_H
 	#define __SARMFSW_H
+
+#ifdef __cplusplus
+	extern "C" {
+#endif
 /****************************************************************/
 
 #include "arm_attributes.h"		// Common attributes depending compiler
@@ -35,5 +39,9 @@ typedef enum PACK__ FW_target{
 
 
 /****************************************************************/
+#ifdef __cplusplus
+	}
+#endif
+
 #endif /* __SARMFSW_H */
 /****************************************************************/

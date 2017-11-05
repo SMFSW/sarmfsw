@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-## v1.1
+## v2.0
 
 * arm_macros: added shifting macros & refactoring
 * arm_inlines: refactoring & addded some inlines for 64b and bcd, ascii & gray code
@@ -36,7 +36,7 @@ SOFTWARE.
 * arm_hal_peripheral: reworked all peripheral includes
 * arm_chip_stm32: added wrapper for PWM tim/channels
 * arm_chip_stm32: refactored wrappers for TIM & GPIO names to what's mentioned here
-* arm_chip_sam: added support for SAMC21 family (other families to come)
+* arm_chip_sam: added support for Atmel SAM families
 * arm_chip_xx: Families divided into files with respective fam name
 * arm_errors: added to sarmfsw & refactored ERR_xx to ERROR_xx
 * arm_attributes: renamed WEAK__ to __WEAK
@@ -44,6 +44,7 @@ SOFTWARE.
 * added missing includes in some headers (to be able to import them as standalone)
 * refactored includes order and where some declarations are done through files
 * refactored names of platform header files
+* added anchors to define external C (for Cpp)
 
 ## v1.0
 
