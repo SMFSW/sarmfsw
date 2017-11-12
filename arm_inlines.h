@@ -35,7 +35,7 @@
 **/
 __INLINE bool INLINE__ TPSSUP_MS(const DWORD last, const DWORD time) {
 	register uint32_t hNow = HALTicks();
-	uint32_t diff = (hNow > last) ? hNow - last : (HAL_MAX_TICKS - last) + hNow;
+	uint32_t diff = (hNow >= last) ? hNow - last : (HAL_MAX_TICKS - last) + hNow;
 	return (diff > (DWORD) (time * HAL_MS_TICKS_FACTOR)); }
 
 /*!\brief Tests if stored time value has not reached time lapse in ms
@@ -48,7 +48,7 @@ __INLINE bool INLINE__ TPSSUP_MS(const DWORD last, const DWORD time) {
 **/
 __INLINE bool INLINE__ TPSINF_MS(const DWORD last, const DWORD time) {
 	register uint32_t hNow = HALTicks();
-	uint32_t diff = (hNow > last) ? hNow - last : (HAL_MAX_TICKS - last) + hNow;
+	uint32_t diff = (hNow >= last) ? hNow - last : (HAL_MAX_TICKS - last) + hNow;
 	return (diff < (DWORD) (time * HAL_MS_TICKS_FACTOR)); }
 
 
