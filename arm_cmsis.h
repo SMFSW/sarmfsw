@@ -484,7 +484,6 @@
 #if defined(STM_FAMILY)
 	/*** Defines for STMicro STM32 families ***/
 	#include "arm_chip_stm32.h"
-	#include "main.h"
 
 	#if !defined(USE_HAL_DRIVER)
 		#error "This library is intended to be used with chip vendor supplied HAL, please enable it!"
@@ -493,7 +492,6 @@
 #elif defined(SAM_FAMILY)
 	/*** Defines for Atmel SAM families ***/
 	#include "arm_chip_sam.h"
-	#include "atmel_start_pins.h"
 
 // #elif defined(XXX_FAMILY)
 	// For other ARM vendor families
@@ -502,11 +500,6 @@
 #else
 	#error "You will have to define your own CMSIS_INC & CMSIS_CFG file names with <> around manually (for specified vendor chip before including sarmfsw.h)."
 #endif
-
-
-/*** GLOBAL CMSIS & HAL includes ***/
-#include ARM_CMSIS_INC	// CMSIS includes
-// #include ARM_HAL_CFG	// HAL configuration includes (already included by ARM_CMSIS_INC)
 
 
 /****************************************************************/

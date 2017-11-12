@@ -26,20 +26,30 @@
 /********************/
 
 /*!\brief Tests if stored time value has reached time lapse in ms
-** \param[in] val - stored time value
+** \warning For SAM families, no ms base time counter is implemented in HAL,
+**			please refer to arm_chip_sam.h for an implementation example.
+** \note	Define custom HAL_MS_TICKS_FACTOR at project level if tick period is not 1ms
+** \param[in] last - stored time value
 ** \param[in] time - time lapse (in ms)
 ** \return true if time elapsed
 **/
-__INLINE bool INLINE__ TPSSUP_MS(DWORD val, DWORD time) {
-	return ((DWORD) (HALTicks() - (DWORD) (val)) > (DWORD) (time)); }
+__INLINE bool INLINE__ TPSSUP_MS(const DWORD last, const DWORD time) {
+	register uint32_t hNow = HALTicks();
+	uint32_t diff = (hNow > last) ? hNow - last : (HAL_MAX_TICKS - last) + hNow;
+	return (diff > (DWORD) (time * HAL_MS_TICKS_FACTOR)); }
 
 /*!\brief Tests if stored time value has not reached time lapse in ms
-** \param[in] val - stored time value
+** \warning For SAM families, no ms base time counter is implemented in HAL,
+**			please refer to arm_chip_sam.h for an implementation example.
+** \note	Define custom HAL_MS_TICKS_FACTOR at project level if tick period is not 1ms
+** \param[in] last - stored time value
 ** \param[in] time - time lapse (in ms)
 ** \return true if time not elapsed
 **/
-__INLINE bool INLINE__ TPSINF_MS(DWORD val, DWORD time) {
-	return ((DWORD) (HALTicks() - (DWORD) (val)) < (DWORD) (time)); }
+__INLINE bool INLINE__ TPSINF_MS(const DWORD last, const DWORD time) {
+	register uint32_t hNow = HALTicks();
+	uint32_t diff = (hNow > last) ? hNow - last : (HAL_MAX_TICKS - last) + hNow;
+	return (diff < (DWORD) (time * HAL_MS_TICKS_FACTOR)); }
 
 
 /*************************************************/
@@ -51,7 +61,7 @@ __INLINE bool INLINE__ TPSINF_MS(DWORD val, DWORD time) {
 ** \param[in] hex - Hexadecimal value to convert
 ** \return BCD value
 **/
-__INLINE BYTE HexToBCD(BYTE hex) {
+__INLINE BYTE HexToBCD(const BYTE hex) {
 	if (hex > 99)	{ return 0xFF; }
 	return LSHIFT((hex / 10), 4) | (hex % 10); }
 
@@ -60,7 +70,7 @@ __INLINE BYTE HexToBCD(BYTE hex) {
 ** \param[in] bcd - BCD value to convert
 ** \return Hexadecimal value
 **/
-__INLINE BYTE BCDToHex(BYTE bcd) {
+__INLINE BYTE BCDToHex(const BYTE bcd) {
 	uint8_t	ms = RSHIFT(bcd & 0xF0, 4);
 	uint8_t	ls = bcd & 0x0F;
 	if ((ms > 9) || (ls > 9))	{ return 0xFF; }
@@ -79,7 +89,7 @@ __INLINE CHAR INLINE__ HexToASCII(BYTE hex) {
 ** \param[in] ascii - ASCII char to convert
 ** \return Hexadecimal value
 **/
-__INLINE SBYTE ASCIIToHex(CHAR ascii)
+__INLINE SBYTE ASCIIToHex(const CHAR ascii)
 {
 	if ((ascii >= '0') && (ascii <= '9'))			{ return ascii - 0x30; }
 	else if ((ascii >= 'A') && (ascii <= 'F'))		{ return ascii - 0x37; }
@@ -92,18 +102,18 @@ __INLINE SBYTE ASCIIToHex(CHAR ascii)
 ** \param[in] bin - binary value
 ** \return Converted value (gray code)
 **/
-__INLINE DWORD INLINE__ bin2gray(DWORD bin) {
+__INLINE DWORD INLINE__ bin2gray(const DWORD bin) {
 	return RSHIFT(bin, 1) ^ bin; }
 
 /*!\brief Convert gray code to binary value
 ** \param[in] gray - gray code value
 ** \return Converted value (binary)
 **/
-__INLINE DWORD gray2bin(DWORD gray)
+__INLINE DWORD gray2bin(const DWORD gray)
 {
 	SWORD bits = 32;
 	DWORD tmp = gray;
-	
+
 	while ((bits >>= 1) > 0)	{ tmp ^= (tmp >> bits); }
 	return tmp;
 }
@@ -117,14 +127,14 @@ __INLINE DWORD gray2bin(DWORD gray)
 ** \param[in] val - 16b value to convert
 ** \return Converted value
 **/
-__INLINE BYTE INLINE__ conv16to8Bits(WORD val) {
+__INLINE BYTE INLINE__ conv16to8Bits(const WORD val) {
 	return (BYTE) RSHIFT(val, 8); }
 
 /*!\brief converts 8bits to 16bits
 ** \param[in] val - 8b value to convert
 ** \return Converted value
 **/
-__INLINE WORD INLINE__ conv8to16Bits(BYTE val) {
+__INLINE WORD INLINE__ conv8to16Bits(const BYTE val) {
 	return (WORD) (LSHIFT(val, 8) + val); }
 
 
@@ -135,7 +145,7 @@ __INLINE WORD INLINE__ conv8to16Bits(BYTE val) {
 ** \param[in] nb - number of bits to add (8bits max)
 ** \return Converted value
 **/
-__INLINE WORD conv8upto16Bits(BYTE val, BYTE nb) {
+__INLINE WORD conv8upto16Bits(const BYTE val, const BYTE nb) {
 	return ((WORD) ((WORD) (val << nb) + (WORD) (val & (0xFF >> (8-nb))))); }
 
 /*!\brief converts 16bits to 16+nb bits (32bits max)
@@ -145,7 +155,7 @@ __INLINE WORD conv8upto16Bits(BYTE val, BYTE nb) {
 ** \param[in] nb - number of bits to add (16bits max)
 ** \return Converted value
 **/
-__INLINE DWORD conv16upto32Bits(WORD val, BYTE nb) {
+__INLINE DWORD conv16upto32Bits(const WORD val, const BYTE nb) {
 	return ((DWORD) ((DWORD) (val << nb) + (DWORD) (val & (0xFFFF >> (16-nb))))); }
 
 /*!\brief converts 32bits to 32+nb bits (64bits max)
@@ -155,7 +165,7 @@ __INLINE DWORD conv16upto32Bits(WORD val, BYTE nb) {
 ** \param[in] nb - number of bits to add (32bits max)
 ** \return Converted value
 **/
-__INLINE LWORD conv32upto64Bits(DWORD val, BYTE nb) {
+__INLINE LWORD conv32upto64Bits(const DWORD val, const BYTE nb) {
 	return ((LWORD) ((LWORD) (val << nb) + (LWORD) (val & (0xFFFFFFFF >> (32-nb))))); }
 
 
@@ -167,21 +177,21 @@ __INLINE LWORD conv32upto64Bits(DWORD val, BYTE nb) {
 ** \param[in] w - 16b value
 ** \return Swapped value
 **/
-__INLINE WORD SWAP_END16B(WORD w) {
+__INLINE WORD SWAP_END16B(const WORD w) {
 	return (WORD) (LSHIFT((w & 0xFF), 8) | RSHIFT((w & 0xFF00), 8)); }
 
 /*!\brief Swap endians of the contents of a 32b value
 ** \param[in] d - 32b value
 ** \return Swapped value
 **/
-__INLINE DWORD SWAP_END32B(DWORD d) {
+__INLINE DWORD SWAP_END32B(const DWORD d) {
 	return (DWORD) (LSHIFT(SWAP_END16B(d & 0xFFFF), 16) | SWAP_END16B(RSHIFT((d & 0xFFFF0000), 16))); }
 
 /*!\brief Swap endians of the contents of a 64b value
 ** \param[in] l - 64b value
 ** \return Swapped value
 **/
-__INLINE LWORD SWAP_END64B(LWORD l) {
+__INLINE LWORD SWAP_END64B(const LWORD l) {
 	return (LWORD) (LSHIFT64(SWAP_END32B(l & 0xFFFFFFFF), 32) | SWAP_END32B(RSHIFT64((l & 0xFFFFFFFF00000000), 32))); }
 
 
@@ -189,21 +199,21 @@ __INLINE LWORD SWAP_END64B(LWORD l) {
 ** \param[in] tab - tab of 16b values
 ** \param[in] nb - nb of values in tab
 **/
-__INLINE void INLINE__ SWAP_END16B_TAB(WORD tab[], WORD nb) {
+__INLINE void INLINE__ SWAP_END16B_TAB(WORD tab[], const WORD nb) {
 	for (unsigned int i = 0 ; i < nb ; i++)	tab[i] = SWAP_END16B(tab[i]); }
 
 /*!\brief Swap endians of a 32b tab
 ** \param[in] tab - tab of 32b values
 ** \param[in] nb - nb of values in tab
 **/
-__INLINE void INLINE__ SWAP_END32B_TAB(DWORD tab[], WORD nb) {
+__INLINE void INLINE__ SWAP_END32B_TAB(DWORD tab[], const WORD nb) {
 	for (unsigned int i = 0 ; i < nb ; i++)	tab[i] = SWAP_END32B(tab[i]); }
 
 /*!\brief Swap endians of a 64b tab
 ** \param[in] tab - tab of 64b values
 ** \param[in] nb - nb of values in tab
 **/
-__INLINE void INLINE__ SWAP_END64B_TAB(LWORD tab[], WORD nb) {
+__INLINE void INLINE__ SWAP_END64B_TAB(LWORD tab[], const WORD nb) {
 	for (unsigned int i = 0 ; i < nb ; i++)	tab[i] = SWAP_END64B(tab[i]); }
 
 
@@ -217,7 +227,7 @@ __INLINE void INLINE__ SWAP_END64B_TAB(LWORD tab[], WORD nb) {
 ** \param[in] tolerance - Tolerance on reference value (in percent)
 ** \return true if val is inTolerance
 **/
-__INLINE bool inTolerance(SDWORD val, SDWORD ref, float tolerance)
+__INLINE bool inTolerance(const SDWORD val, const SDWORD ref, float tolerance)
 {
 	tolerance = min(100.0f, max(0.0f, tolerance));
 	DWORD margin = (DWORD) (ref * (tolerance / 100.0f));
@@ -230,7 +240,7 @@ __INLINE bool inTolerance(SDWORD val, SDWORD ref, float tolerance)
 ** \param[in] high - High range boundary
 ** \return true if val is inRange
 **/
-__INLINE bool INLINE__ inRange(SDWORD val, SDWORD low, SDWORD high) {
+__INLINE bool INLINE__ inRange(const SDWORD val, const SDWORD low, const SDWORD high) {
 	return ((val <= high) && (val >= low)); }
 
 

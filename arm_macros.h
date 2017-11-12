@@ -40,8 +40,9 @@
 #define LOBYTE(w)			((BYTE) (w))														//!< Get BYTE LSB from WORD \b w
 #define HIBYTE(w)			((BYTE) RSHIFT((WORD) (w), 8))										//!< Get BYTE MSB from WORD \b w
 
-#define OFFSET_OF(typ, mbr)	((size_t) &(((typ*)0)->mbr))				//!< Computes the offset member \b mbr from struct \b typ
-#define SZ_OBJ(obj, typ)	((size_t) (sizeof(obj) / sizeof(typ)))		//!< Computes the number of elements of \b obj following \b typ
+#define OFFSET_OF(typ, mbr)			((size_t) &(((typ *)0)->mbr))						//!< Computes the offset member \b mbr from struct \b typ
+#define PARENT_OF(ptr, typ, mbr)	((typ *) (((uint8_t *) ptr) - OFFSET_OF(typ, mbr)))	//!< Computes the address of parent struct \b typ of \b ptr from member \b mbr
+#define SZ_OBJ(obj, typ)			((size_t) (sizeof(obj) / sizeof(typ)))				//!< Computes the number of elements of \b obj following \b typ
 
 //! \warning No nesting possible, use \a XCAT in this case
 #define	CAT(a, b)			a##b			//!< Preprocessor Name catenation

@@ -217,57 +217,13 @@
 			#include "wwdg.h"
 		#endif /* HAL_WWDG_MODULE_ENABLED */
 
-
-		/******************/
-		/*** HAL MACROS ***/
-		/******************/
-		#define HALTicks	HAL_GetTick	//!< Alias for HAL get ticks function
-
-		/*!\brief Convert HAL_StatusTypeDef to FctERR
-		** \param[in] status - HAL_StatusTypeDef status
-		** \return FctERR status
-		**/
-		__INLINE FctERR HALERRtoFCTERR(HAL_StatusTypeDef status)
-		{
-			if		(status == HAL_OK)			return ERROR_OK;
-			else if (status == HAL_ERROR)		return ERROR_FAULT;
-			else if (status == HAL_BUSY)		return ERROR_BUSY;
-			else if (status == HAL_TIMEOUT)		return ERROR_TIMEOUT;
-			else 								return ERROR_COMMON;
-		}
-
 	#endif
 
 #elif defined(SAM_FAMILY)
 
 	// TODO: add SAM families HAL config includes
-	#include "err_codes.h"
-	#include "hpl_time_measure.h"
-
-	/******************/
-	/*** HAL MACROS ***/
-	/******************/
-	#define HALTicks()	_system_time_get(0)	//!< Alias for HAL get ticks function
-
-	/*!\brief Convert ATMEL error code to FctERR
-	** \param[in] status - ATMEL error code
-	** \return FctERR status
-	**/
-	__INLINE FctERR HALERRtoFCTERR(int32_t status)
-	{
-		if		(status == ERR_NONE)									return ERROR_OK;
-		else if (status == ERR_INVALID_DATA)							return ERROR_VALUE;
-		else if ((status == ERR_BUSY) || (status == ERR_NOT_READY))		return ERROR_BUSY;
-		else if (status == ERR_TIMEOUT)									return ERROR_TIMEOUT;
-		else if (status == ERR_NO_MEMORY)								return ERROR_MEMORY;
-		else if (status == ERR_BAD_FRQ)									return ERROR_SPEED;
-		else if (status == ERR_DENIED)									return ERROR_PROTECT;
-		else if (status == ERR_OVERFLOW)								return ERROR_OVERFLOW;
-		else if (status == ERR_NOT_INITIALIZED)							return ERROR_NOTAVAIL;
-		else if (status == ERR_PACKET_COLLISION)						return ERROR_ARBITR;
-		else if (status == ERR_UNSUPPORTED_OP)							return ERROR_CMD;
-		else 															return ERROR_COMMON;
-	}
+	#include "peripheral_clk_config.h"	// Peripheral clock definitions
+	#include "hpl_time_measure.h"		// Time measurement definitions
 
 #endif
 
