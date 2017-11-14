@@ -24,7 +24,7 @@ SOFTWARE.
 ## v2.1
 
 * moved defines & inlines from arm_hal_peripheral to arm_family headers
-* arm_macros: added PARENT_OF macro
+* arm_macros: added ROOT_OF macro
 * arm_inlines: const qualifier for most inline parameters
 * arm_inlines: modified TPSSUP_MS & TPSINF_MS to handle custom tick frequency (following arm_family header or custom defines)
 

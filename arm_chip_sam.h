@@ -9,18 +9,18 @@
 **				you can add this code to your projects.
 **
 **static struct timer_task TIMER_0_task1; \n
-**static uint32_t uwTick = 0; \n
+**static volatile uint32_t uwTick = 0; \n
 ** \n
 **
-**WEAK uint32_t HAL_GetTick(void) {			// Declare HALTicks() at project level if you're using a different getter function name \n
+**uint32_t HAL_GetTick(void) {			// Declare HALTicks() at project level if you're using a different getter function name \n
 **	return uwTick; } \n
 ** \n
 **static void TIMER_0_task1_cb(const struct timer_task *const timer_task) { \n
 **	uwTick++; } \n
 ** \n
-**void TIMER_0_start(void)					// Adapt function if TIM configured is not TIMER_0 \n
+**void TIMER_0_start(void)				// Adapt function if TIM configured is not TIMER_0 \n
 **{ \n
-**	TIMER_0_task1.interval = 1;				// Adjust interval if TIM period is faster than 1ms (or define appropriate HAL_MS_TICKS_FACTOR) \n
+**	TIMER_0_task1.interval = 1;			// Adjust interval if TIM period is faster than 1ms (or define appropriate HAL_MS_TICKS_FACTOR) \n
 **	TIMER_0_task1.cb = TIMER_0_task1_cb; \n
 **	TIMER_0_task1.mode = TIMER_TASK_REPEAT; \n
 ** \n
@@ -29,7 +29,6 @@
 **} \n
 ** \n
 **Please note TIMER_0_start() shall be called at init. \n
-**Beware, depending compiler optimizations, HAL_GetTick() seems to run correctly only when declared as WEAK. \n
 **Also, HAL_GetTick shall be known to sarmfsw.
 **As atmel_start_pins.h is included by sarmfsw, you should add HAL_GetTick prototype in the file:
 ** \n

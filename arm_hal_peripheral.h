@@ -221,9 +221,7 @@
 
 #elif defined(SAM_FAMILY)
 
-	// TODO: add SAM families HAL config includes
-	#include "peripheral_clk_config.h"	// Peripheral clock definitions
-	#include "hpl_time_measure.h"		// Time measurement definitions
+	// SAM families HAL config includes already included by CMSIS include
 
 #endif
 
