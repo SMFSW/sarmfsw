@@ -8,32 +8,36 @@
 **				Using driver examples from ATMEL START generated code,
 **				you can add this code to your projects.
 **
-**static struct timer_task TIMER_0_task1; \n
-**static volatile uint32_t uwTick = 0; \n
-** \n
+** \code
+** static struct timer_task TIMER_0_task1;
+** static volatile uint32_t uwTick = 0;
 **
-**uint32_t HAL_GetTick(void) {			// Declare HALTicks() at project level if you're using a different getter function name \n
-**	return uwTick; } \n
-** \n
-**static void TIMER_0_task1_cb(const struct timer_task *const timer_task) { \n
-**	uwTick++; } \n
-** \n
-**void TIMER_0_start(void)				// Adapt function if TIM configured is not TIMER_0 \n
-**{ \n
-**	TIMER_0_task1.interval = 1;			// Adjust interval if TIM period is faster than 1ms (or define appropriate HAL_MS_TICKS_FACTOR) \n
-**	TIMER_0_task1.cb = TIMER_0_task1_cb; \n
-**	TIMER_0_task1.mode = TIMER_TASK_REPEAT; \n
-** \n
-**	timer_add_task(&TIMER_0, &TIMER_0_task1); \n
-**	timer_start(&TIMER_0); \n
-**} \n
-** \n
-**Please note TIMER_0_start() shall be called at init. \n
-**Also, HAL_GetTick shall be known to sarmfsw.
-**As atmel_start_pins.h is included by sarmfsw, you should add HAL_GetTick prototype in the file:
-** \n
-**#include <stdint.h> \n
-**uint32_t HAL_GetTick(void); \n
+**
+** uint32_t HAL_GetTick(void) {		// Declare HALTicks() at project level if you're using a different getter function name
+** 	return uwTick; }
+**
+** static void TIMER_0_task1_cb(const struct timer_task *const timer_task) {
+** 	uwTick++; }
+**
+** void TIMER_0_start(void)			// Adapt function if TIM configured is not TIMER_0
+** {
+** 	TIMER_0_task1.interval = 1;		// Adjust interval if TIM period is faster than 1ms (or define appropriate HAL_MS_TICKS_FACTOR)
+** 	TIMER_0_task1.cb = TIMER_0_task1_cb;
+** 	TIMER_0_task1.mode = TIMER_TASK_REPEAT;
+**
+** 	timer_add_task(&TIMER_0, &TIMER_0_task1);
+** 	timer_start(&TIMER_0);
+** }
+** \endcode
+**
+** Please note TIMER_0_start() shall be called at init.
+** Also, HAL_GetTick shall be known to sarmfsw.
+** As atmel_start_pins.h is included by sarmfsw, you should add HAL_GetTick prototype in the file:
+**
+** \code
+** #include <stdint.h>
+** uint32_t HAL_GetTick(void);
+** \endcode
 */
 /****************************************************************/
 #ifndef __ARM_CHIP_SAM_H

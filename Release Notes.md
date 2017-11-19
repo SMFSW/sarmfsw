@@ -27,6 +27,7 @@ SOFTWARE.
 * arm_macros: added ROOT_OF macro
 * arm_inlines: const qualifier for most inline parameters
 * arm_inlines: modified TPSSUP_MS & TPSINF_MS to handle custom tick frequency (following arm_family header or custom defines)
+* arm_chip_sam: refactored doxygen comments block
 
 ## v2.0
 
