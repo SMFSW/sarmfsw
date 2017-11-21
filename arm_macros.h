@@ -24,9 +24,9 @@
 
 
 //!\warning this macro is optimized only when used with \b b with a static value
-#define LSHIFT(v, b)		((v) * (1 << b))											//!< Shift \b v \b b bits left (up to 31b)
+#define LSHIFT(v, b)		((v) * (1L << b))											//!< Shift \b v \b b bits left (up to 31b)
 //!\warning this macro is optimized only when used with \b b with a static value
-#define RSHIFT(v, b)		((v) / (1 << b))											//!< Shift \b v \b b bits right (up to 31b)
+#define RSHIFT(v, b)		((v) / (1L << b))											//!< Shift \b v \b b bits right (up to 31b)
 //!\warning this macro is optimized only when used with \b b with a static value
 #define LSHIFT64(v, b)		((v) * (1LL << b))											//!< Shift \b v \b b bits left (up to 63b)
 //!\warning this macro is optimized only when used with \b b with a static value
