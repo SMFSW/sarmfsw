@@ -28,6 +28,7 @@ SOFTWARE.
 * arm_inlines: const qualifier for most inline parameters
 * arm_inlines: modified TPSSUP_MS & TPSINF_MS to handle custom tick frequency (following arm_family header or custom defines)
 * arm_chip_sam: refactored doxygen comments block
+* arm_cmsis: fixed multiline macro SAMDA1
 
 ## v2.0
 

@@ -320,7 +320,7 @@
 	#endif
 #elif	defined(__SAMDA1E14A__) || defined(__ATSAMDA1E14A__) || defined(__SAMDA1E15A__) || defined(__ATSAMDA1E15A__) || defined(__SAMDA1E16A__) || defined(__ATSAMDA1E16A__) ||	\
 		defined(__SAMDA1G14A__) || defined(__ATSAMDA1G14A__) || defined(__SAMDA1G15A__) || defined(__ATSAMDA1G15A__) || defined(__SAMDA1G16A__) || defined(__ATSAMDA1G16A__) ||	\
-		defined(__SAMDA1J14A__) || defined(__ATSAMDA1J14A__) || defined(__SAMDA1J15A__) || defined(__ATSAMDA1J15A__) || defined(__SAMDA1J16A__) || defined(__ATSAMDA1J16A__) ||	\
+		defined(__SAMDA1J14A__) || defined(__ATSAMDA1J14A__) || defined(__SAMDA1J15A__) || defined(__ATSAMDA1J15A__) || defined(__SAMDA1J16A__) || defined(__ATSAMDA1J16A__)
 	#define SAMDA1					//!< SAMDA1 family generic define
 	#if !defined(SAM_FAMILY)
 		#define SAM_FAMILY	da1		//!< SAM family (da1) for name catenation
