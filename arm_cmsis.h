@@ -14,14 +14,25 @@
 /****************************************************************/
 
 
-#define	diInterrupts()		__disable_irq()		//!< Disable interruptions macro
-#define	enInterrupts()		__enable_irq()		//!< Enable interruptions macro
+#if !defined(ARDUINO)
+	#define	diInterrupts()		__disable_irq()		//!< Disable interruptions macro
+	#define	enInterrupts()		__enable_irq()		//!< Enable interruptions macro
+#endif /* !defined(ARDUINO) */
 
+
+/************************/
+/*** Arduino platform ***/
+/************************/
+#if defined (ARDUINO)
+	#define ARDUINO_PLATFORM		//!< Arduino platform generic define
+	#if !defined(INO_FAMILY)
+		#define INO_FAMILY	arduino	//!< Arduion family for name catenation?
+	#endif
 
 /******************************/
 /*** STMicro STM32 Families ***/
 /******************************/
-#if		defined(STM32F030x6) || defined(STM32F030x8) ||													\
+#elif	defined(STM32F030x6) || defined(STM32F030x8) ||													\
 		defined(STM32F031x6) || defined(STM32F038xx) ||													\
 		defined(STM32F042x6) || defined(STM32F048xx) || defined(STM32F070x6) ||							\
 		defined(STM32F051x8) || defined(STM32F058xx) ||													\
@@ -481,7 +492,16 @@
 #endif
 
 
-#if defined(STM_FAMILY)
+#if defined(INO_FAMILY)
+	/*** Define CMSIS common macros ***/
+	#define __ASM				__asm			//!< asm keyword for GNU Compiler
+	#define __INLINE			inline			//!< inline keyword for GNU Compiler
+	#define __STATIC_INLINE		static inline	//!< static inline keyword for GNU Compiler
+
+	/*** Defines for Arduino platform ***/
+	#include "arm_chip_ino.h"
+
+#elif defined(STM_FAMILY)
 	/*** Defines for STMicro STM32 families ***/
 	#include "arm_chip_stm32.h"
 

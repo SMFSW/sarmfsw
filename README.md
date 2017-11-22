@@ -1,5 +1,5 @@
 # sarmfsw
-ARM based common headers (yet oriented stm32)
+ARM based common headers (compatible with most Arduino platforms)
 
 Basic yet useful macros for any ARM CMSIS based project
 

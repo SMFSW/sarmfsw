@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-## v2.1
+## v3.0
 
 * moved defines & inlines from arm_hal_peripheral to arm_family headers
 * arm_macros: added ROOT_OF macro
@@ -30,6 +30,7 @@ SOFTWARE.
 * arm_inlines: modified TPSSUP_MS & TPSINF_MS to handle custom tick frequency (following arm_family header or custom defines)
 * arm_chip_sam: refactored doxygen comments block
 * arm_cmsis: fixed multiline macro SAMDA1
+* arm_chip_ino: made compatible with Arduino platform
 
 ## v2.0
 

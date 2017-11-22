@@ -3,6 +3,9 @@
 ** \date 2017
 ** \copyright MIT (c) 2017, SMFSW
 ** \brief ARM common typedefs
+** \warning	For Arduino platform, some binary.h defintions needs to be undefined,
+			If you find them useful, define I_FIND_BINARY_HEADER_USEFULL in project to redefine them
+			Please note, B0 & B1 Bytes substructs of sBitfieldXX will not be available anymore
 */
 /****************************************************************/
 #ifndef __ARM_TYPEDEFS_H
@@ -191,6 +194,13 @@ typedef struct StructBitfield64{
 } sBitfield64;
 
 
+#if defined(ARDUINO)
+	// Undef binary.h definitions used here
+	#undef B0
+	#undef B1
+#endif /* defined(ARDUINO) */
+
+
 /*!\union UnionByte
 ** \brief Union for BYTE
 **/
@@ -262,6 +272,15 @@ typedef union UnionLWord{
 	} Bytes;
 	sBitfield64		Bits;		//!< Bits
 } uLWord;
+
+
+#if defined(I_FIND_BINARY_HEADER_USEFULL)
+#if defined(ARDUINO)
+	// Redef binary.h definitions used here
+	#define B0 0
+	#define B1 1
+#endif /* defined(ARDUINO) */
+#endif /* defined(I_FIND_BINARY_HEADER_USEFULL) */
 
 
 /****************************************************************/

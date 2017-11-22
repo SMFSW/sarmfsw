@@ -24,9 +24,9 @@
 	#define COLD__
 	#define DEPRECATED__	__attribute__((deprecated))			//!< \b Deprecated attribute
 	#define HOT__
-	#define INLINE__		__attribute__((always_inline))		//!< \b Always inline attribute
+	#define INLINE__		__attribute__((always_inline))		//!< \b Always \b inline attribute
 	#define NONNULL__
-	#define NORETURN__		__attribute__((noreturn))			//!< \b No return attribute
+	#define NORETURN__		__attribute__((noreturn))			//!< \b No \b return attribute
 	#define PACK__			__attribute__((packed))				//!< \b Packed attribute
 	#define PURE__			__attribute__((pure))				//!< \b Pure attribute
 
@@ -40,9 +40,9 @@
 	#define COLD__
 	#define DEPRECATED__	__attribute__((deprecated))			//!< \b Deprecated attribute
 	#define HOT__
-	#define INLINE__		__attribute__((always_inline))		//!< \b Always inline attribute
-	#define NONNULL__		__attribute__((nonnull))			//!< \b Non null attribute (all pointers will be checked)
-	#define NORETURN__		__attribute__((noreturn))			//!< \b No return attribute
+	#define INLINE__		__attribute__((always_inline))		//!< \b Always \b inline attribute
+	#define NONNULL__		__attribute__((nonnull))			//!< \b Non \b null attribute (all pointers will be checked)
+	#define NORETURN__		__attribute__((noreturn))			//!< \b No \b return attribute
 	#define PACK__			__attribute__((packed))				//!< \b Packed attribute
 	#define PURE__			__attribute__((pure))				//!< \b Pure attribute
 
@@ -56,9 +56,9 @@
 	#define COLD__			__attribute__((cold))				//!< \b Cold attribute
 	#define DEPRECATED__	__attribute__((deprecated))			//!< \b Deprecated attribute
 	#define HOT__			__attribute__((hot))				//!< \b Hot attribute
-	#define INLINE__		__attribute__((always_inline))		//!< \b Always inline attribute
-	#define NONNULL__		__attribute__((nonnull))			//!< \b Non null attribute (all pointers will be checked)
-	#define NORETURN__		__attribute__((noreturn))			//!< \b No return attribute
+	#define INLINE__		__attribute__((always_inline))		//!< \b Always \b inline attribute
+	#define NONNULL__		__attribute__((nonnull))			//!< \b Non \b null attribute (all pointers will be checked)
+	#define NORETURN__		__attribute__((noreturn))			//!< \b No \b return attribute
 	#define PACK__			__attribute__((__packed__))			//!< \b Packed attribute
 	#define PURE__			__attribute__((pure))				//!< \b Pure attribute
 
@@ -74,7 +74,7 @@
 	#define HOT__
 	#define INLINE__
 	#define NONNULL__
-	#define NORETURN__		__noreturn							//!< \b No return attribute
+	#define NORETURN__		__noreturn							//!< \b No \b return attribute
 	#define PACK__			__packed							//!< \b Packed attribute
 	#define PURE__
 
@@ -88,9 +88,9 @@
 	#define COLD__
 	#define DEPRECATED__	__attribute__((deprecated))			//!< \b Deprecated attribute
 	#define HOT__
-	#define INLINE__		__attribute__((always_inline))		//!< \b Always inline attribute
+	#define INLINE__		__attribute__((always_inline))		//!< \b Always \b inline attribute
 	#define NONNULL__
-	#define NORETURN__		__attribute__((noreturn))			//!< \b No return attribute
+	#define NORETURN__		__attribute__((noreturn))			//!< \b No \b return attribute
 	#define PACK__			__attribute__((__packed__))			//!< \b Packed attribute
 	#define PURE__			__attribute__((pure))				//!< \b Pure attribute
 
@@ -104,9 +104,9 @@
 	#define COLD__
 	#define DEPRECATED__
 	#define HOT__
-	#define INLINE__		__attribute__((always_inline))		//!< \b Always inline attribute
+	#define INLINE__		__attribute__((always_inline))		//!< \b Always \b inline attribute
 	#define NONNULL__
-	#define NORETURN__		__attribute__((noreturn))			//!< \b No return attribute
+	#define NORETURN__		__attribute__((noreturn))			//!< \b No \b return attribute
 	#define PACK__			__packed__							//!< \b Packed attribute
 	#define PURE__			__attribute__((pure))				//!< \b Pure attribute
 
