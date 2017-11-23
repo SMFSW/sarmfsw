@@ -274,13 +274,13 @@ typedef union UnionLWord{
 } uLWord;
 
 
-#if defined(I_FIND_BINARY_HEADER_USEFULL)
 #if defined(ARDUINO)
+#if defined(I_FIND_BINARY_HEADER_USEFULL)
 	// Redef binary.h definitions used here
 	#define B0 0
 	#define B1 1
-#endif /* defined(ARDUINO) */
 #endif /* defined(I_FIND_BINARY_HEADER_USEFULL) */
+#endif /* defined(ARDUINO) */
 
 
 /****************************************************************/

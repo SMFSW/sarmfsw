@@ -21,6 +21,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+## v3.1
+
+* arm_chip_ino: fixed enable/disable interrupts macro (and undef arm_cmsis defined ones)
+* arm_chip_ino: fixed Arduino HALTicks macro (ms tick base is millis, not micros)
+
 ## v3.0
 
 * moved defines & inlines from arm_hal_peripheral to arm_family headers

@@ -22,13 +22,15 @@
 #else
 	#include "WProgram.h"		// Common Arduino definitions
 #endif
-#include "pins_arduino.h"		// Arduino pins definitions
+#include "pins_arduino.h"		// Arduino pins definitions for current board
 /****************************************************************/
 
 
 /*** Define Enable/Disable interrupts macros ***/
-#define	diInterrupts()		cli()				//!< Disable interruptions macro
-#define	enInterrupts()		sei()				//!< Enable interruptions macro
+#undef diInterrupts
+#define diInterrupts()		noInterrupts()		//!< Disable interruptions macro
+#undef enInterrupts
+#define enInterrupts()		interrupts()		//!< Enable interruptions macro
 
 /*** MS Time base ***/
 #ifndef HAL_MAX_TICKS
@@ -40,7 +42,7 @@
 #define HAL_MS_TICKS_FACTOR	1					//!< Milliseconds multiplier (depending tick counter frequency)
 #endif
 
-#define HALTicks()			micros()			//!< Alias for Arduino get ms ticks function
+#define HALTicks()			millis()			//!< Alias for Arduino get ms ticks function
 
 /*!\brief Convert Arduino error code to FctERR
 ** \param[in] status - Arduino error code

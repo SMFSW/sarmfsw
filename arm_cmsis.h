@@ -14,10 +14,8 @@
 /****************************************************************/
 
 
-#if !defined(ARDUINO)
-	#define	diInterrupts()		__disable_irq()		//!< Disable interruptions macro
-	#define	enInterrupts()		__enable_irq()		//!< Enable interruptions macro
-#endif /* !defined(ARDUINO) */
+#define diInterrupts()		__disable_irq()		//!< Disable interruptions macro
+#define enInterrupts()		__enable_irq()		//!< Enable interruptions macro
 
 
 /************************/

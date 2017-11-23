@@ -1,8 +1,10 @@
 # sarmfsw
-ARM based common headers (compatible with most Arduino platforms)
+ARM based common headers
 
 Basic yet useful macros for any ARM CMSIS based project
 
+Library has been updated to become compatible with Arduino platform
+(not only ARM cores, yet less optimized for 8/16bit cores)
 
 ## Documentation
 
