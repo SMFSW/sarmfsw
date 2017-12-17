@@ -71,7 +71,7 @@
 #endif
 #ifndef HAL_MS_TICKS_FACTOR
 //!\note Define HAL_MS_TICKS_FACTOR with custom multiplier in project if tick period is not 1ms
-#define HAL_MS_TICKS_FACTOR	1				//!< HAL milliseconds multiplier (depending tick counter frequency)
+#define HAL_MS_TICKS_FACTOR	1					//!< HAL milliseconds multiplier (depending tick counter frequency)
 #endif
 
 #ifndef HALTicks

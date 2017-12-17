@@ -89,13 +89,11 @@ __INLINE CHAR INLINE__ HexToASCII(BYTE hex) {
 ** \param[in] ascii - ASCII char to convert
 ** \return Hexadecimal value
 **/
-__INLINE SBYTE ASCIIToHex(const CHAR ascii)
-{
+__INLINE SBYTE ASCIIToHex(const CHAR ascii) {
 	if ((ascii >= '0') && (ascii <= '9'))			{ return ascii - 0x30; }
 	else if ((ascii >= 'A') && (ascii <= 'F'))		{ return ascii - 0x37; }
 	else if ((ascii >= 'a') && (ascii <= 'f'))		{ return ascii - 0x47; }
-	else											{ return -1; }
-}
+	else											{ return -1; } }
 
 
 /*!\brief Convert binary value to gray code
@@ -109,14 +107,11 @@ __INLINE DWORD INLINE__ bin2gray(const DWORD bin) {
 ** \param[in] gray - gray code value
 ** \return Converted value (binary)
 **/
-__INLINE DWORD gray2bin(const DWORD gray)
-{
+__INLINE DWORD gray2bin(const DWORD gray) {
 	SWORD bits = 32;
 	DWORD tmp = gray;
-
 	while ((bits >>= 1) > 0)	{ tmp ^= (tmp >> bits); }
-	return tmp;
-}
+	return tmp; }
 
 
 /******************************/
@@ -146,7 +141,7 @@ __INLINE WORD INLINE__ conv8to16Bits(const BYTE val) {
 ** \return Converted value
 **/
 __INLINE WORD conv8upto16Bits(const BYTE val, const BYTE nb) {
-	return ((WORD) ((WORD) (val << nb) + (WORD) (val & (0xFF >> (8-nb))))); }
+	return ((WORD) ((WORD) (val << nb) + (WORD) (val & (0xFFU >> (8-nb))))); }
 
 /*!\brief converts 16bits to 16+nb bits (32bits max)
 ** \warning conversion output shall not exceed 32bits (input shall strictly be unsigned 16bits)
@@ -156,7 +151,7 @@ __INLINE WORD conv8upto16Bits(const BYTE val, const BYTE nb) {
 ** \return Converted value
 **/
 __INLINE DWORD conv16upto32Bits(const WORD val, const BYTE nb) {
-	return ((DWORD) ((DWORD) (val << nb) + (DWORD) (val & (0xFFFF >> (16-nb))))); }
+	return ((DWORD) ((DWORD) (val << nb) + (DWORD) (val & (0xFFFFU >> (16-nb))))); }
 
 /*!\brief converts 32bits to 32+nb bits (64bits max)
 ** \warning conversion output shall not exceed 64bits (input shall strictly be unsigned 32bits)
@@ -166,7 +161,7 @@ __INLINE DWORD conv16upto32Bits(const WORD val, const BYTE nb) {
 ** \return Converted value
 **/
 __INLINE LWORD conv32upto64Bits(const DWORD val, const BYTE nb) {
-	return ((LWORD) ((LWORD) (val << nb) + (LWORD) (val & (0xFFFFFFFF >> (32-nb))))); }
+	return ((LWORD) ((LWORD) (val << nb) + (LWORD) (val & (0xFFFFFFFFUL >> (32-nb))))); }
 
 
 /*****************************/
@@ -178,21 +173,21 @@ __INLINE LWORD conv32upto64Bits(const DWORD val, const BYTE nb) {
 ** \return Swapped value
 **/
 __INLINE WORD SWAP_END16B(const WORD w) {
-	return (WORD) (LSHIFT((w & 0xFF), 8) | RSHIFT((w & 0xFF00), 8)); }
+	return (WORD) (LSHIFT((w & 0xFFU), 8) | RSHIFT((w & 0xFF00U), 8)); }
 
 /*!\brief Swap endians of the contents of a 32b value
 ** \param[in] d - 32b value
 ** \return Swapped value
 **/
 __INLINE DWORD SWAP_END32B(const DWORD d) {
-	return (DWORD) (LSHIFT(SWAP_END16B(d & 0xFFFF), 16) | SWAP_END16B(RSHIFT((d & 0xFFFF0000), 16))); }
+	return (DWORD) (LSHIFT(SWAP_END16B(d & 0xFFFFUL), 16) | SWAP_END16B(RSHIFT((d & 0xFFFF0000UL), 16))); }
 
 /*!\brief Swap endians of the contents of a 64b value
 ** \param[in] l - 64b value
 ** \return Swapped value
 **/
 __INLINE LWORD SWAP_END64B(const LWORD l) {
-	return (LWORD) (LSHIFT64(SWAP_END32B(l & 0xFFFFFFFF), 32) | SWAP_END32B(RSHIFT64((l & 0xFFFFFFFF00000000), 32))); }
+	return (LWORD) (LSHIFT64(SWAP_END32B(l & 0xFFFFFFFFULL), 32) | SWAP_END32B(RSHIFT64((l & 0xFFFFFFFF00000000ULL), 32))); }
 
 
 /*!\brief Swap endians of a 16b tab
@@ -227,12 +222,10 @@ __INLINE void INLINE__ SWAP_END64B_TAB(LWORD tab[], const WORD nb) {
 ** \param[in] tolerance - Tolerance on reference value (in percent)
 ** \return true if val is inTolerance
 **/
-__INLINE bool inTolerance(const SDWORD val, const SDWORD ref, float tolerance)
-{
+__INLINE bool inTolerance(const SDWORD val, const SDWORD ref, float tolerance) {
 	tolerance = min(100.0f, max(0.0f, tolerance));
 	DWORD margin = (DWORD) (ref * (tolerance / 100.0f));
-	return ((val <= (SDWORD) (ref + margin)) && (val >= (SDWORD) (ref - margin)));
-}
+	return ((val <= (SDWORD) (ref + margin)) && (val >= (SDWORD) (ref - margin))); }
 
 /*!\brief Checks if val given as parameter is in range
 ** \param[in] val - Value to check
@@ -255,13 +248,11 @@ __INLINE bool INLINE__ inRange(const SDWORD val, const SDWORD low, const SDWORD 
 ** \param[in] nb - Number of decimal to get after floating point
 ** \return nb decimal part as integer
 **/
-__INLINE int32_t get_fp_dec(float f, uint8_t nb)
-{
+__INLINE int32_t get_fp_dec(float f, uint8_t nb) {
 	int32_t mul = 1;
 	f -= (int32_t) f;
-	while(nb-- != 0)	{ mul *= 10; }
-	return (int32_t) (f * mul);
-}
+	while (nb-- != 0) { mul *= 10; }
+	return (int32_t) (f * mul); }
 
 
 /****************************************************************/

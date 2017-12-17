@@ -1,4 +1,5 @@
 # sarmfsw
+
 ARM based common headers
 
 Basic yet useful macros for any ARM CMSIS based project
@@ -6,15 +7,24 @@ Basic yet useful macros for any ARM CMSIS based project
 Library has been updated to become compatible with Arduino platform
 (not only ARM cores, yet less optimized for 8/16bit cores)
 
+## Symbols
+
+* STM_FAMILY: Define with proper family name if your STM32 MCU is not automatically recognized (in case of warning message displayed)
+* SAM_FAMILY: Define with proper family name if your ATMEL SAM MCU is not automatically recognized (in case of warning message displayed)
+* HAL_MAX_TICKS val: Define with custom max value in project if tick max value is not using 32b variable full scale
+* HAL_MS_TICKS_FACTOR: Define with custom multiplier in project if tick period is not 1ms
+* BIG_ENDIAN: Define this symbol if using big endian target architecture if not automatically recognized (in case of warning message displayed)
+* LITTLE_ENDIAN: Define this symbol if using little endian target architecture if not automatically recognized (in case of warning message displayed)
+* REVERSE_BITFIELD: By default biftfields are stored from lsb to msb; if not the case with the compiler, use a pragma or define this symbol
+* I_FIND_BINARY_HEADER_USEFULL: For Arduino platform, if using defines from binary.h, define this symbol (not recommended, use 0bxxx for binary instead)
+
 ## Documentation
 
 Doxygen generated documentation can be found in "sarmfsw_vXXX.pdf"
 
-
 ## Release Notes
 
 See [release notes](https://github.com/SMFSW/sarmfsw/ReleaseNotes.md)
-
 
 ## License
 

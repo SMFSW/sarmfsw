@@ -19,30 +19,38 @@
 #define	Undefined			-1				//!< Undefined value
 
 #define Null				0				//!< Null Value
-#define pNull				(void *) 0		//!< Null pointer -> same as NULL in Stdlib.h
+#define pNull				(void *) 0		//!< Null pointer -> same as NULL in stdlib.h
 #define	charNUL				'\0'			//!< Null Char
 
 
 //!\warning this macro is optimized only when used with \b b with a static value
-#define LSHIFT(v, b)		((v) * (1L << b))											//!< Shift \b v \b b bits left (up to 31b)
+#define LSHIFT(v, b)		((v) * (1UL << b))											//!< Shift \b v \b b bits left (up to 31b)
 //!\warning this macro is optimized only when used with \b b with a static value
-#define RSHIFT(v, b)		((v) / (1L << b))											//!< Shift \b v \b b bits right (up to 31b)
+#define RSHIFT(v, b)		((v) / (1UL << b))											//!< Shift \b v \b b bits right (up to 31b)
 //!\warning this macro is optimized only when used with \b b with a static value
-#define LSHIFT64(v, b)		((v) * (1LL << b))											//!< Shift \b v \b b bits left (up to 63b)
+#define LSHIFT64(v, b)		((v) * (1ULL << b))											//!< Shift \b v \b b bits left (up to 63b)
 //!\warning this macro is optimized only when used with \b b with a static value
-#define RSHIFT64(v, b)		((v) / (1LL << b))											//!< Shift \b v \b b bits right (up to 63b)
+#define RSHIFT64(v, b)		((v) / (1ULL << b))											//!< Shift \b v \b b bits right (up to 63b)
 
 #define MAKEWORD(lsb, msb)	((WORD) (((BYTE) (lsb)) | LSHIFT(((WORD) ((BYTE) (msb))), 8)))		//!< Make WORD from \b lsb and \b msb
 #define MAKELONG(lsw, msw)	((DWORD) (((WORD) (lsw)) | LSHIFT(((DWORD) ((WORD) (msw))), 16)))	//!< Make LONG from \b lsw and \b msw
 
-#define LOWORD(l)			((WORD) (l))														//!< Get WORD LSW from LONG \b l
-#define HIWORD(l)			((WORD) RSHIFT((DWORD) (l), 16))									//!< Get WORD MSW from LONG \b l
-#define LOBYTE(w)			((BYTE) (w))														//!< Get BYTE LSB from WORD \b w
-#define HIBYTE(w)			((BYTE) RSHIFT((WORD) (w), 8))										//!< Get BYTE MSB from WORD \b w
+#define LOWORD(l)			((WORD) (l))						//!< Get WORD LSW from LONG \b l
+#define HIWORD(l)			((WORD) RSHIFT((DWORD) (l), 16))	//!< Get WORD MSW from LONG \b l
+#define LOBYTE(w)			((BYTE) (w))						//!< Get BYTE LSB from WORD \b w
+#define HIBYTE(w)			((BYTE) RSHIFT((WORD) (w), 8))		//!< Get BYTE MSB from WORD \b w
 
-#define OFFSET_OF(typ, mbr)			((size_t) &(((typ *)0)->mbr))						//!< Computes the offset member \b mbr from struct \b typ
-#define ROOT_OF(ptr, typ, mbr)		((typ *) (((uint8_t *) ptr) - OFFSET_OF(typ, mbr)))	//!< Computes the address of parent struct \b typ of \b ptr from member \b mbr
-#define SZ_OBJ(obj, typ)			((size_t) (sizeof(obj) / sizeof(typ)))				//!< Computes the number of elements of \b obj following \b typ
+#define	SWAP_TYPE(a, b, typ)	{ typ c = a; a = b; b = c; }	//!< Swap type \b typ \b a \& \b b
+#define	SWAP_BYTE(a, b)			SWAP_TYPE(a, b, BYTE)			//!< Swap BYTEs \b a \& \b b
+#define	SWAP_WORD(a, b)			SWAP_TYPE(a, b, WORD)			//!< Swap WORDs \b a \& \b b
+#define	SWAP_DWORD(a, b)		SWAP_TYPE(a, b, DWORD)			//!< Swap DWORDs \b a \& \b b
+#define	SWAP_LWORD(a, b)		SWAP_TYPE(a, b, LWORD)			//!< Swap LWORDs \b a \& \b b
+#define	SWAP_FLOAT(a, b)		SWAP_TYPE(a, b, float)			//!< Swap floats \b a \& \b b
+#define	SWAP_DOUBLE(a, b)		SWAP_TYPE(a, b, double)			//!< Swap doubles \b a \& \b b
+
+#define SZ_OBJ(obj, typ)		((size_t) (sizeof(obj) / sizeof(typ)))					//!< Computes the number of elements of \b obj following \b typ
+#define OFFSET_OF(typ, mbr)		((size_t) &(((typ *)0)->mbr))							//!< Computes the offset member \b mbr from struct \b typ
+#define ROOT_OF(ptr, typ, mbr)	((typ *) (((uint8_t *) ptr) - OFFSET_OF(typ, mbr)))		//!< Computes the address of parent struct \b typ of \b ptr from member \b mbr
 
 //! \warning No nesting possible, use \a XCAT in this case
 #define	CAT(a, b)			a##b			//!< Preprocessor Name catenation
@@ -78,11 +86,6 @@
 
 #define DEG_TO_FLOAT(d)		((float) (((d) > 360.0f ? 360.0f : (d)) / 360.0f))
 #define FLOAT_TO_DEG(f)		((float) ((((f) > 1.0f ? 1.0f : (f)) < 0.0f ? 0.0f : (f)) * 360.0f))
-
-
-#define	SWAP_BYTE(a, b)		{ BYTE c = a; a = b; b = c; }	//!< Swap BYTEs \b a \& \b b
-#define	SWAP_WORD(a, b)		{ WORD c = a; a = b; b = c; }	//!< Swap WORDs \b a \& \b b
-#define	SWAP_DWORD(a, b)	{ DWORD c = a; a = b; b = c; }	//!< Swap DWORDs \b a \& \b b
 
 
 /****************************************************************/

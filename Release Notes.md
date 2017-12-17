@@ -20,6 +20,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+## v3.2
+
+* arm_typedefs: endianness handling for bitfields and unions
+* arm_inlines: added L & LL qualifiers when needed for compatibility with <32b architectures
+* arm_macros: added SWAP_TYPE macro for any simple typedef swapping
+* arm_macros: added missing SWAP_LWORD, SWAP_FLOAT & SWAP_DOUBLE macros
+* README: added list and description of special symbols to change library behavior 
 
 ## v3.1
 

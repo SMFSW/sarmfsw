@@ -14,8 +14,8 @@
 /****************************************************************/
 
 #include "arm_attributes.h"		// Common attributes depending compiler
-
 #include "arm_typedefs.h"		// Common typedefs
+
 #include "arm_errors.h"			// Common errors
 
 #include "arm_macros.h"			// Common macros
@@ -29,7 +29,7 @@
 /*!\enum FW_target
 ** \brief Firmware target types
 **/
-typedef enum PACK__ FW_target{
+typedef enum PACK__ FW_target {
 	DefSpecialTarget = 0,		//!< Special FW target (same as debug, yet)
 	DefDebugTarget,				//!< Debug FW target (default)
 	DefReleaseTarget,			//!< Release FW target (No debug information)

@@ -3,9 +3,13 @@
 ** \date 2017
 ** \copyright MIT (c) 2017, SMFSW
 ** \brief ARM common typedefs
-** \warning	For Arduino platform, some binary.h defintions needs to be undefined,
+** \warning	Endianness for unions shall be checked following target / compiler to avoid potential headaches
+** \warning sBitfieldXX are defined from lsb to msb as most compiler does by default; if it's not the case
+**			try to find a compiler directive or pragma to reverse bitfield order.
+**			If not available, define REVERSE_BITFIELD symbol at project level.
+** \warning	For Arduino platform, some binary.h definitions needs to be undefined,
 			If you find them useful, define I_FIND_BINARY_HEADER_USEFULL in project to redefine them
-			Please note, B0 & B1 Bytes substructs of sBitfieldXX will not be available anymore
+			Please note, B0 & B1 Bytes sub-structures of sBitfieldXX will not be available anymore
 */
 /****************************************************************/
 #ifndef __ARM_TYPEDEFS_H
@@ -18,6 +22,29 @@
 #include <stdint.h>
 #include <stdbool.h>
 /****************************************************************/
+
+
+#if defined(__BYTE_ORDER) && __BYTE_ORDER == __BIG_ENDIAN ||		\
+	defined(__BIG_ENDIAN__) ||										\
+	defined(__ARMEB__) ||											\
+	defined(__THUMBEB__) ||											\
+	defined(__AARCH64EB__) ||										\
+	defined(_MIBSEB) || defined(__MIBSEB) || defined(__MIBSEB__)
+	#ifndef BIG_ENDIAN
+		#define BIG_ENDIAN		// Big-endian target
+	#endif
+#elif defined(__BYTE_ORDER) && __BYTE_ORDER == __LITTLE_ENDIAN ||	\
+	defined(__LITTLE_ENDIAN__) ||									\
+	defined(__ARMEL__) ||											\
+	defined(__THUMBEL__) ||											\
+	defined(__AARCH64EL__) ||										\
+	defined(_MIPSEL) || defined(__MIPSEL) || defined(__MIPSEL__)
+	#ifndef LITTLE_ENDIAN
+		#define LITTLE_ENDIAN	// Little-endian target
+	#endif
+#else
+	#warning "Unknown endianness, please define LITTLE_ENDIAN or BIG_ENDIAN symbol to ensure behavior!"
+#endif
 
 
 typedef char		CHAR;		//!< Char typedef (8bits)
@@ -34,7 +61,7 @@ typedef	int64_t		SLWORD;		//!< Signed lWord typedef (64bits)
 /*!\enum eState
 ** \brief Activation state On, Off
 **/
-typedef enum eState{
+typedef enum eState {
 	Off = 0U,	//!< Off / Clear
 	On = 1U		//!< On / Set
 } eState;
@@ -52,145 +79,277 @@ typedef enum eEdge {
 /*!\struct StructBitfield8
 ** \brief Bitfield 8b
 **/
-typedef struct StructBitfield8{
-	BYTE	b0	:1;	//!< Bit 0 (LSB)
-	BYTE	b1	:1;	//!< Bit 1
-	BYTE	b2	:1;	//!< Bit 2
-	BYTE	b3	:1;	//!< Bit 3
-	BYTE	b4	:1;	//!< Bit 4
-	BYTE	b5	:1;	//!< Bit 5
-	BYTE	b6	:1;	//!< Bit 6
-	BYTE	b7	:1;	//!< Bit 7 (MSB)
+typedef struct StructBitfield8 {
+	#ifndef REVERSE_BITFIELD
+		BYTE	b0	:1;	//!< Bit 0 (LSB)
+		BYTE	b1	:1;	//!< Bit 1
+		BYTE	b2	:1;	//!< Bit 2
+		BYTE	b3	:1;	//!< Bit 3
+		BYTE	b4	:1;	//!< Bit 4
+		BYTE	b5	:1;	//!< Bit 5
+		BYTE	b6	:1;	//!< Bit 6
+		BYTE	b7	:1;	//!< Bit 7 (MSB)
+	#else
+		BYTE	b7	:1;	//!< Bit 7 (MSB)
+		BYTE	b6	:1;	//!< Bit 6
+		BYTE	b5	:1;	//!< Bit 5
+		BYTE	b4	:1;	//!< Bit 4
+		BYTE	b3	:1;	//!< Bit 3
+		BYTE	b2	:1;	//!< Bit 2
+		BYTE	b1	:1;	//!< Bit 1
+		BYTE	b0	:1;	//!< Bit 0 (LSB)
+	#endif
 } sBitfield8;
 
 /*!\struct StructBitfield16
 ** \brief Bitfield 16b
 **/
-typedef struct StructBitfield16{
-	WORD	b0	:1;	//!< Bit 0 (LSB)
-	WORD	b1	:1;	//!< Bit 1
-	WORD	b2	:1;	//!< Bit 2
-	WORD	b3	:1;	//!< Bit 3
-	WORD	b4	:1;	//!< Bit 4
-	WORD	b5	:1;	//!< Bit 5
-	WORD	b6	:1;	//!< Bit 6
-	WORD	b7	:1;	//!< Bit 7
-	WORD	b8	:1;	//!< Bit 8
-	WORD	b9	:1;	//!< Bit 9
-	WORD	b10	:1;	//!< Bit 10
-	WORD	b11	:1;	//!< Bit 11
-	WORD	b12	:1;	//!< Bit 12
-	WORD	b13	:1;	//!< Bit 13
-	WORD	b14	:1;	//!< Bit 14
-	WORD	b15	:1;	//!< Bit 15 (MSB)
+typedef struct StructBitfield16 {
+	#ifndef REVERSE_BITFIELD
+		WORD	b0	:1;	//!< Bit 0 (LSB)
+		WORD	b1	:1;	//!< Bit 1
+		WORD	b2	:1;	//!< Bit 2
+		WORD	b3	:1;	//!< Bit 3
+		WORD	b4	:1;	//!< Bit 4
+		WORD	b5	:1;	//!< Bit 5
+		WORD	b6	:1;	//!< Bit 6
+		WORD	b7	:1;	//!< Bit 7
+		WORD	b8	:1;	//!< Bit 8
+		WORD	b9	:1;	//!< Bit 9
+		WORD	b10	:1;	//!< Bit 10
+		WORD	b11	:1;	//!< Bit 11
+		WORD	b12	:1;	//!< Bit 12
+		WORD	b13	:1;	//!< Bit 13
+		WORD	b14	:1;	//!< Bit 14
+		WORD	b15	:1;	//!< Bit 15 (MSB)
+	#else
+		WORD	b15	:1;	//!< Bit 15 (MSB)
+		WORD	b14	:1;	//!< Bit 14
+		WORD	b13	:1;	//!< Bit 13
+		WORD	b12	:1;	//!< Bit 12
+		WORD	b11	:1;	//!< Bit 11
+		WORD	b10	:1;	//!< Bit 10
+		WORD	b9	:1;	//!< Bit 9
+		WORD	b8	:1;	//!< Bit 8
+		WORD	b7	:1;	//!< Bit 7
+		WORD	b6	:1;	//!< Bit 6
+		WORD	b5	:1;	//!< Bit 5
+		WORD	b4	:1;	//!< Bit 4
+		WORD	b3	:1;	//!< Bit 3
+		WORD	b2	:1;	//!< Bit 2
+		WORD	b1	:1;	//!< Bit 1
+		WORD	b0	:1;	//!< Bit 0 (LSB)
+	#endif
 } sBitfield16;
 
 /*!\struct StructBitfield32
 ** \brief Bitfield 32b
 **/
-typedef struct StructBitfield32{
-	DWORD	b0	:1;	//!< Bit 0 (LSB)
-	DWORD	b1	:1;	//!< Bit 1
-	DWORD	b2	:1;	//!< Bit 2
-	DWORD	b3	:1;	//!< Bit 3
-	DWORD	b4	:1;	//!< Bit 4
-	DWORD	b5	:1;	//!< Bit 5
-	DWORD	b6	:1;	//!< Bit 6
-	DWORD	b7	:1;	//!< Bit 7
-	DWORD	b8	:1;	//!< Bit 8
-	DWORD	b9	:1;	//!< Bit 9
-	DWORD	b10	:1;	//!< Bit 10
-	DWORD	b11	:1;	//!< Bit 11
-	DWORD	b12	:1;	//!< Bit 12
-	DWORD	b13	:1;	//!< Bit 13
-	DWORD	b14	:1;	//!< Bit 14
-	DWORD	b15	:1;	//!< Bit 15
-	DWORD	b16	:1;	//!< Bit 16
-	DWORD	b17	:1;	//!< Bit 17
-	DWORD	b18	:1;	//!< Bit 18
-	DWORD	b19	:1;	//!< Bit 19
-	DWORD	b20	:1;	//!< Bit 20
-	DWORD	b21	:1;	//!< Bit 21
-	DWORD	b22	:1;	//!< Bit 22
-	DWORD	b23	:1;	//!< Bit 23
-	DWORD	b24	:1;	//!< Bit 24
-	DWORD	b25	:1;	//!< Bit 25
-	DWORD	b26	:1;	//!< Bit 26
-	DWORD	b27	:1;	//!< Bit 27
-	DWORD	b28	:1;	//!< Bit 28
-	DWORD	b29	:1;	//!< Bit 29
-	DWORD	b30	:1;	//!< Bit 30
-	DWORD	b31	:1;	//!< Bit 31 (MSB)
+typedef struct StructBitfield32 {
+	#ifndef REVERSE_BITFIELD
+		DWORD	b0	:1;	//!< Bit 0 (LSB)
+		DWORD	b1	:1;	//!< Bit 1
+		DWORD	b2	:1;	//!< Bit 2
+		DWORD	b3	:1;	//!< Bit 3
+		DWORD	b4	:1;	//!< Bit 4
+		DWORD	b5	:1;	//!< Bit 5
+		DWORD	b6	:1;	//!< Bit 6
+		DWORD	b7	:1;	//!< Bit 7
+		DWORD	b8	:1;	//!< Bit 8
+		DWORD	b9	:1;	//!< Bit 9
+		DWORD	b10	:1;	//!< Bit 10
+		DWORD	b11	:1;	//!< Bit 11
+		DWORD	b12	:1;	//!< Bit 12
+		DWORD	b13	:1;	//!< Bit 13
+		DWORD	b14	:1;	//!< Bit 14
+		DWORD	b15	:1;	//!< Bit 15
+		DWORD	b16	:1;	//!< Bit 16
+		DWORD	b17	:1;	//!< Bit 17
+		DWORD	b18	:1;	//!< Bit 18
+		DWORD	b19	:1;	//!< Bit 19
+		DWORD	b20	:1;	//!< Bit 20
+		DWORD	b21	:1;	//!< Bit 21
+		DWORD	b22	:1;	//!< Bit 22
+		DWORD	b23	:1;	//!< Bit 23
+		DWORD	b24	:1;	//!< Bit 24
+		DWORD	b25	:1;	//!< Bit 25
+		DWORD	b26	:1;	//!< Bit 26
+		DWORD	b27	:1;	//!< Bit 27
+		DWORD	b28	:1;	//!< Bit 28
+		DWORD	b29	:1;	//!< Bit 29
+		DWORD	b30	:1;	//!< Bit 30
+		DWORD	b31	:1;	//!< Bit 31 (MSB)
+	#else
+		DWORD	b31	:1;	//!< Bit 31 (MSB)
+		DWORD	b30	:1;	//!< Bit 30
+		DWORD	b29	:1;	//!< Bit 29
+		DWORD	b28	:1;	//!< Bit 28
+		DWORD	b27	:1;	//!< Bit 27
+		DWORD	b26	:1;	//!< Bit 26
+		DWORD	b25	:1;	//!< Bit 25
+		DWORD	b24	:1;	//!< Bit 24
+		DWORD	b23	:1;	//!< Bit 23
+		DWORD	b22	:1;	//!< Bit 22
+		DWORD	b21	:1;	//!< Bit 21
+		DWORD	b20	:1;	//!< Bit 20
+		DWORD	b19	:1;	//!< Bit 19
+		DWORD	b18	:1;	//!< Bit 18
+		DWORD	b17	:1;	//!< Bit 17
+		DWORD	b16	:1;	//!< Bit 16
+		DWORD	b15	:1;	//!< Bit 15
+		DWORD	b14	:1;	//!< Bit 14
+		DWORD	b13	:1;	//!< Bit 13
+		DWORD	b12	:1;	//!< Bit 12
+		DWORD	b11	:1;	//!< Bit 11
+		DWORD	b10	:1;	//!< Bit 10
+		DWORD	b9	:1;	//!< Bit 9
+		DWORD	b8	:1;	//!< Bit 8
+		DWORD	b7	:1;	//!< Bit 7
+		DWORD	b6	:1;	//!< Bit 6
+		DWORD	b5	:1;	//!< Bit 5
+		DWORD	b4	:1;	//!< Bit 4
+		DWORD	b3	:1;	//!< Bit 3
+		DWORD	b2	:1;	//!< Bit 2
+		DWORD	b1	:1;	//!< Bit 1
+		DWORD	b0	:1;	//!< Bit 0 (LSB)
+	#endif
 } sBitfield32;
 
 /*!\struct StructBitfield64
 ** \brief Bitfield 64b
 **/
-typedef struct StructBitfield64{
-	LWORD	b0	:1;	//!< Bit 0 (LSB)
-	LWORD	b1	:1;	//!< Bit 1
-	LWORD	b2	:1;	//!< Bit 2
-	LWORD	b3	:1;	//!< Bit 3
-	LWORD	b4	:1;	//!< Bit 4
-	LWORD	b5	:1;	//!< Bit 5
-	LWORD	b6	:1;	//!< Bit 6
-	LWORD	b7	:1;	//!< Bit 7
-	LWORD	b8	:1;	//!< Bit 8
-	LWORD	b9	:1;	//!< Bit 9
-	LWORD	b10	:1;	//!< Bit 10
-	LWORD	b11	:1;	//!< Bit 11
-	LWORD	b12	:1;	//!< Bit 12
-	LWORD	b13	:1;	//!< Bit 13
-	LWORD	b14	:1;	//!< Bit 14
-	LWORD	b15	:1;	//!< Bit 15
-	LWORD	b16	:1;	//!< Bit 16
-	LWORD	b17	:1;	//!< Bit 17
-	LWORD	b18	:1;	//!< Bit 18
-	LWORD	b19	:1;	//!< Bit 19
-	LWORD	b20	:1;	//!< Bit 20
-	LWORD	b21	:1;	//!< Bit 21
-	LWORD	b22	:1;	//!< Bit 22
-	LWORD	b23	:1;	//!< Bit 23
-	LWORD	b24	:1;	//!< Bit 24
-	LWORD	b25	:1;	//!< Bit 25
-	LWORD	b26	:1;	//!< Bit 26
-	LWORD	b27	:1;	//!< Bit 27
-	LWORD	b28	:1;	//!< Bit 28
-	LWORD	b29	:1;	//!< Bit 29
-	LWORD	b30	:1;	//!< Bit 30
-	LWORD	b31	:1;	//!< Bit 31
-	LWORD	b32	:1;	//!< Bit 32
-	LWORD	b33	:1;	//!< Bit 33
-	LWORD	b34	:1;	//!< Bit 34
-	LWORD	b35	:1;	//!< Bit 35
-	LWORD	b36	:1;	//!< Bit 36
-	LWORD	b37	:1;	//!< Bit 37
-	LWORD	b38	:1;	//!< Bit 38
-	LWORD	b39	:1;	//!< Bit 39
-	LWORD	b40	:1;	//!< Bit 40
-	LWORD	b41	:1;	//!< Bit 41
-	LWORD	b42	:1;	//!< Bit 42
-	LWORD	b43	:1;	//!< Bit 43
-	LWORD	b44	:1;	//!< Bit 44
-	LWORD	b45	:1;	//!< Bit 45
-	LWORD	b46	:1;	//!< Bit 46
-	LWORD	b47	:1;	//!< Bit 47
-	LWORD	b48	:1;	//!< Bit 48
-	LWORD	b49	:1;	//!< Bit 49
-	LWORD	b50	:1;	//!< Bit 50
-	LWORD	b51	:1;	//!< Bit 51
-	LWORD	b52	:1;	//!< Bit 52
-	LWORD	b53	:1;	//!< Bit 53
-	LWORD	b54	:1;	//!< Bit 54
-	LWORD	b55	:1;	//!< Bit 55
-	LWORD	b56	:1;	//!< Bit 56
-	LWORD	b57	:1;	//!< Bit 57
-	LWORD	b58	:1;	//!< Bit 58
-	LWORD	b59	:1;	//!< Bit 59
-	LWORD	b60	:1;	//!< Bit 60
-	LWORD	b61	:1;	//!< Bit 61
-	LWORD	b62	:1;	//!< Bit 62
-	LWORD	b63	:1;	//!< Bit 63 (MSB)
+typedef struct StructBitfield64 {
+	#ifndef REVERSE_BITFIELD
+		LWORD	b0	:1;	//!< Bit 0 (LSB)
+		LWORD	b1	:1;	//!< Bit 1
+		LWORD	b2	:1;	//!< Bit 2
+		LWORD	b3	:1;	//!< Bit 3
+		LWORD	b4	:1;	//!< Bit 4
+		LWORD	b5	:1;	//!< Bit 5
+		LWORD	b6	:1;	//!< Bit 6
+		LWORD	b7	:1;	//!< Bit 7
+		LWORD	b8	:1;	//!< Bit 8
+		LWORD	b9	:1;	//!< Bit 9
+		LWORD	b10	:1;	//!< Bit 10
+		LWORD	b11	:1;	//!< Bit 11
+		LWORD	b12	:1;	//!< Bit 12
+		LWORD	b13	:1;	//!< Bit 13
+		LWORD	b14	:1;	//!< Bit 14
+		LWORD	b15	:1;	//!< Bit 15
+		LWORD	b16	:1;	//!< Bit 16
+		LWORD	b17	:1;	//!< Bit 17
+		LWORD	b18	:1;	//!< Bit 18
+		LWORD	b19	:1;	//!< Bit 19
+		LWORD	b20	:1;	//!< Bit 20
+		LWORD	b21	:1;	//!< Bit 21
+		LWORD	b22	:1;	//!< Bit 22
+		LWORD	b23	:1;	//!< Bit 23
+		LWORD	b24	:1;	//!< Bit 24
+		LWORD	b25	:1;	//!< Bit 25
+		LWORD	b26	:1;	//!< Bit 26
+		LWORD	b27	:1;	//!< Bit 27
+		LWORD	b28	:1;	//!< Bit 28
+		LWORD	b29	:1;	//!< Bit 29
+		LWORD	b30	:1;	//!< Bit 30
+		LWORD	b31	:1;	//!< Bit 31
+		LWORD	b32	:1;	//!< Bit 32
+		LWORD	b33	:1;	//!< Bit 33
+		LWORD	b34	:1;	//!< Bit 34
+		LWORD	b35	:1;	//!< Bit 35
+		LWORD	b36	:1;	//!< Bit 36
+		LWORD	b37	:1;	//!< Bit 37
+		LWORD	b38	:1;	//!< Bit 38
+		LWORD	b39	:1;	//!< Bit 39
+		LWORD	b40	:1;	//!< Bit 40
+		LWORD	b41	:1;	//!< Bit 41
+		LWORD	b42	:1;	//!< Bit 42
+		LWORD	b43	:1;	//!< Bit 43
+		LWORD	b44	:1;	//!< Bit 44
+		LWORD	b45	:1;	//!< Bit 45
+		LWORD	b46	:1;	//!< Bit 46
+		LWORD	b47	:1;	//!< Bit 47
+		LWORD	b48	:1;	//!< Bit 48
+		LWORD	b49	:1;	//!< Bit 49
+		LWORD	b50	:1;	//!< Bit 50
+		LWORD	b51	:1;	//!< Bit 51
+		LWORD	b52	:1;	//!< Bit 52
+		LWORD	b53	:1;	//!< Bit 53
+		LWORD	b54	:1;	//!< Bit 54
+		LWORD	b55	:1;	//!< Bit 55
+		LWORD	b56	:1;	//!< Bit 56
+		LWORD	b57	:1;	//!< Bit 57
+		LWORD	b58	:1;	//!< Bit 58
+		LWORD	b59	:1;	//!< Bit 59
+		LWORD	b60	:1;	//!< Bit 60
+		LWORD	b61	:1;	//!< Bit 61
+		LWORD	b62	:1;	//!< Bit 62
+		LWORD	b63	:1;	//!< Bit 63 (MSB)
+	#else
+		LWORD	b63	:1;	//!< Bit 63 (MSB)
+		LWORD	b62	:1;	//!< Bit 62
+		LWORD	b61	:1;	//!< Bit 61
+		LWORD	b60	:1;	//!< Bit 60
+		LWORD	b59	:1;	//!< Bit 59
+		LWORD	b58	:1;	//!< Bit 58
+		LWORD	b57	:1;	//!< Bit 57
+		LWORD	b56	:1;	//!< Bit 56
+		LWORD	b55	:1;	//!< Bit 55
+		LWORD	b54	:1;	//!< Bit 54
+		LWORD	b53	:1;	//!< Bit 53
+		LWORD	b52	:1;	//!< Bit 52
+		LWORD	b51	:1;	//!< Bit 51
+		LWORD	b50	:1;	//!< Bit 50
+		LWORD	b49	:1;	//!< Bit 49
+		LWORD	b48	:1;	//!< Bit 48
+		LWORD	b47	:1;	//!< Bit 47
+		LWORD	b46	:1;	//!< Bit 46
+		LWORD	b45	:1;	//!< Bit 45
+		LWORD	b44	:1;	//!< Bit 44
+		LWORD	b43	:1;	//!< Bit 43
+		LWORD	b42	:1;	//!< Bit 42
+		LWORD	b41	:1;	//!< Bit 41
+		LWORD	b40	:1;	//!< Bit 40
+		LWORD	b39	:1;	//!< Bit 39
+		LWORD	b38	:1;	//!< Bit 38
+		LWORD	b37	:1;	//!< Bit 37
+		LWORD	b36	:1;	//!< Bit 36
+		LWORD	b35	:1;	//!< Bit 35
+		LWORD	b34	:1;	//!< Bit 34
+		LWORD	b33	:1;	//!< Bit 33
+		LWORD	b32	:1;	//!< Bit 32
+		LWORD	b31	:1;	//!< Bit 31
+		LWORD	b30	:1;	//!< Bit 30
+		LWORD	b29	:1;	//!< Bit 29
+		LWORD	b28	:1;	//!< Bit 28
+		LWORD	b27	:1;	//!< Bit 27
+		LWORD	b26	:1;	//!< Bit 26
+		LWORD	b25	:1;	//!< Bit 25
+		LWORD	b24	:1;	//!< Bit 24
+		LWORD	b23	:1;	//!< Bit 23
+		LWORD	b22	:1;	//!< Bit 22
+		LWORD	b21	:1;	//!< Bit 21
+		LWORD	b20	:1;	//!< Bit 20
+		LWORD	b19	:1;	//!< Bit 19
+		LWORD	b18	:1;	//!< Bit 18
+		LWORD	b17	:1;	//!< Bit 17
+		LWORD	b16	:1;	//!< Bit 16
+		LWORD	b15	:1;	//!< Bit 15
+		LWORD	b14	:1;	//!< Bit 14
+		LWORD	b13	:1;	//!< Bit 13
+		LWORD	b12	:1;	//!< Bit 12
+		LWORD	b11	:1;	//!< Bit 11
+		LWORD	b10	:1;	//!< Bit 10
+		LWORD	b9	:1;	//!< Bit 9
+		LWORD	b8	:1;	//!< Bit 8
+		LWORD	b7	:1;	//!< Bit 7
+		LWORD	b6	:1;	//!< Bit 6
+		LWORD	b5	:1;	//!< Bit 5
+		LWORD	b4	:1;	//!< Bit 4
+		LWORD	b3	:1;	//!< Bit 3
+		LWORD	b2	:1;	//!< Bit 2
+		LWORD	b1	:1;	//!< Bit 1
+		LWORD	b0	:1;	//!< Bit 0 (LSB)
+	#endif
 } sBitfield64;
 
 
@@ -204,7 +363,7 @@ typedef struct StructBitfield64{
 /*!\union UnionByte
 ** \brief Union for BYTE
 **/
-typedef union UnionByte{
+typedef union UnionByte {
 	BYTE		Byte;	//!< BYTE
 	sBitfield8	Bits;	//!< Bits
 } uByte;
@@ -212,12 +371,17 @@ typedef union UnionByte{
 /*!\union UnionWord
 ** \brief Union for WORD
 **/
-typedef union UnionWord{
+typedef union UnionWord {
 	WORD			Word;		//!< 16b
 	BYTE			Byte[2];	//!< Bytes tab
 	struct {
-		BYTE		B0 :8;		//!< LSByte
-		BYTE		B1 :8;		//!< MSByte
+		#ifdef LITTLE_ENDIAN
+			BYTE		B0 :8;		//!< LSByte
+			BYTE		B1 :8;		//!< MSByte
+		#else
+			BYTE		B1 :8;		//!< MSByte
+			BYTE		B0 :8;		//!< LSByte
+		#endif
 	} Bytes;
 	sBitfield16		Bits;		//!< Bits
 } uWord;
@@ -225,19 +389,31 @@ typedef union UnionWord{
 /*!\union UnionDWord
 ** \brief Union for DWORD
 **/
-typedef union UnionDWord{
+typedef union UnionDWord {
 	DWORD			DWord;		//!< 32b
 	WORD			Word[2];	//!< Words tab
 	BYTE			Byte[4];	//!< Bytes tab
 	struct {
-		WORD		W0 :16;		//!< W0 LSWord
-		WORD		W1 :16;		//!< W1 MSWord
+		#ifdef LITTLE_ENDIAN
+			WORD	W0 :16;		//!< W0 LSWord
+			WORD	W1 :16;		//!< W1 MSWord
+		#else
+			WORD	W1 :16;		//!< W1 MSWord
+			WORD	W0 :16;		//!< W0 LSWord
+		#endif
 	} Words;
 	struct {
-		BYTE		B0 :8;		//!< B0 LSByte
-		BYTE		B1 :8;		//!< B1
-		BYTE		B2 :8;		//!< B2
-		BYTE		B3 :8;		//!< B3 MSByte
+		#ifdef LITTLE_ENDIAN
+			BYTE	B0 :8;		//!< B0 LSByte
+			BYTE	B1 :8;		//!< B1
+			BYTE	B2 :8;		//!< B2
+			BYTE	B3 :8;		//!< B3 MSByte
+		#else
+			BYTE	B3 :8;		//!< B3 MSByte
+			BYTE	B2 :8;		//!< B2
+			BYTE	B1 :8;		//!< B1
+			BYTE	B0 :8;		//!< B0 LSByte
+		#endif
 	} Bytes;
 	sBitfield32		Bits;		//!< Bits
 } uDWord;
@@ -245,30 +421,53 @@ typedef union UnionDWord{
 /*!\union UnionLWord
 ** \brief Union for LWORD
 **/
-typedef union UnionLWord{
+typedef union UnionLWord {
 	LWORD			LWord;		//!< 64b
 	DWORD			DWord[2];	//!< DWords tab
 	WORD			Word[4];	//!< Words tab
 	BYTE			Byte[8];	//!< Bytes tab
 	struct {
-		DWORD		D0 :32;		//!< DW0 LSDWord
-		DWORD		D1 :32;		//!< DW1 MSDWord
+		#ifdef LITTLE_ENDIAN
+			DWORD	D0 :32;		//!< DW0 LSDWord
+			DWORD	D1 :32;		//!< DW1 MSDWord
+		#else
+			DWORD	D1 :32;		//!< DW1 MSDWord
+			DWORD	D0 :32;		//!< DW0 LSDWord
+		#endif
 	} DWords;
 	struct {
-		WORD		W0 :16;		//!< W0 LSWord
-		WORD		W1 :16;		//!< W1
-		WORD		W2 :16;		//!< W2
-		WORD		W3 :16;		//!< W3 MSWord
+		#ifdef LITTLE_ENDIAN
+			WORD	W0 :16;		//!< W0 LSWord
+			WORD	W1 :16;		//!< W1
+			WORD	W2 :16;		//!< W2
+			WORD	W3 :16;		//!< W3 MSWord
+		#else
+			WORD	W3 :16;		//!< W3 MSWord
+			WORD	W2 :16;		//!< W2
+			WORD	W1 :16;		//!< W1
+			WORD	W0 :16;		//!< W0 LSWord
+		#endif
 	} Words;
 	struct {
-		BYTE		B0 :8;		//!< B0 LSByte
-		BYTE		B1 :8;		//!< B1
-		BYTE		B2 :8;		//!< B2
-		BYTE		B3 :8;		//!< B3
-		BYTE		B4 :8;		//!< B4
-		BYTE		B5 :8;		//!< B5
-		BYTE		B6 :8;		//!< B6
-		BYTE		B7 :8;		//!< B7 MSByte
+		#ifdef LITTLE_ENDIAN
+			BYTE	B0 :8;		//!< B0 LSByte
+			BYTE	B1 :8;		//!< B1
+			BYTE	B2 :8;		//!< B2
+			BYTE	B3 :8;		//!< B3
+			BYTE	B4 :8;		//!< B4
+			BYTE	B5 :8;		//!< B5
+			BYTE	B6 :8;		//!< B6
+			BYTE	B7 :8;		//!< B7 MSByte
+		#else
+			BYTE	B7 :8;		//!< B7 MSByte
+			BYTE	B6 :8;		//!< B6
+			BYTE	B5 :8;		//!< B5
+			BYTE	B4 :8;		//!< B4
+			BYTE	B3 :8;		//!< B3
+			BYTE	B2 :8;		//!< B2
+			BYTE	B1 :8;		//!< B1
+			BYTE	B0 :8;		//!< B0 LSByte
+		#endif
 	} Bytes;
 	sBitfield64		Bits;		//!< Bits
 } uLWord;
