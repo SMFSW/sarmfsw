@@ -7,6 +7,7 @@
 #######################################
 eState	KEYWORD1
 eEdge	KEYWORD1
+eEndian	KEYWORD1
 
 BYTE	KEYWORD1
 WORD	KEYWORD1
@@ -105,6 +106,8 @@ conv8upto16Bits	KEYWORD2
 conv16upto32Bits	KEYWORD2
 conv32upto64Bits	KEYWORD2
 
+testEndian_basic	KEYWORD2
+testEndian_full	KEYWORD2
 SWAP_END16B	KEYWORD2
 SWAP_END32B	KEYWORD2
 SWAP_END64B	KEYWORD2

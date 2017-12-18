@@ -24,6 +24,7 @@ SOFTWARE.
 
 * arm_typedefs: endianness handling for bitfields and unions
 * arm_inlines: added L & LL qualifiers when needed for compatibility with <32b architectures
+* arm_inlines: added testEndian basic & full inlines
 * arm_macros: added SWAP_TYPE macro for any simple typedef swapping
 * arm_macros: added missing SWAP_LWORD, SWAP_FLOAT & SWAP_DOUBLE macros
 * README: added list and description of special symbols to change library behavior 
