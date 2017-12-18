@@ -24,23 +24,28 @@
 /****************************************************************/
 
 
-#if defined(__BYTE_ORDER) && __BYTE_ORDER == __BIG_ENDIAN ||		\
-	defined(__BIG_ENDIAN__) ||										\
-	defined(__ARMEB__) ||											\
-	defined(__THUMBEB__) ||											\
-	defined(__AARCH64EB__) ||										\
-	defined(_MIBSEB) || defined(__MIBSEB) || defined(__MIBSEB__)
+#if 	defined(__BYTE_ORDER) && (__BYTE_ORDER == __BIG_ENDIAN) ||								\
+		defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__) ||					\
+		defined(__FLOAT_WORD_ORDER__) && (__FLOAT_WORD_ORDER__ == __ORDER_BIG_ENDIAN__) ||		\
+		defined(__BIG_ENDIAN__) ||																\
+		defined(__ARMEB__) || defined(__THUMBEB__) || defined(__AARCH64EB__) ||					\
+		defined(_MIPSEB) || defined(__MIPSEB) || defined(__MIPSEB__)
 	#ifndef BIG_ENDIAN
 		#define BIG_ENDIAN		// Big-endian target
 	#endif
-#elif defined(__BYTE_ORDER) && __BYTE_ORDER == __LITTLE_ENDIAN ||	\
-	defined(__LITTLE_ENDIAN__) ||									\
-	defined(__ARMEL__) ||											\
-	defined(__THUMBEL__) ||											\
-	defined(__AARCH64EL__) ||										\
-	defined(_MIPSEL) || defined(__MIPSEL) || defined(__MIPSEL__)
+#elif	defined(__BYTE_ORDER) && (__BYTE_ORDER == __LITTLE_ENDIAN) ||							\
+		defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__) ||				\
+		defined(__FLOAT_WORD_ORDER__) && (__FLOAT_WORD_ORDER__ == __ORDER_LITTLE_ENDIAN__) ||	\
+		defined(__LITTLE_ENDIAN__) ||															\
+		defined(__ARMEL__) || defined(__THUMBEL__) || defined(__AARCH64EL__) ||					\
+		defined(_MIPSEL) || defined(__MIPSEL) || defined(__MIPSEL__)
 	#ifndef LITTLE_ENDIAN
 		#define LITTLE_ENDIAN	// Little-endian target
+	#endif
+#elif	defined(__BYTE_ORDER) && (__BYTE_ORDER == __PDP_ENDIAN)
+	#warning "Unfortunately, easy-access typedefs not handled by the sarmfw library!"
+	#ifndef PDP_ENDIAN
+		#define PDP_ENDIAN		// Little-endian (word swapped) target
 	#endif
 #else
 	#warning "Unknown endianness, please define LITTLE_ENDIAN or BIG_ENDIAN symbol to ensure behavior!"
