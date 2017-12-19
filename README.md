@@ -16,7 +16,7 @@ Library has been updated to become compatible with Arduino platform
 * BIG_ENDIAN: Define this symbol if using big endian target architecture if not automatically recognized (in case of warning message displayed)
 * LITTLE_ENDIAN: Define this symbol if using little endian target architecture if not automatically recognized (in case of warning message displayed)
 * REVERSE_BITFIELD: By default biftfields are stored from lsb to msb; if not the case with the compiler, use a pragma or define this symbol
-* I_FIND_BINARY_HEADER_USEFULL: For Arduino platform, if using defines from binary.h, define this symbol (not recommended, use 0bxxx for binary instead)
+* I_FIND_BINARY_HEADER_USEFUL: For Arduino platform, if using defines from binary.h, define this symbol (not recommended, use 0bxxx for binary instead)
 
 ## Documentation
 

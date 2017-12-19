@@ -8,7 +8,7 @@
 **			try to find a compiler directive or pragma to reverse bitfield order.
 **			If not available, define REVERSE_BITFIELD symbol at project level.
 ** \warning	For Arduino platform, some binary.h definitions needs to be undefined,
-			If you find them useful, define I_FIND_BINARY_HEADER_USEFULL in project to redefine them
+			If you find them useful, define I_FIND_BINARY_HEADER_USEFUL in project to redefine them
 			Please note, B0 & B1 Bytes sub-structures of sBitfieldXX will not be available anymore
 */
 /****************************************************************/
@@ -43,7 +43,7 @@
 		#define LITTLE_ENDIAN	// Little-endian target
 	#endif
 #elif	defined(__BYTE_ORDER) && (__BYTE_ORDER == __PDP_ENDIAN)
-	#warning "Unfortunately, easy-access typedefs not handled by the sarmfw library!"
+	#warning "Unfortunately, easy-access typedefs for PDP Endian not handled by the sarmfw library!"
 	#ifndef PDP_ENDIAN
 		#define PDP_ENDIAN		// Little-endian (word swapped) target
 	#endif
@@ -370,7 +370,7 @@ typedef struct StructBitfield64 {
 
 
 #if defined(ARDUINO)
-	// Undef binary.h definitions used here
+	// Undefine binary.h definitions used here
 	#undef B0
 	#undef B1
 #endif /* defined(ARDUINO) */
@@ -392,11 +392,11 @@ typedef union UnionWord {
 	BYTE			Byte[2];	//!< Bytes tab
 	struct {
 		#ifdef LITTLE_ENDIAN
-			BYTE		B0 :8;		//!< LSByte
-			BYTE		B1 :8;		//!< MSByte
+			BYTE	B0 :8;		//!< LSByte
+			BYTE	B1 :8;		//!< MSByte
 		#else
-			BYTE		B1 :8;		//!< MSByte
-			BYTE		B0 :8;		//!< LSByte
+			BYTE	B1 :8;		//!< MSByte
+			BYTE	B0 :8;		//!< LSByte
 		#endif
 	} Bytes;
 	sBitfield16		Bits;		//!< Bits
@@ -490,8 +490,8 @@ typedef union UnionLWord {
 
 
 #if defined(ARDUINO)
-#if defined(I_FIND_BINARY_HEADER_USEFULL)
-	// Redef binary.h definitions used here
+#if defined(I_FIND_BINARY_HEADER_USEFUL)
+	// Redefine binary.h definitions used here
 	#define B0 0
 	#define B1 1
 #endif /* defined(I_FIND_BINARY_HEADER_USEFULL) */
