@@ -1,7 +1,6 @@
 /*!\file arm_macros.h
 ** \author SMFSW
-** \date 2017
-** \copyright MIT (c) 2017, SMFSW
+** \copyright MIT (c) 2017-2018, SMFSW
 ** \brief ARM common macros
 */
 /****************************************************************/
@@ -22,6 +21,19 @@
 #define pNull				(void *) 0		//!< Null pointer -> same as NULL in stdlib.h
 #define	charNUL				'\0'			//!< Null Char
 
+
+#ifndef True
+	#define	True			true			//!< \b True alias for \b true
+#endif
+#ifndef False
+	#define	False			false			//!< \b False alias for \b false
+#endif
+#ifndef TRUE
+	#define	TRUE			true			//!< \b TRUE alias for \b true
+#endif
+#ifndef FALSE
+	#define	FALSE			false			//!< \b FALSE alias for \b false
+#endif
 
 //!\warning this macro is optimized only when used with \b b with a static value
 #define LSHIFT(v, b)		((v) * (1UL << b))											//!< Shift \b v \b b bits left (up to 31b)

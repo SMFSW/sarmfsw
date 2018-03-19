@@ -1,7 +1,6 @@
 /*!\file arm_typedefs.h
 ** \author SMFSW
-** \date 2017
-** \copyright MIT (c) 2017, SMFSW
+** \copyright MIT (c) 2017-2018, SMFSW
 ** \brief ARM common typedefs
 ** \warning	Endianness for unions shall be checked following target / compiler to avoid potential headaches
 ** \warning sBitfieldXX are defined from lsb to msb as most compiler does by default; if it's not the case
@@ -67,9 +66,10 @@ typedef	int64_t		SLWORD;		//!< Signed lWord typedef (64bits)
 ** \brief Activation state On, Off
 **/
 typedef enum eState {
-	Off = 0U,	//!< Off / Clear
+	Off = 0U,	//!< Off / Reset
 	On = 1U		//!< On / Set
 } eState;
+
 
 /*!\enum eEdge
 ** \brief Signal Edges
@@ -79,6 +79,27 @@ typedef enum eEdge {
 	Rising,		//!< Rising edge
 	Falling		//!< Falling edge
 } eEdge;
+
+
+/*!\enum eGPIOState
+** \brief GPIO possible states/actions enumeration
+**/
+typedef enum eGPIOState {
+	Reset = 0,	//!< Reset State
+	Set,		//!< Set State
+	Toggle		//!< Toggle Output
+	//! \note Toggle is only GPIO output related
+} eGPIOState;
+
+/*!\enum GPIOPull
+** \brief GPIO possible pull resistor configuration
+**/
+typedef enum eGPIOPull {
+	PullDown = 0,	//!< GPIO with pull down
+	PullUp,			//!< GPIO with pull up
+	NoPull			//!< GPIO without pull
+} eGPIOPull;
+
 
 /*!\enum eEndian
 ** \brief Core endian

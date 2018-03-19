@@ -30,7 +30,7 @@ See [release notes](https://github.com/SMFSW/sarmfsw/ReleaseNotes.md)
 
 The MIT License (MIT)
 
-Copyright (c) 2017 SMFSW (Sebastien Bizien)
+Copyright (c) 2017-2018 SMFSW (Sebastien Bizien)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

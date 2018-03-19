@@ -2,7 +2,7 @@
 
 The MIT License (MIT)
 
-Copyright (c) 2017 SMFSW (Sebastien Bizien)
+Copyright (c) 2017-2018 SMFSW (Sebastien Bizien)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,11 +23,14 @@ SOFTWARE.
 ## v3.2
 
 * arm_typedefs: endianness handling for bitfields and unions
+* arm_typedefs: added eGPIOState & eGPIOPull enums
 * arm_inlines: added L & LL qualifiers when needed for compatibility with <32b architectures
 * arm_inlines: added testEndian basic & full inlines
 * arm_macros: added SWAP_TYPE macro for any simple typedef swapping
 * arm_macros: added missing SWAP_LWORD, SWAP_FLOAT & SWAP_DOUBLE macros
-* README: added list and description of special symbols to change library behavior 
+* arm_macros: added aliases for True, False, TRUE, FALSE
+* README: added list and description of special symbols to change library behavior
+* keywords.txt: Added new and enum litteral keywords
 
 ## v3.1
 
