@@ -1,8 +1,7 @@
 /*!\file arm_hal_peripheral.h
 ** \warning for STM32, HAL shall be configured to generate as pairs of h/c files
 ** \author SMFSW
-** \date 2017
-** \copyright MIT (c) 2017, SMFSW
+** \copyright MIT (c) 2017-2018, SMFSW
 ** \brief ARM HAL peripheral includes
 */
 /****************************************************************/
@@ -13,7 +12,7 @@
 	extern "C" {
 #endif
 
-#include "arm_cmsis.h"			// HAL & Drivers depending platform
+#include "arm_cmsis.h"			// HAL & Drivers (following defined platform)
 /****************************************************************/
 
 

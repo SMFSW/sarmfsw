@@ -1,7 +1,6 @@
 /*!\file arm_inlines.h
 ** \author SMFSW
-** \date 2017
-** \copyright MIT (c) 2017, SMFSW
+** \copyright MIT (c) 2017-2018, SMFSW
 ** \brief ARM common inlines
 */
 /****************************************************************/
@@ -12,12 +11,12 @@
 	extern "C" {
 #endif
 
-#include "arm_attributes.h"		// Attributes depending compiler
+#include "arm_attributes.h"		// Common attributes (following compiler)
 #include "arm_typedefs.h"		// Common typedefs
 #include "arm_errors.h"			// Common errors
 #include "arm_macros.h"			// Common macros
-#include "arm_cmsis.h"			// HAL & Drivers depending platform
-#include "arm_hal_peripheral.h"	// HAL peripherals includes
+#include "arm_cmsis.h"			// HAL & Drivers (following defined platform)
+#include "arm_hal_peripheral.h"	// HAL peripherals includes (following defined platform)
 /****************************************************************/
 
 
@@ -50,6 +49,61 @@ __INLINE bool INLINE__ TPSINF_MS(const DWORD last, const DWORD time) {
 	register uint32_t hNow = HALTicks();
 	uint32_t diff = (hNow >= last) ? hNow - last : (HAL_MAX_TICKS - last) + hNow;
 	return (diff < (DWORD) (time * HAL_MS_TICKS_FACTOR)); }
+
+
+/******************************/
+/***  BINARY MANIPULATIONS  ***/
+/******************************/
+
+/*!\brief Create specified number of bits mask
+** \note function limited to arm native 32b
+** \param[in] bits - Number of bits to create mask
+** \return Mask value for specified number of bits
+**/
+__INLINE DWORD maskBits(const BYTE bits) {
+	const BYTE	nb_bits = 32;
+	uint8_t		nb = (bits > nb_bits) ? nb_bits : bits;
+	DWORD		mask = 0;
+	for (unsigned int i = 0 ; i < nb ; i++)	mask |= 1UL << i;
+	return mask; }
+
+/*!\brief Check the number of clear/set bits in a variable
+** \note function limited to arm native 32b
+** \param[in] val - Variable to check for bits
+** \param[in] bits - Number of bits to check
+** \param[in] state - Logic state to check
+** \return Number of state specified bits in val
+**/
+__INLINE BYTE nbBitsState(const DWORD val, const BYTE bits, const bool state) {
+	const BYTE	nb_bits = 32;
+	uint8_t		nb = (bits > nb_bits) ? nb_bits : bits;
+	BYTE		ret = 0;
+	for (unsigned int i = 0 ; i < nb ; i++)	{ if (val & (1UL << i))	ret++; }
+	return state ? ret : nb - ret; }
+
+/*!\brief Get power of 2 of the most significant set bit
+** \param[in] val - Variable to check for bits
+** \return Power of 2 of most significant bit set
+** \retval >=0: Index (power of 2) of most significant bit set
+** \retval -1: no bit set
+**/
+__INLINE SBYTE getMSBitSet(const DWORD val) {
+	const BYTE	nb_bits = 32;
+	for (int i = nb_bits - 1 ; i >= 0 ; i--)	{ if (val & (1UL << i))	return i; }
+	return -1; }
+
+/*!\brief Swap specified number of bits in value (mirroring bits)
+** \note function limited to arm native 32b
+** \param[in] val - Value to swap
+** \param[in] bits - Number of bits to swap
+** \return Swapped binary value
+**/
+__INLINE DWORD swapBits(const DWORD val, const BYTE bits) {
+	const BYTE	nb_bits = 32;
+	uint8_t		nb = (bits > nb_bits ? nb_bits : bits) - 1;
+	DWORD		swap = 0;
+	for (int i = nb ; i >= 0 ; i--)	{ if (val & (1UL << i))	swap |= 1UL << (nb - i); }
+	return swap; }
 
 
 /*************************************************/
@@ -164,40 +218,29 @@ __INLINE LWORD conv32upto64Bits(const DWORD val, const BYTE nb) {
 	return ((LWORD) ((LWORD) (val << nb) + (LWORD) (val & (0xFFFFFFFFUL >> (32-nb))))); }
 
 
-/*************************/
-/***  ENDIANS TESTING  ***/
-/*************************/
+/************************/
+/***  VALUES TESTING  ***/
+/************************/
 
-/*!\brief Test Core endian
-** \return Endian type
+/*!\brief Checks if val given as parameter is in tolerance
+** \param[in] val - Value to check
+** \param[in] ref - Reference value
+** \param[in] tolerance - Tolerance on reference value (in percent)
+** \return true if val is inTolerance
 **/
-__INLINE eEndian testEndian_basic(void) {
-	WORD x = 0x100;
-	return (* (CHAR *) (&x)) ? Endian_big : Endian_little; }
+__INLINE bool inTolerance(const SDWORD val, const SDWORD ref, float tolerance) {
+	tolerance = min(100.0f, max(0.0f, tolerance));
+	DWORD margin = (DWORD) (ref * (tolerance / 100.0f));
+	return ((val <= (SDWORD) (ref + margin)) && (val >= (SDWORD) (ref - margin))); }
 
-/*!\brief Test Core endian (full, recognizing mid endians too)
-** \return Endian type
+/*!\brief Checks if val given as parameter is in range
+** \param[in] val - Value to check
+** \param[in] low - Low range boundary
+** \param[in] high - High range boundary
+** \return true if val is inRange
 **/
-__INLINE eEndian testEndian_full(void) {
-	union {
-		LWORD	dword;
-		BYTE	byte[sizeof(LWORD)];
-	} tst;
-
-	tst.byte[0] = 1;
-	tst.byte[1] = 2;
-	tst.byte[2] = 3;
-	tst.byte[3] = 4;
-
-	switch (tst.dword)
-	{
-		case 0x01020304UL:	return Endian_big;
-		case 0x04030201UL:	return Endian_little;
-		case 0x03040102UL:	return Endian_mid_big;
-		case 0x02010403UL:	return Endian_mid_little;
-		default:      		return Endian_unknown;
-	}
-}
+__INLINE bool INLINE__ inRange(const SDWORD val, const SDWORD low, const SDWORD high) {
+	return ((val <= high) && (val >= low)); }
 
 
 /*****************************/
@@ -248,29 +291,40 @@ __INLINE void INLINE__ SWAP_END64B_TAB(LWORD tab[], const WORD nb) {
 	for (unsigned int i = 0 ; i < nb ; i++)	tab[i] = SWAP_END64B(tab[i]); }
 
 
-/************************/
-/***  VALUES TESTING  ***/
-/************************/
+/*************************/
+/***  ENDIANS TESTING  ***/
+/*************************/
 
-/*!\brief Checks if val given as parameter is in tolerance
-** \param[in] val - Value to check
-** \param[in] ref - Reference value
-** \param[in] tolerance - Tolerance on reference value (in percent)
-** \return true if val is inTolerance
+/*!\brief Test Core endian
+** \return Endian type
 **/
-__INLINE bool inTolerance(const SDWORD val, const SDWORD ref, float tolerance) {
-	tolerance = min(100.0f, max(0.0f, tolerance));
-	DWORD margin = (DWORD) (ref * (tolerance / 100.0f));
-	return ((val <= (SDWORD) (ref + margin)) && (val >= (SDWORD) (ref - margin))); }
+__INLINE eEndian testEndian_basic(void) {
+	WORD x = 0x100;
+	return (* (CHAR *) (&x)) ? Endian_big : Endian_little; }
 
-/*!\brief Checks if val given as parameter is in range
-** \param[in] val - Value to check
-** \param[in] low - Low range boundary
-** \param[in] high - High range boundary
-** \return true if val is inRange
+/*!\brief Test Core endian (full, recognizing mid endians too)
+** \return Endian type
 **/
-__INLINE bool INLINE__ inRange(const SDWORD val, const SDWORD low, const SDWORD high) {
-	return ((val <= high) && (val >= low)); }
+__INLINE eEndian testEndian_full(void) {
+	union {
+		LWORD	dword;
+		BYTE	byte[sizeof(LWORD)];
+	} tst;
+
+	tst.byte[0] = 1;
+	tst.byte[1] = 2;
+	tst.byte[2] = 3;
+	tst.byte[3] = 4;
+
+	switch (tst.dword)
+	{
+		case 0x01020304UL:	return Endian_big;
+		case 0x04030201UL:	return Endian_little;
+		case 0x03040102UL:	return Endian_mid_big;
+		case 0x02010403UL:	return Endian_mid_little;
+		default:      		return Endian_unknown;
+	}
+}
 
 
 /************************/

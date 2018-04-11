@@ -1,7 +1,6 @@
 /*!\file arm_chip_ino.h
 ** \author SMFSW
-** \date 2017
-** \copyright MIT (c) 2017, SMFSW
+** \copyright MIT (c) 2017-2018, SMFSW
 ** \brief Common macros for Arduino
 */
 /****************************************************************/
@@ -12,10 +11,10 @@
 	extern "C" {
 #endif
 
-#include "arm_attributes.h"		// Common attributes depending compiler
+#include "arm_attributes.h"		// Common attributes (following compiler)
 #include "arm_typedefs.h"		// Common typedefs
 #include "arm_errors.h"			// Common errors
-#include "arm_cmsis.h"			// HAL & Drivers depending platform
+#include "arm_cmsis.h"			// HAL & Drivers (following defined platform)
 /****************************************************************/
 #if ARDUINO > 22
 	#include "Arduino.h"		// Common Arduino definitions

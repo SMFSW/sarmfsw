@@ -1,7 +1,6 @@
 /*!\file arm_stdclib.h
 ** \author SMFSW
-** \date 2017
-** \copyright MIT (c) 2017, SMFSW
+** \copyright MIT (c) 2017-2018, SMFSW
 ** \brief ARM common standard c library wrapper macros
 */
 /****************************************************************/
@@ -26,10 +25,6 @@
 
 
 #define VerboseInc(x)		(puts("Incrementing " #x), (x)++)		//!< Increment example using puts
-
-
-/*** Test Macros ***/
-#define TestMalloc(x)		((x) = malloc(sizeof(*x)), assert(x))	//!< Asserted malloc
 
 
 /****************************************************************/

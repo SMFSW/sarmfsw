@@ -1,8 +1,7 @@
 /*!\file arm_errors.h
 ** \author SMFSW
-** \date 2017
-** \copyright MIT (c) 2017, SMFSW
-** \brief ARM user errors declarations
+** \copyright MIT (c) 2017-2018, SMFSW
+** \brief ARM user errors
 **/
 /****************************************************************/
 #ifndef __ARM_ERROR_H

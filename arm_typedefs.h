@@ -2,13 +2,16 @@
 ** \author SMFSW
 ** \copyright MIT (c) 2017-2018, SMFSW
 ** \brief ARM common typedefs
-** \warning	Endianness for unions shall be checked following target / compiler to avoid potential headaches
-** \warning sBitfieldXX are defined from lsb to msb as most compiler does by default; if it's not the case
-**			try to find a compiler directive or pragma to reverse bitfield order.
-**			If not available, define REVERSE_BITFIELD symbol at project level.
-** \warning	For Arduino platform, some binary.h definitions needs to be undefined,
-			If you find them useful, define I_FIND_BINARY_HEADER_USEFUL in project to redefine them
-			Please note, B0 & B1 Bytes sub-structures of sBitfieldXX will not be available anymore
+** \warning	Endianness for unions shall be checked following target / compiler to avoid potential headaches!
+** \warning sBitfieldXX are defined from lsb to msb as most compiler does by default; if it's not the case,
+**			try to find a compiler directive or pragma to reverse bitfield order;
+**			if not available, define REVERSE_BITFIELD symbol at project level.
+** \warning	For Arduino platform, some binary.h definitions needs to be undefined.
+**			If you find them useful, define I_FIND_BINARY_HEADER_USEFUL in project to redefine them.
+**			Please note, B0 & B1 Bytes sub-structures of sBitfieldXX will not be available anymore
+**			(please refer to following note)
+** \note	For Arduino platform, prefer ANSI-C(pp) 0b notation for binary representation,
+** 			instead of using derived defines from Arduino binary.h
 */
 /****************************************************************/
 #ifndef __ARM_TYPEDEFS_H
@@ -91,7 +94,7 @@ typedef enum eGPIOState {
 	//! \note Toggle is only GPIO output related
 } eGPIOState;
 
-/*!\enum GPIOPull
+/*!\enum eGPIOPull
 ** \brief GPIO possible pull resistor configuration
 **/
 typedef enum eGPIOPull {

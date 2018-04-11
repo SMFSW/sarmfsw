@@ -1,8 +1,16 @@
 /*!\file arm_cmsis.h
 ** \author SMFSW
-** \date 2017
-** \copyright MIT (c) 2017, SMFSW
+** \copyright MIT (c) 2017-2018, SMFSW
 ** \brief ARM link with CMSIS files
+** \warning Latest ARM chips might now be recognized; if not, define at project level:
+** 			- for STM32 families (STMicroelectronics):
+** 				- STM_FAMILY xy:
+** 					- x : f/l/h
+** 					- y : sub-family number
+** 			- for SAM families (Atmel):
+** 				- SAM_FAMILY xy(yy)
+** 			- for Other families (TI...):
+** 				- not implemented yet
 */
 /****************************************************************/
 #ifndef __ARM_CMSIS_H

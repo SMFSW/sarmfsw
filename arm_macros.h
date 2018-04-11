@@ -100,6 +100,10 @@
 #define FLOAT_TO_DEG(f)		((float) ((((f) > 1.0f ? 1.0f : (f)) < 0.0f ? 0.0f : (f)) * 360.0f))
 
 
+/*** Test Macros ***/
+#define malloc_assert(x)	((x) = malloc(sizeof(*x)), assert(x))	//!< Asserted malloc
+
+
 /****************************************************************/
 #ifdef __cplusplus
 	}

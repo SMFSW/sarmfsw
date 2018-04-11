@@ -1,8 +1,9 @@
 /*!\file arm_attributes.h
 ** \author SMFSW
-** \date 2017
-** \copyright MIT (c) 2017, SMFSW
+** \copyright MIT (c) 2017-2018, SMFSW
 ** \brief ARM common compilers attributes
+** \details Set attributes following compiler
+** \warning Cosmic compiler for STM32 attributes not implemented
 */
 /****************************************************************/
 #ifndef __ARM_ATTRIBUTES_H

@@ -1,7 +1,6 @@
 /*!\file arm_chip_sam.h
 ** \author SMFSW
-** \date 2017
-** \copyright MIT (c) 2017, SMFSW
+** \copyright MIT (c) 2017-2018, SMFSW
 ** \brief ARM common macros for Atmel SAM families
 ** \attention	On SAM families you should configure a timer to count for ms.
 **				A TIM peripheral shall be configured in ATMEL START (with a period of 1ms).
@@ -47,10 +46,10 @@
 	extern "C" {
 #endif
 
-#include "arm_attributes.h"			// Common attributes depending compiler
+#include "arm_attributes.h"			// Common attributes (following compiler)
 #include "arm_typedefs.h"			// Common typedefs
 #include "arm_errors.h"				// Common errors
-#include "arm_cmsis.h"				// HAL & Drivers depending platform
+#include "arm_cmsis.h"				// HAL & Drivers (following defined platform)
 /****************************************************************/
 #include "atmel_start_pins.h"		// Project pins definitions
 #include "err_codes.h"				// Atmel error codes

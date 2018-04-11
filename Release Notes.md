@@ -20,6 +20,16 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+## v3.3
+
+* arm_inlines: added some binary manipulation inlines
+* arm_macros: moved TestMalloc to arm_macros.h (renamed to malloc_assert)
+* arm_typedefs: Doxygen eGPIOState enum name fixed
+* arm_typedefs: Doxygen note added related to Arduino platform (for binary representation in binary.h)
+* sarmfsw.h: target names changed in enum
+* misc: typo fixes, Doxygen comments, notes & warnings added*
+* Release Notes.md: sections added
+
 ## v3.2
 
 * arm_typedefs: endianness handling for bitfields and unions
