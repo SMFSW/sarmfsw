@@ -1,0 +1,4 @@
+<map id="SWAP_END64B" name="SWAP_END64B">
+<area shape="rect" id="node2" href="$arm__inlines_8h.html#a33178bfe2a44506a79e74e63b745c359" title="Swap endians of the contents of a 32b value (little &#45;&gt; big, big &#45;&gt; little) " alt="" coords="177,5,298,32"/>
+<area shape="rect" id="node3" href="$arm__inlines_8h.html#aee4cd55d7169d1fbf0eaff78a9fa81e4" title="Swap endians of the contents of a 16b value (little &#45;&gt; big, big &#45;&gt; little) " alt="" coords="347,5,469,32"/>
+</map>

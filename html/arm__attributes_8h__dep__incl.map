@@ -1,0 +1,7 @@
+<map id="arm_attributes.h" name="arm_attributes.h">
+<area shape="rect" id="node2" href="$arm__chip__ino_8h.html" title="Common macros for Arduino. " alt="" coords="5,80,115,107"/>
+<area shape="rect" id="node3" href="$arm__chip__sam_8h.html" title="ARM common macros for Atmel SAM families. " alt="" coords="139,80,257,107"/>
+<area shape="rect" id="node4" href="$arm__chip__stm32_8h.html" title="ARM common macros for STM32. " alt="" coords="282,80,411,107"/>
+<area shape="rect" id="node5" href="$arm__inlines_8h.html" title="ARM common inlines. " alt="" coords="436,80,535,107"/>
+<area shape="rect" id="node6" href="$sarmfsw_8h.html" title="sarmfsw ARM common headers " alt="" coords="487,155,568,181"/>
+</map>

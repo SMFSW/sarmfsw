@@ -1,0 +1,8 @@
+<map id="arm_inlines.h" name="arm_inlines.h">
+<area shape="rect" id="node2" href="$arm__attributes_8h.html" title="ARM common compilers attributes. " alt="" coords="5,80,120,107"/>
+<area shape="rect" id="node3" href="$arm__typedefs_8h.html" title="ARM common typedefs. " alt="" coords="188,155,299,181"/>
+<area shape="rect" id="node6" href="$arm__errors_8h.html" title="ARM user errors. " alt="" coords="197,80,291,107"/>
+<area shape="rect" id="node7" href="$arm__macros_8h.html" title="ARM common macros. " alt="" coords="315,80,420,107"/>
+<area shape="rect" id="node8" href="$arm__cmsis_8h.html" title="ARM link with CMSIS files. " alt="" coords="465,155,561,181"/>
+<area shape="rect" id="node9" href="$arm__hal__peripheral_8h.html" title="ARM HAL peripheral includes. " alt="" coords="497,80,639,107"/>
+</map>
