@@ -22,6 +22,7 @@ SOFTWARE.
 
 ## v3.3
 
+* Adding support for unit tests and doxygen documentation generation with Travis CI
 * arm_inlines: added some binary manipulation inlines
 * arm_macros: moved TestMalloc to arm_macros.h (renamed to malloc_assert)
 * arm_typedefs: Doxygen eGPIOState enum name fixed
