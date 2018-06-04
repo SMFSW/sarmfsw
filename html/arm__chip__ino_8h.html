@@ -120,20 +120,26 @@ Enumerations</h2></td></tr>
 <tr class="memitem:a54c1cd171722e4b22b2ee97d084f7900"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900">eResetSource</a> { <br />
 &#160;&#160;<a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = 1, 
 <a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF, 
-<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = 1, 
-<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF, 
+<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = RESET_REASON_POR, 
+<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900af64bcf1bb1d174a2a924881b10ad7b63">RST_BODCORE</a> = RESET_REASON_BODCORE, 
 <br />
-&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = 1, 
+&#160;&#160;<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900aa13fbd8342254bba39e061c16c4d6101">RST_BODVDD</a> = RESET_REASON_BODVDD, 
+<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a7c7b4e219ec871bd20bfe1b65ab64e5d">RST_EXT</a> = RESET_REASON_EXT, 
+<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a40678c7575f6977727e7eebfb08e22d2">RST_WDT</a> = RESET_REASON_WDT, 
+<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a96beca7cd7bd787aa59fa01171d26e90">RST_SYST</a> = RESET_REASON_SYST, 
+<br />
+&#160;&#160;<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF, 
+<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = 1, 
 <a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a4c0091b55b47cca800d01a6a6442f586">RST_PIN</a>, 
 <a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a066003c79359a0b9bb25ea84ca4c9c6a">RST_SW</a>, 
-<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a58d541ad7dff9c6e770aa4aeffa3bcc4">RST_IWDG</a>, 
 <br />
-&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900ad38183e2f4809aa13b2c149b9158cdb1">RST_WWDG</a>, 
+&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a58d541ad7dff9c6e770aa4aeffa3bcc4">RST_IWDG</a>, 
+<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900ad38183e2f4809aa13b2c149b9158cdb1">RST_WWDG</a>, 
 <a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a33de1f2d7ec80d375553bd397b2b91f1">RST_LPWR</a>, 
 <a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a44373a6fa84a5148452e73e341c13056">RST_OBL</a>, 
-<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd1dd71f600c1c5266b2b269b1288c2e">RST_V18PWR</a>, 
 <br />
-&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF
+&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd1dd71f600c1c5266b2b269b1288c2e">RST_V18PWR</a>, 
+<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF
 <br />
  }<tr class="memdesc:a54c1cd171722e4b22b2ee97d084f7900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source of last reset.  <a href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900">More...</a><br /></td></tr>
 </td></tr>
@@ -141,6 +147,9 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aecd9f047d3bda51bde705ae3ed90596b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900">eResetSource</a> <a class="el" href="arm__attributes_8h.html#a78219eeb59c8d4ad79b22f3f2975ea57">INLINE__</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__ino_8h.html#aecd9f047d3bda51bde705ae3ed90596b">HAL_ResetSource</a> (void)</td></tr>
+<tr class="memdesc:aecd9f047d3bda51bde705ae3ed90596b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get and convert ARDUINO Reset Source to eResetSource.  <a href="#aecd9f047d3bda51bde705ae3ed90596b">More...</a><br /></td></tr>
+<tr class="separator:aecd9f047d3bda51bde705ae3ed90596b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70af0a99aded5573a8358fb485a82a11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__errors_8h.html#abf6c1e972e63bb08ca4e60f3820ae617">FctERR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__ino_8h.html#a70af0a99aded5573a8358fb485a82a11">HALERRtoFCTERR</a> (int32_t status)</td></tr>
 <tr class="memdesc:a70af0a99aded5573a8358fb485a82a11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Arduino error code to FctERR.  <a href="#a70af0a99aded5573a8358fb485a82a11">More...</a><br /></td></tr>
 <tr class="separator:a70af0a99aded5573a8358fb485a82a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -277,6 +286,15 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e"></a>RST_POR&#160;</td><td class="fielddoc"><p>Power On Reset. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900af64bcf1bb1d174a2a924881b10ad7b63"></a>RST_BODCORE&#160;</td><td class="fielddoc"><p>Brown Out Reset. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900aa13fbd8342254bba39e061c16c4d6101"></a>RST_BODVDD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a7c7b4e219ec871bd20bfe1b65ab64e5d"></a>RST_EXT&#160;</td><td class="fielddoc"><p>Pin Reset (External Reset) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a40678c7575f6977727e7eebfb08e22d2"></a>RST_WDT&#160;</td><td class="fielddoc"><p>Watchdog Reset. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a96beca7cd7bd787aa59fa01171d26e90"></a>RST_SYST&#160;</td><td class="fielddoc"><p>Software Reset. </p>
+</td></tr>
 <tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d"></a>RST_UNKNOWN&#160;</td><td class="fielddoc"><p>Unknown Reset Source. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e"></a>RST_POR&#160;</td><td class="fielddoc"><p>Power On Reset. </p>
@@ -302,6 +320,36 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="aecd9f047d3bda51bde705ae3ed90596b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecd9f047d3bda51bde705ae3ed90596b">&#9670;&nbsp;</a></span>HAL_ResetSource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900">eResetSource</a> <a class="el" href="arm__attributes_8h.html#a78219eeb59c8d4ad79b22f3f2975ea57">INLINE__</a> HAL_ResetSource </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get and convert ARDUINO Reset Source to eResetSource. </p>
+<dl class="section warning"><dt>Warning</dt><dd>This function should be called soon after reset </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Last reset source </dd></dl>
+
+</div>
+</div>
 <a id="a70af0a99aded5573a8358fb485a82a11"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70af0a99aded5573a8358fb485a82a11">&#9670;&nbsp;</a></span>HALERRtoFCTERR()</h2>
 

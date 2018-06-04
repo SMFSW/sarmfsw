@@ -132,6 +132,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a209c11556884be396ddce3dc23156559"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#a209c11556884be396ddce3dc23156559">HALTicks</a>()&#160;&#160;&#160;HAL_GetTick()</td></tr>
 <tr class="memdesc:a209c11556884be396ddce3dc23156559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for HAL get ticks function.  <a href="#a209c11556884be396ddce3dc23156559">More...</a><br /></td></tr>
 <tr class="separator:a209c11556884be396ddce3dc23156559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea685fbfbca0a2d4afccf5c7f6880622"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#aea685fbfbca0a2d4afccf5c7f6880622">HAL_ResetSource</a>()&#160;&#160;&#160;Get_Reset_Source()</td></tr>
+<tr class="memdesc:aea685fbfbca0a2d4afccf5c7f6880622"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get STM32 Reset Source.  <a href="#aea685fbfbca0a2d4afccf5c7f6880622">More...</a><br /></td></tr>
+<tr class="separator:aea685fbfbca0a2d4afccf5c7f6880622"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -143,20 +146,26 @@ Enumerations</h2></td></tr>
 <tr class="memitem:a54c1cd171722e4b22b2ee97d084f7900"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900">eResetSource</a> { <br />
 &#160;&#160;<a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = 1, 
 <a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF, 
-<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = 1, 
-<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF, 
+<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = RESET_REASON_POR, 
+<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900af64bcf1bb1d174a2a924881b10ad7b63">RST_BODCORE</a> = RESET_REASON_BODCORE, 
 <br />
-&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = 1, 
+&#160;&#160;<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900aa13fbd8342254bba39e061c16c4d6101">RST_BODVDD</a> = RESET_REASON_BODVDD, 
+<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a7c7b4e219ec871bd20bfe1b65ab64e5d">RST_EXT</a> = RESET_REASON_EXT, 
+<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a40678c7575f6977727e7eebfb08e22d2">RST_WDT</a> = RESET_REASON_WDT, 
+<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a96beca7cd7bd787aa59fa01171d26e90">RST_SYST</a> = RESET_REASON_SYST, 
+<br />
+&#160;&#160;<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF, 
+<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = 1, 
 <a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a4c0091b55b47cca800d01a6a6442f586">RST_PIN</a>, 
 <a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a066003c79359a0b9bb25ea84ca4c9c6a">RST_SW</a>, 
-<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a58d541ad7dff9c6e770aa4aeffa3bcc4">RST_IWDG</a>, 
 <br />
-&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900ad38183e2f4809aa13b2c149b9158cdb1">RST_WWDG</a>, 
+&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a58d541ad7dff9c6e770aa4aeffa3bcc4">RST_IWDG</a>, 
+<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900ad38183e2f4809aa13b2c149b9158cdb1">RST_WWDG</a>, 
 <a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a33de1f2d7ec80d375553bd397b2b91f1">RST_LPWR</a>, 
 <a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a44373a6fa84a5148452e73e341c13056">RST_OBL</a>, 
-<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd1dd71f600c1c5266b2b269b1288c2e">RST_V18PWR</a>, 
 <br />
-&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF
+&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd1dd71f600c1c5266b2b269b1288c2e">RST_V18PWR</a>, 
+<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF
 <br />
  }</td></tr>
 <tr class="separator:a54c1cd171722e4b22b2ee97d084f7900"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -274,6 +283,29 @@ Functions</h2></td></tr>
 
 <p>HAL milliseconds multiplier (depending tick counter frequency) </p>
 <dl class="section note"><dt>Note</dt><dd>Define HAL_MS_TICKS_FACTOR with custom multiplier in project if tick period is not 1ms </dd></dl>
+
+</div>
+</div>
+<a id="aea685fbfbca0a2d4afccf5c7f6880622"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea685fbfbca0a2d4afccf5c7f6880622">&#9670;&nbsp;</a></span>HAL_ResetSource</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HAL_ResetSource</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">void</td><td>)</td>
+          <td>&#160;&#160;&#160;Get_Reset_Source()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get STM32 Reset Source. </p>
+<dl class="section warning"><dt>Warning</dt><dd>This function should be called soon after reset (before or after SystemClock_Config()) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function using some special macros can't be inlined, thus can't be in sarmfsw stm32 header unfortunately </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Last reset sourceAlias for HARMcksL Get_Reset_Source function </dd></dl>
 
 </div>
 </div>
@@ -450,6 +482,15 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d"></a>RST_UNKNOWN&#160;</td><td class="fielddoc"><p>Unknown Reset Source. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e"></a>RST_POR&#160;</td><td class="fielddoc"><p>Power On Reset. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900af64bcf1bb1d174a2a924881b10ad7b63"></a>RST_BODCORE&#160;</td><td class="fielddoc"><p>Brown Out Reset. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900aa13fbd8342254bba39e061c16c4d6101"></a>RST_BODVDD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a7c7b4e219ec871bd20bfe1b65ab64e5d"></a>RST_EXT&#160;</td><td class="fielddoc"><p>Pin Reset (External Reset) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a40678c7575f6977727e7eebfb08e22d2"></a>RST_WDT&#160;</td><td class="fielddoc"><p>Watchdog Reset. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a96beca7cd7bd787aa59fa01171d26e90"></a>RST_SYST&#160;</td><td class="fielddoc"><p>Software Reset. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d"></a>RST_UNKNOWN&#160;</td><td class="fielddoc"><p>Unknown Reset Source. </p>
 </td></tr>
