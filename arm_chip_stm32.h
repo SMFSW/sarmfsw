@@ -52,6 +52,22 @@
 #define HALTicks()			HAL_GetTick()		//!< Alias for HAL get ticks function
 
 
+/*!\enum eResetSource
+** \brief Source of last reset
+**/
+typedef enum eResetSource {
+	RST_POR = 1,		//!< Power On Reset
+	RST_PIN,			//!< Pin Reset (External Reset)
+	RST_SW,				//!< Software Reset
+	RST_IWDG,			//!< Independent Watchdog Reset
+	RST_WWDG,			//!< Window Watchdog Reset
+	RST_LPWR,			//!< Low Power Reset
+	RST_OBL,			//!< Option Byte Load Reset (F3)
+	RST_V18PWR,			//!< 1.8V Domain Power Reset (F3)
+	RST_UNKNOWN = 0xFF	//!< Unknown Reset Source
+} eResetSource;
+
+
 /*** GLOBAL CMSIS & HAL includes ***/
 #include ARM_CMSIS_INC	// CMSIS includes
 // #include ARM_HAL_CFG	// HAL configuration includes (already included by ARM_CMSIS_INC)

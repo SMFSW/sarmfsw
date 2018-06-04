@@ -13,16 +13,16 @@ branches:
 
 env:
   global:
-     - PRETTYNAME="sarmfsw: ARM based common headers (compatible with most Arduino platforms)"
-     - GH_REPO_NAME: sarmfsw
-     - GH_REPO_REF: github.com/SMFSW/sarmfsw.git
-     - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile.auto
+    - PRETTYNAME="sarmfsw: ARM based common headers (compatible with most Arduino platforms)"
+    - GH_REPO_NAME: sarmfsw
+    - GH_REPO_REF: github.com/SMFSW/sarmfsw.git
+    - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile.auto
 
 before_install:
-   - source <(curl -SLs https://raw.githubusercontent.com/SMFSW/travis-ci-arduino/master/install.sh)
+  - source <(curl -SLs https://raw.githubusercontent.com/SMFSW/travis-ci-arduino/master/install.sh)
 
 script:
-   - build_main_platforms
+  - build_main_platforms
 
 # Generate and deploy documentation
 after_success:

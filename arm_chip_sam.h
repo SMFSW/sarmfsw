@@ -79,6 +79,15 @@
 #endif
 
 
+/*!\enum eResetSource
+** \brief Source of last reset
+**/
+typedef enum eResetSource {
+	RST_POR = 1,		//!< Power On Reset
+	RST_UNKNOWN = 0xFF	//!< Unknown Reset Source
+} eResetSource;
+
+
 /*** GLOBAL CMSIS & HAL includes ***/
 #include ARM_CMSIS_INC	// CMSIS includes
 // #include ARM_HAL_CFG	// HAL configuration includes (already included by ARM_CMSIS_INC)

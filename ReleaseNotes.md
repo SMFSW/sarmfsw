@@ -23,12 +23,13 @@ SOFTWARE.
 ## v3.3
 
 * Adding support for unit tests and doxygen documentation generation with Travis CI
+* arm_chip_stm32: Added enum for last reset source (TODO: add more for sam & ino)
 * arm_inlines: added some binary manipulation inlines
 * arm_macros: moved TestMalloc to arm_macros.h (renamed to malloc_assert)
 * arm_typedefs: Doxygen eGPIOState enum name fixed
 * arm_typedefs: Doxygen note added related to Arduino platform (for binary representation in binary.h)
 * sarmfsw.h: target names changed in enum
-* misc: typo fixes, Doxygen comments, notes & warnings added*
+* misc: typo fixes, Doxygen comments, notes & warnings added
 * Release Notes.md: sections added
 
 ## v3.2

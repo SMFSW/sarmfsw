@@ -43,6 +43,16 @@
 
 #define HALTicks()			millis()			//!< Alias for Arduino get ms ticks function
 
+
+/*!\enum eResetSource
+** \brief Source of last reset
+**/
+typedef enum eResetSource {
+	RST_POR = 1,		//!< Power On Reset
+	RST_UNKNOWN = 0xFF	//!< Unknown Reset Source
+} eResetSource;
+
+
 /*!\brief Convert Arduino error code to FctERR
 ** \param[in] status - Arduino error code
 ** \return FctERR status
