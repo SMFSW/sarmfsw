@@ -73,6 +73,14 @@ typedef enum eResetSource {
 // #include ARM_HAL_CFG	// HAL configuration includes (already included by ARM_CMSIS_INC)
 
 
+/*!\brief Get STM32 Reset Source
+** \warning This function should be called soon after reset (before or after SystemClock_Config())
+** \note This function using some special macros can't be inlined, thus can't be in sarmfsw stm32 header unfortunately
+** \return Last reset source
+**/
+#define HAL_ResetSource()	Get_Reset_Source()	//!< Alias for HARMcksL Get_Reset_Source function
+
+
 /*!\brief Convert HAL_StatusTypeDef to FctERR
 ** \param[in] status - HAL_StatusTypeDef status
 ** \return FctERR status

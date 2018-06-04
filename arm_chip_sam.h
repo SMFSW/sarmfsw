@@ -53,6 +53,7 @@
 /****************************************************************/
 #include "atmel_start_pins.h"		// Project pins definitions
 #include "err_codes.h"				// Atmel error codes
+#include "hpl_reset.h"				// Atmel reset sources
 /****************************************************************/
 
 
@@ -83,14 +84,27 @@
 ** \brief Source of last reset
 **/
 typedef enum eResetSource {
-	RST_POR = 1,		//!< Power On Reset
-	RST_UNKNOWN = 0xFF	//!< Unknown Reset Source
+	RST_POR = RESET_REASON_POR,				//!< Power On Reset
+	RST_BODCORE = RESET_REASON_BODCORE,		//!< Brown Out Reset
+	RST_BODVDD = RESET_REASON_BODVDD,		//!
+	RST_EXT = RESET_REASON_EXT,				//!< Pin Reset (External Reset)
+	RST_WDT = RESET_REASON_WDT,				//!< Watchdog Reset
+	RST_SYST = RESET_REASON_SYST,			//!< Software Reset
+	RST_UNKNOWN = 0xFF						//!< Unknown Reset Source
 } eResetSource;
 
 
 /*** GLOBAL CMSIS & HAL includes ***/
 #include ARM_CMSIS_INC	// CMSIS includes
 // #include ARM_HAL_CFG	// HAL configuration includes (already included by ARM_CMSIS_INC)
+
+
+/*!\brief Get and convert ATMEL Reset Source to eResetSource
+** \warning This function should be called soon after reset
+** \return Last reset source
+**/
+__INLINE eResetSource INLINE__ HAL_ResetSource(void) {
+	return (eResetSource) _get_reset_reason(); }
 
 
 /*!\brief Convert ATMEL error code to FctERR

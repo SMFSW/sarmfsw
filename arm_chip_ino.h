@@ -53,6 +53,14 @@ typedef enum eResetSource {
 } eResetSource;
 
 
+/*!\brief Get and convert ARDUINO Reset Source to eResetSource
+** \warning This function should be called soon after reset
+** \return Last reset source
+**/
+__INLINE eResetSource INLINE__ HAL_ResetSource(void) {
+	return RST_UNKNOWN; }
+
+
 /*!\brief Convert Arduino error code to FctERR
 ** \param[in] status - Arduino error code
 ** \return FctERR status
