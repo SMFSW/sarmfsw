@@ -62,6 +62,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">arm_chip_sam.h File Reference</div>  </div>
@@ -114,6 +116,34 @@ Macros</h2></td></tr>
 <tr class="memitem:a209c11556884be396ddce3dc23156559"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__sam_8h.html#a209c11556884be396ddce3dc23156559">HALTicks</a>()&#160;&#160;&#160;HAL_GetTick()</td></tr>
 <tr class="memdesc:a209c11556884be396ddce3dc23156559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for HAL get ticks function.  <a href="#a209c11556884be396ddce3dc23156559">More...</a><br /></td></tr>
 <tr class="separator:a209c11556884be396ddce3dc23156559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a3b63a3d3b405d4a66dfed6b393301619"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900">eResetSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__sam_8h.html#a3b63a3d3b405d4a66dfed6b393301619">eResetSource</a></td></tr>
+<tr class="separator:a3b63a3d3b405d4a66dfed6b393301619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a54c1cd171722e4b22b2ee97d084f7900"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900">eResetSource</a> { <br />
+&#160;&#160;<a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = 1, 
+<a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF, 
+<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = 1, 
+<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF, 
+<br />
+&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = 1, 
+<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a4c0091b55b47cca800d01a6a6442f586">RST_PIN</a>, 
+<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a066003c79359a0b9bb25ea84ca4c9c6a">RST_SW</a>, 
+<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a58d541ad7dff9c6e770aa4aeffa3bcc4">RST_IWDG</a>, 
+<br />
+&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900ad38183e2f4809aa13b2c149b9158cdb1">RST_WWDG</a>, 
+<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a33de1f2d7ec80d375553bd397b2b91f1">RST_LPWR</a>, 
+<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a44373a6fa84a5148452e73e341c13056">RST_OBL</a>, 
+<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd1dd71f600c1c5266b2b269b1288c2e">RST_V18PWR</a>, 
+<br />
+&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF
+<br />
+ }</td></tr>
+<tr class="separator:a54c1cd171722e4b22b2ee97d084f7900"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -251,6 +281,64 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>concatenate &lt;hri_(f).h&gt; name following sam family <b>f</b> </p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a3b63a3d3b405d4a66dfed6b393301619"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b63a3d3b405d4a66dfed6b393301619">&#9670;&nbsp;</a></span>eResetSource</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900">eResetSource</a>  <a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900">eResetSource</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a54c1cd171722e4b22b2ee97d084f7900"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54c1cd171722e4b22b2ee97d084f7900">&#9670;&nbsp;</a></span>eResetSource</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900">eResetSource</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e"></a>RST_POR&#160;</td><td class="fielddoc"><p>Power On Reset. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d"></a>RST_UNKNOWN&#160;</td><td class="fielddoc"><p>Unknown Reset Source. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e"></a>RST_POR&#160;</td><td class="fielddoc"><p>Power On Reset. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d"></a>RST_UNKNOWN&#160;</td><td class="fielddoc"><p>Unknown Reset Source. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e"></a>RST_POR&#160;</td><td class="fielddoc"><p>Power On Reset. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a4c0091b55b47cca800d01a6a6442f586"></a>RST_PIN&#160;</td><td class="fielddoc"><p>Pin Reset (External Reset) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a066003c79359a0b9bb25ea84ca4c9c6a"></a>RST_SW&#160;</td><td class="fielddoc"><p>Software Reset. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a58d541ad7dff9c6e770aa4aeffa3bcc4"></a>RST_IWDG&#160;</td><td class="fielddoc"><p>Independent Watchdog Reset. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900ad38183e2f4809aa13b2c149b9158cdb1"></a>RST_WWDG&#160;</td><td class="fielddoc"><p>Window Watchdog Reset. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a33de1f2d7ec80d375553bd397b2b91f1"></a>RST_LPWR&#160;</td><td class="fielddoc"><p>Low Power Reset. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a44373a6fa84a5148452e73e341c13056"></a>RST_OBL&#160;</td><td class="fielddoc"><p>Option Byte Load Reset (F3) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900acd1dd71f600c1c5266b2b269b1288c2e"></a>RST_V18PWR&#160;</td><td class="fielddoc"><p>1.8V Domain Power Reset (F3) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d"></a>RST_UNKNOWN&#160;</td><td class="fielddoc"><p>Unknown Reset Source. </p>
+</td></tr>
+</table>
 
 </div>
 </div>

@@ -12,6 +12,6 @@ var searchData=
   ['toggle',['Toggle',['../arm__typedefs_8h.html#abc85f209b5307f54c70121d3e83f14b9a0884ca4af1f5df7de6604f540de37743',1,'arm_typedefs.h']]],
   ['tpsinf_5fms',['TPSINF_MS',['../arm__inlines_8h.html#aecd1115e6e80e069a73a09a011cdc8b9',1,'arm_inlines.h']]],
   ['tpssup_5fms',['TPSSUP_MS',['../arm__inlines_8h.html#aaf7c9009b7c8bb77dba778bc2b319af4',1,'arm_inlines.h']]],
-  ['true',['True',['../arm__macros_8h.html#add3ca9eefe3b5b754426f51d3043e579',1,'True():&#160;arm_macros.h'],['../arm__macros_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d',1,'TRUE():&#160;arm_macros.h']]],
+  ['true',['TRUE',['../arm__macros_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d',1,'TRUE():&#160;arm_macros.h'],['../arm__macros_8h.html#add3ca9eefe3b5b754426f51d3043e579',1,'True():&#160;arm_macros.h']]],
   ['twothird',['TwoThird',['../arm__macros_8h.html#a42087a58bf74f075fdfa47ddead28edf',1,'arm_macros.h']]]
 ];
