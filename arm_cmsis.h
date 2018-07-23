@@ -81,12 +81,13 @@
 	#endif
 #elif	defined(STM32F756xx) || defined(STM32F746xx) || defined(STM32F745xx) || defined(STM32F767xx) ||	\
 		defined(STM32F769xx) || defined(STM32F777xx) || defined(STM32F779xx) || defined(STM32F722xx) ||	\
-		defined(STM32F723xx) || defined(STM32F732xx) || defined(STM32F733xx)
+		defined(STM32F723xx) || defined(STM32F732xx) || defined(STM32F733xx) || defined(STM32F730xx) ||	\
+		defined(STM32F750xx)
 	#define STM32F7					//!< STM32F7 family generic define
 	#if !defined(STM_FAMILY)
 		#define STM_FAMILY	f7		//!< STM32 family (f7) for name catenation
 	#endif
-#elif	defined(STM32H743xx) || defined(STM32H753xx)
+#elif	defined(STM32H743xx) || defined(STM32H753xx) || defined(STM32H750xx)
 	#define STM32H7					//!< STM32H7 family generic define
 	#if !defined(STM_FAMILY)
 		#define STM_FAMILY	h7		//!< STM32 family (h7) for name catenation
