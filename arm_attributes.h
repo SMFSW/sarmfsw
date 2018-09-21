@@ -30,6 +30,9 @@
 	#define NORETURN__		__attribute__((noreturn))			//!< \b No \b return attribute
 	#define PACK__			__attribute__((packed))				//!< \b Packed attribute
 	#define PURE__			__attribute__((pure))				//!< \b Pure attribute
+	#define SECTION__(s)	__attribute__((section("" #s)))		//!< \b Section attribute to place declaration into section \b s
+
+	#define ATTRS__(...)	__attribute__((__VA_ARGS__))		//!< Macro to define multiple attributes \b ... for a declaration
 
 #elif defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
 	/*** ARM COMPILER TOOLCHAIN ***/
@@ -46,6 +49,10 @@
 	#define NORETURN__		__attribute__((noreturn))			//!< \b No \b return attribute
 	#define PACK__			__attribute__((packed))				//!< \b Packed attribute
 	#define PURE__			__attribute__((pure))				//!< \b Pure attribute
+	#define SECTION__(s)	__attribute__((section("" #s)))		//!< \b Section attribute to place declaration into section \b s
+	#define USED__			__attribute__((used))				//!< \b Ensures declaration won't be removed by garbage collector
+
+	#define ATTRS__(...)	__attribute__((__VA_ARGS__))		//!< Macro to define multiple attributes \b ... for a declaration
 
 #elif defined (__GNUC__)
 	/*** GCC ***/
@@ -62,6 +69,10 @@
 	#define NORETURN__		__attribute__((noreturn))			//!< \b No \b return attribute
 	#define PACK__			__attribute__((__packed__))			//!< \b Packed attribute
 	#define PURE__			__attribute__((pure))				//!< \b Pure attribute
+	#define SECTION__(s)	__attribute__((section("" #s)))		//!< \b Section attribute to place declaration into section \b s
+	#define USED__			__attribute__((used))				//!< \b Ensures declaration won't be removed by garbage collector
+
+	#define ATTRS__(...)	__attribute__((__VA_ARGS__))		//!< Macro to define multiple attributes \b ... for a declaration
 
 #elif defined (__ICCARM__)
 	/*** IAR ***/
@@ -78,6 +89,10 @@
 	#define NORETURN__		__noreturn							//!< \b No \b return attribute
 	#define PACK__			__packed							//!< \b Packed attribute
 	#define PURE__
+	#define SECTION__(s)										//!< \b Section attribute to place declaration into section \b s
+	#define USED__
+
+	#define ATTRS__(...)										//!< Macro to define multiple attributes \b ... for a declaration
 
 #elif defined (__TMS470__)
 	/*** TEXAS INSTRUMENTS ***/
@@ -94,6 +109,10 @@
 	#define NORETURN__		__attribute__((noreturn))			//!< \b No \b return attribute
 	#define PACK__			__attribute__((__packed__))			//!< \b Packed attribute
 	#define PURE__			__attribute__((pure))				//!< \b Pure attribute
+	#define SECTION__(s)	__attribute__((section("" #s)))		//!< \b Section attribute to place declaration into section \b s
+	#define USED__			__attribute__((used))				//!< \b Ensures declaration won't be removed by garbage collector
+
+	#define ATTRS__(...)	__attribute__((__VA_ARGS__))		//!< Macro to define multiple attributes \b ... for a declaration
 
 #elif defined (__TASKING__)
 	/*** TASKING ***/
@@ -110,6 +129,10 @@
 	#define NORETURN__		__attribute__((noreturn))			//!< \b No \b return attribute
 	#define PACK__			__packed__							//!< \b Packed attribute
 	#define PURE__			__attribute__((pure))				//!< \b Pure attribute
+	#define SECTION__(s)	__attribute__((section("" #s)))		//!< \b Section attribute to place declaration into section \b s
+	#define USED__			__attribute__((used))				//!< \b Ensures declaration won't be removed by garbage collector
+
+	#define ATTRS__(...)	__attribute__((__VA_ARGS__))		//!< Macro to define multiple attributes \b ... for a declaration
 
 #elif defined (__CSMC__)
 	/*** COSMIC ***/

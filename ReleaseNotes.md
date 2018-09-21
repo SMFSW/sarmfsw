@@ -23,6 +23,7 @@ SOFTWARE.
 ## v3.3
 
 * Adding support for unit tests and doxygen documentation generation with Travis CI
+* arm_attributes: Added macro for section, used & multiple attibutes atributes
 * arm_cmsis: Added latest STM32 chips
 * arm_chip_stm32: Added enum for last reset source (TODO: add more for sam & ino)
 * arm_inlines: added some binary manipulation inlines
