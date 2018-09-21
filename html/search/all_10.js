@@ -9,6 +9,7 @@ var searchData=
   ['sbitfield8',['sBitfield8',['../arm__typedefs_8h.html#a569abd40339085d3887d42bc4433bb37',1,'arm_typedefs.h']]],
   ['sbyte',['SBYTE',['../arm__typedefs_8h.html#a0b0ec08cb12c90f493f131cffb432638',1,'arm_typedefs.h']]],
   ['sdword',['SDWORD',['../arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013',1,'arm_typedefs.h']]],
+  ['section_5f_5f',['SECTION__',['../arm__attributes_8h.html#adef3770cc970cb5e7bd47c58224149f8',1,'arm_attributes.h']]],
   ['set',['Set',['../arm__typedefs_8h.html#abc85f209b5307f54c70121d3e83f14b9a20120ef9c542d271e929c93efa56b665',1,'arm_typedefs.h']]],
   ['slword',['SLWORD',['../arm__typedefs_8h.html#afb75babc11ab7623115c59cdc4ba567a',1,'arm_typedefs.h']]],
   ['stm_5fconf_5fheader',['STM_CONF_HEADER',['../arm__chip__stm32_8h.html#ad933dee8f026e8ecb15487cedeb0d1c3',1,'arm_chip_stm32.h']]],

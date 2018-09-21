@@ -119,6 +119,15 @@ Macros</h2></td></tr>
 <tr class="memitem:a9c7791b7a2a45b5c433743fdadc52df3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__attributes_8h.html#a9c7791b7a2a45b5c433743fdadc52df3">PURE__</a>&#160;&#160;&#160;__attribute__((pure))</td></tr>
 <tr class="memdesc:a9c7791b7a2a45b5c433743fdadc52df3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Pure</b> attribute  <a href="#a9c7791b7a2a45b5c433743fdadc52df3">More...</a><br /></td></tr>
 <tr class="separator:a9c7791b7a2a45b5c433743fdadc52df3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adef3770cc970cb5e7bd47c58224149f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__attributes_8h.html#adef3770cc970cb5e7bd47c58224149f8">SECTION__</a>(s)&#160;&#160;&#160;__attribute__((section(&quot;&quot; #s)))</td></tr>
+<tr class="memdesc:adef3770cc970cb5e7bd47c58224149f8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Section</b> attribute to place declaration into section <b>s</b>  <a href="#adef3770cc970cb5e7bd47c58224149f8">More...</a><br /></td></tr>
+<tr class="separator:adef3770cc970cb5e7bd47c58224149f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab28b7e20751ce7fd19d09e80356ebd8a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__attributes_8h.html#ab28b7e20751ce7fd19d09e80356ebd8a">USED__</a>&#160;&#160;&#160;__attribute__((used))</td></tr>
+<tr class="memdesc:ab28b7e20751ce7fd19d09e80356ebd8a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Ensures</b> declaration won't be removed by garbage collector  <a href="#ab28b7e20751ce7fd19d09e80356ebd8a">More...</a><br /></td></tr>
+<tr class="separator:ab28b7e20751ce7fd19d09e80356ebd8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a311919f288039e3ccac1a6b476a90988"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__attributes_8h.html#a311919f288039e3ccac1a6b476a90988">ATTRS__</a>(...)&#160;&#160;&#160;__attribute__((__VA_ARGS__))</td></tr>
+<tr class="memdesc:a311919f288039e3ccac1a6b476a90988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to define multiple attributes <b></b>... for a declaration.  <a href="#a311919f288039e3ccac1a6b476a90988">More...</a><br /></td></tr>
+<tr class="separator:a311919f288039e3ccac1a6b476a90988"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ARM common compilers attributes. </p>
@@ -175,6 +184,26 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p><b>Align</b> attribute padded to <b>n</b> </p>
+
+</div>
+</div>
+<a id="a311919f288039e3ccac1a6b476a90988"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a311919f288039e3ccac1a6b476a90988">&#9670;&nbsp;</a></span>ATTRS__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ATTRS__</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;__attribute__((__VA_ARGS__))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro to define multiple attributes <b></b>... for a declaration. </p>
 
 </div>
 </div>
@@ -303,6 +332,42 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p><b>Pure</b> attribute </p>
+
+</div>
+</div>
+<a id="adef3770cc970cb5e7bd47c58224149f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adef3770cc970cb5e7bd47c58224149f8">&#9670;&nbsp;</a></span>SECTION__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SECTION__</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">s</td><td>)</td>
+          <td>&#160;&#160;&#160;__attribute__((section(&quot;&quot; #s)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>Section</b> attribute to place declaration into section <b>s</b> </p>
+
+</div>
+</div>
+<a id="ab28b7e20751ce7fd19d09e80356ebd8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab28b7e20751ce7fd19d09e80356ebd8a">&#9670;&nbsp;</a></span>USED__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USED__&#160;&#160;&#160;__attribute__((used))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>Ensures</b> declaration won't be removed by garbage collector </p>
 
 </div>
 </div>
