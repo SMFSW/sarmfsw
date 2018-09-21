@@ -68,7 +68,7 @@
 #define	CAT(a, b)			a##b			//!< Preprocessor Name catenation
 #define XCAT(a, b)			CAT(a, b)		//!< Preprocessor Name catenation (possible nesting)
 
-#define STR(s)				("" #s)			//!< Stringify an expression
+#define STR(s)				(#s)			//!< Stringify an expression
 
 #define binEval(exp)		((exp) ? true : false)		//!< boolean evaluation of expression \b exp
 #define nbinEval(exp)		(!binEval(exp))				//!< complemented boolean evaluation of expression \b exp

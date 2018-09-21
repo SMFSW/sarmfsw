@@ -30,7 +30,8 @@
 	#define NORETURN__		__attribute__((noreturn))			//!< \b No \b return attribute
 	#define PACK__			__attribute__((packed))				//!< \b Packed attribute
 	#define PURE__			__attribute__((pure))				//!< \b Pure attribute
-	#define SECTION__(s)	__attribute__((section("" #s)))		//!< \b Section attribute to place declaration into section \b s
+	#define SECTION__(s)	__attribute__((section(#s)))		//!< \b Section attribute to place declaration into section \b s
+	#define USED__			__attribute__((used))				//!< \b Ensures declaration won't be removed by garbage collector
 
 	#define ATTRS__(...)	__attribute__((__VA_ARGS__))		//!< Macro to define multiple attributes \b ... for a declaration
 
@@ -49,7 +50,7 @@
 	#define NORETURN__		__attribute__((noreturn))			//!< \b No \b return attribute
 	#define PACK__			__attribute__((packed))				//!< \b Packed attribute
 	#define PURE__			__attribute__((pure))				//!< \b Pure attribute
-	#define SECTION__(s)	__attribute__((section("" #s)))		//!< \b Section attribute to place declaration into section \b s
+	#define SECTION__(s)	__attribute__((section(#s)))		//!< \b Section attribute to place declaration into section \b s
 	#define USED__			__attribute__((used))				//!< \b Ensures declaration won't be removed by garbage collector
 
 	#define ATTRS__(...)	__attribute__((__VA_ARGS__))		//!< Macro to define multiple attributes \b ... for a declaration
@@ -69,7 +70,7 @@
 	#define NORETURN__		__attribute__((noreturn))			//!< \b No \b return attribute
 	#define PACK__			__attribute__((__packed__))			//!< \b Packed attribute
 	#define PURE__			__attribute__((pure))				//!< \b Pure attribute
-	#define SECTION__(s)	__attribute__((section("" #s)))		//!< \b Section attribute to place declaration into section \b s
+	#define SECTION__(s)	__attribute__((section(#s)))		//!< \b Section attribute to place declaration into section \b s
 	#define USED__			__attribute__((used))				//!< \b Ensures declaration won't be removed by garbage collector
 
 	#define ATTRS__(...)	__attribute__((__VA_ARGS__))		//!< Macro to define multiple attributes \b ... for a declaration
@@ -109,7 +110,7 @@
 	#define NORETURN__		__attribute__((noreturn))			//!< \b No \b return attribute
 	#define PACK__			__attribute__((__packed__))			//!< \b Packed attribute
 	#define PURE__			__attribute__((pure))				//!< \b Pure attribute
-	#define SECTION__(s)	__attribute__((section("" #s)))		//!< \b Section attribute to place declaration into section \b s
+	#define SECTION__(s)	__attribute__((section(#s)))		//!< \b Section attribute to place declaration into section \b s
 	#define USED__			__attribute__((used))				//!< \b Ensures declaration won't be removed by garbage collector
 
 	#define ATTRS__(...)	__attribute__((__VA_ARGS__))		//!< Macro to define multiple attributes \b ... for a declaration
@@ -129,7 +130,7 @@
 	#define NORETURN__		__attribute__((noreturn))			//!< \b No \b return attribute
 	#define PACK__			__packed__							//!< \b Packed attribute
 	#define PURE__			__attribute__((pure))				//!< \b Pure attribute
-	#define SECTION__(s)	__attribute__((section("" #s)))		//!< \b Section attribute to place declaration into section \b s
+	#define SECTION__(s)	__attribute__((section(#s)))		//!< \b Section attribute to place declaration into section \b s
 	#define USED__			__attribute__((used))				//!< \b Ensures declaration won't be removed by garbage collector
 
 	#define ATTRS__(...)	__attribute__((__VA_ARGS__))		//!< Macro to define multiple attributes \b ... for a declaration
