@@ -34,7 +34,9 @@
 	#define PACK__				__attribute__((packed))				//!< \b Packed attribute
 	#define PURE__				__attribute__((pure))				//!< \b Pure attribute
 	#define SECTION__(s)		__attribute__((section(#s)))		//!< \b Section attribute to place declaration into section \b s
-	#define USED__				__attribute__((used))				//!< \b Ensures declaration won't be removed by garbage collector
+	#define USED__				__attribute__((used))				//!< \b Used attribute ensures declaration won't be removed by garbage collector
+	// Common mixed attributes
+	#define NONNULL_INLINE__	ATTR__(nonnull, always_inline)			//!< \b Ensures declaration won't be removed by garbage collector
 
 #elif defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
 	/*** ARM COMPILER TOOLCHAIN ***/
@@ -55,7 +57,9 @@
 	#define PACK__				__attribute__((packed))					//!< \b Packed attribute
 	#define PURE__				__attribute__((pure))					//!< \b Pure attribute
 	#define SECTION__(s)		__attribute__((section(#s)))			//!< \b Section attribute to place declaration into section \b s
-	#define USED__				__attribute__((used))					//!< \b Ensures declaration won't be removed by garbage collector
+	#define USED__				__attribute__((used))					//!< \b Used attribute ensures declaration won't be removed by garbage collector
+	// Common mixed attributes
+	#define NONNULL_INLINE__	ATTR__(nonnull, always_inline)			//!< \b Ensures declaration won't be removed by garbage collector
 
 #elif defined (__GNUC__)
 	/*** GCC ***/
@@ -76,7 +80,9 @@
 	#define PACK__				__attribute__((__packed__))				//!< \b Packed attribute
 	#define PURE__				__attribute__((pure))					//!< \b Pure attribute
 	#define SECTION__(s)		__attribute__((section(#s)))			//!< \b Section attribute to place declaration into section \b s
-	#define USED__				__attribute__((used))					//!< \b Ensures declaration won't be removed by garbage collector
+	#define USED__				__attribute__((used))					//!< \b Used attribute ensures declaration won't be removed by garbage collector
+	// Common mixed attributes
+	#define NONNULL_INLINE__	ATTR__(nonnull, always_inline)			//!< \b Ensures declaration won't be removed by garbage collector
 
 #elif defined (__ICCARM__)
 	/*** IAR ***/
@@ -98,6 +104,8 @@
 	#define PURE__
 	#define SECTION__(s)
 	#define USED__
+	// Common mixed attributes
+	#define NONNULL_INLINE__
 
 #elif defined (__TMS470__)
 	/*** TEXAS INSTRUMENTS ***/
@@ -118,7 +126,9 @@
 	#define PACK__				__attribute__((__packed__))				//!< \b Packed attribute
 	#define PURE__				__attribute__((pure))					//!< \b Pure attribute
 	#define SECTION__(s)		__attribute__((section(#s)))			//!< \b Section attribute to place declaration into section \b s
-	#define USED__				__attribute__((used))					//!< \b Ensures declaration won't be removed by garbage collector
+	#define USED__				__attribute__((used))					//!< \b Used attribute ensures declaration won't be removed by garbage collector
+	// Common mixed attributes
+	#define NONNULL_INLINE__
 
 #elif defined (__TASKING__)
 	/*** TASKING ***/
@@ -139,7 +149,9 @@
 	#define PACK__				__packed__								//!< \b Packed attribute
 	#define PURE__				__attribute__((pure))					//!< \b Pure attribute
 	#define SECTION__(s)		__attribute__((section(#s)))			//!< \b Section attribute to place declaration into section \b s
-	#define USED__				__attribute__((used))					//!< \b Ensures declaration won't be removed by garbage collector
+	#define USED__				__attribute__((used))					//!< \b Used attribute ensures declaration won't be removed by garbage collector
+	// Common mixed attributes
+	#define NONNULL_INLINE__
 
 #elif defined (__CSMC__)
 	/*** COSMIC ***/
