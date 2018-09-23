@@ -1,5 +1,5 @@
 <map id="SWAP_END32B" name="SWAP_END32B">
 <area shape="rect" id="node2" href="$arm__inlines_8h.html#a95adbe3363102aee10caf3bc78a4f54c" title="Swap endians of the contents of a 64b value (little &#45;&gt; big, big &#45;&gt; little) " alt="" coords="193,5,314,32"/>
-<area shape="rect" id="node4" href="$arm__inlines_8h.html#ac0719525c787d30a54a23d3484c92919" title="Swap endians of a 32b tab (little &#45;&gt; big, big &#45;&gt; little) " alt="" coords="176,56,331,83"/>
-<area shape="rect" id="node3" href="$arm__inlines_8h.html#aed7836328579a7f160d3874571e0309e" title="Swap endians of a 64b tab (little &#45;&gt; big, big &#45;&gt; little) " alt="" coords="379,5,533,32"/>
+<area shape="rect" id="node4" href="$arm__inlines_8h.html#a161604654481ab2144d50f962a9eea98" title="Swap endians of a 32b tab (little &#45;&gt; big, big &#45;&gt; little) " alt="" coords="176,56,331,83"/>
+<area shape="rect" id="node3" href="$arm__inlines_8h.html#a7febd655a73137b8e588f1bc116e35b4" title="Swap endians of a 64b tab (little &#45;&gt; big, big &#45;&gt; little) " alt="" coords="379,5,533,32"/>
 </map>

@@ -10,8 +10,8 @@ var searchData=
   ['tim',['TIM',['../arm__chip__stm32_8h.html#a9c6e547f2295dccada70bd4af9595791',1,'arm_chip_stm32.h']]],
   ['timer',['timer',['../arm__chip__stm32_8h.html#a37e0bd65f92cddd42b5507ae5fb50a50',1,'arm_chip_stm32.h']]],
   ['toggle',['Toggle',['../arm__typedefs_8h.html#abc85f209b5307f54c70121d3e83f14b9a0884ca4af1f5df7de6604f540de37743',1,'arm_typedefs.h']]],
-  ['tpsinf_5fms',['TPSINF_MS',['../arm__inlines_8h.html#aecd1115e6e80e069a73a09a011cdc8b9',1,'arm_inlines.h']]],
-  ['tpssup_5fms',['TPSSUP_MS',['../arm__inlines_8h.html#aaf7c9009b7c8bb77dba778bc2b319af4',1,'arm_inlines.h']]],
+  ['tpsinf_5fms',['TPSINF_MS',['../arm__inlines_8h.html#a560417db6ae50a888c8cd0d14cb31be2',1,'arm_inlines.h']]],
+  ['tpssup_5fms',['TPSSUP_MS',['../arm__inlines_8h.html#a08a6e7e63e959dc8f8c87f6065c648ea',1,'arm_inlines.h']]],
   ['true',['TRUE',['../arm__macros_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d',1,'TRUE():&#160;arm_macros.h'],['../arm__macros_8h.html#add3ca9eefe3b5b754426f51d3043e579',1,'True():&#160;arm_macros.h']]],
   ['twothird',['TwoThird',['../arm__macros_8h.html#a42087a58bf74f075fdfa47ddead28edf',1,'arm_macros.h']]]
 ];
