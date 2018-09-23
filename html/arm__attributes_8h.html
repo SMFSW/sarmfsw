@@ -129,8 +129,11 @@ Macros</h2></td></tr>
 <tr class="memdesc:adef3770cc970cb5e7bd47c58224149f8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Section</b> attribute to place declaration into section <b>s</b>  <a href="#adef3770cc970cb5e7bd47c58224149f8">More...</a><br /></td></tr>
 <tr class="separator:adef3770cc970cb5e7bd47c58224149f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab28b7e20751ce7fd19d09e80356ebd8a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__attributes_8h.html#ab28b7e20751ce7fd19d09e80356ebd8a">USED__</a>&#160;&#160;&#160;__attribute__((used))</td></tr>
-<tr class="memdesc:ab28b7e20751ce7fd19d09e80356ebd8a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Ensures</b> declaration won't be removed by garbage collector  <a href="#ab28b7e20751ce7fd19d09e80356ebd8a">More...</a><br /></td></tr>
+<tr class="memdesc:ab28b7e20751ce7fd19d09e80356ebd8a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Used</b> attribute ensures declaration won't be removed by garbage collector  <a href="#ab28b7e20751ce7fd19d09e80356ebd8a">More...</a><br /></td></tr>
 <tr class="separator:ab28b7e20751ce7fd19d09e80356ebd8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f63acee5b85bc2a8d4d13b8ca41f9b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__attributes_8h.html#a2f63acee5b85bc2a8d4d13b8ca41f9b6">NONNULL_INLINE__</a>&#160;&#160;&#160;<a class="el" href="arm__attributes_8h.html#a4928d9d5681585f8bc21560cd30ef83d">ATTR__</a>(nonnull, always_inline)</td></tr>
+<tr class="memdesc:a2f63acee5b85bc2a8d4d13b8ca41f9b6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Ensures</b> declaration won't be removed by garbage collector  <a href="#a2f63acee5b85bc2a8d4d13b8ca41f9b6">More...</a><br /></td></tr>
+<tr class="separator:a2f63acee5b85bc2a8d4d13b8ca41f9b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ARM common compilers attributes. </p>
@@ -290,6 +293,22 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="a2f63acee5b85bc2a8d4d13b8ca41f9b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f63acee5b85bc2a8d4d13b8ca41f9b6">&#9670;&nbsp;</a></span>NONNULL_INLINE__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NONNULL_INLINE__&#160;&#160;&#160;<a class="el" href="arm__attributes_8h.html#a4928d9d5681585f8bc21560cd30ef83d">ATTR__</a>(nonnull, always_inline)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>Ensures</b> declaration won't be removed by garbage collector </p>
+
+</div>
+</div>
 <a id="a6b4cb05def851e19a35c1f46ca6e3d0d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6b4cb05def851e19a35c1f46ca6e3d0d">&#9670;&nbsp;</a></span>NONNULLX__</h2>
 
@@ -390,7 +409,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><b>Ensures</b> declaration won't be removed by garbage collector </p>
+<p><b>Used</b> attribute ensures declaration won't be removed by garbage collector </p>
 
 </div>
 </div>
