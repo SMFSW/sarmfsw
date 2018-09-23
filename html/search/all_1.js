@@ -15,5 +15,5 @@ var searchData=
   ['arm_5fstdclib_2eh',['arm_stdclib.h',['../arm__stdclib_8h.html',1,'']]],
   ['arm_5ftypedefs_2eh',['arm_typedefs.h',['../arm__typedefs_8h.html',1,'']]],
   ['asciitohex',['ASCIIToHex',['../arm__inlines_8h.html#a2c00cb92bd59bc1c90fbae9ebef00202',1,'arm_inlines.h']]],
-  ['attrs_5f_5f',['ATTRS__',['../arm__attributes_8h.html#a311919f288039e3ccac1a6b476a90988',1,'arm_attributes.h']]]
+  ['attr_5f_5f',['ATTR__',['../arm__attributes_8h.html#a4928d9d5681585f8bc21560cd30ef83d',1,'arm_attributes.h']]]
 ];

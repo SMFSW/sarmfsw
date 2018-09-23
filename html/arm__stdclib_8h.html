@@ -82,12 +82,6 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:abdb35fe5009818050f272c96997f495a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#abdb35fe5009818050f272c96997f495a">printExpr</a>(e)&#160;&#160;&#160;(printf(&quot;%s = %d\r\n&quot;, #e, (e)))</td></tr>
-<tr class="memdesc:abdb35fe5009818050f272c96997f495a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print expression <b>e</b> and it's result <b>e</b> using printf.  <a href="#abdb35fe5009818050f272c96997f495a">More...</a><br /></td></tr>
-<tr class="separator:abdb35fe5009818050f272c96997f495a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a0958004718cacfebd15dee4a047b58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a7a0958004718cacfebd15dee4a047b58">verbInstr</a>(i)&#160;&#160;&#160;(printf(&quot;&quot; #i), (i))</td></tr>
-<tr class="memdesc:a7a0958004718cacfebd15dee4a047b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print instruction <b>e</b> and execute it.  <a href="#a7a0958004718cacfebd15dee4a047b58">More...</a><br /></td></tr>
-<tr class="separator:a7a0958004718cacfebd15dee4a047b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a972178562c2f1b9265e922291f2981bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a972178562c2f1b9265e922291f2981bb">str_clr</a>(s)&#160;&#160;&#160;(s[0] = '\0')</td></tr>
 <tr class="memdesc:a972178562c2f1b9265e922291f2981bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear string <b>s</b> (fast way)  <a href="#a972178562c2f1b9265e922291f2981bb">More...</a><br /></td></tr>
 <tr class="separator:a972178562c2f1b9265e922291f2981bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -100,9 +94,18 @@ Macros</h2></td></tr>
 <tr class="memitem:a367127b0408c41838d4bddce5040028b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a367127b0408c41838d4bddce5040028b">str_add_cr</a>(s)&#160;&#160;&#160;(strcat(s, '\r\n'))</td></tr>
 <tr class="memdesc:a367127b0408c41838d4bddce5040028b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adding new line to string using strcat.  <a href="#a367127b0408c41838d4bddce5040028b">More...</a><br /></td></tr>
 <tr class="separator:a367127b0408c41838d4bddce5040028b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81a5456c9c79ce15e9956a51e678ca52"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a81a5456c9c79ce15e9956a51e678ca52">VerboseInc</a>(x)&#160;&#160;&#160;(puts(&quot;Incrementing &quot; #x), (x)++)</td></tr>
-<tr class="memdesc:a81a5456c9c79ce15e9956a51e678ca52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment example using puts.  <a href="#a81a5456c9c79ce15e9956a51e678ca52">More...</a><br /></td></tr>
-<tr class="separator:a81a5456c9c79ce15e9956a51e678ca52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdb35fe5009818050f272c96997f495a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#abdb35fe5009818050f272c96997f495a">printExpr</a>(e)&#160;&#160;&#160;(printf(&quot;%s = %d\r\n&quot;, #e, (e)))</td></tr>
+<tr class="memdesc:abdb35fe5009818050f272c96997f495a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print expression <b>e</b> and it's result <b>e</b> using printf.  <a href="#abdb35fe5009818050f272c96997f495a">More...</a><br /></td></tr>
+<tr class="separator:abdb35fe5009818050f272c96997f495a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a0958004718cacfebd15dee4a047b58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a7a0958004718cacfebd15dee4a047b58">verbInstr</a>(i)&#160;&#160;&#160;(printf(#i), (i))</td></tr>
+<tr class="memdesc:a7a0958004718cacfebd15dee4a047b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print instruction <b>e</b> and execute it.  <a href="#a7a0958004718cacfebd15dee4a047b58">More...</a><br /></td></tr>
+<tr class="separator:a7a0958004718cacfebd15dee4a047b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a679dacf2212f2c67dcf07cc246a79b0c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a679dacf2212f2c67dcf07cc246a79b0c">verbInc</a>(x)&#160;&#160;&#160;(puts(&quot;Incrementing &quot; #x), (x)++)</td></tr>
+<tr class="memdesc:a679dacf2212f2c67dcf07cc246a79b0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment example using puts.  <a href="#a679dacf2212f2c67dcf07cc246a79b0c">More...</a><br /></td></tr>
+<tr class="separator:a679dacf2212f2c67dcf07cc246a79b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3fd4444390849a4408b62064ec70605"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#ac3fd4444390849a4408b62064ec70605">verbDec</a>(x)&#160;&#160;&#160;(puts(&quot;Incrementing &quot; #x), (x)--)</td></tr>
+<tr class="memdesc:ac3fd4444390849a4408b62064ec70605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrement example using puts.  <a href="#ac3fd4444390849a4408b62064ec70605">More...</a><br /></td></tr>
+<tr class="separator:ac3fd4444390849a4408b62064ec70605"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ARM common standard c library wrapper macros. </p>
@@ -209,6 +212,46 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="ac3fd4444390849a4408b62064ec70605"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3fd4444390849a4408b62064ec70605">&#9670;&nbsp;</a></span>verbDec</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define verbDec</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;(puts(&quot;Incrementing &quot; #x), (x)--)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decrement example using puts. </p>
+
+</div>
+</div>
+<a id="a679dacf2212f2c67dcf07cc246a79b0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a679dacf2212f2c67dcf07cc246a79b0c">&#9670;&nbsp;</a></span>verbInc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define verbInc</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;(puts(&quot;Incrementing &quot; #x), (x)++)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Increment example using puts. </p>
+
+</div>
+</div>
 <a id="a7a0958004718cacfebd15dee4a047b58"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a0958004718cacfebd15dee4a047b58">&#9670;&nbsp;</a></span>verbInstr</h2>
 
@@ -220,32 +263,12 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">i</td><td>)</td>
-          <td>&#160;&#160;&#160;(printf(&quot;&quot; #i), (i))</td>
+          <td>&#160;&#160;&#160;(printf(#i), (i))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Print instruction <b>e</b> and execute it. </p>
-
-</div>
-</div>
-<a id="a81a5456c9c79ce15e9956a51e678ca52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81a5456c9c79ce15e9956a51e678ca52">&#9670;&nbsp;</a></span>VerboseInc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define VerboseInc</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(puts(&quot;Incrementing &quot; #x), (x)++)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Increment example using puts. </p>
 
 </div>
 </div>
