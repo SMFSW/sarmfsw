@@ -2053,9 +2053,22 @@ INCLUDE_FILE_PATTERNS  = *.h
 # This tag requires that the tag ENABLE_PREPROCESSING is set to YES.
 
 PREDEFINED             = DOXY=1 \
-                         PACK__ \
                          __INLINE=inline \
                          "__STATIC_INLINE=static inline" \
+                         __WEAK= \
+                         ATTR__(...)= \
+                         ALIGN__(a)= \
+                         COLD__= \
+                         DEPRECATED__= \
+                         HOT__= \
+                         INLINE__= \
+                         NONNULL__= \
+                         NONNULLX__(...)= \
+                         NORETURN__= \
+                         SECTION__(s)= \
+                         PACK__= \
+                         PURE__= \
+                         USED__= \
                          __IO=volatile \
                          __O=volatile \
                          "__I=volatile const" \

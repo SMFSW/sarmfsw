@@ -22,6 +22,7 @@ SOFTWARE.
 
 ## v3.3
 
+* Doxyfile update
 * Adding support for unit tests and doxygen documentation generation with Travis CI
 * arm_attributes: Added macro for section, used nonnull(...) & multiple attibutes attributes
 * arm_cmsis: Added latest STM32 chips
@@ -29,6 +30,7 @@ SOFTWARE.
 * arm_inlines: added some binary manipulation inlines
 * arm_macros & arm_stdclib: simplified STR macro (no need of "")
 * arm_macros: moved TestMalloc to arm_macros.h (renamed to malloc_assert)
+* arm_macros: added SCALE_VAL & SCALE_VAL_FAST macros
 * arm_typedefs: Doxygen eGPIOState enum name fixed
 * arm_typedefs: Doxygen note added related to Arduino platform (for binary representation in binary.h)
 * sarmfsw.h: target names changed in enum
