@@ -123,6 +123,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a9c6e547f2295dccada70bd4af9595791"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#a9c6e547f2295dccada70bd4af9595791">TIM</a>(mnem)&#160;&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a37e0bd65f92cddd42b5507ae5fb50a50">timer</a>(mnem), <a class="el" href="arm__chip__stm32_8h.html#a8c38e09faad95f3e7edb678ba638a4b0">channel</a>(mnem)</td></tr>
 <tr class="memdesc:a9c6e547f2295dccada70bd4af9595791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for TIM/CHAN Alias (when using HAL_TIM_PWM_Start for example)  <a href="#a9c6e547f2295dccada70bd4af9595791">More...</a><br /></td></tr>
 <tr class="separator:a9c6e547f2295dccada70bd4af9595791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae69620948dea1b76e0ab7843ab719db7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#ae69620948dea1b76e0ab7843ab719db7">FLASH_SIZE</a>&#160;&#160;&#160;((*(uint16_t *) (FLASHSIZE_BASE)) * 1024)</td></tr>
+<tr class="memdesc:ae69620948dea1b76e0ab7843ab719db7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flash size in bytes.  <a href="#ae69620948dea1b76e0ab7843ab719db7">More...</a><br /></td></tr>
+<tr class="separator:ae69620948dea1b76e0ab7843ab719db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7aa97bf10990b633dcdebcbce97e7ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#af7aa97bf10990b633dcdebcbce97e7ff">HAL_MAX_TICKS</a>&#160;&#160;&#160;((uint32_t) -1)</td></tr>
 <tr class="memdesc:af7aa97bf10990b633dcdebcbce97e7ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">HAL max Ticks value.  <a href="#af7aa97bf10990b633dcdebcbce97e7ff">More...</a><br /></td></tr>
 <tr class="separator:af7aa97bf10990b633dcdebcbce97e7ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -229,6 +232,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Wrapper for TIM Channel Alias </p>
+
+</div>
+</div>
+<a id="ae69620948dea1b76e0ab7843ab719db7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae69620948dea1b76e0ab7843ab719db7">&#9670;&nbsp;</a></span>FLASH_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_SIZE&#160;&#160;&#160;((*(uint16_t *) (FLASHSIZE_BASE)) * 1024)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Flash size in bytes. </p>
+<dl class="section note"><dt>Note</dt><dd>FLASHSIZE_BASE is uint16_t type (given in kB) </dd></dl>
 
 </div>
 </div>
