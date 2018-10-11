@@ -64,6 +64,9 @@
 #define ARM_HAL_CFG			SAM_CONF_HEADER(SAM_FAMILY)			//!< Alias for SAM HAL config include
 
 
+/*** Flash size ***/
+// FLASH_SIZE (in bytes) is already defined in controller header, thus not requiring to define it here
+
 /*** MS Time base ***/
 #ifndef HAL_MAX_TICKS
 //!\note Define HAL_MAX_TICKS with custom max value in project if tick max value is not using 32b variable full scale

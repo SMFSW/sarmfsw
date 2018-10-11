@@ -28,16 +28,19 @@
 
 
 /*** GPIO pin name wrapper (from CubeMX pin names) ***/
-#define	port(mnem)			XCAT(mnem, _GPIO_Port)				//!< Wrapper for PORT Alias
-#define	pin(mnem)			XCAT(mnem, _Pin)					//!< Wrapper for PIN Alias
-#define	GPIO(mnem)			port(mnem), pin(mnem)				//!< Wrapper for PORT/PIN Alias (when using HAL_GPIO_ReadPin for example)
+#define	port(mnem)			XCAT(mnem, _GPIO_Port)		//!< Wrapper for PORT Alias
+#define	pin(mnem)			XCAT(mnem, _Pin)			//!< Wrapper for PIN Alias
+#define	GPIO(mnem)			port(mnem), pin(mnem)		//!< Wrapper for PORT/PIN Alias (when using HAL_GPIO_ReadPin for example)
 
 /*** TIM Channel name wrapper ***/
-#define	timer(mnem)			XCAT(mnem, _Tim)					//!< Wrapper for TIM Alias
-#define	channel(mnem)		XCAT(mnem, _Chan)					//!< Wrapper for TIM Channel Alias
+#define	timer(mnem)			XCAT(mnem, _Tim)			//!< Wrapper for TIM Alias
+#define	channel(mnem)		XCAT(mnem, _Chan)			//!< Wrapper for TIM Channel Alias
 //!\note You would have to define mnemonic _Tim/_Chan corresponding to what's defined in CubeMX as Port/Pin (for consistency)
-#define	TIM(mnem)			timer(mnem), channel(mnem)			//!< Wrapper for TIM/CHAN Alias (when using HAL_TIM_PWM_Start for example)
+#define	TIM(mnem)			timer(mnem), channel(mnem)	//!< Wrapper for TIM/CHAN Alias (when using HAL_TIM_PWM_Start for example)
 
+/*** Flash size ***/
+//!\note FLASHSIZE_BASE is uint16_t type (given in kB)
+#define	FLASH_SIZE			((*(uint16_t *) (FLASHSIZE_BASE)) * 1024)	//!< Flash size in bytes
 
 /*** MS Time base ***/
 #ifndef HAL_MAX_TICKS

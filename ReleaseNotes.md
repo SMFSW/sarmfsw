@@ -26,11 +26,11 @@ SOFTWARE.
 * Adding support for unit tests and doxygen documentation generation with Travis CI
 * arm_attributes: Added macro for section, used nonnull(...) & multiple attibutes attributes
 * arm_cmsis: Added latest STM32 chips
+* arm_chip_stm32: Added FLASH_SIZE macro (returning flash size in bytes) 
 * arm_chip_stm32: Added enum for last reset source (TODO: add more for sam & ino)
 * arm_inlines: added some binary manipulation inlines
 * arm_macros & arm_stdclib: simplified STR macro (no need of "")
 * arm_macros: moved TestMalloc to arm_macros.h (renamed to malloc_assert)
-* arm_macros: added SCALE_VAL & SCALE_VAL_FAST macros
 * arm_typedefs: Doxygen eGPIOState enum name fixed
 * arm_typedefs: Doxygen note added related to Arduino platform (for binary representation in binary.h)
 * sarmfsw.h: target names changed in enum
