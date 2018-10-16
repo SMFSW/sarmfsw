@@ -273,21 +273,21 @@ __INLINE LWORD SWAP_END64B(const LWORD l) {
 ** \param[in] tab - tab of 16b values
 ** \param[in] nb - nb of values in tab
 **/
-__INLINE void INLINE__ SWAP_END16B_TAB(WORD tab[], const WORD nb) {
+__INLINE void NONNULL_INLINE__ SWAP_END16B_TAB(WORD tab[], const WORD nb) {
 	for (unsigned int i = 0 ; i < nb ; i++)	tab[i] = SWAP_END16B(tab[i]); }
 
 /*!\brief Swap endians of a 32b tab (little -> big, big -> little)
 ** \param[in] tab - tab of 32b values
 ** \param[in] nb - nb of values in tab
 **/
-__INLINE void INLINE__ SWAP_END32B_TAB(DWORD tab[], const WORD nb) {
+__INLINE void NONNULL_INLINE__ SWAP_END32B_TAB(DWORD tab[], const WORD nb) {
 	for (unsigned int i = 0 ; i < nb ; i++)	tab[i] = SWAP_END32B(tab[i]); }
 
 /*!\brief Swap endians of a 64b tab (little -> big, big -> little)
 ** \param[in] tab - tab of 64b values
 ** \param[in] nb - nb of values in tab
 **/
-__INLINE void INLINE__ SWAP_END64B_TAB(LWORD tab[], const WORD nb) {
+__INLINE void NONNULL_INLINE__ SWAP_END64B_TAB(LWORD tab[], const WORD nb) {
 	for (unsigned int i = 0 ; i < nb ; i++)	tab[i] = SWAP_END64B(tab[i]); }
 
 
