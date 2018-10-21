@@ -1,6 +1,8 @@
 var searchData=
 [
   ['cat',['CAT',['../arm__macros_8h.html#a9404439ed46dc67d489a7d4ec2853e8f',1,'arm_macros.h']]],
+  ['celsius2fahrenheit',['celsius2fahrenheit',['../arm__inlines_8h.html#a3b3f9e0dbd250c7de2dbe1257d35bf2f',1,'arm_inlines.h']]],
+  ['celsius2kelvin',['celsius2kelvin',['../arm__inlines_8h.html#a368d516af8cf363f407eba746f6e3ec9',1,'arm_inlines.h']]],
   ['channel',['channel',['../arm__chip__stm32_8h.html#a8c38e09faad95f3e7edb678ba638a4b0',1,'arm_chip_stm32.h']]],
   ['char',['CHAR',['../arm__typedefs_8h.html#aebb9e13210d88d43e32e735ada43a425',1,'arm_typedefs.h']]],
   ['charnul',['charNUL',['../arm__macros_8h.html#a7fbb0dad1ca70368008c8f4faff09aef',1,'arm_macros.h']]],

@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['celsius2fahrenheit',['celsius2fahrenheit',['../arm__inlines_8h.html#a3b3f9e0dbd250c7de2dbe1257d35bf2f',1,'arm_inlines.h']]],
+  ['celsius2kelvin',['celsius2kelvin',['../arm__inlines_8h.html#a368d516af8cf363f407eba746f6e3ec9',1,'arm_inlines.h']]],
   ['conv16to8bits',['conv16to8Bits',['../arm__inlines_8h.html#a7de2b87520419d797b6a91591014dfb8',1,'arm_inlines.h']]],
   ['conv16upto32bits',['conv16upto32Bits',['../arm__inlines_8h.html#a3d38ca4793f247857de480c56fd386d8',1,'arm_inlines.h']]],
   ['conv32upto64bits',['conv32upto64Bits',['../arm__inlines_8h.html#a3d75eb415c6e1e2934004156649b8abe',1,'arm_inlines.h']]],

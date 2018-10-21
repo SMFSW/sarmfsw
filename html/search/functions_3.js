@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['get_5ffp_5fdec',['get_fp_dec',['../arm__inlines_8h.html#a6c8023a0e3ebc69175bbdedfdb7d6791',1,'arm_inlines.h']]],
-  ['getmsbitset',['getMSBitSet',['../arm__inlines_8h.html#a3b4c0ea5c22f86371428b38be1501b3e',1,'arm_inlines.h']]],
-  ['gray2bin',['gray2bin',['../arm__inlines_8h.html#a75b2d190a8d80294c31477c0324e970c',1,'arm_inlines.h']]]
+  ['fahrenheit2celsius',['fahrenheit2celsius',['../arm__inlines_8h.html#af04317d39611be5064e8c91c0f46790b',1,'arm_inlines.h']]],
+  ['fahrenheit2kelvin',['fahrenheit2kelvin',['../arm__inlines_8h.html#a2ef862de015ad6dbf6013f26c5642f3b',1,'arm_inlines.h']]]
 ];
