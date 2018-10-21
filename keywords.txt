@@ -126,6 +126,13 @@ SWAP_END64B_TAB	KEYWORD2
 testEndian_basic	KEYWORD2
 testEndian_full	KEYWORD2
 
+celsius2kelvin	KEYWORD2
+kelvin2celsius	KEYWORD2
+celsius2fahrenheit	KEYWORD2
+fahrenheit2celsius	KEYWORD2
+fahrenheit2kelvin	KEYWORD2
+kelvin2fahrenheit	KEYWORD2
+
 get_fp_dec	KEYWORD2
 
 #######################################

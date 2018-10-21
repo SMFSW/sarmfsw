@@ -327,6 +327,55 @@ __INLINE eEndian testEndian_full(void) {
 }
 
 
+/*********************************/
+/***  TEMPERATURE CCONVERSIONS ***/
+/*********************************/
+
+/*!\brief Convert degrees Celsius to Kelvin
+** \param[in] cels - Celsius degrees value
+** \return Kelvin degrees
+**/
+__INLINE float celsius2kelvin(const float cels) {
+	return (cels + 273.15f); }
+
+/*!\brief Convert degrees Kelvin to Celsius
+** \param[in] kelv - Kelvin degrees value
+** \return Kelvin degrees
+**/
+__INLINE float kelvin2celsius(const float kelv) {
+	return (kelv - 273.15f); }
+
+
+/*!\brief Convert degrees Celsius to Fahrenheit
+** \param[in] cels - Celsius degrees value
+** \return Fahrenheit degrees
+**/
+__INLINE float celsius2fahrenheit(const float cels) {
+	return (cels * (9.0f / 5.0f)) + 32.0f; }
+
+/*!\brief Convert degrees Fahrenheit to Celsius
+** \param[in] fahr - Fahrenheit degrees value
+** \return Celsius degrees
+**/
+__INLINE float fahrenheit2celsius(const float fahr) {
+	return ((fahr - 32.0f) * (5.0f / 9.0f)); }
+
+
+/*!\brief Convert degrees Fahrenheit to Kelvin
+** \param[in] fahr - Fahrenheit degrees value
+** \return Kelvin degrees
+**/
+__INLINE float fahrenheit2kelvin(const float fahr) {
+	return (celsius2kelvin(fahrenheit2celsius(fahr))); }
+
+/*!\brief Convert degrees Kelvin to Fahrenheit
+** \param[in] kelv - Kelvin degrees value
+** \return Fahrenheit degrees
+**/
+__INLINE float kelvin2fahrenheit(const float kelv) {
+	return (celsius2fahrenheit(kelvin2celsius(kelv))); }
+
+
 /************************/
 /***  FLOATING POINT  ***/
 /************************/
