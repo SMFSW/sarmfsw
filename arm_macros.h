@@ -47,10 +47,19 @@
 #define MAKEWORD(lsb, msb)	((WORD) (((BYTE) (lsb)) | LSHIFT(((WORD) ((BYTE) (msb))), 8)))		//!< Make WORD from \b lsb and \b msb
 #define MAKELONG(lsw, msw)	((DWORD) (((WORD) (lsw)) | LSHIFT(((DWORD) ((WORD) (msw))), 16)))	//!< Make LONG from \b lsw and \b msw
 
-#define LOWORD(l)			((WORD) (l))						//!< Get WORD LSW from LONG \b l
-#define HIWORD(l)			((WORD) RSHIFT((DWORD) (l), 16))	//!< Get WORD MSW from LONG \b l
+
+#ifdef LOBYTE
+#undef LOBYTE
+#endif
+
+#ifdef HIBYTE
+#undef HIBYTE
+#endif
+
 #define LOBYTE(w)			((BYTE) (w))						//!< Get BYTE LSB from WORD \b w
 #define HIBYTE(w)			((BYTE) RSHIFT((WORD) (w), 8))		//!< Get BYTE MSB from WORD \b w
+#define LOWORD(l)			((WORD) (l))						//!< Get WORD LSW from LONG \b l
+#define HIWORD(l)			((WORD) RSHIFT((DWORD) (l), 16))	//!< Get WORD MSW from LONG \b l
 
 #define	SWAP_TYPE(a, b, typ)	{ typ c = a; a = b; b = c; }	//!< Swap type \b typ \b a \& \b b
 #define	SWAP_BYTE(a, b)			SWAP_TYPE(a, b, BYTE)			//!< Swap BYTEs \b a \& \b b

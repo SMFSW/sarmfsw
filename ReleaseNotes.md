@@ -34,6 +34,7 @@ SOFTWARE.
 * arm_macros & arm_stdclib: simplified STR macro (no need of "")
 * arm_macros: moved TestMalloc to arm_macros.h (renamed to malloc_assert)
 * arm_macros: added OBJ macro to get the abstract object of a structure
+* arm_macros: added undef of LOBYTE & HIBYTE if previously defined
 * arm_typedefs: Doxygen eGPIOState enum name fixed
 * arm_typedefs: Doxygen note added related to Arduino platform (for binary representation in binary.h)
 * sarmfsw.h: target names changed in enum
