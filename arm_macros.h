@@ -49,11 +49,11 @@
 
 
 #ifdef LOBYTE
-#undef LOBYTE
+#undef LOBYTE	//!\note Undefine LOBYTE if already defined in some other library
 #endif
 
 #ifdef HIBYTE
-#undef HIBYTE
+#undef HIBYTE	//!\note Undefine HIBYTE if already defined in some other library
 #endif
 
 #define LOBYTE(w)			((BYTE) (w))						//!< Get BYTE LSB from WORD \b w

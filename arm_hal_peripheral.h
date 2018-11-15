@@ -124,10 +124,6 @@
 			#include "mdios.h"
 		#endif /* HAL_MDIOS_MODULE_ENABLED */
 
-		#ifdef HAL_MMC_MODULE_ENABLED
-			#include "mmc.h"
-		#endif /* HAL_MMC_MODULE_ENABLED */
-
 		#ifdef HAL_MDMA_MODULE_ENABLED
 			#include "mdma.h"
 		#endif /* HAL_MDMA_MODULE_ENABLED */
