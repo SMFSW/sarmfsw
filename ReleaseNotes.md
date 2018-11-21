@@ -25,7 +25,7 @@ SOFTWARE.
 * Doxyfile update
 * Adding support for unit tests and doxygen documentation generation with Travis CI
 * arm_attributes: Added macro for section, used, nonnull(...) & ATTR__ multiple attributes
-* arm_cmsis: Added latest STM32 chips
+* arm_cmsis: Added latest STM32 chips (and STM32G0 family added)
 * arm_chip_stm32: Added FLASH_SIZE macro (returning flash size in bytes) 
 * arm_chip_stm32: Added enum for last reset source (TODO: add more for sam & ino)
 * arm_hal_peripheral: Removed unlikely defined include files (not related to STM32 periherals, rather linked to middlewares)

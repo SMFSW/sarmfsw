@@ -5,7 +5,7 @@
 ** \warning Latest ARM chips might now be recognized; if not, define at project level:
 ** 			- for STM32 families (STMicroelectronics):
 ** 				- STM_FAMILY xy:
-** 					- x : f/l/h
+** 					- x : f/l/h/g
 ** 					- y : sub-family number
 ** 			- for SAM families (Atmel):
 ** 				- SAM_FAMILY xy(yy)
@@ -119,6 +119,11 @@
 	#define STM32L4					//!< STM32L4 family generic define
 	#if !defined(STM_FAMILY)
 		#define STM_FAMILY	l4		//!< STM32 family (l4) for name catenation
+	#endif
+#elif	defined(STM32G071xx) || defined(STM32G081xx) || defined(STM32G070xx)
+	#define STM32G0					//!< STM32G0 family generic define
+	#if !defined(STM_FAMILY)
+		#define STM_FAMILY	g0		//!< STM32 family (g0) for name catenation
 	#endif
 /**************************/
 /*** Atmel SAM Families ***/
