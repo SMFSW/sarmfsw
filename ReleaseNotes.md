@@ -29,6 +29,7 @@ SOFTWARE.
 * arm_chip_stm32: Added FLASH_SIZE macro (returning flash size in bytes) 
 * arm_chip_stm32: Added enum for last reset source (TODO: add more for sam & ino)
 * arm_hal_peripheral: Removed unlikely defined include files (not related to STM32 periherals, rather linked to middlewares)
+* arm_hal_peripheral: Fixed qspi.h include (quadspi.h)
 * arm_inlines: added some binary manipulation inlines
 * arm_inlines: added nonnull check for pointers in SWAP_ENDxxB_TAB
 * arm_inlines: added temperature conversions (kelvin, celsius, fahrenheit)

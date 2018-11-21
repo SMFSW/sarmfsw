@@ -145,7 +145,7 @@
 		#endif /* HAL_PCCARD_MODULE_ENABLED */
 
 		#ifdef HAL_QSPI_MODULE_ENABLED
-			#include "qspi.h"
+			#include "quadspi.h"
 		#endif /* HAL_QSPI_MODULE_ENABLED */
 
 		#ifdef HAL_RNG_MODULE_ENABLED
