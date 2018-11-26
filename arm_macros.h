@@ -70,6 +70,7 @@
 #define	SWAP_DOUBLE(a, b)		SWAP_TYPE(a, b, double)			//!< Swap doubles \b a \& \b b
 
 #define SZ_OBJ(obj, typ)		((size_t) (sizeof(obj) / sizeof(typ)))					//!< Computes the number of elements of \b obj following \b typ
+#define SZ_OBJ_MBR(typ, mbr)	((size_t) sizeof(((typ *)0)->mbr))						//!< Computes the size of member \b mbr in struct \b typ
 #define OFFSET_OF(typ, mbr)		((size_t) &(((typ *)0)->mbr))							//!< Computes the offset member \b mbr from struct \b typ
 #define ROOT_OF(ptr, typ, mbr)	((typ *) (((uint8_t *) ptr) - OFFSET_OF(typ, mbr)))		//!< Computes the address of parent struct \b typ of \b ptr from member \b mbr
 
