@@ -165,13 +165,13 @@ Macros</h2></td></tr>
 <tr class="memdesc:a7cee056d79cdd74747fecb89a4c39d7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap doubles <b>a</b> &amp; <b>b</b>.  <a href="#a7cee056d79cdd74747fecb89a4c39d7f">More...</a><br /></td></tr>
 <tr class="separator:a7cee056d79cdd74747fecb89a4c39d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae222ed5e4821c01c4d5fc924673d844d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#ae222ed5e4821c01c4d5fc924673d844d">SZ_OBJ</a>(obj,  typ)&#160;&#160;&#160;((size_t) (sizeof(obj) / sizeof(typ)))</td></tr>
-<tr class="memdesc:ae222ed5e4821c01c4d5fc924673d844d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the number of elements of <b>obj</b> following <b>typ</b>.  <a href="#ae222ed5e4821c01c4d5fc924673d844d">More...</a><br /></td></tr>
+<tr class="memdesc:ae222ed5e4821c01c4d5fc924673d844d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the number of elements in <b>obj</b> of type <b>typ</b>.  <a href="#ae222ed5e4821c01c4d5fc924673d844d">More...</a><br /></td></tr>
 <tr class="separator:ae222ed5e4821c01c4d5fc924673d844d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8141524986e4f2139efc27a8a08ce51"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#ab8141524986e4f2139efc27a8a08ce51">SZ_OBJ_MBR</a>(typ,  mbr)&#160;&#160;&#160;((size_t) sizeof(((typ *)0)-&gt;mbr))</td></tr>
-<tr class="memdesc:ab8141524986e4f2139efc27a8a08ce51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the size of member <b>mbr</b> in struct <b>typ</b>.  <a href="#ab8141524986e4f2139efc27a8a08ce51">More...</a><br /></td></tr>
-<tr class="separator:ab8141524986e4f2139efc27a8a08ce51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44a11b5d464b3d6837a0e6136c367abb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a44a11b5d464b3d6837a0e6136c367abb">SZ_TYP_MBR</a>(typ,  mbr)&#160;&#160;&#160;((size_t) sizeof(((typ *)0)-&gt;mbr))</td></tr>
+<tr class="memdesc:a44a11b5d464b3d6837a0e6136c367abb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the size of member <b>mbr</b> in struct type <b>typ</b>.  <a href="#a44a11b5d464b3d6837a0e6136c367abb">More...</a><br /></td></tr>
+<tr class="separator:a44a11b5d464b3d6837a0e6136c367abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ca80befacab1cf54e976f05f625f32c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a4ca80befacab1cf54e976f05f625f32c">OFFSET_OF</a>(typ,  mbr)&#160;&#160;&#160;((size_t) &amp;(((typ *)0)-&gt;mbr))</td></tr>
-<tr class="memdesc:a4ca80befacab1cf54e976f05f625f32c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the offset member <b>mbr</b> from struct <b>typ</b>.  <a href="#a4ca80befacab1cf54e976f05f625f32c">More...</a><br /></td></tr>
+<tr class="memdesc:a4ca80befacab1cf54e976f05f625f32c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the offset member <b>mbr</b> from struct type <b>typ</b>.  <a href="#a4ca80befacab1cf54e976f05f625f32c">More...</a><br /></td></tr>
 <tr class="separator:a4ca80befacab1cf54e976f05f625f32c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32c119f1bd8155fc34ea0a798cc2f2c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a32c119f1bd8155fc34ea0a798cc2f2c3">ROOT_OF</a>(ptr,  typ,  mbr)&#160;&#160;&#160;((typ *) (((uint8_t *) ptr) - <a class="el" href="arm__macros_8h.html#a4ca80befacab1cf54e976f05f625f32c">OFFSET_OF</a>(typ, mbr)))</td></tr>
 <tr class="memdesc:a32c119f1bd8155fc34ea0a798cc2f2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the address of parent struct <b>typ</b> of <b>ptr</b> from member <b>mbr</b>.  <a href="#a32c119f1bd8155fc34ea0a798cc2f2c3">More...</a><br /></td></tr>
@@ -859,7 +859,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Computes the offset member <b>mbr</b> from struct <b>typ</b>. </p>
+<p>Computes the offset member <b>mbr</b> from struct type <b>typ</b>. </p>
 
 </div>
 </div>
@@ -1307,18 +1307,18 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Computes the number of elements of <b>obj</b> following <b>typ</b>. </p>
+<p>Computes the number of elements in <b>obj</b> of type <b>typ</b>. </p>
 
 </div>
 </div>
-<a id="ab8141524986e4f2139efc27a8a08ce51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8141524986e4f2139efc27a8a08ce51">&#9670;&nbsp;</a></span>SZ_OBJ_MBR</h2>
+<a id="a44a11b5d464b3d6837a0e6136c367abb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44a11b5d464b3d6837a0e6136c367abb">&#9670;&nbsp;</a></span>SZ_TYP_MBR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SZ_OBJ_MBR</td>
+          <td class="memname">#define SZ_TYP_MBR</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">typ, </td>
@@ -1337,7 +1337,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Computes the size of member <b>mbr</b> in struct <b>typ</b>. </p>
+<p>Computes the size of member <b>mbr</b> in struct type <b>typ</b>. </p>
 
 </div>
 </div>

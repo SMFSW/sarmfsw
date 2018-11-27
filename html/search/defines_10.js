@@ -18,5 +18,5 @@ var searchData=
   ['swap_5ftype',['SWAP_TYPE',['../arm__macros_8h.html#a0878b994fac8d6563664edba349c7f70',1,'arm_macros.h']]],
   ['swap_5fword',['SWAP_WORD',['../arm__macros_8h.html#a51fe793cd398d5f269295b88b0433929',1,'arm_macros.h']]],
   ['sz_5fobj',['SZ_OBJ',['../arm__macros_8h.html#ae222ed5e4821c01c4d5fc924673d844d',1,'arm_macros.h']]],
-  ['sz_5fobj_5fmbr',['SZ_OBJ_MBR',['../arm__macros_8h.html#ab8141524986e4f2139efc27a8a08ce51',1,'arm_macros.h']]]
+  ['sz_5ftyp_5fmbr',['SZ_TYP_MBR',['../arm__macros_8h.html#a44a11b5d464b3d6837a0e6136c367abb',1,'arm_macros.h']]]
 ];
