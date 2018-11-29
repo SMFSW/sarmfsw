@@ -36,6 +36,8 @@ SOFTWARE.
 * arm_macros & arm_stdclib: simplified STR macro (no need of "")
 * arm_macros: moved TestMalloc to arm_macros.h (renamed to malloc_assert)
 * arm_macros: added SZ_TYP_MBR macro to get the sizeof of a member in a structure
+* arm_macros: added TYP_MBR macro to get member of typedef struct
+* arm_macros: added TYP_MBR_TYP macro to get type of member in typedef struct
 * arm_macros: added undef of LOBYTE & HIBYTE if previously defined
 * arm_typedefs: Doxygen eGPIOState enum name fixed
 * arm_typedefs: Doxygen note added related to Arduino platform (for binary representation in binary.h)

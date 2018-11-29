@@ -71,6 +71,10 @@
 
 #define SZ_OBJ(obj, typ)		((size_t) (sizeof(obj) / sizeof(typ)))					//!< Computes the number of elements in \b obj of type \b typ
 #define SZ_TYP_MBR(typ, mbr)	((size_t) sizeof(((typ *)0)->mbr))						//!< Computes the size of member \b mbr in struct type \b typ
+
+#define TYP_MBR(typ, mbr)		(((typ *)0)->mbr)										//!< Get member \b mbr from a struct type \b typ
+#define TYP_MBR_TYP(typ, mbr)	typeof(TYP_MBR(typ, mbr))								//!< Get typeof member \b mbr from a struct type \b typ (no () as it wouldn't work for pointers to member type)
+
 #define OFFSET_OF(typ, mbr)		((size_t) &(((typ *)0)->mbr))							//!< Computes the offset member \b mbr from struct type \b typ
 #define ROOT_OF(ptr, typ, mbr)	((typ *) (((uint8_t *) ptr) - OFFSET_OF(typ, mbr)))		//!< Computes the address of parent struct \b typ of \b ptr from member \b mbr
 
