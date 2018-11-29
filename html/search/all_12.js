@@ -12,6 +12,8 @@ var searchData=
   ['toggle',['Toggle',['../arm__typedefs_8h.html#abc85f209b5307f54c70121d3e83f14b9a0884ca4af1f5df7de6604f540de37743',1,'arm_typedefs.h']]],
   ['tpsinf_5fms',['TPSINF_MS',['../arm__inlines_8h.html#a560417db6ae50a888c8cd0d14cb31be2',1,'arm_inlines.h']]],
   ['tpssup_5fms',['TPSSUP_MS',['../arm__inlines_8h.html#a08a6e7e63e959dc8f8c87f6065c648ea',1,'arm_inlines.h']]],
-  ['true',['TRUE',['../arm__macros_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d',1,'TRUE():&#160;arm_macros.h'],['../arm__macros_8h.html#add3ca9eefe3b5b754426f51d3043e579',1,'True():&#160;arm_macros.h']]],
-  ['twothird',['TwoThird',['../arm__macros_8h.html#a42087a58bf74f075fdfa47ddead28edf',1,'arm_macros.h']]]
+  ['true',['True',['../arm__macros_8h.html#add3ca9eefe3b5b754426f51d3043e579',1,'True():&#160;arm_macros.h'],['../arm__macros_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d',1,'TRUE():&#160;arm_macros.h']]],
+  ['twothird',['TwoThird',['../arm__macros_8h.html#a42087a58bf74f075fdfa47ddead28edf',1,'arm_macros.h']]],
+  ['typ_5fmbr',['TYP_MBR',['../arm__macros_8h.html#a945f756368ec4c5e11befc58b4b91dc1',1,'arm_macros.h']]],
+  ['typ_5fmbr_5ftyp',['TYP_MBR_TYP',['../arm__macros_8h.html#a26bc59a26ebb159518e4717ffa37cc6d',1,'arm_macros.h']]]
 ];

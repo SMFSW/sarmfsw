@@ -170,6 +170,12 @@ Macros</h2></td></tr>
 <tr class="memitem:a44a11b5d464b3d6837a0e6136c367abb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a44a11b5d464b3d6837a0e6136c367abb">SZ_TYP_MBR</a>(typ,  mbr)&#160;&#160;&#160;((size_t) sizeof(((typ *)0)-&gt;mbr))</td></tr>
 <tr class="memdesc:a44a11b5d464b3d6837a0e6136c367abb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the size of member <b>mbr</b> in struct type <b>typ</b>.  <a href="#a44a11b5d464b3d6837a0e6136c367abb">More...</a><br /></td></tr>
 <tr class="separator:a44a11b5d464b3d6837a0e6136c367abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a945f756368ec4c5e11befc58b4b91dc1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a945f756368ec4c5e11befc58b4b91dc1">TYP_MBR</a>(typ,  mbr)&#160;&#160;&#160;(((typ *)0)-&gt;mbr)</td></tr>
+<tr class="memdesc:a945f756368ec4c5e11befc58b4b91dc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get member <b>mbr</b> from a struct type <b>typ</b>.  <a href="#a945f756368ec4c5e11befc58b4b91dc1">More...</a><br /></td></tr>
+<tr class="separator:a945f756368ec4c5e11befc58b4b91dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26bc59a26ebb159518e4717ffa37cc6d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a26bc59a26ebb159518e4717ffa37cc6d">TYP_MBR_TYP</a>(typ,  mbr)&#160;&#160;&#160;typeof(<a class="el" href="arm__macros_8h.html#a945f756368ec4c5e11befc58b4b91dc1">TYP_MBR</a>(typ, mbr))</td></tr>
+<tr class="memdesc:a26bc59a26ebb159518e4717ffa37cc6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get typeof member <b>mbr</b> from a struct type <b>typ</b> (no () as it wouldn't work for pointers to member type)  <a href="#a26bc59a26ebb159518e4717ffa37cc6d">More...</a><br /></td></tr>
+<tr class="separator:a26bc59a26ebb159518e4717ffa37cc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ca80befacab1cf54e976f05f625f32c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a4ca80befacab1cf54e976f05f625f32c">OFFSET_OF</a>(typ,  mbr)&#160;&#160;&#160;((size_t) &amp;(((typ *)0)-&gt;mbr))</td></tr>
 <tr class="memdesc:a4ca80befacab1cf54e976f05f625f32c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the offset member <b>mbr</b> from struct type <b>typ</b>.  <a href="#a4ca80befacab1cf54e976f05f625f32c">More...</a><br /></td></tr>
 <tr class="separator:a4ca80befacab1cf54e976f05f625f32c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1386,6 +1392,66 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>2/3 approximation </p>
+
+</div>
+</div>
+<a id="a945f756368ec4c5e11befc58b4b91dc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a945f756368ec4c5e11befc58b4b91dc1">&#9670;&nbsp;</a></span>TYP_MBR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TYP_MBR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">typ, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mbr&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(((typ *)0)-&gt;mbr)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get member <b>mbr</b> from a struct type <b>typ</b>. </p>
+
+</div>
+</div>
+<a id="a26bc59a26ebb159518e4717ffa37cc6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26bc59a26ebb159518e4717ffa37cc6d">&#9670;&nbsp;</a></span>TYP_MBR_TYP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TYP_MBR_TYP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">typ, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mbr&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;typeof(<a class="el" href="arm__macros_8h.html#a945f756368ec4c5e11befc58b4b91dc1">TYP_MBR</a>(typ, mbr))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get typeof member <b>mbr</b> from a struct type <b>typ</b> (no () as it wouldn't work for pointers to member type) </p>
 
 </div>
 </div>
