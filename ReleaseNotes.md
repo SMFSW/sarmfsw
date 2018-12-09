@@ -33,6 +33,7 @@ SOFTWARE.
 * arm_inlines: added some binary manipulation inlines
 * arm_inlines: added nonnull check for pointers in SWAP_ENDxxB_TAB
 * arm_inlines: added temperature conversions (kelvin, celsius, fahrenheit)
+* arm_inlines: added RestrictedAverage_XXX inlines
 * arm_macros & arm_stdclib: simplified STR macro (no need of "")
 * arm_macros: moved TestMalloc to arm_macros.h (renamed to malloc_assert)
 * arm_macros: added SZ_TYP_MBR macro to get the sizeof of a member in a structure

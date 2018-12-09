@@ -140,6 +140,15 @@ kelvin2fahrenheit	KEYWORD2
 
 get_fp_dec	KEYWORD2
 
+RestrictedAverage_BYTE	KEYWORD2
+RestrictedAverage_WORD	KEYWORD2
+RestrictedAverage_DWORD	KEYWORD2
+RestrictedAverage_SBYTE	KEYWORD2
+RestrictedAverage_SWORD	KEYWORD2
+RestrictedAverage_SDWORD	KEYWORD2
+RestrictedAverage_float	KEYWORD2
+RestrictedAverage_double	KEYWORD2
+
 #######################################
 # Instances (KEYWORD2)
 #######################################
