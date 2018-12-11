@@ -61,6 +61,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">arm_inlines.h File Reference</div>  </div>
@@ -99,6 +100,11 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 <p><a href="arm__inlines_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a1e1965e310ddad5163f2d880e4a8b43d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines_8h.html#a1e1965e310ddad5163f2d880e4a8b43d">RESTRICTED_AVERAGE</a>(typ_t,  sum_t)</td></tr>
+<tr class="separator:a1e1965e310ddad5163f2d880e4a8b43d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a08a6e7e63e959dc8f8c87f6065c648ea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines_8h.html#a08a6e7e63e959dc8f8c87f6065c648ea">TPSSUP_MS</a> (const <a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a> last, const <a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a> time)</td></tr>
@@ -203,12 +209,66 @@ Functions</h2></td></tr>
 <tr class="memitem:a6c8023a0e3ebc69175bbdedfdb7d6791"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines_8h.html#a6c8023a0e3ebc69175bbdedfdb7d6791">get_fp_dec</a> (float f, uint8_t nb)</td></tr>
 <tr class="memdesc:a6c8023a0e3ebc69175bbdedfdb7d6791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get floating point number decimal part.  <a href="#a6c8023a0e3ebc69175bbdedfdb7d6791">More...</a><br /></td></tr>
 <tr class="separator:a6c8023a0e3ebc69175bbdedfdb7d6791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca27ac701ad715533881a975c34f914e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines_8h.html#aca27ac701ad715533881a975c34f914e">RestrictedAverage_BYTE</a> (volatile <a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a> pArray[], const uint8_t nb)</td></tr>
+<tr class="memdesc:aca27ac701ad715533881a975c34f914e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get average value of tab excluding most extreme values (BYTE)  <a href="#aca27ac701ad715533881a975c34f914e">More...</a><br /></td></tr>
+<tr class="separator:aca27ac701ad715533881a975c34f914e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a682426f65de80e91da828561e1c398e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines_8h.html#a682426f65de80e91da828561e1c398e2">RestrictedAverage_WORD</a> (volatile <a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a> pArray[], const uint8_t nb)</td></tr>
+<tr class="memdesc:a682426f65de80e91da828561e1c398e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get average value of tab excluding most extreme values (WORD)  <a href="#a682426f65de80e91da828561e1c398e2">More...</a><br /></td></tr>
+<tr class="separator:a682426f65de80e91da828561e1c398e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7c86891a6cc20ab319e6df397baffec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines_8h.html#ab7c86891a6cc20ab319e6df397baffec">RestrictedAverage_DWORD</a> (volatile <a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a> pArray[], const uint8_t nb)</td></tr>
+<tr class="memdesc:ab7c86891a6cc20ab319e6df397baffec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get average value of tab excluding most extreme values (DWORD)  <a href="#ab7c86891a6cc20ab319e6df397baffec">More...</a><br /></td></tr>
+<tr class="separator:ab7c86891a6cc20ab319e6df397baffec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fcecd92ddf43c0dad1dabf609c111c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__typedefs_8h.html#a0b0ec08cb12c90f493f131cffb432638">SBYTE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines_8h.html#a6fcecd92ddf43c0dad1dabf609c111c7">RestrictedAverage_SBYTE</a> (volatile <a class="el" href="arm__typedefs_8h.html#a0b0ec08cb12c90f493f131cffb432638">SBYTE</a> pArray[], const uint8_t nb)</td></tr>
+<tr class="memdesc:a6fcecd92ddf43c0dad1dabf609c111c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get average value of tab excluding most extreme values (SBYTE)  <a href="#a6fcecd92ddf43c0dad1dabf609c111c7">More...</a><br /></td></tr>
+<tr class="separator:a6fcecd92ddf43c0dad1dabf609c111c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accd4dcbfe94ab4fc6cdbf086883dfbdf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__typedefs_8h.html#a9beb1dcf5779f93653b7a57919d431e1">SWORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines_8h.html#accd4dcbfe94ab4fc6cdbf086883dfbdf">RestrictedAverage_SWORD</a> (volatile <a class="el" href="arm__typedefs_8h.html#a9beb1dcf5779f93653b7a57919d431e1">SWORD</a> pArray[], const uint8_t nb)</td></tr>
+<tr class="memdesc:accd4dcbfe94ab4fc6cdbf086883dfbdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get average value of tab excluding most extreme values (SWORD)  <a href="#accd4dcbfe94ab4fc6cdbf086883dfbdf">More...</a><br /></td></tr>
+<tr class="separator:accd4dcbfe94ab4fc6cdbf086883dfbdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77a4b3249e93883b5411f8a3a4172d2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines_8h.html#a77a4b3249e93883b5411f8a3a4172d2d">RestrictedAverage_SDWORD</a> (volatile <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a> pArray[], const uint8_t nb)</td></tr>
+<tr class="memdesc:a77a4b3249e93883b5411f8a3a4172d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get average value of tab excluding most extreme values (SDWORD)  <a href="#a77a4b3249e93883b5411f8a3a4172d2d">More...</a><br /></td></tr>
+<tr class="separator:a77a4b3249e93883b5411f8a3a4172d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3265305209ddedf7bc75ced8c12a569e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines_8h.html#a3265305209ddedf7bc75ced8c12a569e">RestrictedAverage_float</a> (volatile float pArray[], const uint8_t nb)</td></tr>
+<tr class="memdesc:a3265305209ddedf7bc75ced8c12a569e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get average value of tab excluding most extreme values (float)  <a href="#a3265305209ddedf7bc75ced8c12a569e">More...</a><br /></td></tr>
+<tr class="separator:a3265305209ddedf7bc75ced8c12a569e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab547739da836561137aa4d4a1e71b5b6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines_8h.html#ab547739da836561137aa4d4a1e71b5b6">RestrictedAverage_double</a> (volatile double pArray[], const uint8_t nb)</td></tr>
+<tr class="memdesc:ab547739da836561137aa4d4a1e71b5b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get average value of tab excluding most extreme values (double)  <a href="#ab547739da836561137aa4d4a1e71b5b6">More...</a><br /></td></tr>
+<tr class="separator:ab547739da836561137aa4d4a1e71b5b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ARM common inlines. </p>
 <dl class="section author"><dt>Author</dt><dd>SMFSW </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2018, SMFSW </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a1e1965e310ddad5163f2d880e4a8b43d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e1965e310ddad5163f2d880e4a8b43d">&#9670;&nbsp;</a></span>RESTRICTED_AVERAGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RESTRICTED_AVERAGE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">typ_t, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">sum_t&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">__INLINE typ_t RestrictedAverage_##typ_t(<span class="keyword">volatile</span> typ_t pArray[], <span class="keyword">const</span> uint8_t nb)                                     \</div><div class="line">    {                                                                                                                       \</div><div class="line">        typ_t   Array[nb];                                                                                                  \</div><div class="line">        sum_t   sum = 0;                                                                                                    \</div><div class="line">        int     i;                                                                                                          \</div><div class="line">                                                                                                                            \</div><div class="line">        if (nb &lt;= 2)    { <span class="keywordflow">return</span> 0; }                                                                                       \</div><div class="line">                                                                                                                            \</div><div class="line">        <span class="comment">/* Array copy (memcpy not used as copy by byte and pTab may be volatile) */</span>                                         \</div><div class="line">        for (i = 0 ; i &lt; nb ; i++)          { Array[i] = pArray[i]; }                                                       \</div><div class="line">        <span class="comment">/* Shift min to first array index */</span>                                                                                \</div><div class="line">        for (i = 1 ; i &lt; nb ; i++)          { <span class="keywordflow">if</span> (Array[i] &lt; Array[0])  <a class="code" href="arm__macros_8h.html#a0878b994fac8d6563664edba349c7f70">SWAP_TYPE</a>(Array[0], Array[i], typ_t); }             \</div><div class="line">        <span class="comment">/* Shift max to last array index */</span>                                                                                 \</div><div class="line">        for (i = 1 ; i &lt; (nb - 1) ; i++)    { <span class="keywordflow">if</span> (Array[i] &gt; Array[nb - 1]) <a class="code" href="arm__macros_8h.html#a0878b994fac8d6563664edba349c7f70">SWAP_TYPE</a>(Array[nb - 1], Array[i], typ_t); }    \</div><div class="line">        <span class="comment">/* Sum and averaging */</span>                                                                                             \</div><div class="line">        for (i = 1 ; i &lt; (nb - 1) ; i++)    { sum += Array[i]; }                                                            \</div><div class="line">        return (sum / (nb - 2));                                                                                            \</div><div class="line">    }                                                                                                                       \</div><div class="ttc" id="arm__macros_8h_html_a0878b994fac8d6563664edba349c7f70"><div class="ttname"><a href="arm__macros_8h.html#a0878b994fac8d6563664edba349c7f70">SWAP_TYPE</a></div><div class="ttdeci">#define SWAP_TYPE(a, b, typ)</div><div class="ttdoc">Swap type typ a &amp; b. </div><div class="ttdef"><b>Definition:</b> arm_macros.h:64</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a2c00cb92bd59bc1c90fbae9ebef00202"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2c00cb92bd59bc1c90fbae9ebef00202">&#9670;&nbsp;</a></span>ASCIIToHex()</h2>
 
@@ -1181,6 +1241,382 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Number of state specified bits in val </dd></dl>
+
+</div>
+</div>
+<a id="aca27ac701ad715533881a975c34f914e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca27ac701ad715533881a975c34f914e">&#9670;&nbsp;</a></span>RestrictedAverage_BYTE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a> RestrictedAverage_BYTE </td>
+          <td>(</td>
+          <td class="paramtype">volatile <a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>&#160;</td>
+          <td class="paramname"><em>pArray</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>nb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get average value of tab excluding most extreme values (BYTE) </p>
+<dl class="section warning"><dt>Warning</dt><dd>If pArray is volatile array: A new value may be written in the tab (by interrupt for example) while copying it (not dangerous for BYTEs). Disabling interruptions before calling function can overcome this behavior if needed (not forgetting to re-enable interrupts after).</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pArray</td><td>- Pointer to BYTEs array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nb</td><td>- Number of array elements </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Average value (BYTE) </dd></dl>
+
+</div>
+</div>
+<a id="ab547739da836561137aa4d4a1e71b5b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab547739da836561137aa4d4a1e71b5b6">&#9670;&nbsp;</a></span>RestrictedAverage_double()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double RestrictedAverage_double </td>
+          <td>(</td>
+          <td class="paramtype">volatile double&#160;</td>
+          <td class="paramname"><em>pArray</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>nb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get average value of tab excluding most extreme values (double) </p>
+<dl class="section warning"><dt>Warning</dt><dd>If pArray is volatile array: A new value may be written in the tab (by interrupt for example) while copying it (which can lead to corrupted results). Disabling interruptions before calling function can overcome this behavior (not forgetting to re-enable interrupts after).</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pArray</td><td>- Pointer to doubles array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nb</td><td>- Number of array elements </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Average value (double) </dd></dl>
+
+</div>
+</div>
+<a id="ab7c86891a6cc20ab319e6df397baffec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7c86891a6cc20ab319e6df397baffec">&#9670;&nbsp;</a></span>RestrictedAverage_DWORD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a> RestrictedAverage_DWORD </td>
+          <td>(</td>
+          <td class="paramtype">volatile <a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>&#160;</td>
+          <td class="paramname"><em>pArray</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>nb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get average value of tab excluding most extreme values (DWORD) </p>
+<dl class="section warning"><dt>Warning</dt><dd>If pArray is volatile array: A new value may be written in the tab (by interrupt for example) while copying it (which can lead to corrupted results for 8b and 16b microcontroller). Disabling interruptions before calling function can overcome this behavior if needed (not forgetting to re-enable interrupts after).</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pArray</td><td>- Pointer to DWORDs array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nb</td><td>- Number of array elements </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Average value (DWORD) </dd></dl>
+
+</div>
+</div>
+<a id="a3265305209ddedf7bc75ced8c12a569e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3265305209ddedf7bc75ced8c12a569e">&#9670;&nbsp;</a></span>RestrictedAverage_float()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float RestrictedAverage_float </td>
+          <td>(</td>
+          <td class="paramtype">volatile float&#160;</td>
+          <td class="paramname"><em>pArray</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>nb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get average value of tab excluding most extreme values (float) </p>
+<dl class="section warning"><dt>Warning</dt><dd>If pArray is volatile array: A new value may be written in the tab (by interrupt for example) while copying it (which can lead to corrupted results). Disabling interruptions before calling function can overcome this behavior (not forgetting to re-enable interrupts after).</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pArray</td><td>- Pointer to floats array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nb</td><td>- Number of array elements </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Average value (float) </dd></dl>
+
+</div>
+</div>
+<a id="a6fcecd92ddf43c0dad1dabf609c111c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fcecd92ddf43c0dad1dabf609c111c7">&#9670;&nbsp;</a></span>RestrictedAverage_SBYTE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="arm__typedefs_8h.html#a0b0ec08cb12c90f493f131cffb432638">SBYTE</a> RestrictedAverage_SBYTE </td>
+          <td>(</td>
+          <td class="paramtype">volatile <a class="el" href="arm__typedefs_8h.html#a0b0ec08cb12c90f493f131cffb432638">SBYTE</a>&#160;</td>
+          <td class="paramname"><em>pArray</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>nb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get average value of tab excluding most extreme values (SBYTE) </p>
+<dl class="section warning"><dt>Warning</dt><dd>If pArray is volatile array: A new value may be written in the tab (by interrupt for example) while copying it (not dangerous for SBYTEs). Disabling interruptions before calling function can overcome this behavior if needed (not forgetting to re-enable interrupts after).</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pArray</td><td>- Pointer to SBYTEs array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nb</td><td>- Number of array elements </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Average value (SBYTE) </dd></dl>
+
+</div>
+</div>
+<a id="a77a4b3249e93883b5411f8a3a4172d2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77a4b3249e93883b5411f8a3a4172d2d">&#9670;&nbsp;</a></span>RestrictedAverage_SDWORD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a> RestrictedAverage_SDWORD </td>
+          <td>(</td>
+          <td class="paramtype">volatile <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a>&#160;</td>
+          <td class="paramname"><em>pArray</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>nb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get average value of tab excluding most extreme values (SDWORD) </p>
+<dl class="section warning"><dt>Warning</dt><dd>If pArray is volatile array: A new value may be written in the tab (by interrupt for example) while copying it (which can lead to corrupted results for 8b and 16b microcontroller). Disabling interruptions before calling function can overcome this behavior if needed (not forgetting to re-enable interrupts after).</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pArray</td><td>- Pointer to SDWORDs array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nb</td><td>- Number of array elements </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Average value (SDWORD) </dd></dl>
+
+</div>
+</div>
+<a id="accd4dcbfe94ab4fc6cdbf086883dfbdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accd4dcbfe94ab4fc6cdbf086883dfbdf">&#9670;&nbsp;</a></span>RestrictedAverage_SWORD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="arm__typedefs_8h.html#a9beb1dcf5779f93653b7a57919d431e1">SWORD</a> RestrictedAverage_SWORD </td>
+          <td>(</td>
+          <td class="paramtype">volatile <a class="el" href="arm__typedefs_8h.html#a9beb1dcf5779f93653b7a57919d431e1">SWORD</a>&#160;</td>
+          <td class="paramname"><em>pArray</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>nb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get average value of tab excluding most extreme values (SWORD) </p>
+<dl class="section warning"><dt>Warning</dt><dd>If pArray is volatile array: A new value may be written in the tab (by interrupt for example) while copying it (which can lead to corrupted results for 8b microcontroller). Disabling interruptions before calling function can overcome this behavior if needed (not forgetting to re-enable interrupts after).</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pArray</td><td>- Pointer to SWORDs array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nb</td><td>- Number of array elements </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Average value (SWORD) </dd></dl>
+
+</div>
+</div>
+<a id="a682426f65de80e91da828561e1c398e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a682426f65de80e91da828561e1c398e2">&#9670;&nbsp;</a></span>RestrictedAverage_WORD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a> RestrictedAverage_WORD </td>
+          <td>(</td>
+          <td class="paramtype">volatile <a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>&#160;</td>
+          <td class="paramname"><em>pArray</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>nb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get average value of tab excluding most extreme values (WORD) </p>
+<dl class="section warning"><dt>Warning</dt><dd>If pArray is volatile array: A new value may be written in the tab (by interrupt for example) while copying it (which can lead to corrupted results for 8b microcontroller). Disabling interruptions before calling function can overcome this behavior if needed (not forgetting to re-enable interrupts after).</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pArray</td><td>- Pointer to WORDs array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nb</td><td>- Number of array elements </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Average value (WORD) </dd></dl>
 
 </div>
 </div>
