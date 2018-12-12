@@ -1,4 +1,4 @@
-# sarmfsw [![Build Status](https://travis-ci.org/SMFSW/sarmfsw.svg?branch=master)](https://travis-ci.org/SMFSW/sarmfsw)
+# sarmfsw [![Build Status](https://travis-ci.com/SMFSW/sarmfsw.svg?branch=master)](https://travis-ci.com/SMFSW/sarmfsw)
 
 ARM based common headers
 
