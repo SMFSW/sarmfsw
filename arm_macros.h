@@ -69,6 +69,8 @@
 #define	SWAP_FLOAT(a, b)		SWAP_TYPE(a, b, float)			//!< Swap floats \b a \& \b b
 #define	SWAP_DOUBLE(a, b)		SWAP_TYPE(a, b, double)			//!< Swap doubles \b a \& \b b
 
+#define VAL_AT(addr, typ)		(*(typ *) (addr))										//!< Get the type \b typ content of address \b addr
+
 #define SZ_OBJ(obj, typ)		((size_t) (sizeof(obj) / sizeof(typ)))					//!< Computes the number of elements in \b obj of type \b typ
 #define SZ_TYP_MBR(typ, mbr)	((size_t) sizeof(((typ *)0)->mbr))						//!< Computes the size of member \b mbr in struct type \b typ
 

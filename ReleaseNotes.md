@@ -28,6 +28,7 @@ SOFTWARE.
 * arm_cmsis: Added latest STM32 chips (and STM32G0 family added)
 * arm_chip_stm32: Added FLASH_SIZE macro (returning flash size in bytes) 
 * arm_chip_stm32: Added enum for last reset source (TODO: add more for sam & ino)
+* arm_chip_stm32: Added some special STM32 registers getter macros
 * arm_hal_peripheral: Removed unlikely defined include files (not related to STM32 periherals, rather linked to middlewares)
 * arm_hal_peripheral: Fixed qspi.h include (quadspi.h)
 * arm_inlines: added some binary manipulation inlines
@@ -39,12 +40,14 @@ SOFTWARE.
 * arm_macros: added SZ_TYP_MBR macro to get the sizeof of a member in a structure
 * arm_macros: added TYP_MBR macro to get member of typedef struct
 * arm_macros: added TYP_MBR_TYP macro to get type of member in typedef struct
+* arm_macros: added VAL_AT macro to get content of an address
 * arm_macros: added undef of LOBYTE & HIBYTE if previously defined
 * arm_typedefs: Doxygen eGPIOState enum name fixed
 * arm_typedefs: Doxygen note added related to Arduino platform (for binary representation in binary.h)
 * sarmfsw.h: target names changed in enum
+* keywords.txt: added Error codes & Reset codes
 * misc: typo fixes, Doxygen comments, notes & warnings added
-* Release Notes.md: sections added
+* README.md: sections added
 
 ## v3.2
 

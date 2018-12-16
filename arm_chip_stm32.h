@@ -38,9 +38,17 @@
 //!\note You would have to define mnemonic _Tim/_Chan corresponding to what's defined in CubeMX as Port/Pin (for consistency)
 #define	TIM(mnem)			timer(mnem), channel(mnem)	//!< Wrapper for TIM/CHAN Alias (when using HAL_TIM_PWM_Start for example)
 
+/*** STM32 Special Registers ***/
+#define STM32_OPTION_BYTES	(VAL_AT(OB_BASE, uint64_t))			//!< Option Bytes register address content
+#define STM32_FLASHSIZE		(VAL_AT(FLASHSIZE_BASE, uint16_t))	//!< Flash size register address content
+#define STM32_UNIQUE_ID		(VAL_AT(FLASHSIZE_UID, uint32_t))	//!< Unique ID register address content
+#define STM32_VREF_CAL		(VAL_AT(0x1FFFF7BA, uint16_t))		//!< VRef (ADC) calibration address content
+#define STM32_TS_CAL1		(VAL_AT(0x1FFFF7B8, uint16_t))		//!< Temp sensor ADC raw data acquired at 30°C, VDDA=3.3V address content
+#define STM32_TS_CAL2		(VAL_AT(0x1FFFF7C2, uint16_t))		//!< Temp sensor raw data acquired at 110°C, VDDA=3.3V address content
+
 /*** Flash size ***/
 //!\note FLASHSIZE_BASE is uint16_t type (given in kB)
-#define	FLASH_SIZE			((*(uint16_t *) (FLASHSIZE_BASE)) * 1024)	//!< Flash size in bytes
+#define	FLASH_SIZE			(STM32_FLASHSIZE * 1024)			//!< Flash size in bytes
 
 /*** MS Time base ***/
 #ifndef HAL_MAX_TICKS
@@ -53,7 +61,6 @@
 #endif
 
 #define HALTicks()			HAL_GetTick()		//!< Alias for HAL get ticks function
-
 
 /*!\enum eResetSource
 ** \brief Source of last reset
