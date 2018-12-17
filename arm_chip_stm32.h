@@ -42,9 +42,6 @@
 #define STM32_OPTION_BYTES	(VAL_AT(OB_BASE, uint64_t))			//!< Option Bytes register address content
 #define STM32_FLASHSIZE		(VAL_AT(FLASHSIZE_BASE, uint16_t))	//!< Flash size register address content
 #define STM32_UNIQUE_ID		(VAL_AT(FLASHSIZE_UID, uint32_t))	//!< Unique ID register address content
-#define STM32_VREF_CAL		(VAL_AT(0x1FFFF7BA, uint16_t))		//!< VRef (ADC) calibration address content
-#define STM32_TS_CAL1		(VAL_AT(0x1FFFF7B8, uint16_t))		//!< Temp sensor ADC raw data acquired at 30°C, VDDA=3.3V address content
-#define STM32_TS_CAL2		(VAL_AT(0x1FFFF7C2, uint16_t))		//!< Temp sensor raw data acquired at 110°C, VDDA=3.3V address content
 
 /*** Flash size ***/
 //!\note FLASHSIZE_BASE is uint16_t type (given in kB)
