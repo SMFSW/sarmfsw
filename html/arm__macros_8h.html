@@ -164,6 +164,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a7cee056d79cdd74747fecb89a4c39d7f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a7cee056d79cdd74747fecb89a4c39d7f">SWAP_DOUBLE</a>(a,  b)&#160;&#160;&#160;<a class="el" href="arm__macros_8h.html#a0878b994fac8d6563664edba349c7f70">SWAP_TYPE</a>(a, b, double)</td></tr>
 <tr class="memdesc:a7cee056d79cdd74747fecb89a4c39d7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap doubles <b>a</b> &amp; <b>b</b>.  <a href="#a7cee056d79cdd74747fecb89a4c39d7f">More...</a><br /></td></tr>
 <tr class="separator:a7cee056d79cdd74747fecb89a4c39d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a638d917776f76f7f41be5875d9305f50"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>(addr,  typ)&#160;&#160;&#160;(*(typ *) (addr))</td></tr>
+<tr class="memdesc:a638d917776f76f7f41be5875d9305f50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the type <b>typ</b> content of address <b>addr</b>.  <a href="#a638d917776f76f7f41be5875d9305f50">More...</a><br /></td></tr>
+<tr class="separator:a638d917776f76f7f41be5875d9305f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae222ed5e4821c01c4d5fc924673d844d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#ae222ed5e4821c01c4d5fc924673d844d">SZ_OBJ</a>(obj,  typ)&#160;&#160;&#160;((size_t) (sizeof(obj) / sizeof(typ)))</td></tr>
 <tr class="memdesc:ae222ed5e4821c01c4d5fc924673d844d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the number of elements in <b>obj</b> of type <b>typ</b>.  <a href="#ae222ed5e4821c01c4d5fc924673d844d">More...</a><br /></td></tr>
 <tr class="separator:ae222ed5e4821c01c4d5fc924673d844d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1468,6 +1471,36 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Undefined value. </p>
+
+</div>
+</div>
+<a id="a638d917776f76f7f41be5875d9305f50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a638d917776f76f7f41be5875d9305f50">&#9670;&nbsp;</a></span>VAL_AT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VAL_AT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">addr, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">typ&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(*(typ *) (addr))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the type <b>typ</b> content of address <b>addr</b>. </p>
 
 </div>
 </div>

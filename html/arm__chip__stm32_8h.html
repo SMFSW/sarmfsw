@@ -123,7 +123,16 @@ Macros</h2></td></tr>
 <tr class="memitem:a9c6e547f2295dccada70bd4af9595791"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#a9c6e547f2295dccada70bd4af9595791">TIM</a>(mnem)&#160;&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a37e0bd65f92cddd42b5507ae5fb50a50">timer</a>(mnem), <a class="el" href="arm__chip__stm32_8h.html#a8c38e09faad95f3e7edb678ba638a4b0">channel</a>(mnem)</td></tr>
 <tr class="memdesc:a9c6e547f2295dccada70bd4af9595791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for TIM/CHAN Alias (when using HAL_TIM_PWM_Start for example)  <a href="#a9c6e547f2295dccada70bd4af9595791">More...</a><br /></td></tr>
 <tr class="separator:a9c6e547f2295dccada70bd4af9595791"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae69620948dea1b76e0ab7843ab719db7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#ae69620948dea1b76e0ab7843ab719db7">FLASH_SIZE</a>&#160;&#160;&#160;((*(uint16_t *) (FLASHSIZE_BASE)) * 1024)</td></tr>
+<tr class="memitem:a988e800ad9acd2fa2bbb108507bf25d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#a988e800ad9acd2fa2bbb108507bf25d7">STM32_OPTION_BYTES</a>&#160;&#160;&#160;(<a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>(OB_BASE, uint64_t))</td></tr>
+<tr class="memdesc:a988e800ad9acd2fa2bbb108507bf25d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option Bytes register address content.  <a href="#a988e800ad9acd2fa2bbb108507bf25d7">More...</a><br /></td></tr>
+<tr class="separator:a988e800ad9acd2fa2bbb108507bf25d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0389f0023fe941b7977d3faf862e8c4a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#a0389f0023fe941b7977d3faf862e8c4a">STM32_FLASHSIZE</a>&#160;&#160;&#160;(<a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>(FLASHSIZE_BASE, uint16_t))</td></tr>
+<tr class="memdesc:a0389f0023fe941b7977d3faf862e8c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flash size register address content.  <a href="#a0389f0023fe941b7977d3faf862e8c4a">More...</a><br /></td></tr>
+<tr class="separator:a0389f0023fe941b7977d3faf862e8c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16d4383fc683b8798160a1409edacb91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#a16d4383fc683b8798160a1409edacb91">STM32_UNIQUE_ID</a>&#160;&#160;&#160;(<a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>(FLASHSIZE_UID, uint32_t))</td></tr>
+<tr class="memdesc:a16d4383fc683b8798160a1409edacb91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique ID register address content.  <a href="#a16d4383fc683b8798160a1409edacb91">More...</a><br /></td></tr>
+<tr class="separator:a16d4383fc683b8798160a1409edacb91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae69620948dea1b76e0ab7843ab719db7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#ae69620948dea1b76e0ab7843ab719db7">FLASH_SIZE</a>&#160;&#160;&#160;(<a class="el" href="arm__chip__stm32_8h.html#a0389f0023fe941b7977d3faf862e8c4a">STM32_FLASHSIZE</a> * 1024)</td></tr>
 <tr class="memdesc:ae69620948dea1b76e0ab7843ab719db7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flash size in bytes.  <a href="#ae69620948dea1b76e0ab7843ab719db7">More...</a><br /></td></tr>
 <tr class="separator:ae69620948dea1b76e0ab7843ab719db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7aa97bf10990b633dcdebcbce97e7ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#af7aa97bf10990b633dcdebcbce97e7ff">HAL_MAX_TICKS</a>&#160;&#160;&#160;((uint32_t) -1)</td></tr>
@@ -242,7 +251,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FLASH_SIZE&#160;&#160;&#160;((*(uint16_t *) (FLASHSIZE_BASE)) * 1024)</td>
+          <td class="memname">#define FLASH_SIZE&#160;&#160;&#160;(<a class="el" href="arm__chip__stm32_8h.html#a0389f0023fe941b7977d3faf862e8c4a">STM32_FLASHSIZE</a> * 1024)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -385,6 +394,54 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Wrapper for PORT Alias. </p>
+
+</div>
+</div>
+<a id="a0389f0023fe941b7977d3faf862e8c4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0389f0023fe941b7977d3faf862e8c4a">&#9670;&nbsp;</a></span>STM32_FLASHSIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STM32_FLASHSIZE&#160;&#160;&#160;(<a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>(FLASHSIZE_BASE, uint16_t))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Flash size register address content. </p>
+
+</div>
+</div>
+<a id="a988e800ad9acd2fa2bbb108507bf25d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a988e800ad9acd2fa2bbb108507bf25d7">&#9670;&nbsp;</a></span>STM32_OPTION_BYTES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STM32_OPTION_BYTES&#160;&#160;&#160;(<a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>(OB_BASE, uint64_t))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Option Bytes register address content. </p>
+
+</div>
+</div>
+<a id="a16d4383fc683b8798160a1409edacb91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16d4383fc683b8798160a1409edacb91">&#9670;&nbsp;</a></span>STM32_UNIQUE_ID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STM32_UNIQUE_ID&#160;&#160;&#160;(<a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>(FLASHSIZE_UID, uint32_t))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unique ID register address content. </p>
 
 </div>
 </div>
