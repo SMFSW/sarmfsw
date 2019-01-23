@@ -35,7 +35,7 @@ Macros/Inlines name standardization (case) not always respected for backward com
  
 ## Documentation
 
-Doxygen generated documentation can be found in "sarmfsw_vXXX.pdf"
+Doxygen doc can be generated using "Doxyfile"
 
 See [generated documentation](https://smfsw.github.io/sarmfsw/)
 
