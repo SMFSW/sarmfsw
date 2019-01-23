@@ -1,6 +1,6 @@
 /*!\file arm_chip_sam.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2018, SMFSW
+** \copyright MIT (c) 2017-2019, SMFSW
 ** \brief ARM common macros for Atmel SAM families
 ** \attention	On SAM families you should configure a timer to count for ms.
 **				A TIM peripheral shall be configured in ATMEL START (with a period of 1ms).
@@ -114,7 +114,7 @@ __INLINE eResetSource INLINE__ HAL_ResetSource(void) {
 ** \param[in] status - ATMEL error code
 ** \return FctERR status
 **/
-__INLINE FctERR HALERRtoFCTERR(int32_t status)
+__INLINE FctERR HALERRtoFCTERR(const SDWORD status)
 {
 	if		(status == ERR_NONE)									return ERROR_OK;
 	else if (status == ERR_INVALID_DATA)							return ERROR_VALUE;

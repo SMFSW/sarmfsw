@@ -2,7 +2,7 @@
 
 The MIT License (MIT)
 
-Copyright (c) 2017-2018 SMFSW (Sebastien Bizien)
+Copyright (c) 2017-2019 SMFSW (Sebastien Bizien)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,6 +24,7 @@ SOFTWARE.
 
 * Doxyfile update
 * Adding support for unit tests and doxygen documentation generation with Travis CI
+* Few type names changed to their own typedefs
 * arm_attributes: Added macro for section, used, nonnull(...) & ATTR__ multiple attributes
 * arm_cmsis: Added latest STM32 chips (and STM32G0 family added)
 * arm_chip_stm32: Added FLASH_SIZE macro (returning flash size in bytes) 
@@ -35,6 +36,7 @@ SOFTWARE.
 * arm_inlines: added nonnull check for pointers in SWAP_ENDxxB_TAB
 * arm_inlines: added temperature conversions (kelvin, celsius, fahrenheit)
 * arm_inlines: added RestrictedAverage_XXX inlines
+* arm_inlines: ASCIIToHex returns BYTE with 0xFF value if not valid ASCII char
 * arm_macros & arm_stdclib: simplified STR macro (no need of "")
 * arm_macros: moved TestMalloc to arm_macros.h (renamed to malloc_assert)
 * arm_macros: added SZ_TYP_MBR macro to get the sizeof of a member in a structure

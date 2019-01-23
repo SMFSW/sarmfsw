@@ -1,6 +1,6 @@
 /*!\file arm_inlines.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2018, SMFSW
+** \copyright MIT (c) 2017-2019, SMFSW
 ** \brief ARM common inlines
 */
 /****************************************************************/
@@ -33,8 +33,8 @@
 ** \return true if time elapsed
 **/
 __INLINE bool INLINE__ TPSSUP_MS(const DWORD last, const DWORD time) {
-	register uint32_t hNow = HALTicks();
-	uint32_t diff = (hNow >= last) ? hNow - last : (HAL_MAX_TICKS - last) + hNow;
+	register const	uint32_t hNow = HALTicks();
+	const uint32_t	diff = (hNow >= last) ? hNow - last : (HAL_MAX_TICKS - last) + hNow;
 	return (diff > (DWORD) (time * HAL_MS_TICKS_FACTOR)); }
 
 /*!\brief Tests if stored time value has not reached time lapse in ms
@@ -46,8 +46,8 @@ __INLINE bool INLINE__ TPSSUP_MS(const DWORD last, const DWORD time) {
 ** \return true if time not elapsed
 **/
 __INLINE bool INLINE__ TPSINF_MS(const DWORD last, const DWORD time) {
-	register uint32_t hNow = HALTicks();
-	uint32_t diff = (hNow >= last) ? hNow - last : (HAL_MAX_TICKS - last) + hNow;
+	register const	uint32_t hNow = HALTicks();
+	const uint32_t	diff = (hNow >= last) ? hNow - last : (HAL_MAX_TICKS - last) + hNow;
 	return (diff < (DWORD) (time * HAL_MS_TICKS_FACTOR)); }
 
 
@@ -62,7 +62,7 @@ __INLINE bool INLINE__ TPSINF_MS(const DWORD last, const DWORD time) {
 **/
 __INLINE DWORD maskBits(const BYTE bits) {
 	const BYTE	nb_bits = 32;
-	uint8_t		nb = (bits > nb_bits) ? nb_bits : bits;
+	const BYTE	nb = (bits > nb_bits) ? nb_bits : bits;
 	DWORD		mask = 0;
 	for (unsigned int i = 0 ; i < nb ; i++)	mask |= 1UL << i;
 	return mask; }
@@ -76,7 +76,7 @@ __INLINE DWORD maskBits(const BYTE bits) {
 **/
 __INLINE BYTE nbBitsState(const DWORD val, const BYTE bits, const bool state) {
 	const BYTE	nb_bits = 32;
-	uint8_t		nb = (bits > nb_bits) ? nb_bits : bits;
+	const BYTE	nb = (bits > nb_bits) ? nb_bits : bits;
 	BYTE		ret = 0;
 	for (unsigned int i = 0 ; i < nb ; i++)	{ if (val & (1UL << i))	ret++; }
 	return state ? ret : nb - ret; }
@@ -100,7 +100,7 @@ __INLINE SBYTE getMSBitSet(const DWORD val) {
 **/
 __INLINE DWORD swapBits(const DWORD val, const BYTE bits) {
 	const BYTE	nb_bits = 32;
-	uint8_t		nb = (bits > nb_bits ? nb_bits : bits) - 1;
+	const BYTE	nb = (bits > nb_bits ? nb_bits : bits) - 1;
 	DWORD		swap = 0;
 	for (int i = nb ; i >= 0 ; i--)	{ if (val & (1UL << i))	swap |= 1UL << (nb - i); }
 	return swap; }
@@ -125,10 +125,10 @@ __INLINE BYTE HexToBCD(const BYTE hex) {
 ** \return Hexadecimal value
 **/
 __INLINE BYTE BCDToHex(const BYTE bcd) {
-	uint8_t	ms = RSHIFT(bcd & 0xF0, 4);
-	uint8_t	ls = bcd & 0x0F;
+	const BYTE	ms = RSHIFT(bcd & 0xF0, 4);
+	const BYTE	ls = bcd & 0x0F;
 	if ((ms > 9) || (ls > 9))	{ return 0xFF; }
-	return (uint8_t) ((ms * 10) + ls); }
+	return (BYTE) ((ms * 10) + ls); }
 
 
 /*!\brief Converts hexadecimal value to ASCII
@@ -143,11 +143,11 @@ __INLINE CHAR INLINE__ HexToASCII(BYTE hex) {
 ** \param[in] ascii - ASCII char to convert
 ** \return Hexadecimal value
 **/
-__INLINE SBYTE ASCIIToHex(const CHAR ascii) {
+__INLINE BYTE ASCIIToHex(const CHAR ascii) {
 	if ((ascii >= '0') && (ascii <= '9'))			{ return ascii - 0x30; }
 	else if ((ascii >= 'A') && (ascii <= 'F'))		{ return ascii - 0x37; }
 	else if ((ascii >= 'a') && (ascii <= 'f'))		{ return ascii - 0x47; }
-	else											{ return -1; } }
+	else											{ return 0xFF; } }
 
 
 /*!\brief Convert binary value to gray code
@@ -162,8 +162,8 @@ __INLINE DWORD INLINE__ bin2gray(const DWORD bin) {
 ** \return Converted value (binary)
 **/
 __INLINE DWORD gray2bin(const DWORD gray) {
-	SWORD bits = 32;
-	DWORD tmp = gray;
+	SWORD	bits = 32;
+	DWORD	tmp = gray;
 	while ((bits >>= 1) > 0)	{ tmp ^= (tmp >> bits); }
 	return tmp; }
 
@@ -195,7 +195,7 @@ __INLINE WORD INLINE__ conv8to16Bits(const BYTE val) {
 ** \return Converted value
 **/
 __INLINE WORD conv8upto16Bits(const BYTE val, const BYTE nb) {
-	return ((WORD) ((WORD) (val << nb) + (WORD) (val & (0xFFU >> (8-nb))))); }
+	return ((WORD) ((WORD) (val << nb) + (WORD) (val & (0xFFU >> (8 - nb))))); }
 
 /*!\brief converts 16bits to 16+nb bits (32bits max)
 ** \warning conversion output shall not exceed 32bits (input shall strictly be unsigned 16bits)
@@ -205,7 +205,7 @@ __INLINE WORD conv8upto16Bits(const BYTE val, const BYTE nb) {
 ** \return Converted value
 **/
 __INLINE DWORD conv16upto32Bits(const WORD val, const BYTE nb) {
-	return ((DWORD) ((DWORD) (val << nb) + (DWORD) (val & (0xFFFFU >> (16-nb))))); }
+	return ((DWORD) ((DWORD) (val << nb) + (DWORD) (val & (0xFFFFU >> (16 - nb))))); }
 
 /*!\brief converts 32bits to 32+nb bits (64bits max)
 ** \warning conversion output shall not exceed 64bits (input shall strictly be unsigned 32bits)
@@ -215,7 +215,7 @@ __INLINE DWORD conv16upto32Bits(const WORD val, const BYTE nb) {
 ** \return Converted value
 **/
 __INLINE LWORD conv32upto64Bits(const DWORD val, const BYTE nb) {
-	return ((LWORD) ((LWORD) (val << nb) + (LWORD) (val & (0xFFFFFFFFUL >> (32-nb))))); }
+	return ((LWORD) ((LWORD) (val << nb) + (LWORD) (val & (0xFFFFFFFFUL >> (32 - nb))))); }
 
 
 /************************/
@@ -230,7 +230,7 @@ __INLINE LWORD conv32upto64Bits(const DWORD val, const BYTE nb) {
 **/
 __INLINE bool inTolerance(const SDWORD val, const SDWORD ref, float tolerance) {
 	tolerance = min(100.0f, max(0.0f, tolerance));
-	DWORD margin = (DWORD) (ref * (tolerance / 100.0f));
+	const DWORD margin = (DWORD) (ref * (tolerance / 100.0f));
 	return ((val <= (SDWORD) (ref + margin)) && (val >= (SDWORD) (ref - margin))); }
 
 /*!\brief Checks if val given as parameter is in range
@@ -299,8 +299,8 @@ __INLINE void NONNULL_INLINE__ SWAP_END64B_TAB(LWORD tab[], const WORD nb) {
 ** \return Endian type
 **/
 __INLINE eEndian testEndian_basic(void) {
-	WORD x = 0x100;
-	return (* (CHAR *) (&x)) ? Endian_big : Endian_little; }
+	const WORD x = 0x100;
+	return (*(BYTE *) (&x)) ? Endian_big : Endian_little; }
 
 /*!\brief Test Core endian (full, recognizing mid endians too)
 ** \return Endian type
@@ -309,12 +309,7 @@ __INLINE eEndian testEndian_full(void) {
 	union {
 		LWORD	dword;
 		BYTE	byte[sizeof(LWORD)];
-	} tst;
-
-	tst.byte[0] = 1;
-	tst.byte[1] = 2;
-	tst.byte[2] = 3;
-	tst.byte[3] = 4;
+	} tst = { .byte = { 1, 2, 3, 4 } };
 
 	switch (tst.dword)
 	{
@@ -388,36 +383,35 @@ __INLINE float kelvin2fahrenheit(const float kelv) {
 ** \param[in] nb - Number of decimal to get after floating point
 ** \return nb decimal part as integer
 **/
-__INLINE int32_t get_fp_dec(float f, uint8_t nb) {
-	int32_t mul = 1;
-	f -= (int32_t) f;
+__INLINE SDWORD get_fp_dec(float f, BYTE nb) {
+	SDWORD mul = 1;
+	f -= (SDWORD) f;
 	while (nb-- != 0) { mul *= 10; }
-	return (int32_t) (f * mul); }
+	return (SDWORD) (f * mul); }
 
 
 /*******************/
 /***  AVERAGING  ***/
 /*******************/
 
-#define	RESTRICTED_AVERAGE(typ_t, sum_t)																					\
-	__INLINE typ_t RestrictedAverage_##typ_t(volatile typ_t pArray[], const uint8_t nb)										\
-	{																														\
-		typ_t	Array[nb];																									\
-		sum_t	sum = 0;																									\
-		int		i;																											\
-																															\
-		if (nb <= 2)	{ return 0; }																						\
-																															\
-		/* Array copy (memcpy not used as copy by byte and pTab may be volatile) */											\
-		for (i = 0 ; i < nb ; i++)			{ Array[i] = pArray[i]; }														\
-		/* Shift min to first array index */																				\
-		for (i = 1 ; i < nb ; i++)			{ if (Array[i] < Array[0])	SWAP_TYPE(Array[0], Array[i], typ_t); }				\
-		/* Shift max to last array index */																					\
-		for (i = 1 ; i < (nb - 1) ; i++)	{ if (Array[i] > Array[nb - 1])	SWAP_TYPE(Array[nb - 1], Array[i], typ_t); }	\
-		/* Sum and averaging */																								\
-		for (i = 1 ; i < (nb - 1) ; i++)	{ sum += Array[i]; }															\
-		return (sum / (nb - 2));																							\
-	}																														\
+#define	RESTRICTED_AVERAGE(typ_t, sum_t)																						\
+	__INLINE typ_t RestrictedAverage_##typ_t(volatile typ_t pArray[], const uint8_t nb)											\
+	{																															\
+		typ_t	Array[nb];																										\
+		sum_t	sum = 0;																										\
+																																\
+		if (nb <= 2)	{ return 0; }																							\
+																																\
+		/* Array copy (memcpy not used as copy by byte and pTab may be volatile) */												\
+		for (int i = 0 ; i < nb ; i++)			{ Array[i] = pArray[i]; }														\
+		/* Shift min to first array index */																					\
+		for (int i = 1 ; i < nb ; i++)			{ if (Array[i] < Array[0])	SWAP_TYPE(Array[0], Array[i], typ_t); }				\
+		/* Shift max to last array index */																						\
+		for (int i = 1 ; i < (nb - 1) ; i++)	{ if (Array[i] > Array[nb - 1])	SWAP_TYPE(Array[nb - 1], Array[i], typ_t); }	\
+		/* Sum and averaging */																									\
+		for (int i = 1 ; i < (nb - 1) ; i++)	{ sum += Array[i]; }															\
+		return (sum / (nb - 2));																								\
+	}																															\
 
 /*!\brief Get average value of tab excluding most extreme values (BYTE)
 ** \warning If pArray is volatile array:

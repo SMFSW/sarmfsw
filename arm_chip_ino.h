@@ -1,6 +1,6 @@
 /*!\file arm_chip_ino.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2018, SMFSW
+** \copyright MIT (c) 2017-2019, SMFSW
 ** \brief Common macros for Arduino
 */
 /****************************************************************/
@@ -65,7 +65,7 @@ __INLINE eResetSource INLINE__ HAL_ResetSource(void) {
 ** \param[in] status - Arduino error code
 ** \return FctERR status
 **/
-__INLINE FctERR HALERRtoFCTERR(int32_t status)
+__INLINE FctERR HALERRtoFCTERR(const SDWORD status)
 {
 	if (status == 0)	return ERROR_OK;
 	else				return ERROR_COMMON;
