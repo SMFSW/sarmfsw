@@ -157,14 +157,14 @@ Functions</h2></td></tr>
 <tr class="memitem:afd1b57d0c23eee7e4e777f12233b5b9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900">eResetSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__sam_8h.html#afd1b57d0c23eee7e4e777f12233b5b9b">HAL_ResetSource</a> (void)</td></tr>
 <tr class="memdesc:afd1b57d0c23eee7e4e777f12233b5b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get and convert ATMEL Reset Source to eResetSource.  <a href="#afd1b57d0c23eee7e4e777f12233b5b9b">More...</a><br /></td></tr>
 <tr class="separator:afd1b57d0c23eee7e4e777f12233b5b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70af0a99aded5573a8358fb485a82a11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__errors_8h.html#abf6c1e972e63bb08ca4e60f3820ae617">FctERR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__sam_8h.html#a70af0a99aded5573a8358fb485a82a11">HALERRtoFCTERR</a> (int32_t status)</td></tr>
-<tr class="memdesc:a70af0a99aded5573a8358fb485a82a11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert ATMEL error code to FctERR.  <a href="#a70af0a99aded5573a8358fb485a82a11">More...</a><br /></td></tr>
-<tr class="separator:a70af0a99aded5573a8358fb485a82a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bc1886e713db1fc285bdeeb34802694"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__errors_8h.html#abf6c1e972e63bb08ca4e60f3820ae617">FctERR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__sam_8h.html#a6bc1886e713db1fc285bdeeb34802694">HALERRtoFCTERR</a> (const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a> status)</td></tr>
+<tr class="memdesc:a6bc1886e713db1fc285bdeeb34802694"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert ATMEL error code to FctERR.  <a href="#a6bc1886e713db1fc285bdeeb34802694">More...</a><br /></td></tr>
+<tr class="separator:a6bc1886e713db1fc285bdeeb34802694"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ARM common macros for Atmel SAM families. </p>
 <dl class="section author"><dt>Author</dt><dd>SMFSW </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2018, SMFSW </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2019, SMFSW </dd></dl>
 <dl class="section attention"><dt>Attention</dt><dd>On SAM families you should configure a timer to count for ms. A TIM peripheral shall be configured in ATMEL START (with a period of 1ms). Using driver examples from ATMEL START generated code, you can add this code to your projects.</dd></dl>
 <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">struct </span>timer_task TIMER_0_task1;</div><div class="line"><span class="keyword">static</span> <span class="keyword">volatile</span> uint32_t uwTick = 0;</div><div class="line"></div><div class="line"></div><div class="line">uint32_t HAL_GetTick(<span class="keywordtype">void</span>) {        <span class="comment">// Declare HALTicks() at project level if you&#39;re using a different getter function name</span></div><div class="line">    <span class="keywordflow">return</span> uwTick; }</div><div class="line"></div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> TIMER_0_task1_cb(<span class="keyword">const</span> <span class="keyword">struct</span> timer_task *<span class="keyword">const</span> timer_task) {</div><div class="line">    uwTick++; }</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> TIMER_0_start(<span class="keywordtype">void</span>)            <span class="comment">// Adapt function if TIM configured is not TIMER_0</span></div><div class="line">{</div><div class="line">    TIMER_0_task1.interval = 1;     <span class="comment">// Adjust interval if TIM period is faster than 1ms (or define appropriate HAL_MS_TICKS_FACTOR)</span></div><div class="line">    TIMER_0_task1.cb = TIMER_0_task1_cb;</div><div class="line">    TIMER_0_task1.mode = TIMER_TASK_REPEAT;</div><div class="line"></div><div class="line">    timer_add_task(&amp;TIMER_0, &amp;TIMER_0_task1);</div><div class="line">    timer_start(&amp;TIMER_0);</div><div class="line">}</div></div><!-- fragment --><p>Please note TIMER_0_start() shall be called at init. Also, HAL_GetTick shall be known to sarmfsw. As atmel_start_pins.h is included by sarmfsw, you should add HAL_GetTick prototype in the file:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line">uint32_t HAL_GetTick(<span class="keywordtype">void</span>);</div></div><!-- fragment --> </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -392,8 +392,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a70af0a99aded5573a8358fb485a82a11"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70af0a99aded5573a8358fb485a82a11">&#9670;&nbsp;</a></span>HALERRtoFCTERR()</h2>
+<a id="a6bc1886e713db1fc285bdeeb34802694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bc1886e713db1fc285bdeeb34802694">&#9670;&nbsp;</a></span>HALERRtoFCTERR()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -404,7 +404,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="arm__errors_8h.html#abf6c1e972e63bb08ca4e60f3820ae617">FctERR</a> HALERRtoFCTERR </td>
           <td>(</td>
-          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramtype">const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a>&#160;</td>
           <td class="paramname"><em>status</em></td><td>)</td>
           <td></td>
         </tr>
