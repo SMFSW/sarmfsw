@@ -117,9 +117,14 @@ gray2bin	KEYWORD2
 
 conv16to8Bits	KEYWORD2
 conv8to16Bits	KEYWORD2
+conv32to16Bits	KEYWORD2
+conv16to32Bits	KEYWORD2
+conv64to32Bits	KEYWORD2
+conv32to64Bits	KEYWORD2
 conv8upto16Bits	KEYWORD2
 conv16upto32Bits	KEYWORD2
 conv32upto64Bits	KEYWORD2
+convXtoYBits	KEYWORD2
 
 inTolerance	KEYWORD2
 inRange	KEYWORD2

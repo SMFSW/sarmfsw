@@ -37,6 +37,8 @@ SOFTWARE.
 * arm_inlines: added temperature conversions (kelvin, celsius, fahrenheit)
 * arm_inlines: added RestrictedAverage_XXX inlines
 * arm_inlines: ASCIIToHex returns BYTE with 0xFF value if not valid ASCII char
+* arm_inlines: var size conversions (bits) fixed to gain accuracy
+* arm_inlines: inline added to convert var size from x to y number of bits
 * arm_macros & arm_stdclib: simplified STR macro (no need of "")
 * arm_macros: moved TestMalloc to arm_macros.h (renamed to malloc_assert)
 * arm_macros: added SZ_TYP_MBR macro to get the sizeof of a member in a structure
