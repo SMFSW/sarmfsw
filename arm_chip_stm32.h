@@ -45,7 +45,9 @@
 
 /*** Flash size ***/
 //!\note FLASHSIZE_BASE is uint16_t type (given in kB)
+#ifndef FLASH_SIZE
 #define	FLASH_SIZE			(STM32_FLASHSIZE * 1024)			//!< Flash size in bytes
+#endif
 
 /*** MS Time base ***/
 #ifndef HAL_MAX_TICKS

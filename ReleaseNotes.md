@@ -20,6 +20,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+## v3.4
+
+* arm_chip_stm32: few changes using G0 family
+
 ## v3.3
 
 * Doxyfile update
@@ -27,7 +31,7 @@ SOFTWARE.
 * Few type names changed to their own typedefs
 * arm_attributes: Added macro for section, used, nonnull(...) & ATTR__ multiple attributes
 * arm_cmsis: Added latest STM32 chips (and STM32G0 family added)
-* arm_chip_stm32: Added FLASH_SIZE macro (returning flash size in bytes) 
+* arm_chip_stm32: Added FLASH_SIZE macro (returning flash size in bytes)
 * arm_chip_stm32: Added enum for last reset source (TODO: add more for sam & ino)
 * arm_chip_stm32: Added some special STM32 registers getter macros
 * arm_hal_peripheral: Removed unlikely defined include files (not related to STM32 periherals, rather linked to middlewares)
