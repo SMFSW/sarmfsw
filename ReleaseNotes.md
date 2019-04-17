@@ -23,6 +23,10 @@ SOFTWARE.
 ## v3.4
 
 * arm_chip_stm32: few changes using G0 family
+* arm_macros: replaced some macros values by their constants (from math.h)
+* arm_inlines: inlines split into separate files
+* arm_inlines_rotation: added 2D coordinates rotation inline
+* arm_inlines_linearization: added linearization inline
 
 ## v3.3
 

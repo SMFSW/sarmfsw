@@ -11,6 +11,7 @@
 	extern "C" {
 #endif
 
+#include <math.h>				// For math constants
 #include "arm_typedefs.h"		// Common typedefs
 /****************************************************************/
 
@@ -104,13 +105,13 @@
 #define OneThird			((float) (1.0 / 3.0))		//!< 1/3 approximation
 #define TwoThird			((float) (2.0 / 3.0))		//!< 2/3 approximation
 
-#define Pi					3.141593f		//!< Approximate Pi calculation (4 * atan(1))
+#define Pi					M_PI						//!< Pi approximation alias
 
 #define BYTE_TO_PERC(b)		((BYTE) (((b) * 100) / 255))						//!< Converts a BYTE \b b (0-255) to percent (0-100)
 #define PERC_TO_BYTE(p)		((BYTE) (((p) > 100 ? 100 : (p)) * 255 / 100))		//!< Converts a BYTE \b p percentage (0-100) to BYTE (0-255) with max checking
 
-#define RAD_TO_FLOAT(r)		((float) (((r) > 2*Pi ? 2*Pi : (r)) / 2*Pi))
-#define FLOAT_TO_RAD(f)		((float) ((((f) > 1.0f ? 1.0f : (f)) < 0.0f ? 0.0f : (f)) * 2*Pi)
+#define RAD_TO_FLOAT(r)		((float) (((r) > M_TWOPI ? M_TWOPI : (r)) / M_TWOPI))
+#define FLOAT_TO_RAD(f)		((float) ((((f) > 1.0f ? 1.0f : (f)) < 0.0f ? 0.0f : (f)) * M_TWOPI)
 
 #define DEG_TO_FLOAT(d)		((float) (((d) > 360.0f ? 360.0f : (d)) / 360.0f))
 #define FLOAT_TO_DEG(f)		((float) ((((f) > 1.0f ? 1.0f : (f)) < 0.0f ? 0.0f : (f)) * 360.0f))

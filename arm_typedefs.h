@@ -104,18 +104,6 @@ typedef enum eGPIOPull {
 } eGPIOPull;
 
 
-/*!\enum eEndian
-** \brief Core endian
-**/
-typedef enum eEndian {
-	Endian_little = 0,		//!< Little endian configured MCU
-	Endian_big,				//!< Big endian configured MCU
-	Endian_mid_little,		//!< Middle little endian configured MCU (PDP-11)
-	Endian_mid_big,			//!< Middle big endian configured MCU (Honeywell 316)
-	Endian_unknown			//!< Unknown endian MCU
-} eEndian;
-
-
 /*!\struct StructBitfield8
 ** \brief Bitfield 8b
 **/
