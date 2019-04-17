@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['w0',['W0',['../union_union_d_word.html#a0645109e2af4010d139e6fce06a1ad8b',1,'UnionDWord::W0()'],['../union_union_l_word.html#a9b9f6a9062e04583e3778dfffd097f78',1,'UnionLWord::W0()']]],
-  ['w1',['W1',['../union_union_d_word.html#a6baf361d0c7a9b9223f3d25a13101fb6',1,'UnionDWord::W1()'],['../union_union_l_word.html#adca111c57dedfcc76a51a61556931cb4',1,'UnionLWord::W1()']]],
-  ['w2',['W2',['../union_union_l_word.html#a3be6ba4873c478aae2cd062c8e31978b',1,'UnionLWord']]],
-  ['w3',['W3',['../union_union_l_word.html#a5c19fb0729c4fafb060148487f6ccb4c',1,'UnionLWord']]],
-  ['word',['Word',['../union_union_word.html#aa9139a1cc2c90be109fea421f9023f32',1,'UnionWord::Word()'],['../union_union_d_word.html#a16a16931d20d65b6d09a739914ad239a',1,'UnionDWord::Word()'],['../union_union_l_word.html#a8a3f4c12e3c3ec8f18c7ac37147e1102',1,'UnionLWord::Word()'],['../arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c',1,'WORD():&#160;arm_typedefs.h']]],
-  ['words',['Words',['../union_union_d_word.html#ab4fdb1da48c570af10b4783e32f8e0a2',1,'UnionDWord::Words()'],['../union_union_l_word.html#a86f721fc5ff24ef0653e1109c8005363',1,'UnionLWord::Words()']]]
+  ['w0',['W0',['../unionu_d_word.html#ad3aebab70df6262d412bae6eada36a7e',1,'uDWord::W0()'],['../unionu_l_word.html#a7fd17dcfea6972250e4b4949306edaef',1,'uLWord::W0()']]],
+  ['w1',['W1',['../unionu_d_word.html#a6810908e4a94c9f9e46b5c77fcc81fee',1,'uDWord::W1()'],['../unionu_l_word.html#a85497cdf341595a74faa935b6c7424b4',1,'uLWord::W1()']]],
+  ['w2',['W2',['../unionu_l_word.html#aa554ce24bb6a7a4f5833a75fe8fbfb0f',1,'uLWord']]],
+  ['w3',['W3',['../unionu_l_word.html#a7b5ceb7c1c17a4acf0c6af79e1b8b2a3',1,'uLWord']]],
+  ['word',['Word',['../unionu_word.html#a0d540c571aa29e3b5fadf9c6378d21c9',1,'uWord::Word()'],['../unionu_d_word.html#ab48a7518836c8b18fe0a1a1f031b34f6',1,'uDWord::Word()'],['../unionu_l_word.html#a5255b5b3a27d5ab06bd423a5f12bb000',1,'uLWord::Word()'],['../arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c',1,'WORD():&#160;arm_typedefs.h']]],
+  ['words',['Words',['../unionu_d_word.html#af87eb8b477557b5325a6c438417276b3',1,'uDWord::Words()'],['../unionu_l_word.html#aaba034ceea11029bc99baf5bdccfc161',1,'uLWord::Words()']]]
 ];
