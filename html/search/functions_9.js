@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nbbitsstate',['nbBitsState',['../arm__inlines_8h.html#a2c54fcea02a5c8298afbd54666f867d8',1,'arm_inlines.h']]]
+  ['maskbits',['maskBits',['../arm__inlines__binary_8h.html#a22d29769e5b7873a1683e1a8dbc8bc80',1,'arm_inlines_binary.h']]]
 ];

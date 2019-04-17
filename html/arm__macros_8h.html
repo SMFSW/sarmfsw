@@ -69,13 +69,14 @@ $(function() {
 
 <p>ARM common macros.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="arm__typedefs_8h_source.html">arm_typedefs.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="arm__typedefs_8h_source.html">arm_typedefs.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for arm_macros.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="arm__macros_8h__incl.png" border="0" usemap="#arm__macros_8h" alt=""/></div>
 <map name="arm__macros_8h" id="arm__macros_8h">
-<area shape="rect" id="node2" href="arm__typedefs_8h.html" title="ARM common typedefs. " alt="" coords="28,80,139,107"/>
+<area shape="rect" id="node3" href="arm__typedefs_8h.html" title="ARM common typedefs. " alt="" coords="92,80,203,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -221,8 +222,8 @@ Macros</h2></td></tr>
 <tr class="memitem:a42087a58bf74f075fdfa47ddead28edf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a42087a58bf74f075fdfa47ddead28edf">TwoThird</a>&#160;&#160;&#160;((float) (2.0 / 3.0))</td></tr>
 <tr class="memdesc:a42087a58bf74f075fdfa47ddead28edf"><td class="mdescLeft">&#160;</td><td class="mdescRight">2/3 approximation  <a href="#a42087a58bf74f075fdfa47ddead28edf">More...</a><br /></td></tr>
 <tr class="separator:a42087a58bf74f075fdfa47ddead28edf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c233fcb94ea9f05596b48427095806e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a0c233fcb94ea9f05596b48427095806e">Pi</a>&#160;&#160;&#160;3.141593f</td></tr>
-<tr class="memdesc:a0c233fcb94ea9f05596b48427095806e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Approximate Pi calculation (4 * atan(1))  <a href="#a0c233fcb94ea9f05596b48427095806e">More...</a><br /></td></tr>
+<tr class="memitem:a0c233fcb94ea9f05596b48427095806e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a0c233fcb94ea9f05596b48427095806e">Pi</a>&#160;&#160;&#160;M_PI</td></tr>
+<tr class="memdesc:a0c233fcb94ea9f05596b48427095806e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pi approximation alias.  <a href="#a0c233fcb94ea9f05596b48427095806e">More...</a><br /></td></tr>
 <tr class="separator:a0c233fcb94ea9f05596b48427095806e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfe9c2ca6f52ac26d50f91ae9b727ef0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#abfe9c2ca6f52ac26d50f91ae9b727ef0">BYTE_TO_PERC</a>(b)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (((b) * 100) / 255))</td></tr>
 <tr class="memdesc:abfe9c2ca6f52ac26d50f91ae9b727ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a BYTE <b>b</b> (0-255) to percent (0-100)  <a href="#abfe9c2ca6f52ac26d50f91ae9b727ef0">More...</a><br /></td></tr>
@@ -230,9 +231,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a5893d02434fa28ae78a58cc23a499549"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a5893d02434fa28ae78a58cc23a499549">PERC_TO_BYTE</a>(p)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (((p) &gt; 100 ? 100 : (p)) * 255 / 100))</td></tr>
 <tr class="memdesc:a5893d02434fa28ae78a58cc23a499549"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a BYTE <b>p</b> percentage (0-100) to BYTE (0-255) with max checking.  <a href="#a5893d02434fa28ae78a58cc23a499549">More...</a><br /></td></tr>
 <tr class="separator:a5893d02434fa28ae78a58cc23a499549"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad760033c35493f676415513805aaa7cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#ad760033c35493f676415513805aaa7cd">RAD_TO_FLOAT</a>(r)&#160;&#160;&#160;((float) (((r) &gt; 2*<a class="el" href="arm__macros_8h.html#a0c233fcb94ea9f05596b48427095806e">Pi</a> ? 2*<a class="el" href="arm__macros_8h.html#a0c233fcb94ea9f05596b48427095806e">Pi</a> : (r)) / 2*<a class="el" href="arm__macros_8h.html#a0c233fcb94ea9f05596b48427095806e">Pi</a>))</td></tr>
+<tr class="memitem:ad760033c35493f676415513805aaa7cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#ad760033c35493f676415513805aaa7cd">RAD_TO_FLOAT</a>(r)&#160;&#160;&#160;((float) (((r) &gt; M_TWOPI ? M_TWOPI : (r)) / M_TWOPI))</td></tr>
 <tr class="separator:ad760033c35493f676415513805aaa7cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c2d77ef83ee12d562ed870e37b2f24c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a4c2d77ef83ee12d562ed870e37b2f24c">FLOAT_TO_RAD</a>(f)&#160;&#160;&#160;((float) ((((f) &gt; 1.0f ? 1.0f : (f)) &lt; 0.0f ? 0.0f : (f)) * 2*Pi)</td></tr>
+<tr class="memitem:a4c2d77ef83ee12d562ed870e37b2f24c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a4c2d77ef83ee12d562ed870e37b2f24c">FLOAT_TO_RAD</a>(f)&#160;&#160;&#160;((float) ((((f) &gt; 1.0f ? 1.0f : (f)) &lt; 0.0f ? 0.0f : (f)) * M_TWOPI)</td></tr>
 <tr class="separator:a4c2d77ef83ee12d562ed870e37b2f24c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f0cbbf788bc52c3dcdc928136d73d08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a9f0cbbf788bc52c3dcdc928136d73d08">DEG_TO_FLOAT</a>(d)&#160;&#160;&#160;((float) (((d) &gt; 360.0f ? 360.0f : (d)) / 360.0f))</td></tr>
 <tr class="separator:a9f0cbbf788bc52c3dcdc928136d73d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -449,7 +450,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">f</td><td>)</td>
-          <td>&#160;&#160;&#160;((float) ((((f) &gt; 1.0f ? 1.0f : (f)) &lt; 0.0f ? 0.0f : (f)) * 2*Pi)</td>
+          <td>&#160;&#160;&#160;((float) ((((f) &gt; 1.0f ? 1.0f : (f)) &lt; 0.0f ? 0.0f : (f)) * M_TWOPI)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -915,12 +916,12 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define Pi&#160;&#160;&#160;3.141593f</td>
+          <td class="memname">#define Pi&#160;&#160;&#160;M_PI</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Approximate Pi calculation (4 * atan(1)) </p>
+<p>Pi approximation alias. </p>
 
 </div>
 </div>
@@ -951,7 +952,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">r</td><td>)</td>
-          <td>&#160;&#160;&#160;((float) (((r) &gt; 2*<a class="el" href="arm__macros_8h.html#a0c233fcb94ea9f05596b48427095806e">Pi</a> ? 2*<a class="el" href="arm__macros_8h.html#a0c233fcb94ea9f05596b48427095806e">Pi</a> : (r)) / 2*<a class="el" href="arm__macros_8h.html#a0c233fcb94ea9f05596b48427095806e">Pi</a>))</td>
+          <td>&#160;&#160;&#160;((float) (((r) &gt; M_TWOPI ? M_TWOPI : (r)) / M_TWOPI))</td>
         </tr>
       </table>
 </div><div class="memdoc">

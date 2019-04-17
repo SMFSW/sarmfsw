@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['nbbitsstate',['nbBitsState',['../arm__inlines_8h.html#a2c54fcea02a5c8298afbd54666f867d8',1,'arm_inlines.h']]],
+  ['nbbitsstate',['nbBitsState',['../arm__inlines__binary_8h.html#a2c54fcea02a5c8298afbd54666f867d8',1,'arm_inlines_binary.h']]],
   ['nbineval',['nbinEval',['../arm__macros_8h.html#ac533e4916b93f3a66c1057c103045086',1,'arm_macros.h']]],
   ['noedge',['NoEdge',['../arm__typedefs_8h.html#ac4aae790b5854309a8bd82c571e47ef5a6a6d01e696f82b7189c5da2299a3820b',1,'arm_typedefs.h']]],
   ['nonnull_5f_5f',['NONNULL__',['../arm__attributes_8h.html#a5b9d49574b0cb964847dd9d5df780c55',1,'arm_attributes.h']]],

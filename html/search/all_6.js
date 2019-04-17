@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['fahrenheit2celsius',['fahrenheit2celsius',['../arm__inlines_8h.html#af04317d39611be5064e8c91c0f46790b',1,'arm_inlines.h']]],
-  ['fahrenheit2kelvin',['fahrenheit2kelvin',['../arm__inlines_8h.html#a2ef862de015ad6dbf6013f26c5642f3b',1,'arm_inlines.h']]],
+  ['fahrenheit2celsius',['fahrenheit2celsius',['../arm__inlines__temperature_8h.html#aa125151294a94b7241c149a8ec897891',1,'arm_inlines_temperature.h']]],
+  ['fahrenheit2kelvin',['fahrenheit2kelvin',['../arm__inlines__temperature_8h.html#a2bc3a1420f0839536b3b6dac9549dce7',1,'arm_inlines_temperature.h']]],
   ['falling',['Falling',['../arm__typedefs_8h.html#ac4aae790b5854309a8bd82c571e47ef5a746691be2cff34db1c8ed48b73305601',1,'arm_typedefs.h']]],
   ['false',['False',['../arm__macros_8h.html#a306ebd41c0cd1303b1372c6153f0caf8',1,'False():&#160;arm_macros.h'],['../arm__macros_8h.html#aa93f0eb578d23995850d61f7d61c55c1',1,'FALSE():&#160;arm_macros.h']]],
   ['fcterr',['FctERR',['../arm__errors_8h.html#abf6c1e972e63bb08ca4e60f3820ae617',1,'FctERR():&#160;arm_errors.h'],['../arm__errors_8h.html#a4a55492b8cd3269252f94f8c661949fa',1,'FctERR():&#160;arm_errors.h']]],
