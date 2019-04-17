@@ -104,10 +104,10 @@ typedef enum eGPIOPull {
 } eGPIOPull;
 
 
-/*!\struct StructBitfield8
+/*!\struct sBitfield8
 ** \brief Bitfield 8b
 **/
-typedef struct StructBitfield8 {
+typedef struct sBitfield8 {
 	#ifndef REVERSE_BITFIELD
 		BYTE	b0	:1;	//!< Bit 0 (LSB)
 		BYTE	b1	:1;	//!< Bit 1
@@ -129,10 +129,10 @@ typedef struct StructBitfield8 {
 	#endif
 } sBitfield8;
 
-/*!\struct StructBitfield16
+/*!\struct sBitfield16
 ** \brief Bitfield 16b
 **/
-typedef struct StructBitfield16 {
+typedef struct sBitfield16 {
 	#ifndef REVERSE_BITFIELD
 		WORD	b0	:1;	//!< Bit 0 (LSB)
 		WORD	b1	:1;	//!< Bit 1
@@ -170,10 +170,10 @@ typedef struct StructBitfield16 {
 	#endif
 } sBitfield16;
 
-/*!\struct StructBitfield32
+/*!\struct sBitfield32
 ** \brief Bitfield 32b
 **/
-typedef struct StructBitfield32 {
+typedef struct sBitfield32 {
 	#ifndef REVERSE_BITFIELD
 		DWORD	b0	:1;	//!< Bit 0 (LSB)
 		DWORD	b1	:1;	//!< Bit 1
@@ -243,10 +243,10 @@ typedef struct StructBitfield32 {
 	#endif
 } sBitfield32;
 
-/*!\struct StructBitfield64
+/*!\struct sBitfield64
 ** \brief Bitfield 64b
 **/
-typedef struct StructBitfield64 {
+typedef struct sBitfield64 {
 	#ifndef REVERSE_BITFIELD
 		LWORD	b0	:1;	//!< Bit 0 (LSB)
 		LWORD	b1	:1;	//!< Bit 1
@@ -388,18 +388,18 @@ typedef struct StructBitfield64 {
 #endif /* defined(ARDUINO) */
 
 
-/*!\union UnionByte
+/*!\union uByte
 ** \brief Union for BYTE
 **/
-typedef union UnionByte {
+typedef union uByte {
 	BYTE		Byte;	//!< BYTE
 	sBitfield8	Bits;	//!< Bits
 } uByte;
 
-/*!\union UnionWord
+/*!\union uWord
 ** \brief Union for WORD
 **/
-typedef union UnionWord {
+typedef union uWord {
 	WORD			Word;		//!< 16b
 	BYTE			Byte[2];	//!< Bytes tab
 	struct {
@@ -414,10 +414,10 @@ typedef union UnionWord {
 	sBitfield16		Bits;		//!< Bits
 } uWord;
 
-/*!\union UnionDWord
+/*!\union uDWord
 ** \brief Union for DWORD
 **/
-typedef union UnionDWord {
+typedef union uDWord {
 	DWORD			DWord;		//!< 32b
 	WORD			Word[2];	//!< Words tab
 	BYTE			Byte[4];	//!< Bytes tab
@@ -446,10 +446,10 @@ typedef union UnionDWord {
 	sBitfield32		Bits;		//!< Bits
 } uDWord;
 
-/*!\union UnionLWord
+/*!\union uLWord
 ** \brief Union for LWORD
 **/
-typedef union UnionLWord {
+typedef union uLWord {
 	LWORD			LWord;		//!< 64b
 	DWORD			DWord[2];	//!< DWords tab
 	WORD			Word[4];	//!< Words tab

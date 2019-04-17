@@ -25,12 +25,16 @@ sBitfield16	KEYWORD1
 sBitfield32	KEYWORD1
 sBitfield64	KEYWORD1
 
+sCoord2D	KEYWORD1
+
 uByte	KEYWORD1
 uWord	KEYWORD1
 uDWord	KEYWORD1
 uLWord	KEYWORD1
 
 FctERR	KEYWORD1
+
+LINEAR_TAB	KEYWORD1
 
 FW_target	KEYWORD1
 
@@ -155,6 +159,11 @@ RestrictedAverage_SWORD	KEYWORD2
 RestrictedAverage_SDWORD	KEYWORD2
 RestrictedAverage_float	KEYWORD2
 RestrictedAverage_double	KEYWORD2
+
+LINEAR_EVAL	KEYWORD2
+linearization_eval	KEYWORD2
+
+rotate_2D	KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)
