@@ -36,10 +36,7 @@ __INLINE typ_t RestrictedAverage_##typ_t(volatile typ_t pArray[], const uint8_t 
 /*!\brief Get average value of tab excluding most extreme values (BYTE)
 ** \warning If pArray is volatile array:
 ** 			A new value may be written in the tab (by interrupt for example) while copying it (not dangerous for BYTEs).
-** 			Disabling interruptions before calling function can overcome this behavior if needed
-** 			(not forgetting to re-enable interrupts after).
-**
-**
+** 			Disabling interruptions before calling function can overcome this behavior if needed (not forgetting to re-enable interrupts afterwards).
 ** \param[in] pArray - Pointer to BYTEs array
 ** \param[in] nb - Number of array elements
 ** \return Average value (BYTE)
@@ -51,9 +48,7 @@ RESTRICTED_AVERAGE(BYTE, DWORD);
 ** \warning If pArray is volatile array:
 ** 			A new value may be written in the tab (by interrupt for example) while copying it
 ** 			(which can lead to corrupted results for 8b microcontroller).
-** 			Disabling interruptions before calling function can overcome this behavior if needed
-** 			(not forgetting to re-enable interrupts after).
-**
+** 			Disabling interruptions before calling function can overcome this behavior if needed (not forgetting to re-enable interrupts afterwards).
 ** \param[in] pArray - Pointer to WORDs array
 ** \param[in] nb - Number of array elements
 ** \return Average value (WORD)
@@ -65,9 +60,7 @@ RESTRICTED_AVERAGE(WORD, LWORD);
 ** \warning If pArray is volatile array:
 ** 			A new value may be written in the tab (by interrupt for example) while copying it
 ** 			(which can lead to corrupted results for 8b and 16b microcontroller).
-** 			Disabling interruptions before calling function can overcome this behavior if needed
-** 			(not forgetting to re-enable interrupts after).
-**
+** 			Disabling interruptions before calling function can overcome this behavior if needed (not forgetting to re-enable interrupts afterwards).
 ** \param[in] pArray - Pointer to DWORDs array
 ** \param[in] nb - Number of array elements
 ** \return Average value (DWORD)
@@ -78,9 +71,7 @@ RESTRICTED_AVERAGE(DWORD, LWORD);
 /*!\brief Get average value of tab excluding most extreme values (SBYTE)
 ** \warning If pArray is volatile array:
 ** 			A new value may be written in the tab (by interrupt for example) while copying it (not dangerous for SBYTEs).
-** 			Disabling interruptions before calling function can overcome this behavior if needed
-** 			(not forgetting to re-enable interrupts after).
-**
+** 			Disabling interruptions before calling function can overcome this behavior if needed (not forgetting to re-enable interrupts afterwards).
 ** \param[in] pArray - Pointer to SBYTEs array
 ** \param[in] nb - Number of array elements
 ** \return Average value (SBYTE)
@@ -92,9 +83,7 @@ RESTRICTED_AVERAGE(SBYTE, SDWORD);
 ** \warning If pArray is volatile array:
 ** 			A new value may be written in the tab (by interrupt for example) while copying it
 ** 			(which can lead to corrupted results for 8b microcontroller).
-** 			Disabling interruptions before calling function can overcome this behavior if needed
-** 			(not forgetting to re-enable interrupts after).
-**
+** 			Disabling interruptions before calling function can overcome this behavior if needed (not forgetting to re-enable interrupts afterwards).
 ** \param[in] pArray - Pointer to SWORDs array
 ** \param[in] nb - Number of array elements
 ** \return Average value (SWORD)
@@ -106,9 +95,7 @@ RESTRICTED_AVERAGE(SWORD, SLWORD);
 ** \warning If pArray is volatile array:
 ** 			A new value may be written in the tab (by interrupt for example) while copying it
 ** 			(which can lead to corrupted results for 8b and 16b microcontroller).
-** 			Disabling interruptions before calling function can overcome this behavior if needed
-** 			(not forgetting to re-enable interrupts after).
-**
+** 			Disabling interruptions before calling function can overcome this behavior if needed (not forgetting to re-enable interrupts afterwards).
 ** \param[in] pArray - Pointer to SDWORDs array
 ** \param[in] nb - Number of array elements
 ** \return Average value (SDWORD)
@@ -118,11 +105,8 @@ RESTRICTED_AVERAGE(SDWORD, SLWORD);
 
 /*!\brief Get average value of tab excluding most extreme values (float)
 ** \warning If pArray is volatile array:
-** 			A new value may be written in the tab (by interrupt for example) while copying it
-** 			(which can lead to corrupted results).
-** 			Disabling interruptions before calling function can overcome this behavior
-** 			(not forgetting to re-enable interrupts after).
-**
+** 			A new value may be written in the tab (by interrupt for example) while copying it (which can lead to corrupted results).
+** 			Disabling interruptions before calling function can overcome this behavior (not forgetting to re-enable interrupts afterwards).
 ** \param[in] pArray - Pointer to floats array
 ** \param[in] nb - Number of array elements
 ** \return Average value (float)
@@ -134,9 +118,7 @@ RESTRICTED_AVERAGE(float, float);
 ** \warning If pArray is volatile array:
 ** 			A new value may be written in the tab (by interrupt for example) while copying it
 ** 			(which can lead to corrupted results).
-** 			Disabling interruptions before calling function can overcome this behavior
-** 			(not forgetting to re-enable interrupts after).
-**
+** 			Disabling interruptions before calling function can overcome this behavior (not forgetting to re-enable interrupts afterwards).
 ** \param[in] pArray - Pointer to doubles array
 ** \param[in] nb - Number of array elements
 ** \return Average value (double)

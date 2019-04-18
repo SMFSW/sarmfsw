@@ -19,7 +19,8 @@
 **/
 __INLINE CHAR INLINE__ HexToASCII(const BYTE hex)
 {
-	return ((hex & 0x0F) < 0x0A ? 0x30 : 0x37) + hex;
+	const BYTE h = hex & 0x0F;
+	return (h < 0x0A ? 0x30 : 0x37) + h;
 }
 
 

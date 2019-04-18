@@ -27,6 +27,9 @@ SOFTWARE.
 * arm_inlines: inlines split into separate files
 * arm_inlines_rotation: added 2D coordinates rotation inline
 * arm_inlines_linearization: added linearization inline
+* arm_inlines_ascii: fix HexToASCII
+* arm_inlines_float: changed get_fp_dec to get decimal part as absolute value
+* arm_stdclib: fix str_clr_safe
 
 ## v3.3
 

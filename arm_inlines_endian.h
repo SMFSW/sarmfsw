@@ -101,18 +101,18 @@ __INLINE eEndian testEndian_basic(void)
 **/
 __INLINE eEndian testEndian_full(void)
 {
-	union {
-		LWORD	dword;
-		BYTE	byte[sizeof(LWORD)];
+	const union {
+		DWORD	dword;
+		BYTE	byte[sizeof(DWORD)];
 	} tst = { .byte = { 1, 2, 3, 4 } };
 
 	switch (tst.dword)
 	{
+		default:			return Endian_unknown;
 		case 0x01020304UL:	return Endian_big;
 		case 0x04030201UL:	return Endian_little;
 		case 0x03040102UL:	return Endian_mid_big;
 		case 0x02010403UL:	return Endian_mid_little;
-		default:      		return Endian_unknown;
 	}
 }
 

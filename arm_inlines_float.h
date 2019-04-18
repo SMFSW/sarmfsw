@@ -10,26 +10,28 @@
 #ifdef __cplusplus
 	extern "C" {
 #endif
+
+#include <math.h>
 /****************************************************************/
 
 
-/*!\brief Get floating point number decimal part
+/*!\brief Get floating point number decimal part (as absolute value)
 ** \note in need to print floats, add '-u _printf_float' in Linker options.
 ** \warning enabling floating point support from linker seems to fubar printing long variables,
 ** 			so welcome get_fp_dec for the purpose.
 ** \param[in] f - floating point value
 ** \param[in] nb - Number of decimal to get after floating point
-** \return nb decimal part as integer
+** \return nb decimal part as unsigned integer
 **/
-__INLINE SDWORD get_fp_dec(float f, BYTE nb)
+__INLINE DWORD get_fp_dec(float f, BYTE nb)
 {
-	SDWORD mul = 1;
+	DWORD mul = 1;
 
 	f -= (SDWORD) f;
 
 	while (nb-- != 0) { mul *= 10; }
 
-	return (SDWORD) (f * mul);
+	return (DWORD) (fabs(f) * mul);
 }
 
 

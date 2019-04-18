@@ -102,8 +102,8 @@
 
 #define CLAMP(v, min, max)	((v) < (min) ? (min) : ((v) > (max) ? (max) : (v)))		//!< Returns the value between \b min and \b max from \b val
 
-#define OneThird			((float) (1.0 / 3.0))		//!< 1/3 approximation
-#define TwoThird			((float) (2.0 / 3.0))		//!< 2/3 approximation
+#define OneThird			((float) (1.0f / 3.0f))		//!< 1/3 approximation
+#define TwoThird			((float) (2.0f / 3.0f))		//!< 2/3 approximation
 
 #define Pi					M_PI						//!< Pi approximation alias
 

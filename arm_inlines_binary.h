@@ -50,6 +50,7 @@ __INLINE BYTE nbBitsState(const DWORD val, const BYTE bits, const bool state)
 
 
 /*!\brief Get power of 2 of the most significant set bit
+** \note function limited to arm native 32b
 ** \param[in] val - Variable to check for bits
 ** \return Power of 2 of most significant bit set
 ** \retval >=0: Index (power of 2) of most significant bit set
