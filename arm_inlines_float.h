@@ -12,6 +12,7 @@
 #endif
 
 #include <math.h>
+#include "arm_typedefs.h"			// Common typedefs
 /****************************************************************/
 
 
@@ -23,15 +24,13 @@
 ** \param[in] nb - Number of decimal to get after floating point
 ** \return nb decimal part as unsigned integer
 **/
-__INLINE DWORD get_fp_dec(float f, BYTE nb)
+__INLINE DWORD get_fp_dec(const float f, BYTE nb)
 {
 	DWORD mul = 1;
 
-	f -= (SDWORD) f;
-
 	while (nb-- != 0) { mul *= 10; }
 
-	return (DWORD) (fabs(f) * mul);
+	return (DWORD) (fabs(f - (SDWORD) f) * mul);
 }
 
 

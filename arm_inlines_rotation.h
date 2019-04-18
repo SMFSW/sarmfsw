@@ -11,7 +11,9 @@
 	extern "C" {
 #endif
 
-#include <math.h>	// For math constants
+#include <math.h>
+#include "arm_typedefs.h"			// Common typedefs
+#include "arm_inlines_angle.h"
 /****************************************************************/
 
 
@@ -41,7 +43,7 @@ __INLINE sCoord2D rotate_2D(const sCoord2D c, const SWORD angle)
 	{
 		default:
 		{
-			const float rad = (M_PI * deg) / 180.0f;
+			const float rad = deg * M_PI_180;
 			r.x = (SDWORD) ((c.x * cos(rad)) - (c.y * sin(rad)));
 			r.y = (SDWORD) ((c.x * sin(rad)) + (c.y * cos(rad)));
 		}

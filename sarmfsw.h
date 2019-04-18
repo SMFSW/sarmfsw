@@ -1,7 +1,7 @@
 /*!\file sarmfsw.h
 ** \author SMFSW
 ** \copyright MIT (c) 2017-2019, SMFSW
-** \brief sarmfsw ARM common headers
+** \brief sarmfsw (ARM) common headers
 */
 /****************************************************************/
 #ifndef __SARMFSW_H

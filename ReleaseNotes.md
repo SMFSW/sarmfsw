@@ -22,14 +22,17 @@ SOFTWARE.
 
 ## v3.4
 
+* Some refactoring
 * arm_chip_stm32: few changes using G0 family
-* arm_macros: replaced some macros values by their constants (from math.h)
+* arm_macros: charNUL renamed to charNULL
+* arm_macros: mathematical constants under the macro form M_xxx as in math.h
 * arm_inlines: inlines split into separate files
+* arm_inlines_angle: added inlines instead of associated macros in arm_macros.h (and associated constants)
 * arm_inlines_rotation: added 2D coordinates rotation inline
 * arm_inlines_linearization: added linearization inline
 * arm_inlines_ascii: fix HexToASCII
 * arm_inlines_float: changed get_fp_dec to get decimal part as absolute value
-* arm_stdclib: fix str_clr_safe
+* arm_stdclib: fix str_clr_safe use of sarmfsw macros and use of predefined macros
 
 ## v3.3
 

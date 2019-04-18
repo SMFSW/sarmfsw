@@ -52,11 +52,6 @@
 /***************************************/
 #include "arm_inlines_endian.h"
 
-/********************************/
-/***  TEMPERATURE CONVERSIONS ***/
-/********************************/
-#include "arm_inlines_temperature.h"
-
 /************************/
 /***  FLOATING POINT  ***/
 /************************/
@@ -72,10 +67,20 @@
 /***********************/
 #include "arm_inlines_linearization.h"
 
+/**************************/
+/***  ANGLE CONVERSIONS ***/
+/**************************/
+#include "arm_inlines_angle.h"
+
 /*******************/
 /***  ROTATTION  ***/
 /*******************/
 #include "arm_inlines_rotation.h"
+
+/********************************/
+/***  TEMPERATURE CONVERSIONS ***/
+/********************************/
+#include "arm_inlines_temperature.h"
 
 
 /****************************************************************/

@@ -10,6 +10,8 @@
 #ifdef __cplusplus
 	extern "C" {
 #endif
+
+#include "arm_typedefs.h"			// Common typedefs
 /****************************************************************/
 
 
@@ -17,14 +19,14 @@
 ** \warning For SAM families, no ms base time counter is implemented in HAL,
 **			please refer to arm_chip_sam.h for an implementation example.
 ** \note	Define custom HAL_MS_TICKS_FACTOR at project level if tick period is not 1ms
-** \param[in] last - stored time value
+** \param[in] prev - previously stored time value
 ** \param[in] time - time lapse (in ms)
 ** \return true if time elapsed
 **/
-__INLINE bool INLINE__ TPSSUP_MS(const DWORD last, const DWORD time)
+__INLINE bool INLINE__ TPSSUP_MS(const DWORD prev, const DWORD time)
 {
-	register const DWORD	hNow = HALTicks();
-	const DWORD				diff = (hNow >= last) ? hNow - last : (HAL_MAX_TICKS - last) + hNow;
+	const DWORD hNow = HALTicks();
+	const DWORD diff = (hNow >= prev) ? hNow - prev : (HAL_MAX_TICKS - prev) + hNow;
 
 	return (diff > (DWORD) (time * HAL_MS_TICKS_FACTOR));
 }
@@ -34,14 +36,14 @@ __INLINE bool INLINE__ TPSSUP_MS(const DWORD last, const DWORD time)
 ** \warning For SAM families, no ms base time counter is implemented in HAL,
 **			please refer to arm_chip_sam.h for an implementation example.
 ** \note	Define custom HAL_MS_TICKS_FACTOR at project level if tick period is not 1ms
-** \param[in] last - stored time value
+** \param[in] prev - previously stored time value
 ** \param[in] time - time lapse (in ms)
 ** \return true if time not elapsed
 **/
-__INLINE bool INLINE__ TPSINF_MS(const DWORD last, const DWORD time)
+__INLINE bool INLINE__ TPSINF_MS(const DWORD prev, const DWORD time)
 {
-	register const DWORD	hNow = HALTicks();
-	const DWORD				diff = (hNow >= last) ? hNow - last : (HAL_MAX_TICKS - last) + hNow;
+	const DWORD hNow = HALTicks();
+	const DWORD diff = (hNow >= prev) ? hNow - prev : (HAL_MAX_TICKS - prev) + hNow;
 
 	return (diff < (DWORD) (time * HAL_MS_TICKS_FACTOR));
 }

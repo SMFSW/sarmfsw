@@ -13,6 +13,10 @@
 /****************************************************************/
 
 
+#define M_5_9	(5.0 / 9.0)		//!< 5/9 constant approximation
+#define M_9_5	(9.0 / 5.0)		//!< 9/5 constant approximation
+
+
 /*!\brief Convert degrees Celsius to Kelvin
 ** \param[in] cel - Celsius degrees value
 ** \return Kelvin degrees
@@ -39,7 +43,7 @@ __INLINE float kelvin2celsius(const float kel)
 **/
 __INLINE float celsius2fahrenheit(const float cel)
 {
-	return (cel * (9.0f / 5.0f)) + 32.0f;
+	return (cel * M_9_5) + 32.0f;
 }
 
 
@@ -49,7 +53,7 @@ __INLINE float celsius2fahrenheit(const float cel)
 **/
 __INLINE float fahrenheit2celsius(const float fah)
 {
-	return ((fah - 32.0f) * (5.0f / 9.0f));
+	return ((fah - 32.0f) * M_5_9);
 }
 
 
