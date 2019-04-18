@@ -69,7 +69,16 @@ $(function() {
 
 <p>ARM common standard c library wrapper macros.  
 <a href="#details">More...</a></p>
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for arm_stdclib.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="arm__stdclib_8h__incl.png" border="0" usemap="#arm__stdclib_8h" alt=""/></div>
+<map name="arm__stdclib_8h" id="arm__stdclib_8h">
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="arm__stdclib_8h__dep__incl.png" border="0" usemap="#arm__stdclib_8hdep" alt=""/></div>
@@ -85,7 +94,7 @@ Macros</h2></td></tr>
 <tr class="memitem:a972178562c2f1b9265e922291f2981bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a972178562c2f1b9265e922291f2981bb">str_clr</a>(s)&#160;&#160;&#160;(s[0] = '\0')</td></tr>
 <tr class="memdesc:a972178562c2f1b9265e922291f2981bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear string <b>s</b> (fast way)  <a href="#a972178562c2f1b9265e922291f2981bb">More...</a><br /></td></tr>
 <tr class="separator:a972178562c2f1b9265e922291f2981bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21d9ade01d7277ab8de5208930473a36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a21d9ade01d7277ab8de5208930473a36">str_clr_safe</a>(s)&#160;&#160;&#160;(memset('\0', s, sizeof(s)))</td></tr>
+<tr class="memitem:a21d9ade01d7277ab8de5208930473a36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a21d9ade01d7277ab8de5208930473a36">str_clr_safe</a>(s)&#160;&#160;&#160;(memset(s, '\0', sizeof(s)))</td></tr>
 <tr class="memdesc:a21d9ade01d7277ab8de5208930473a36"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear string <b>s</b> (safe way)  <a href="#a21d9ade01d7277ab8de5208930473a36">More...</a><br /></td></tr>
 <tr class="separator:a21d9ade01d7277ab8de5208930473a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b9d72ff31499940e498832de21e3d72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a2b9d72ff31499940e498832de21e3d72">str_add_tab</a>(s)&#160;&#160;&#160;(strcat(s, '\t'))</td></tr>
@@ -103,7 +112,7 @@ Macros</h2></td></tr>
 <tr class="memitem:a679dacf2212f2c67dcf07cc246a79b0c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a679dacf2212f2c67dcf07cc246a79b0c">verbInc</a>(x)&#160;&#160;&#160;(puts(&quot;Incrementing &quot; #x), (x)++)</td></tr>
 <tr class="memdesc:a679dacf2212f2c67dcf07cc246a79b0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment example using puts.  <a href="#a679dacf2212f2c67dcf07cc246a79b0c">More...</a><br /></td></tr>
 <tr class="separator:a679dacf2212f2c67dcf07cc246a79b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3fd4444390849a4408b62064ec70605"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#ac3fd4444390849a4408b62064ec70605">verbDec</a>(x)&#160;&#160;&#160;(puts(&quot;Incrementing &quot; #x), (x)--)</td></tr>
+<tr class="memitem:ac3fd4444390849a4408b62064ec70605"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#ac3fd4444390849a4408b62064ec70605">verbDec</a>(x)&#160;&#160;&#160;(puts(&quot;Decrementing &quot; #x), (x)--)</td></tr>
 <tr class="memdesc:ac3fd4444390849a4408b62064ec70605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrement example using puts.  <a href="#ac3fd4444390849a4408b62064ec70605">More...</a><br /></td></tr>
 <tr class="separator:ac3fd4444390849a4408b62064ec70605"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -203,7 +212,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">s</td><td>)</td>
-          <td>&#160;&#160;&#160;(memset('\0', s, sizeof(s)))</td>
+          <td>&#160;&#160;&#160;(memset(s, '\0', sizeof(s)))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -223,7 +232,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(puts(&quot;Incrementing &quot; #x), (x)--)</td>
+          <td>&#160;&#160;&#160;(puts(&quot;Decrementing &quot; #x), (x)--)</td>
         </tr>
       </table>
 </div><div class="memdoc">
