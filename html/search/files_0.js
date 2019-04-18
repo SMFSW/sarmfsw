@@ -8,6 +8,7 @@ var searchData=
   ['arm_5ferrors_2eh',['arm_errors.h',['../arm__errors_8h.html',1,'']]],
   ['arm_5fhal_5fperipheral_2eh',['arm_hal_peripheral.h',['../arm__hal__peripheral_8h.html',1,'']]],
   ['arm_5finlines_2eh',['arm_inlines.h',['../arm__inlines_8h.html',1,'']]],
+  ['arm_5finlines_5fangle_2eh',['arm_inlines_angle.h',['../arm__inlines__angle_8h.html',1,'']]],
   ['arm_5finlines_5fascii_2eh',['arm_inlines_ascii.h',['../arm__inlines__ascii_8h.html',1,'']]],
   ['arm_5finlines_5faverage_2eh',['arm_inlines_average.h',['../arm__inlines__average_8h.html',1,'']]],
   ['arm_5finlines_5fbcd_2eh',['arm_inlines_bcd.h',['../arm__inlines__bcd_8h.html',1,'']]],

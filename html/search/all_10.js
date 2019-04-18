@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['rad_5fto_5ffloat',['RAD_TO_FLOAT',['../arm__macros_8h.html#ad760033c35493f676415513805aaa7cd',1,'arm_macros.h']]],
+  ['rad_5fnorm',['RAD_NORM',['../arm__inlines__angle_8h.html#a871797975689252dad591817403aae9e',1,'arm_inlines_angle.h']]],
+  ['rad_5fto_5fdeg',['RAD_TO_DEG',['../arm__inlines__angle_8h.html#a5584522761691415956fef6baed2ec97',1,'arm_inlines_angle.h']]],
+  ['rad_5fto_5ffloat',['RAD_TO_FLOAT',['../arm__inlines__angle_8h.html#a8c4bcb031f2a77271c903bdafbfa627b',1,'arm_inlines_angle.h']]],
   ['reset',['Reset',['../arm__typedefs_8h.html#abc85f209b5307f54c70121d3e83f14b9a92793663441ced378f4676b8a6524385',1,'arm_typedefs.h']]],
   ['restricted_5faverage',['RESTRICTED_AVERAGE',['../arm__inlines__average_8h.html#a1e1965e310ddad5163f2d880e4a8b43d',1,'arm_inlines_average.h']]],
   ['restrictedaverage_5fbyte',['RestrictedAverage_BYTE',['../arm__inlines__average_8h.html#aca27ac701ad715533881a975c34f914e',1,'arm_inlines_average.h']]],

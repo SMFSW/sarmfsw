@@ -71,11 +71,14 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="arm__macros_8h_source.html">arm_macros.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for arm_stdclib.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="arm__stdclib_8h__incl.png" border="0" usemap="#arm__stdclib_8h" alt=""/></div>
 <map name="arm__stdclib_8h" id="arm__stdclib_8h">
+<area shape="rect" id="node4" href="arm__macros_8h.html" title="ARM common macros. " alt="" coords="181,80,285,107"/>
+<area shape="rect" id="node5" href="arm__typedefs_8h.html" title="ARM common typedefs. " alt="" coords="177,155,288,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -83,7 +86,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="arm__stdclib_8h__dep__incl.png" border="0" usemap="#arm__stdclib_8hdep" alt=""/></div>
 <map name="arm__stdclib_8hdep" id="arm__stdclib_8hdep">
-<area shape="rect" id="node2" href="sarmfsw_8h.html" title="sarmfsw ARM common headers " alt="" coords="13,80,95,107"/>
+<area shape="rect" id="node2" href="sarmfsw_8h.html" title="sarmfsw (ARM) common headers " alt="" coords="13,80,95,107"/>
 </map>
 </div>
 </div>
@@ -91,10 +94,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a972178562c2f1b9265e922291f2981bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a972178562c2f1b9265e922291f2981bb">str_clr</a>(s)&#160;&#160;&#160;(s[0] = '\0')</td></tr>
+<tr class="memitem:a972178562c2f1b9265e922291f2981bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a972178562c2f1b9265e922291f2981bb">str_clr</a>(s)&#160;&#160;&#160;(s[0] = <a class="el" href="arm__macros_8h.html#ace955bbe2a2f83133bc0f701e22c08a5">charNull</a>)</td></tr>
 <tr class="memdesc:a972178562c2f1b9265e922291f2981bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear string <b>s</b> (fast way)  <a href="#a972178562c2f1b9265e922291f2981bb">More...</a><br /></td></tr>
 <tr class="separator:a972178562c2f1b9265e922291f2981bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21d9ade01d7277ab8de5208930473a36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a21d9ade01d7277ab8de5208930473a36">str_clr_safe</a>(s)&#160;&#160;&#160;(memset(s, '\0', sizeof(s)))</td></tr>
+<tr class="memitem:a21d9ade01d7277ab8de5208930473a36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a21d9ade01d7277ab8de5208930473a36">str_clr_safe</a>(s)&#160;&#160;&#160;(memset(s, <a class="el" href="arm__macros_8h.html#ace955bbe2a2f83133bc0f701e22c08a5">charNull</a>, sizeof(s)))</td></tr>
 <tr class="memdesc:a21d9ade01d7277ab8de5208930473a36"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear string <b>s</b> (safe way)  <a href="#a21d9ade01d7277ab8de5208930473a36">More...</a><br /></td></tr>
 <tr class="separator:a21d9ade01d7277ab8de5208930473a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b9d72ff31499940e498832de21e3d72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a2b9d72ff31499940e498832de21e3d72">str_add_tab</a>(s)&#160;&#160;&#160;(strcat(s, '\t'))</td></tr>
@@ -103,16 +106,16 @@ Macros</h2></td></tr>
 <tr class="memitem:a367127b0408c41838d4bddce5040028b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a367127b0408c41838d4bddce5040028b">str_add_cr</a>(s)&#160;&#160;&#160;(strcat(s, '\r\n'))</td></tr>
 <tr class="memdesc:a367127b0408c41838d4bddce5040028b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adding new line to string using strcat.  <a href="#a367127b0408c41838d4bddce5040028b">More...</a><br /></td></tr>
 <tr class="separator:a367127b0408c41838d4bddce5040028b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdb35fe5009818050f272c96997f495a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#abdb35fe5009818050f272c96997f495a">printExpr</a>(e)&#160;&#160;&#160;(printf(&quot;%s = %d\r\n&quot;, #e, (e)))</td></tr>
+<tr class="memitem:abdb35fe5009818050f272c96997f495a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#abdb35fe5009818050f272c96997f495a">printExpr</a>(e)&#160;&#160;&#160;(printf(&quot;%s = %d\r\n&quot;, STR(e), (e)))</td></tr>
 <tr class="memdesc:abdb35fe5009818050f272c96997f495a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print expression <b>e</b> and it's result <b>e</b> using printf.  <a href="#abdb35fe5009818050f272c96997f495a">More...</a><br /></td></tr>
 <tr class="separator:abdb35fe5009818050f272c96997f495a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a0958004718cacfebd15dee4a047b58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a7a0958004718cacfebd15dee4a047b58">verbInstr</a>(i)&#160;&#160;&#160;(printf(#i), (i))</td></tr>
+<tr class="memitem:a7a0958004718cacfebd15dee4a047b58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a7a0958004718cacfebd15dee4a047b58">verbInstr</a>(i)&#160;&#160;&#160;(printf(<a class="el" href="arm__macros_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(i)), (i))</td></tr>
 <tr class="memdesc:a7a0958004718cacfebd15dee4a047b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print instruction <b>e</b> and execute it.  <a href="#a7a0958004718cacfebd15dee4a047b58">More...</a><br /></td></tr>
 <tr class="separator:a7a0958004718cacfebd15dee4a047b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a679dacf2212f2c67dcf07cc246a79b0c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a679dacf2212f2c67dcf07cc246a79b0c">verbInc</a>(x)&#160;&#160;&#160;(puts(&quot;Incrementing &quot; #x), (x)++)</td></tr>
+<tr class="memitem:a679dacf2212f2c67dcf07cc246a79b0c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#a679dacf2212f2c67dcf07cc246a79b0c">verbInc</a>(x)&#160;&#160;&#160;(puts(&quot;Incrementing &quot; STR(x)), (x)++)</td></tr>
 <tr class="memdesc:a679dacf2212f2c67dcf07cc246a79b0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment example using puts.  <a href="#a679dacf2212f2c67dcf07cc246a79b0c">More...</a><br /></td></tr>
 <tr class="separator:a679dacf2212f2c67dcf07cc246a79b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3fd4444390849a4408b62064ec70605"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#ac3fd4444390849a4408b62064ec70605">verbDec</a>(x)&#160;&#160;&#160;(puts(&quot;Decrementing &quot; #x), (x)--)</td></tr>
+<tr class="memitem:ac3fd4444390849a4408b62064ec70605"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__stdclib_8h.html#ac3fd4444390849a4408b62064ec70605">verbDec</a>(x)&#160;&#160;&#160;(puts(&quot;Decrementing &quot; STR(x)), (x)--)</td></tr>
 <tr class="memdesc:ac3fd4444390849a4408b62064ec70605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrement example using puts.  <a href="#ac3fd4444390849a4408b62064ec70605">More...</a><br /></td></tr>
 <tr class="separator:ac3fd4444390849a4408b62064ec70605"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -132,7 +135,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">e</td><td>)</td>
-          <td>&#160;&#160;&#160;(printf(&quot;%s = %d\r\n&quot;, #e, (e)))</td>
+          <td>&#160;&#160;&#160;(printf(&quot;%s = %d\r\n&quot;, STR(e), (e)))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -192,7 +195,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">s</td><td>)</td>
-          <td>&#160;&#160;&#160;(s[0] = '\0')</td>
+          <td>&#160;&#160;&#160;(s[0] = <a class="el" href="arm__macros_8h.html#ace955bbe2a2f83133bc0f701e22c08a5">charNull</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -212,7 +215,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">s</td><td>)</td>
-          <td>&#160;&#160;&#160;(memset(s, '\0', sizeof(s)))</td>
+          <td>&#160;&#160;&#160;(memset(s, <a class="el" href="arm__macros_8h.html#ace955bbe2a2f83133bc0f701e22c08a5">charNull</a>, sizeof(s)))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -232,7 +235,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(puts(&quot;Decrementing &quot; #x), (x)--)</td>
+          <td>&#160;&#160;&#160;(puts(&quot;Decrementing &quot; STR(x)), (x)--)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -252,7 +255,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(puts(&quot;Incrementing &quot; #x), (x)++)</td>
+          <td>&#160;&#160;&#160;(puts(&quot;Incrementing &quot; STR(x)), (x)++)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -272,7 +275,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">i</td><td>)</td>
-          <td>&#160;&#160;&#160;(printf(#i), (i))</td>
+          <td>&#160;&#160;&#160;(printf(<a class="el" href="arm__macros_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(i)), (i))</td>
         </tr>
       </table>
 </div><div class="memdoc">

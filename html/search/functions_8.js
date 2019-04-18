@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['linearization_5feval',['linearization_eval',['../arm__inlines__linearization_8h.html#a28d9eb6a585d0a3e4eda746eced007fa',1,'arm_inlines_linearization.h']]]
+  ['kelvin2celsius',['kelvin2celsius',['../arm__inlines__temperature_8h.html#ab4ad197d5bc7768ab4863d2dd839cb59',1,'arm_inlines_temperature.h']]],
+  ['kelvin2fahrenheit',['kelvin2fahrenheit',['../arm__inlines__temperature_8h.html#a6705d455db02418df1e218257ae04c39',1,'arm_inlines_temperature.h']]]
 ];

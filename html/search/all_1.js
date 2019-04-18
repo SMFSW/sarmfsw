@@ -11,6 +11,7 @@ var searchData=
   ['arm_5fhal_5fcfg',['ARM_HAL_CFG',['../arm__chip__sam_8h.html#adb8c26d7baf6e005f9c99e859fc91c10',1,'ARM_HAL_CFG():&#160;arm_chip_sam.h'],['../arm__chip__stm32_8h.html#adb8c26d7baf6e005f9c99e859fc91c10',1,'ARM_HAL_CFG():&#160;arm_chip_stm32.h']]],
   ['arm_5fhal_5fperipheral_2eh',['arm_hal_peripheral.h',['../arm__hal__peripheral_8h.html',1,'']]],
   ['arm_5finlines_2eh',['arm_inlines.h',['../arm__inlines_8h.html',1,'']]],
+  ['arm_5finlines_5fangle_2eh',['arm_inlines_angle.h',['../arm__inlines__angle_8h.html',1,'']]],
   ['arm_5finlines_5fascii_2eh',['arm_inlines_ascii.h',['../arm__inlines__ascii_8h.html',1,'']]],
   ['arm_5finlines_5faverage_2eh',['arm_inlines_average.h',['../arm__inlines__average_8h.html',1,'']]],
   ['arm_5finlines_5fbcd_2eh',['arm_inlines_bcd.h',['../arm__inlines__bcd_8h.html',1,'']]],

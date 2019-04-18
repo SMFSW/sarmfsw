@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['kelvin2celsius',['kelvin2celsius',['../arm__inlines__temperature_8h.html#ab4ad197d5bc7768ab4863d2dd839cb59',1,'arm_inlines_temperature.h']]],
-  ['kelvin2fahrenheit',['kelvin2fahrenheit',['../arm__inlines__temperature_8h.html#a6705d455db02418df1e218257ae04c39',1,'arm_inlines_temperature.h']]]
+  ['inrange',['inRange',['../arm__inlines__var__test_8h.html#af78ef10afd0f14e26e00c795a22f516f',1,'arm_inlines_var_test.h']]],
+  ['intolerance',['inTolerance',['../arm__inlines__var__test_8h.html#aa1f0249d3e62eb4d05eb2692ac3cb581',1,'arm_inlines_var_test.h']]]
 ];
