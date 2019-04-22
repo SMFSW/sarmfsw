@@ -95,10 +95,19 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a893e7964ae5d1ea5137a25d70c8642a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__angle_8h.html#a893e7964ae5d1ea5137a25d70c8642a2">M_PI_180</a>&#160;&#160;&#160;0.017453292519943295</td></tr>
+<tr class="memitem:a66b3ab30f1332874326ed93969e496e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__angle_8h.html#a66b3ab30f1332874326ed93969e496e0">M_SQRT2</a>&#160;&#160;&#160;1.41421356237309504880</td></tr>
+<tr class="memdesc:a66b3ab30f1332874326ed93969e496e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">sqrt(2) approximation constant  <a href="#a66b3ab30f1332874326ed93969e496e0">More...</a><br /></td></tr>
+<tr class="separator:a66b3ab30f1332874326ed93969e496e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae71449b1cc6e6250b91f539153a7a0d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__angle_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a>&#160;&#160;&#160;3.14159265358979323846</td></tr>
+<tr class="memdesc:ae71449b1cc6e6250b91f539153a7a0d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pi approximation constant.  <a href="#ae71449b1cc6e6250b91f539153a7a0d3">More...</a><br /></td></tr>
+<tr class="separator:ae71449b1cc6e6250b91f539153a7a0d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a333b8c19e9861e0819243b069999f0d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__angle_8h.html#a333b8c19e9861e0819243b069999f0d3">M_TWOPI</a>&#160;&#160;&#160;(<a class="el" href="arm__inlines__angle_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> * 2.0)</td></tr>
+<tr class="memdesc:a333b8c19e9861e0819243b069999f0d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">2*Pi approximation constant  <a href="#a333b8c19e9861e0819243b069999f0d3">More...</a><br /></td></tr>
+<tr class="separator:a333b8c19e9861e0819243b069999f0d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a893e7964ae5d1ea5137a25d70c8642a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__angle_8h.html#a893e7964ae5d1ea5137a25d70c8642a2">M_PI_180</a>&#160;&#160;&#160;(<a class="el" href="arm__inlines__angle_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> / 180.0)</td></tr>
 <tr class="memdesc:a893e7964ae5d1ea5137a25d70c8642a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pi/180 approximation constant.  <a href="#a893e7964ae5d1ea5137a25d70c8642a2">More...</a><br /></td></tr>
 <tr class="separator:a893e7964ae5d1ea5137a25d70c8642a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa72c815141a6a1d35404fd914f663f63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__angle_8h.html#aa72c815141a6a1d35404fd914f663f63">M_180_PI</a>&#160;&#160;&#160;57.295779513082323</td></tr>
+<tr class="memitem:aa72c815141a6a1d35404fd914f663f63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__angle_8h.html#aa72c815141a6a1d35404fd914f663f63">M_180_PI</a>&#160;&#160;&#160;(180.0 / <a class="el" href="arm__inlines__angle_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a>)</td></tr>
 <tr class="memdesc:aa72c815141a6a1d35404fd914f663f63"><td class="mdescLeft">&#160;</td><td class="mdescRight">180/Pi approximation constant  <a href="#aa72c815141a6a1d35404fd914f663f63">More...</a><br /></td></tr>
 <tr class="separator:aa72c815141a6a1d35404fd914f663f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -141,12 +150,28 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define M_180_PI&#160;&#160;&#160;57.295779513082323</td>
+          <td class="memname">#define M_180_PI&#160;&#160;&#160;(180.0 / <a class="el" href="arm__inlines__angle_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>180/Pi approximation constant </p>
+
+</div>
+</div>
+<a id="ae71449b1cc6e6250b91f539153a7a0d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae71449b1cc6e6250b91f539153a7a0d3">&#9670;&nbsp;</a></span>M_PI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define M_PI&#160;&#160;&#160;3.14159265358979323846</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pi approximation constant. </p>
 
 </div>
 </div>
@@ -157,12 +182,44 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define M_PI_180&#160;&#160;&#160;0.017453292519943295</td>
+          <td class="memname">#define M_PI_180&#160;&#160;&#160;(<a class="el" href="arm__inlines__angle_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> / 180.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Pi/180 approximation constant. </p>
+
+</div>
+</div>
+<a id="a66b3ab30f1332874326ed93969e496e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66b3ab30f1332874326ed93969e496e0">&#9670;&nbsp;</a></span>M_SQRT2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define M_SQRT2&#160;&#160;&#160;1.41421356237309504880</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>sqrt(2) approximation constant </p>
+
+</div>
+</div>
+<a id="a333b8c19e9861e0819243b069999f0d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a333b8c19e9861e0819243b069999f0d3">&#9670;&nbsp;</a></span>M_TWOPI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define M_TWOPI&#160;&#160;&#160;(<a class="el" href="arm__inlines__angle_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> * 2.0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>2*Pi approximation constant </p>
 
 </div>
 </div>
@@ -204,7 +261,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="arm__inlines__angle_8h_a2fe3b8e43b755ce206990fb2c7bb9ac1_icgraph.png" border="0" usemap="#arm__inlines__angle_8h_a2fe3b8e43b755ce206990fb2c7bb9ac1_icgraph" alt=""/></div>
 <map name="arm__inlines__angle_8h_a2fe3b8e43b755ce206990fb2c7bb9ac1_icgraph" id="arm__inlines__angle_8h_a2fe3b8e43b755ce206990fb2c7bb9ac1_icgraph">
-<area shape="rect" id="node2" href="arm__inlines__angle_8h.html#a2eba976e50f5240cc57d26049571b5dd" title="Degrees to 0&#45;1 scaled float conversion. " alt="" coords="152,5,277,32"/>
+<area shape="rect" id="node2" href="arm__inlines__angle_8h.html#a67d8b68093c33dfdc874d2bb26800aeb" title="Degrees to radians conversion. " alt="" coords="159,5,271,32"/>
+<area shape="rect" id="node3" href="arm__inlines__angle_8h.html#a2eba976e50f5240cc57d26049571b5dd" title="Degrees to 0&#45;1 scaled float conversion. " alt="" coords="152,56,277,83"/>
 </map>
 </div>
 
@@ -290,7 +348,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="arm__inlines__angle_8h_a67d8b68093c33dfdc874d2bb26800aeb_cgraph.png" border="0" usemap="#arm__inlines__angle_8h_a67d8b68093c33dfdc874d2bb26800aeb_cgraph" alt=""/></div>
 <map name="arm__inlines__angle_8h_a67d8b68093c33dfdc874d2bb26800aeb_cgraph" id="arm__inlines__angle_8h_a67d8b68093c33dfdc874d2bb26800aeb_cgraph">
-<area shape="rect" id="node2" href="arm__inlines__angle_8h.html#a871797975689252dad591817403aae9e" title="Radians normalization (normalize angle to single rotation) " alt="" coords="165,5,264,32"/>
+<area shape="rect" id="node2" href="arm__inlines__angle_8h.html#a2fe3b8e43b755ce206990fb2c7bb9ac1" title="Degrees normalization (normalize angle to single rotation) " alt="" coords="165,5,264,32"/>
 </map>
 </div>
 
@@ -404,8 +462,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="arm__inlines__angle_8h_a871797975689252dad591817403aae9e_icgraph.png" border="0" usemap="#arm__inlines__angle_8h_a871797975689252dad591817403aae9e_icgraph" alt=""/></div>
 <map name="arm__inlines__angle_8h_a871797975689252dad591817403aae9e_icgraph" id="arm__inlines__angle_8h_a871797975689252dad591817403aae9e_icgraph">
 <area shape="rect" id="node2" href="arm__inlines__angle_8h.html#a5584522761691415956fef6baed2ec97" title="Radians to degrees conversion. " alt="" coords="159,5,271,32"/>
-<area shape="rect" id="node3" href="arm__inlines__angle_8h.html#a67d8b68093c33dfdc874d2bb26800aeb" title="Degrees to radians conversion. " alt="" coords="159,56,271,83"/>
-<area shape="rect" id="node4" href="arm__inlines__angle_8h.html#a8c4bcb031f2a77271c903bdafbfa627b" title="Radians to 0&#45;1 scaled float conversion. " alt="" coords="152,107,277,133"/>
+<area shape="rect" id="node3" href="arm__inlines__angle_8h.html#a8c4bcb031f2a77271c903bdafbfa627b" title="Radians to 0&#45;1 scaled float conversion. " alt="" coords="152,56,277,83"/>
 </map>
 </div>
 

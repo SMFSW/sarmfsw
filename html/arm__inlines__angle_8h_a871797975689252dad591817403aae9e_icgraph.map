@@ -1,5 +1,4 @@
 <map id="RAD_NORM" name="RAD_NORM">
 <area shape="rect" id="node2" href="$arm__inlines__angle_8h.html#a5584522761691415956fef6baed2ec97" title="Radians to degrees conversion. " alt="" coords="159,5,271,32"/>
-<area shape="rect" id="node3" href="$arm__inlines__angle_8h.html#a67d8b68093c33dfdc874d2bb26800aeb" title="Degrees to radians conversion. " alt="" coords="159,56,271,83"/>
-<area shape="rect" id="node4" href="$arm__inlines__angle_8h.html#a8c4bcb031f2a77271c903bdafbfa627b" title="Radians to 0&#45;1 scaled float conversion. " alt="" coords="152,107,277,133"/>
+<area shape="rect" id="node3" href="$arm__inlines__angle_8h.html#a8c4bcb031f2a77271c903bdafbfa627b" title="Radians to 0&#45;1 scaled float conversion. " alt="" coords="152,56,277,83"/>
 </map>

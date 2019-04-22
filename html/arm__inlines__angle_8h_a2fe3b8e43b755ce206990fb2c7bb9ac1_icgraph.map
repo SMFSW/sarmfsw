@@ -1,3 +1,4 @@
 <map id="DEG_NORM" name="DEG_NORM">
-<area shape="rect" id="node2" href="$arm__inlines__angle_8h.html#a2eba976e50f5240cc57d26049571b5dd" title="Degrees to 0&#45;1 scaled float conversion. " alt="" coords="152,5,277,32"/>
+<area shape="rect" id="node2" href="$arm__inlines__angle_8h.html#a67d8b68093c33dfdc874d2bb26800aeb" title="Degrees to radians conversion. " alt="" coords="159,5,271,32"/>
+<area shape="rect" id="node3" href="$arm__inlines__angle_8h.html#a2eba976e50f5240cc57d26049571b5dd" title="Degrees to 0&#45;1 scaled float conversion. " alt="" coords="152,56,277,83"/>
 </map>
