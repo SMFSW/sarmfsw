@@ -16,8 +16,20 @@
 /****************************************************************/
 
 
-#define M_PI_180	0.017453292519943295		//!< Pi/180 approximation constant
-#define M_180_PI	57.295779513082323			//!< 180/Pi approximation constant
+#if !defined(M_SQRT2)
+#define M_SQRT2		1.41421356237309504880		//!< sqrt(2) approximation constant
+#endif
+
+#if !defined(M_PI)
+#define M_PI		3.14159265358979323846		//!< Pi approximation constant
+#endif
+
+#if !defined(M_TWOPI)
+#define M_TWOPI		(M_PI * 2.0)				//!< 2*Pi approximation constant
+#endif
+
+#define M_PI_180	(M_PI / 180.0)				//!< Pi/180 approximation constant
+#define M_180_PI	(180.0 / M_PI)				//!< 180/Pi approximation constant
 
 
 /*!\brief Radians normalization (normalize angle to single rotation)
@@ -66,7 +78,7 @@ __INLINE float RAD_TO_DEG(const float rad)
 **/
 __INLINE float DEG_TO_RAD(const float deg)
 {
-	return RAD_NORM(deg) * M_PI_180;
+	return DEG_NORM(deg) * M_PI_180;
 }
 
 
