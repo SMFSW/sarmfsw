@@ -71,8 +71,9 @@ typedef enum eResetSource {
 	RST_IWDG,			//!< Independent Watchdog Reset
 	RST_WWDG,			//!< Window Watchdog Reset
 	RST_LPWR,			//!< Low Power Reset
-	RST_OBL,			//!< Option Byte Load Reset (F3)
+	RST_OBL,			//!< Option Byte Load Reset
 	RST_V18PWR,			//!< 1.8V Domain Power Reset (F3)
+	RST_FW,				//!< Firewall Reset (L4)
 	RST_UNKNOWN = 0xFF	//!< Unknown Reset Source
 } eResetSource;
 
