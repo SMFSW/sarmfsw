@@ -33,6 +33,8 @@ SOFTWARE.
 * arm_inlines_linearization: added linearization inline
 * arm_inlines_ascii: fix HexToASCII
 * arm_inlines_float: changed get_fp_dec to get decimal part as absolute value
+* arm_inlines_var_size: added mask on input value in convXtoYBits (if value given size mismatch with from size)
+* arm_inlines_var_size: replaced sums by bitwise or operations in every variable size expansion inlines 
 * arm_stdclib: fix str_clr_safe use of sarmfsw macros and use of predefined macros
 
 ## v3.3

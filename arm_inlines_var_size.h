@@ -13,6 +13,7 @@
 
 #include "arm_macros.h"				// Common macros
 #include "arm_typedefs.h"			// Common typedefs
+#include "arm_inlines_binary.h"
 /****************************************************************/
 
 
@@ -32,7 +33,7 @@ __INLINE BYTE INLINE__ conv16to8Bits(const WORD val)
 **/
 __INLINE WORD INLINE__ conv8to16Bits(const BYTE val)
 {
-	return (WORD) (LSHIFT(val, 8) + val);
+	return (WORD) (LSHIFT(val, 8) | val);
 }
 
 
@@ -52,7 +53,7 @@ __INLINE WORD INLINE__ conv32to16Bits(const DWORD val)
 **/
 __INLINE DWORD INLINE__ conv16to32Bits(const WORD val)
 {
-	return (DWORD) (LSHIFT(val, 16) + val);
+	return (DWORD) (LSHIFT(val, 16) | val);
 }
 
 
@@ -72,7 +73,7 @@ __INLINE DWORD INLINE__ conv64to32Bits(const LWORD val)
 **/
 __INLINE LWORD INLINE__ conv32to64Bits(const DWORD val)
 {
-	return (LWORD) (LSHIFT64(val, 32) + val);
+	return (LWORD) (LSHIFT64(val, 32) | val);
 }
 
 
@@ -85,7 +86,7 @@ __INLINE LWORD INLINE__ conv32to64Bits(const DWORD val)
 **/
 __INLINE WORD conv8upto16Bits(const BYTE val, const BYTE nb)
 {
-	return (WORD) ((val << nb) + (val >> (8 - nb)));
+	return (WORD) ((val << nb) | (val >> (8 - nb)));
 }
 
 
@@ -98,7 +99,7 @@ __INLINE WORD conv8upto16Bits(const BYTE val, const BYTE nb)
 **/
 __INLINE DWORD conv16upto32Bits(const WORD val, const BYTE nb)
 {
-	return (DWORD) ((val << nb) + (val >> (16 - nb)));
+	return (DWORD) ((val << nb) | (val >> (16 - nb)));
 }
 
 
@@ -111,7 +112,7 @@ __INLINE DWORD conv16upto32Bits(const WORD val, const BYTE nb)
 **/
 __INLINE LWORD conv32upto64Bits(const DWORD val, const BYTE nb)
 {
-	return (LWORD) (((LWORD) val << nb) + (val >> (32 - nb)));
+	return (LWORD) (((LWORD) val << nb) | (val >> (32 - nb)));
 }
 
 
@@ -123,11 +124,12 @@ __INLINE LWORD conv32upto64Bits(const DWORD val, const BYTE nb)
 ** \param[in] to - number of bits of output variable
 ** \return Converted value
 **/
-__INLINE DWORD convXtoYBits(const DWORD val, const BYTE from, const BYTE to)
+__INLINE DWORD convXtoYBits(DWORD val, const BYTE from, const BYTE to)
 {
 	const SBYTE diff_bits = min(32, to) - min(32, from);
+	val &= maskBits(from);
 
-	if (diff_bits > 0)		{ return (DWORD) ((val << diff_bits) + (val >> (from - diff_bits))); }
+	if (diff_bits > 0)		{ return (DWORD) ((val << diff_bits) | (val >> (from - diff_bits))); }
 	else if (diff_bits < 0)	{ return (DWORD) RSHIFT(val, diff_bits); }
 	return val;
 }
