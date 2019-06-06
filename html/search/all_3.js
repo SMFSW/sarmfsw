@@ -17,5 +17,5 @@ var searchData=
   ['conv64to32bits',['conv64to32Bits',['../arm__inlines__var__size_8h.html#aaf54d655508f6b03191b00e861c2257e',1,'arm_inlines_var_size.h']]],
   ['conv8to16bits',['conv8to16Bits',['../arm__inlines__var__size_8h.html#a7dd927f8650fde0ed0aeced1582657eb',1,'arm_inlines_var_size.h']]],
   ['conv8upto16bits',['conv8upto16Bits',['../arm__inlines__var__size_8h.html#a108d66bf0d45f84e85b0f923309ca422',1,'arm_inlines_var_size.h']]],
-  ['convxtoybits',['convXtoYBits',['../arm__inlines__var__size_8h.html#a4c3a90aca0d0e1849b28e463e294c1e1',1,'arm_inlines_var_size.h']]]
+  ['convxtoybits',['convXtoYBits',['../arm__inlines__var__size_8h.html#a6359bd06db0201c0af5abf14f3d04d6a',1,'arm_inlines_var_size.h']]]
 ];

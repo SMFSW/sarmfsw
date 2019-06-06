@@ -71,13 +71,15 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="arm__macros_8h_source.html">arm_macros.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="arm__typedefs_8h_source.html">arm_typedefs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="arm__inlines__binary_8h_source.html">arm_inlines_binary.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for arm_inlines_var_size.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="arm__inlines__var__size_8h__incl.png" border="0" usemap="#arm__inlines__var__size_8h" alt=""/></div>
 <map name="arm__inlines__var__size_8h" id="arm__inlines__var__size_8h">
 <area shape="rect" id="node2" href="arm__macros_8h.html" title="ARM common macros. " alt="" coords="5,80,109,107"/>
-<area shape="rect" id="node3" href="arm__typedefs_8h.html" title="ARM common typedefs. " alt="" coords="47,155,157,181"/>
+<area shape="rect" id="node3" href="arm__typedefs_8h.html" title="ARM common typedefs. " alt="" coords="92,155,203,181"/>
+<area shape="rect" id="node6" href="arm__inlines__binary_8h.html" title="Binary manipulation inlines. " alt="" coords="185,80,325,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -121,9 +123,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a3d75eb415c6e1e2934004156649b8abe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__typedefs_8h.html#a53ce154ee4efa73480bde2c7fff08da3">LWORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__var__size_8h.html#a3d75eb415c6e1e2934004156649b8abe">conv32upto64Bits</a> (const <a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a> val, const <a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a> nb)</td></tr>
 <tr class="memdesc:a3d75eb415c6e1e2934004156649b8abe"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert 32bits variable to 32+nb bits (64bits max)  <a href="#a3d75eb415c6e1e2934004156649b8abe">More...</a><br /></td></tr>
 <tr class="separator:a3d75eb415c6e1e2934004156649b8abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c3a90aca0d0e1849b28e463e294c1e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__var__size_8h.html#a4c3a90aca0d0e1849b28e463e294c1e1">convXtoYBits</a> (const <a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a> val, const <a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a> from, const <a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a> to)</td></tr>
-<tr class="memdesc:a4c3a90aca0d0e1849b28e463e294c1e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert x bits variable to y bits (32bits max)  <a href="#a4c3a90aca0d0e1849b28e463e294c1e1">More...</a><br /></td></tr>
-<tr class="separator:a4c3a90aca0d0e1849b28e463e294c1e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6359bd06db0201c0af5abf14f3d04d6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__var__size_8h.html#a6359bd06db0201c0af5abf14f3d04d6a">convXtoYBits</a> (<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a> val, const <a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a> from, const <a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a> to)</td></tr>
+<tr class="memdesc:a6359bd06db0201c0af5abf14f3d04d6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert x bits variable to y bits (32bits max)  <a href="#a6359bd06db0201c0af5abf14f3d04d6a">More...</a><br /></td></tr>
+<tr class="separator:a6359bd06db0201c0af5abf14f3d04d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Variables size conversion inlines. </p>
@@ -487,8 +489,8 @@ nb shall be in range 0-8 (note that using 0 doesn't change val) </dd></dl>
 
 </div>
 </div>
-<a id="a4c3a90aca0d0e1849b28e463e294c1e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c3a90aca0d0e1849b28e463e294c1e1">&#9670;&nbsp;</a></span>convXtoYBits()</h2>
+<a id="a6359bd06db0201c0af5abf14f3d04d6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6359bd06db0201c0af5abf14f3d04d6a">&#9670;&nbsp;</a></span>convXtoYBits()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -499,7 +501,7 @@ nb shall be in range 0-8 (note that using 0 doesn't change val) </dd></dl>
         <tr>
           <td class="memname"><a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a> convXtoYBits </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>&#160;</td>
           <td class="paramname"><em>val</em>, </td>
         </tr>
         <tr>
@@ -540,6 +542,14 @@ nb shall be in range 0-32 </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Converted value </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="arm__inlines__var__size_8h_a6359bd06db0201c0af5abf14f3d04d6a_cgraph.png" border="0" usemap="#arm__inlines__var__size_8h_a6359bd06db0201c0af5abf14f3d04d6a_cgraph" alt=""/></div>
+<map name="arm__inlines__var__size_8h_a6359bd06db0201c0af5abf14f3d04d6a_cgraph" id="arm__inlines__var__size_8h_a6359bd06db0201c0af5abf14f3d04d6a_cgraph">
+<area shape="rect" id="node2" href="arm__inlines__binary_8h.html#a22d29769e5b7873a1683e1a8dbc8bc80" title="Create specified number of bits mask. " alt="" coords="157,5,235,32"/>
+</map>
+</div>
 
 </div>
 </div>
