@@ -35,6 +35,15 @@
 	#define	FALSE			false			//!< \b FALSE alias for \b false
 #endif
 
+
+#define GET_BITS(v, b)			(v & (b))							//!< Get bits from mask \b b of variable \b v
+#define SET_BITS(v, b)			(v |= (b))							//!< Set bits \b b of variable \b v
+#define CLR_BITS(v, b)			(v &= ~(b))							//!< Clear bits \b b of variable \b v
+#define INV_BITS(v, b)			(v ^= (b))							//!< Invert bits \b b of variable \b v
+
+#define SET_BITS_VAL(v, c, s)	(v = ((v & ~(c)) | (s)))			//!< Set variable \b v with clear mask \b c to set mask \b s
+
+
 //!\warning this macro is optimized only when used with \b b with a static value
 #define LSHIFT(v, b)		((v) * (1UL << b))											//!< Shift \b v \b b bits left (up to 31b)
 //!\warning this macro is optimized only when used with \b b with a static value

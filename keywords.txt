@@ -41,6 +41,12 @@ FW_target	KEYWORD1
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
+GET_BITS	KEYWORD2
+SET_BITS	KEYWORD2
+CLR_BITS	KEYWORD2
+INV_BITS	KEYWORD2
+SET_BITS_VAL	KEYWORD2
+
 LSHIFT	KEYWORD2
 RSHIFT	KEYWORD2
 LSHIFT64	KEYWORD2

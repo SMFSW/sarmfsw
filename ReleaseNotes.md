@@ -27,6 +27,7 @@ SOFTWARE.
 * arm_chip_stm32: Added other reset sources in eResetSource
 * arm_macros: charNUL renamed to charNULL
 * arm_macros: mathematical constants under the macro form M_xxx as in math.h
+* arm_macros: added bitwise boolean arithmetic macros (useful for register or bitfields registers/variables)
 * arm_inlines: inlines split into separate files
 * arm_inlines_angle: added inlines instead of associated macros in arm_macros.h (and associated constants)
 * arm_inlines_rotation: added 2D coordinates rotation inline
