@@ -1,8 +1,8 @@
 <map id="arm_cmsis.h" name="arm_cmsis.h">
-<area shape="rect" id="node2" href="$arm__chip__ino_8h.html" title="Common macros for Arduino. " alt="" coords="5,80,115,107"/>
-<area shape="rect" id="node3" href="$arm__chip__sam_8h.html" title="ARM common macros for Atmel SAM families. " alt="" coords="139,80,257,107"/>
-<area shape="rect" id="node4" href="$arm__chip__stm32_8h.html" title="ARM common macros for STM32. " alt="" coords="282,80,411,107"/>
-<area shape="rect" id="node5" href="$arm__hal__peripheral_8h.html" title="ARM HAL peripheral includes. " alt="" coords="487,80,629,107"/>
-<area shape="rect" id="node6" href="$arm__inlines_8h.html" title="ARM common inlines. " alt="" coords="452,155,551,181"/>
-<area shape="rect" id="node7" href="$sarmfsw_8h.html" title="sarmfsw (ARM) common headers " alt="" coords="547,229,628,256"/>
+<area shape="rect" id="node2" href="$arm__chip__ino_8h.html" title="Common macros for Arduino. " alt="" coords="5,80,124,107"/>
+<area shape="rect" id="node3" href="$arm__chip__sam_8h.html" title="ARM common macros for Atmel SAM families. " alt="" coords="149,80,277,107"/>
+<area shape="rect" id="node4" href="$arm__chip__stm32_8h.html" title="ARM common macros for STM32. " alt="" coords="301,80,442,107"/>
+<area shape="rect" id="node5" href="$arm__hal__peripheral_8h.html" title="ARM HAL peripheral includes. " alt="" coords="517,80,674,107"/>
+<area shape="rect" id="node6" href="$arm__inlines_8h.html" title="ARM common inlines. " alt="" coords="483,155,590,181"/>
+<area shape="rect" id="node7" href="$sarmfsw_8h.html" title="sarmfsw (ARM) common headers " alt="" coords="584,229,671,256"/>
 </map>

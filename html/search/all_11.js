@@ -12,6 +12,8 @@ var searchData=
   ['sdword',['SDWORD',['../arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013',1,'arm_typedefs.h']]],
   ['section_5f_5f',['SECTION__',['../arm__attributes_8h.html#adef3770cc970cb5e7bd47c58224149f8',1,'arm_attributes.h']]],
   ['set',['Set',['../arm__typedefs_8h.html#abc85f209b5307f54c70121d3e83f14b9a20120ef9c542d271e929c93efa56b665',1,'arm_typedefs.h']]],
+  ['set_5fbits',['SET_BITS',['../arm__macros_8h.html#a32e12cdc4515de294c7f3005d3c770f9',1,'arm_macros.h']]],
+  ['set_5fbits_5fval',['SET_BITS_VAL',['../arm__macros_8h.html#a36f8749a10d3021f66f0fbf0676f76d4',1,'arm_macros.h']]],
   ['slword',['SLWORD',['../arm__typedefs_8h.html#afb75babc11ab7623115c59cdc4ba567a',1,'arm_typedefs.h']]],
   ['stm32_5fflashsize',['STM32_FLASHSIZE',['../arm__chip__stm32_8h.html#a0389f0023fe941b7977d3faf862e8c4a',1,'arm_chip_stm32.h']]],
   ['stm32_5foption_5fbytes',['STM32_OPTION_BYTES',['../arm__chip__stm32_8h.html#a988e800ad9acd2fa2bbb108507bf25d7',1,'arm_chip_stm32.h']]],
