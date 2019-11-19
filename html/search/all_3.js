@@ -3,7 +3,6 @@ var searchData=
   ['cat',['CAT',['../arm__macros_8h.html#a9404439ed46dc67d489a7d4ec2853e8f',1,'arm_macros.h']]],
   ['celsius2fahrenheit',['celsius2fahrenheit',['../arm__inlines__temperature_8h.html#aa9c4144ad3c12dea516892a55f67246e',1,'arm_inlines_temperature.h']]],
   ['celsius2kelvin',['celsius2kelvin',['../arm__inlines__temperature_8h.html#a7f8e8571f3a41a6cfebffaf5ecbf173e',1,'arm_inlines_temperature.h']]],
-  ['channel',['channel',['../arm__chip__stm32_8h.html#a8c38e09faad95f3e7edb678ba638a4b0',1,'arm_chip_stm32.h']]],
   ['char',['CHAR',['../arm__typedefs_8h.html#aebb9e13210d88d43e32e735ada43a425',1,'arm_typedefs.h']]],
   ['charnull',['charNull',['../arm__macros_8h.html#ace955bbe2a2f83133bc0f701e22c08a5',1,'arm_macros.h']]],
   ['clamp',['CLAMP',['../arm__macros_8h.html#aa1883836bb0955d41ac606649d0cab4b',1,'CLAMP():&#160;arm_macros.h'],['../arm__macros_8h.html#a8594bb7076b41a9e7f7fd061c5e334fd',1,'clamp():&#160;arm_macros.h']]],
