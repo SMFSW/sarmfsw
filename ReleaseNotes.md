@@ -25,6 +25,7 @@ SOFTWARE.
 * Some refactoring
 * arm_chip_stm32: few changes using G0 family
 * arm_chip_stm32: Added other reset sources in eResetSource
+* arm_chip_stm32: pins & ports refactored to stm_xxx
 * arm_macros: charNUL renamed to charNULL
 * arm_macros: mathematical constants under the macro form M_xxx as in math.h
 * arm_macros: added bitwise boolean arithmetic macros (useful for register or bitfields registers/variables)
