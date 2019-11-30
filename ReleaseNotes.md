@@ -31,6 +31,7 @@ SOFTWARE.
 * arm_macros: added bitwise boolean arithmetic macros (useful for register or bitfields registers/variables)
 * arm_inlines: inlines split into separate files
 * arm_inlines_angle: added inlines instead of associated macros in arm_macros.h (and associated constants)
+* arm_inlines_bcd: updated inlines to handle up to 32b conversions
 * arm_inlines_rotation: added 2D coordinates rotation inline
 * arm_inlines_linearization: added linearization inline
 * arm_inlines_ascii: fix HexToASCII

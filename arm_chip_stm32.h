@@ -32,11 +32,6 @@
 #define	stm_pin(mnem)		XCAT(mnem, _Pin)							//!< Wrapper for PIN Alias
 #define	GPIO(mnem)			stm_port(mnem), stm_pin(mnem)				//!< Wrapper for PORT/PIN Alias (when using HAL_GPIO_ReadPin for example)
 
-/*#define GPIO_DECL(mnem)		GPIO_TypeDef *	GPIOx = stm_port(mnem); \
-							uint16_t		GPIO_Pin = stm_pin(mnem);	//!< Wrapper for GPIO pin declaration in function (port instance and pin)
-//!\warning Only works in conjunction with \b GPIO_DECL beforehand (related to for/switch... statement)
-#define GPIO_DECL_USE()		GPIOx, GPIO_Pin								//!< Wrapper for GPIO pin declaration usage*/
-
 
 /*** TIM Channel name wrapper ***/
 //!\note Shall define mnemonic \b Tim corresponding to what's defined in CubeMX as Tim (for consistency with STM32 HAL)
@@ -45,11 +40,6 @@
 #define	stm_channel(mnem)	XCAT(mnem, _Chan)									//!< Wrapper for TIM Channel Alias
 //!\note Shall define mnemonic \b Tim/Chan corresponding to what's defined in CubeMX as Tim/Chan (for consistency with STM32 HAL)
 #define	TIM(mnem)			stm_timer(mnem), stm_channel(mnem)					//!< Wrapper for TIM/CHAN Alias (when using HAL_TIM_PWM_Start for example)
-
-/*#define TIM_DECL(mnem)		TIM_HandleTypeDef *	htim = stm_timer(mnem); \
-							uint32_t			Channel = stm_channel(mnem);	//!< Wrapper for TIM channel declaration in function (port instance and pin)
-//!\warning Only works in conjunction with \b TIM_DECL beforehand (related to a for/switch... statement)
-#define TIM_DECL_USE		htim, Channel										//!< Wrapper for TIM channel declaration usage */
 
 
 /*** STM32 Special Registers ***/

@@ -11,32 +11,55 @@
 	extern "C" {
 #endif
 
+#include <stdlib.h>
 #include "arm_typedefs.h"			// Common typedefs
 /****************************************************************/
 
 
 /*!\brief Converts hexadecimal value to BCD
-** \note Returns 0xFF if Hex value can't be represented on a BCD BYTE
+** \note Returns 0xFFFFFFFF if Hex value can't be represented on a BCD BYTE
 ** \param[in] hex - Hexadecimal value to convert
 ** \return BCD value
 **/
-__INLINE BYTE HexToBCD(const BYTE hex)
+__INLINE DWORD HexToBCD(const DWORD hex)
 {
-	return ((hex > 99) ? 0xFF : (LSHIFT((hex / 10), 4) | (hex % 10)));
+	if (hex > 99999999)		{ return (DWORD) -1; }
+
+	uint32_t res = 0;
+
+	div_t   tmp;
+	tmp.quot = hex;
+
+	for (int i = 0 ; i < 8 ; i++)
+	{
+		tmp = div(tmp.quot, 10);
+		res |= LSHIFT(tmp.rem, (4 * i));
+	}
+
+	return res;
 }
 
 
 /*!\brief Converts BCD value to hexadecimal
-** \note Returns 0xFF if BCD value is inconsistent
+** \note Returns 0xFFFFFFFF if BCD value is inconsistent
 ** \param[in] bcd - BCD value to convert
 ** \return Hexadecimal value
 **/
-__INLINE BYTE BCDToHex(const BYTE bcd)
+__INLINE DWORD BCDToHex(const DWORD bcd)
 {
-	const BYTE ms = RSHIFT(bcd & 0xF0, 4);
-	const BYTE ls = bcd & 0x0F;
+	uint32_t res = 0, mult = 1;
 
-	return (((ms > 9) || (ls > 9)) ? 0xFF : ((BYTE) ((ms * 10) + ls)));
+	for (unsigned int i = 0 ; i < 8 ; i++)
+	{
+		const uint8_t single = (RSHIFT(bcd, (4 * i)) & 0x0F);
+
+		if (single > 9)		{ return (DWORD) -1; }
+
+		res += single * mult;
+		mult *= 10;
+	}
+
+	return res;
 }
 
 
