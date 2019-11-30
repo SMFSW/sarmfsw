@@ -6,7 +6,7 @@ var searchData=
   ['halerrtofcterr',['HALERRtoFCTERR',['../arm__chip__ino_8h.html#a6bc1886e713db1fc285bdeeb34802694',1,'HALERRtoFCTERR(const SDWORD status):&#160;arm_chip_ino.h'],['../arm__chip__sam_8h.html#a6bc1886e713db1fc285bdeeb34802694',1,'HALERRtoFCTERR(const SDWORD status):&#160;arm_chip_sam.h'],['../arm__chip__stm32_8h.html#a79caeb50ac17444729ac729582b752a4',1,'HALERRtoFCTERR(const HAL_StatusTypeDef status):&#160;arm_chip_stm32.h']]],
   ['halticks',['HALTicks',['../arm__chip__ino_8h.html#a209c11556884be396ddce3dc23156559',1,'HALTicks():&#160;arm_chip_ino.h'],['../arm__chip__sam_8h.html#a209c11556884be396ddce3dc23156559',1,'HALTicks():&#160;arm_chip_sam.h'],['../arm__chip__stm32_8h.html#a209c11556884be396ddce3dc23156559',1,'HALTicks():&#160;arm_chip_stm32.h']]],
   ['hextoascii',['HexToASCII',['../arm__inlines__ascii_8h.html#a7d02d8bd9630f8b4a5dbaf6bfdbe547c',1,'arm_inlines_ascii.h']]],
-  ['hextobcd',['HexToBCD',['../arm__inlines__bcd_8h.html#adbb340da812968ccd37214286afaa04f',1,'arm_inlines_bcd.h']]],
+  ['hextobcd',['HexToBCD',['../arm__inlines__bcd_8h.html#a68b92f79d710d733985e18d34713e1cb',1,'arm_inlines_bcd.h']]],
   ['hibyte',['HIBYTE',['../arm__macros_8h.html#a75c5b5f21e837e80c0feb4da9a421f87',1,'arm_macros.h']]],
   ['hiword',['HIWORD',['../arm__macros_8h.html#aeb28b2d61bd674900a89bfb77e28ae07',1,'arm_macros.h']]],
   ['hot_5f_5f',['HOT__',['../arm__attributes_8h.html#a6a519d2b9df8fdfa8ed20c326b195804',1,'arm_attributes.h']]]
