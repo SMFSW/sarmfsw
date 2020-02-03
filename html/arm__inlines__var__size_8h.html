@@ -126,11 +126,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a6359bd06db0201c0af5abf14f3d04d6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__var__size_8h.html#a6359bd06db0201c0af5abf14f3d04d6a">convXtoYBits</a> (<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a> val, const <a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a> from, const <a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a> to)</td></tr>
 <tr class="memdesc:a6359bd06db0201c0af5abf14f3d04d6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert x bits variable to y bits (32bits max)  <a href="#a6359bd06db0201c0af5abf14f3d04d6a">More...</a><br /></td></tr>
 <tr class="separator:a6359bd06db0201c0af5abf14f3d04d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2321fc90093b5f8c40f5eba4b20b8ac7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__var__size_8h.html#a2321fc90093b5f8c40f5eba4b20b8ac7">scaleValue</a> (const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a> val, const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a> from_min, const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a> from_max, const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a> to_min, const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a> to_max)</td></tr>
+<tr class="memdesc:a2321fc90093b5f8c40f5eba4b20b8ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale value from one range to another.  <a href="#a2321fc90093b5f8c40f5eba4b20b8ac7">More...</a><br /></td></tr>
+<tr class="separator:a2321fc90093b5f8c40f5eba4b20b8ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Variables size conversion inlines. </p>
 <dl class="section author"><dt>Author</dt><dd>SMFSW </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2019, SMFSW </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2020, SMFSW </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a0d019ceba7e589e953ad14552f43baf5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0d019ceba7e589e953ad14552f43baf5">&#9670;&nbsp;</a></span>conv16to32Bits()</h2>
@@ -550,6 +553,72 @@ Here is the call graph for this function:</div>
 <area shape="rect" id="node2" href="arm__inlines__binary_8h.html#a22d29769e5b7873a1683e1a8dbc8bc80" title="Create specified number of bits mask. " alt="" coords="157,5,239,32"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="a2321fc90093b5f8c40f5eba4b20b8ac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2321fc90093b5f8c40f5eba4b20b8ac7">&#9670;&nbsp;</a></span>scaleValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a> scaleValue </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a>&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a>&#160;</td>
+          <td class="paramname"><em>from_min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a>&#160;</td>
+          <td class="paramname"><em>from_max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a>&#160;</td>
+          <td class="paramname"><em>to_min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a>&#160;</td>
+          <td class="paramname"><em>to_max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Scale value from one range to another. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>- Value to scale </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">from_min</td><td>- Minimal input range value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">from_max</td><td>- Maximal input range value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">to_min</td><td>- Minimal output range value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">to_max</td><td>- Maximal output range value </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

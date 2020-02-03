@@ -217,6 +217,9 @@ Macros</h2></td></tr>
 <tr class="memitem:ac533e4916b93f3a66c1057c103045086"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#ac533e4916b93f3a66c1057c103045086">nbinEval</a>(exp)&#160;&#160;&#160;(!<a class="el" href="arm__macros_8h.html#a4bcc263075d1521213cd7db6d08dd23c">binEval</a>(exp))</td></tr>
 <tr class="memdesc:ac533e4916b93f3a66c1057c103045086"><td class="mdescLeft">&#160;</td><td class="mdescRight">complemented boolean evaluation of expression <b>exp</b>  <a href="#ac533e4916b93f3a66c1057c103045086">More...</a><br /></td></tr>
 <tr class="separator:ac533e4916b93f3a66c1057c103045086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05805389397c01d99e812f228b6b4f6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a05805389397c01d99e812f228b6b4f6e">SCALE_VAL</a>(v,  from_min,  from_max,  to_min,  to_max)&#160;&#160;&#160;(((((v) - from_min) * (to_max - to_min)) / (from_max - from_min)) + to_min)</td></tr>
+<tr class="memdesc:a05805389397c01d99e812f228b6b4f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale value <b>v</b> from range <b>in_min:in_max</b> to range <b>out_min:out_max</b>.  <a href="#a05805389397c01d99e812f228b6b4f6e">More...</a><br /></td></tr>
+<tr class="separator:a05805389397c01d99e812f228b6b4f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1883836bb0955d41ac606649d0cab4b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#aa1883836bb0955d41ac606649d0cab4b">CLAMP</a>(v,  <a class="el" href="arm__macros_8h.html#ac6afabdc09a49a433ee19d8a9486056d">min</a>,  <a class="el" href="arm__macros_8h.html#affe776513b24d84b39af8ab0930fef7f">max</a>)&#160;&#160;&#160;((v) &lt; (<a class="el" href="arm__macros_8h.html#ac6afabdc09a49a433ee19d8a9486056d">min</a>) ? (<a class="el" href="arm__macros_8h.html#ac6afabdc09a49a433ee19d8a9486056d">min</a>) : ((v) &gt; (<a class="el" href="arm__macros_8h.html#affe776513b24d84b39af8ab0930fef7f">max</a>) ? (<a class="el" href="arm__macros_8h.html#affe776513b24d84b39af8ab0930fef7f">max</a>) : (v)))</td></tr>
 <tr class="memdesc:aa1883836bb0955d41ac606649d0cab4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value between <b>min</b> and <b>max</b> from <b>val</b>.  <a href="#aa1883836bb0955d41ac606649d0cab4b">More...</a><br /></td></tr>
 <tr class="separator:aa1883836bb0955d41ac606649d0cab4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -260,7 +263,7 @@ Macros</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ARM common macros. </p>
 <dl class="section author"><dt>Author</dt><dd>SMFSW </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2019, SMFSW </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2020, SMFSW </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a4bcc263075d1521213cd7db6d08dd23c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4bcc263075d1521213cd7db6d08dd23c">&#9670;&nbsp;</a></span>binEval</h2>
@@ -1132,6 +1135,54 @@ Macros</h2></td></tr>
 
 <p>Shift <b>v</b> <b>b</b> bits right (up to 63b) </p>
 <dl class="section warning"><dt>Warning</dt><dd>this macro is optimized only when used with <b>b</b> with a static value </dd></dl>
+
+</div>
+</div>
+<a id="a05805389397c01d99e812f228b6b4f6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05805389397c01d99e812f228b6b4f6e">&#9670;&nbsp;</a></span>SCALE_VAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCALE_VAL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">v, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">from_min, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">from_max, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">to_min, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">to_max&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(((((v) - from_min) * (to_max - to_min)) / (from_max - from_min)) + to_min)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scale value <b>v</b> from range <b>in_min:in_max</b> to range <b>out_min:out_max</b>. </p>
 
 </div>
 </div>

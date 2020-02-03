@@ -8,6 +8,8 @@ var searchData=
   ['sbitfield64',['sBitfield64',['../structs_bitfield64.html',1,'sBitfield64'],['../arm__typedefs_8h.html#ac7ac6c80aae21315e82ec581a9a4740b',1,'sBitfield64():&#160;arm_typedefs.h']]],
   ['sbitfield8',['sBitfield8',['../structs_bitfield8.html',1,'sBitfield8'],['../arm__typedefs_8h.html#a36fccd1a22320671dbdf71f4e9ba2e42',1,'sBitfield8():&#160;arm_typedefs.h']]],
   ['sbyte',['SBYTE',['../arm__typedefs_8h.html#a0b0ec08cb12c90f493f131cffb432638',1,'arm_typedefs.h']]],
+  ['scale_5fval',['SCALE_VAL',['../arm__macros_8h.html#a05805389397c01d99e812f228b6b4f6e',1,'arm_macros.h']]],
+  ['scalevalue',['scaleValue',['../arm__inlines__var__size_8h.html#a2321fc90093b5f8c40f5eba4b20b8ac7',1,'arm_inlines_var_size.h']]],
   ['scoord2d',['sCoord2D',['../structs_coord2_d.html',1,'sCoord2D'],['../arm__inlines__rotation_8h.html#ad11b856930f0e493cc6b7bf36191f194',1,'sCoord2D():&#160;arm_inlines_rotation.h']]],
   ['sdword',['SDWORD',['../arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013',1,'arm_typedefs.h']]],
   ['section_5f_5f',['SECTION__',['../arm__attributes_8h.html#adef3770cc970cb5e7bd47c58224149f8',1,'arm_attributes.h']]],

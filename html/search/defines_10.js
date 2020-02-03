@@ -2,6 +2,7 @@ var searchData=
 [
   ['sam_5fconf_5fheader',['SAM_CONF_HEADER',['../arm__chip__sam_8h.html#a4e98a77bb515ef232389cdfd55def200',1,'arm_chip_sam.h']]],
   ['sam_5fheader',['SAM_HEADER',['../arm__chip__sam_8h.html#a9beeda5cac65026214e784ea65e17959',1,'arm_chip_sam.h']]],
+  ['scale_5fval',['SCALE_VAL',['../arm__macros_8h.html#a05805389397c01d99e812f228b6b4f6e',1,'arm_macros.h']]],
   ['section_5f_5f',['SECTION__',['../arm__attributes_8h.html#adef3770cc970cb5e7bd47c58224149f8',1,'arm_attributes.h']]],
   ['set_5fbits',['SET_BITS',['../arm__macros_8h.html#a32e12cdc4515de294c7f3005d3c770f9',1,'arm_macros.h']]],
   ['set_5fbits_5fval',['SET_BITS_VAL',['../arm__macros_8h.html#a36f8749a10d3021f66f0fbf0676f76d4',1,'arm_macros.h']]],
