@@ -1,6 +1,6 @@
 /*!\file arm_inlines_var_size.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2019, SMFSW
+** \copyright MIT (c) 2017-2020, SMFSW
 ** \brief Variables size conversion inlines
 */
 /****************************************************************/
@@ -132,6 +132,20 @@ __INLINE DWORD convXtoYBits(DWORD val, const BYTE from, const BYTE to)
 	if (diff_bits > 0)		{ return (DWORD) ((val << diff_bits) | (val >> (from - diff_bits))); }
 	else if (diff_bits < 0)	{ return (DWORD) RSHIFT(val, diff_bits); }
 	return val;
+}
+
+
+/*!\brief Scale value from one range to another
+**
+** \param[in] val - Value to scale
+** \param[in] from_min - Minimal input range value
+** \param[in] from_max - Maximal input range value
+** \param[in] to_min - Minimal output range value
+** \param[in] to_max - Maximal output range value
+**/
+__INLINE SDWORD scaleValue(const SDWORD val, const SDWORD from_min, const SDWORD from_max, const SDWORD to_min, const SDWORD to_max)
+{
+	return (((val - from_min) * (to_max - to_min)) / (from_max - from_min)) + to_min;
 }
 
 

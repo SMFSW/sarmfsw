@@ -1,6 +1,6 @@
 /*!\file arm_chip_stm32.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2019, SMFSW
+** \copyright MIT (c) 2017-2020, SMFSW
 ** \brief ARM common macros for STM32
 */
 /****************************************************************/

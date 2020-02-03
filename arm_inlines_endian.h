@@ -1,6 +1,6 @@
 /*!\file arm_inlines_endian.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2019, SMFSW
+** \copyright MIT (c) 2017-2020, SMFSW
 ** \brief Endians conversion and testing inlines
 */
 /****************************************************************/

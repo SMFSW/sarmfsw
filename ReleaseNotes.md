@@ -2,7 +2,7 @@
 
 The MIT License (MIT)
 
-Copyright (c) 2017-2019 SMFSW (Sebastien Bizien)
+Copyright (c) 2017-2020 SMFSW (Sebastien Bizien)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -29,6 +29,7 @@ SOFTWARE.
 * arm_macros: charNUL renamed to charNULL
 * arm_macros: mathematical constants under the macro form M_xxx as in math.h
 * arm_macros: added bitwise boolean arithmetic macros (useful for register or bitfields registers/variables)
+* arm_macros: added SCALE_VAL macro
 * arm_inlines: inlines split into separate files
 * arm_inlines_angle: added inlines instead of associated macros in arm_macros.h (and associated constants)
 * arm_inlines_bcd: updated inlines to handle up to 32b conversions
@@ -38,6 +39,7 @@ SOFTWARE.
 * arm_inlines_float: changed get_fp_dec to get decimal part as absolute value
 * arm_inlines_var_size: added mask on input value in convXtoYBits (if value given size mismatch with from size)
 * arm_inlines_var_size: replaced sums by bitwise or operations in every variable size expansion inlines 
+* arm_inlines_var_size: added scaleValue macro
 * arm_stdclib: fix str_clr_safe use of sarmfsw macros and use of predefined macros
 
 ## v3.3

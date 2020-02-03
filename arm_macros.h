@@ -1,6 +1,6 @@
 /*!\file arm_macros.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2019, SMFSW
+** \copyright MIT (c) 2017-2020, SMFSW
 ** \brief ARM common macros
 */
 /****************************************************************/
@@ -101,6 +101,11 @@
 #define binEval(exp)		((exp) ? true : false)		//!< boolean evaluation of expression \b exp
 #define nbinEval(exp)		(!binEval(exp))				//!< complemented boolean evaluation of expression \b exp
 
+
+#define SCALE_VAL(	v,					\
+					from_min, from_max,	\
+					to_min, to_max)		\
+							(((((v) - from_min) * (to_max - to_min)) / (from_max - from_min)) + to_min)	//!< Scale value \b v from range \b in_min:in_max to range \b out_min:out_max
 
 #define CLAMP(v, min, max)	((v) < (min) ? (min) : ((v) > (max) ? (max) : (v)))		//!< Returns the value between \b min and \b max from \b val
 #define	MAX3(a, b, c)		((b) >= (c) ? ((a) >= (b) ? (a) : (b)) : ((a) >= (c) ? (a) : (c)))	//!< Returns max value between \b a, \b b and \b c

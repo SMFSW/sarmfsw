@@ -1,6 +1,6 @@
 /*!\file arm_inlines_ascii.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2019, SMFSW
+** \copyright MIT (c) 2017-2020, SMFSW
 ** \brief ASCII code conversion inlines
 */
 /****************************************************************/

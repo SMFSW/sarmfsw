@@ -1,6 +1,6 @@
 /*!\file arm_inlines.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2019, SMFSW
+** \copyright MIT (c) 2017-2020, SMFSW
 ** \brief ARM common inlines
 */
 /****************************************************************/
