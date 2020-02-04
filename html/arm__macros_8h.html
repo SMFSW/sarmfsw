@@ -191,7 +191,6 @@ Macros</h2></td></tr>
 <tr class="memdesc:a44a11b5d464b3d6837a0e6136c367abb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the size of member <b>mbr</b> in struct type <b>typ</b>.  <a href="#a44a11b5d464b3d6837a0e6136c367abb">More...</a><br /></td></tr>
 <tr class="separator:a44a11b5d464b3d6837a0e6136c367abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a945f756368ec4c5e11befc58b4b91dc1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a945f756368ec4c5e11befc58b4b91dc1">TYP_MBR</a>(typ,  mbr)&#160;&#160;&#160;(((typ *)0)-&gt;mbr)</td></tr>
-<tr class="memdesc:a945f756368ec4c5e11befc58b4b91dc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get member <b>mbr</b> from a struct type <b>typ</b>.  <a href="#a945f756368ec4c5e11befc58b4b91dc1">More...</a><br /></td></tr>
 <tr class="separator:a945f756368ec4c5e11befc58b4b91dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26bc59a26ebb159518e4717ffa37cc6d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a26bc59a26ebb159518e4717ffa37cc6d">TYP_MBR_TYP</a>(typ,  mbr)&#160;&#160;&#160;typeof(<a class="el" href="arm__macros_8h.html#a945f756368ec4c5e11befc58b4b91dc1">TYP_MBR</a>(typ, mbr))</td></tr>
 <tr class="memdesc:a26bc59a26ebb159518e4717ffa37cc6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get typeof member <b>mbr</b> from a struct type <b>typ</b> (no () as it wouldn't work for pointers to member type)  <a href="#a26bc59a26ebb159518e4717ffa37cc6d">More...</a><br /></td></tr>
@@ -203,7 +202,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:a32c119f1bd8155fc34ea0a798cc2f2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the address of parent struct <b>typ</b> of <b>ptr</b> from member <b>mbr</b>.  <a href="#a32c119f1bd8155fc34ea0a798cc2f2c3">More...</a><br /></td></tr>
 <tr class="separator:a32c119f1bd8155fc34ea0a798cc2f2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9404439ed46dc67d489a7d4ec2853e8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a9404439ed46dc67d489a7d4ec2853e8f">CAT</a>(a,  b)&#160;&#160;&#160;a##b</td></tr>
-<tr class="memdesc:a9404439ed46dc67d489a7d4ec2853e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preprocessor Name catenation.  <a href="#a9404439ed46dc67d489a7d4ec2853e8f">More...</a><br /></td></tr>
+<tr class="memdesc:a9404439ed46dc67d489a7d4ec2853e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preprocessor Name catenation (use of <a class="el" href="arm__macros_8h.html#acc44cb41b0818b28b4d2b9c4d46ee3c6">XCAT</a> is highly recommended for any need)  <a href="#a9404439ed46dc67d489a7d4ec2853e8f">More...</a><br /></td></tr>
 <tr class="separator:a9404439ed46dc67d489a7d4ec2853e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc44cb41b0818b28b4d2b9c4d46ee3c6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#acc44cb41b0818b28b4d2b9c4d46ee3c6">XCAT</a>(a,  b)&#160;&#160;&#160;<a class="el" href="arm__macros_8h.html#a9404439ed46dc67d489a7d4ec2853e8f">CAT</a>(a, b)</td></tr>
 <tr class="memdesc:acc44cb41b0818b28b4d2b9c4d46ee3c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preprocessor Name catenation (possible nesting)  <a href="#acc44cb41b0818b28b4d2b9c4d46ee3c6">More...</a><br /></td></tr>
@@ -218,7 +217,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:ac533e4916b93f3a66c1057c103045086"><td class="mdescLeft">&#160;</td><td class="mdescRight">complemented boolean evaluation of expression <b>exp</b>  <a href="#ac533e4916b93f3a66c1057c103045086">More...</a><br /></td></tr>
 <tr class="separator:ac533e4916b93f3a66c1057c103045086"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05805389397c01d99e812f228b6b4f6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a05805389397c01d99e812f228b6b4f6e">SCALE_VAL</a>(v,  from_min,  from_max,  to_min,  to_max)&#160;&#160;&#160;(((((v) - from_min) * (to_max - to_min)) / (from_max - from_min)) + to_min)</td></tr>
-<tr class="memdesc:a05805389397c01d99e812f228b6b4f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale value <b>v</b> from range <b>in_min:in_max</b> to range <b>out_min:out_max</b>.  <a href="#a05805389397c01d99e812f228b6b4f6e">More...</a><br /></td></tr>
+<tr class="memdesc:a05805389397c01d99e812f228b6b4f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale value <b>v</b> from range <b>from_min:from_max</b> to range <b>to_min:to_max</b>.  <a href="#a05805389397c01d99e812f228b6b4f6e">More...</a><br /></td></tr>
 <tr class="separator:a05805389397c01d99e812f228b6b4f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1883836bb0955d41ac606649d0cab4b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#aa1883836bb0955d41ac606649d0cab4b">CLAMP</a>(v,  <a class="el" href="arm__macros_8h.html#ac6afabdc09a49a433ee19d8a9486056d">min</a>,  <a class="el" href="arm__macros_8h.html#affe776513b24d84b39af8ab0930fef7f">max</a>)&#160;&#160;&#160;((v) &lt; (<a class="el" href="arm__macros_8h.html#ac6afabdc09a49a433ee19d8a9486056d">min</a>) ? (<a class="el" href="arm__macros_8h.html#ac6afabdc09a49a433ee19d8a9486056d">min</a>) : ((v) &gt; (<a class="el" href="arm__macros_8h.html#affe776513b24d84b39af8ab0930fef7f">max</a>) ? (<a class="el" href="arm__macros_8h.html#affe776513b24d84b39af8ab0930fef7f">max</a>) : (v)))</td></tr>
 <tr class="memdesc:aa1883836bb0955d41ac606649d0cab4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value between <b>min</b> and <b>max</b> from <b>val</b>.  <a href="#aa1883836bb0955d41ac606649d0cab4b">More...</a><br /></td></tr>
@@ -331,8 +330,8 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Preprocessor Name catenation. </p>
-<dl class="section warning"><dt>Warning</dt><dd>No nesting possible, use <em>XCAT</em> in this case </dd></dl>
+<p>Preprocessor Name catenation (use of <a class="el" href="arm__macros_8h.html#acc44cb41b0818b28b4d2b9c4d46ee3c6">XCAT</a> is highly recommended for any need) </p>
+<dl class="section warning"><dt>Warning</dt><dd>No nesting possible, use <a class="el" href="arm__macros_8h.html#acc44cb41b0818b28b4d2b9c4d46ee3c6">XCAT</a> instead (unless there is a good reason not to use <a class="el" href="arm__macros_8h.html#acc44cb41b0818b28b4d2b9c4d46ee3c6">XCAT</a>) </dd></dl>
 
 </div>
 </div>
@@ -957,7 +956,6 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>complemented boolean evaluation of expression <b>exp</b> </p>
-<dl class="section warning"><dt>Warning</dt><dd>SCALE_VAL does not check types and is limited to MCU register size computation, for larger scales, use <a class="el" href="arm__inlines__var__size_8h.html#ab7a4ed95964c912e64242d8aa2f19764">scaleValue</a> instead </dd></dl>
 
 </div>
 </div>
@@ -1183,7 +1181,8 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Scale value <b>v</b> from range <b>in_min:in_max</b> to range <b>out_min:out_max</b>. </p>
+<p>Scale value <b>v</b> from range <b>from_min:from_max</b> to range <b>to_min:to_max</b>. </p>
+<dl class="section warning"><dt>Warning</dt><dd>SCALE_VAL does not check types and is limited to MCU register size computation, for larger scales, use <a class="el" href="arm__inlines__var__size_8h.html#ab7a4ed95964c912e64242d8aa2f19764">scaleValue</a> instead </dd></dl>
 
 </div>
 </div>
@@ -1606,8 +1605,7 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Get member <b>mbr</b> from a struct type <b>typ</b>. </p>
+<p>Get member <b>mbr</b> from a struct type <b>typ</b> </p>
 
 </div>
 </div>
@@ -1638,6 +1636,8 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get typeof member <b>mbr</b> from a struct type <b>typ</b> (no () as it wouldn't work for pointers to member type) </p>
+<dl class="section warning"><dt>Warning</dt><dd>use with caution, C language typeof extension works well with native types, yet can be the cause of big (experienced) issues with more complex ones </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>typeof</b> C language extension should only be used to get a compiler native known type </dd></dl>
 
 </div>
 </div>
