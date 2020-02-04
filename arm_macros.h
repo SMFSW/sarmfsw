@@ -102,6 +102,7 @@
 #define nbinEval(exp)		(!binEval(exp))				//!< complemented boolean evaluation of expression \b exp
 
 
+//!< \warning SCALE_VAL does not check types and is limited to MCU register size computation, for larger scales, use \ref scaleValue instead
 #define SCALE_VAL(	v,					\
 					from_min, from_max,	\
 					to_min, to_max)		\

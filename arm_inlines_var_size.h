@@ -143,7 +143,7 @@ __INLINE DWORD convXtoYBits(DWORD val, const BYTE from, const BYTE to)
 ** \param[in] to_min - Minimal output range value
 ** \param[in] to_max - Maximal output range value
 **/
-__INLINE SDWORD scaleValue(const SDWORD val, const SDWORD from_min, const SDWORD from_max, const SDWORD to_min, const SDWORD to_max)
+__INLINE SLWORD scaleValue(const SLWORD val, const SLWORD from_min, const SLWORD from_max, const SLWORD to_min, const SLWORD to_max)
 {
 	return (((val - from_min) * (to_max - to_min)) / (from_max - from_min)) + to_min;
 }
