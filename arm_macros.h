@@ -85,14 +85,16 @@
 #define SZ_TYP_MBR(typ, mbr)	((size_t) sizeof(((typ *)0)->mbr))						//!< Computes the size of member \b mbr in struct type \b typ
 
 #define TYP_MBR(typ, mbr)		(((typ *)0)->mbr)										//!< Get member \b mbr from a struct type \b typ
+//! \warning use with caution, C language typeof extension works well with native types, yet can be the cause of big (experienced) issues with more complex ones
+//! \note \b typeof C language extension should only be used to get a compiler native known type
 #define TYP_MBR_TYP(typ, mbr)	typeof(TYP_MBR(typ, mbr))								//!< Get typeof member \b mbr from a struct type \b typ (no () as it wouldn't work for pointers to member type)
 
 #define OFFSET_OF(typ, mbr)		((size_t) &(((typ *)0)->mbr))							//!< Computes the offset member \b mbr from struct type \b typ
 #define ROOT_OF(ptr, typ, mbr)	((typ *) (((uint8_t *) ptr) - OFFSET_OF(typ, mbr)))		//!< Computes the address of parent struct \b typ of \b ptr from member \b mbr
 
 
-//! \warning No nesting possible, use \a XCAT in this case
-#define	CAT(a, b)			a##b			//!< Preprocessor Name catenation
+//! \warning No nesting possible, use \ref XCAT instead (unless there is a good reason not to use \ref XCAT)
+#define	CAT(a, b)			a##b			//!< Preprocessor Name catenation (use of \ref XCAT is highly recommended for any need)
 #define XCAT(a, b)			CAT(a, b)		//!< Preprocessor Name catenation (possible nesting)
 
 #define STR(s)				(#s)			//!< Stringify an expression
@@ -102,11 +104,11 @@
 #define nbinEval(exp)		(!binEval(exp))				//!< complemented boolean evaluation of expression \b exp
 
 
-//!< \warning SCALE_VAL does not check types and is limited to MCU register size computation, for larger scales, use \ref scaleValue instead
+//! \warning SCALE_VAL does not check types and is limited to MCU register size computation, for larger scales, use \ref scaleValue instead
 #define SCALE_VAL(	v,					\
 					from_min, from_max,	\
 					to_min, to_max)		\
-							(((((v) - from_min) * (to_max - to_min)) / (from_max - from_min)) + to_min)	//!< Scale value \b v from range \b in_min:in_max to range \b out_min:out_max
+							(((((v) - from_min) * (to_max - to_min)) / (from_max - from_min)) + to_min)	//!< Scale value \b v from range \b from_min:from_max to range \b to_min:to_max
 
 #define CLAMP(v, min, max)	((v) < (min) ? (min) : ((v) > (max) ? (max) : (v)))		//!< Returns the value between \b min and \b max from \b val
 #define	MAX3(a, b, c)		((b) >= (c) ? ((a) >= (b) ? (a) : (b)) : ((a) >= (c) ? (a) : (c)))	//!< Returns max value between \b a, \b b and \b c
