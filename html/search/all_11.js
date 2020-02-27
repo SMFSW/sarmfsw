@@ -46,6 +46,7 @@ var searchData=
   ['swap_5fword',['SWAP_WORD',['../arm__macros_8h.html#a51fe793cd398d5f269295b88b0433929',1,'arm_macros.h']]],
   ['swapbits',['swapBits',['../arm__inlines__binary_8h.html#a23b972350ec16fb505c3ccc4624db242',1,'arm_inlines_binary.h']]],
   ['sword',['SWORD',['../arm__typedefs_8h.html#a9beb1dcf5779f93653b7a57919d431e1',1,'arm_typedefs.h']]],
+  ['sz_5farray',['SZ_ARRAY',['../arm__macros_8h.html#a2b5ec466595a0483322b2c3c924996c4',1,'arm_macros.h']]],
   ['sz_5fobj',['SZ_OBJ',['../arm__macros_8h.html#ae222ed5e4821c01c4d5fc924673d844d',1,'arm_macros.h']]],
   ['sz_5ftyp_5fmbr',['SZ_TYP_MBR',['../arm__macros_8h.html#a44a11b5d464b3d6837a0e6136c367abb',1,'arm_macros.h']]]
 ];

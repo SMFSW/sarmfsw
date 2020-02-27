@@ -184,6 +184,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a638d917776f76f7f41be5875d9305f50"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>(addr,  typ)&#160;&#160;&#160;(*(typ *) (addr))</td></tr>
 <tr class="memdesc:a638d917776f76f7f41be5875d9305f50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the type <b>typ</b> content of address <b>addr</b>.  <a href="#a638d917776f76f7f41be5875d9305f50">More...</a><br /></td></tr>
 <tr class="separator:a638d917776f76f7f41be5875d9305f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b5ec466595a0483322b2c3c924996c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a2b5ec466595a0483322b2c3c924996c4">SZ_ARRAY</a>(arr)&#160;&#160;&#160;((size_t) (sizeof(arr) / sizeof(arr[0])))</td></tr>
+<tr class="memdesc:a2b5ec466595a0483322b2c3c924996c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the number of array elements in <b>arr</b>.  <a href="#a2b5ec466595a0483322b2c3c924996c4">More...</a><br /></td></tr>
+<tr class="separator:a2b5ec466595a0483322b2c3c924996c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae222ed5e4821c01c4d5fc924673d844d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#ae222ed5e4821c01c4d5fc924673d844d">SZ_OBJ</a>(obj,  typ)&#160;&#160;&#160;((size_t) (sizeof(obj) / sizeof(typ)))</td></tr>
 <tr class="memdesc:ae222ed5e4821c01c4d5fc924673d844d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the number of elements in <b>obj</b> of type <b>typ</b>.  <a href="#ae222ed5e4821c01c4d5fc924673d844d">More...</a><br /></td></tr>
 <tr class="separator:ae222ed5e4821c01c4d5fc924673d844d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1485,6 +1488,26 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Swap WORDs <b>a</b> &amp; <b>b</b>. </p>
+
+</div>
+</div>
+<a id="a2b5ec466595a0483322b2c3c924996c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b5ec466595a0483322b2c3c924996c4">&#9670;&nbsp;</a></span>SZ_ARRAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SZ_ARRAY</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">arr</td><td>)</td>
+          <td>&#160;&#160;&#160;((size_t) (sizeof(arr) / sizeof(arr[0])))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the number of array elements in <b>arr</b>. </p>
 
 </div>
 </div>
