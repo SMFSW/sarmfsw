@@ -83,10 +83,11 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="arm__macros_8h__dep__incl.png" border="0" usemap="#arm__macros_8hdep" alt=""/></div>
 <map name="arm__macros_8hdep" id="arm__macros_8hdep">
-<area shape="rect" id="node2" href="arm__inlines_8h.html" title="ARM common inlines. " alt="" coords="54,155,160,181"/>
-<area shape="rect" id="node3" href="sarmfsw_8h.html" title="sarmfsw (ARM) common headers " alt="" coords="185,229,272,256"/>
-<area shape="rect" id="node4" href="arm__inlines__var__size_8h.html" title="Variables size conversion inlines. " alt="" coords="24,80,190,107"/>
-<area shape="rect" id="node5" href="arm__stdclib_8h.html" title="ARM common standard c library wrapper macros. " alt="" coords="266,155,374,181"/>
+<area shape="rect" id="node2" href="arm__inlines_8h.html" title="ARM common inlines. " alt="" coords="154,155,260,181"/>
+<area shape="rect" id="node3" href="sarmfsw_8h.html" title="sarmfsw (ARM) common headers " alt="" coords="380,229,466,256"/>
+<area shape="rect" id="node4" href="arm__inlines__var__size_8h.html" title="Variables size conversion inlines. " alt="" coords="28,80,194,107"/>
+<area shape="rect" id="node5" href="arm__inlines__var__test_8h.html" title="Variables test inlines. " alt="" coords="218,80,385,107"/>
+<area shape="rect" id="node6" href="arm__stdclib_8h.html" title="ARM common standard c library wrapper macros. " alt="" coords="461,155,569,181"/>
 </map>
 </div>
 </div>
@@ -222,16 +223,16 @@ Macros</h2></td></tr>
 <tr class="memitem:a05805389397c01d99e812f228b6b4f6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a05805389397c01d99e812f228b6b4f6e">SCALE_VAL</a>(v,  from_min,  from_max,  to_min,  to_max)&#160;&#160;&#160;(((((v) - from_min) * (to_max - to_min)) / (from_max - from_min)) + to_min)</td></tr>
 <tr class="memdesc:a05805389397c01d99e812f228b6b4f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale value <b>v</b> from range <b>from_min:from_max</b> to range <b>to_min:to_max</b>.  <a href="#a05805389397c01d99e812f228b6b4f6e">More...</a><br /></td></tr>
 <tr class="separator:a05805389397c01d99e812f228b6b4f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1883836bb0955d41ac606649d0cab4b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#aa1883836bb0955d41ac606649d0cab4b">CLAMP</a>(v,  <a class="el" href="arm__macros_8h.html#ac6afabdc09a49a433ee19d8a9486056d">min</a>,  <a class="el" href="arm__macros_8h.html#affe776513b24d84b39af8ab0930fef7f">max</a>)&#160;&#160;&#160;((v) &lt; (<a class="el" href="arm__macros_8h.html#ac6afabdc09a49a433ee19d8a9486056d">min</a>) ? (<a class="el" href="arm__macros_8h.html#ac6afabdc09a49a433ee19d8a9486056d">min</a>) : ((v) &gt; (<a class="el" href="arm__macros_8h.html#affe776513b24d84b39af8ab0930fef7f">max</a>) ? (<a class="el" href="arm__macros_8h.html#affe776513b24d84b39af8ab0930fef7f">max</a>) : (v)))</td></tr>
-<tr class="memdesc:aa1883836bb0955d41ac606649d0cab4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value between <b>min</b> and <b>max</b> from <b>val</b>.  <a href="#aa1883836bb0955d41ac606649d0cab4b">More...</a><br /></td></tr>
-<tr class="separator:aa1883836bb0955d41ac606649d0cab4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0912f55b4d17650e8c90ea81c68c69bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a0912f55b4d17650e8c90ea81c68c69bc">CLAMP</a>(v,  mn,  mx)&#160;&#160;&#160;((v) &lt; (mn) ? (mn) : ((v) &gt; (mx) ? (mx) : (v)))</td></tr>
+<tr class="memdesc:a0912f55b4d17650e8c90ea81c68c69bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value between <b>mn</b> and <b>mx</b> from <b>val</b>.  <a href="#a0912f55b4d17650e8c90ea81c68c69bc">More...</a><br /></td></tr>
+<tr class="separator:a0912f55b4d17650e8c90ea81c68c69bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37c6d7fcb9c177c308ef38e1d51d35e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a37c6d7fcb9c177c308ef38e1d51d35e3">MAX3</a>(a,  b,  c)&#160;&#160;&#160;((b) &gt;= (c) ? ((a) &gt;= (b) ? (a) : (b)) : ((a) &gt;= (c) ? (a) : (c)))</td></tr>
 <tr class="memdesc:a37c6d7fcb9c177c308ef38e1d51d35e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns max value between <b>a</b>, <b>b</b> and <b>c</b>.  <a href="#a37c6d7fcb9c177c308ef38e1d51d35e3">More...</a><br /></td></tr>
 <tr class="separator:a37c6d7fcb9c177c308ef38e1d51d35e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4887ceeae88266064841cbbc11ef8b53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a4887ceeae88266064841cbbc11ef8b53">MIN3</a>(a,  b,  c)&#160;&#160;&#160;((b) &lt;= (c) ? ((a) &lt;= (b) ? (a) : (b)) : ((a) &lt;= (c) ? (a) : (c)))</td></tr>
 <tr class="memdesc:a4887ceeae88266064841cbbc11ef8b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns min value between <b>a</b>, <b>b</b> and <b>c</b>.  <a href="#a4887ceeae88266064841cbbc11ef8b53">More...</a><br /></td></tr>
 <tr class="separator:a4887ceeae88266064841cbbc11ef8b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8594bb7076b41a9e7f7fd061c5e334fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a8594bb7076b41a9e7f7fd061c5e334fd">clamp</a>&#160;&#160;&#160;<a class="el" href="arm__macros_8h.html#aa1883836bb0955d41ac606649d0cab4b">CLAMP</a></td></tr>
+<tr class="memitem:a8594bb7076b41a9e7f7fd061c5e334fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a8594bb7076b41a9e7f7fd061c5e334fd">clamp</a>&#160;&#160;&#160;<a class="el" href="arm__macros_8h.html#a0912f55b4d17650e8c90ea81c68c69bc">CLAMP</a></td></tr>
 <tr class="memdesc:a8594bb7076b41a9e7f7fd061c5e334fd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>clamp</b> alias for <b>CLAMP</b>  <a href="#a8594bb7076b41a9e7f7fd061c5e334fd">More...</a><br /></td></tr>
 <tr class="separator:a8594bb7076b41a9e7f7fd061c5e334fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbf2b959a47dd7b7855a8d836fa88f10"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#adbf2b959a47dd7b7855a8d836fa88f10">max3</a>&#160;&#160;&#160;<a class="el" href="arm__macros_8h.html#a37c6d7fcb9c177c308ef38e1d51d35e3">MAX3</a></td></tr>
@@ -354,8 +355,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="aa1883836bb0955d41ac606649d0cab4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1883836bb0955d41ac606649d0cab4b">&#9670;&nbsp;</a></span>CLAMP</h2>
+<a id="a0912f55b4d17650e8c90ea81c68c69bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0912f55b4d17650e8c90ea81c68c69bc">&#9670;&nbsp;</a></span>CLAMP</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -370,23 +371,23 @@ Macros</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="arm__macros_8h.html#ac6afabdc09a49a433ee19d8a9486056d">min</a>, </td>
+          <td class="paramname">mn, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="arm__macros_8h.html#affe776513b24d84b39af8ab0930fef7f">max</a>&#160;</td>
+          <td class="paramname">mx&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((v) &lt; (<a class="el" href="arm__macros_8h.html#ac6afabdc09a49a433ee19d8a9486056d">min</a>) ? (<a class="el" href="arm__macros_8h.html#ac6afabdc09a49a433ee19d8a9486056d">min</a>) : ((v) &gt; (<a class="el" href="arm__macros_8h.html#affe776513b24d84b39af8ab0930fef7f">max</a>) ? (<a class="el" href="arm__macros_8h.html#affe776513b24d84b39af8ab0930fef7f">max</a>) : (v)))</td>
+          <td></td><td>&#160;&#160;&#160;((v) &lt; (mn) ? (mn) : ((v) &gt; (mx) ? (mx) : (v)))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the value between <b>min</b> and <b>max</b> from <b>val</b>. </p>
+<p>Returns the value between <b>mn</b> and <b>mx</b> from <b>val</b>. </p>
 
 </div>
 </div>
@@ -397,7 +398,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define clamp&#160;&#160;&#160;<a class="el" href="arm__macros_8h.html#aa1883836bb0955d41ac606649d0cab4b">CLAMP</a></td>
+          <td class="memname">#define clamp&#160;&#160;&#160;<a class="el" href="arm__macros_8h.html#a0912f55b4d17650e8c90ea81c68c69bc">CLAMP</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
