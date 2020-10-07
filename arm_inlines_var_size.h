@@ -11,8 +11,8 @@
 	extern "C" {
 #endif
 
-#include "arm_macros.h"				// Common macros
 #include "arm_typedefs.h"			// Common typedefs
+#include "arm_macros.h"				// Common macros
 #include "arm_inlines_binary.h"
 /****************************************************************/
 

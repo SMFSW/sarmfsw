@@ -111,7 +111,7 @@
 					to_min, to_max)		\
 							(((((v) - from_min) * (to_max - to_min)) / (from_max - from_min)) + to_min)	//!< Scale value \b v from range \b from_min:from_max to range \b to_min:to_max
 
-#define CLAMP(v, min, max)	((v) < (min) ? (min) : ((v) > (max) ? (max) : (v)))		//!< Returns the value between \b min and \b max from \b val
+#define CLAMP(v, mn, mx)	((v) < (mn) ? (mn) : ((v) > (mx) ? (mx) : (v)))						//!< Returns the value between \b mn and \b mx from \b val
 #define	MAX3(a, b, c)		((b) >= (c) ? ((a) >= (b) ? (a) : (b)) : ((a) >= (c) ? (a) : (c)))	//!< Returns max value between \b a, \b b and \b c
 #define	MIN3(a, b, c)		((b) <= (c) ? ((a) <= (b) ? (a) : (b)) : ((a) <= (c) ? (a) : (c)))	//!< Returns min value between \b a, \b b and \b c
 

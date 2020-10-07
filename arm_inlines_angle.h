@@ -40,7 +40,7 @@ __INLINE float RAD_NORM(float rad)
 {
 	while (fabs(rad) > M_TWOPI)
 	{
-		 rad += (rad < 0.0f) ? M_TWOPI : -M_TWOPI;
+		rad += (rad < 0.0f) ? M_TWOPI : -M_TWOPI;
 	}
 
 	return rad;
@@ -55,14 +55,16 @@ __INLINE float DEG_NORM(float deg)
 {
 	while (fabs(deg) > 360.0f)
 	{
-		 deg += (deg < 0.0f) ? 360.0f : -360.0f;
+		deg += (deg < 0.0f) ? 360.0f : -360.0f;
 	}
 
 	return deg;
 }
 
 
+#if !defined(ARDUINO)
 /*!\brief Radians to degrees conversion
+** \note On Arduino platform, RAD_TO_DEG is already defined as conversion value
 ** \param[in] rad - Radians to convert
 ** \return Converted angle
 **/
@@ -73,6 +75,7 @@ __INLINE float RAD_TO_DEG(const float rad)
 
 
 /*!\brief Degrees to radians conversion
+** \note On Arduino platform, DEG_TO_RAD is already defined as conversion value
 ** \param[in] deg - Degrees to convert
 ** \return Converted angle
 **/
@@ -80,6 +83,7 @@ __INLINE float DEG_TO_RAD(const float deg)
 {
 	return DEG_NORM(deg) * M_PI_180;
 }
+#endif
 
 
 /*!\brief Radians to 0-1 scaled float conversion

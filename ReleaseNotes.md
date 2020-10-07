@@ -33,6 +33,7 @@ SOFTWARE.
 * arm_macros: added SCALE_VAL macro
 * arm_inlines: inlines split into separate files
 * arm_inlines_angle: added inlines instead of associated macros in arm_macros.h (and associated constants)
+* arm_inlines_angle: DEG_TO_RAD & RAD_TO_DEG not defined for Arduino platforms (already defined as conversion value)
 * arm_inlines_bcd: updated inlines to handle up to 32b conversions
 * arm_inlines_rotation: added 2D coordinates rotation inline
 * arm_inlines_linearization: added linearization inline
