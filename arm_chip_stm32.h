@@ -28,18 +28,18 @@
 
 
 /*** GPIO pin name wrapper (from CubeMX pin names) ***/
-#define	stm_port(mnem)		XCAT(mnem, _GPIO_Port)						//!< Wrapper for PORT Alias
-#define	stm_pin(mnem)		XCAT(mnem, _Pin)							//!< Wrapper for PIN Alias
-#define	GPIO(mnem)			stm_port(mnem), stm_pin(mnem)				//!< Wrapper for PORT/PIN Alias (when using HAL_GPIO_ReadPin for example)
+#define	stm_port(mnem)		XCAT(mnem, _GPIO_Port)				//!< Wrapper for PORT Alias
+#define	stm_pin(mnem)		XCAT(mnem, _Pin)					//!< Wrapper for PIN Alias
+#define	GPIO(mnem)			stm_port(mnem), stm_pin(mnem)		//!< Wrapper for PORT/PIN Alias (when using HAL_GPIO_ReadPin for example)
 
 
 /*** TIM Channel name wrapper ***/
 //!\note Shall define mnemonic \b Tim corresponding to what's defined in CubeMX as Tim (for consistency with STM32 HAL)
-#define	stm_timer(mnem)		XCAT(mnem, _Tim)									//!< Wrapper for TIM Alias
+#define	stm_timer(mnem)		XCAT(mnem, _Tim)					//!< Wrapper for TIM Alias
 //!\note Shall define mnemonic \b Chan corresponding to what's defined in CubeMX as Chan (for consistency with STM32 HAL)
-#define	stm_channel(mnem)	XCAT(mnem, _Chan)									//!< Wrapper for TIM Channel Alias
+#define	stm_channel(mnem)	XCAT(mnem, _Chan)					//!< Wrapper for TIM Channel Alias
 //!\note Shall define mnemonic \b Tim/Chan corresponding to what's defined in CubeMX as Tim/Chan (for consistency with STM32 HAL)
-#define	TIM(mnem)			stm_timer(mnem), stm_channel(mnem)					//!< Wrapper for TIM/CHAN Alias (when using HAL_TIM_PWM_Start for example)
+#define	TIM(mnem)			stm_timer(mnem), stm_channel(mnem)	//!< Wrapper for TIM/CHAN Alias (when using HAL_TIM_PWM_Start for example)
 
 
 /*** STM32 Special Registers ***/
