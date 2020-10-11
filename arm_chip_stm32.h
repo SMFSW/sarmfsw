@@ -72,6 +72,7 @@
 **/
 typedef enum eResetSource {
 	RST_POR = 1,		//!< Power On Reset
+	RST_BOR,			//!< Brown Out Reset (H7)
 	RST_PIN,			//!< Pin Reset (External Reset)
 	RST_SW,				//!< Software Reset
 	RST_IWDG,			//!< Independent Watchdog Reset
