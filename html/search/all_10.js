@@ -20,6 +20,7 @@ var searchData=
   ['rshift64',['RSHIFT64',['../arm__macros_8h.html#a127ac6aac4c8e3f1ef5d02feab40afa7',1,'arm_macros.h']]],
   ['rst_5fbodcore',['RST_BODCORE',['../arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900af64bcf1bb1d174a2a924881b10ad7b63',1,'arm_chip_sam.h']]],
   ['rst_5fbodvdd',['RST_BODVDD',['../arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900aa13fbd8342254bba39e061c16c4d6101',1,'arm_chip_sam.h']]],
+  ['rst_5fbor',['RST_BOR',['../arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900adbfa93139d6e2edfef0a92ef81e028cc',1,'arm_chip_stm32.h']]],
   ['rst_5fext',['RST_EXT',['../arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a7c7b4e219ec871bd20bfe1b65ab64e5d',1,'arm_chip_sam.h']]],
   ['rst_5ffw',['RST_FW',['../arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a6b8d9bf9a35fe80d6bb309658838b97d',1,'arm_chip_stm32.h']]],
   ['rst_5fiwdg',['RST_IWDG',['../arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a58d541ad7dff9c6e770aa4aeffa3bcc4',1,'arm_chip_stm32.h']]],
