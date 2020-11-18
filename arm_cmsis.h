@@ -87,7 +87,10 @@
 	#if !defined(STM_FAMILY)
 		#define STM_FAMILY	f7		//!< STM32 family (f7) for name catenation
 	#endif
-#elif	defined(STM32G071xx) || defined(STM32G081xx) || defined(STM32G070xx) || defined(STM32G030xx) || defined(STM32G031xx) || defined(STM32G041xx)
+#elif	defined(STM32G071xx) || defined(STM32G081xx) || defined(STM32G070xx) || \
+		defined(STM32G030xx) || defined(STM32G031xx) || defined(STM32G041xx) || \
+		defined(STM32G0B0xx) || defined(STM32G0B1xx) || defined(STM32G0C1xx) || \
+		defined(STM32G050xx) || defined(STM32G051xx) || defined(STM32G061xx)
 	#define STM32G0					//!< STM32G0 family generic define
 	#if !defined(STM_FAMILY)
 		#define STM_FAMILY	g0		//!< STM32 family (g0) for name catenation
@@ -155,6 +158,11 @@
 	#define STM32WB					//!< STM32WB family generic define
 	#if !defined(STM_FAMILY)
 		#define STM_FAMILY	wb		//!< STM32 family (wb) for name catenation
+	#endif
+#elif	defined(STM32WL55xx) || defined(STM32WL54xx) || defined(STM32WLE5xx) || defined(STM32WLE4xx)
+	#define STM32WL					//!< STM32WL family generic define
+	#if !defined(STM_FAMILY)
+		#define STM_FAMILY	wl		//!< STM32 family (wl) for name catenation
 	#endif
 /**************************/
 /*** Atmel SAM Families ***/
