@@ -44,6 +44,7 @@ SOFTWARE.
 * arm_inlines_var_size: replaced sums by bitwise or operations in every variable size expansion inlines 
 * arm_inlines_var_size: added scaleValue macro
 * arm_stdclib: fix str_clr_safe use of sarmfsw macros and use of predefined macros
+* arm_typedefs: BIG_ENDIAN/LITTLE_ENDIAN/PDP_ENDIAN changed to ___XXX_ENDIAN___ (were already all defined in endian.h)
 
 ## v3.3
 

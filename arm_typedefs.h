@@ -32,8 +32,8 @@
 		defined(__BIG_ENDIAN__) ||																\
 		defined(__ARMEB__) || defined(__THUMBEB__) || defined(__AARCH64EB__) ||					\
 		defined(_MIPSEB) || defined(__MIPSEB) || defined(__MIPSEB__)
-	#ifndef BIG_ENDIAN
-		#define BIG_ENDIAN		//!< Big-endian target
+	#ifndef __BIG_ENDIAN__
+		#define __BIG_ENDIAN__		//!< Big-endian target
 	#endif
 #elif	defined(__BYTE_ORDER) && (__BYTE_ORDER == __LITTLE_ENDIAN) ||							\
 		defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__) ||				\
@@ -41,13 +41,13 @@
 		defined(__LITTLE_ENDIAN__) ||															\
 		defined(__ARMEL__) || defined(__THUMBEL__) || defined(__AARCH64EL__) ||					\
 		defined(_MIPSEL) || defined(__MIPSEL) || defined(__MIPSEL__)
-	#ifndef LITTLE_ENDIAN
-		#define LITTLE_ENDIAN	//!< Little-endian target
+	#ifndef __LITTLE_ENDIAN__
+		#define __LITTLE_ENDIAN__	//!< Little-endian target
 	#endif
 #elif	defined(__BYTE_ORDER) && (__BYTE_ORDER == __PDP_ENDIAN)
 	#warning "Unfortunately, easy-access typedefs for PDP Endian not handled by the sarmfw library!"
-	#ifndef PDP_ENDIAN
-		#define PDP_ENDIAN		//!< Little-endian (word swapped) target
+	#ifndef __PDP_ENDIAN__
+		#define __PDP_ENDIAN__		//!< Little-endian (word swapped) target
 	#endif
 #else
 	#warning "Unknown endianness, please define LITTLE_ENDIAN or BIG_ENDIAN symbol to ensure behavior!"
@@ -403,7 +403,7 @@ typedef union uWord {
 	WORD			Word;		//!< 16b
 	BYTE			Byte[2];	//!< Bytes tab
 	struct {
-		#ifdef LITTLE_ENDIAN
+		#ifdef __LITTLE_ENDIAN__
 			BYTE	B0 :8;		//!< LSByte
 			BYTE	B1 :8;		//!< MSByte
 		#else
@@ -422,7 +422,7 @@ typedef union uDWord {
 	WORD			Word[2];	//!< Words tab
 	BYTE			Byte[4];	//!< Bytes tab
 	struct {
-		#ifdef LITTLE_ENDIAN
+		#ifdef __LITTLE_ENDIAN__
 			WORD	W0 :16;		//!< W0 LSWord
 			WORD	W1 :16;		//!< W1 MSWord
 		#else
@@ -431,7 +431,7 @@ typedef union uDWord {
 		#endif
 	} Words;
 	struct {
-		#ifdef LITTLE_ENDIAN
+		#ifdef __LITTLE_ENDIAN__
 			BYTE	B0 :8;		//!< B0 LSByte
 			BYTE	B1 :8;		//!< B1
 			BYTE	B2 :8;		//!< B2
@@ -455,7 +455,7 @@ typedef union uLWord {
 	WORD			Word[4];	//!< Words tab
 	BYTE			Byte[8];	//!< Bytes tab
 	struct {
-		#ifdef LITTLE_ENDIAN
+		#ifdef __LITTLE_ENDIAN__
 			DWORD	D0 :32;		//!< DW0 LSDWord
 			DWORD	D1 :32;		//!< DW1 MSDWord
 		#else
@@ -464,7 +464,7 @@ typedef union uLWord {
 		#endif
 	} DWords;
 	struct {
-		#ifdef LITTLE_ENDIAN
+		#ifdef __LITTLE_ENDIAN__
 			WORD	W0 :16;		//!< W0 LSWord
 			WORD	W1 :16;		//!< W1
 			WORD	W2 :16;		//!< W2
@@ -477,7 +477,7 @@ typedef union uLWord {
 		#endif
 	} Words;
 	struct {
-		#ifdef LITTLE_ENDIAN
+		#ifdef __LITTLE_ENDIAN__
 			BYTE	B0 :8;		//!< B0 LSByte
 			BYTE	B1 :8;		//!< B1
 			BYTE	B2 :8;		//!< B2
