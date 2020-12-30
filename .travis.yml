@@ -16,12 +16,14 @@ env:
     - GH_REPO_NAME: sarmfsw
     - GH_REPO_REF: github.com/SMFSW/sarmfsw.git
     - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile.auto
+    - INSTALL_PLATFORMS: avr,samd
 
 before_install:
   - source <(curl -SLs https://raw.githubusercontent.com/SMFSW/travis-ci-arduino/master/install.sh)
 
 script:
-  - build_main_platforms
+  - build_avr_platforms
+  - build_samd_platforms
 
 # Generate and deploy documentation
 after_success:
