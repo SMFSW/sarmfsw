@@ -55,7 +55,6 @@ __INLINE SDWORD NONNULL__ linearization_eval(const SDWORD array[][2], const WORD
 }
 
 
-
 /****************************************************************/
 #ifdef __cplusplus
 	}

@@ -1,7 +1,7 @@
 /*!\file arm_inlines_endian.h
 ** \author SMFSW
 ** \copyright MIT (c) 2017-2020, SMFSW
-** \brief Endians conversion and testing inlines
+** \brief Endian conversion and testing inlines
 */
 /****************************************************************/
 #ifndef __ARM_INLINES_ENDIAN_H
@@ -27,7 +27,7 @@ typedef enum eEndian {
 } eEndian;
 
 
-/*!\brief Swap endians of the contents of a 16b value (little -> big, big -> little)
+/*!\brief Swap content endian of a 16b value (little -> big, big -> little)
 ** \param[in] w - 16b value
 ** \return Swapped value
 **/
@@ -37,7 +37,7 @@ __INLINE WORD SWAP_END16B(const WORD w)
 }
 
 
-/*!\brief Swap endians of the contents of a 32b value (little -> big, big -> little)
+/*!\brief Swap content endian of a 32b value (little -> big, big -> little)
 ** \param[in] d - 32b value
 ** \return Swapped value
 **/
@@ -47,7 +47,7 @@ __INLINE DWORD SWAP_END32B(const DWORD d)
 }
 
 
-/*!\brief Swap endians of the contents of a 64b value (little -> big, big -> little)
+/*!\brief Swap content endian of a 64b value (little -> big, big -> little)
 ** \param[in] l - 64b value
 ** \return Swapped value
 **/
@@ -57,7 +57,7 @@ __INLINE LWORD SWAP_END64B(const LWORD l)
 }
 
 
-/*!\brief Swap endians of a 16b tab (little -> big, big -> little)
+/*!\brief Swap endian of a 16b tab (little -> big, big -> little)
 ** \param[in] tab - tab of 16b values
 ** \param[in] nb - nb of values in tab
 **/
@@ -67,7 +67,7 @@ __INLINE void NONNULL_INLINE__ SWAP_END16B_TAB(WORD tab[], const WORD nb)
 }
 
 
-/*!\brief Swap endians of a 32b tab (little -> big, big -> little)
+/*!\brief Swap endian of a 32b tab (little -> big, big -> little)
 ** \param[in] tab - tab of 32b values
 ** \param[in] nb - nb of values in tab
 **/
@@ -77,7 +77,7 @@ __INLINE void NONNULL_INLINE__ SWAP_END32B_TAB(DWORD tab[], const WORD nb)
 }
 
 
-/*!\brief Swap endians of a 64b tab (little -> big, big -> little)
+/*!\brief Swap endian of a 64b tab (little -> big, big -> little)
 ** \param[in] tab - tab of 64b values
 ** \param[in] nb - nb of values in tab
 **/
@@ -98,7 +98,7 @@ __INLINE eEndian testEndian_basic(void)
 }
 
 
-/*!\brief Test Core endian (full, recognizing mid endians too)
+/*!\brief Test Core endian (full, recognizing mid endian too)
 ** \return Endian type
 **/
 __INLINE eEndian testEndian_full(void)

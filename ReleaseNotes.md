@@ -56,7 +56,7 @@ SOFTWARE.
 * arm_chip_stm32: Added FLASH_SIZE macro (returning flash size in bytes)
 * arm_chip_stm32: Added enum for last reset source (TODO: add more for sam & ino)
 * arm_chip_stm32: Added some special STM32 registers getter macros
-* arm_hal_peripheral: Removed unlikely defined include files (not related to STM32 periherals, rather linked to middlewares)
+* arm_hal_peripheral: Removed unlikely defined include files (not related to STM32 peripherals, rather linked to middlewares)
 * arm_hal_peripheral: Fixed qspi.h include (quadspi.h)
 * arm_inlines: added some binary manipulation inlines
 * arm_inlines: added nonnull check for pointers in SWAP_ENDxxB_TAB
@@ -89,7 +89,7 @@ SOFTWARE.
 * arm_macros: added missing SWAP_LWORD, SWAP_FLOAT & SWAP_DOUBLE macros
 * arm_macros: added aliases for True, False, TRUE, FALSE
 * README: added list and description of special symbols to change library behavior
-* keywords.txt: Added new and enum litteral keywords
+* keywords.txt: Added new and enum literal keywords
 
 ## v3.1
 
@@ -104,7 +104,7 @@ SOFTWARE.
 * arm_inlines: const qualifier for most inline parameters
 * arm_inlines: modified TPSSUP_MS & TPSINF_MS to handle custom tick frequency (following arm_family header or custom defines)
 * arm_chip_sam: refactored doxygen comments block
-* arm_cmsis: fixed multiline macro SAMDA1
+* arm_cmsis: fixed multi-line macro SAMDA1
 * arm_chip_ino: made compatible with Arduino platform
 
 ## v2.0
@@ -123,7 +123,7 @@ SOFTWARE.
 * arm_chip_stm32: added wrapper for PWM tim/channels
 * arm_chip_stm32: refactored wrappers for TIM & GPIO names to what's mentioned here
 * arm_chip_sam: added support for Atmel SAM families
-* arm_chip_xx: Families divided into files with respective fam name
+* arm_chip_xx: Families divided into files with respective family name
 * arm_errors: added to sarmfsw & refactored ERR_xx to ERROR_xx
 * arm_attributes: renamed WEAK__ to __WEAK
 * arm_attributes: added various compiler attributes definition

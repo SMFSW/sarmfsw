@@ -27,7 +27,7 @@ __INLINE DWORD HexToBCD(const DWORD hex)
 
 	uint32_t res = 0;
 
-	div_t   tmp;
+	div_t tmp;
 	tmp.quot = hex;
 
 	for (int i = 0 ; i < 8 ; i++)

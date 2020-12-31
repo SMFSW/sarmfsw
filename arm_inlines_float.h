@@ -17,9 +17,7 @@
 
 
 /*!\brief Get floating point number decimal part (as absolute value)
-** \note in need to print floats, add '-u _printf_float' in Linker options.
-** \warning enabling floating point support from linker seems to fubar printing long variables,
-** 			so welcome get_fp_dec for the purpose.
+** \note if in need to print floats, you can add '-u _printf_float' in Linker options instead of using get_fp_dec.
 ** \param[in] f - floating point value
 ** \param[in] nb - Number of decimal to get after floating point
 ** \return nb decimal part as unsigned integer

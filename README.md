@@ -18,19 +18,19 @@ Library has been updated to become compatible with Arduino platform
 * `REVERSE_BITFIELD`: By default biftfields are stored from lsb to msb; if not the case with the compiler, use a pragma or define this symbol
 * `I_FIND_BINARY_HEADER_USEFUL`: For Arduino platform, if using defines from binary.h, define this symbol (not recommended, use 0bxxx for binary instead)
 
-## Help appreciated (and wanted):
+## Help would be appreciated:
 
 * Cosmic compiler users: attributes aliases implementation (or related documentation)
 * Texas Instruments chips users: defining families & sub-families for chips in arm_cmsis.h & peripheral includes (if available)
 * Any ARM chip provider users: defining families & sub-families for chips in arm_cmsis.h & peripheral includes (if available)
 * Atmel SAM users: defining new families & sub-families for chips & rationalization of peripheral includes (arm_peripherals.h)
-* Arduino platform users: miscellaneous improvements (not related to <32b optimizations, ARM core being the main focus of sarmfsw library) 
-* No redeeming ARM users: improvements & optimizations, additions and bug fixes are welcome as long as it still remains in the spirit of C header helpers 
+* Arduino platform users: miscellaneous improvements (not related to <32b optimizations, ARM core being the main focus of sarmfsw library)
+* No redeeming ARM users: improvements & optimizations, additions and bug fixes are welcome as long as it still remains in the spirit of C header helpers
 
 ## Notes
 
 Macros/Inlines name standardization (case) not always respected for backward compatibility with older versions:
-- For new users: sorry for this apparent nonsense (aliases may be implemented sooner, later or never)!
+- For new users: sorry for this apparent nonsense (aliases may be implemented sooner, later, bust most likely never)!
 - For former users: you're welcome (except some special cases, backward compatibility should still be handled)!
  
 ## Documentation
