@@ -137,8 +137,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get floating point number decimal part (as absolute value) </p>
-<dl class="section note"><dt>Note</dt><dd>in need to print floats, add '-u _printf_float' in Linker options. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>enabling floating point support from linker seems to fubar printing long variables, so welcome get_fp_dec for the purpose. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>if in need to print floats, you can add '-u _printf_float' in Linker options instead of using get_fp_dec. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td>- floating point value </td></tr>

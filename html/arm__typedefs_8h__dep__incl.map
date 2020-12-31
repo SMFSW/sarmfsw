@@ -12,7 +12,7 @@
 <area shape="rect" id="node13" href="$arm__inlines__ascii_8h.html" title="ASCII code conversion inlines. " alt="" coords="1232,155,1375,181"/>
 <area shape="rect" id="node14" href="$arm__inlines__bcd_8h.html" title="BCD code conversion inlines. " alt="" coords="1399,155,1536,181"/>
 <area shape="rect" id="node15" href="$arm__inlines__gray_8h.html" title="Gray code conversion inlines. " alt="" coords="1560,155,1700,181"/>
-<area shape="rect" id="node16" href="$arm__inlines__endian_8h.html" title="Endians conversion and testing inlines. " alt="" coords="1725,155,1882,181"/>
+<area shape="rect" id="node16" href="$arm__inlines__endian_8h.html" title="Endian conversion and testing inlines. " alt="" coords="1725,155,1882,181"/>
 <area shape="rect" id="node17" href="$arm__inlines__float_8h.html" title="Floating point manipulation inlines. " alt="" coords="1907,155,2049,181"/>
 <area shape="rect" id="node18" href="$arm__inlines__average_8h.html" title="Averaging inlines. " alt="" coords="1585,80,1752,107"/>
 <area shape="rect" id="node19" href="$arm__inlines__linearization_8h.html" title="Linearization inlines. " alt="" coords="1857,80,2048,107"/>
