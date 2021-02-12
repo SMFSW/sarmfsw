@@ -130,7 +130,7 @@ __INLINE DWORD convXtoYBits(DWORD val, const BYTE from, const BYTE to)
 	val &= maskBits(from);
 
 	if (diff_bits > 0)		{ return (DWORD) ((val << diff_bits) | (val >> (from - diff_bits))); }
-	else if (diff_bits < 0)	{ return (DWORD) RSHIFT(val, diff_bits); }
+	else if (diff_bits < 0)	{ return (DWORD) RSHIFT(val, -diff_bits); }
 	return val;
 }
 
