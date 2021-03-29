@@ -185,11 +185,11 @@
 #ifdef __INLINE
 #undef __INLINE
 #endif
-#define __INLINE			__STATIC_FORCEINLINE						//!< \b Inline attribute alias when __NOOPT__ defined
+#define __INLINE			__STATIC_FORCEINLINE						//!< \b Inline attribute alias when `__NOOPT__` defined
 #ifdef __STATIC_INLINE
 #undef __STATIC_INLINE
 #endif
-#define __STATIC_INLINE		__STATIC_FORCEINLINE						//!< \b Static \b Inline attribute alias when __NOOPT__ defined
+#define __STATIC_INLINE		__STATIC_FORCEINLINE						//!< \b Static \b Inline attribute alias when `__NOOPT__` defined
 #endif
 
 
