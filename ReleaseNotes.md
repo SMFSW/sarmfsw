@@ -25,6 +25,8 @@ SOFTWARE.
 * arm_inlines_ascii: fix lower case result of ASCIIToHex
 * arm_inlines_var_size: fix reducing number of bits in convXtoYBits
 * arm_inlines_float: limit set to 9 digits after floating point in get_fp_dec
+* arm_attributes: Overriding inline attributes when optimizations are set to none with gcc like toolchains
+* Doxyfiles updated to reflect changes in Doxygen v1.9.x
 
 ## v3.4
 
