@@ -134,6 +134,15 @@ Macros</h2></td></tr>
 <tr class="memitem:a2f63acee5b85bc2a8d4d13b8ca41f9b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__attributes_8h.html#a2f63acee5b85bc2a8d4d13b8ca41f9b6">NONNULL_INLINE__</a>&#160;&#160;&#160;<a class="el" href="arm__attributes_8h.html#a4928d9d5681585f8bc21560cd30ef83d">ATTR__</a>(nonnull, always_inline)</td></tr>
 <tr class="memdesc:a2f63acee5b85bc2a8d4d13b8ca41f9b6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Ensures</b> declaration won't be removed by garbage collector  <a href="#a2f63acee5b85bc2a8d4d13b8ca41f9b6">More...</a><br /></td></tr>
 <tr class="separator:a2f63acee5b85bc2a8d4d13b8ca41f9b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae429abb49d0235f7d07ea426b146cb3b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__attributes_8h.html#ae429abb49d0235f7d07ea426b146cb3b">__NOOPT__</a></td></tr>
+<tr class="memdesc:ae429abb49d0235f7d07ea426b146cb3b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>No</b> <b>Optimizations</b> attribute  <a href="#ae429abb49d0235f7d07ea426b146cb3b">More...</a><br /></td></tr>
+<tr class="separator:ae429abb49d0235f7d07ea426b146cb3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade2d8d7118f8ff49547f60aa0c3382bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__attributes_8h.html#ade2d8d7118f8ff49547f60aa0c3382bb">__INLINE</a>&#160;&#160;&#160;__STATIC_FORCEINLINE</td></tr>
+<tr class="memdesc:ade2d8d7118f8ff49547f60aa0c3382bb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Inline</b> attribute alias when <b>NOOPT</b> defined  <a href="#ade2d8d7118f8ff49547f60aa0c3382bb">More...</a><br /></td></tr>
+<tr class="separator:ade2d8d7118f8ff49547f60aa0c3382bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba87361bfad2ae52cfe2f40c1a1dbf9c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__attributes_8h.html#aba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a>&#160;&#160;&#160;__STATIC_FORCEINLINE</td></tr>
+<tr class="memdesc:aba87361bfad2ae52cfe2f40c1a1dbf9c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Static</b> <b>Inline</b> attribute alias when <b>NOOPT</b> defined  <a href="#aba87361bfad2ae52cfe2f40c1a1dbf9c">More...</a><br /></td></tr>
+<tr class="separator:aba87361bfad2ae52cfe2f40c1a1dbf9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ARM common compilers attributes. </p>
@@ -141,6 +150,22 @@ Macros</h2></td></tr>
 <dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2021, SMFSW</dd></dl>
 <p>Set attributes following compiler </p><dl class="section warning"><dt>Warning</dt><dd>Cosmic compiler for STM32 attributes not implemented </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ade2d8d7118f8ff49547f60aa0c3382bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade2d8d7118f8ff49547f60aa0c3382bb">&#9670;&nbsp;</a></span>__INLINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __INLINE&#160;&#160;&#160;__STATIC_FORCEINLINE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>Inline</b> attribute alias when <b>NOOPT</b> defined </p>
+
+</div>
+</div>
 <a id="aa5a6a9b207c15c7edc0f3fbdf74667ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa5a6a9b207c15c7edc0f3fbdf74667ce">&#9670;&nbsp;</a></span>__IRQ</h2>
 
@@ -154,6 +179,38 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p><b>Interrupt</b> attribute </p>
+
+</div>
+</div>
+<a id="ae429abb49d0235f7d07ea426b146cb3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae429abb49d0235f7d07ea426b146cb3b">&#9670;&nbsp;</a></span>__NOOPT__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __NOOPT__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>No</b> <b>Optimizations</b> attribute </p>
+
+</div>
+</div>
+<a id="aba87361bfad2ae52cfe2f40c1a1dbf9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba87361bfad2ae52cfe2f40c1a1dbf9c">&#9670;&nbsp;</a></span>__STATIC_INLINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __STATIC_INLINE&#160;&#160;&#160;__STATIC_FORCEINLINE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>Static</b> <b>Inline</b> attribute alias when <b>NOOPT</b> defined </p>
 
 </div>
 </div>
