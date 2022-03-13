@@ -1,6 +1,6 @@
 /*!\file arm_inlines_bcd.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2021, SMFSW
+** \copyright MIT (c) 2017-2022, SMFSW
 ** \brief BCD code conversion inlines
 */
 /****************************************************************/
@@ -49,14 +49,13 @@ __INLINE DWORD BCDToHex(const DWORD bcd)
 {
 	uint32_t res = 0, mult = 1;
 
-	for (unsigned int i = 0 ; i < 8 ; i++)
+	for (unsigned int i = 0 ; i < 8 ; i++, mult *= 10)
 	{
-		const uint8_t single = (RSHIFT(bcd, (4 * i)) & 0x0F);
+		const uint8_t single = RSHIFT(bcd, (4 * i)) & 0x0F;
 
 		if (single > 9)		{ return (DWORD) -1; }
 
 		res += single * mult;
-		mult *= 10;
 	}
 
 	return res;

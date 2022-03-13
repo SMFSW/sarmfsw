@@ -1,6 +1,6 @@
 /*!\file arm_inlines_rotation.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2021, SMFSW
+** \copyright MIT (c) 2017-2022, SMFSW
 ** \brief Rotation inlines
 */
 /****************************************************************/

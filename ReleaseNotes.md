@@ -2,7 +2,7 @@
 
 The MIT License (MIT)
 
-Copyright (c) 2017-2021 SMFSW (Sebastien Bizien)
+Copyright (c) 2017-2022 SMFSW (Sebastien Bizien)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -20,6 +20,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+## v3.6
+
+* arm_inlines_ascii: added check and convert inlines (num, alphanum, lower and upper case)
+* arm_inlines_ascii: added ASCIIstrToDecimal & ASCIIstrToHex
+
+
 ## v3.5
 
 * arm_inlines_ascii: fix lower case result of ASCIIToHex
@@ -27,6 +33,7 @@ SOFTWARE.
 * arm_inlines_float: limit set to 9 digits after floating point in get_fp_dec
 * arm_attributes: Overriding inline attributes when optimizations are set to none with gcc like toolchains
 * Doxyfiles updated to reflect changes in Doxygen v1.9.x
+
 
 ## v3.4
 
