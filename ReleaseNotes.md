@@ -22,6 +22,7 @@ SOFTWARE.
 
 ## v3.6
 
+* arm_inlines_ascii: ASCIIstrToDecimal & ASCIIstrToHex returns correctly converted part if something goes wrong
 * arm_inlines_ascii: added check and convert inlines (num, alphanum, lower and upper case)
 * arm_inlines_ascii: added ASCIIstrToDecimal & ASCIIstrToHex
 

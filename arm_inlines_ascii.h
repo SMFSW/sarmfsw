@@ -113,7 +113,7 @@ __INLINE DWORD NONNULL__ ASCIIstrToDecimal(const CHAR * const pASCII, const BYTE
 	{
 		const uint8_t single = ASCIIToHex(pASCII[i]);
 
-		if (single > 9)		{ return (DWORD) -1; }
+		if (single > 9)		{ break; }
 
 		dec += single * mult;
 	}
@@ -133,7 +133,11 @@ __INLINE DWORD NONNULL__ ASCIIstrToHex(const CHAR * const pASCII, const BYTE len
 
 	for (int i = len - 1, shift = 0 ; i >= 0 ; i--, shift += 4)
 	{
-		hex |= LSHIFT(ASCIIToHex(pASCII[i]), shift);
+		const uint8_t nybble = ASCIIToHex(pASCII[i]);
+
+		if (nybble == 0xFF)	{ break; }
+
+		hex |= LSHIFT(nybble, shift);
 	}
 
 	return hex;
