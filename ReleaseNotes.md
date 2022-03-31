@@ -22,6 +22,11 @@ SOFTWARE.
 
 ## v3.6
 
+* README & keywords.txt update
+* arm_cmsis: update for STM32 families (also added C0, U5 families)
+* introducing Microchip XC compiler & PIC compatibility
+* arm_typedefs: stdbool.h & stdint.h can be skept if not handled by compiler (through pre-processing symbols definition)
+* arm_typedefs: matching stdbool.h & stdint.h common types used in arm_typdefs.h to native C types by typedefs if headers are not included
 * arm_inlines_ascii: ASCIIstrToDecimal & ASCIIstrToHex returns correctly converted part if something goes wrong
 * arm_inlines_ascii: added check and convert inlines (num, alphanum, lower and upper case)
 * arm_inlines_ascii: added ASCIIstrToDecimal & ASCIIstrToHex

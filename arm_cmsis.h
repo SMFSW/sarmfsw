@@ -5,10 +5,12 @@
 ** \warning Latest ARM chips might now be recognized; if not, define at project level:
 ** 			- for STM32 families (STMicroelectronics):
 ** 				- STM_FAMILY xy:
-** 					- x : f/l/h/g
+** 					- x : c/f/h/l/mp/u/wb/wl
 ** 					- y : sub-family number
 ** 			- for SAM families (Atmel):
 ** 				- SAM_FAMILY xy(yy)
+** 			- for PIC families (Microchip):
+** 				- PIC_FAMILY pic(xx)
 ** 			- for Other families (TI...):
 ** 				- not implemented yet
 */
@@ -29,15 +31,20 @@
 /************************/
 /*** Arduino platform ***/
 /************************/
-#if defined (ARDUINO)
+#if defined(ARDUINO)
 	#define ARDUINO_PLATFORM		//!< Arduino platform generic define
 	#if !defined(INO_FAMILY)
-		#define INO_FAMILY	arduino	//!< Arduion family for name catenation?
+		#define INO_FAMILY	arduino	//!< Arduino family for name catenation?
 	#endif
 
 /******************************/
 /*** STMicro STM32 Families ***/
 /******************************/
+#elif	defined(STM32C011xx) || defined(STM32C031xx)
+	#define STM32C0					//!< STM32C0 family generic define
+	#if !defined(STM_FAMILY)
+		#define STM_FAMILY	c0		//!< STM32 family (c0) for name catenation
+	#endif
 #elif	defined(STM32F030x6) || defined(STM32F030x8) ||													\
 		defined(STM32F031x6) || defined(STM32F038xx) ||													\
 		defined(STM32F042x6) || defined(STM32F048xx) || defined(STM32F070x6) ||							\
@@ -103,7 +110,7 @@
 		#define STM_FAMILY	g4		//!< STM32 family (g4) for name catenation
 	#endif
 #elif	defined(STM32H743xx) || defined(STM32H753xx)  || defined(STM32H750xx) || defined(STM32H742xx)  ||													\
-		defined(STM32H745xx) || defined(STM32H755xx)  || defined(STM32H747xx) || defined(STM32H757xx)  ||													\
+		defined(STM32H745xx) || defined(STM32H745xG)  || defined(STM32H755xx) || defined(STM32H747xx)  || defined(STM32H747xG) || defined(STM32H757xx)  ||	\
 		defined(STM32H7A3xx) || defined(STM32H7A3xxQ) || defined(STM32H7B3xx) || defined(STM32H7B3xxQ) || defined(STM32H7B0xx) || defined(STM32H7B0xxQ) ||	\
 		defined(STM32H735xx) || defined(STM32H733xx)  || defined(STM32H730xx) || defined(STM32H730xxQ) || defined(STM32H725xx) || defined(STM32H723xx)
 	#define STM32H7					//!< STM32H7 family generic define
@@ -114,7 +121,7 @@
 		defined(STM32L011xx) || defined(STM32L021xx) ||													\
 		defined(STM32L031xx) || defined(STM32L041xx) ||													\
 		defined(STM32L051xx) || defined(STM32L052xx) || defined(STM32L053xx) ||							\
-		defined(STM32L061xx) || defined(STM32L062xx) || defined(STM32L063xx) ||							\
+		defined(STM32L062xx) || defined(STM32L063xx) ||													\
 		defined(STM32L071xx) || defined(STM32L072xx) || defined(STM32L073xx) ||							\
 		defined(STM32L081xx) || defined(STM32L082xx) || defined(STM32L083xx)
 	#define STM32L0					//!< STM32L0 family generic define
@@ -153,8 +160,16 @@
 	#if !defined(STM_FAMILY)
 		#define STM_FAMILY	mp1		//!< STM32 family (mp1) for name catenation
 	#endif
+#elif 	defined(STM32U575xx) || defined(STM32U585xx) || \
+		defined(STM32U595xx) || defined(STM32U599xx) || \
+		defined(STM32U5A5xx) || defined(STM32U5A9xx)
+	#define STM32U5					//!< STM32U5 family generic define
+	#if !defined(STM_FAMILY)
+		#define STM_FAMILY	u5		//!< STM32 family (u5) for name catenation
+	#endif
 #elif	defined(STM32WB55xx) || defined(STM32WB5Mxx) || defined(STM32WB50xx) || \
-		defined(STM32WB35xx) || defined(STM32WB30xx)
+		defined(STM32WB35xx) || defined(STM32WB30xx) ||							\
+		defined(STM32WB15xx) || defined(STM32WB10xx)
 	#define STM32WB					//!< STM32WB family generic define
 	#if !defined(STM_FAMILY)
 		#define STM_FAMILY	wb		//!< STM32 family (wb) for name catenation
@@ -164,6 +179,7 @@
 	#if !defined(STM_FAMILY)
 		#define STM_FAMILY	wl		//!< STM32 family (wl) for name catenation
 	#endif
+
 /**************************/
 /*** Atmel SAM Families ***/
 /**************************/
@@ -529,6 +545,33 @@
 	#if !defined(SAM_FAMILY)
 		#define SAM_FAMILY	v71b	//!< SAM family (v71b) for name catenation
 	#endif
+
+/******************************/
+/*** Microchip PIC Families ***/
+/******************************/
+#elif defined(__XC)
+	#if defined(__XC32)
+		#define PIC32					//!< PIC32 platform generic define
+		#if !defined(PIC_FAMILY)
+			#define PIC_FAMILY	pic32	//!< PIC family (pic32) for name catenation?
+		#endif
+	#elif defined(__XC16)
+		#define PIC16					//!< PIC16 platform generic define
+		#if !defined(PIC_FAMILY)
+			#define PIC_FAMILY	pic16	//!< PIC family (pic16) for name catenation?
+		#endif
+	#elif defined(__XC8)
+		#define PIC8					//!< PIC8 platform generic define
+		#if !defined(PIC_FAMILY)
+			#define PIC_FAMILY	pic8	//!< PIC family (pic8) for name catenation?
+		#endif
+	#else
+		#define PIC						//!< PIC platform generic define
+		#if !defined(PIC_FAMILY)
+			#define PIC_FAMILY	pic		//!< PIC family (pic) for name catenation?
+		#endif
+	#endif
+
 /**********************/
 /*** Other Families ***/
 /**********************/
@@ -539,7 +582,7 @@
 	#endif*/
 #else
 	#error "You should add the CMSIS base include following chip used & comment this error."
-	#error "If working with STM32 and chip is not in the list, try add STM_FAMILY=(f/h/l)x in project defines."
+	#error "If working with STM32 and chip is not in the list, try add STM_FAMILY=(c/f/h/l/mp/u/wb/wl)x in project defines."
 	#error "If working with ATMEL SAM and chip is not in the list, try add SAM_FAMILY=(b/c/d/e/g/h/l/r/s/v)xx in project defines."
 #endif
 
@@ -552,6 +595,15 @@
 
 	/*** Defines for Arduino platform ***/
 	#include "arm_chip_ino.h"
+
+#elif defined(PIC_FAMILY)
+	/*** Define CMSIS common macros ***/
+	#define __ASM				__asm__			//!< asm keyword for GNU Compiler
+	#define __INLINE			inline			//!< inline keyword for GNU Compiler
+	#define __STATIC_INLINE		static inline	//!< static inline keyword for GNU Compiler
+
+	/*** Defines for Microchip PIC families ***/
+	#include "arm_chip_pic.h"
 
 #elif defined(STM_FAMILY)
 	/*** Defines for STMicro STM32 families ***/

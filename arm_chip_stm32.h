@@ -112,6 +112,11 @@ __INLINE FctERR HALERRtoFCTERR(const HAL_StatusTypeDef status)
 }
 
 
+#ifndef UNUSED
+#define UNUSED(X)			(void) (X)			//!< To avoid gcc/g++ warnings
+#endif
+
+
 /****************************************************************/
 #ifdef __cplusplus
 	}

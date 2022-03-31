@@ -22,7 +22,7 @@
 ** \param[in] tolerance - Tolerance on reference value (in percent)
 ** \return true if val is inTolerance
 **/
-__INLINE bool inTolerance(const SDWORD val, const SDWORD ref, float tolerance)
+__INLINE BOOL inTolerance(const SDWORD val, const SDWORD ref, float tolerance)
 {
 	tolerance = min(100.0f, max(0.0f, tolerance));
 
@@ -38,7 +38,7 @@ __INLINE bool inTolerance(const SDWORD val, const SDWORD ref, float tolerance)
 ** \param[in] high - High range boundary
 ** \return true if val is inRange
 **/
-__INLINE bool INLINE__ inRange(const SDWORD val, const SDWORD low, const SDWORD high)
+__INLINE BOOL INLINE__ inRange(const SDWORD val, const SDWORD low, const SDWORD high)
 {
 	return ((val <= high) && (val >= low));
 }

@@ -36,7 +36,7 @@
 	#define SECTION__(s)		__attribute__((section(#s)))			//!< \b Section attribute to place declaration into section \b s
 	#define USED__				__attribute__((used))					//!< \b Used attribute ensures declaration won't be removed by garbage collector
 	// Common mixed attributes
-	#define NONNULL_INLINE__	ATTR__(nonnull, always_inline)			//!< \b Ensures declaration won't be removed by garbage collector
+	#define NONNULL_INLINE__	ATTR__(nonnull, always_inline)			//!< \b Non-null and \b Always \b inline attributes
 
 	#if (!defined(__OPTIMIZE__))
 	#define __NOOPT__													//!< \b No \b Optimizations attribute
@@ -63,7 +63,7 @@
 	#define SECTION__(s)		__attribute__((section(#s)))			//!< \b Section attribute to place declaration into section \b s
 	#define USED__				__attribute__((used))					//!< \b Used attribute ensures declaration won't be removed by garbage collector
 	// Common mixed attributes
-	#define NONNULL_INLINE__	ATTR__(nonnull, always_inline)			//!< \b Ensures declaration won't be removed by garbage collector
+	#define NONNULL_INLINE__	ATTR__(nonnull, always_inline)			//!< \b Non-null and \b Always \b inline attributes
 
 	#if (!defined(__OPTIMIZE__))
 	#define __NOOPT__													//!< \b No \b Optimizations attribute
@@ -90,7 +90,7 @@
 	#define SECTION__(s)		__attribute__((section(#s)))			//!< \b Section attribute to place declaration into section \b s
 	#define USED__				__attribute__((used))					//!< \b Used attribute ensures declaration won't be removed by garbage collector
 	// Common mixed attributes
-	#define NONNULL_INLINE__	ATTR__(nonnull, always_inline)			//!< \b Ensures declaration won't be removed by garbage collector
+	#define NONNULL_INLINE__	ATTR__(nonnull, always_inline)			//!< \b Non-null and \b Always \b inline attributes
 
 	#if (!defined(__OPTIMIZE__))
 	#define __NOOPT__													//!< \b No \b Optimizations attribute
@@ -142,7 +142,7 @@
 	#define SECTION__(s)		__attribute__((section(#s)))			//!< \b Section attribute to place declaration into section \b s
 	#define USED__				__attribute__((used))					//!< \b Used attribute ensures declaration won't be removed by garbage collector
 	// Common mixed attributes
-	#define NONNULL_INLINE__
+	#define NONNULL_INLINE__	__attribute__((always_inline))			//!< \b Always \b inline attribute
 
 	//#define __NOOPT__													//!< \b No \b Optimizations attribute not identified on TI toolchain
 
@@ -167,9 +167,36 @@
 	#define SECTION__(s)		__attribute__((section(#s)))			//!< \b Section attribute to place declaration into section \b s
 	#define USED__				__attribute__((used))					//!< \b Used attribute ensures declaration won't be removed by garbage collector
 	// Common mixed attributes
-	#define NONNULL_INLINE__
+	#define NONNULL_INLINE__	__attribute__((always_inline))			//!< \b Always \b inline attribute
 
 	//#define __NOOPT__													//!< \b No \b Optimizations attribute not identified on TASKING toolchain
+
+#elif defined (__XC)
+	/*** Microchip XC ***/
+	// Declared as qualifier
+	#define __WEAK				__attribute__((weak))					//!< \b Weak attribute
+	#define __IRQ				__attribute__((__interrupt__))			//!< \b Interrupt attribute
+	// Declared as attribute
+	#define ATTR__(...)			__attribute__((__VA_ARGS__))			//!< Macro to define one or multiple attribute(s) \b ... for a declaration
+
+	#define ALIGN__(n)			__attribute__((aligned (n)))			//!< \b Align attribute padded to \b n
+	#define COLD__
+	#define DEPRECATED__		__attribute__((deprecated))				//!< \b Deprecated attribute
+	#define HOT__
+	#define INLINE__			__attribute__((__always_inline__))		//!< \b Always \b inline attribute
+	#define NONNULL__
+	#define NONNULLX__(...)
+	#define NORETURN__
+	#define PACK__				__attribute__((__packed__))				//!< \b Packed attribute
+	#define PURE__
+	#define SECTION__(s)		__attribute__((section(#s)))			//!< \b Section attribute to place declaration into section \b s
+	#define USED__
+	// Common mixed attributes
+	#define NONNULL_INLINE__	__attribute__((__always_inline__))		//!< \b Always \b inline attribute
+
+	#if (!defined(__OPTIMIZE__))
+	#define __NOOPT__													//!< \b No \b Optimizations attribute
+	#endif
 
 #elif defined (__CSMC__)
 	/*** COSMIC ***/

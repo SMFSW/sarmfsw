@@ -39,7 +39,7 @@ __INLINE DWORD maskBits(const BYTE bits)
 ** \param[in] state - Logic state to check
 ** \return Number of state specified bits in val
 **/
-__INLINE BYTE nbBitsState(const DWORD val, const BYTE bits, const bool state)
+__INLINE BYTE nbBitsState(const DWORD val, const BYTE bits, const BOOL state)
 {
 	const BYTE	nb_bits = 32;
 	const BYTE	nb = (bits > nb_bits) ? nb_bits : bits;

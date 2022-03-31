@@ -20,10 +20,51 @@
 #ifdef __cplusplus
 	extern "C" {
 #endif
-
-#include <stdint.h>
-#include <stdbool.h>
 /****************************************************************/
+
+
+#ifndef STDBOOL_NDEF // TODO: maybe find proper pre-processing directive for compilers not handling stdbool.h
+#define __STDBOOL_DEF
+//! \note SARMFSW_STDBOOL_NDEF can defined at project level if stdint.h doesn't exist for target compiler
+#else
+// If not possible to include header, types defined as symbols here
+typedef unsigned char			bool;		//!< pseudo bool typedef
+#endif
+
+#ifndef STDINT_NDEF // TODO: maybe find proper pre-processing directive for compilers not handling stdint.h
+#define __STDINT_DEF
+//! \note SARMFSW_STDINT_NDEF can defined at project level if stdint.h doesn't exist for target compiler
+#else
+// If not possible to include header, types defined as symbols here
+typedef unsigned char			uint8_t;	//!< uint8_t typedef
+typedef short unsigned int		uint16_t;	//!< uint16_t typedef
+typedef long unsigned int		uint32_t;	//!< uint32_t typedef
+typedef long long unsigned int	uint64_t;	//!< uint64_t typedef
+typedef signed char				int8_t;		//!< int8_t typedef
+typedef short signed int		int16_t;	//!< int16_t typedef
+typedef long signed int			int32_t;	//!< int32_t typedef
+typedef long long signed int	int64_t;	//!< int64_t typedef
+#endif
+
+
+#ifdef __STDBOOL_DEF
+#include <stdbool.h>	//!< Include stdbool.h
+#endif
+#ifdef __STDINT_DEF
+#include <stdint.h>		//!< Include stdint.h
+#endif
+
+
+typedef	bool		BOOL;		//!< boolean typedef (1bit, for stdbool.h handling compilers)
+typedef char		CHAR;		//!< Char typedef (8bits)
+typedef	uint8_t		BYTE;		//!< Unsigned Byte typedef (8bits)
+typedef	uint16_t	WORD;		//!< Unsigned Word typedef (16bits)
+typedef	uint32_t	DWORD;		//!< Unsigned dWord typedef (32bits)
+typedef	uint64_t	LWORD;		//!< Unsigned lWord typedef (64bits)
+typedef	int8_t		SBYTE;		//!< Signed Byte typedef (8bits)
+typedef	int16_t		SWORD;		//!< Signed Word typedef (16bits)
+typedef	int32_t		SDWORD;		//!< Signed dWord typedef (32bits)
+typedef	int64_t		SLWORD;		//!< Signed lWord typedef (64bits)
 
 
 #if 	defined(__BYTE_ORDER) && (__BYTE_ORDER == __BIG_ENDIAN) ||								\
@@ -52,17 +93,6 @@
 #else
 	#warning "Unknown endianness, please define LITTLE_ENDIAN or BIG_ENDIAN symbol to ensure behavior!"
 #endif
-
-
-typedef char		CHAR;		//!< Char typedef (8bits)
-typedef	uint8_t		BYTE;		//!< Unsigned Byte typedef (8bits)
-typedef	uint16_t	WORD;		//!< Unsigned Word typedef (16bits)
-typedef	uint32_t	DWORD;		//!< Unsigned dWord typedef (32bits)
-typedef	uint64_t	LWORD;		//!< Unsigned lWord typedef (64bits)
-typedef	int8_t		SBYTE;		//!< Signed Byte typedef (8bits)
-typedef	int16_t		SWORD;		//!< Signed Word typedef (16bits)
-typedef	int32_t		SDWORD;		//!< Signed dWord typedef (32bits)
-typedef	int64_t		SLWORD;		//!< Signed lWord typedef (64bits)
 
 
 /*!\enum eState

@@ -22,7 +22,7 @@
 ** \return true if lower case, false otherwise
 ** \warning You probably should ensure \b ascii is alphabetic char first (false will be always returned in case non alphabetic char)
 **/
-__INLINE bool isLowerCase(const CHAR ascii) {
+__INLINE BOOL isLowerCase(const CHAR ascii) {
 	return binEval((ascii >= 'a') && (ascii <= 'z')); }
 
 
@@ -31,7 +31,7 @@ __INLINE bool isLowerCase(const CHAR ascii) {
 ** \return true if upper case, false otherwise
 ** \warning You probably should ensure \b ascii is alphabetic char first (false will be always returned in case non alphabetic char)
 **/
-__INLINE bool isUpperCase(const CHAR ascii) {
+__INLINE BOOL isUpperCase(const CHAR ascii) {
 	return binEval((ascii >= 'A') && (ascii <= 'Z')); }
 
 
@@ -39,7 +39,7 @@ __INLINE bool isUpperCase(const CHAR ascii) {
 ** \param[in] ascii - ASCII char to check
 ** \return true if alphabetic, false otherwise
 **/
-__INLINE bool isAlpha(const CHAR ascii) {
+__INLINE BOOL isAlpha(const CHAR ascii) {
 	return binEval(isLowerCase(ascii) || isUpperCase(ascii)); }
 
 
@@ -47,7 +47,7 @@ __INLINE bool isAlpha(const CHAR ascii) {
 ** \param[in] ascii - ASCII char to check
 ** \return true if numeric, false otherwise
 **/
-__INLINE bool isNum(const CHAR ascii) {
+__INLINE BOOL isNum(const CHAR ascii) {
 	return binEval((ascii >= '0') && (ascii <= '9')); }
 
 
@@ -55,7 +55,7 @@ __INLINE bool isNum(const CHAR ascii) {
 ** \param[in] ascii - ASCII char to check
 ** \return true if alpha/numeric, false otherwise
 **/
-__INLINE bool isAlphaNum(const CHAR ascii) {
+__INLINE BOOL isAlphaNum(const CHAR ascii) {
 	return binEval(isNum(ascii) || isAlpha(ascii)); }
 
 

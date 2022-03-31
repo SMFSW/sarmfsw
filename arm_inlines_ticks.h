@@ -23,7 +23,7 @@
 ** \param[in] time - time lapse (in ms)
 ** \return true if time elapsed
 **/
-__INLINE bool INLINE__ TPSSUP_MS(const DWORD prev, const DWORD time)
+__INLINE BOOL INLINE__ TPSSUP_MS(const DWORD prev, const DWORD time)
 {
 	const DWORD hNow = HALTicks();
 	const DWORD diff = (hNow >= prev) ? hNow - prev : (HAL_MAX_TICKS - prev) + hNow;
@@ -40,7 +40,7 @@ __INLINE bool INLINE__ TPSSUP_MS(const DWORD prev, const DWORD time)
 ** \param[in] time - time lapse (in ms)
 ** \return true if time not elapsed
 **/
-__INLINE bool INLINE__ TPSINF_MS(const DWORD prev, const DWORD time)
+__INLINE BOOL INLINE__ TPSINF_MS(const DWORD prev, const DWORD time)
 {
 	const DWORD hNow = HALTicks();
 	const DWORD diff = (hNow >= prev) ? hNow - prev : (HAL_MAX_TICKS - prev) + hNow;

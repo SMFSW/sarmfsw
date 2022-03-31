@@ -4,18 +4,23 @@ ARM based common headers
 
 Basic yet useful typedefs/macros/inlines for any ARM CMSIS based project
 
-Library has been updated to become compatible with Arduino platform
+Library has been updated to become compatible with Arduino & other 8/16bit platforms
 (not only ARM cores, yet less optimized for 8/16bit cores)
 
 ## Library handled symbols (to be defined if needed)
 
 * `STM_FAMILY`: Define with proper family name if your STM32 MCU is not automatically recognized (in case of warning message displayed)
 * `SAM_FAMILY`: Define with proper family name if your ATMEL SAM MCU is not automatically recognized (in case of warning message displayed)
+
 * `HAL_MAX_TICKS` val: Define with custom max value in project if tick max value is not using 32b variable full scale
 * `HAL_MS_TICKS_FACTOR`: Define with custom multiplier in project if tick period is not 1ms
-* `BIG_ENDIAN`: Define this symbol if using big endian target architecture if not automatically recognized (in case of warning message displayed)
-* `LITTLE_ENDIAN`: Define this symbol if using little endian target architecture if not automatically recognized (in case of warning message displayed)
-* `REVERSE_BITFIELD`: By default biftfields are stored from lsb to msb; if not the case with the compiler, use a pragma or define this symbol
+
+* `BIG_ENDIAN`: Define this symbol when using big endian target architecture if not automatically recognized (in case of warning message displayed)
+* `LITTLE_ENDIAN`: Define this symbol when using little endian target architecture if not automatically recognized (in case of warning message displayed)
+* `REVERSE_BITFIELD`: By default biftfields are stored from lsb to msb; if not the case with used compiler, use a pragma or define this symbol
+
+* `STDBOOL_NDEF`: define this symbol in case used compiler doesn't have stdbool.h header
+* `STDINT_NDEF`: define this symbol in case used compiler doesn't have stdint.h header
 * `I_FIND_BINARY_HEADER_USEFUL`: For Arduino platform, if using defines from binary.h, define this symbol (not recommended, use 0bxxx for binary instead)
 
 ## Help would be appreciated:
