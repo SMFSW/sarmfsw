@@ -26,6 +26,8 @@
 #include "arm_errors.h"			// Common errors
 #include "arm_cmsis.h"			// HAL & Drivers (following defined platform)
 /****************************************************************/
+#include "xc.h"					// Microchip common
+
 extern unsigned int HAL_GetTick(void);	//!< External definition of HAL_GetTick that shall be defined in project
 /****************************************************************/
 

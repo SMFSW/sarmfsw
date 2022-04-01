@@ -22,6 +22,9 @@ SOFTWARE.
 
 ## v3.6
 
+* arm_cmsis: xc symbol test fix; moved __INLINE and __STATIC_INLINE definitions (when defined) in arm_attributes.h
+* arm_attributes: manual definition of __INLINE and __STATIC_INLINE if __STATIC_FORCEINLINE is not defined
+* arm_attributes: xc symbol test fix; moved xc part prior to gnuc (as the symbol is also defined by xc compiler)
 * README & keywords.txt update
 * arm_cmsis: update for STM32 families (also added C0, U5 families)
 * introducing Microchip XC compiler & PIC compatibility
