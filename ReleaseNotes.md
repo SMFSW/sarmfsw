@@ -22,6 +22,8 @@ SOFTWARE.
 
 ## v3.6
 
+* arm_attributes: few fixes and CSMC compiler attributes added
+* arm_cmsis: __ASM symbol definition moved to arm_attributes.h
 * arm_cmsis: xc symbol test fix; moved __INLINE and __STATIC_INLINE definitions (when defined) in arm_attributes.h
 * arm_attributes: manual definition of __INLINE and __STATIC_INLINE if __STATIC_FORCEINLINE is not defined
 * arm_attributes: xc symbol test fix; moved xc part prior to gnuc (as the symbol is also defined by xc compiler)

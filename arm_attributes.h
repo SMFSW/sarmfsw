@@ -72,6 +72,7 @@
 #elif defined (__XC__)	// Defined prior to __GNUC__ as also defined for some __XC__ compilers
 	/*** Microchip XC ***/
 	// Declared as qualifier
+	#define __ASM				__asm__									//!< ASM keyword alias for XC Compiler
 	#define __WEAK				__attribute__((weak))					//!< \b Weak attribute
 	#define __IRQ				__attribute__((interrupt))  			//!< \b Interrupt attribute
 	// Declared as attribute
@@ -111,8 +112,8 @@
 	#define INLINE__			__attribute__((always_inline))			//!< \b Always \b inline attribute
 	#define NONNULL__			__attribute__((nonnull))				//!< \b Non \b null attribute (all pointers will be checked)
 	#define NONNULLX__(...)		__attribute__((nonnull(__VA_ARGS__)))	//!< \b Non \b null attribute for \b ... pointers indexes
-	#define NORETURN__			__attribute__((noreturn))				//!< \b No \b return attribute
-	#define PACK__				__attribute__((__packed__))				//!< \b Packed attribute
+	#define NORETURN__			__attribute__((__noreturn__))			//!< \b No \b return attribute
+	#define PACK__				__attribute__((packed))					//!< \b Packed attribute
 	#define PURE__				__attribute__((pure))					//!< \b Pure attribute
 	#define SECTION__(s)		__attribute__((section(#s)))			//!< \b Section attribute to place declaration into section \b s
 	#define USED__				__attribute__((used))					//!< \b Used attribute ensures declaration won't be removed by garbage collector
@@ -124,6 +125,7 @@
 	#endif
 
 #elif defined (__ICCARM__)
+	// FIXME: most likely will not work, check cmsis_iccarm.h to fix attributes
 	/*** IAR ***/
 	// Declared as qualifier
 	#define __WEAK				__weak									//!< \b Weak attribute
@@ -148,10 +150,10 @@
 
 	//#define __NOOPT__													//!< \b No \b Optimizations attribute not identified on IAR toolchain
 
-#elif defined (__TMS470__)
+#elif defined (__TI_ARM__)
 	/*** TEXAS INSTRUMENTS ***/
 	// Declared as qualifier
-	#define __WEAK														//!< \b Weak attribute only through #pragma weak(symbol)
+	#define __WEAK				__attribute__((weak))					//!< \b Weak attribute only through #pragma weak(symbol)
 	#define __IRQ				__interrupt								//!< \b Interrupt attribute
 	// Declared as attribute
 	#define ATTR__(...)			__attribute__((__VA_ARGS__))			//!< Macro to define one or multiple attribute(s) \b ... for a declaration
@@ -160,18 +162,21 @@
 	#define COLD__
 	#define DEPRECATED__		__attribute__((deprecated))				//!< \b Deprecated attribute
 	#define HOT__
-	#define INLINE__			__attribute__((always_inline))			//!< \b Always \b inline attribute
+	#define INLINE__
 	#define NONNULL__
 	#define NONNULLX__(...)
 	#define NORETURN__			__attribute__((noreturn))				//!< \b No \b return attribute
-	#define PACK__				__attribute__((__packed__))				//!< \b Packed attribute
+	#define PACK__				__attribute__((packed))					//!< \b Packed attribute
 	#define PURE__				__attribute__((pure))					//!< \b Pure attribute
 	#define SECTION__(s)		__attribute__((section(#s)))			//!< \b Section attribute to place declaration into section \b s
 	#define USED__				__attribute__((used))					//!< \b Used attribute ensures declaration won't be removed by garbage collector
 	// Common mixed attributes
-	#define NONNULL_INLINE__	__attribute__((always_inline))			//!< \b Always \b inline attribute
+	#define NONNULL_INLINE__
 
-	//#define __NOOPT__													//!< \b No \b Optimizations attribute not identified on TI toolchain
+	#if (!defined(__OPTIMIZE__))
+	#define __NOOPT__													//!< \b No \b Optimizations attribute
+	#define __STATIC_FORCEINLINE	static inline						//!< \b Static \b Inline attribute alias when `__NOOPT__` defined
+	#endif
 
 #elif defined (__TASKING__)
 	/*** TASKING ***/
@@ -196,16 +201,47 @@
 	// Common mixed attributes
 	#define NONNULL_INLINE__	__attribute__((always_inline))			//!< \b Always \b inline attribute
 
-	//#define __NOOPT__													//!< \b No \b Optimizations attribute not identified on TASKING toolchain
+	#if (!defined(__OPTIMIZE__))
+	#define __NOOPT__													//!< \b No \b Optimizations attribute
+	#define __STATIC_FORCEINLINE	static inline						//!< \b Static \b Inline attribute alias when `__NOOPT__` defined
+	#endif
 
 #elif defined (__CSMC__)
-	/*** COSMIC ***/
-	#error No attribute defined yet with Cosmic compiler.
+	/*** GCC ***/
+	// Declared as qualifier
+	#define __WEAK				__weak									//!< \b Weak attribute
+	#define __IRQ				@interrupt								//!< \b Interrupt attribute
+	// Declared as attribute
+	#define ATTR__(...)
+
+	#define ALIGN__(n)
+	#define COLD__
+	#define DEPRECATED__
+	#define HOT__
+	#define INLINE__
+	#define NONNULL__
+	#define NONNULLX__(...)
+	#define NORETURN__
+	#define PACK__				@packed									//!< \b Packed attribute
+	#define PURE__
+	#define SECTION__(s)
+	#define USED__
+	// Common mixed attributes
+	#define NONNULL_INLINE__
+
+	#if (!defined(__OPTIMIZE__))
+	#define __NOOPT__													//!< \b No \b Optimizations attribute
+	#define __STATIC_FORCEINLINE	static inline						//!< \b Static \b Inline attribute alias when `__NOOPT__` defined
+	#endif
 
 #else
 	#error Unknown compiler. Attributes will not be recognized.
 #endif
 
+
+#ifndef __ASM
+#define __ASM				__asm				//!< ASM keyword alias (unless already defined)
+#endif
 
 #ifndef __INLINE
 #define __INLINE			inline				//!< \b Inline attribute alias

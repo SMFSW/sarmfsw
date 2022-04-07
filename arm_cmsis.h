@@ -588,16 +588,10 @@
 
 
 #if defined(INO_FAMILY)
-	/*** Define CMSIS common macros ***/
-	#define __ASM				__asm			//!< asm keyword for GNU Compiler
-
 	/*** Defines for Arduino platform ***/
 	#include "arm_chip_ino.h"
 
 #elif defined(PIC_FAMILY)
-	/*** Define CMSIS common macros ***/
-	#define __ASM				__asm__			//!< asm keyword for GNU Compiler
-
 	/*** Defines for Microchip PIC families ***/
 	#include "arm_chip_pic.h"
 
