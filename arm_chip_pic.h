@@ -26,22 +26,26 @@
 #include "arm_errors.h"			// Common errors
 #include "arm_cmsis.h"			// HAL & Drivers (following defined platform)
 /****************************************************************/
-#include "xc.h"					// Microchip common
-
-extern unsigned int HAL_GetTick(void);	//!< External definition of HAL_GetTick that shall be defined in project
+#include "xc.h"					// Microchip common & MCU dependent definitions
 /****************************************************************/
 
 
 /*** Define Enable/Disable interrupts macros ***/
 #undef diInterrupts
-#define diInterrupts()		_GIE = 0;		//!< Disable interruptions macro
 #undef enInterrupts
-#define enInterrupts()		_GIE = 1;		//!< Enable interruptions macro
+#if defined(__XC8)
+	#define diInterrupts()		di()							//!< Disable interruptions macro
+	#define enInterrupts()		en()							//!< Enable interruptions macro
+#else	// builtins should be defined for __XC16 & __XC32
+	#define diInterrupts()		__builtin_disable_interrupts()	//!< Disable interruptions macro
+	#define enInterrupts()		__builtin_enable_interrupts()	//!< Enable interruptions macro
+#endif
+
 
 /*** MS Time base ***/
 #ifndef HAL_MAX_TICKS
-//!\note Define HAL_MAX_TICKS with custom max value in project if tick max value is not using unsigned int variable full scale
-#define HAL_MAX_TICKS		((unsigned int) -1)		//!< Max Ticks value
+//!\note Define HAL_MAX_TICKS with custom max value in project if tick max value is not using 32b variable full scale
+#define HAL_MAX_TICKS		((uint32_t) -1)		//!< Max Ticks value
 #endif
 #ifndef HAL_MS_TICKS_FACTOR
 //!\note Define HAL_MS_TICKS_FACTOR with custom multiplier in project if tick period is not 1ms
@@ -49,7 +53,8 @@ extern unsigned int HAL_GetTick(void);	//!< External definition of HAL_GetTick t
 #endif
 
 #ifndef HALTicks
-#define HALTicks()			HAL_GetTick()			//!< Alias for Arduino get ms ticks function
+extern unsigned int HAL_GetTick(void);			//!< External definition of HAL_GetTick that shall be defined in project
+#define HALTicks()			HAL_GetTick()		//!< Alias for HAL get ticks function
 #endif
 
 /*!\enum eResetSource
