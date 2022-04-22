@@ -16,7 +16,7 @@
 
 
 #define	LINEAR_TAB(name, nbElem)		typedef struct linear##name {	\
-											WORD		nb;				\
+											WORD	nb;					\
 											SDWORD	array[nbElem][2];	\
 										} linear##name;	//!< Pattern tab typedef declaration with \b name catenation and \b nbElem max tab elements
 
