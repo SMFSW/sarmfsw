@@ -23,6 +23,8 @@ SOFTWARE.
 ## v3.6
 
 * arm_attributes: few fixes and CSMC compiler attributes added
+* arm_cmsis: volatile symbols definition added in case not defined
+* arm_cmsis: UNUSED symbol definition (removed multiple definitions from other files)
 * arm_cmsis: __ASM symbol definition moved to arm_attributes.h
 * arm_cmsis: xc symbol test fix; moved __INLINE and __STATIC_INLINE definitions (when defined) in arm_attributes.h
 * arm_attributes: manual definition of __INLINE and __STATIC_INLINE if __STATIC_FORCEINLINE is not defined
@@ -35,7 +37,7 @@ SOFTWARE.
 * arm_inlines_ascii: ASCIIstrToDecimal & ASCIIstrToHex returns correctly converted part if something goes wrong
 * arm_inlines_ascii: added check and convert inlines (num, alphanum, lower and upper case)
 * arm_inlines_ascii: added ASCIIstrToDecimal & ASCIIstrToHex
-
+* arm_inlines_linearization: assuming linearization tabs may not always be constant, const qualifier is now removed from declarations
 
 ## v3.5
 
@@ -44,7 +46,6 @@ SOFTWARE.
 * arm_inlines_float: limit set to 9 digits after floating point in get_fp_dec
 * arm_attributes: Overriding inline attributes when optimizations are set to none with gcc like toolchains
 * Doxyfiles updated to reflect changes in Doxygen v1.9.x
-
 
 ## v3.4
 

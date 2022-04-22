@@ -616,6 +616,38 @@
 #endif
 
 
+/* IO definitions (access restrictions to peripheral registers) */
+#ifndef __I
+#ifdef __cplusplus
+	#define __I		volatile		//!< Defines 'read only' permissions
+#else
+	#define __I		volatile const	//!< Defines 'read only' permissions
+#endif
+#endif
+#ifndef __O
+#define __O     	volatile		//!< Defines 'write only' permissions
+#endif
+#ifndef __IO
+#define __IO    	volatile		//!< Defines 'read / write' permissions
+#endif
+
+/* following defines should be used for structure members */
+#ifndef __IM
+#define __IM		volatile const	//!< Defines 'read only' structure member permissions
+#endif
+#ifndef __OM
+#define __OM		volatile		//!< Defines 'write only' structure member permissions
+#endif
+#ifndef __IOM
+#define __IOM		volatile		//!< Defines 'read / write' structure member permissions
+#endif
+
+
+#ifndef UNUSED
+#define UNUSED(X)	(void) (X)		//!< To avoid gcc/g++ warnings
+#endif
+
+
 /****************************************************************/
 #ifdef __cplusplus
 	}

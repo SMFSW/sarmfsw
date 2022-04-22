@@ -15,9 +15,9 @@
 /****************************************************************/
 
 
-#define	LINEAR_TAB(name, nbElem)		typedef struct linear##name {			\
-											const WORD		nb;					\
-											const SDWORD	array[nbElem][2];	\
+#define	LINEAR_TAB(name, nbElem)		typedef struct linear##name {	\
+											WORD		nb;				\
+											SDWORD	array[nbElem][2];	\
 										} linear##name;	//!< Pattern tab typedef declaration with \b name catenation and \b nbElem max tab elements
 
 #define LINEAR_EVAL(name, val)			linearization_eval(name.array, name.nb, val)	//!< Macro to call linearization on a LINEAR_TAB typedef
@@ -30,7 +30,7 @@
 ** \param [in] val - Value to evaluate
 ** \return Evaluated value in regard of val
 **/
-__INLINE SDWORD NONNULL__ linearization_eval(const SDWORD array[][2], const WORD nb, const SDWORD val)
+__INLINE SDWORD NONNULL__ linearization_eval(SDWORD array[][2], WORD nb, const SDWORD val)
 {
 	unsigned int idxMin = 0, idxMax = nb - 1;
 
