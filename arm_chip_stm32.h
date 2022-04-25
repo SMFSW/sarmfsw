@@ -10,11 +10,6 @@
 #ifdef __cplusplus
 	extern "C" {
 #endif
-
-#include "arm_attributes.h"		// Common attributes (following compiler)
-#include "arm_typedefs.h"		// Common typedefs
-#include "arm_errors.h"			// Common errors
-#include "arm_cmsis.h"			// HAL & Drivers (following defined platform)
 /****************************************************************/
 #include "main.h"				// Project pins & constants definitions
 /****************************************************************/
@@ -65,7 +60,11 @@
 #define HAL_MS_TICKS_FACTOR	1					//!< HAL milliseconds multiplier (depending tick counter frequency)
 #endif
 
+#ifndef HALTicks
+uint32_t HAL_GetTick(void);						//!< External definition of HAL_GetTick that shall be defined in project
 #define HALTicks()			HAL_GetTick()		//!< Alias for HAL get ticks function
+#endif
+
 
 /*!\enum eResetSource
 ** \brief Source of last reset

@@ -12,7 +12,6 @@
 #endif
 
 #include <stdlib.h>
-#include "arm_typedefs.h"			// Common typedefs
 /****************************************************************/
 
 

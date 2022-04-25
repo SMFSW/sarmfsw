@@ -22,6 +22,8 @@ SOFTWARE.
 
 ## v3.6
 
+* library entry point being sarmfsw.h, most cross includes in files now removed
+* arm_chip_xxx: an external definition of HAL_getTick is provided when used (implicitly checking consistency with the one defined in project)
 * arm_attributes: few fixes and CSMC compiler attributes added
 * arm_cmsis: volatile symbols definition added in case not defined
 * arm_cmsis: UNUSED symbol definition (removed multiple definitions from other files)

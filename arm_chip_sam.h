@@ -45,11 +45,6 @@
 #ifdef __cplusplus
 	extern "C" {
 #endif
-
-#include "arm_attributes.h"			// Common attributes (following compiler)
-#include "arm_typedefs.h"			// Common typedefs
-#include "arm_errors.h"				// Common errors
-#include "arm_cmsis.h"				// HAL & Drivers (following defined platform)
 /****************************************************************/
 #include "atmel_start_pins.h"		// Project pins definitions
 #include "err_codes.h"				// Atmel error codes
@@ -78,7 +73,7 @@
 #endif
 
 #ifndef HALTicks
-//!\note Define HALTicks at project level to call your own ms tick getter function
+uint32_t HAL_GetTick(void);						//!< External definition of HAL_GetTick that shall be defined in project
 #define HALTicks()			HAL_GetTick()		//!< Alias for HAL get ticks function
 #endif
 

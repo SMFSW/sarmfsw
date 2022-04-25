@@ -10,16 +10,11 @@
 #ifdef __cplusplus
 	extern "C" {
 #endif
-
-#include "arm_attributes.h"		// Common attributes (following compiler)
-#include "arm_typedefs.h"		// Common typedefs
-#include "arm_errors.h"			// Common errors
-#include "arm_cmsis.h"			// HAL & Drivers (following defined platform)
 /****************************************************************/
 #if ARDUINO > 22
-	#include "Arduino.h"		// Common Arduino definitions
+#include "Arduino.h"			// Common Arduino definitions
 #else
-	#include "WProgram.h"		// Common Arduino definitions
+#include "WProgram.h"			// Common Arduino definitions
 #endif
 #include "pins_arduino.h"		// Arduino pins definitions for current board
 /****************************************************************/
@@ -27,8 +22,8 @@
 
 /*** Define Enable/Disable interrupts macros ***/
 #undef diInterrupts
-#define diInterrupts()		noInterrupts()		//!< Disable interruptions macro
 #undef enInterrupts
+#define diInterrupts()		noInterrupts()		//!< Disable interruptions macro
 #define enInterrupts()		interrupts()		//!< Enable interruptions macro
 
 /*** MS Time base ***/
@@ -41,7 +36,9 @@
 #define HAL_MS_TICKS_FACTOR	1					//!< Milliseconds multiplier (depending tick counter frequency)
 #endif
 
+#ifndef HALTicks
 #define HALTicks()			millis()			//!< Alias for Arduino get ms ticks function
+#endif
 
 
 /*!\enum eResetSource

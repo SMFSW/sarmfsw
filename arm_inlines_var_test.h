@@ -10,9 +10,6 @@
 #ifdef __cplusplus
 	extern "C" {
 #endif
-
-#include "arm_typedefs.h"			// Common typedefs
-#include "arm_macros.h"				// Common macros
 /****************************************************************/
 
 

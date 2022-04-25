@@ -20,11 +20,6 @@
 #ifdef __cplusplus
 	extern "C" {
 #endif
-
-#include "arm_attributes.h"		// Common attributes (following compiler)
-#include "arm_typedefs.h"		// Common typedefs
-#include "arm_errors.h"			// Common errors
-#include "arm_cmsis.h"			// HAL & Drivers (following defined platform)
 /****************************************************************/
 #include "xc.h"					// Microchip common & MCU dependent definitions
 /****************************************************************/
@@ -53,7 +48,7 @@
 #endif
 
 #ifndef HALTicks
-extern unsigned int HAL_GetTick(void);			//!< External definition of HAL_GetTick that shall be defined in project
+uint32_t HAL_GetTick(void);						//!< External definition of HAL_GetTick that shall be defined in project
 #define HALTicks()			HAL_GetTick()		//!< Alias for HAL get ticks function
 #endif
 

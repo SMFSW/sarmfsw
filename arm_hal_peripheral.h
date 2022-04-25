@@ -11,8 +11,6 @@
 #ifdef __cplusplus
 	extern "C" {
 #endif
-
-#include "arm_cmsis.h"			// HAL & Drivers (following defined platform)
 /****************************************************************/
 
 

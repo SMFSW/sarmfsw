@@ -13,7 +13,6 @@
 
 #include <string.h>
 #include <stdio.h>
-#include "arm_macros.h"				// Common macros
 /****************************************************************/
 
 
