@@ -76,9 +76,9 @@
 			#include "hash.h"
 		#endif /* HAL_HASH_MODULE_ENABLED */
 
-		#ifdef HAL_HCD_MODULE_ENABLED
-			#include "hcd.h"
-		#endif /* HAL_HCD_MODULE_ENABLED */
+	//	#ifdef HAL_HCD_MODULE_ENABLED
+	//		#include "hcd.h"
+	//	#endif /* HAL_HCD_MODULE_ENABLED */
 
 		#ifdef HAL_HRTIM_MODULE_ENABLED
 			#include "hrtim.h"
