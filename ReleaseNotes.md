@@ -23,6 +23,9 @@ SOFTWARE.
 ## v3.6
 
 * library entry point being sarmfsw.h, most cross includes in files now removed
+* arm_macros: BYTE_TO_PERC byte value clamp added
+* arm_macros: LSHIFT & RSHIFT changed (handling optimized shift opcodes and more explicit sizes if desired/required)
+* arm_typedefs.h: intCPU_t & uintCPU_t typedefs added
 * arm_hal_peirpheral: No include when HAL_HCD_MODULE_ENABLED is defined 
 * arm_chip_xxx: an external definition of HAL_getTick is provided when used (implicitly checking consistency with the one defined in project)
 * arm_attributes: few fixes and CSMC compiler attributes added
@@ -37,9 +40,9 @@ SOFTWARE.
 * introducing Microchip XC compiler & PIC compatibility
 * arm_typedefs: stdbool.h & stdint.h can be skept if not handled by compiler (through pre-processing symbols definition)
 * arm_typedefs: matching stdbool.h & stdint.h common types used in arm_typdefs.h to native C types by typedefs if headers are not included
-* arm_inlines_ascii: ASCIIstrToDecimal & ASCIIstrToHex returns correctly converted part if something goes wrong
+* arm_inlines_ascii: strDecToInt & strHexToInt returns correctly converted part if something goes wrong
 * arm_inlines_ascii: added check and convert inlines (num, alphanum, lower and upper case)
-* arm_inlines_ascii: added ASCIIstrToDecimal & ASCIIstrToHex
+* arm_inlines_ascii: added strDecToInt & strHexToInt
 * arm_inlines_linearization: assuming linearization tabs may not always be constant, const qualifier is now removed from declarations
 
 ## v3.5

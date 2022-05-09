@@ -7,7 +7,7 @@ Basic yet useful typedefs/macros/inlines for any ARM CMSIS based project
 Library has been updated to become compatible with Arduino & other 8/16bit platforms
 (not only ARM cores, yet less optimized for 8/16bit cores)
 
-## Library handled symbols (to be defined if needed)
+## Library handled symbols (to be defined if needed, at project level)
 
 * `STM_FAMILY`: Define with proper family name if your STM32 MCU is not automatically recognized (in case of warning message displayed)
 * `SAM_FAMILY`: Define with proper family name if your ATMEL SAM MCU is not automatically recognized (in case of warning message displayed)
@@ -22,6 +22,8 @@ Library has been updated to become compatible with Arduino & other 8/16bit platf
 * `STDBOOL_NDEF`: define this symbol in case used compiler doesn't have stdbool.h header
 * `STDINT_NDEF`: define this symbol in case used compiler doesn't have stdint.h header
 * `I_FIND_BINARY_HEADER_USEFUL`: For Arduino platform, if using defines from binary.h, define this symbol (not recommended, use 0bxxx for binary instead)
+
+* `SINGLE_SHIFT_ONLY_OPCODE`: If used CPU only handles single shifts opcode, define this symbol to optimize use of LSHIFTx & RSHIFTx with constants
 
 ## Help would be appreciated:
 

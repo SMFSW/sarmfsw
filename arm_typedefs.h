@@ -12,6 +12,8 @@
 **			(please refer to following note)
 ** \note	For Arduino platform, prefer ANSI-C(pp) 0b notation for binary representation,
 ** 			instead of using derived defines from Arduino binary.h
+** \note	SARMFSW_STDBOOL_NDEF can defined at project level if stdint.h doesn't exist for target compiler
+** \note	SARMFSW_STDINT_NDEF can defined at project level if stdint.h doesn't exist for target compiler
 */
 /****************************************************************/
 #ifndef __ARM_TYPEDEFS_H
@@ -25,7 +27,6 @@
 
 #ifndef STDBOOL_NDEF // TODO: maybe find proper pre-processing directive for compilers not handling stdbool.h
 #define __STDBOOL_DEF
-//! \note SARMFSW_STDBOOL_NDEF can defined at project level if stdint.h doesn't exist for target compiler
 #else
 // If not possible to include header, types defined as symbols here
 typedef unsigned char			bool;		//!< pseudo bool typedef
@@ -33,7 +34,6 @@ typedef unsigned char			bool;		//!< pseudo bool typedef
 
 #ifndef STDINT_NDEF // TODO: maybe find proper pre-processing directive for compilers not handling stdint.h
 #define __STDINT_DEF
-//! \note SARMFSW_STDINT_NDEF can defined at project level if stdint.h doesn't exist for target compiler
 #else
 // If not possible to include header, types defined as symbols here
 typedef unsigned char			uint8_t;	//!< uint8_t typedef
@@ -54,17 +54,19 @@ typedef long long signed int	int64_t;	//!< int64_t typedef
 #include <stdint.h>		//!< Include stdint.h
 #endif
 
+typedef int				intCPU_t;	//!< Signed integer typedef
+typedef unsigned int	uintCPU_t;	//!< Unsigned integer typedef
 
-typedef	bool		BOOL;		//!< boolean typedef (1bit, for stdbool.h handling compilers)
-typedef char		CHAR;		//!< Char typedef (8bits)
-typedef	uint8_t		BYTE;		//!< Unsigned Byte typedef (8bits)
-typedef	uint16_t	WORD;		//!< Unsigned Word typedef (16bits)
-typedef	uint32_t	DWORD;		//!< Unsigned dWord typedef (32bits)
-typedef	uint64_t	LWORD;		//!< Unsigned lWord typedef (64bits)
-typedef	int8_t		SBYTE;		//!< Signed Byte typedef (8bits)
-typedef	int16_t		SWORD;		//!< Signed Word typedef (16bits)
-typedef	int32_t		SDWORD;		//!< Signed dWord typedef (32bits)
-typedef	int64_t		SLWORD;		//!< Signed lWord typedef (64bits)
+typedef	bool			BOOL;		//!< boolean typedef (1bit, for stdbool.h handling compilers)
+typedef char			CHAR;		//!< Char typedef (8bits)
+typedef	uint8_t			BYTE;		//!< Unsigned Byte typedef (8bits)
+typedef	uint16_t		WORD;		//!< Unsigned Word typedef (16bits)
+typedef	uint32_t		DWORD;		//!< Unsigned dWord typedef (32bits)
+typedef	uint64_t		LWORD;		//!< Unsigned lWord typedef (64bits)
+typedef	int8_t			SBYTE;		//!< Signed Byte typedef (8bits)
+typedef	int16_t			SWORD;		//!< Signed Word typedef (16bits)
+typedef	int32_t			SDWORD;		//!< Signed dWord typedef (32bits)
+typedef	int64_t			SLWORD;		//!< Signed lWord typedef (64bits)
 
 
 #if 	defined(__BYTE_ORDER) && (__BYTE_ORDER == __BIG_ENDIAN) ||								\

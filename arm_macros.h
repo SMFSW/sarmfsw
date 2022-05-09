@@ -2,6 +2,7 @@
 ** \author SMFSW
 ** \copyright MIT (c) 2017-2022, SMFSW
 ** \brief ARM common macros
+** \note If used CPU only handles single shifts, you may define SINGLE_SHIFT_ONLY_OPCODE at project level (see \ref LSHIFT & \ref RSHIFT)
 */
 /****************************************************************/
 #ifndef __ARM_MACROS_H
@@ -34,27 +35,60 @@
 #endif
 
 
-#define GET_BITS(v, b)			(v & (b))							//!< Get bits from mask \b b of variable \b v
-#define SET_BITS(v, b)			(v |= (b))							//!< Set bits \b b of variable \b v
-#define CLR_BITS(v, b)			(v &= ~(b))							//!< Clear bits \b b of variable \b v
-#define INV_BITS(v, b)			(v ^= (b))							//!< Invert bits \b b of variable \b v
+#define GET_BITS(v, b)			(v & (b))					//!< Get bits from mask \b b of variable \b v
+#define SET_BITS(v, b)			(v |= (b))					//!< Set bits \b b of variable \b v
+#define CLR_BITS(v, b)			(v &= ~(b))					//!< Clear bits \b b of variable \b v
+#define INV_BITS(v, b)			(v ^= (b))					//!< Invert bits \b b of variable \b v
 
-#define SET_BITS_VAL(v, c, s)	(v = ((v & ~(c)) | (s)))			//!< Set variable \b v with clear mask \b c to set mask \b s
-
-
-//!\warning this macro is optimized only when used with \b b with a static value
-#define LSHIFT(v, b)		((v) * (1UL << b))											//!< Shift \b v \b b bits left (up to 31b)
-//!\warning this macro is optimized only when used with \b b with a static value
-#define RSHIFT(v, b)		((v) / (1UL << b))											//!< Shift \b v \b b bits right (up to 31b)
-//!\warning this macro is optimized only when used with \b b with a static value
-#define LSHIFT64(v, b)		((v) * (1ULL << b))											//!< Shift \b v \b b bits left (up to 63b)
-//!\warning this macro is optimized only when used with \b b with a static value
-#define RSHIFT64(v, b)		((v) / (1ULL << b))											//!< Shift \b v \b b bits right (up to 63b)
+#define SET_BITS_VAL(v, c, s)	(v = ((v & ~(c)) | (s)))	//!< Set variable \b v with clear mask \b c to set mask \b s
 
 
-#define MAKEWORD(lsb, msb)	((WORD) (((BYTE) (lsb)) | LSHIFT(((WORD) ((BYTE) (msb))), 8)))		//!< Make WORD from \b lsb and \b msb
-#define MAKELONG(lsw, msw)	((DWORD) (((WORD) (lsw)) | LSHIFT(((DWORD) ((WORD) (msw))), 16)))	//!< Make LONG from \b lsw and \b msw
+#if defined(SINGLE_SHIFT_ONLY_OPCODE)
 
+//!\warning this macro is optimized only when \b n is a static value
+#define LSHIFT_CAST(t, v, n)	((t) (v) * ((t) 1U << n))
+//!\warning this macro is optimized only when \b n is a static value
+#define RSHIFT_CAST(t, v, n)	((t) (v) / ((t) 1U << n))
+
+//!\warning this macro is optimized only when \b n is a static value
+#define LSHIFT(v, n)			((v) * (1U << n))			//!< Shift \b v \b n bits left (up to compiler handled size for shifting)
+//!\warning this macro is optimized only when \b n is a static value
+#define RSHIFT(v, n)			((v) / (1U << n))			//!< Shift \b v \b n bits right (up to compiler handled size for shifting)
+
+//!\warning this macro is optimized only when \b n is a static value
+#define LSHIFT16(v, n)			LSHIFT_CAST(WORD, v, n)		//!< Shift \b v \b n bits left (up to 15b)
+//!\warning this macro is optimized only when \b n is a static value
+#define RSHIFT16(v, n)			RSHIFT_CAST(WORD, v, n)		//!< Shift \b v \b n bits right (up to 15b)
+
+//!\warning this macro is optimized only when \b n is a static value
+#define LSHIFT32(v, n)			LSHIFT_CAST(DWORD, v, n)	//!< Shift \b v \b n bits left (up to 31b)
+//!\warning this macro is optimized only when \b n is a static value
+#define RSHIFT32(v, n)			RSHIFT_CAST(DWORD, v, n)	//!< Shift \b v \b n bits right (up to 31b)
+
+//!\warning this macro is optimized only when \b n is a static value
+#define LSHIFT64(v, n)			LSHIFT_CAST(LWORD, v, n)	//!< Shift \b v \b n bits left (up to 63b)
+//!\warning this macro is optimized only when \b n is a static value
+#define RSHIFT64(v, n)			RSHIFT_CAST(LWORD, v, n)	//!< Shift \b v \b n bits right (up to 63b)
+
+#else
+
+#define LSHIFT(v, n)			((v) << n)					//!< Shift \b v \b n bits left (up to compiler handled size for shifting)
+#define RSHIFT(v, n)			((v) >> n)					//!< Shift \b v \b n bits right (up to compiler handled size for shifting)
+
+#define LSHIFT16(v, n)			((WORD) (v) << n)			//!< Shift \b v \b n bits left (up to 15b)
+#define RSHIFT16(v, n)			((WORD) (v) >> n)			//!< Shift \b v \b n bits right (up to 15b)
+
+#define LSHIFT32(v, n)			((DWORD) (v) << n)			//!< Shift \b v \b n bits left (up to 31b)
+#define RSHIFT32(v, n)			((DWORD) (v) >> n)			//!< Shift \b v \b n bits right (up to 31b)
+
+#define LSHIFT64(v, n)			((LWORD) (v) << n)			//!< Shift \b v \b n bits left (up to 63b)
+#define RSHIFT64(v, n)			((LWORD) (v) >> n)			//!< Shift \b v \b n bits right (up to 63b)
+
+#endif
+
+
+#define MAKEWORD(lsb, msb)		((WORD) (((BYTE) (lsb)) | LSHIFT(((WORD) ((BYTE) (msb))), 8)))		//!< Make WORD from \b lsb and \b msb
+#define MAKELONG(lsw, msw)		((DWORD) (((WORD) (lsw)) | LSHIFT(((DWORD) ((WORD) (msw))), 16)))	//!< Make LONG from \b lsw and \b msw
 
 #ifdef LOBYTE
 #undef LOBYTE	//!\note Undefine LOBYTE if already defined in some other library
@@ -76,6 +110,7 @@
 #define	SWAP_LWORD(a, b)		SWAP_TYPE(a, b, LWORD)				//!< Swap LWORDs \b a \& \b b
 #define	SWAP_FLOAT(a, b)		SWAP_TYPE(a, b, float)				//!< Swap floats \b a \& \b b
 #define	SWAP_DOUBLE(a, b)		SWAP_TYPE(a, b, double)				//!< Swap doubles \b a \& \b b
+
 
 #define VAL_AT(addr, typ)		(*(typ *) (addr))										//!< Get the type \b typ content of address \b addr
 
@@ -107,20 +142,20 @@
 #define SCALE_VAL(	v,					\
 					from_min, from_max,	\
 					to_min, to_max)		\
-							(((((v) - from_min) * (to_max - to_min)) / (from_max - from_min)) + to_min)	//!< Scale value \b v from range \b from_min:from_max to range \b to_min:to_max
+					(((((v) - from_min) * (to_max - to_min)) / (from_max - from_min)) + to_min)	//!< Scale value \b v from range \b from_min:from_max to range \b to_min:to_max
 
 #define CLAMP(v, mn, mx)	((v) < (mn) ? (mn) : ((v) > (mx) ? (mx) : (v)))						//!< Returns the value between \b mn and \b mx from \b val
 #define	MAX3(a, b, c)		((b) >= (c) ? ((a) >= (b) ? (a) : (b)) : ((a) >= (c) ? (a) : (c)))	//!< Returns max value between \b a, \b b and \b c
 #define	MIN3(a, b, c)		((b) <= (c) ? ((a) <= (b) ? (a) : (b)) : ((a) <= (c) ? (a) : (c)))	//!< Returns min value between \b a, \b b and \b c
 
 #ifndef clamp
-	#define clamp	CLAMP	//!< \b clamp alias for \b CLAMP
+	#define clamp			CLAMP						//!< \b clamp alias for \b CLAMP
 #endif
 #ifndef max3
-	#define max3	MAX3	//!< \b max3 alias for \b MAX3
+	#define max3			MAX3						//!< \b max3 alias for \b MAX3
 #endif
 #ifndef min3
-	#define min3	MIN3	//!< \b min3 alias for \b MIN3
+	#define min3			MIN3						//!< \b min3 alias for \b MIN3
 #endif
 
 #ifndef max
@@ -130,9 +165,8 @@
 	#define min(a, b)		((a) <= (b) ? (a) : (b))	//!< Returns min value between \b a and \b b
 #endif
 
-
-#define BYTE_TO_PERC(b)		((BYTE) (((b) * 100) / 255))						//!< Converts a BYTE \b b (0-255) to percent (0-100)
-#define PERC_TO_BYTE(p)		((BYTE) (((p) > 100 ? 100 : (p)) * 255 / 100))		//!< Converts a BYTE \b p percentage (0-100) to BYTE (0-255) with max checking
+#define BYTE_TO_PERC(b)		((BYTE) ((((b) > 255 ? 255 : (b)) * 100) / 255))	//!< Converts a BYTE \b b (0-255) to percent (0-100)
+#define PERC_TO_BYTE(p)		((BYTE) ((((p) > 100 ? 100 : (p)) * 255) / 100))	//!< Converts a BYTE \b p percentage (0-100) to BYTE (0-255) with max checking
 
 
 /*** Constants ***/

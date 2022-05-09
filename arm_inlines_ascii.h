@@ -98,12 +98,12 @@ __INLINE BYTE ASCIIToHex(const CHAR ascii)
 	else											{ return 0xFF; }
 }
 
-/*!\brief ASCII string to 32bit unsigned decimal
+/*!\brief ASCII decimal string to 32bit unsigned integer
 ** \param[in] pASCII - pointer to ASCII string
 ** \param[in] len - ASCII string length (max shall be 10, and may overflow return value when 10)
-** \return Unsigned decimal value
+** \return Unsigned integer value
 **/
-__INLINE DWORD NONNULL__ ASCIIstrToDecimal(const CHAR * const pASCII, const BYTE len)
+__INLINE DWORD NONNULL__ strDecToInt(const CHAR * const pASCII, const BYTE len)
 {
 	DWORD dec = 0;
 
@@ -120,12 +120,12 @@ __INLINE DWORD NONNULL__ ASCIIstrToDecimal(const CHAR * const pASCII, const BYTE
 }
 
 
-/*!\brief ASCII string to 32bit unsigned hexadecimal
+/*!\brief ASCII hexadecimal string to 32bit unsigned integer
 ** \param[in] pASCII - pointer to ASCII string
 ** \param[in] len - ASCII string length (max shall be 8)
-** \return Unsigned hexadecimal value
+** \return Unsigned integer value
 **/
-__INLINE DWORD NONNULL__ ASCIIstrToHex(const CHAR * const pASCII, const BYTE len)
+__INLINE DWORD NONNULL__ strHexToInt(const CHAR * const pASCII, const BYTE len)
 {
 	DWORD hex = 0;
 
