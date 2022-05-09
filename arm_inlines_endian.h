@@ -31,7 +31,7 @@ typedef enum eEndian {
 **/
 __INLINE WORD SWAP_END16B(const WORD w)
 {
-	return (WORD) (LSHIFT((w & 0xFFU), 8) | RSHIFT((w & 0xFF00U), 8));
+	return (WORD) (LSHIFT16((w & 0xFFU), 8) | RSHIFT16((w & 0xFF00U), 8));
 }
 
 
@@ -41,7 +41,7 @@ __INLINE WORD SWAP_END16B(const WORD w)
 **/
 __INLINE DWORD SWAP_END32B(const DWORD d)
 {
-	return (DWORD) (LSHIFT(SWAP_END16B(d & 0xFFFFUL), 16) | SWAP_END16B(RSHIFT((d & 0xFFFF0000UL), 16)));
+	return (DWORD) (LSHIFT32(SWAP_END16B(d & 0xFFFFUL), 16) | SWAP_END16B(RSHIFT32((d & 0xFFFF0000UL), 16)));
 }
 
 
