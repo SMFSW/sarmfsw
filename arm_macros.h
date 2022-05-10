@@ -51,9 +51,16 @@
 #define RSHIFT_CAST(t, v, n)	((t) (v) / ((t) 1U << n))
 
 //!\warning this macro is optimized only when \b n is a static value
-#define LSHIFT(v, n)			((v) * (1U << n))			//!< Shift \b v \b n bits left (up to compiler handled size for shifting)
+//!\note sarmfsw library being optimized for 32b architecture, default shifting behavior set to 32b
+#define LSHIFT(v, n)			((v) * (1UL << n))			//!< Shift \b v \b n bits left
 //!\warning this macro is optimized only when \b n is a static value
-#define RSHIFT(v, n)			((v) / (1U << n))			//!< Shift \b v \b n bits right (up to compiler handled size for shifting)
+//!\note sarmfsw library being optimized for 32b architecture, default shifting behavior set to 32b
+#define RSHIFT(v, n)			((v) / (1UL << n))			//!< Shift \b v \b n bits right
+
+//!\warning this macro is optimized only when \b n is a static value
+#define LSHIFT8(v, n)			LSHIFT_CAST(BYTE, v, n)		//!< Shift \b v \b n bits left (up to 7b)
+//!\warning this macro is optimized only when \b n is a static value
+#define RSHIFT8(v, n)			RSHIFT_CAST(BYTE, v, n)		//!< Shift \b v \b n bits right (up to 7b)
 
 //!\warning this macro is optimized only when \b n is a static value
 #define LSHIFT16(v, n)			LSHIFT_CAST(WORD, v, n)		//!< Shift \b v \b n bits left (up to 15b)
@@ -72,8 +79,13 @@
 
 #else
 
-#define LSHIFT(v, n)			((v) << n)					//!< Shift \b v \b n bits left (up to compiler handled size for shifting)
-#define RSHIFT(v, n)			((v) >> n)					//!< Shift \b v \b n bits right (up to compiler handled size for shifting)
+//!\note sarmfsw library being optimized for 32b architecture, default shifting behavior set to 32b
+#define LSHIFT(v, n)			((DWORD) (v) << n)			//!< Shift \b v \b n bits left (up to compiler handled size for shifting)
+//!\note sarmfsw library being optimized for 32b architecture, default shifting behavior set to 32b
+#define RSHIFT(v, n)			((DWORD) (v) >> n)			//!< Shift \b v \b n bits right (up to compiler handled size for shifting)
+
+#define LSHIFT8(v, n)			((BYTE) (v) << n)			//!< Shift \b v \b n bits left (up to 7b)
+#define RSHIFT8(v, n)			((BYTE) (v) >> n)			//!< Shift \b v \b n bits right (up to 7b)
 
 #define LSHIFT16(v, n)			((WORD) (v) << n)			//!< Shift \b v \b n bits left (up to 15b)
 #define RSHIFT16(v, n)			((WORD) (v) >> n)			//!< Shift \b v \b n bits right (up to 15b)

@@ -19,7 +19,7 @@
 **/
 __INLINE BYTE INLINE__ conv16to8Bits(const WORD val)
 {
-	return (BYTE) RSHIFT16(val, 8);
+	return (BYTE) RSHIFT(val, 8);
 }
 
 
@@ -29,7 +29,7 @@ __INLINE BYTE INLINE__ conv16to8Bits(const WORD val)
 **/
 __INLINE WORD INLINE__ conv8to16Bits(const BYTE val)
 {
-	return (WORD) (LSHIFT16(val, 8) | val);
+	return (WORD) (LSHIFT(val, 8) | val);
 }
 
 
@@ -39,7 +39,7 @@ __INLINE WORD INLINE__ conv8to16Bits(const BYTE val)
 **/
 __INLINE WORD INLINE__ conv32to16Bits(const DWORD val)
 {
-	return (WORD) RSHIFT32(val, 16);
+	return (WORD) RSHIFT(val, 16);
 }
 
 
@@ -49,7 +49,7 @@ __INLINE WORD INLINE__ conv32to16Bits(const DWORD val)
 **/
 __INLINE DWORD INLINE__ conv16to32Bits(const WORD val)
 {
-	return (DWORD) (LSHIFT32(val, 16) | val);
+	return (DWORD) (LSHIFT(val, 16) | val);
 }
 
 

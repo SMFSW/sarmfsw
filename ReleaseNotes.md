@@ -25,7 +25,6 @@ SOFTWARE.
 * library entry point being sarmfsw.h, most cross includes in files now removed
 * arm_macros: BYTE_TO_PERC byte value clamp added
 * arm_macros: LSHIFT & RSHIFT changed (handling optimized shift opcodes and more explicit sizes if desired/required)
-* arm_inlines_endian & arm_inlines_var_size: explicit size shifting (for CPU size compatibility)
 * arm_typedefs.h: intCPU_t & uintCPU_t typedefs added
 * arm_hal_peirpheral: No include when HAL_HCD_MODULE_ENABLED is defined 
 * arm_chip_xxx: an external definition of HAL_getTick is provided when used (implicitly checking consistency with the one defined in project)
