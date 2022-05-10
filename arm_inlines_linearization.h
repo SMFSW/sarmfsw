@@ -30,12 +30,12 @@
 **/
 __INLINE SDWORD NONNULL__ linearization_eval(SDWORD array[][2], WORD nb, const SDWORD val)
 {
-	unsigned int idxMin = 0, idxMax = nb - 1;
+	uintCPU_t idxMin = 0, idxMax = nb - 1;
 
 	// Find indexes
 	while (idxMax > idxMin + 1)
 	{
-		const unsigned int idx = ((idxMax - idxMin) / 2 + idxMin);
+		const uintCPU_t idx = ((idxMax - idxMin) / 2 + idxMin);
 
 		if (val < array[idx][0])	{ idxMax = idx; }
 		else						{ idxMin = idx; }
@@ -49,7 +49,7 @@ __INLINE SDWORD NONNULL__ linearization_eval(SDWORD array[][2], WORD nb, const S
 
 	// Linearize
 	const float coef = (float) (y1 - y0) / (float) (x1 - x0);
-	return (SDWORD) (coef * (val -  x0) + y0);
+	return (SDWORD) (coef * (val - x0) + y0);
 }
 
 

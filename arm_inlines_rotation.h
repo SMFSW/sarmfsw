@@ -57,18 +57,18 @@ __INLINE sCoord2D rotate_2D(const sCoord2D c, const SWORD angle)
 			r.x = (SDWORD) ((c.x - c.y) / M_SQRT2);
 			r.y = (SDWORD) ((c.x + c.y) / M_SQRT2);
 			deg -= 45;
-			//break;	// No break, may still need to rotate by a multiple of 90�
+			//break;	// No break, may still need to rotate by a multiple of 90°
 
 		case 90:
-			// Return only if 90�, otherwise, continue
+			// Return only if 90°, otherwise, continue
 			if (deg == 90)	{ return (sCoord2D) { -r.y, r.x }; }
 
 		case 180:
-			// Return only if 180�, otherwise, continue
+			// Return only if 180°, otherwise, continue
 			if (deg == 180)	{ return (sCoord2D) { -r.x, -r.y }; }
 
 		case 270:
-			// Return only if 270�, otherwise, continue
+			// Return only if 270°, otherwise, continue
 			if (deg == 270)	{ return (sCoord2D) { r.y, -r.x }; }
 	}
 

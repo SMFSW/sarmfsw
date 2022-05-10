@@ -13,23 +13,23 @@
 /****************************************************************/
 
 
-#define	RESTRICTED_AVERAGE(typ_t, sum_t)																					\
-__INLINE typ_t RestrictedAverage_##typ_t(volatile typ_t pArray[], const uint8_t nb)											\
-{																															\
-	typ_t	Array[nb];																										\
-	sum_t	sum = 0;																										\
-																															\
-	if (nb <= 2)	{ return 0; }																							\
-																															\
-	/* Array copy (memcpy not used as copy by byte and pTab may be volatile) */												\
-	for (int i = 0 ; i < nb ; i++)			{ Array[i] = pArray[i]; }														\
-	/* Shift min to first array index */																					\
-	for (int i = 1 ; i < nb ; i++)			{ if (Array[i] < Array[0])	SWAP_TYPE(Array[0], Array[i], typ_t); }				\
-	/* Shift max to last array index */																						\
-	for (int i = 1 ; i < (nb - 1) ; i++)	{ if (Array[i] > Array[nb - 1])	SWAP_TYPE(Array[nb - 1], Array[i], typ_t); }	\
-	/* Sum and averaging */																									\
-	for (int i = 1 ; i < (nb - 1) ; i++)	{ sum += Array[i]; }															\
-	return (sum / (nb - 2));																								\
+#define	RESTRICTED_AVERAGE(typ_t, sum_t)																						\
+__INLINE typ_t RestrictedAverage_##typ_t(volatile typ_t pArray[], const uint8_t nb)												\
+{																																\
+	typ_t	Array[nb];																											\
+	sum_t	sum = 0;																											\
+																																\
+	if (nb <= 2)	{ return 0; }																								\
+																																\
+	/* Array copy (memcpy not used as copy by byte and pTab may be volatile) */													\
+	for (uintCPU_t i = 0 ; i < nb ; i++)		{ Array[i] = pArray[i]; }														\
+	/* Shift min to first array index */																						\
+	for (uintCPU_t i = 1 ; i < nb ; i++)		{ if (Array[i] < Array[0])	SWAP_TYPE(Array[0], Array[i], typ_t); }				\
+	/* Shift max to last array index */																							\
+	for (uintCPU_t i = 1 ; i < (nb - 1) ; i++)	{ if (Array[i] > Array[nb - 1])	SWAP_TYPE(Array[nb - 1], Array[i], typ_t); }	\
+	/* Sum and averaging */																										\
+	for (uintCPU_t i = 1 ; i < (nb - 1) ; i++)	{ sum += Array[i]; }															\
+	return (sum / (nb - 2));																									\
 }
 
 

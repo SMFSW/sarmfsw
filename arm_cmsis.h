@@ -625,10 +625,10 @@
 #endif
 #endif
 #ifndef __O
-#define __O     	volatile		//!< Defines 'write only' permissions
+#define __O			volatile		//!< Defines 'write only' permissions
 #endif
 #ifndef __IO
-#define __IO    	volatile		//!< Defines 'read / write' permissions
+#define __IO		volatile		//!< Defines 'read / write' permissions
 #endif
 
 /* following defines should be used for structure members */

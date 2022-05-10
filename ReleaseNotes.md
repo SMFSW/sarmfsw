@@ -23,6 +23,7 @@ SOFTWARE.
 ## v3.6
 
 * library entry point being sarmfsw.h, most cross includes in files now removed
+* inlines variable length and types reviewed
 * arm_macros: BYTE_TO_PERC byte value clamp added
 * arm_macros: LSHIFT & RSHIFT changed (handling optimized shift opcodes and more explicit sizes if desired/required)
 * arm_typedefs.h: intCPU_t & uintCPU_t typedefs added

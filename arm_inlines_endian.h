@@ -61,7 +61,7 @@ __INLINE LWORD SWAP_END64B(const LWORD l)
 **/
 __INLINE void NONNULL_INLINE__ SWAP_END16B_TAB(WORD tab[], const WORD nb)
 {
-	for (unsigned int i = 0 ; i < nb ; i++)	{ tab[i] = SWAP_END16B(tab[i]); }
+	for (uintCPU_t i = 0 ; i < nb ; i++)	{ tab[i] = SWAP_END16B(tab[i]); }
 }
 
 
@@ -71,7 +71,7 @@ __INLINE void NONNULL_INLINE__ SWAP_END16B_TAB(WORD tab[], const WORD nb)
 **/
 __INLINE void NONNULL_INLINE__ SWAP_END32B_TAB(DWORD tab[], const WORD nb)
 {
-	for (unsigned int i = 0 ; i < nb ; i++)	{ tab[i] = SWAP_END32B(tab[i]); }
+	for (uintCPU_t i = 0 ; i < nb ; i++)	{ tab[i] = SWAP_END32B(tab[i]); }
 }
 
 
@@ -81,7 +81,7 @@ __INLINE void NONNULL_INLINE__ SWAP_END32B_TAB(DWORD tab[], const WORD nb)
 **/
 __INLINE void NONNULL_INLINE__ SWAP_END64B_TAB(LWORD tab[], const WORD nb)
 {
-	for (unsigned int i = 0 ; i < nb ; i++)	{ tab[i] = SWAP_END64B(tab[i]); }
+	for (uintCPU_t i = 0 ; i < nb ; i++)	{ tab[i] = SWAP_END64B(tab[i]); }
 }
 
 

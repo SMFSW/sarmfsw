@@ -107,9 +107,9 @@ __INLINE DWORD NONNULL__ strDecToInt(const CHAR * const pASCII, const BYTE len)
 {
 	DWORD dec = 0;
 
-	for (int i = len - 1, mult = 1 ; i >= 0 ; i--, mult *= 10)
+	for (intCPU_t i = len - 1, mult = 1 ; i >= 0 ; i--, mult *= 10)
 	{
-		const uint8_t single = ASCIIToHex(pASCII[i]);
+		const BYTE single = ASCIIToHex(pASCII[i]);
 
 		if (single > 9)		{ break; }
 
@@ -129,9 +129,9 @@ __INLINE DWORD NONNULL__ strHexToInt(const CHAR * const pASCII, const BYTE len)
 {
 	DWORD hex = 0;
 
-	for (int i = len - 1, shift = 0 ; i >= 0 ; i--, shift += 4)
+	for (intCPU_t i = len - 1, shift = 0 ; i >= 0 ; i--, shift += 4)
 	{
-		const uint8_t nybble = ASCIIToHex(pASCII[i]);
+		const BYTE nybble = ASCIIToHex(pASCII[i]);
 
 		if (nybble == 0xFF)	{ break; }
 

@@ -29,7 +29,7 @@
 /*** MS Time base ***/
 #ifndef HAL_MAX_TICKS
 //!\note Define HAL_MAX_TICKS with custom max value in project if tick max value is not using 32b variable full scale
-#define HAL_MAX_TICKS		((uint32_t) -1)		//!< Max Ticks value
+#define HAL_MAX_TICKS		((DWORD) -1)		//!< Max Ticks value
 #endif
 #ifndef HAL_MS_TICKS_FACTOR
 //!\note Define HAL_MS_TICKS_FACTOR with custom multiplier in project if tick period is not 1ms

@@ -29,10 +29,10 @@ __INLINE DWORD INLINE__ bin2gray(const DWORD bin)
 **/
 __INLINE DWORD gray2bin(const DWORD gray)
 {
-	unsigned int	bits = 32;
-	DWORD			tmp = gray;
+	uintCPU_t	bits = 32;
+	DWORD		tmp = gray;
 
-	while ((bits >>= 1) > 0)	{ tmp ^= (tmp >> bits); }
+	while (bits >>= 1)	{ tmp ^= (tmp >> bits); }
 
 	return tmp;
 }

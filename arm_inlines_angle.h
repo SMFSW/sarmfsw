@@ -37,10 +37,9 @@
 **/
 __INLINE float RAD_NORM(float rad)
 {
-	while (fabs(rad) > M_TWOPI)
-	{
-		rad += (rad < 0.0f) ? M_TWOPI : -M_TWOPI;
-	}
+	const float val = (rad < 0.0f) ? M_TWOPI : -M_TWOPI;
+
+	while (fabs(rad) > M_TWOPI)	{ rad += val; }
 
 	return rad;
 }
@@ -52,10 +51,9 @@ __INLINE float RAD_NORM(float rad)
 **/
 __INLINE float DEG_NORM(float deg)
 {
-	while (fabs(deg) > 360.0f)
-	{
-		deg += (deg < 0.0f) ? 360.0f : -360.0f;
-	}
+	const float val = (deg < 0.0f) ? 360.0f : -360.0f;
+
+	while (fabs(deg) > 360.0f)	{ deg += val; }
 
 	return deg;
 }
@@ -100,7 +98,7 @@ __INLINE float RAD_TO_FLOAT(const float rad)
 **/
 __INLINE float FLOAT_TO_RAD(const float val)
 {
-	return (val - (SDWORD) val) * M_TWOPI;
+	return (val - (intCPU_t) val) * M_TWOPI;
 }
 
 
@@ -119,7 +117,7 @@ __INLINE float DEG_TO_FLOAT(const float deg)
 **/
 __INLINE float FLOAT_TO_DEG(const float val)
 {
-	return (val - (SDWORD) val) * 360.0f;
+	return (val - (intCPU_t) val) * 360.0f;
 }
 
 

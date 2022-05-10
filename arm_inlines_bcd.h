@@ -24,12 +24,12 @@ __INLINE DWORD HexToBCD(const DWORD hex)
 {
 	if (hex > 99999999)		{ return (DWORD) -1; }
 
-	uint32_t res = 0;
+	DWORD res = 0;
 
 	div_t tmp;
 	tmp.quot = hex;
 
-	for (int i = 0 ; i < 8 ; i++)
+	for (uintCPU_t i = 0 ; i < 8 ; i++)
 	{
 		tmp = div(tmp.quot, 10);
 		res |= LSHIFT(tmp.rem, (4 * i));
@@ -46,11 +46,11 @@ __INLINE DWORD HexToBCD(const DWORD hex)
 **/
 __INLINE DWORD BCDToHex(const DWORD bcd)
 {
-	uint32_t res = 0, mult = 1;
+	DWORD res = 0, mult = 1;
 
-	for (unsigned int i = 0 ; i < 8 ; i++, mult *= 10)
+	for (uintCPU_t i = 0 ; i < 8 ; i++, mult *= 10)
 	{
-		const uint8_t single = RSHIFT(bcd, (4 * i)) & 0x0F;
+		const BYTE single = RSHIFT(bcd, (4 * i)) & 0x0F;
 
 		if (single > 9)		{ return (DWORD) -1; }
 

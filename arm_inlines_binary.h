@@ -20,11 +20,11 @@
 **/
 __INLINE DWORD maskBits(const BYTE bits)
 {
-	const BYTE	nb_bits = 32;
-	const BYTE	nb = (bits > nb_bits) ? nb_bits : bits;
-	DWORD		mask = 0;
+	const uintCPU_t	nb_bits = 32;
+	const uintCPU_t	nb = min(bits, nb_bits);
+	DWORD			mask = 0;
 
-	for (unsigned int i = 0 ; i < nb ; i++)	{ mask |= 1UL << i; }
+	for (uintCPU_t i = 0 ; i < nb ; i++)	{ mask |= 1UL << i; }
 
 	return mask;
 }
@@ -39,11 +39,11 @@ __INLINE DWORD maskBits(const BYTE bits)
 **/
 __INLINE BYTE nbBitsState(const DWORD val, const BYTE bits, const BOOL state)
 {
-	const BYTE	nb_bits = 32;
-	const BYTE	nb = (bits > nb_bits) ? nb_bits : bits;
-	BYTE		ret = 0;
+	const uintCPU_t	nb_bits = 32;
+	const uintCPU_t	nb = min(bits, nb_bits);
+	BYTE			ret = 0;
 
-	for (unsigned int i = 0 ; i < nb ; i++)	{ if (val & (1UL << i))	ret++; }
+	for (uintCPU_t i = 0 ; i < nb ; i++)	{ if (val & (1UL << i))	ret++; }
 
 	return state ? ret : nb - ret;
 }
@@ -58,9 +58,9 @@ __INLINE BYTE nbBitsState(const DWORD val, const BYTE bits, const BOOL state)
 **/
 __INLINE SBYTE getMSBitSet(const DWORD val)
 {
-	const BYTE	nb_bits = 32;
+	const intCPU_t nb_bits = 32;
 
-	for (int i = nb_bits - 1 ; i >= 0 ; i--)	{ if (val & (1UL << i))	return i; }
+	for (intCPU_t i = nb_bits - 1 ; i >= 0 ; i--)	{ if (val & (1UL << i))	return i; }
 
 	return -1;
 }
@@ -74,11 +74,11 @@ __INLINE SBYTE getMSBitSet(const DWORD val)
 **/
 __INLINE DWORD swapBits(const DWORD val, const BYTE bits)
 {
-	const BYTE	nb_bits = 32;
-	const BYTE	nb = (bits > nb_bits ? nb_bits : bits) - 1;
-	DWORD		swap = 0;
+	const intCPU_t	nb_bits = 32;
+	const intCPU_t	nb = min(bits, nb_bits) - 1;
+	DWORD			swap = 0;
 
-	for (int i = nb ; i >= 0 ; i--)	{ if (val & (1UL << i))	swap |= 1UL << (nb - i); }
+	for (intCPU_t i = nb ; i >= 0 ; i--)	{ if (val & (1UL << i))	swap |= 1UL << (nb - i); }
 
 	return swap;
 }
