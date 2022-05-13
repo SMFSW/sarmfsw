@@ -150,11 +150,14 @@
 #define nbinEval(exp)		(!binEval(exp))				//!< complemented boolean evaluation of expression \b exp
 
 
-//! \warning SCALE_VAL does not check types and is limited to MCU register size computation, for larger scales, use \ref scaleValue instead
-#define SCALE_VAL(	v,					\
-					from_min, from_max,	\
-					to_min, to_max)		\
-					(((((v) - from_min) * (to_max - to_min)) / (from_max - from_min)) + to_min)	//!< Scale value \b v from range \b from_min:from_max to range \b to_min:to_max
+//! \warning SCALE_VAL does not check types and is limited to MCU register size computation, for larger scales, use \ref SCALE_VAL_T or \ref scaleValue instead
+#define SCALE_VAL(	v, from_min, from_max, to_min, to_max)		\
+					(((((v) - from_min) * (to_max - to_min))	\
+					/ (from_max - from_min)) + to_min)	//!< Scale value \b v from range \b from_min:from_max to range \b to_min:to_max
+
+#define SCALE_VAL_T(t, v, from_min, from_max, to_min, to_max)					\
+					(((((t) (v) - (t) from_min) * ((t) to_max - (t) to_min))	\
+					/ ((t) from_max - (t) from_min)) + (t) to_min)	//!< Scale typed \b t value \b v from range \b from_min:from_max to range \b to_min:to_max
 
 #define CLAMP(v, mn, mx)	((v) < (mn) ? (mn) : ((v) > (mx) ? (mx) : (v)))						//!< Returns the value between \b mn and \b mx from \b val
 #define	MAX3(a, b, c)		((b) >= (c) ? ((a) >= (b) ? (a) : (b)) : ((a) >= (c) ? (a) : (c)))	//!< Returns max value between \b a, \b b and \b c
