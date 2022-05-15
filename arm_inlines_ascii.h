@@ -63,7 +63,7 @@ __INLINE BOOL isAlphaNum(const CHAR ascii) {
 ** \warning You probably should ensure \b ascii is alphabetic char first
 **/
 __INLINE CHAR toLowerCase(const CHAR ascii) {
-	return binEval(isUpperCase(ascii)) ? (ascii + ('A' - 'a')) : ascii; }
+	return binEval(isUpperCase(ascii)) ? (ascii + ('a' - 'A')) : ascii; }
 
 
 /*!\brief Convert lower case alphabetic char to upper case
@@ -72,7 +72,7 @@ __INLINE CHAR toLowerCase(const CHAR ascii) {
 ** \warning You probably should ensure \b ascii is alphabetic char first
 **/
 __INLINE CHAR toUpperCase(const CHAR ascii) {
-	return binEval(isLowerCase(ascii)) ? (ascii - ('A' - 'a')) : ascii; }
+	return binEval(isLowerCase(ascii)) ? (ascii - ('a' - 'A')) : ascii; }
 
 
 /*!\brief Converts hexadecimal value to ASCII
