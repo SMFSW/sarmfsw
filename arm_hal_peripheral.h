@@ -142,6 +142,10 @@
 			#include "pccard.h"
 		#endif /* HAL_PCCARD_MODULE_ENABLED */
 
+		#ifdef HAL_PCD_MODULE_ENABLED
+			#include "usb_device.h"
+		#endif /* HAL_PCD_MODULE_ENABLED */
+
 		#ifdef HAL_QSPI_MODULE_ENABLED
 			#include "quadspi.h"
 		#endif /* HAL_QSPI_MODULE_ENABLED */

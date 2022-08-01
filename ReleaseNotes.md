@@ -24,6 +24,7 @@ SOFTWARE.
 
 * library entry point being sarmfsw.h, most cross includes in files now removed
 * inlines variable length and types reviewed
+* arm_hal_peripheral: PCD device enabled includes usb_device.h header
 * arm_macros: SCALE_VAL_T added
 * arm_macros: BYTE_TO_PERC byte value clamp added
 * arm_macros: LSHIFT & RSHIFT changed (handling optimized shift opcodes and more explicit sizes if desired/required)
