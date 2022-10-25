@@ -46,7 +46,11 @@ SOFTWARE.
 * arm_inlines_ascii: strDecToInt & strHexToInt returns correctly converted part if something goes wrong
 * arm_inlines_ascii: added check and convert inlines (num, alphanum, lower and upper case)
 * arm_inlines_ascii: added strDecToInt & strHexToInt
-* arm_inlines_linearization: assuming linearization tabs may not always be constant, const qualifier is now removed from declarations
+* arm_inlines_linearization: sLinearFlexArray typedef & linearization_eval_flex function added 
+* arm_inlines_linearization: linearization_eval constant parameters, nb values set to 32b
+* arm_inlines_linearization: linearXXX LINEAR_TAB macro generated name now outputs sLinearXXX
+* arm_attributes: scalar storage order attributes defined for __GNUC__ compiler (mostly for reference, not defined for other compilers)
+* Doxyfiles updated to reflect changes in Doxygen v1.9.x
 
 ## v3.5
 

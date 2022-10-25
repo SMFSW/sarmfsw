@@ -13,29 +13,45 @@
 /****************************************************************/
 
 
-#define	LINEAR_TAB(name, nbElem)		typedef struct linear##name {	\
-											WORD	nb;					\
-											SDWORD	array[nbElem][2];	\
-										} linear##name;	//!< Pattern tab typedef declaration with \b name catenation and \b nbElem max tab elements
+/*************************************************/
+/*** Non Flexible member array type definition ***/
+/*************************************************/
+#define	LINEAR_TAB(name, nbElem)	typedef struct sLinear##name {	\
+										DWORD	nb;					\
+										SDWORD	array[nbElem][2];	\
+									} sLinear##name;	//!< Pattern tab typedef declaration with \b name catenation and \b nbElem max array elements
 
-#define LINEAR_EVAL(name, val)			linearization_eval(name.array, name.nb, val)	//!< Macro to call linearization on a LINEAR_TAB typedef
+/*********************************************/
+/*** Flexible member array type definition ***/
+/*********************************************/
+/*!\struct sLinearFlexArray
+** \brief Linearization flexible member array structure
+** \note Can be used as declaration of static hard-coded initialized structures or dynamically allocated structures
+**/
+typedef struct sLinearFlexArray {
+	DWORD	nb;						//!< Number of items
+	SDWORD	array[/*flexible*/][2];	//!< Flexible 2 dimensional array member
+} sLinearFlexArray;
+
+
+#define LINEAR_EVAL(name, val)		linearization_eval(name.array, name.nb, val)	//!< Macro to call linearization on a LINEAR_TAB or sLinearFlexArray typedef
 
 
 /*!\brief 2 dimensional linearization
 **
-** \param [in] array - pointer to 2 dimensional
+** \param [in] array - pointer to 2 dimensional array
 ** \param [in] nb - Number of items of the array
 ** \param [in] val - Value to evaluate
 ** \return Evaluated value in regard of val
 **/
-__INLINE SDWORD NONNULL__ linearization_eval(SDWORD array[][2], WORD nb, const SDWORD val)
+__INLINE SDWORD NONNULL__ linearization_eval(const SDWORD array[][2], const DWORD nb, const SDWORD val)
 {
-	uintCPU_t idxMin = 0, idxMax = nb - 1;
+	DWORD idxMin = 0, idxMax = nb - 1;
 
 	// Find indexes
 	while (idxMax > idxMin + 1)
 	{
-		const uintCPU_t idx = ((idxMax - idxMin) / 2 + idxMin);
+		const DWORD idx = ((idxMax - idxMin) / 2 + idxMin);
 
 		if (val < array[idx][0])	{ idxMax = idx; }
 		else						{ idxMin = idx; }
@@ -51,6 +67,16 @@ __INLINE SDWORD NONNULL__ linearization_eval(SDWORD array[][2], WORD nb, const S
 	const float coef = (float) (y1 - y0) / (float) (x1 - x0);
 	return (SDWORD) (coef * (val - x0) + y0);
 }
+
+
+/*!\brief 2 dimensional linearization (flexible member array)
+**
+** \param [in] pArray - pointer to flexible member array structure
+** \param [in] val - Value to evaluate
+** \return Evaluated value in regard of val
+**/
+__INLINE SDWORD NONNULL_INLINE__ linearization_eval_flex(const sLinearFlexArray * const pArray, const SDWORD val) {
+	return linearization_eval(pArray->array, pArray->nb, val); }
 
 
 /****************************************************************/

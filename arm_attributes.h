@@ -120,6 +120,11 @@
 	// Common mixed attributes
 	#define NONNULL_INLINE__	ATTR__(nonnull, always_inline)			//!< \b Non-null and \b Always \b inline attributes
 
+	// Only supported starting GCC 6 (WARNING: here mostly for reference and specific cases, not defined for other compilers)
+	#define SSO(o)				scalar_storage_order(#o)				//!< Alias for Scalar Storage Order
+	#define BIG_ENDIAN__		ATTR__(packed, SSO(big-endian))			//!< Force structure in \b Big-Endian (use wisely or not at all)
+	#define LITTLE_ENDIAN__		ATTR__(packed, SSO(little-endian))		//!< Force structure in \b Little-Endian (use wisely or not at all)
+
 	#if (!defined(__OPTIMIZE__))
 	#define __NOOPT__													//!< \b No \b Optimizations attribute
 	#endif

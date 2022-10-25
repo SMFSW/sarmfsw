@@ -39,6 +39,7 @@ uLWord	KEYWORD1
 FctERR	KEYWORD1
 
 LINEAR_TAB	KEYWORD1
+sLinearFlexArray	KEYWORD1
 
 FW_target	KEYWORD1
 
@@ -197,6 +198,7 @@ RestrictedAverage_double	KEYWORD2
 
 LINEAR_EVAL	KEYWORD2
 linearization_eval	KEYWORD2
+linearization_eval_flex	KEYWORD2
 
 RAD_NORM	KEYWORD2
 DEG_NORM	KEYWORD2
