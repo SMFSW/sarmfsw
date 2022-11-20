@@ -9,8 +9,10 @@ var searchData=
   ['testendian_5ffull',['testEndian_full',['../arm__inlines__endian_8h.html#a8893c965376eecdcd9c55b156eada6bd',1,'arm_inlines_endian.h']]],
   ['tim',['TIM',['../arm__chip__stm32_8h.html#a9c6e547f2295dccada70bd4af9595791',1,'arm_chip_stm32.h']]],
   ['toggle',['Toggle',['../arm__typedefs_8h.html#abc85f209b5307f54c70121d3e83f14b9a0884ca4af1f5df7de6604f540de37743',1,'arm_typedefs.h']]],
-  ['tpsinf_5fms',['TPSINF_MS',['../arm__inlines__ticks_8h.html#ad4ad55aed33e20368b5384c61537662a',1,'arm_inlines_ticks.h']]],
-  ['tpssup_5fms',['TPSSUP_MS',['../arm__inlines__ticks_8h.html#aefcd7a71bbaec2ed56bc9e9aac39c109',1,'arm_inlines_ticks.h']]],
+  ['tolowercase',['toLowerCase',['../arm__inlines__ascii_8h.html#ad4b4e637114af0d3eefb2863849ba934',1,'arm_inlines_ascii.h']]],
+  ['touppercase',['toUpperCase',['../arm__inlines__ascii_8h.html#af647b1753e3ff9364df5f841489a6587',1,'arm_inlines_ascii.h']]],
+  ['tpsinf_5fms',['TPSINF_MS',['../arm__inlines__ticks_8h.html#a5ba90b95ab9aad46c8cf196dbdf843cd',1,'arm_inlines_ticks.h']]],
+  ['tpssup_5fms',['TPSSUP_MS',['../arm__inlines__ticks_8h.html#a72196af91b2f117d8e208fdbae0173a9',1,'arm_inlines_ticks.h']]],
   ['true',['TRUE',['../arm__macros_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d',1,'TRUE():&#160;arm_macros.h'],['../arm__macros_8h.html#add3ca9eefe3b5b754426f51d3043e579',1,'True():&#160;arm_macros.h']]],
   ['typ_5fmbr',['TYP_MBR',['../arm__macros_8h.html#a945f756368ec4c5e11befc58b4b91dc1',1,'arm_macros.h']]],
   ['typ_5fmbr_5ftyp',['TYP_MBR_TYP',['../arm__macros_8h.html#a26bc59a26ebb159518e4717ffa37cc6d',1,'arm_macros.h']]]

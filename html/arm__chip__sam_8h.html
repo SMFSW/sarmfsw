@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">sarmfsw: SMFSW Toolbox (for ARM &amp; compatible with Arduino platform)
-   &#160;<span id="projectnumber">3.5</span>
+   &#160;<span id="projectnumber">3.6</span>
    </div>
    <div id="projectbrief">SMFSW collection of miscellaneous functions &amp; macros (for ARM &amp; compatible with Arduino platform)</div>
   </td>
@@ -72,11 +72,7 @@ $(function() {
 
 <p>ARM common macros for Atmel SAM families.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="arm__attributes_8h_source.html">arm_attributes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="arm__typedefs_8h_source.html">arm_typedefs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="arm__errors_8h_source.html">arm_errors.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="arm__cmsis_8h_source.html">arm_cmsis.h</a>&quot;</code><br />
-<code>#include &quot;atmel_start_pins.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;atmel_start_pins.h&quot;</code><br />
 <code>#include &quot;err_codes.h&quot;</code><br />
 <code>#include &quot;hpl_reset.h&quot;</code><br />
 <code>#include &lt;XCAT(&lt;hri_, SAM_FAMILY).h&gt;</code><br />
@@ -85,10 +81,6 @@ Include dependency graph for arm_chip_sam.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="arm__chip__sam_8h__incl.png" border="0" usemap="#arm__chip__sam_8h" alt=""/></div>
 <map name="arm__chip__sam_8h" id="arm__chip__sam_8h">
-<area shape="rect" id="node2" href="arm__attributes_8h.html" title="ARM common compilers attributes. " alt="" coords="5,80,135,107"/>
-<area shape="rect" id="node3" href="arm__typedefs_8h.html" title="ARM common typedefs. " alt="" coords="159,80,282,107"/>
-<area shape="rect" id="node6" href="arm__errors_8h.html" title="ARM user errors. " alt="" coords="307,80,412,107"/>
-<area shape="rect" id="node7" href="arm__cmsis_8h.html" title="ARM link with CMSIS files. " alt="" coords="437,80,541,107"/>
 </map>
 </div>
 </div>
@@ -114,7 +106,7 @@ Macros</h2></td></tr>
 <tr class="memitem:a12c03261686c24d3f3607b9c3643c8f0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__sam_8h.html#a12c03261686c24d3f3607b9c3643c8f0">HAL_MS_TICKS_FACTOR</a>&#160;&#160;&#160;1</td></tr>
 <tr class="memdesc:a12c03261686c24d3f3607b9c3643c8f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">HAL milliseconds multiplier (depending tick counter frequency)  <a href="#a12c03261686c24d3f3607b9c3643c8f0">More...</a><br /></td></tr>
 <tr class="separator:a12c03261686c24d3f3607b9c3643c8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a209c11556884be396ddce3dc23156559"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__sam_8h.html#a209c11556884be396ddce3dc23156559">HALTicks</a>()&#160;&#160;&#160;HAL_GetTick()</td></tr>
+<tr class="memitem:a209c11556884be396ddce3dc23156559"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__sam_8h.html#a209c11556884be396ddce3dc23156559">HALTicks</a>()&#160;&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#af2c4f03d53e997a54e1fd5e80daa55c4">HAL_GetTick</a>()</td></tr>
 <tr class="memdesc:a209c11556884be396ddce3dc23156559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for HAL get ticks function.  <a href="#a209c11556884be396ddce3dc23156559">More...</a><br /></td></tr>
 <tr class="separator:a209c11556884be396ddce3dc23156559"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -128,27 +120,30 @@ Enumerations</h2></td></tr>
 <tr class="memitem:a54c1cd171722e4b22b2ee97d084f7900"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900">eResetSource</a> { <br />
 &#160;&#160;<a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = 1, 
 <a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF, 
-<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = RESET_REASON_POR, 
+<a class="el" href="arm__chip__pic_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = 1, 
+<a class="el" href="arm__chip__pic_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF, 
+<br />
+&#160;&#160;<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = RESET_REASON_POR, 
 <a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900af64bcf1bb1d174a2a924881b10ad7b63">RST_BODCORE</a> = RESET_REASON_BODCORE, 
-<br />
-&#160;&#160;<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900aa13fbd8342254bba39e061c16c4d6101">RST_BODVDD</a> = RESET_REASON_BODVDD, 
+<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900aa13fbd8342254bba39e061c16c4d6101">RST_BODVDD</a> = RESET_REASON_BODVDD, 
 <a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a7c7b4e219ec871bd20bfe1b65ab64e5d">RST_EXT</a> = RESET_REASON_EXT, 
-<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a40678c7575f6977727e7eebfb08e22d2">RST_WDT</a> = RESET_REASON_WDT, 
+<br />
+&#160;&#160;<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a40678c7575f6977727e7eebfb08e22d2">RST_WDT</a> = RESET_REASON_WDT, 
 <a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a96beca7cd7bd787aa59fa01171d26e90">RST_SYST</a> = RESET_REASON_SYST, 
-<br />
-&#160;&#160;<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF, 
+<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF, 
 <a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = 1, 
-<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900adbfa93139d6e2edfef0a92ef81e028cc">RST_BOR</a>, 
+<br />
+&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900adbfa93139d6e2edfef0a92ef81e028cc">RST_BOR</a>, 
 <a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a4c0091b55b47cca800d01a6a6442f586">RST_PIN</a>, 
-<br />
-&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a066003c79359a0b9bb25ea84ca4c9c6a">RST_SW</a>, 
+<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a066003c79359a0b9bb25ea84ca4c9c6a">RST_SW</a>, 
 <a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a58d541ad7dff9c6e770aa4aeffa3bcc4">RST_IWDG</a>, 
-<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900ad38183e2f4809aa13b2c149b9158cdb1">RST_WWDG</a>, 
-<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a33de1f2d7ec80d375553bd397b2b91f1">RST_LPWR</a>, 
 <br />
-&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a44373a6fa84a5148452e73e341c13056">RST_OBL</a>, 
+&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900ad38183e2f4809aa13b2c149b9158cdb1">RST_WWDG</a>, 
+<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a33de1f2d7ec80d375553bd397b2b91f1">RST_LPWR</a>, 
+<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a44373a6fa84a5148452e73e341c13056">RST_OBL</a>, 
 <a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd1dd71f600c1c5266b2b269b1288c2e">RST_V18PWR</a>, 
-<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a6b8d9bf9a35fe80d6bb309658838b97d">RST_FW</a>, 
+<br />
+&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a6b8d9bf9a35fe80d6bb309658838b97d">RST_FW</a>, 
 <a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF
 <br />
  }</td></tr>
@@ -156,20 +151,23 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:acc2f042134b3c25eeb40fea9fc0e9557"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__attributes_8h.html#ade2d8d7118f8ff49547f60aa0c3382bb">__INLINE</a> <a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900">eResetSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__sam_8h.html#acc2f042134b3c25eeb40fea9fc0e9557">HAL_ResetSource</a> (void)</td></tr>
-<tr class="memdesc:acc2f042134b3c25eeb40fea9fc0e9557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get and convert ATMEL Reset Source to eResetSource.  <a href="#acc2f042134b3c25eeb40fea9fc0e9557">More...</a><br /></td></tr>
-<tr class="separator:acc2f042134b3c25eeb40fea9fc0e9557"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa96e07d9f35418d295fa1a37b7ca9df3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__attributes_8h.html#ade2d8d7118f8ff49547f60aa0c3382bb">__INLINE</a> <a class="el" href="arm__errors_8h.html#abf6c1e972e63bb08ca4e60f3820ae617">FctERR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__sam_8h.html#aa96e07d9f35418d295fa1a37b7ca9df3">HALERRtoFCTERR</a> (const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a> status)</td></tr>
-<tr class="memdesc:aa96e07d9f35418d295fa1a37b7ca9df3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert ATMEL error code to FctERR.  <a href="#aa96e07d9f35418d295fa1a37b7ca9df3">More...</a><br /></td></tr>
-<tr class="separator:aa96e07d9f35418d295fa1a37b7ca9df3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2c4f03d53e997a54e1fd5e80daa55c4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__sam_8h.html#af2c4f03d53e997a54e1fd5e80daa55c4">HAL_GetTick</a> (void)</td></tr>
+<tr class="memdesc:af2c4f03d53e997a54e1fd5e80daa55c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">External definition of HAL_GetTick that shall be defined in project.  <a href="#af2c4f03d53e997a54e1fd5e80daa55c4">More...</a><br /></td></tr>
+<tr class="separator:af2c4f03d53e997a54e1fd5e80daa55c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd1b57d0c23eee7e4e777f12233b5b9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900">eResetSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__sam_8h.html#afd1b57d0c23eee7e4e777f12233b5b9b">HAL_ResetSource</a> (void)</td></tr>
+<tr class="memdesc:afd1b57d0c23eee7e4e777f12233b5b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get and convert ATMEL Reset Source to eResetSource.  <a href="#afd1b57d0c23eee7e4e777f12233b5b9b">More...</a><br /></td></tr>
+<tr class="separator:afd1b57d0c23eee7e4e777f12233b5b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bc1886e713db1fc285bdeeb34802694"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__errors_8h.html#abf6c1e972e63bb08ca4e60f3820ae617">FctERR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__sam_8h.html#a6bc1886e713db1fc285bdeeb34802694">HALERRtoFCTERR</a> (const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a> status)</td></tr>
+<tr class="memdesc:a6bc1886e713db1fc285bdeeb34802694"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert ATMEL error code to FctERR.  <a href="#a6bc1886e713db1fc285bdeeb34802694">More...</a><br /></td></tr>
+<tr class="separator:a6bc1886e713db1fc285bdeeb34802694"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ARM common macros for Atmel SAM families. </p>
 <dl class="section author"><dt>Author</dt><dd>SMFSW </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2021, SMFSW </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2022, SMFSW </dd></dl>
 <dl class="section attention"><dt>Attention</dt><dd>On SAM families you should configure a timer to count for ms. A TIM peripheral shall be configured in ATMEL START (with a period of 1ms). Using driver examples from ATMEL START generated code, you can add this code to your projects.</dd></dl>
-<div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">struct </span>timer_task TIMER_0_task1;</div><div class="line"><span class="keyword">static</span> <span class="keyword">volatile</span> uint32_t uwTick = 0;</div><div class="line"></div><div class="line"></div><div class="line">uint32_t HAL_GetTick(<span class="keywordtype">void</span>) {        <span class="comment">// Declare HALTicks() at project level if you&#39;re using a different getter function name</span></div><div class="line">    <span class="keywordflow">return</span> uwTick; }</div><div class="line"></div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> TIMER_0_task1_cb(<span class="keyword">const</span> <span class="keyword">struct</span> timer_task *<span class="keyword">const</span> timer_task) {</div><div class="line">    uwTick++; }</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> TIMER_0_start(<span class="keywordtype">void</span>)            <span class="comment">// Adapt function if TIM configured is not TIMER_0</span></div><div class="line">{</div><div class="line">    TIMER_0_task1.interval = 1;     <span class="comment">// Adjust interval if TIM period is faster than 1ms (or define appropriate HAL_MS_TICKS_FACTOR)</span></div><div class="line">    TIMER_0_task1.cb = TIMER_0_task1_cb;</div><div class="line">    TIMER_0_task1.mode = TIMER_TASK_REPEAT;</div><div class="line"></div><div class="line">    timer_add_task(&amp;TIMER_0, &amp;TIMER_0_task1);</div><div class="line">    timer_start(&amp;TIMER_0);</div><div class="line">}</div></div><!-- fragment --><p>Please note TIMER_0_start() shall be called at init. Also, HAL_GetTick shall be known to sarmfsw. As atmel_start_pins.h is included by sarmfsw, you should add HAL_GetTick prototype in the file:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line">uint32_t HAL_GetTick(<span class="keywordtype">void</span>);</div></div><!-- fragment --> </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">struct </span>timer_task TIMER_0_task1;</div><div class="line"><span class="keyword">static</span> <span class="keyword">volatile</span> uint32_t uwTick = 0;</div><div class="line"></div><div class="line"></div><div class="line">uint32_t <a class="code" href="arm__chip__pic_8h.html#af2c4f03d53e997a54e1fd5e80daa55c4">HAL_GetTick</a>(<span class="keywordtype">void</span>) {        <span class="comment">// Declare HALTicks() at project level if you&#39;re using a different getter function name</span></div><div class="line">    <span class="keywordflow">return</span> uwTick; }</div><div class="line"></div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> TIMER_0_task1_cb(<span class="keyword">const</span> <span class="keyword">struct</span> timer_task *<span class="keyword">const</span> timer_task) {</div><div class="line">    uwTick++; }</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> TIMER_0_start(<span class="keywordtype">void</span>)            <span class="comment">// Adapt function if TIM configured is not TIMER_0</span></div><div class="line">{</div><div class="line">    TIMER_0_task1.interval = 1;     <span class="comment">// Adjust interval if TIM period is faster than 1ms (or define appropriate HAL_MS_TICKS_FACTOR)</span></div><div class="line">    TIMER_0_task1.cb = TIMER_0_task1_cb;</div><div class="line">    TIMER_0_task1.mode = TIMER_TASK_REPEAT;</div><div class="line"></div><div class="line">    timer_add_task(&amp;TIMER_0, &amp;TIMER_0_task1);</div><div class="line">    timer_start(&amp;TIMER_0);</div><div class="line">}</div></div><!-- fragment --><p>Please note TIMER_0_start() shall be called at init. Also, HAL_GetTick shall be known to sarmfsw. As atmel_start_pins.h is included by sarmfsw, you should add HAL_GetTick prototype in the file:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line">uint32_t <a class="code" href="arm__chip__pic_8h.html#af2c4f03d53e997a54e1fd5e80daa55c4">HAL_GetTick</a>(<span class="keywordtype">void</span>);</div></div><!-- fragment --> </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a3d6ec9389968017326fe136c57af28a6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3d6ec9389968017326fe136c57af28a6">&#9670;&nbsp;</a></span>ARM_CMSIS_INC</h2>
 
@@ -246,13 +244,12 @@ Functions</h2></td></tr>
           <td class="memname">#define HALTicks</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;HAL_GetTick()</td>
+          <td>&#160;&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#af2c4f03d53e997a54e1fd5e80daa55c4">HAL_GetTick</a>()</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Alias for HAL get ticks function. </p>
-<dl class="section note"><dt>Note</dt><dd>Define HALTicks at project level to call your own ms tick getter function </dd></dl>
 
 </div>
 </div>
@@ -330,6 +327,10 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e"></a>RST_POR&#160;</td><td class="fielddoc"><p>Power On Reset. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d"></a>RST_UNKNOWN&#160;</td><td class="fielddoc"><p>Unknown Reset Source. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e"></a>RST_POR&#160;</td><td class="fielddoc"><p>Power On Reset. </p>
+</td></tr>
 <tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900af64bcf1bb1d174a2a924881b10ad7b63"></a>RST_BODCORE&#160;</td><td class="fielddoc"><p>Brown Out Reset. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900aa13fbd8342254bba39e061c16c4d6101"></a>RST_BODVDD&#160;</td><td class="fielddoc"></td></tr>
@@ -368,14 +369,14 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="acc2f042134b3c25eeb40fea9fc0e9557"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc2f042134b3c25eeb40fea9fc0e9557">&#9670;&nbsp;</a></span>HAL_ResetSource()</h2>
+<a id="af2c4f03d53e997a54e1fd5e80daa55c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2c4f03d53e997a54e1fd5e80daa55c4">&#9670;&nbsp;</a></span>HAL_GetTick()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="arm__attributes_8h.html#ade2d8d7118f8ff49547f60aa0c3382bb">__INLINE</a> <a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900">eResetSource</a> HAL_ResetSource </td>
+          <td class="memname">uint32_t HAL_GetTick </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -384,26 +385,62 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>External definition of HAL_GetTick that shall be defined in project. </p>
+
+</div>
+</div>
+<a id="afd1b57d0c23eee7e4e777f12233b5b9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd1b57d0c23eee7e4e777f12233b5b9b">&#9670;&nbsp;</a></span>HAL_ResetSource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900">eResetSource</a> HAL_ResetSource </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 <p>Get and convert ATMEL Reset Source to eResetSource. </p>
 <dl class="section warning"><dt>Warning</dt><dd>This function should be called soon after reset </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Last reset source </dd></dl>
 
 </div>
 </div>
-<a id="aa96e07d9f35418d295fa1a37b7ca9df3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa96e07d9f35418d295fa1a37b7ca9df3">&#9670;&nbsp;</a></span>HALERRtoFCTERR()</h2>
+<a id="a6bc1886e713db1fc285bdeeb34802694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bc1886e713db1fc285bdeeb34802694">&#9670;&nbsp;</a></span>HALERRtoFCTERR()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="arm__attributes_8h.html#ade2d8d7118f8ff49547f60aa0c3382bb">__INLINE</a> <a class="el" href="arm__errors_8h.html#abf6c1e972e63bb08ca4e60f3820ae617">FctERR</a> HALERRtoFCTERR </td>
+          <td class="memname"><a class="el" href="arm__errors_8h.html#abf6c1e972e63bb08ca4e60f3820ae617">FctERR</a> HALERRtoFCTERR </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a>&#160;</td>
           <td class="paramname"><em>status</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Convert ATMEL error code to FctERR. </p>

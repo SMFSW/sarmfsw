@@ -3,6 +3,7 @@ var searchData=
   ['align_5f_5f',['ALIGN__',['../arm__attributes_8h.html#acc95cef50a41c342b0a520c36700e3bb',1,'arm_attributes.h']]],
   ['arm_5fattributes_2eh',['arm_attributes.h',['../arm__attributes_8h.html',1,'']]],
   ['arm_5fchip_5fino_2eh',['arm_chip_ino.h',['../arm__chip__ino_8h.html',1,'']]],
+  ['arm_5fchip_5fpic_2eh',['arm_chip_pic.h',['../arm__chip__pic_8h.html',1,'']]],
   ['arm_5fchip_5fsam_2eh',['arm_chip_sam.h',['../arm__chip__sam_8h.html',1,'']]],
   ['arm_5fchip_5fstm32_2eh',['arm_chip_stm32.h',['../arm__chip__stm32_8h.html',1,'']]],
   ['arm_5fcmsis_2eh',['arm_cmsis.h',['../arm__cmsis_8h.html',1,'']]],
@@ -28,6 +29,7 @@ var searchData=
   ['arm_5fmacros_2eh',['arm_macros.h',['../arm__macros_8h.html',1,'']]],
   ['arm_5fstdclib_2eh',['arm_stdclib.h',['../arm__stdclib_8h.html',1,'']]],
   ['arm_5ftypedefs_2eh',['arm_typedefs.h',['../arm__typedefs_8h.html',1,'']]],
+  ['array',['array',['../structs_linear_flex_array.html#ac74a0aaf1bb0820910949f9e2e1b1f36',1,'sLinearFlexArray']]],
   ['asciitohex',['ASCIIToHex',['../arm__inlines__ascii_8h.html#a09bb0ae00bea03c71052f5e3b61c47b4',1,'arm_inlines_ascii.h']]],
   ['attr_5f_5f',['ATTR__',['../arm__attributes_8h.html#a4928d9d5681585f8bc21560cd30ef83d',1,'arm_attributes.h']]]
 ];

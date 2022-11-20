@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">sarmfsw: SMFSW Toolbox (for ARM &amp; compatible with Arduino platform)
-   &#160;<span id="projectnumber">3.5</span>
+   &#160;<span id="projectnumber">3.6</span>
    </div>
    <div id="projectbrief">SMFSW collection of miscellaneous functions &amp; macros (for ARM &amp; compatible with Arduino platform)</div>
   </td>
@@ -62,6 +62,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
@@ -71,8 +72,8 @@ $(function() {
 
 <p>ARM common typedefs.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
-<code>#include &lt;stdbool.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for arm_typedefs.h:</div>
 <div class="dyncontent">
@@ -85,26 +86,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="arm__typedefs_8h__dep__incl.png" border="0" usemap="#arm__typedefs_8hdep" alt=""/></div>
 <map name="arm__typedefs_8hdep" id="arm__typedefs_8hdep">
-<area shape="rect" id="node2" href="arm__chip__ino_8h.html" title="Common macros for Arduino. " alt="" coords="5,80,124,107"/>
-<area shape="rect" id="node3" href="arm__chip__sam_8h.html" title="ARM common macros for Atmel SAM families. " alt="" coords="149,80,277,107"/>
-<area shape="rect" id="node4" href="arm__chip__stm32_8h.html" title="ARM common macros for STM32. " alt="" coords="301,80,442,107"/>
-<area shape="rect" id="node5" href="arm__inlines_8h.html" title="ARM common inlines. " alt="" coords="1495,229,1602,256"/>
-<area shape="rect" id="node6" href="sarmfsw_8h.html" title="sarmfsw (ARM) common headers " alt="" coords="495,304,581,331"/>
-<area shape="rect" id="node7" href="arm__macros_8h.html" title="ARM common macros. " alt="" coords="553,80,667,107"/>
-<area shape="rect" id="node8" href="arm__inlines__var__size_8h.html" title="Variables size conversion inlines. " alt="" coords="632,155,799,181"/>
-<area shape="rect" id="node9" href="arm__inlines__var__test_8h.html" title="Variables test inlines. " alt="" coords="875,155,1041,181"/>
-<area shape="rect" id="node11" href="arm__inlines__ticks_8h.html" title="Ticks related inlines. " alt="" coords="1065,155,1208,181"/>
-<area shape="rect" id="node12" href="arm__inlines__binary_8h.html" title="Binary manipulation inlines. " alt="" coords="761,80,912,107"/>
-<area shape="rect" id="node13" href="arm__inlines__ascii_8h.html" title="ASCII code conversion inlines. " alt="" coords="1232,155,1375,181"/>
-<area shape="rect" id="node14" href="arm__inlines__bcd_8h.html" title="BCD code conversion inlines. " alt="" coords="1399,155,1536,181"/>
-<area shape="rect" id="node15" href="arm__inlines__gray_8h.html" title="Gray code conversion inlines. " alt="" coords="1560,155,1700,181"/>
-<area shape="rect" id="node16" href="arm__inlines__endian_8h.html" title="Endian conversion and testing inlines. " alt="" coords="1725,155,1882,181"/>
-<area shape="rect" id="node17" href="arm__inlines__float_8h.html" title="Floating point manipulation inlines. " alt="" coords="1907,155,2049,181"/>
-<area shape="rect" id="node18" href="arm__inlines__average_8h.html" title="Averaging inlines. " alt="" coords="1585,80,1752,107"/>
-<area shape="rect" id="node19" href="arm__inlines__linearization_8h.html" title="Linearization inlines. " alt="" coords="1857,80,2048,107"/>
-<area shape="rect" id="node20" href="arm__inlines__angle_8h.html" title="Angle conversion inlines. " alt="" coords="2114,80,2263,107"/>
-<area shape="rect" id="node21" href="arm__inlines__rotation_8h.html" title="Rotation inlines. " alt="" coords="2227,155,2391,181"/>
-<area shape="rect" id="node10" href="arm__stdclib_8h.html" title="ARM common standard c library wrapper macros. " alt="" coords="531,229,639,256"/>
+<area shape="rect" id="node2" href="sarmfsw_8h.html" title="sarmfsw (ARM) common headers " alt="" coords="23,80,110,107"/>
 </map>
 </div>
 </div>
@@ -137,8 +119,25 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Union for LWORD.  <a href="unionu_l_word.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a1b225b356e36e42cda8f2408a287c243"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__typedefs_8h.html#a1b225b356e36e42cda8f2408a287c243">__STDBOOL_DEF</a></td></tr>
+<tr class="separator:a1b225b356e36e42cda8f2408a287c243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3028be9b9d540095fd0a787b4c2bd02b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__typedefs_8h.html#a3028be9b9d540095fd0a787b4c2bd02b">__STDINT_DEF</a></td></tr>
+<tr class="memdesc:a3028be9b9d540095fd0a787b4c2bd02b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Include stdbool.h.  <a href="#a3028be9b9d540095fd0a787b4c2bd02b">More...</a><br /></td></tr>
+<tr class="separator:a3028be9b9d540095fd0a787b4c2bd02b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:aa1449461e7884124e1a46d7f5c0babfe"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__typedefs_8h.html#aa1449461e7884124e1a46d7f5c0babfe">intCPU_t</a></td></tr>
+<tr class="memdesc:aa1449461e7884124e1a46d7f5c0babfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signed integer typedef.  <a href="#aa1449461e7884124e1a46d7f5c0babfe">More...</a><br /></td></tr>
+<tr class="separator:aa1449461e7884124e1a46d7f5c0babfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac78fad3d8bf59eb44161d6fb5f4c73f8"><td class="memItemLeft" align="right" valign="top">typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__typedefs_8h.html#ac78fad3d8bf59eb44161d6fb5f4c73f8">uintCPU_t</a></td></tr>
+<tr class="memdesc:ac78fad3d8bf59eb44161d6fb5f4c73f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsigned integer typedef.  <a href="#ac78fad3d8bf59eb44161d6fb5f4c73f8">More...</a><br /></td></tr>
+<tr class="separator:ac78fad3d8bf59eb44161d6fb5f4c73f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab40a1f154aa44511af7f97b88296f7d3"><td class="memItemLeft" align="right" valign="top">typedef bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__typedefs_8h.html#ab40a1f154aa44511af7f97b88296f7d3">BOOL</a></td></tr>
+<tr class="memdesc:ab40a1f154aa44511af7f97b88296f7d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">boolean typedef (1bit, for stdbool.h handling compilers)  <a href="#ab40a1f154aa44511af7f97b88296f7d3">More...</a><br /></td></tr>
+<tr class="separator:ab40a1f154aa44511af7f97b88296f7d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebb9e13210d88d43e32e735ada43a425"><td class="memItemLeft" align="right" valign="top">typedef char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__typedefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a></td></tr>
 <tr class="memdesc:aebb9e13210d88d43e32e735ada43a425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Char typedef (8bits)  <a href="#aebb9e13210d88d43e32e735ada43a425">More...</a><br /></td></tr>
 <tr class="separator:aebb9e13210d88d43e32e735ada43a425"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,14 +219,66 @@ Enumerations</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ARM common typedefs. </p>
 <dl class="section author"><dt>Author</dt><dd>SMFSW </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2021, SMFSW </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2022, SMFSW </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Endianness for unions shall be checked following target / compiler to avoid potential headaches! </dd>
 <dd>
 sBitfieldXX are defined from lsb to msb as most compiler does by default; if it's not the case, try to find a compiler directive or pragma to reverse bitfield order; if not available, define REVERSE_BITFIELD symbol at project level. </dd>
 <dd>
 For Arduino platform, some binary.h definitions needs to be undefined. If you find them useful, define I_FIND_BINARY_HEADER_USEFUL in project to redefine them. Please note, B0 &amp; B1 Bytes sub-structures of sBitfieldXX will not be available anymore (please refer to following note) </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>For Arduino platform, prefer ANSI-C(pp) 0b notation for binary representation, instead of using derived defines from Arduino binary.h </dd></dl>
-</div><h2 class="groupheader">Typedef Documentation</h2>
+<dl class="section note"><dt>Note</dt><dd>For Arduino platform, prefer ANSI-C(pp) 0b notation for binary representation, instead of using derived defines from Arduino binary.h </dd>
+<dd>
+SARMFSW_STDBOOL_NDEF can defined at project level if stdint.h doesn't exist for target compiler </dd>
+<dd>
+SARMFSW_STDINT_NDEF can defined at project level if stdint.h doesn't exist for target compiler </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a1b225b356e36e42cda8f2408a287c243"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b225b356e36e42cda8f2408a287c243">&#9670;&nbsp;</a></span>__STDBOOL_DEF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __STDBOOL_DEF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3028be9b9d540095fd0a787b4c2bd02b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3028be9b9d540095fd0a787b4c2bd02b">&#9670;&nbsp;</a></span>__STDINT_DEF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __STDINT_DEF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Include stdbool.h. </p>
+<p>Include stdint.h </p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ab40a1f154aa44511af7f97b88296f7d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab40a1f154aa44511af7f97b88296f7d3">&#9670;&nbsp;</a></span>BOOL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef bool <a class="el" href="arm__typedefs_8h.html#ab40a1f154aa44511af7f97b88296f7d3">BOOL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>boolean typedef (1bit, for stdbool.h handling compilers) </p>
+
+</div>
+</div>
 <a id="aae9749d96e15ccb4f482dd5f55d98f9b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aae9749d96e15ccb4f482dd5f55d98f9b">&#9670;&nbsp;</a></span>BYTE</h2>
 
@@ -329,6 +380,22 @@ For Arduino platform, some binary.h definitions needs to be undefined. If you fi
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa1449461e7884124e1a46d7f5c0babfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1449461e7884124e1a46d7f5c0babfe">&#9670;&nbsp;</a></span>intCPU_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int <a class="el" href="arm__typedefs_8h.html#aa1449461e7884124e1a46d7f5c0babfe">intCPU_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Signed integer typedef. </p>
 
 </div>
 </div>
@@ -493,6 +560,22 @@ For Arduino platform, some binary.h definitions needs to be undefined. If you fi
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac78fad3d8bf59eb44161d6fb5f4c73f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac78fad3d8bf59eb44161d6fb5f4c73f8">&#9670;&nbsp;</a></span>uintCPU_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned int <a class="el" href="arm__typedefs_8h.html#ac78fad3d8bf59eb44161d6fb5f4c73f8">uintCPU_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unsigned integer typedef. </p>
 
 </div>
 </div>

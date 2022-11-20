@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">sarmfsw: SMFSW Toolbox (for ARM &amp; compatible with Arduino platform)
-   &#160;<span id="projectnumber">3.5</span>
+   &#160;<span id="projectnumber">3.6</span>
    </div>
    <div id="projectbrief">SMFSW collection of miscellaneous functions &amp; macros (for ARM &amp; compatible with Arduino platform)</div>
   </td>
@@ -61,7 +61,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">arm_inlines_linearization.h File Reference</div>  </div>
@@ -70,16 +72,7 @@ $(function() {
 
 <p>Linearization inlines.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="arm__typedefs_8h_source.html">arm_typedefs.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for arm_inlines_linearization.h:</div>
-<div class="dyncontent">
-<div class="center"><img src="arm__inlines__linearization_8h__incl.png" border="0" usemap="#arm__inlines__linearization_8h" alt=""/></div>
-<map name="arm__inlines__linearization_8h" id="arm__inlines__linearization_8h">
-<area shape="rect" id="node2" href="arm__typedefs_8h.html" title="ARM common typedefs. " alt="" coords="39,80,162,107"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
+<div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="arm__inlines__linearization_8h__dep__incl.png" border="0" usemap="#arm__inlines__linearization_8hdep" alt=""/></div>
@@ -91,25 +84,39 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 <p><a href="arm__inlines__linearization_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs_linear_flex_array.html">sLinearFlexArray</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linearization flexible member array structure.  <a href="structs_linear_flex_array.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a06fbd5b88ba1075d22c01506ef5f8d04"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__linearization_8h.html#a06fbd5b88ba1075d22c01506ef5f8d04">LINEAR_TAB</a>(name,  nbElem)</td></tr>
-<tr class="memdesc:a06fbd5b88ba1075d22c01506ef5f8d04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pattern tab typedef declaration with <b>name</b> catenation and <b>nbElem</b> max tab elements.  <a href="#a06fbd5b88ba1075d22c01506ef5f8d04">More...</a><br /></td></tr>
+<tr class="memdesc:a06fbd5b88ba1075d22c01506ef5f8d04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pattern tab typedef declaration with <b>name</b> catenation and <b>nbElem</b> max array elements.  <a href="#a06fbd5b88ba1075d22c01506ef5f8d04">More...</a><br /></td></tr>
 <tr class="separator:a06fbd5b88ba1075d22c01506ef5f8d04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2433dd8390ea4e7d97e827c66dfcb10e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__linearization_8h.html#a2433dd8390ea4e7d97e827c66dfcb10e">LINEAR_EVAL</a>(name,  val)&#160;&#160;&#160;<a class="el" href="arm__inlines__linearization_8h.html#a28d9eb6a585d0a3e4eda746eced007fa">linearization_eval</a>(name.array, name.nb, val)</td></tr>
-<tr class="memdesc:a2433dd8390ea4e7d97e827c66dfcb10e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to call linearization on a LINEAR_TAB typedef.  <a href="#a2433dd8390ea4e7d97e827c66dfcb10e">More...</a><br /></td></tr>
+<tr class="memitem:a2433dd8390ea4e7d97e827c66dfcb10e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__linearization_8h.html#a2433dd8390ea4e7d97e827c66dfcb10e">LINEAR_EVAL</a>(name,  val)&#160;&#160;&#160;<a class="el" href="arm__inlines__linearization_8h.html#abb47fc0c16796affd5b3a9dfd665b186">linearization_eval</a>(name.array, name.nb, val)</td></tr>
+<tr class="memdesc:a2433dd8390ea4e7d97e827c66dfcb10e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to call linearization on a LINEAR_TAB or <a class="el" href="structs_linear_flex_array.html" title="Linearization flexible member array structure. ">sLinearFlexArray</a> typedef.  <a href="#a2433dd8390ea4e7d97e827c66dfcb10e">More...</a><br /></td></tr>
 <tr class="separator:a2433dd8390ea4e7d97e827c66dfcb10e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a702f02d228d64bae487af2f21558009d"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structs_linear_flex_array.html">sLinearFlexArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__linearization_8h.html#a702f02d228d64bae487af2f21558009d">sLinearFlexArray</a></td></tr>
+<tr class="separator:a702f02d228d64bae487af2f21558009d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a28d9eb6a585d0a3e4eda746eced007fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__linearization_8h.html#a28d9eb6a585d0a3e4eda746eced007fa">linearization_eval</a> (const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a> array[][2], const <a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a> nb, const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a> val)</td></tr>
-<tr class="memdesc:a28d9eb6a585d0a3e4eda746eced007fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">2 dimensional linearization  <a href="#a28d9eb6a585d0a3e4eda746eced007fa">More...</a><br /></td></tr>
-<tr class="separator:a28d9eb6a585d0a3e4eda746eced007fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb47fc0c16796affd5b3a9dfd665b186"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__linearization_8h.html#abb47fc0c16796affd5b3a9dfd665b186">linearization_eval</a> (const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a> array[][2], const <a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a> nb, const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a> val)</td></tr>
+<tr class="memdesc:abb47fc0c16796affd5b3a9dfd665b186"><td class="mdescLeft">&#160;</td><td class="mdescRight">2 dimensional linearization  <a href="#abb47fc0c16796affd5b3a9dfd665b186">More...</a><br /></td></tr>
+<tr class="separator:abb47fc0c16796affd5b3a9dfd665b186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54325f205c7d2fe43ed694f0472998f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__inlines__linearization_8h.html#a54325f205c7d2fe43ed694f0472998f3">linearization_eval_flex</a> (const <a class="el" href="structs_linear_flex_array.html">sLinearFlexArray</a> *const pArray, const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a> val)</td></tr>
+<tr class="memdesc:a54325f205c7d2fe43ed694f0472998f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">2 dimensional linearization (flexible member array)  <a href="#a54325f205c7d2fe43ed694f0472998f3">More...</a><br /></td></tr>
+<tr class="separator:a54325f205c7d2fe43ed694f0472998f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Linearization inlines. </p>
 <dl class="section author"><dt>Author</dt><dd>SMFSW </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2021, SMFSW </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2022, SMFSW </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a2433dd8390ea4e7d97e827c66dfcb10e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2433dd8390ea4e7d97e827c66dfcb10e">&#9670;&nbsp;</a></span>LINEAR_EVAL</h2>
@@ -132,12 +139,12 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="arm__inlines__linearization_8h.html#a28d9eb6a585d0a3e4eda746eced007fa">linearization_eval</a>(name.array, name.nb, val)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="arm__inlines__linearization_8h.html#abb47fc0c16796affd5b3a9dfd665b186">linearization_eval</a>(name.array, name.nb, val)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro to call linearization on a LINEAR_TAB typedef. </p>
+<p>Macro to call linearization on a LINEAR_TAB or <a class="el" href="structs_linear_flex_array.html" title="Linearization flexible member array structure. ">sLinearFlexArray</a> typedef. </p>
 
 </div>
 </div>
@@ -166,16 +173,29 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>linear##name {           \</div><div class="line">                                            const <a class="code" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>      nb;                 \</div><div class="line">                                            const <a class="code" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a>    array[nbElem][2];   \</div><div class="line">                                        } linear##name;</div><div class="ttc" id="arm__typedefs_8h_html_a3119cd3f198b5e533a6a415156ddf013"><div class="ttname"><a href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a></div><div class="ttdeci">int32_t SDWORD</div><div class="ttdoc">Signed dWord typedef (32bits) </div><div class="ttdef"><b>Definition:</b> arm_typedefs.h:64</div></div>
-<div class="ttc" id="arm__typedefs_8h_html_ab24077addd3b7b13e086987ff296552c"><div class="ttname"><a href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a></div><div class="ttdeci">uint16_t WORD</div><div class="ttdoc">Unsigned Word typedef (16bits) </div><div class="ttdef"><b>Definition:</b> arm_typedefs.h:59</div></div>
-</div><!-- fragment -->
-<p>Pattern tab typedef declaration with <b>name</b> catenation and <b>nbElem</b> max tab elements. </p>
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>sLinear##name {  \</div><div class="line">                                        DWORD   nb;                 \</div><div class="line">                                        SDWORD  array[nbElem][2];   \</div><div class="line">                                    } sLinear##name;</div></div><!-- fragment -->
+<p>Pattern tab typedef declaration with <b>name</b> catenation and <b>nbElem</b> max array elements. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a702f02d228d64bae487af2f21558009d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a702f02d228d64bae487af2f21558009d">&#9670;&nbsp;</a></span>sLinearFlexArray</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structs_linear_flex_array.html">sLinearFlexArray</a>  <a class="el" href="structs_linear_flex_array.html">sLinearFlexArray</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a28d9eb6a585d0a3e4eda746eced007fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28d9eb6a585d0a3e4eda746eced007fa">&#9670;&nbsp;</a></span>linearization_eval()</h2>
+<a id="abb47fc0c16796affd5b3a9dfd665b186"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb47fc0c16796affd5b3a9dfd665b186">&#9670;&nbsp;</a></span>linearization_eval()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,7 +212,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>&#160;</td>
           <td class="paramname"><em>nb</em>, </td>
         </tr>
         <tr>
@@ -217,13 +237,75 @@ Functions</h2></td></tr>
 <p>2 dimensional linearization </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">array</td><td>- pointer to 2 dimensional </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">array</td><td>- pointer to 2 dimensional array </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">nb</td><td>- Number of items of the array </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>- Value to evaluate </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Evaluated value in regard of val </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="arm__inlines__linearization_8h_abb47fc0c16796affd5b3a9dfd665b186_cgraph.png" border="0" usemap="#arm__inlines__linearization_8h_abb47fc0c16796affd5b3a9dfd665b186_cgraph" alt=""/></div>
+<map name="arm__inlines__linearization_8h_abb47fc0c16796affd5b3a9dfd665b186_cgraph" id="arm__inlines__linearization_8h_abb47fc0c16796affd5b3a9dfd665b186_cgraph">
+<area shape="rect" id="node2" href="arm__inlines__linearization_8h.html#a54325f205c7d2fe43ed694f0472998f3" title="2 dimensional linearization (flexible member array) " alt="" coords="185,5,347,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a54325f205c7d2fe43ed694f0472998f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54325f205c7d2fe43ed694f0472998f3">&#9670;&nbsp;</a></span>linearization_eval_flex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a> linearization_eval_flex </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structs_linear_flex_array.html">sLinearFlexArray</a> *const&#160;</td>
+          <td class="paramname"><em>pArray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013">SDWORD</a>&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>2 dimensional linearization (flexible member array) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pArray</td><td>- pointer to flexible member array structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>- Value to evaluate </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Evaluated value in regard of val </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="arm__inlines__linearization_8h_a54325f205c7d2fe43ed694f0472998f3_icgraph.png" border="0" usemap="#arm__inlines__linearization_8h_a54325f205c7d2fe43ed694f0472998f3_icgraph" alt=""/></div>
+<map name="arm__inlines__linearization_8h_a54325f205c7d2fe43ed694f0472998f3_icgraph" id="arm__inlines__linearization_8h_a54325f205c7d2fe43ed694f0472998f3_icgraph">
+<area shape="rect" id="node2" href="arm__inlines__linearization_8h.html#abb47fc0c16796affd5b3a9dfd665b186" title="2 dimensional linearization " alt="" coords="215,5,347,32"/>
+</map>
+</div>
 
 </div>
 </div>

@@ -1,6 +1,8 @@
 var searchData=
 [
   ['scalevalue',['scaleValue',['../arm__inlines__var__size_8h.html#ab7a4ed95964c912e64242d8aa2f19764',1,'arm_inlines_var_size.h']]],
+  ['strdectoint',['strDecToInt',['../arm__inlines__ascii_8h.html#ad776f83d1f57d3dd5ab24c9988ad6537',1,'arm_inlines_ascii.h']]],
+  ['strhextoint',['strHexToInt',['../arm__inlines__ascii_8h.html#a9efdb2427de10516e4fcb9b8bb4321d3',1,'arm_inlines_ascii.h']]],
   ['swap_5fend16b',['SWAP_END16B',['../arm__inlines__endian_8h.html#aee4cd55d7169d1fbf0eaff78a9fa81e4',1,'arm_inlines_endian.h']]],
   ['swap_5fend16b_5ftab',['SWAP_END16B_TAB',['../arm__inlines__endian_8h.html#a09502510b3fc307c4f6c14e45aa1fe1a',1,'arm_inlines_endian.h']]],
   ['swap_5fend32b',['SWAP_END32B',['../arm__inlines__endian_8h.html#a33178bfe2a44506a79e74e63b745c359',1,'arm_inlines_endian.h']]],

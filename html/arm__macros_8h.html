@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">sarmfsw: SMFSW Toolbox (for ARM &amp; compatible with Arduino platform)
-   &#160;<span id="projectnumber">3.5</span>
+   &#160;<span id="projectnumber">3.6</span>
    </div>
    <div id="projectbrief">SMFSW collection of miscellaneous functions &amp; macros (for ARM &amp; compatible with Arduino platform)</div>
   </td>
@@ -69,25 +69,12 @@ $(function() {
 
 <p>ARM common macros.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="arm__typedefs_8h_source.html">arm_typedefs.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for arm_macros.h:</div>
-<div class="dyncontent">
-<div class="center"><img src="arm__macros_8h__incl.png" border="0" usemap="#arm__macros_8h" alt=""/></div>
-<map name="arm__macros_8h" id="arm__macros_8h">
-<area shape="rect" id="node2" href="arm__typedefs_8h.html" title="ARM common typedefs. " alt="" coords="29,80,151,107"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
+<div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="arm__macros_8h__dep__incl.png" border="0" usemap="#arm__macros_8hdep" alt=""/></div>
 <map name="arm__macros_8hdep" id="arm__macros_8hdep">
-<area shape="rect" id="node2" href="arm__inlines_8h.html" title="ARM common inlines. " alt="" coords="154,155,260,181"/>
-<area shape="rect" id="node3" href="sarmfsw_8h.html" title="sarmfsw (ARM) common headers " alt="" coords="380,229,466,256"/>
-<area shape="rect" id="node4" href="arm__inlines__var__size_8h.html" title="Variables size conversion inlines. " alt="" coords="28,80,194,107"/>
-<area shape="rect" id="node5" href="arm__inlines__var__test_8h.html" title="Variables test inlines. " alt="" coords="218,80,385,107"/>
-<area shape="rect" id="node6" href="arm__stdclib_8h.html" title="ARM common standard c library wrapper macros. " alt="" coords="461,155,569,181"/>
+<area shape="rect" id="node2" href="sarmfsw_8h.html" title="sarmfsw (ARM) common headers " alt="" coords="19,80,106,107"/>
 </map>
 </div>
 </div>
@@ -134,31 +121,51 @@ Macros</h2></td></tr>
 <tr class="memitem:a36f8749a10d3021f66f0fbf0676f76d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a36f8749a10d3021f66f0fbf0676f76d4">SET_BITS_VAL</a>(v,  c,  s)&#160;&#160;&#160;(v = ((v &amp; ~(c)) | (s)))</td></tr>
 <tr class="memdesc:a36f8749a10d3021f66f0fbf0676f76d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set variable <b>v</b> with clear mask <b>c</b> to set mask <b>s</b>.  <a href="#a36f8749a10d3021f66f0fbf0676f76d4">More...</a><br /></td></tr>
 <tr class="separator:a36f8749a10d3021f66f0fbf0676f76d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa53ed25e24178bfac0ec1243ad8c8f52"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#aa53ed25e24178bfac0ec1243ad8c8f52">LSHIFT</a>(v,  b)&#160;&#160;&#160;((v) * (1UL &lt;&lt; b))</td></tr>
-<tr class="separator:aa53ed25e24178bfac0ec1243ad8c8f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50c56a86ec21900ff4ca56fd922cfad9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a50c56a86ec21900ff4ca56fd922cfad9">RSHIFT</a>(v,  b)&#160;&#160;&#160;((v) / (1UL &lt;&lt; b))</td></tr>
-<tr class="separator:a50c56a86ec21900ff4ca56fd922cfad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69d954313882b370a888c21433f108a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a69d954313882b370a888c21433f108a9">LSHIFT64</a>(v,  b)&#160;&#160;&#160;((v) * (1ULL &lt;&lt; b))</td></tr>
-<tr class="separator:a69d954313882b370a888c21433f108a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a127ac6aac4c8e3f1ef5d02feab40afa7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a127ac6aac4c8e3f1ef5d02feab40afa7">RSHIFT64</a>(v,  b)&#160;&#160;&#160;((v) / (1ULL &lt;&lt; b))</td></tr>
-<tr class="memdesc:a127ac6aac4c8e3f1ef5d02feab40afa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift <b>v</b> <b>b</b> bits right (up to 63b)  <a href="#a127ac6aac4c8e3f1ef5d02feab40afa7">More...</a><br /></td></tr>
-<tr class="separator:a127ac6aac4c8e3f1ef5d02feab40afa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a54665fc1a9138ee101d6d83288177a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a9a54665fc1a9138ee101d6d83288177a">MAKEWORD</a>(lsb,  msb)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (lsb)) | <a class="el" href="arm__macros_8h.html#aa53ed25e24178bfac0ec1243ad8c8f52">LSHIFT</a>(((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) ((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (msb))), 8)))</td></tr>
+<tr class="memitem:ac67c4dbfe2f188872a0ac531c73e2821"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#ac67c4dbfe2f188872a0ac531c73e2821">LSHIFT</a>(v,  n)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) ((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (v) &lt;&lt; n))</td></tr>
+<tr class="separator:ac67c4dbfe2f188872a0ac531c73e2821"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf5b4d01be517fa611eb7d1cb3378d25"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#abf5b4d01be517fa611eb7d1cb3378d25">RSHIFT</a>(v,  n)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) ((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (v) &gt;&gt; n))</td></tr>
+<tr class="memdesc:abf5b4d01be517fa611eb7d1cb3378d25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift <b>v</b> <b>n</b> bits right.  <a href="#abf5b4d01be517fa611eb7d1cb3378d25">More...</a><br /></td></tr>
+<tr class="separator:abf5b4d01be517fa611eb7d1cb3378d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5071b3f74d26c901f48d60e53a1b01eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a5071b3f74d26c901f48d60e53a1b01eb">LSHIFT8</a>(v,  n)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) ((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (v) &lt;&lt; n))</td></tr>
+<tr class="memdesc:a5071b3f74d26c901f48d60e53a1b01eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift <b>v</b> <b>n</b> bits left (up to 7b)  <a href="#a5071b3f74d26c901f48d60e53a1b01eb">More...</a><br /></td></tr>
+<tr class="separator:a5071b3f74d26c901f48d60e53a1b01eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3e5f80c3eba8fcb1ed0d7b0dd231431"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#aa3e5f80c3eba8fcb1ed0d7b0dd231431">RSHIFT8</a>(v,  n)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) ((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (v) &gt;&gt; n))</td></tr>
+<tr class="memdesc:aa3e5f80c3eba8fcb1ed0d7b0dd231431"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift <b>v</b> <b>n</b> bits right (up to 7b)  <a href="#aa3e5f80c3eba8fcb1ed0d7b0dd231431">More...</a><br /></td></tr>
+<tr class="separator:aa3e5f80c3eba8fcb1ed0d7b0dd231431"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00133d52768725eb4defeb9b9d8dcaf1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a00133d52768725eb4defeb9b9d8dcaf1">LSHIFT16</a>(v,  n)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) ((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (v) &lt;&lt; n))</td></tr>
+<tr class="memdesc:a00133d52768725eb4defeb9b9d8dcaf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift <b>v</b> <b>n</b> bits left (up to 15b)  <a href="#a00133d52768725eb4defeb9b9d8dcaf1">More...</a><br /></td></tr>
+<tr class="separator:a00133d52768725eb4defeb9b9d8dcaf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abad306bf302a28b224ce63ecab9ce2a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#abad306bf302a28b224ce63ecab9ce2a6">RSHIFT16</a>(v,  n)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) ((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (v) &gt;&gt; n))</td></tr>
+<tr class="memdesc:abad306bf302a28b224ce63ecab9ce2a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift <b>v</b> <b>n</b> bits right (up to 15b)  <a href="#abad306bf302a28b224ce63ecab9ce2a6">More...</a><br /></td></tr>
+<tr class="separator:abad306bf302a28b224ce63ecab9ce2a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a517ef11743e8eb0b1a90c7ed81a41902"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a517ef11743e8eb0b1a90c7ed81a41902">LSHIFT32</a>(v,  n)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) ((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (v) &lt;&lt; n))</td></tr>
+<tr class="memdesc:a517ef11743e8eb0b1a90c7ed81a41902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift <b>v</b> <b>n</b> bits left (up to 31b)  <a href="#a517ef11743e8eb0b1a90c7ed81a41902">More...</a><br /></td></tr>
+<tr class="separator:a517ef11743e8eb0b1a90c7ed81a41902"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d5105cca0186e5d9cdda660db5e6c8c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a0d5105cca0186e5d9cdda660db5e6c8c">RSHIFT32</a>(v,  n)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) ((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (v) &gt;&gt; n))</td></tr>
+<tr class="memdesc:a0d5105cca0186e5d9cdda660db5e6c8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift <b>v</b> <b>n</b> bits right (up to 31b)  <a href="#a0d5105cca0186e5d9cdda660db5e6c8c">More...</a><br /></td></tr>
+<tr class="separator:a0d5105cca0186e5d9cdda660db5e6c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8746d881d2ecbb2c9caabe0745ba7595"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a8746d881d2ecbb2c9caabe0745ba7595">LSHIFT64</a>(v,  n)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#a53ce154ee4efa73480bde2c7fff08da3">LWORD</a>) ((<a class="el" href="arm__typedefs_8h.html#a53ce154ee4efa73480bde2c7fff08da3">LWORD</a>) (v) &lt;&lt; n))</td></tr>
+<tr class="memdesc:a8746d881d2ecbb2c9caabe0745ba7595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift <b>v</b> <b>n</b> bits left (up to 63b)  <a href="#a8746d881d2ecbb2c9caabe0745ba7595">More...</a><br /></td></tr>
+<tr class="separator:a8746d881d2ecbb2c9caabe0745ba7595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ad0eba97ec8159ff35f98c4b36ab2c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a2ad0eba97ec8159ff35f98c4b36ab2c7">RSHIFT64</a>(v,  n)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#a53ce154ee4efa73480bde2c7fff08da3">LWORD</a>) ((<a class="el" href="arm__typedefs_8h.html#a53ce154ee4efa73480bde2c7fff08da3">LWORD</a>) (v) &gt;&gt; n))</td></tr>
+<tr class="memdesc:a2ad0eba97ec8159ff35f98c4b36ab2c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift <b>v</b> <b>n</b> bits right (up to 63b)  <a href="#a2ad0eba97ec8159ff35f98c4b36ab2c7">More...</a><br /></td></tr>
+<tr class="separator:a2ad0eba97ec8159ff35f98c4b36ab2c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a54665fc1a9138ee101d6d83288177a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a9a54665fc1a9138ee101d6d83288177a">MAKEWORD</a>(lsb,  msb)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (lsb)) | <a class="el" href="arm__macros_8h.html#ac67c4dbfe2f188872a0ac531c73e2821">LSHIFT</a>(((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) ((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (msb))), 8)))</td></tr>
 <tr class="memdesc:a9a54665fc1a9138ee101d6d83288177a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make WORD from <b>lsb</b> and <b>msb</b>.  <a href="#a9a54665fc1a9138ee101d6d83288177a">More...</a><br /></td></tr>
 <tr class="separator:a9a54665fc1a9138ee101d6d83288177a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6ac9f11b19f6a2c508b3b216eca9cc0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#af6ac9f11b19f6a2c508b3b216eca9cc0">MAKELONG</a>(lsw,  msw)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (lsw)) | <a class="el" href="arm__macros_8h.html#aa53ed25e24178bfac0ec1243ad8c8f52">LSHIFT</a>(((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) ((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (msw))), 16)))</td></tr>
+<tr class="memitem:af6ac9f11b19f6a2c508b3b216eca9cc0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#af6ac9f11b19f6a2c508b3b216eca9cc0">MAKELONG</a>(lsw,  msw)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (lsw)) | <a class="el" href="arm__macros_8h.html#ac67c4dbfe2f188872a0ac531c73e2821">LSHIFT</a>(((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) ((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (msw))), 16)))</td></tr>
 <tr class="memdesc:af6ac9f11b19f6a2c508b3b216eca9cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make LONG from <b>lsw</b> and <b>msw</b>.  <a href="#af6ac9f11b19f6a2c508b3b216eca9cc0">More...</a><br /></td></tr>
 <tr class="separator:af6ac9f11b19f6a2c508b3b216eca9cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04c0416272e5c07bdf955d803a21688e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a04c0416272e5c07bdf955d803a21688e">LOBYTE</a>(w)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (w))</td></tr>
 <tr class="memdesc:a04c0416272e5c07bdf955d803a21688e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get BYTE LSB from WORD <b>w</b>.  <a href="#a04c0416272e5c07bdf955d803a21688e">More...</a><br /></td></tr>
 <tr class="separator:a04c0416272e5c07bdf955d803a21688e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75c5b5f21e837e80c0feb4da9a421f87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a75c5b5f21e837e80c0feb4da9a421f87">HIBYTE</a>(w)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) <a class="el" href="arm__macros_8h.html#a50c56a86ec21900ff4ca56fd922cfad9">RSHIFT</a>((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (w), 8))</td></tr>
+<tr class="memitem:a75c5b5f21e837e80c0feb4da9a421f87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a75c5b5f21e837e80c0feb4da9a421f87">HIBYTE</a>(w)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) <a class="el" href="arm__macros_8h.html#abf5b4d01be517fa611eb7d1cb3378d25">RSHIFT</a>((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (w), 8))</td></tr>
 <tr class="memdesc:a75c5b5f21e837e80c0feb4da9a421f87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get BYTE MSB from WORD <b>w</b>.  <a href="#a75c5b5f21e837e80c0feb4da9a421f87">More...</a><br /></td></tr>
 <tr class="separator:a75c5b5f21e837e80c0feb4da9a421f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00be6c40bc7a1297ada4d47a028066b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a00be6c40bc7a1297ada4d47a028066b8">LOWORD</a>(l)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (l))</td></tr>
 <tr class="memdesc:a00be6c40bc7a1297ada4d47a028066b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get WORD LSW from LONG <b>l</b>.  <a href="#a00be6c40bc7a1297ada4d47a028066b8">More...</a><br /></td></tr>
 <tr class="separator:a00be6c40bc7a1297ada4d47a028066b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb28b2d61bd674900a89bfb77e28ae07"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#aeb28b2d61bd674900a89bfb77e28ae07">HIWORD</a>(l)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) <a class="el" href="arm__macros_8h.html#a50c56a86ec21900ff4ca56fd922cfad9">RSHIFT</a>((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (l), 16))</td></tr>
+<tr class="memitem:aeb28b2d61bd674900a89bfb77e28ae07"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#aeb28b2d61bd674900a89bfb77e28ae07">HIWORD</a>(l)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) <a class="el" href="arm__macros_8h.html#abf5b4d01be517fa611eb7d1cb3378d25">RSHIFT</a>((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (l), 16))</td></tr>
 <tr class="memdesc:aeb28b2d61bd674900a89bfb77e28ae07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get WORD MSW from LONG <b>l</b>.  <a href="#aeb28b2d61bd674900a89bfb77e28ae07">More...</a><br /></td></tr>
 <tr class="separator:aeb28b2d61bd674900a89bfb77e28ae07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0878b994fac8d6563664edba349c7f70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a0878b994fac8d6563664edba349c7f70">SWAP_TYPE</a>(a,  b,  typ)&#160;&#160;&#160;{ typ c = a; a = b; b = c; }</td></tr>
@@ -220,9 +227,12 @@ Macros</h2></td></tr>
 <tr class="memitem:ac533e4916b93f3a66c1057c103045086"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#ac533e4916b93f3a66c1057c103045086">nbinEval</a>(exp)&#160;&#160;&#160;(!<a class="el" href="arm__macros_8h.html#a4bcc263075d1521213cd7db6d08dd23c">binEval</a>(exp))</td></tr>
 <tr class="memdesc:ac533e4916b93f3a66c1057c103045086"><td class="mdescLeft">&#160;</td><td class="mdescRight">complemented boolean evaluation of expression <b>exp</b>  <a href="#ac533e4916b93f3a66c1057c103045086">More...</a><br /></td></tr>
 <tr class="separator:ac533e4916b93f3a66c1057c103045086"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05805389397c01d99e812f228b6b4f6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a05805389397c01d99e812f228b6b4f6e">SCALE_VAL</a>(v,  from_min,  from_max,  to_min,  to_max)&#160;&#160;&#160;(((((v) - from_min) * (to_max - to_min)) / (from_max - from_min)) + to_min)</td></tr>
+<tr class="memitem:a05805389397c01d99e812f228b6b4f6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a05805389397c01d99e812f228b6b4f6e">SCALE_VAL</a>(v,  from_min,  from_max,  to_min,  to_max)</td></tr>
 <tr class="memdesc:a05805389397c01d99e812f228b6b4f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale value <b>v</b> from range <b>from_min:from_max</b> to range <b>to_min:to_max</b>.  <a href="#a05805389397c01d99e812f228b6b4f6e">More...</a><br /></td></tr>
 <tr class="separator:a05805389397c01d99e812f228b6b4f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64d59affe0d1c975e98552e9eaa55a87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a64d59affe0d1c975e98552e9eaa55a87">SCALE_VAL_T</a>(t,  v,  from_min,  from_max,  to_min,  to_max)</td></tr>
+<tr class="memdesc:a64d59affe0d1c975e98552e9eaa55a87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale typed <b>t</b> value <b>v</b> from range <b>from_min:from_max</b> to range <b>to_min:to_max</b>.  <a href="#a64d59affe0d1c975e98552e9eaa55a87">More...</a><br /></td></tr>
+<tr class="separator:a64d59affe0d1c975e98552e9eaa55a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0912f55b4d17650e8c90ea81c68c69bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a0912f55b4d17650e8c90ea81c68c69bc">CLAMP</a>(v,  mn,  mx)&#160;&#160;&#160;((v) &lt; (mn) ? (mn) : ((v) &gt; (mx) ? (mx) : (v)))</td></tr>
 <tr class="memdesc:a0912f55b4d17650e8c90ea81c68c69bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value between <b>mn</b> and <b>mx</b> from <b>val</b>.  <a href="#a0912f55b4d17650e8c90ea81c68c69bc">More...</a><br /></td></tr>
 <tr class="separator:a0912f55b4d17650e8c90ea81c68c69bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -247,10 +257,10 @@ Macros</h2></td></tr>
 <tr class="memitem:ac6afabdc09a49a433ee19d8a9486056d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#ac6afabdc09a49a433ee19d8a9486056d">min</a>(a,  b)&#160;&#160;&#160;((a) &lt;= (b) ? (a) : (b))</td></tr>
 <tr class="memdesc:ac6afabdc09a49a433ee19d8a9486056d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns min value between <b>a</b> and <b>b</b>.  <a href="#ac6afabdc09a49a433ee19d8a9486056d">More...</a><br /></td></tr>
 <tr class="separator:ac6afabdc09a49a433ee19d8a9486056d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfe9c2ca6f52ac26d50f91ae9b727ef0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#abfe9c2ca6f52ac26d50f91ae9b727ef0">BYTE_TO_PERC</a>(b)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (((b) * 100) / 255))</td></tr>
+<tr class="memitem:abfe9c2ca6f52ac26d50f91ae9b727ef0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#abfe9c2ca6f52ac26d50f91ae9b727ef0">BYTE_TO_PERC</a>(b)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) ((((b) &gt; 255 ? 255 : (b)) * 100) / 255))</td></tr>
 <tr class="memdesc:abfe9c2ca6f52ac26d50f91ae9b727ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a BYTE <b>b</b> (0-255) to percent (0-100)  <a href="#abfe9c2ca6f52ac26d50f91ae9b727ef0">More...</a><br /></td></tr>
 <tr class="separator:abfe9c2ca6f52ac26d50f91ae9b727ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5893d02434fa28ae78a58cc23a499549"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a5893d02434fa28ae78a58cc23a499549">PERC_TO_BYTE</a>(p)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (((p) &gt; 100 ? 100 : (p)) * 255 / 100))</td></tr>
+<tr class="memitem:a5893d02434fa28ae78a58cc23a499549"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a5893d02434fa28ae78a58cc23a499549">PERC_TO_BYTE</a>(p)&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) ((((p) &gt; 100 ? 100 : (p)) * 255) / 100))</td></tr>
 <tr class="memdesc:a5893d02434fa28ae78a58cc23a499549"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a BYTE <b>p</b> percentage (0-100) to BYTE (0-255) with max checking.  <a href="#a5893d02434fa28ae78a58cc23a499549">More...</a><br /></td></tr>
 <tr class="separator:a5893d02434fa28ae78a58cc23a499549"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e3bcff681d2bd89a4e1cd58588d2101"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__macros_8h.html#a7e3bcff681d2bd89a4e1cd58588d2101">M_1_3</a>&#160;&#160;&#160;(1.0 / 3.0)</td></tr>
@@ -266,7 +276,8 @@ Macros</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ARM common macros. </p>
 <dl class="section author"><dt>Author</dt><dd>SMFSW </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2021, SMFSW </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2022, SMFSW </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If used CPU only handles single shifts, you may define SINGLE_SHIFT_ONLY_OPCODE at project level (see <a class="el" href="arm__macros_8h.html#ac67c4dbfe2f188872a0ac531c73e2821">LSHIFT</a> &amp; <a class="el" href="arm__macros_8h.html#abf5b4d01be517fa611eb7d1cb3378d25">RSHIFT</a>) </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a4bcc263075d1521213cd7db6d08dd23c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4bcc263075d1521213cd7db6d08dd23c">&#9670;&nbsp;</a></span>binEval</h2>
@@ -299,7 +310,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">b</td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (((b) * 100) / 255))</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) ((((b) &gt; 255 ? 255 : (b)) * 100) / 255))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -510,7 +521,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">w</td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) <a class="el" href="arm__macros_8h.html#a50c56a86ec21900ff4ca56fd922cfad9">RSHIFT</a>((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (w), 8))</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) <a class="el" href="arm__macros_8h.html#abf5b4d01be517fa611eb7d1cb3378d25">RSHIFT</a>((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (w), 8))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -530,7 +541,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">l</td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) <a class="el" href="arm__macros_8h.html#a50c56a86ec21900ff4ca56fd922cfad9">RSHIFT</a>((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (l), 16))</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) <a class="el" href="arm__macros_8h.html#abf5b4d01be517fa611eb7d1cb3378d25">RSHIFT</a>((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (l), 16))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -609,8 +620,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="aa53ed25e24178bfac0ec1243ad8c8f52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa53ed25e24178bfac0ec1243ad8c8f52">&#9670;&nbsp;</a></span>LSHIFT</h2>
+<a id="ac67c4dbfe2f188872a0ac531c73e2821"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac67c4dbfe2f188872a0ac531c73e2821">&#9670;&nbsp;</a></span>LSHIFT</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -625,21 +636,81 @@ Macros</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">b&#160;</td>
+          <td class="paramname">n&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((v) * (1UL &lt;&lt; b))</td>
+          <td></td><td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) ((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (v) &lt;&lt; n))</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section warning"><dt>Warning</dt><dd>this macro is optimized only when used with <b>b</b> with a static value Shift <b>v</b> <b>b</b> bits left (up to 31b) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>sarmfsw library being optimized for 32b architecture, default shifting behavior set to 32b Shift <b>v</b> <b>n</b> bits left </dd></dl>
 
 </div>
 </div>
-<a id="a69d954313882b370a888c21433f108a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69d954313882b370a888c21433f108a9">&#9670;&nbsp;</a></span>LSHIFT64</h2>
+<a id="a00133d52768725eb4defeb9b9d8dcaf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00133d52768725eb4defeb9b9d8dcaf1">&#9670;&nbsp;</a></span>LSHIFT16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LSHIFT16</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">v, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) ((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (v) &lt;&lt; n))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift <b>v</b> <b>n</b> bits left (up to 15b) </p>
+
+</div>
+</div>
+<a id="a517ef11743e8eb0b1a90c7ed81a41902"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a517ef11743e8eb0b1a90c7ed81a41902">&#9670;&nbsp;</a></span>LSHIFT32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LSHIFT32</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">v, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) ((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (v) &lt;&lt; n))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift <b>v</b> <b>n</b> bits left (up to 31b) </p>
+
+</div>
+</div>
+<a id="a8746d881d2ecbb2c9caabe0745ba7595"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8746d881d2ecbb2c9caabe0745ba7595">&#9670;&nbsp;</a></span>LSHIFT64</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -654,16 +725,47 @@ Macros</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">b&#160;</td>
+          <td class="paramname">n&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((v) * (1ULL &lt;&lt; b))</td>
+          <td></td><td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#a53ce154ee4efa73480bde2c7fff08da3">LWORD</a>) ((<a class="el" href="arm__typedefs_8h.html#a53ce154ee4efa73480bde2c7fff08da3">LWORD</a>) (v) &lt;&lt; n))</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section warning"><dt>Warning</dt><dd>this macro is optimized only when used with <b>b</b> with a static value Shift <b>v</b> <b>b</b> bits left (up to 63b) </dd></dl>
+
+<p>Shift <b>v</b> <b>n</b> bits left (up to 63b) </p>
+
+</div>
+</div>
+<a id="a5071b3f74d26c901f48d60e53a1b01eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5071b3f74d26c901f48d60e53a1b01eb">&#9670;&nbsp;</a></span>LSHIFT8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LSHIFT8</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">v, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) ((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (v) &lt;&lt; n))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift <b>v</b> <b>n</b> bits left (up to 7b) </p>
 
 </div>
 </div>
@@ -720,7 +822,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (lsw)) | <a class="el" href="arm__macros_8h.html#aa53ed25e24178bfac0ec1243ad8c8f52">LSHIFT</a>(((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) ((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (msw))), 16)))</td>
+          <td></td><td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (lsw)) | <a class="el" href="arm__macros_8h.html#ac67c4dbfe2f188872a0ac531c73e2821">LSHIFT</a>(((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) ((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (msw))), 16)))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -750,7 +852,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (lsb)) | <a class="el" href="arm__macros_8h.html#aa53ed25e24178bfac0ec1243ad8c8f52">LSHIFT</a>(((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) ((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (msb))), 8)))</td>
+          <td></td><td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (lsb)) | <a class="el" href="arm__macros_8h.html#ac67c4dbfe2f188872a0ac531c73e2821">LSHIFT</a>(((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) ((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (msb))), 8)))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1020,7 +1122,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">p</td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (((p) &gt; 100 ? 100 : (p)) * 255 / 100))</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) ((((p) &gt; 100 ? 100 : (p)) * 255) / 100))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1081,8 +1183,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a50c56a86ec21900ff4ca56fd922cfad9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50c56a86ec21900ff4ca56fd922cfad9">&#9670;&nbsp;</a></span>RSHIFT</h2>
+<a id="abf5b4d01be517fa611eb7d1cb3378d25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf5b4d01be517fa611eb7d1cb3378d25">&#9670;&nbsp;</a></span>RSHIFT</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1097,21 +1199,83 @@ Macros</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">b&#160;</td>
+          <td class="paramname">n&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((v) / (1UL &lt;&lt; b))</td>
+          <td></td><td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) ((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (v) &gt;&gt; n))</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section warning"><dt>Warning</dt><dd>this macro is optimized only when used with <b>b</b> with a static value Shift <b>v</b> <b>b</b> bits right (up to 31b) </dd></dl>
+
+<p>Shift <b>v</b> <b>n</b> bits right. </p>
+<dl class="section note"><dt>Note</dt><dd>sarmfsw library being optimized for 32b architecture, default shifting behavior set to 32b </dd></dl>
 
 </div>
 </div>
-<a id="a127ac6aac4c8e3f1ef5d02feab40afa7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a127ac6aac4c8e3f1ef5d02feab40afa7">&#9670;&nbsp;</a></span>RSHIFT64</h2>
+<a id="abad306bf302a28b224ce63ecab9ce2a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abad306bf302a28b224ce63ecab9ce2a6">&#9670;&nbsp;</a></span>RSHIFT16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RSHIFT16</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">v, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) ((<a class="el" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (v) &gt;&gt; n))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift <b>v</b> <b>n</b> bits right (up to 15b) </p>
+
+</div>
+</div>
+<a id="a0d5105cca0186e5d9cdda660db5e6c8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d5105cca0186e5d9cdda660db5e6c8c">&#9670;&nbsp;</a></span>RSHIFT32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RSHIFT32</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">v, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) ((<a class="el" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (v) &gt;&gt; n))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift <b>v</b> <b>n</b> bits right (up to 31b) </p>
+
+</div>
+</div>
+<a id="a2ad0eba97ec8159ff35f98c4b36ab2c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ad0eba97ec8159ff35f98c4b36ab2c7">&#9670;&nbsp;</a></span>RSHIFT64</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1126,18 +1290,47 @@ Macros</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">b&#160;</td>
+          <td class="paramname">n&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((v) / (1ULL &lt;&lt; b))</td>
+          <td></td><td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#a53ce154ee4efa73480bde2c7fff08da3">LWORD</a>) ((<a class="el" href="arm__typedefs_8h.html#a53ce154ee4efa73480bde2c7fff08da3">LWORD</a>) (v) &gt;&gt; n))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Shift <b>v</b> <b>b</b> bits right (up to 63b) </p>
-<dl class="section warning"><dt>Warning</dt><dd>this macro is optimized only when used with <b>b</b> with a static value </dd></dl>
+<p>Shift <b>v</b> <b>n</b> bits right (up to 63b) </p>
+
+</div>
+</div>
+<a id="aa3e5f80c3eba8fcb1ed0d7b0dd231431"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3e5f80c3eba8fcb1ed0d7b0dd231431">&#9670;&nbsp;</a></span>RSHIFT8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RSHIFT8</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">v, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) ((<a class="el" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (v) &gt;&gt; n))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift <b>v</b> <b>n</b> bits right (up to 7b) </p>
 
 </div>
 </div>
@@ -1180,13 +1373,67 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;(((((v) - from_min) * (to_max - to_min)) / (from_max - from_min)) + to_min)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Value:</b><div class="fragment"><div class="line">(((((v) - from_min) * (to_max - to_min))    \</div><div class="line">                    / (from_max - from_min)) + to_min)</div></div><!-- fragment -->
 <p>Scale value <b>v</b> from range <b>from_min:from_max</b> to range <b>to_min:to_max</b>. </p>
-<dl class="section warning"><dt>Warning</dt><dd>SCALE_VAL does not check types and is limited to MCU register size computation, for larger scales, use <a class="el" href="arm__inlines__var__size_8h.html#ab7a4ed95964c912e64242d8aa2f19764">scaleValue</a> instead </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>SCALE_VAL does not check types and is limited to MCU register size computation, for larger scales, use <a class="el" href="arm__macros_8h.html#a64d59affe0d1c975e98552e9eaa55a87">SCALE_VAL_T</a> or <a class="el" href="arm__inlines__var__size_8h.html#ab7a4ed95964c912e64242d8aa2f19764">scaleValue</a> instead </dd></dl>
+
+</div>
+</div>
+<a id="a64d59affe0d1c975e98552e9eaa55a87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64d59affe0d1c975e98552e9eaa55a87">&#9670;&nbsp;</a></span>SCALE_VAL_T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCALE_VAL_T</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">t, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">v, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">from_min, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">from_max, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">to_min, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">to_max&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(((((t) (v) - (t) from_min) * ((t) to_max - (t) to_min))    \</div><div class="line">                    / ((t) from_max - (t) from_min)) + (t) to_min)</div></div><!-- fragment -->
+<p>Scale typed <b>t</b> value <b>v</b> from range <b>from_min:from_max</b> to range <b>to_min:to_max</b>. </p>
 
 </div>
 </div>

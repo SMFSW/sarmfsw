@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">sarmfsw: SMFSW Toolbox (for ARM &amp; compatible with Arduino platform)
-   &#160;<span id="projectnumber">3.5</span>
+   &#160;<span id="projectnumber">3.6</span>
    </div>
    <div id="projectbrief">SMFSW collection of miscellaneous functions &amp; macros (for ARM &amp; compatible with Arduino platform)</div>
   </td>
@@ -72,21 +72,13 @@ $(function() {
 
 <p>ARM common macros for STM32.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="arm__attributes_8h_source.html">arm_attributes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="arm__typedefs_8h_source.html">arm_typedefs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="arm__errors_8h_source.html">arm_errors.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="arm__cmsis_8h_source.html">arm_cmsis.h</a>&quot;</code><br />
-<code>#include &quot;main.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;main.h&quot;</code><br />
 <code>#include &lt;XCAT(&lt;stm32, XCAT(STM_FAMILY, xx.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for arm_chip_stm32.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="arm__chip__stm32_8h__incl.png" border="0" usemap="#arm__chip__stm32_8h" alt=""/></div>
 <map name="arm__chip__stm32_8h" id="arm__chip__stm32_8h">
-<area shape="rect" id="node2" href="arm__attributes_8h.html" title="ARM common compilers attributes. " alt="" coords="5,87,135,114"/>
-<area shape="rect" id="node3" href="arm__typedefs_8h.html" title="ARM common typedefs. " alt="" coords="159,87,282,114"/>
-<area shape="rect" id="node6" href="arm__errors_8h.html" title="ARM user errors. " alt="" coords="307,87,412,114"/>
-<area shape="rect" id="node7" href="arm__cmsis_8h.html" title="ARM link with CMSIS files. " alt="" coords="437,87,541,114"/>
 </map>
 </div>
 </div>
@@ -140,7 +132,7 @@ Macros</h2></td></tr>
 <tr class="memitem:a12c03261686c24d3f3607b9c3643c8f0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#a12c03261686c24d3f3607b9c3643c8f0">HAL_MS_TICKS_FACTOR</a>&#160;&#160;&#160;1</td></tr>
 <tr class="memdesc:a12c03261686c24d3f3607b9c3643c8f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">HAL milliseconds multiplier (depending tick counter frequency)  <a href="#a12c03261686c24d3f3607b9c3643c8f0">More...</a><br /></td></tr>
 <tr class="separator:a12c03261686c24d3f3607b9c3643c8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a209c11556884be396ddce3dc23156559"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#a209c11556884be396ddce3dc23156559">HALTicks</a>()&#160;&#160;&#160;HAL_GetTick()</td></tr>
+<tr class="memitem:a209c11556884be396ddce3dc23156559"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#a209c11556884be396ddce3dc23156559">HALTicks</a>()&#160;&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#af2c4f03d53e997a54e1fd5e80daa55c4">HAL_GetTick</a>()</td></tr>
 <tr class="memdesc:a209c11556884be396ddce3dc23156559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for HAL get ticks function.  <a href="#a209c11556884be396ddce3dc23156559">More...</a><br /></td></tr>
 <tr class="separator:a209c11556884be396ddce3dc23156559"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea685fbfbca0a2d4afccf5c7f6880622"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#aea685fbfbca0a2d4afccf5c7f6880622">HAL_ResetSource</a>()&#160;&#160;&#160;Get_Reset_Source()</td></tr>
@@ -157,27 +149,30 @@ Enumerations</h2></td></tr>
 <tr class="memitem:a54c1cd171722e4b22b2ee97d084f7900"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900">eResetSource</a> { <br />
 &#160;&#160;<a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = 1, 
 <a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF, 
-<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = RESET_REASON_POR, 
+<a class="el" href="arm__chip__pic_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = 1, 
+<a class="el" href="arm__chip__pic_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF, 
+<br />
+&#160;&#160;<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = RESET_REASON_POR, 
 <a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900af64bcf1bb1d174a2a924881b10ad7b63">RST_BODCORE</a> = RESET_REASON_BODCORE, 
-<br />
-&#160;&#160;<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900aa13fbd8342254bba39e061c16c4d6101">RST_BODVDD</a> = RESET_REASON_BODVDD, 
+<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900aa13fbd8342254bba39e061c16c4d6101">RST_BODVDD</a> = RESET_REASON_BODVDD, 
 <a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a7c7b4e219ec871bd20bfe1b65ab64e5d">RST_EXT</a> = RESET_REASON_EXT, 
-<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a40678c7575f6977727e7eebfb08e22d2">RST_WDT</a> = RESET_REASON_WDT, 
+<br />
+&#160;&#160;<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a40678c7575f6977727e7eebfb08e22d2">RST_WDT</a> = RESET_REASON_WDT, 
 <a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a96beca7cd7bd787aa59fa01171d26e90">RST_SYST</a> = RESET_REASON_SYST, 
-<br />
-&#160;&#160;<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF, 
+<a class="el" href="arm__chip__sam_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF, 
 <a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e">RST_POR</a> = 1, 
-<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900adbfa93139d6e2edfef0a92ef81e028cc">RST_BOR</a>, 
+<br />
+&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900adbfa93139d6e2edfef0a92ef81e028cc">RST_BOR</a>, 
 <a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a4c0091b55b47cca800d01a6a6442f586">RST_PIN</a>, 
-<br />
-&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a066003c79359a0b9bb25ea84ca4c9c6a">RST_SW</a>, 
+<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a066003c79359a0b9bb25ea84ca4c9c6a">RST_SW</a>, 
 <a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a58d541ad7dff9c6e770aa4aeffa3bcc4">RST_IWDG</a>, 
-<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900ad38183e2f4809aa13b2c149b9158cdb1">RST_WWDG</a>, 
-<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a33de1f2d7ec80d375553bd397b2b91f1">RST_LPWR</a>, 
 <br />
-&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a44373a6fa84a5148452e73e341c13056">RST_OBL</a>, 
+&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900ad38183e2f4809aa13b2c149b9158cdb1">RST_WWDG</a>, 
+<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a33de1f2d7ec80d375553bd397b2b91f1">RST_LPWR</a>, 
+<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a44373a6fa84a5148452e73e341c13056">RST_OBL</a>, 
 <a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900acd1dd71f600c1c5266b2b269b1288c2e">RST_V18PWR</a>, 
-<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a6b8d9bf9a35fe80d6bb309658838b97d">RST_FW</a>, 
+<br />
+&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a6b8d9bf9a35fe80d6bb309658838b97d">RST_FW</a>, 
 <a class="el" href="arm__chip__stm32_8h.html#a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d">RST_UNKNOWN</a> = 0xFF
 <br />
  }</td></tr>
@@ -185,14 +180,17 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aeac047871fd5e67eb6950504c24ef340"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__attributes_8h.html#ade2d8d7118f8ff49547f60aa0c3382bb">__INLINE</a> <a class="el" href="arm__errors_8h.html#abf6c1e972e63bb08ca4e60f3820ae617">FctERR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#aeac047871fd5e67eb6950504c24ef340">HALERRtoFCTERR</a> (const HAL_StatusTypeDef status)</td></tr>
-<tr class="memdesc:aeac047871fd5e67eb6950504c24ef340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert HAL_StatusTypeDef to FctERR.  <a href="#aeac047871fd5e67eb6950504c24ef340">More...</a><br /></td></tr>
-<tr class="separator:aeac047871fd5e67eb6950504c24ef340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2c4f03d53e997a54e1fd5e80daa55c4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#af2c4f03d53e997a54e1fd5e80daa55c4">HAL_GetTick</a> (void)</td></tr>
+<tr class="memdesc:af2c4f03d53e997a54e1fd5e80daa55c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">External definition of HAL_GetTick that shall be defined in project.  <a href="#af2c4f03d53e997a54e1fd5e80daa55c4">More...</a><br /></td></tr>
+<tr class="separator:af2c4f03d53e997a54e1fd5e80daa55c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79caeb50ac17444729ac729582b752a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__errors_8h.html#abf6c1e972e63bb08ca4e60f3820ae617">FctERR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__chip__stm32_8h.html#a79caeb50ac17444729ac729582b752a4">HALERRtoFCTERR</a> (const HAL_StatusTypeDef status)</td></tr>
+<tr class="memdesc:a79caeb50ac17444729ac729582b752a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert HAL_StatusTypeDef to FctERR.  <a href="#a79caeb50ac17444729ac729582b752a4">More...</a><br /></td></tr>
+<tr class="separator:a79caeb50ac17444729ac729582b752a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ARM common macros for STM32. </p>
 <dl class="section author"><dt>Author</dt><dd>SMFSW </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2021, SMFSW </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2022, SMFSW </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a3d6ec9389968017326fe136c57af28a6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3d6ec9389968017326fe136c57af28a6">&#9670;&nbsp;</a></span>ARM_CMSIS_INC</h2>
@@ -330,7 +328,7 @@ Functions</h2></td></tr>
           <td class="memname">#define HALTicks</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;HAL_GetTick()</td>
+          <td>&#160;&#160;&#160;<a class="el" href="arm__chip__stm32_8h.html#af2c4f03d53e997a54e1fd5e80daa55c4">HAL_GetTick</a>()</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -560,6 +558,10 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e"></a>RST_POR&#160;</td><td class="fielddoc"><p>Power On Reset. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900a643fa3335654ea7bbd8002f41d411a1d"></a>RST_UNKNOWN&#160;</td><td class="fielddoc"><p>Unknown Reset Source. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900acd51f5dfabe63d05d5bc0105549d003e"></a>RST_POR&#160;</td><td class="fielddoc"><p>Power On Reset. </p>
+</td></tr>
 <tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900af64bcf1bb1d174a2a924881b10ad7b63"></a>RST_BODCORE&#160;</td><td class="fielddoc"><p>Brown Out Reset. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a54c1cd171722e4b22b2ee97d084f7900aa13fbd8342254bba39e061c16c4d6101"></a>RST_BODVDD&#160;</td><td class="fielddoc"></td></tr>
@@ -598,20 +600,48 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aeac047871fd5e67eb6950504c24ef340"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeac047871fd5e67eb6950504c24ef340">&#9670;&nbsp;</a></span>HALERRtoFCTERR()</h2>
+<a id="af2c4f03d53e997a54e1fd5e80daa55c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2c4f03d53e997a54e1fd5e80daa55c4">&#9670;&nbsp;</a></span>HAL_GetTick()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="arm__attributes_8h.html#ade2d8d7118f8ff49547f60aa0c3382bb">__INLINE</a> <a class="el" href="arm__errors_8h.html#abf6c1e972e63bb08ca4e60f3820ae617">FctERR</a> HALERRtoFCTERR </td>
+          <td class="memname">uint32_t HAL_GetTick </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>External definition of HAL_GetTick that shall be defined in project. </p>
+
+</div>
+</div>
+<a id="a79caeb50ac17444729ac729582b752a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79caeb50ac17444729ac729582b752a4">&#9670;&nbsp;</a></span>HALERRtoFCTERR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="arm__errors_8h.html#abf6c1e972e63bb08ca4e60f3820ae617">FctERR</a> HALERRtoFCTERR </td>
           <td>(</td>
           <td class="paramtype">const HAL_StatusTypeDef&#160;</td>
           <td class="paramname"><em>status</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Convert HAL_StatusTypeDef to FctERR. </p>

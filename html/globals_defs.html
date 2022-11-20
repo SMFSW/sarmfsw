@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">sarmfsw: SMFSW Toolbox (for ARM &amp; compatible with Arduino platform)
-   &#160;<span id="projectnumber">3.5</span>
+   &#160;<span id="projectnumber">3.6</span>
    </div>
    <div id="projectbrief">SMFSW collection of miscellaneous functions &amp; macros (for ARM &amp; compatible with Arduino platform)</div>
   </td>
@@ -63,6 +63,9 @@ $(function() {
 &#160;
 
 <h3><a id="index__"></a>- _ -</h3><ul>
+<li>__ASM
+: <a class="el" href="arm__attributes_8h.html#a1378040bcf22428955c6e3ce9c2053cd">arm_attributes.h</a>
+</li>
 <li>__INLINE
 : <a class="el" href="arm__attributes_8h.html#ade2d8d7118f8ff49547f60aa0c3382bb">arm_attributes.h</a>
 </li>
@@ -74,6 +77,12 @@ $(function() {
 </li>
 <li>__STATIC_INLINE
 : <a class="el" href="arm__attributes_8h.html#aba87361bfad2ae52cfe2f40c1a1dbf9c">arm_attributes.h</a>
+</li>
+<li>__STDBOOL_DEF
+: <a class="el" href="arm__typedefs_8h.html#a1b225b356e36e42cda8f2408a287c243">arm_typedefs.h</a>
+</li>
+<li>__STDINT_DEF
+: <a class="el" href="arm__typedefs_8h.html#a3028be9b9d540095fd0a787b4c2bd02b">arm_typedefs.h</a>
 </li>
 <li>__WEAK
 : <a class="el" href="arm__attributes_8h.html#ac607bf387b29162be6a9b77fc7999539">arm_attributes.h</a>
@@ -100,6 +109,9 @@ $(function() {
 
 
 <h3><a id="index_b"></a>- b -</h3><ul>
+<li>BIG_ENDIAN__
+: <a class="el" href="arm__attributes_8h.html#af57f72d503eb88fd8f8331f2a70b9e39">arm_attributes.h</a>
+</li>
 <li>binEval
 : <a class="el" href="arm__macros_8h.html#a4bcc263075d1521213cd7db6d08dd23c">arm_macros.h</a>
 </li>
@@ -137,6 +149,7 @@ $(function() {
 </li>
 <li>diInterrupts
 : <a class="el" href="arm__cmsis_8h.html#aeadc423c6937709ec2bbfbb3e3c68e3a">arm_cmsis.h</a>
+, <a class="el" href="arm__chip__pic_8h.html#aeadc423c6937709ec2bbfbb3e3c68e3a">arm_chip_pic.h</a>
 , <a class="el" href="arm__chip__ino_8h.html#aeadc423c6937709ec2bbfbb3e3c68e3a">arm_chip_ino.h</a>
 </li>
 </ul>
@@ -146,6 +159,7 @@ $(function() {
 <li>enInterrupts
 : <a class="el" href="arm__chip__ino_8h.html#acee56de58b734437f47ad3c413cbeb36">arm_chip_ino.h</a>
 , <a class="el" href="arm__cmsis_8h.html#acee56de58b734437f47ad3c413cbeb36">arm_cmsis.h</a>
+, <a class="el" href="arm__chip__pic_8h.html#acee56de58b734437f47ad3c413cbeb36">arm_chip_pic.h</a>
 </li>
 </ul>
 
@@ -176,21 +190,24 @@ $(function() {
 <h3><a id="index_h"></a>- h -</h3><ul>
 <li>HAL_MAX_TICKS
 : <a class="el" href="arm__chip__ino_8h.html#af7aa97bf10990b633dcdebcbce97e7ff">arm_chip_ino.h</a>
-, <a class="el" href="arm__chip__sam_8h.html#af7aa97bf10990b633dcdebcbce97e7ff">arm_chip_sam.h</a>
+, <a class="el" href="arm__chip__pic_8h.html#af7aa97bf10990b633dcdebcbce97e7ff">arm_chip_pic.h</a>
 , <a class="el" href="arm__chip__stm32_8h.html#af7aa97bf10990b633dcdebcbce97e7ff">arm_chip_stm32.h</a>
+, <a class="el" href="arm__chip__sam_8h.html#af7aa97bf10990b633dcdebcbce97e7ff">arm_chip_sam.h</a>
 </li>
 <li>HAL_MS_TICKS_FACTOR
-: <a class="el" href="arm__chip__ino_8h.html#a12c03261686c24d3f3607b9c3643c8f0">arm_chip_ino.h</a>
+: <a class="el" href="arm__chip__stm32_8h.html#a12c03261686c24d3f3607b9c3643c8f0">arm_chip_stm32.h</a>
+, <a class="el" href="arm__chip__ino_8h.html#a12c03261686c24d3f3607b9c3643c8f0">arm_chip_ino.h</a>
+, <a class="el" href="arm__chip__pic_8h.html#a12c03261686c24d3f3607b9c3643c8f0">arm_chip_pic.h</a>
 , <a class="el" href="arm__chip__sam_8h.html#a12c03261686c24d3f3607b9c3643c8f0">arm_chip_sam.h</a>
-, <a class="el" href="arm__chip__stm32_8h.html#a12c03261686c24d3f3607b9c3643c8f0">arm_chip_stm32.h</a>
 </li>
 <li>HAL_ResetSource
 : <a class="el" href="arm__chip__stm32_8h.html#aea685fbfbca0a2d4afccf5c7f6880622">arm_chip_stm32.h</a>
 </li>
 <li>HALTicks
-: <a class="el" href="arm__chip__ino_8h.html#a209c11556884be396ddce3dc23156559">arm_chip_ino.h</a>
+: <a class="el" href="arm__chip__stm32_8h.html#a209c11556884be396ddce3dc23156559">arm_chip_stm32.h</a>
+, <a class="el" href="arm__chip__pic_8h.html#a209c11556884be396ddce3dc23156559">arm_chip_pic.h</a>
 , <a class="el" href="arm__chip__sam_8h.html#a209c11556884be396ddce3dc23156559">arm_chip_sam.h</a>
-, <a class="el" href="arm__chip__stm32_8h.html#a209c11556884be396ddce3dc23156559">arm_chip_stm32.h</a>
+, <a class="el" href="arm__chip__ino_8h.html#a209c11556884be396ddce3dc23156559">arm_chip_ino.h</a>
 </li>
 <li>HIBYTE
 : <a class="el" href="arm__macros_8h.html#a75c5b5f21e837e80c0feb4da9a421f87">arm_macros.h</a>
@@ -221,6 +238,9 @@ $(function() {
 <li>LINEAR_TAB
 : <a class="el" href="arm__inlines__linearization_8h.html#a06fbd5b88ba1075d22c01506ef5f8d04">arm_inlines_linearization.h</a>
 </li>
+<li>LITTLE_ENDIAN__
+: <a class="el" href="arm__attributes_8h.html#af2f918d5e6f4e7646f06309e5e2a3ead">arm_attributes.h</a>
+</li>
 <li>LOBYTE
 : <a class="el" href="arm__macros_8h.html#a04c0416272e5c07bdf955d803a21688e">arm_macros.h</a>
 </li>
@@ -228,10 +248,19 @@ $(function() {
 : <a class="el" href="arm__macros_8h.html#a00be6c40bc7a1297ada4d47a028066b8">arm_macros.h</a>
 </li>
 <li>LSHIFT
-: <a class="el" href="arm__macros_8h.html#aa53ed25e24178bfac0ec1243ad8c8f52">arm_macros.h</a>
+: <a class="el" href="arm__macros_8h.html#ac67c4dbfe2f188872a0ac531c73e2821">arm_macros.h</a>
+</li>
+<li>LSHIFT16
+: <a class="el" href="arm__macros_8h.html#a00133d52768725eb4defeb9b9d8dcaf1">arm_macros.h</a>
+</li>
+<li>LSHIFT32
+: <a class="el" href="arm__macros_8h.html#a517ef11743e8eb0b1a90c7ed81a41902">arm_macros.h</a>
 </li>
 <li>LSHIFT64
-: <a class="el" href="arm__macros_8h.html#a69d954313882b370a888c21433f108a9">arm_macros.h</a>
+: <a class="el" href="arm__macros_8h.html#a8746d881d2ecbb2c9caabe0745ba7595">arm_macros.h</a>
+</li>
+<li>LSHIFT8
+: <a class="el" href="arm__macros_8h.html#a5071b3f74d26c901f48d60e53a1b01eb">arm_macros.h</a>
 </li>
 </ul>
 
@@ -350,10 +379,19 @@ $(function() {
 : <a class="el" href="arm__macros_8h.html#a32c119f1bd8155fc34ea0a798cc2f2c3">arm_macros.h</a>
 </li>
 <li>RSHIFT
-: <a class="el" href="arm__macros_8h.html#a50c56a86ec21900ff4ca56fd922cfad9">arm_macros.h</a>
+: <a class="el" href="arm__macros_8h.html#abf5b4d01be517fa611eb7d1cb3378d25">arm_macros.h</a>
+</li>
+<li>RSHIFT16
+: <a class="el" href="arm__macros_8h.html#abad306bf302a28b224ce63ecab9ce2a6">arm_macros.h</a>
+</li>
+<li>RSHIFT32
+: <a class="el" href="arm__macros_8h.html#a0d5105cca0186e5d9cdda660db5e6c8c">arm_macros.h</a>
 </li>
 <li>RSHIFT64
-: <a class="el" href="arm__macros_8h.html#a127ac6aac4c8e3f1ef5d02feab40afa7">arm_macros.h</a>
+: <a class="el" href="arm__macros_8h.html#a2ad0eba97ec8159ff35f98c4b36ab2c7">arm_macros.h</a>
+</li>
+<li>RSHIFT8
+: <a class="el" href="arm__macros_8h.html#aa3e5f80c3eba8fcb1ed0d7b0dd231431">arm_macros.h</a>
 </li>
 </ul>
 
@@ -368,6 +406,9 @@ $(function() {
 <li>SCALE_VAL
 : <a class="el" href="arm__macros_8h.html#a05805389397c01d99e812f228b6b4f6e">arm_macros.h</a>
 </li>
+<li>SCALE_VAL_T
+: <a class="el" href="arm__macros_8h.html#a64d59affe0d1c975e98552e9eaa55a87">arm_macros.h</a>
+</li>
 <li>SECTION__
 : <a class="el" href="arm__attributes_8h.html#adef3770cc970cb5e7bd47c58224149f8">arm_attributes.h</a>
 </li>
@@ -376,6 +417,9 @@ $(function() {
 </li>
 <li>SET_BITS_VAL
 : <a class="el" href="arm__macros_8h.html#a36f8749a10d3021f66f0fbf0676f76d4">arm_macros.h</a>
+</li>
+<li>SSO
+: <a class="el" href="arm__attributes_8h.html#a9e148fd5aac0a0fdc9fbcae871216121">arm_attributes.h</a>
 </li>
 <li>STM32_FLASHSIZE
 : <a class="el" href="arm__chip__stm32_8h.html#a0389f0023fe941b7977d3faf862e8c4a">arm_chip_stm32.h</a>
@@ -474,6 +518,9 @@ $(function() {
 <h3><a id="index_u"></a>- u -</h3><ul>
 <li>Undefined
 : <a class="el" href="arm__macros_8h.html#a9a257c75902e62f9645e4053418b0edf">arm_macros.h</a>
+</li>
+<li>UNUSED
+: <a class="el" href="arm__cmsis_8h.html#a6bc306171da085f4c7df2c66d2ff8e47">arm_cmsis.h</a>
 </li>
 <li>USED__
 : <a class="el" href="arm__attributes_8h.html#ab28b7e20751ce7fd19d09e80356ebd8a">arm_attributes.h</a>

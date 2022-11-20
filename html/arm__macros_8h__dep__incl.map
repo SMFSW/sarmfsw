@@ -1,7 +1,3 @@
 <map id="arm_macros.h" name="arm_macros.h">
-<area shape="rect" id="node2" href="$arm__inlines_8h.html" title="ARM common inlines. " alt="" coords="154,155,260,181"/>
-<area shape="rect" id="node3" href="$sarmfsw_8h.html" title="sarmfsw (ARM) common headers " alt="" coords="380,229,466,256"/>
-<area shape="rect" id="node4" href="$arm__inlines__var__size_8h.html" title="Variables size conversion inlines. " alt="" coords="28,80,194,107"/>
-<area shape="rect" id="node5" href="$arm__inlines__var__test_8h.html" title="Variables test inlines. " alt="" coords="218,80,385,107"/>
-<area shape="rect" id="node6" href="$arm__stdclib_8h.html" title="ARM common standard c library wrapper macros. " alt="" coords="461,155,569,181"/>
+<area shape="rect" id="node2" href="$sarmfsw_8h.html" title="sarmfsw (ARM) common headers " alt="" coords="19,80,106,107"/>
 </map>

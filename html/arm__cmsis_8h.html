@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">sarmfsw: SMFSW Toolbox (for ARM &amp; compatible with Arduino platform)
-   &#160;<span id="projectnumber">3.5</span>
+   &#160;<span id="projectnumber">3.6</span>
    </div>
    <div id="projectbrief">SMFSW collection of miscellaneous functions &amp; macros (for ARM &amp; compatible with Arduino platform)</div>
   </td>
@@ -74,12 +74,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="arm__cmsis_8h__dep__incl.png" border="0" usemap="#arm__cmsis_8hdep" alt=""/></div>
 <map name="arm__cmsis_8hdep" id="arm__cmsis_8hdep">
-<area shape="rect" id="node2" href="arm__chip__ino_8h.html" title="Common macros for Arduino. " alt="" coords="5,80,124,107"/>
-<area shape="rect" id="node3" href="arm__chip__sam_8h.html" title="ARM common macros for Atmel SAM families. " alt="" coords="149,80,277,107"/>
-<area shape="rect" id="node4" href="arm__chip__stm32_8h.html" title="ARM common macros for STM32. " alt="" coords="301,80,442,107"/>
-<area shape="rect" id="node5" href="arm__hal__peripheral_8h.html" title="ARM HAL peripheral includes. " alt="" coords="517,80,674,107"/>
-<area shape="rect" id="node6" href="arm__inlines_8h.html" title="ARM common inlines. " alt="" coords="483,155,590,181"/>
-<area shape="rect" id="node7" href="sarmfsw_8h.html" title="sarmfsw (ARM) common headers " alt="" coords="584,229,671,256"/>
+<area shape="rect" id="node2" href="sarmfsw_8h.html" title="sarmfsw (ARM) common headers " alt="" coords="14,80,101,107"/>
 </map>
 </div>
 </div>
@@ -93,15 +88,18 @@ Macros</h2></td></tr>
 <tr class="memitem:acee56de58b734437f47ad3c413cbeb36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__cmsis_8h.html#acee56de58b734437f47ad3c413cbeb36">enInterrupts</a>()&#160;&#160;&#160;__enable_irq()</td></tr>
 <tr class="memdesc:acee56de58b734437f47ad3c413cbeb36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable interruptions macro.  <a href="#acee56de58b734437f47ad3c413cbeb36">More...</a><br /></td></tr>
 <tr class="separator:acee56de58b734437f47ad3c413cbeb36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bc306171da085f4c7df2c66d2ff8e47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arm__cmsis_8h.html#a6bc306171da085f4c7df2c66d2ff8e47">UNUSED</a>(X)&#160;&#160;&#160;(void) (X)</td></tr>
+<tr class="memdesc:a6bc306171da085f4c7df2c66d2ff8e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">To avoid gcc/g++ warnings.  <a href="#a6bc306171da085f4c7df2c66d2ff8e47">More...</a><br /></td></tr>
+<tr class="separator:a6bc306171da085f4c7df2c66d2ff8e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ARM link with CMSIS files. </p>
 <dl class="section author"><dt>Author</dt><dd>SMFSW </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2021, SMFSW </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2022, SMFSW </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Latest ARM chips might now be recognized; if not, define at project level:<ul>
 <li>for STM32 families (STMicroelectronics):<ul>
 <li>STM_FAMILY xy:<ul>
-<li>x : f/l/h/g</li>
+<li>x : c/f/h/l/mp/u/wb/wl</li>
 <li>y : sub-family number</li>
 </ul>
 </li>
@@ -109,6 +107,10 @@ Macros</h2></td></tr>
 </li>
 <li>for SAM families (Atmel):<ul>
 <li>SAM_FAMILY xy(yy)</li>
+</ul>
+</li>
+<li>for PIC families (Microchip):<ul>
+<li>PIC_FAMILY pic(xx)</li>
 </ul>
 </li>
 <li>for Other families (TI...):<ul>
@@ -153,6 +155,26 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Enable interruptions macro. </p>
+
+</div>
+</div>
+<a id="a6bc306171da085f4c7df2c66d2ff8e47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bc306171da085f4c7df2c66d2ff8e47">&#9670;&nbsp;</a></span>UNUSED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNUSED</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X</td><td>)</td>
+          <td>&#160;&#160;&#160;(void) (X)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>To avoid gcc/g++ warnings. </p>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x',['x',['../structs_coord2_d.html#a3bdc6d507be912e498130a8edf516729',1,'sCoord2D']]]
+  ['nb',['nb',['../structs_linear_flex_array.html#acf3b391556ab5b1a7e5171316f518f4a',1,'sLinearFlexArray']]]
 ];
