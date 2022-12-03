@@ -29,7 +29,7 @@ SOFTWARE.
 * arm_macros: BYTE_TO_PERC byte value clamp added
 * arm_macros: LSHIFT & RSHIFT changed (handling optimized shift opcodes and more explicit sizes if desired/required)
 * arm_typedefs.h: intCPU_t & uintCPU_t typedefs added
-* arm_hal_peirpheral: No include when HAL_HCD_MODULE_ENABLED is defined 
+* arm_hal_peripheral: No include for some peripherals without dedicated headers (STM32)
 * arm_chip_xxx: an external definition of HAL_getTick is provided when used (implicitly checking consistency with the one defined in project)
 * arm_attributes: few fixes and CSMC compiler attributes added
 * arm_cmsis: volatile symbols definition added in case not defined

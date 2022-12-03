@@ -52,17 +52,17 @@
 			#include "dcmi.h"
 		#endif /* HAL_DCMI_MODULE_ENABLED */
 
-	//	#ifdef HAL_DMA_MODULE_ENABLED
-	//		#include "dma.h"
-	//	#endif /* HAL_DMA_MODULE_ENABLED */
+//		#ifdef HAL_DMA_MODULE_ENABLED
+//			#include "dma.h"	// No header generated
+//		#endif /* HAL_DMA_MODULE_ENABLED */
 
-	//	#ifdef HAL_DMA2D_MODULE_ENABLED
-	//		#include "dma2d.h"
-	//	#endif /* HAL_DMA2D_MODULE_ENABLED */
+//		#ifdef HAL_DMA2D_MODULE_ENABLED
+//			#include "dma2d.h"	// No header generated
+//		#endif /* HAL_DMA2D_MODULE_ENABLED */
 
-	//	#ifdef HAL_ETH_MODULE_ENABLED
-	//		#include "eth.h"
-	//	#endif /* HAL_ETH_MODULE_ENABLED */
+//		#ifdef HAL_ETH_MODULE_ENABLED
+//			#include "eth.h"	// No header generated
+//		#endif /* HAL_ETH_MODULE_ENABLED */
 
 		#ifdef HAL_FDCAN_MODULE_ENABLED
 			#include "fdcan.h"
@@ -76,17 +76,17 @@
 			#include "hash.h"
 		#endif /* HAL_HASH_MODULE_ENABLED */
 
-	//	#ifdef HAL_HCD_MODULE_ENABLED
-	//		#include "hcd.h"
-	//	#endif /* HAL_HCD_MODULE_ENABLED */
+//		#ifdef HAL_HCD_MODULE_ENABLED
+//			#include "hcd.h"	// No header generated
+//		#endif /* HAL_HCD_MODULE_ENABLED */
 
 		#ifdef HAL_HRTIM_MODULE_ENABLED
 			#include "hrtim.h"
 		#endif /* HAL_HRTIM_MODULE_ENABLED */
 
-		#ifdef HAL_HSEM_MODULE_ENABLED
-			#include "hsem.h"
-		#endif /* HAL_HSEM_MODULE_ENABLED */
+//		#ifdef HAL_HSEM_MODULE_ENABLED
+//			#include "hsem.h"	// No header generated
+//		#endif /* HAL_HSEM_MODULE_ENABLED */
 
 		#ifdef HAL_I2C_MODULE_ENABLED
 			#include "i2c.h"
@@ -122,9 +122,9 @@
 			#include "mdios.h"
 		#endif /* HAL_MDIOS_MODULE_ENABLED */
 
-		#ifdef HAL_MDMA_MODULE_ENABLED
-			#include "mdma.h"
-		#endif /* HAL_MDMA_MODULE_ENABLED */
+//		#ifdef HAL_MDMA_MODULE_ENABLED
+//			#include "mdma.h"	// No header generated
+//		#endif /* HAL_MDMA_MODULE_ENABLED */
 
 		#ifdef HAL_NAND_MODULE_ENABLED
 			#include "nand.h"
