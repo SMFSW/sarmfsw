@@ -1,6 +1,6 @@
 /*!\file arm_inlines_var_size.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2022, SMFSW
+** \copyright MIT (c) 2017-2023, SMFSW
 ** \brief Variables size conversion inlines
 */
 /****************************************************************/

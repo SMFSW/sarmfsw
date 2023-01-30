@@ -1,6 +1,6 @@
 /*!\file arm_chip_sam.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2022, SMFSW
+** \copyright MIT (c) 2017-2023, SMFSW
 ** \brief ARM common macros for Atmel SAM families
 ** \attention	On SAM families you should configure a timer to count for ms.
 **				A TIM peripheral shall be configured in ATMEL START (with a period of 1ms).

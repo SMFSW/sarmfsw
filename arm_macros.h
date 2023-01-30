@@ -1,6 +1,6 @@
 /*!\file arm_macros.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2022, SMFSW
+** \copyright MIT (c) 2017-2023, SMFSW
 ** \brief ARM common macros
 ** \note If used CPU only handles single shifts, you may define SINGLE_SHIFT_ONLY_OPCODE at project level (see \ref LSHIFT & \ref RSHIFT)
 */

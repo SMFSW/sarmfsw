@@ -1,6 +1,6 @@
 /*!\file arm_chip_pic.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2022, SMFSW
+** \copyright MIT (c) 2017-2023, SMFSW
 ** \brief Common macros for PIC
 ** \attention	On PIC families you should configure a timer to count for ms.
 **				A TIM peripheral shall be configured in MCC or Harmony (with a period of 1ms).
