@@ -248,9 +248,12 @@
 #define __ASM				__asm				//!< ASM keyword alias (unless already defined)
 #endif
 
-#ifndef __INLINE
-#define __INLINE			inline				//!< \b Inline attribute alias
+#ifdef __INLINE
+#undef __INLINE
 #endif
+//!\note Doesn't optimize code size much (when generated as functions) as code will be static to each file and hidden from others (leading to code duplicates)
+#define __INLINE			static inline		//!< \b Inline attribute alias
+
 #ifndef __STATIC_INLINE
 #define __STATIC_INLINE		static inline		//!< \b Static \b Inline attribute alias
 #endif

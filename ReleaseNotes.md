@@ -22,6 +22,7 @@ SOFTWARE.
 
 ## v3.6
 
+* arm_attributes: __INLINE keyword workaround with C99 inline semantics (static inlining)
 * library entry point being sarmfsw.h, most cross includes in files now removed
 * inlines variable length and types reviewed
 * arm_hal_peripheral: PCD device enabled includes usb_device.h header
