@@ -12,8 +12,8 @@
 **			(please refer to following note)
 ** \note	For Arduino platform, prefer ANSI-C(pp) 0b notation for binary representation,
 ** 			instead of using derived defines from Arduino binary.h
-** \note	SARMFSW_STDBOOL_NDEF can defined at project level if stdint.h doesn't exist for target compiler
-** \note	SARMFSW_STDINT_NDEF can defined at project level if stdint.h doesn't exist for target compiler
+** \note	STDBOOL_NDEF can be defined at project level if stdint.h doesn't exist for target compiler
+** \note	STDINT_NDEF can be defined at project level if stdint.h doesn't exist for target compiler
 */
 /****************************************************************/
 #ifndef __ARM_TYPEDEFS_H

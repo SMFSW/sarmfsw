@@ -12,15 +12,16 @@
 #endif
 /****************************************************************/
 
-#include "arm_attributes.h"		// Common attributes (following compiler)
+#include "arm_errors.h"			// Common errors
 #include "arm_typedefs.h"		// Common typedefs
 
-#include "arm_errors.h"			// Common errors
 #include "arm_macros.h"			// Common macros
 #include "arm_stdclib.h"		// Common standard c library wrapper macros
 
 #include "arm_cmsis.h"			// HAL & Drivers (following defined platform)
 #include "arm_hal_peripheral.h"	// HAL peripherals includes (following defined platform)
+
+#include "arm_attributes.h"		// Common attributes (following compiler)
 
 #include "arm_inlines.h"		// Common inlines (after all includes, some inlines needs to access HAL code)
 
