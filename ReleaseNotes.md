@@ -23,6 +23,7 @@ SOFTWARE.
 ## v3.6
 
 * sarmfsw: includes order fix
+* arm_attributes: __STATIC keyword added
 * arm_attributes: __INLINE keyword workaround with C99 inline semantics (static inlining)
 * library entry point being sarmfsw.h, most cross includes in files now removed
 * inlines variable length and types reviewed

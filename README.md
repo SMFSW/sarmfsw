@@ -25,6 +25,8 @@ Library has been updated to become compatible with Arduino & other 8/16bit platf
 
 * `SINGLE_SHIFT_ONLY_OPCODE`: If used CPU only handles single shifts opcode, define this symbol to optimize use of LSHIFTx & RSHIFTx with constants
 
+* `NO_STATIC_FUNC` or `UNITY_TESTING`: using __STATIC keyword, functions will always be visible by linker if set (useful for unit testing)
+
 ## Help would be appreciated:
 
 * Cosmic compiler users: attributes aliases implementation (or related documentation)

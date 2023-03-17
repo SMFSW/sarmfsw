@@ -248,14 +248,25 @@
 #define __ASM				__asm				//!< ASM keyword alias (unless already defined)
 #endif
 
+
+#ifdef __STATIC
+#undef __STATIC
+#endif
+#if defined(NO_STATIC_FUNC) || defined(UNITY_TESTING)
+#define __STATIC								//!< \b static alias when functions visibility may be required (__INLINE remaining static)
+#else
+#define __STATIC			static				//!< \b static alias when functions visibility may be required (__INLINE remaining static)
+#endif
+
+
 #ifdef __INLINE
 #undef __INLINE
 #endif
 //!\note Doesn't optimize code size much (when generated as functions) as code will be static to each file and hidden from others (leading to code duplicates)
-#define __INLINE			static inline		//!< \b Inline attribute alias
+#define __INLINE			static inline		//!< \b inline attribute alias
 
 #ifndef __STATIC_INLINE
-#define __STATIC_INLINE		static inline		//!< \b Static \b Inline attribute alias
+#define __STATIC_INLINE		static inline		//!< \b static \b inline attribute alias
 #endif
 
 /*** INLINES WORKAROUND WHEN OPTIMIZATION LEVEL SET TO NONE (GCC like toolchains) ***/
@@ -271,7 +282,6 @@
 #define __STATIC_INLINE		__attribute__((always_inline)) static inline	//!< \b Static \b Inline attribute alias when `__NOOPT__` defined
 #endif
 #endif
-
 
 /****************************************************************/
 #ifdef __cplusplus
