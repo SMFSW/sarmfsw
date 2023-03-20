@@ -22,6 +22,7 @@ SOFTWARE.
 
 ## v3.6
 
+* arm_cmsis: update for STM32 families (also added H5, WBA families)
 * sarmfsw: includes order fix
 * arm_attributes: __STATIC keyword added
 * arm_attributes: __INLINE keyword workaround with C99 inline semantics (static inlining)

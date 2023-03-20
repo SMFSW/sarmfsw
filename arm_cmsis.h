@@ -109,6 +109,12 @@
 	#if !defined(STM_FAMILY)
 		#define STM_FAMILY	g4		//!< STM32 family (g4) for name catenation
 	#endif
+#elif	defined (STM32H573xx) || defined (STM32H563xx) || \
+		defined (STM32H562xx) || defined (STM32H503xx)
+	#define STM32H5					//!< STM32H5 family generic define
+	#if !defined(STM_FAMILY)
+		#define STM_FAMILY	h5		//!< STM32 family (h5) for name catenation
+	#endif
 #elif	defined(STM32H743xx) || defined(STM32H753xx)  || defined(STM32H750xx) || defined(STM32H742xx)  ||													\
 		defined(STM32H745xx) || defined(STM32H745xG)  || defined(STM32H755xx) || defined(STM32H747xx)  || defined(STM32H747xG) || defined(STM32H757xx)  ||	\
 		defined(STM32H7A3xx) || defined(STM32H7A3xxQ) || defined(STM32H7B3xx) || defined(STM32H7B3xxQ) || defined(STM32H7B0xx) || defined(STM32H7B0xxQ) ||	\
@@ -173,6 +179,11 @@
 	#define STM32WB					//!< STM32WB family generic define
 	#if !defined(STM_FAMILY)
 		#define STM_FAMILY	wb		//!< STM32 family (wb) for name catenation
+	#endif
+#elif	defined(STM32WBA50xx) || defined(STM32WBA52xx) || defined(STM32WBA54xx) || defined(STM32WBA55xx)
+	#define STM32WBA				//!< STM32WBA family generic define
+	#if !defined(STM_FAMILY)
+		#define STM_FAMILY	wba		//!< STM32 family (wba) for name catenation
 	#endif
 #elif	defined(STM32WL55xx) || defined(STM32WL54xx) || defined(STM32WLE5xx) || defined(STM32WLE4xx)
 	#define STM32WL					//!< STM32WL family generic define
