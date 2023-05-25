@@ -20,6 +20,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+## v3.7
+
+* arm_chip_sam: HAL_ResetSource fix
+
 ## v3.6
 
 * arm_cmsis: update for STM32 families (also added H5, WBA families)
