@@ -22,7 +22,8 @@ SOFTWARE.
 
 ## v3.7
 
-* arm_chip_sam: HAL_ResetSource fix
+* sarmfsw: include order fix (so that arm_chip_xxx attributes can be properly pre-processed)
+* arm_hal_peripheral: pre-processing symbols can be defined to disable HAL includes (globally or separately)
 
 ## v3.6
 

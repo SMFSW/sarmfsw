@@ -15,9 +15,12 @@ Library has been updated to become compatible with Arduino & other 8/16bit platf
 * `HAL_MAX_TICKS` val: Define with custom max value in project if tick max value is not using 32b variable full scale
 * `HAL_MS_TICKS_FACTOR`: Define with custom multiplier in project if tick period is not 1ms
 
+* `HAL_INC_DISABLE`: Define this symbol at project level to disable inclusion of all HAL headers
+* `HAL_XXX_INC_DISABLE`: Define this symbol at project level (replacing `XXX` by peripheral name) to disable inclusion of corresponding HAL header
+
 * `BIG_ENDIAN`: Define this symbol when using big endian target architecture if not automatically recognized (in case of warning message displayed)
 * `LITTLE_ENDIAN`: Define this symbol when using little endian target architecture if not automatically recognized (in case of warning message displayed)
-* `REVERSE_BITFIELD`: By default biftfields are stored from lsb to msb; if not the case with used compiler, use a pragma or define this symbol
+* `REVERSE_BITFIELD`: By default bitfields are stored from lsb to msb; if not the case with used compiler, use a pragma or define this symbol
 
 * `STDBOOL_NDEF`: define this symbol in case used compiler doesn't have stdbool.h header
 * `STDINT_NDEF`: define this symbol in case used compiler doesn't have stdint.h header

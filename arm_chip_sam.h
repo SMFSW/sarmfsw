@@ -101,7 +101,7 @@ typedef enum eResetSource {
 ** \warning This function should be called soon after reset
 ** \return Last reset source
 **/
-__INLINE eResetSource HAL_ResetSource(void) {
+__INLINE eResetSource INLINE__ HAL_ResetSource(void) {
 	return (eResetSource) _get_reset_reason(); }
 
 
