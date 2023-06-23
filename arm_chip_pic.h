@@ -2,6 +2,7 @@
 ** \author SMFSW
 ** \copyright MIT (c) 2017-2023, SMFSW
 ** \brief Common macros for PIC
+** \warning Do not use macros for function qualifiers in this file
 ** \attention	On PIC families you should configure a timer to count for ms.
 **				A TIM peripheral shall be configured in MCC or Harmony (with a period of 1ms).
 **
@@ -65,7 +66,7 @@ typedef enum eResetSource {
 ** \warning This function should be called soon after reset
 ** \return Last reset source
 **/
-__INLINE eResetSource INLINE__ HAL_ResetSource(void) {
+static inline eResetSource HAL_ResetSource(void) {
 	return RST_UNKNOWN; }
 
 
@@ -73,7 +74,7 @@ __INLINE eResetSource INLINE__ HAL_ResetSource(void) {
 ** \param[in] status - Arduino error code
 ** \return FctERR status
 **/
-__INLINE FctERR HALERRtoFCTERR(const SDWORD status)
+static inline FctERR HALERRtoFCTERR(const SDWORD status)
 {
 	if (status == 0)	return ERROR_OK;
 	else				return ERROR_COMMON;

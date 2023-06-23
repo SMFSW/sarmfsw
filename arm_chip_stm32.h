@@ -2,6 +2,7 @@
 ** \author SMFSW
 ** \copyright MIT (c) 2017-2023, SMFSW
 ** \brief ARM common macros for STM32
+** \warning Do not use macros for function qualifiers in this file
 */
 /****************************************************************/
 #ifndef __ARM_CHIP_STM32_H
@@ -101,7 +102,7 @@ typedef enum eResetSource {
 ** \param[in] status - HAL_StatusTypeDef status
 ** \return FctERR status
 **/
-__INLINE FctERR HALERRtoFCTERR(const HAL_StatusTypeDef status)
+static inline FctERR HALERRtoFCTERR(const HAL_StatusTypeDef status)
 {
 	if		(status == HAL_OK)			return ERROR_OK;
 	else if (status == HAL_ERROR)		return ERROR_FAULT;

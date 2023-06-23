@@ -22,7 +22,9 @@ SOFTWARE.
 
 ## v3.7
 
-* sarmfsw: include order fix (so that arm_chip_xxx attributes can be properly pre-processed)
+* sarmfsw: include order set back (to keep compatibility without warnings with older cmsis versions)
+* arm_chip_xxx: all qualifier macros for functions changed by explicit qualifiers (due to includes order)
+* sarmfsw: include order fix (so that arm_chip_xxx attributes can be properly pre-processed) -> revert
 * arm_hal_peripheral: pre-processing symbols can be defined to disable HAL includes (globally or separately)
 
 ## v3.6
