@@ -25,7 +25,7 @@ __INLINE DWORD get_fp_dec(const double f, BYTE nb)
 {
 	DWORD mul = 1;
 
-	nb = min(9, nb);	// Limit to 9 digits
+	nb = MIN(9, nb);	// Limit to 9 digits
 	while (nb--) 	{ mul *= 10; }
 
 	return (DWORD) (fabs(f - (SDWORD) f) * mul);

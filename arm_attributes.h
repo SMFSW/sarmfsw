@@ -72,7 +72,6 @@
 #elif defined (__XC__)	// Defined prior to __GNUC__ as also defined for some __XC__ compilers
 	/*** Microchip XC ***/
 	// Declared as qualifier
-	#define __ASM				__asm__									//!< ASM keyword alias for XC Compiler
 	#define __WEAK				__attribute__((weak))					//!< \b Weak attribute
 	#define __IRQ				__attribute__((interrupt))  			//!< \b Interrupt attribute
 	// Declared as attribute
@@ -243,12 +242,17 @@
 	#error Unknown compiler. Attributes will not be recognized.
 #endif
 
+/*** C extensions keywords ***/
+#ifndef __TYPEOF
+#define __TYPEOF			__typeof__			//!< typeof keyword alias (\note so that it may prior be set to other expansion following compiler)
+#endif
 
 #ifndef __ASM
-#define __ASM				__asm				//!< ASM keyword alias (unless already defined)
+#define __ASM				__asm__				//!< asm keyword alias (\note so that it may prior be set to other expansion following compiler)
 #endif
 
 
+/*** C standard keywords ***/
 #ifdef __STATIC
 #undef __STATIC
 #endif

@@ -22,6 +22,10 @@ SOFTWARE.
 
 ## v3.7
 
+* arm_macros: min, max, min3, max3 & clamp refactored (double evaluation safe)
+* arm_macros: min & max declared as upper case, preventing std::min std::max issues when library is included in cpp file
+* min and max uses set to upper case in the whole library (cpp std workaround)
+* arm_attributes: TYPEOF__ alias added, ASM__ alias set to __asm__ for consistency
 * sarmfsw: include order set back (to keep compatibility without warnings with older cmsis versions)
 * arm_chip_xxx: all qualifier macros for functions changed by explicit qualifiers (due to includes order)
 * sarmfsw: include order fix (so that arm_chip_xxx attributes can be properly pre-processed) -> revert

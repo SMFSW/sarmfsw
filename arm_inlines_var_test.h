@@ -21,7 +21,7 @@
 **/
 __INLINE BOOL inTolerance(const SDWORD val, const SDWORD ref, float tolerance)
 {
-	tolerance = min(100.0f, max(0.0f, tolerance));
+	tolerance = MIN(100.0f, MAX(0.0f, tolerance));
 
 	const DWORD margin = (DWORD) (ref * (tolerance / 100.0f));
 

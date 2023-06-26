@@ -122,7 +122,7 @@ __INLINE LWORD conv32upto64Bits(const DWORD val, const BYTE nb)
 **/
 __INLINE DWORD convXtoYBits(DWORD val, const BYTE from, const BYTE to)
 {
-	const intCPU_t diff_bits = min(32, to) - min(32, from);
+	const intCPU_t diff_bits = MIN(32, to) - MIN(32, from);
 	val &= maskBits(from);
 
 	if (diff_bits > 0)		{ return (DWORD) ((val << diff_bits) | (val >> (from - diff_bits))); }
