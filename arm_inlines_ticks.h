@@ -23,10 +23,10 @@
 **/
 __INLINE BOOL INLINE__ TPSSUP_MS(const DWORD prev, const DWORD time)
 {
-	const DWORD hNow = HALTicks();
-	const DWORD diff = (hNow >= prev) ? hNow - prev : (HAL_MAX_TICKS - prev) + hNow;
+	const DWORD scaled_time = time * HAL_MS_TICKS_FACTOR;
+	const DWORD diff = OVF_DIFF(HALTicks(), prev);
 
-	return (diff > (DWORD) (time * HAL_MS_TICKS_FACTOR));
+	return binEval(diff >= scaled_time);
 }
 
 
@@ -40,10 +40,10 @@ __INLINE BOOL INLINE__ TPSSUP_MS(const DWORD prev, const DWORD time)
 **/
 __INLINE BOOL INLINE__ TPSINF_MS(const DWORD prev, const DWORD time)
 {
-	const DWORD hNow = HALTicks();
-	const DWORD diff = (hNow >= prev) ? hNow - prev : (HAL_MAX_TICKS - prev) + hNow;
+	const DWORD diff = OVF_DIFF(HALTicks(), prev);
+	const DWORD scaled_time = time * HAL_MS_TICKS_FACTOR;
 
-	return (diff < (DWORD) (time * HAL_MS_TICKS_FACTOR));
+	return binEval(diff < scaled_time);
 }
 
 

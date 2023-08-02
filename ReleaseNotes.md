@@ -22,6 +22,8 @@ SOFTWARE.
 
 ## v3.7
 
+* arm_macros: OVF_DIFF added (overflow handling diff)
+* arm_inline_ticks: inlines use of OVF_DIFF
 * arm_macros: min, max, min3, max3 & clamp refactored (double evaluation safe)
 * arm_macros: min & max declared as upper case, preventing std::min std::max issues when library is included in cpp file
 * min and max uses set to upper case in the whole library (cpp std workaround)

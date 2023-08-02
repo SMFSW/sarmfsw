@@ -157,8 +157,8 @@
 #undef MIN		//!\note Undefine MIN if already defined in some other library
 #endif
 #define min					MIN								//!< \b min alias for \b MIN
-#define MIN(a, b)			({	__TYPEOF (a) _a = (a);	\
-								__TYPEOF (b) _b = (b);	\
+#define MIN(a, b)			({	__TYPEOF(a) _a = (a);	\
+								__TYPEOF(b) _b = (b);	\
 								_a <= _b ? _a : _b; })		//!< Returns min value between \b a and \b b
 
 #ifdef max
@@ -168,8 +168,8 @@
 #undef MAX		//!\note Undefine MAX if already defined in some other library
 #endif
 #define max					MAX								//!< \b max alias for \b MAX
-#define MAX(a, b)			({	__TYPEOF (a) _a = (a);	\
-								__TYPEOF (b) _b = (b);	\
+	#define MAX(a, b)		({	__TYPEOF(a) _a = (a);	\
+								__TYPEOF(b) _b = (b);	\
 								_a >= _b ? _a : _b; })		//!< Returns max value between \b a and \b b
 
 #ifdef min3
@@ -179,9 +179,9 @@
 #undef MIN3		//!\note Undefine MIN3 if already defined in some other library
 #endif
 #define min3				MIN3							//!< \b min3 alias for \b MIN3
-#define	MIN3(a, b, c)		({	__TYPEOF (a) _a = (a);	\
-								__TYPEOF (b) _b = (b);	\
-								__TYPEOF (c) _c = (c);	\
+#define	MIN3(a, b, c)		({	__TYPEOF(a) _a = (a);	\
+								__TYPEOF(b) _b = (b);	\
+								__TYPEOF(c) _c = (c);	\
 								_b <= _c ? (_a <= _b ? _a : _b) : (_a <= _c ? _a : c); })	//!< Returns min value between \b a, \b b and \b c
 
 #ifdef max3
@@ -191,9 +191,9 @@
 #undef MAX3		//!\note Undefine MAX3 if already defined in some other library
 #endif
 #define max3				MAX3							//!< \b max3 alias for \b MAX3
-#define	MAX3(a, b, c)		({	__TYPEOF (a) _a = (a);	\
-								__TYPEOF (b) _b = (b);	\
-								__TYPEOF (c) _c = (c);	\
+#define	MAX3(a, b, c)		({	__TYPEOF(a) _a = (a);	\
+								__TYPEOF(b) _b = (b);	\
+								__TYPEOF(c) _c = (c);	\
 								_b >= _c ? (_a >= _b ? _a : _b) : (_a >= _c ? _a : _c); })	//!< Returns max value between \b a, \b b and \b c
 
 #ifdef clamp
@@ -203,20 +203,27 @@
 #undef CLAMP	//!\note Undefine CLAMP if already defined in some other library
 #endif
 #define clamp				CLAMP							//!< \b clamp alias for \b CLAMP
-#define CLAMP(v, mn, mx)	({	__TYPEOF (v) _v = (v);		\
-								__TYPEOF (mn) _mn = (mn);	\
-								__TYPEOF (mx) _mx = (mx);	\
+#define CLAMP(v, mn, mx)	({	__TYPEOF(v) _v = (v);		\
+								__TYPEOF(mn) _mn = (mn);	\
+								__TYPEOF(mx) _mx = (mx);	\
 								_v < _mn ? _mn : (_v > _mx ? _mx : _v); })	//!< Returns the value between \b mn and \b mx from \b val
+
+
+//! \warning OVF_DIFF only works with unsigned integers
+#define OVF_DIFF(a, b)		({	__TYPEOF(a) _a = (a);	\
+								__TYPEOF(b) _b = (b);	\
+								__TYPEOF(a) _max = -1;	\
+								_a >= _b ? (_a - _b) : (_max - _b) + _a; })	//!< Returns difference of unsigned \b a and \b b (with potential overflow handliing)
 
 
 //! \warning SCALE_VAL does not check types and is limited to MCU register size computation, for larger scales, use \ref SCALE_VAL_T or \ref scaleValue instead
 #define SCALE_VAL(	v, from_min, from_max, to_min, to_max)		\
 					(((((v) - from_min) * (to_max - to_min)) /	\
-					(from_max - from_min)) + to_min)	//!< Scale value \b v from range \b from_min:from_max to range \b to_min:to_max
+					(from_max - from_min)) + to_min)						//!< Scale value \b v from range \b from_min:from_max to range \b to_min:to_max
 
-#define SCALE_VAL_T(t, v, from_min, from_max, to_min, to_max)					\
-					(((((t) (v) - (t) from_min) * ((t) to_max - (t) to_min)) /	\
-					((t) from_max - (t) from_min)) + (t) to_min)	//!< Scale typed \b t value \b v from range \b from_min:from_max to range \b to_min:to_max
+#define SCALE_VAL_T(typ, v, from_min, from_max, to_min, to_max)							\
+					(((((typ) (v) - (typ) from_min) * ((typ) to_max - (typ) to_min)) /	\
+					((typ) from_max - (typ) from_min)) + (typ) to_min)		//!< Scale typed \b typ value \b v from range \b from_min:from_max to range \b to_min:to_max
 
 
 #define BYTE_TO_PERC(b)		((BYTE) ((((b) > 255 ? 255 : (b)) * 100) / 255))	//!< Converts a BYTE \b b (0-255) to percent (0-100)
