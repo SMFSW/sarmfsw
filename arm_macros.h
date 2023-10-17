@@ -143,8 +143,8 @@
 #define	CAT(a, b)			a##b			//!< Preprocessor Name catenation (use of \ref XCAT is highly recommended for any need)
 #define XCAT(a, b)			CAT(a, b)		//!< Preprocessor Name catenation (possible nesting)
 
-#define STR(s)				(#s)			//!< Stringify an expression
-
+#define STR(s)				#s				//!< Stringify an expression
+#define XSTR(s)				STR(s)			//!< Stringify the result of an expression (use for stringification of a macro expansion)
 
 #define binEval(exp)		((exp) ? true : false)		//!< boolean evaluation of expression \b exp
 #define nbinEval(exp)		(!binEval(exp))				//!< complemented boolean evaluation of expression \b exp
@@ -168,7 +168,7 @@
 #undef MAX		//!\note Undefine MAX if already defined in some other library
 #endif
 #define max					MAX								//!< \b max alias for \b MAX
-	#define MAX(a, b)		({	__TYPEOF(a) _a = (a);	\
+#define MAX(a, b)			({	__TYPEOF(a) _a = (a);	\
 								__TYPEOF(b) _b = (b);	\
 								_a >= _b ? _a : _b; })		//!< Returns max value between \b a and \b b
 
@@ -217,7 +217,7 @@
 
 
 //! \warning SCALE_VAL does not check types and is limited to MCU register size computation, for larger scales, use \ref SCALE_VAL_T or \ref scaleValue instead
-#define SCALE_VAL(	v, from_min, from_max, to_min, to_max)		\
+#define SCALE_VAL(v, from_min, from_max, to_min, to_max)		\
 					(((((v) - from_min) * (to_max - to_min)) /	\
 					(from_max - from_min)) + to_min)						//!< Scale value \b v from range \b from_min:from_max to range \b to_min:to_max
 
