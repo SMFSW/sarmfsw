@@ -49,7 +49,7 @@
 	#define STM_FAMILY			c0								//!< STM32 family (c0) for name catenation
 	#endif
 	#define STM32C0												//!< STM32C0 family generic define
-	#define STM32_CMSIS_VERSION	__STM32C0xx_CMSIS_VERSION		//!< STM32C0 CMSIS version
+	#define STM32_CMSIS_VERSION	__STM32C0_CMSIS_VERSION			//!< STM32C0 CMSIS version
 
 #elif	defined(STM32F030x6) || defined(STM32F030x8) ||													\
 		defined(STM32F031x6) || defined(STM32F038xx) ||													\
@@ -61,7 +61,7 @@
 	#define STM_FAMILY			f0								//!< STM32 family (f0) for name catenation
 	#endif
 	#define STM32F0												//!< STM32F0 family generic define
-	#define STM32_CMSIS_VERSION	__STM32F0xx_CMSIS_VERSION		//!< STM32F0 CMSIS version
+	#define STM32_CMSIS_VERSION	__STM32F0_CMSIS_VERSION			//!< STM32F0 CMSIS version
 
 #elif	defined(STM32F100xB) || defined(STM32F100xE) || defined(STM32F101x6) ||																			\
 		defined(STM32F101xB) || defined(STM32F101xE) || defined(STM32F101xG) || defined(STM32F102x6) || defined(STM32F102xB) || defined(STM32F103x6) ||	\
@@ -70,7 +70,7 @@
 	#define STM_FAMILY			f1								//!< STM32 family (f1) for name catenation
 	#endif
 	#define STM32F1												//!< STM32F1 family generic define
-	#define STM32_CMSIS_VERSION	__STM32F1xx_CMSIS_VERSION		//!< STM32F1 CMSIS version
+	#define STM32_CMSIS_VERSION	__STM32F1_CMSIS_VERSION			//!< STM32F1 CMSIS version
 
 #elif	defined(STM32F205xx) || defined(STM32F215xx) || defined(STM32F207xx) || defined(STM32F217xx)
 	#if !defined(STM_FAMILY)
@@ -88,7 +88,7 @@
 	#define STM_FAMILY			f3								//!< STM32 family (f3) for name catenation
 	#endif
 	#define STM32F3												//!< STM32F3 family generic define
-	#define STM32_CMSIS_VERSION	__STM32F3xx_CMSIS_VERSION		//!< STM32F3 CMSIS version
+	#define STM32_CMSIS_VERSION	__STM32F3_CMSIS_VERSION			//!< STM32F3 CMSIS version
 
 #elif	defined(STM32F405xx) || defined(STM32F415xx) || defined(STM32F407xx) || defined(STM32F417xx) ||	\
 		defined(STM32F427xx) || defined(STM32F437xx) || defined(STM32F429xx) || defined(STM32F439xx) ||	\
@@ -110,7 +110,7 @@
 	#define STM_FAMILY			f7								//!< STM32 family (f7) for name catenation
 	#endif
 	#define STM32F7												//!< STM32F7 family generic define
-	#define STM32_CMSIS_VERSION	__STM32F7xx_CMSIS_VERSION		//!< STM32F7 CMSIS version
+	#define STM32_CMSIS_VERSION	__STM32F7_CMSIS_VERSION			//!< STM32F7 CMSIS version
 
 #elif	defined(STM32G071xx) || defined(STM32G081xx) || defined(STM32G070xx) || \
 		defined(STM32G030xx) || defined(STM32G031xx) || defined(STM32G041xx) || \
@@ -120,7 +120,7 @@
 	#define STM_FAMILY			g0								//!< STM32 family (g0) for name catenation
 	#endif
 	#define STM32G0												//!< STM32G0 family generic define
-	#define STM32_CMSIS_VERSION	__STM32G0xx_CMSIS_VERSION		//!< STM32G0 CMSIS version
+	#define STM32_CMSIS_VERSION	__STM32G0_CMSIS_VERSION			//!< STM32G0 CMSIS version
 
 #elif	defined(STM32G431xx) || defined(STM32G441xx) || defined(STM32G471xx) || \
 		defined(STM32G473xx) || defined(STM32G474xx) || defined(STM32G484xx) || \
@@ -129,7 +129,7 @@
 	#define STM_FAMILY			g4								//!< STM32 family (g4) for name catenation
 	#endif
 	#define STM32G4												//!< STM32G4 family generic define
-	#define STM32_CMSIS_VERSION	__STM32G4xx_CMSIS_VERSION		//!< STM32G4 CMSIS version
+	#define STM32_CMSIS_VERSION	__STM32G4_CMSIS_VERSION			//!< STM32G4 CMSIS version
 
 #elif	defined (STM32H573xx) || defined (STM32H563xx) || \
 		defined (STM32H562xx) || defined (STM32H503xx)
@@ -137,7 +137,7 @@
 	#define STM_FAMILY			h5								//!< STM32 family (h5) for name catenation
 	#endif
 	#define STM32H5												//!< STM32H5 family generic define
-	#define STM32_CMSIS_VERSION	__STM32H5xx_CMSIS_VERSION		//!< STM32H5 CMSIS version
+	#define STM32_CMSIS_VERSION	__STM32H5_CMSIS_VERSION			//!< STM32H5 CMSIS version
 
 #elif	defined(STM32H743xx) || defined(STM32H753xx)  || defined(STM32H750xx) || defined(STM32H742xx)  ||													\
 		defined(STM32H745xx) || defined(STM32H745xG)  || defined(STM32H755xx) || defined(STM32H747xx)  || defined(STM32H747xG) || defined(STM32H757xx)  ||	\
@@ -183,14 +183,14 @@
 	#define STM_FAMILY			l4								//!< STM32 family (l4) for name catenation
 	#endif
 	#define STM32L4												//!< STM32L4 family generic define
-	#define STM32_CMSIS_VERSION	__STM32L4xx_CMSIS_VERSION		//!< STM32L4 CMSIS version
+	#define STM32_CMSIS_VERSION	__STM32L4_CMSIS_VERSION			//!< STM32L4 CMSIS version
 
 #elif defined(STM32L552xx) || defined(STM32L562xx)
 	#if !defined(STM_FAMILY)
 	#define STM_FAMILY			l5								//!< STM32 family (l5) for name catenation
 	#endif
 	#define STM32L5												//!< STM32L5 family generic define
-	#define STM32_CMSIS_VERSION	__STM32L5xx_CMSIS_VERSION		//!< STM32L5 CMSIS version
+	#define STM32_CMSIS_VERSION	__STM32L5_CMSIS_VERSION			//!< STM32L5 CMSIS version
 
 #elif 	defined(STM32MP15xx)   ||																				\
 		defined(STM32MP157Axx) || defined(STM32MP157Cxx) || defined(STM32MP157Dxx) || defined(STM32MP157Fxx) || \
@@ -209,7 +209,7 @@
 	#define STM_FAMILY			u5								//!< STM32 family (u5) for name catenation
 	#endif
 	#define STM32U5												//!< STM32U5 family generic define
-	#define STM32_CMSIS_VERSION	__STM32U5xx_CMSIS_VERSION		//!< STM32U5 CMSIS version
+	#define STM32_CMSIS_VERSION	__STM32U5_CMSIS_VERSION			//!< STM32U5 CMSIS version
 
 #elif	defined(STM32WB55xx) || defined(STM32WB5Mxx) || defined(STM32WB50xx) || \
 		defined(STM32WB35xx) || defined(STM32WB30xx) ||							\
@@ -225,7 +225,7 @@
 	#define STM_FAMILY			wba								//!< STM32 family (wba) for name catenation
 	#endif
 	#define STM32WBA											//!< STM32WBA family generic define
-	#define STM32_CMSIS_VERSION	__STM32WBAxx_CMSIS_VERSION		//!< STM32WBA CMSIS version
+	#define STM32_CMSIS_VERSION	__STM32WBA_CMSIS_VERSION		//!< STM32WBA CMSIS version
 
 #elif	defined(STM32WL55xx) || defined(STM32WL54xx) || defined(STM32WLE5xx) || defined(STM32WLE4xx)
 	#if !defined(STM_FAMILY)
