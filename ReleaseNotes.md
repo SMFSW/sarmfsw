@@ -2,7 +2,7 @@
 
 The MIT License (MIT)
 
-Copyright (c) 2017-2023 SMFSW (Sebastien Bizien)
+Copyright (c) 2017-2024 SMFSW (Sebastien Bizien)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,6 +22,7 @@ SOFTWARE.
 
 ## v3.7
 
+* arm_macros.h: OVF_DIFF fix, thanks to @Simben
 * keywords.txt: update
 * arm_cmsis: Some CMSIS alias macros added
 * arm_macros: XSTR added (stringification of an expanded macro)

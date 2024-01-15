@@ -1,6 +1,6 @@
 /*!\file arm_macros.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2023, SMFSW
+** \copyright MIT (c) 2017-2024, SMFSW
 ** \brief ARM common macros
 ** \note If used CPU only handles single shifts, you may define SINGLE_SHIFT_ONLY_OPCODE at project level (see \ref LSHIFT & \ref RSHIFT)
 */
@@ -213,7 +213,7 @@
 #define OVF_DIFF(a, b)		({	__TYPEOF(a) _a = (a);	\
 								__TYPEOF(b) _b = (b);	\
 								__TYPEOF(a) _max = -1;	\
-								_a >= _b ? (_a - _b) : (_max - _b) + _a; })	//!< Returns difference of unsigned \b a and \b b (with potential overflow handliing)
+								_a >= _b ? (_a - _b) : (_max - _b) + _a + 1; })	//!< Returns difference of unsigned \b a and \b b (with potential overflow handliing)
 
 
 //! \warning SCALE_VAL does not check types and is limited to MCU register size computation, for larger scales, use \ref SCALE_VAL_T or \ref scaleValue instead

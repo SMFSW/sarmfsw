@@ -1,6 +1,6 @@
 /*!\file arm_inlines_var_test.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2023, SMFSW
+** \copyright MIT (c) 2017-2024, SMFSW
 ** \brief Variables test inlines
 */
 /****************************************************************/

@@ -1,6 +1,6 @@
 /*!\file arm_chip_ino.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2023, SMFSW
+** \copyright MIT (c) 2017-2024, SMFSW
 ** \brief Common macros for Arduino
 ** \warning Do not use macros for function qualifiers in this file
 */

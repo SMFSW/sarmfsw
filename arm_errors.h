@@ -1,6 +1,6 @@
 /*!\file arm_errors.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2023, SMFSW
+** \copyright MIT (c) 2017-2024, SMFSW
 ** \brief ARM user errors
 **/
 /****************************************************************/
