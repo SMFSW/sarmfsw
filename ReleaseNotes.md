@@ -26,6 +26,7 @@ SOFTWARE.
 * keywords.txt: update
 * arm_cmsis: Some CMSIS alias macros added
 * arm_macros: XSTR added (stringification of an expanded macro)
+* arm_stdclib: SPLIT_FLOAT_TO_INTS added
 * arm_stdclib: str_add_cr change (adding only cr) + str_add_lf and str_add_crlf added 
 * arm_macros: OVF_DIFF added (overflow handling diff)
 * arm_inline_ticks: inlines use of OVF_DIFF
