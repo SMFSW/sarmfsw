@@ -31,13 +31,6 @@
 ** \endcode
 **
 ** Please note TIMER_0_start() shall be called at init.
-** Also, HAL_GetTick shall be known to sarmfsw.
-** As atmel_start_pins.h is included by sarmfsw, you should add HAL_GetTick prototype in the file:
-**
-** \code
-** #include <stdint.h>
-** uint32_t HAL_GetTick(void);
-** \endcode
 */
 /****************************************************************/
 #ifndef __ARM_CHIP_SAM_H
@@ -74,8 +67,7 @@
 #endif
 
 #ifndef HALTicks
-uint32_t HAL_GetTick(void);						//!< External definition of HAL_GetTick that shall be defined in project
-#define HALTicks()			HAL_GetTick()		//!< Alias for HAL get ticks function
+// Use common definition of HALTicks in arm_cmsis.h
 #endif
 
 

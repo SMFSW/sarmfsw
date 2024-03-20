@@ -49,8 +49,7 @@
 #endif
 
 #ifndef HALTicks
-uint32_t HAL_GetTick(void);						//!< External definition of HAL_GetTick that shall be defined in project
-#define HALTicks()			HAL_GetTick()		//!< Alias for HAL get ticks function
+// Use common definition of HALTicks in arm_cmsis.h
 #endif
 
 /*!\enum eResetSource

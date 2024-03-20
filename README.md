@@ -12,6 +12,10 @@ Library has been updated to become compatible with Arduino & other 8/16bit platf
 * `STM_FAMILY`: Define with proper family name if your STM32 MCU is not automatically recognized (in case of warning message displayed)
 * `SAM_FAMILY`: Define with proper family name if your ATMEL SAM MCU is not automatically recognized (in case of warning message displayed)
 
+* `SARMFSW_NO_CHIP_HAL`: No includes and definitions of HAL chip files (can be useful to use sarmfsw for static libraries code generation)
+
+* `HALTicks`: can be defined with a function name to use ticks getter function already implemented under the form `uint32_t func(void)`
+
 * `HAL_MAX_TICKS` val: Define with custom max value in project if tick max value is not using 32b variable full scale
 * `HAL_MS_TICKS_FACTOR`: Define with custom multiplier in project if tick period is not 1ms
 

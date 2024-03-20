@@ -22,11 +22,14 @@ SOFTWARE.
 
 ## v3.7
 
+* arm_cmsis: SARMFSW_NO_CHIP_HAL symbol implementation
+* arm_cmsis & arm_chip_xxx: HALTicks symbol refactoring and checks added for provided function declaration consitency
 * arm_macros.h: OVF_DIFF fix, thanks to @Simben
 * keywords.txt: update
+* arm_inlines_float: SPLIT_FLOAT_TO_INTS added
+* arm_inlines_float: sIntFrac struct and associated float2sIntFrac and sIntFrac2float functions added
 * arm_cmsis: Some CMSIS alias macros added
 * arm_macros: XSTR added (stringification of an expanded macro)
-* arm_stdclib: SPLIT_FLOAT_TO_INTS added
 * arm_stdclib: str_add_cr change (adding only cr) + str_add_lf and str_add_crlf added 
 * arm_macros: OVF_DIFF added (overflow handling diff)
 * arm_inline_ticks: inlines use of OVF_DIFF

@@ -32,6 +32,7 @@
 #define CORTEX_M			__CORTEX_M			//!< ARM Cortex type alias
 
 
+#ifndef SARMFSW_NO_CHIP_HAL
 /************************/
 /*** Arduino platform ***/
 /************************/
@@ -694,7 +695,7 @@
 	#endif
 	#define XXXxxxx												//!< XXXxxxx family generic define
 */
-#else
+#elif !defined(INO_FAMILY) && !defined(STM_FAMILY) && !defined(SAM_FAMILY) && !defined(PIC_FAMILY)
 	#error "You should add the CMSIS base include following chip used & comment this error."
 	#error "If working with STM32 and chip is not in the list, try add STM_FAMILY=(c/f/h/l/mp/u/wb/wl)x in project defines."
 	#error "If working with ATMEL SAM and chip is not in the list, try add SAM_FAMILY=(b/c/d/e/g/h/l/r/s/v)xx in project defines."
@@ -727,6 +728,24 @@
 
 #else
 	#error "You will have to define your own CMSIS_INC & CMSIS_CFG file names with <> around manually (for specified vendor chip before including sarmfsw.h)."
+#endif
+
+#endif /* SARMFSW_NO_CHIP_HAL */
+
+
+/*** arm_inlines_ticks.h needs a generic definition of HALTicks & HAL_MS_TICKS_FACTOR ***/
+#define HALTICKS_PROTOTYPE(func)	uint32_t func(void);	//!< External definition of Ticks getter that shall be implemented in project
+
+// In case chip headers don't include specific HALTicks symbol, define generic one and its external prototype
+#ifndef HALTicks
+HALTICKS_PROTOTYPE(HAL_GetTick)			//!< External definition of HAL_GetTick that shall be defined in project
+#define HALTicks		HAL_GetTick		//!< Alias for HAL get ticks function
+#else
+HALTICKS_PROTOTYPE(HALTicks)			//!< External definition of Ticks getter to check for prototype validity
+#endif
+
+#ifndef HAL_MS_TICKS_FACTOR
+#define HAL_MS_TICKS_FACTOR	1			//!< HAL milliseconds multiplier (depending tick counter frequency)
 #endif
 
 

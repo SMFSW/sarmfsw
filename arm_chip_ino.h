@@ -38,7 +38,7 @@
 #endif
 
 #ifndef HALTicks
-#define HALTicks()			millis()			//!< Alias for Arduino get ms ticks function
+#define HALTicks			millis				//!< Alias for Arduino get ms ticks function
 #endif
 
 
