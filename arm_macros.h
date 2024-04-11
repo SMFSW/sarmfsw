@@ -35,12 +35,14 @@
 #endif
 
 
-#define GET_BITS(v, b)			(v & (b))					//!< Get bits from mask \b b of variable \b v
-#define SET_BITS(v, b)			(v |= (b))					//!< Set bits \b b of variable \b v
-#define CLR_BITS(v, b)			(v &= ~(b))					//!< Clear bits \b b of variable \b v
-#define INV_BITS(v, b)			(v ^= (b))					//!< Invert bits \b b of variable \b v
+#define GET_BITS(v, b)			((v) & (b))						//!< Get bits from mask \b b of variable \b v
+#define SET_BITS(v, b)			((v) |= (b))					//!< Set bits \b b of variable \b v
+#define CLR_BITS(v, b)			((v) &= ~(b))					//!< Clear bits \b b of variable \b v
+#define INV_BITS(v, b)			((v) ^= (b))					//!< Invert bits \b b of variable \b v
 
-#define SET_BITS_VAL(v, c, s)	(v = ((v & ~(c)) | (s)))	//!< Set variable \b v with clear mask \b c to set mask \b s
+#define SET_BITS_VAL(v, c, s)	((v) = (((v) & ~(c)) | (s)))	//!< Set variable \b v with clear mask \b c to set mask \b s
+#define TEST_BITS_VAL(v, b)		(((v) & (b)) == (b))			//!< Test variable \b v with bits \b b
+#define TEST_MASK_VAL(v, m, r)	(((v) & (m)) == (r))			//!< Test variable \b v with bits mask \b m is equal to \b r
 
 
 #if defined(SINGLE_SHIFT_ONLY_OPCODE)

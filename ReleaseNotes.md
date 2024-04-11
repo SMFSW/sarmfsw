@@ -24,7 +24,9 @@ SOFTWARE.
 
 * arm_cmsis: SARMFSW_NO_CHIP_HAL symbol implementation
 * arm_cmsis & arm_chip_xxx: HALTicks symbol refactoring and checks added for provided function declaration consitency
-* arm_macros.h: OVF_DIFF fix, thanks to @Simben
+* arm_macros: TEST_BITS_VAL & TEST_MASK_VAL macros added
+* arm_macros: Register intended macros (such as GET_BITS...) encloses tested variable/register/values in parenthesis
+* arm_macros: OVF_DIFF fix, thanks to @Simben
 * keywords.txt: update
 * arm_inlines_float: SPLIT_FLOAT_TO_INTS added
 * arm_inlines_float: sIntFrac struct and associated float2sIntFrac and sIntFrac2float functions added
