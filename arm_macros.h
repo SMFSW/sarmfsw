@@ -82,27 +82,27 @@
 #else
 
 //!\note sarmfsw library being optimized for 32b architecture, default shifting behavior set to 32b
-#define LSHIFT(v, n)			((DWORD) ((DWORD) (v) << n))	//!< Shift \b v \b n bits left
+#define LSHIFT(v, n)			(DWORD) ((DWORD) (v) << n)	//!< Shift \b v \b n bits left
 //!\note sarmfsw library being optimized for 32b architecture, default shifting behavior set to 32b
-#define RSHIFT(v, n)			((DWORD) ((DWORD) (v) >> n))	//!< Shift \b v \b n bits right
+#define RSHIFT(v, n)			(DWORD) ((DWORD) (v) >> n)	//!< Shift \b v \b n bits right
 
-#define LSHIFT8(v, n)			((BYTE) ((BYTE) (v) << n))		//!< Shift \b v \b n bits left (up to 7b)
-#define RSHIFT8(v, n)			((BYTE) ((BYTE) (v) >> n))		//!< Shift \b v \b n bits right (up to 7b)
+#define LSHIFT8(v, n)			(BYTE) ((BYTE) (v) << n)	//!< Shift \b v \b n bits left (up to 7b)
+#define RSHIFT8(v, n)			(BYTE) ((BYTE) (v) >> n)	//!< Shift \b v \b n bits right (up to 7b)
 
-#define LSHIFT16(v, n)			((WORD) ((WORD) (v) << n))		//!< Shift \b v \b n bits left (up to 15b)
-#define RSHIFT16(v, n)			((WORD) ((WORD) (v) >> n))		//!< Shift \b v \b n bits right (up to 15b)
+#define LSHIFT16(v, n)			(WORD) ((WORD) (v) << n)	//!< Shift \b v \b n bits left (up to 15b)
+#define RSHIFT16(v, n)			(WORD) ((WORD) (v) >> n)	//!< Shift \b v \b n bits right (up to 15b)
 
-#define LSHIFT32(v, n)			((DWORD) ((DWORD) (v) << n))	//!< Shift \b v \b n bits left (up to 31b)
-#define RSHIFT32(v, n)			((DWORD) ((DWORD) (v) >> n))	//!< Shift \b v \b n bits right (up to 31b)
+#define LSHIFT32(v, n)			(DWORD) ((DWORD) (v) << n)	//!< Shift \b v \b n bits left (up to 31b)
+#define RSHIFT32(v, n)			(DWORD) ((DWORD) (v) >> n)	//!< Shift \b v \b n bits right (up to 31b)
 
-#define LSHIFT64(v, n)			((LWORD) ((LWORD) (v) << n))	//!< Shift \b v \b n bits left (up to 63b)
-#define RSHIFT64(v, n)			((LWORD) ((LWORD) (v) >> n))	//!< Shift \b v \b n bits right (up to 63b)
+#define LSHIFT64(v, n)			(LWORD) ((LWORD) (v) << n)	//!< Shift \b v \b n bits left (up to 63b)
+#define RSHIFT64(v, n)			(LWORD) ((LWORD) (v) >> n)	//!< Shift \b v \b n bits right (up to 63b)
 
 #endif
 
 
-#define MAKEWORD(lsb, msb)		((WORD) (((BYTE) (lsb)) | LSHIFT(((WORD) ((BYTE) (msb))), 8)))		//!< Make WORD from \b lsb and \b msb
-#define MAKELONG(lsw, msw)		((DWORD) (((WORD) (lsw)) | LSHIFT(((DWORD) ((WORD) (msw))), 16)))	//!< Make LONG from \b lsw and \b msw
+#define MAKEWORD(lsb, msb)		(WORD) (((BYTE) (lsb)) | LSHIFT(((WORD) ((BYTE) (msb))), 8))		//!< Make WORD from \b lsb and \b msb
+#define MAKELONG(lsw, msw)		(DWORD) (((WORD) (lsw)) | LSHIFT(((DWORD) ((WORD) (msw))), 16))		//!< Make LONG from \b lsw and \b msw
 
 #ifdef LOBYTE
 #undef LOBYTE	//!\note Undefine LOBYTE if already defined in some other library
@@ -112,10 +112,10 @@
 #undef HIBYTE	//!\note Undefine HIBYTE if already defined in some other library
 #endif
 
-#define LOBYTE(w)				((BYTE) (w))						//!< Get BYTE LSB from WORD \b w
-#define HIBYTE(w)				((BYTE) RSHIFT((WORD) (w), 8))		//!< Get BYTE MSB from WORD \b w
-#define LOWORD(l)				((WORD) (l))						//!< Get WORD LSW from LONG \b l
-#define HIWORD(l)				((WORD) RSHIFT((DWORD) (l), 16))	//!< Get WORD MSW from LONG \b l
+#define LOBYTE(w)				(BYTE) (w)						//!< Get BYTE LSB from WORD \b w
+#define HIBYTE(w)				(BYTE) RSHIFT((WORD) (w), 8)	//!< Get BYTE MSB from WORD \b w
+#define LOWORD(l)				(WORD) (l)						//!< Get WORD LSW from LONG \b l
+#define HIWORD(l)				(WORD) RSHIFT((DWORD) (l), 16)	//!< Get WORD MSW from LONG \b l
 
 #define	SWAP_TYPE(a, b, typ)	{ typ c = a; a = b; b = c; }		//!< Swap type \b typ \b a \& \b b
 #define	SWAP_BYTE(a, b)			SWAP_TYPE(a, b, BYTE)				//!< Swap BYTEs \b a \& \b b
@@ -161,7 +161,7 @@
 #define min					MIN								//!< \b min alias for \b MIN
 #define MIN(a, b)			({	__TYPEOF(a) _a = (a);	\
 								__TYPEOF(b) _b = (b);	\
-								_a <= _b ? _a : _b; })		//!< Returns min value between \b a and \b b
+								(_a <= _b) ? _a : _b; })	//!< Returns min value between \b a and \b b
 
 #ifdef max
 #undef max		//!\note Undefine max if already defined in some other library
@@ -172,7 +172,7 @@
 #define max					MAX								//!< \b max alias for \b MAX
 #define MAX(a, b)			({	__TYPEOF(a) _a = (a);	\
 								__TYPEOF(b) _b = (b);	\
-								_a >= _b ? _a : _b; })		//!< Returns max value between \b a and \b b
+								(_a >= _b) ? _a : _b; })	//!< Returns max value between \b a and \b b
 
 #ifdef min3
 #undef min3		//!\note Undefine min3 if already defined in some other library
@@ -184,7 +184,7 @@
 #define	MIN3(a, b, c)		({	__TYPEOF(a) _a = (a);	\
 								__TYPEOF(b) _b = (b);	\
 								__TYPEOF(c) _c = (c);	\
-								_b <= _c ? (_a <= _b ? _a : _b) : (_a <= _c ? _a : c); })	//!< Returns min value between \b a, \b b and \b c
+								(_b <= _c) ? ((_a <= _b) ? _a : _b) : ((_a <= _c) ? _a : _c); })	//!< Returns min value between \b a, \b b and \b c
 
 #ifdef max3
 #undef max3		//!\note Undefine max3 if already defined in some other library
@@ -196,7 +196,7 @@
 #define	MAX3(a, b, c)		({	__TYPEOF(a) _a = (a);	\
 								__TYPEOF(b) _b = (b);	\
 								__TYPEOF(c) _c = (c);	\
-								_b >= _c ? (_a >= _b ? _a : _b) : (_a >= _c ? _a : _c); })	//!< Returns max value between \b a, \b b and \b c
+								(_b >= _c) ? ((_a >= _b) ? _a : _b) : ((_a >= _c) ? _a : _c); })	//!< Returns max value between \b a, \b b and \b c
 
 #ifdef clamp
 #undef clamp	//!\note Undefine clamp if already defined in some other library
@@ -208,28 +208,28 @@
 #define CLAMP(v, mn, mx)	({	__TYPEOF(v) _v = (v);		\
 								__TYPEOF(mn) _mn = (mn);	\
 								__TYPEOF(mx) _mx = (mx);	\
-								_v < _mn ? _mn : (_v > _mx ? _mx : _v); })	//!< Returns the value between \b mn and \b mx from \b val
+								(_v < _mn) ? _mn : ((_v > _mx) ? _mx : _v); })	//!< Returns the value between \b mn and \b mx from \b val
 
 
 //! \warning OVF_DIFF only works with unsigned integers
 #define OVF_DIFF(a, b)		({	__TYPEOF(a) _a = (a);	\
 								__TYPEOF(b) _b = (b);	\
 								__TYPEOF(a) _max = -1;	\
-								_a >= _b ? (_a - _b) : (_max - _b) + _a + 1; })	//!< Returns difference of unsigned \b a and \b b (with potential overflow handliing)
+								(_a >= _b) ? (_a - _b) : (_max - _b) + _a + 1; })	//!< Returns difference of unsigned \b a and \b b (with potential overflow handliing)
 
 
 //! \warning SCALE_VAL does not check types and is limited to MCU register size computation, for larger scales, use \ref SCALE_VAL_T or \ref scaleValue instead
-#define SCALE_VAL(v, from_min, from_max, to_min, to_max)		\
-					(((((v) - from_min) * (to_max - to_min)) /	\
-					(from_max - from_min)) + to_min)						//!< Scale value \b v from range \b from_min:from_max to range \b to_min:to_max
+#define SCALE_VAL(v, from_min, from_max, to_min, to_max)				\
+					(((((v) - (from_min)) * ((to_max) - (to_min))) /	\
+					((from_max) - (from_min))) + (to_min))						//!< Scale value \b v from range \b from_min:from_max to range \b to_min:to_max
 
-#define SCALE_VAL_T(typ, v, from_min, from_max, to_min, to_max)							\
-					(((((typ) (v) - (typ) from_min) * ((typ) to_max - (typ) to_min)) /	\
-					((typ) from_max - (typ) from_min)) + (typ) to_min)		//!< Scale typed \b typ value \b v from range \b from_min:from_max to range \b to_min:to_max
+#define SCALE_VAL_T(typ, v, from_min, from_max, to_min, to_max)									\
+					(((((typ) (v) - (typ) (from_min)) * ((typ) (to_max) - (typ) (to_min))) /	\
+					((typ) (from_max) - (typ) (from_min))) + (typ) (to_min))	//!< Scale typed \b typ value \b v from range \b from_min:from_max to range \b to_min:to_max
 
 
-#define BYTE_TO_PERC(b)		((BYTE) ((((b) > 255 ? 255 : (b)) * 100) / 255))	//!< Converts a BYTE \b b (0-255) to percent (0-100)
-#define PERC_TO_BYTE(p)		((BYTE) ((((p) > 100 ? 100 : (p)) * 255) / 100))	//!< Converts a BYTE \b p percentage (0-100) to BYTE (0-255) with max checking
+#define BYTE_TO_PERC(b)		(BYTE) ((MIN((b), 255) * 100) / 255)	//!< Converts a BYTE \b b (0-255) to percent (0-100)
+#define PERC_TO_BYTE(p)		(BYTE) ((MIN((p), 100) * 255) / 100)	//!< Converts a BYTE \b p percentage (0-100) to BYTE (0-255) with max checking
 
 
 /*** Constants ***/
