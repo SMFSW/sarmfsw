@@ -16,9 +16,6 @@
 /****************************************************************/
 
 
-#define SPLIT_FLOAT_TO_INTS(val, nb_dec)	(SDWORD) (val), get_fp_dec((val), (nb_dec))	//!< Split float value \b val into 2 integers with \b nb_dec fractional part digits
-
-
 /*** prints and strings ***/
 #define str_clr(s)			(s[0] = charNull)						//!< clear string \b s (fast way)
 #define str_clr_safe(s)		(memset(s, charNull, sizeof(s)))		//!< clear string \b s (safe way)

@@ -111,7 +111,7 @@ __INLINE DWORD NONNULL__ strDecToInt(const CHAR * const pASCII, const BYTE len)
 	{
 		const BYTE single = ASCIIToHex(pASCII[i]);
 
-		if (single > 9)		{ break; }
+		if (single > 9U)	{ break; }
 
 		dec += single * mult;
 	}
@@ -133,7 +133,7 @@ __INLINE DWORD NONNULL__ strHexToInt(const CHAR * const pASCII, const BYTE len)
 	{
 		const BYTE nybble = ASCIIToHex(pASCII[i]);
 
-		if (nybble == 0xFF)	{ break; }
+		if (nybble == 0xFFU)	{ break; }
 
 		hex |= LSHIFT(nybble, shift);
 	}

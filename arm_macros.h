@@ -48,16 +48,16 @@
 #if defined(SINGLE_SHIFT_ONLY_OPCODE)
 
 //!\warning this macro is optimized only when \b n is a static value
-#define LSHIFT_CAST(t, v, n)	((t) ((t) (v) * ((t) 1U << n)))
+#define LSHIFT_CAST(t, v, n)	(t) ((t) (v) * ((t) 1U << (n)))
 //!\warning this macro is optimized only when \b n is a static value
-#define RSHIFT_CAST(t, v, n)	((t) ((t) (v) / ((t) 1U << n)))
+#define RSHIFT_CAST(t, v, n)	(t) ((t) (v) / ((t) 1U << (n)))
 
 //!\warning this macro is optimized only when \b n is a static value
 //!\note sarmfsw library being optimized for 32b architecture, default shifting behavior set to 32b
-#define LSHIFT(v, n)			((DWORD) ((v) * (1UL << n))		//!< Shift \b v \b n bits left
+#define LSHIFT(v, n)			(DWORD) ((v) * (1UL << (n)))	//!< Shift \b v \b n bits left
 //!\warning this macro is optimized only when \b n is a static value
 //!\note sarmfsw library being optimized for 32b architecture, default shifting behavior set to 32b
-#define RSHIFT(v, n)			((DWORD) ((v) / (1UL << n))		//!< Shift \b v \b n bits right
+#define RSHIFT(v, n)			(DWORD) ((v) / (1UL << (n)))	//!< Shift \b v \b n bits right
 
 //!\warning this macro is optimized only when \b n is a static value
 #define LSHIFT8(v, n)			LSHIFT_CAST(BYTE, v, n)			//!< Shift \b v \b n bits left (up to 7b)
@@ -82,27 +82,27 @@
 #else
 
 //!\note sarmfsw library being optimized for 32b architecture, default shifting behavior set to 32b
-#define LSHIFT(v, n)			(DWORD) ((DWORD) (v) << n)	//!< Shift \b v \b n bits left
+#define LSHIFT(v, n)			(DWORD) ((DWORD) (v) << (n))	//!< Shift \b v \b n bits left
 //!\note sarmfsw library being optimized for 32b architecture, default shifting behavior set to 32b
-#define RSHIFT(v, n)			(DWORD) ((DWORD) (v) >> n)	//!< Shift \b v \b n bits right
+#define RSHIFT(v, n)			(DWORD) ((DWORD) (v) >> (n))	//!< Shift \b v \b n bits right
 
-#define LSHIFT8(v, n)			(BYTE) ((BYTE) (v) << n)	//!< Shift \b v \b n bits left (up to 7b)
-#define RSHIFT8(v, n)			(BYTE) ((BYTE) (v) >> n)	//!< Shift \b v \b n bits right (up to 7b)
+#define LSHIFT8(v, n)			(BYTE) ((BYTE) (v) << (n))		//!< Shift \b v \b n bits left (up to 7b)
+#define RSHIFT8(v, n)			(BYTE) ((BYTE) (v) >> (n))		//!< Shift \b v \b n bits right (up to 7b)
 
-#define LSHIFT16(v, n)			(WORD) ((WORD) (v) << n)	//!< Shift \b v \b n bits left (up to 15b)
-#define RSHIFT16(v, n)			(WORD) ((WORD) (v) >> n)	//!< Shift \b v \b n bits right (up to 15b)
+#define LSHIFT16(v, n)			(WORD) ((WORD) (v) << (n))		//!< Shift \b v \b n bits left (up to 15b)
+#define RSHIFT16(v, n)			(WORD) ((WORD) (v) >> (n))		//!< Shift \b v \b n bits right (up to 15b)
 
-#define LSHIFT32(v, n)			(DWORD) ((DWORD) (v) << n)	//!< Shift \b v \b n bits left (up to 31b)
-#define RSHIFT32(v, n)			(DWORD) ((DWORD) (v) >> n)	//!< Shift \b v \b n bits right (up to 31b)
+#define LSHIFT32(v, n)			(DWORD) ((DWORD) (v) << (n))	//!< Shift \b v \b n bits left (up to 31b)
+#define RSHIFT32(v, n)			(DWORD) ((DWORD) (v) >> (n))	//!< Shift \b v \b n bits right (up to 31b)
 
-#define LSHIFT64(v, n)			(LWORD) ((LWORD) (v) << n)	//!< Shift \b v \b n bits left (up to 63b)
-#define RSHIFT64(v, n)			(LWORD) ((LWORD) (v) >> n)	//!< Shift \b v \b n bits right (up to 63b)
+#define LSHIFT64(v, n)			(LWORD) ((LWORD) (v) << (n))	//!< Shift \b v \b n bits left (up to 63b)
+#define RSHIFT64(v, n)			(LWORD) ((LWORD) (v) >> (n))	//!< Shift \b v \b n bits right (up to 63b)
 
 #endif
 
 
-#define MAKEWORD(lsb, msb)		(WORD) (((BYTE) (lsb)) | LSHIFT(((WORD) ((BYTE) (msb))), 8))		//!< Make WORD from \b lsb and \b msb
-#define MAKELONG(lsw, msw)		(DWORD) (((WORD) (lsw)) | LSHIFT(((DWORD) ((WORD) (msw))), 16))		//!< Make LONG from \b lsw and \b msw
+#define MAKEWORD(lsb, msb)		((WORD) (((BYTE) (lsb)) | LSHIFT(((WORD) (msb)), 8)))		//!< Make WORD from \b lsb and \b msb
+#define MAKELONG(lsw, msw)		((DWORD) (((WORD) (lsw)) | LSHIFT(((DWORD) (msw)), 16)))	//!< Make LONG from \b lsw and \b msw
 
 #ifdef LOBYTE
 #undef LOBYTE	//!\note Undefine LOBYTE if already defined in some other library
@@ -112,12 +112,12 @@
 #undef HIBYTE	//!\note Undefine HIBYTE if already defined in some other library
 #endif
 
-#define LOBYTE(w)				(BYTE) (w)						//!< Get BYTE LSB from WORD \b w
-#define HIBYTE(w)				(BYTE) RSHIFT((WORD) (w), 8)	//!< Get BYTE MSB from WORD \b w
-#define LOWORD(l)				(WORD) (l)						//!< Get WORD LSW from LONG \b l
-#define HIWORD(l)				(WORD) RSHIFT((DWORD) (l), 16)	//!< Get WORD MSW from LONG \b l
+#define LOBYTE(w)				((BYTE) (w))						//!< Get BYTE LSB from WORD \b w
+#define HIBYTE(w)				((BYTE) RSHIFT((WORD) (w), 8))		//!< Get BYTE MSB from WORD \b w
+#define LOWORD(l)				((WORD) (l))						//!< Get WORD LSW from LONG \b l
+#define HIWORD(l)				((WORD) RSHIFT((DWORD) (l), 16))	//!< Get WORD MSW from LONG \b l
 
-#define	SWAP_TYPE(a, b, typ)	{ typ c = a; a = b; b = c; }		//!< Swap type \b typ \b a \& \b b
+#define	SWAP_TYPE(a, b, typ)	({ typ c = a; a = b; b = c; })		//!< Swap type \b typ \b a \& \b b
 #define	SWAP_BYTE(a, b)			SWAP_TYPE(a, b, BYTE)				//!< Swap BYTEs \b a \& \b b
 #define	SWAP_WORD(a, b)			SWAP_TYPE(a, b, WORD)				//!< Swap WORDs \b a \& \b b
 #define	SWAP_DWORD(a, b)		SWAP_TYPE(a, b, DWORD)				//!< Swap DWORDs \b a \& \b b
@@ -228,8 +228,8 @@
 					((typ) (from_max) - (typ) (from_min))) + (typ) (to_min))	//!< Scale typed \b typ value \b v from range \b from_min:from_max to range \b to_min:to_max
 
 
-#define BYTE_TO_PERC(b)		(BYTE) ((MIN((b), 255) * 100) / 255)	//!< Converts a BYTE \b b (0-255) to percent (0-100)
-#define PERC_TO_BYTE(p)		(BYTE) ((MIN((p), 100) * 255) / 100)	//!< Converts a BYTE \b p percentage (0-100) to BYTE (0-255) with max checking
+#define BYTE_TO_PERC(b)		((BYTE) ((MIN((b), 255) * 100) / 255))	//!< Converts a BYTE \b b (0-255) to percent (0-100)
+#define PERC_TO_BYTE(p)		((BYTE) ((MIN((p), 100) * 255) / 100))	//!< Converts a BYTE \b p percentage (0-100) to BYTE (0-255) with max checking
 
 
 /*** Constants ***/

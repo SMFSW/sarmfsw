@@ -22,6 +22,7 @@ SOFTWARE.
 
 ## v3.7
 
+* arm_inlines_var_test: inTolerance fix for negative reference values
 * arm_cmsis: SARMFSW_NO_CHIP_HAL symbol implementation
 * arm_cmsis & arm_chip_xxx: HALTicks symbol refactoring and checks added for provided function declaration consitency
 * arm_macros: reviewed operators precedence used in macros to comply with MISRA rule 12.1

@@ -19,13 +19,14 @@
 ** \param[in] tolerance - Tolerance on reference value (in percent)
 ** \return true if val is inTolerance
 **/
-__INLINE BOOL inTolerance(const SDWORD val, const SDWORD ref, float tolerance)
+__INLINE BOOL inTolerance(const SDWORD val, const SDWORD ref, const float tolerance)
 {
-	tolerance = MIN(100.0f, MAX(0.0f, tolerance));
+	const float ratio = MIN(100.0f, MAX(0.0f, tolerance)) / 100.0f;
 
-	const DWORD margin = (DWORD) (ref * (tolerance / 100.0f));
+	SDWORD hyst = (SDWORD) ((float) ref * ratio);
+	if (hyst < 0.0f)	{ hyst = -hyst; }
 
-	return ((val <= (SDWORD) (ref + margin)) && (val >= (SDWORD) (ref - margin)));
+	return ((val <= (SDWORD) (ref + hyst)) && (val >= (SDWORD) (ref - hyst)));
 }
 
 

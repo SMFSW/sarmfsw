@@ -734,18 +734,18 @@
 
 
 /*** arm_inlines_ticks.h needs a generic definition of HALTicks & HAL_MS_TICKS_FACTOR ***/
-#define HALTICKS_PROTOTYPE(func)	uint32_t func(void);	//!< External definition of Ticks getter that shall be implemented in project
+#define HALTICKS_PROTOTYPE(func)	uint32_t func(void)		//!< External definition of Ticks getter that shall be implemented in project
 
 // In case chip headers don't include specific HALTicks symbol, define generic one and its external prototype
 #ifndef HALTicks
-HALTICKS_PROTOTYPE(HAL_GetTick)			//!< External definition of HAL_GetTick that shall be defined in project
-#define HALTicks		HAL_GetTick		//!< Alias for HAL get ticks function
+HALTICKS_PROTOTYPE(HAL_GetTick);	//!< External definition of HAL_GetTick that shall be defined in project
+#define HALTicks	HAL_GetTick		//!< Alias for HAL get ticks function
 #else
-HALTICKS_PROTOTYPE(HALTicks)			//!< External definition of Ticks getter to check for prototype validity
+HALTICKS_PROTOTYPE(HALTicks);		//!< External definition of Ticks getter to check for prototype validity
 #endif
 
 #ifndef HAL_MS_TICKS_FACTOR
-#define HAL_MS_TICKS_FACTOR	1			//!< HAL milliseconds multiplier (depending tick counter frequency)
+#define HAL_MS_TICKS_FACTOR	1		//!< HAL milliseconds multiplier (depending tick counter frequency)
 #endif
 
 

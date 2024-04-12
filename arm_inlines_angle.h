@@ -35,13 +35,14 @@
 ** \param[in] rad - Radians to convert
 ** \return Converted angle
 **/
-__INLINE float RAD_NORM(float rad)
+__INLINE float RAD_NORM(const float rad)
 {
 	const float val = (rad < 0.0f) ? M_TWOPI : -M_TWOPI;
+	float r = rad;
 
-	while (fabs(rad) > M_TWOPI)	{ rad += val; }
+	while (fabs(r) > M_TWOPI)	{ r += val; }
 
-	return rad;
+	return r;
 }
 
 
@@ -49,13 +50,14 @@ __INLINE float RAD_NORM(float rad)
 ** \param[in] deg - Degrees to convert
 ** \return Converted angle
 **/
-__INLINE float DEG_NORM(float deg)
+__INLINE float DEG_NORM(const float deg)
 {
 	const float val = (deg < 0.0f) ? 360.0f : -360.0f;
+	float d = deg;
 
-	while (fabs(deg) > 360.0f)	{ deg += val; }
+	while (fabs(d) > 360.0f)	{ d += val; }
 
-	return deg;
+	return d;
 }
 
 

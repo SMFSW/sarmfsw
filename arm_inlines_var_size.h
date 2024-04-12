@@ -82,7 +82,7 @@ __INLINE LWORD INLINE__ conv32to64Bits(const DWORD val)
 **/
 __INLINE WORD conv8upto16Bits(const BYTE val, const BYTE nb)
 {
-	return (WORD) ((val << nb) | (val >> (8 - nb)));
+	return (WORD) (((WORD) val << nb) | (val >> (8U - nb)));
 }
 
 
@@ -95,7 +95,7 @@ __INLINE WORD conv8upto16Bits(const BYTE val, const BYTE nb)
 **/
 __INLINE DWORD conv16upto32Bits(const WORD val, const BYTE nb)
 {
-	return (DWORD) ((val << nb) | (val >> (16 - nb)));
+	return (DWORD) (((DWORD) val << nb) | (val >> (16U - nb)));
 }
 
 
@@ -108,7 +108,7 @@ __INLINE DWORD conv16upto32Bits(const WORD val, const BYTE nb)
 **/
 __INLINE LWORD conv32upto64Bits(const DWORD val, const BYTE nb)
 {
-	return (LWORD) (((LWORD) val << nb) | (val >> (32 - nb)));
+	return (LWORD) (((LWORD) val << nb) | (val >> (32U - nb)));
 }
 
 
@@ -120,14 +120,14 @@ __INLINE LWORD conv32upto64Bits(const DWORD val, const BYTE nb)
 ** \param[in] to - number of bits of output variable
 ** \return Converted value
 **/
-__INLINE DWORD convXtoYBits(DWORD val, const BYTE from, const BYTE to)
+__INLINE DWORD convXtoYBits(const DWORD val, const BYTE from, const BYTE to)
 {
 	const intCPU_t diff_bits = MIN(32, to) - MIN(32, from);
-	val &= maskBits(from);
+	DWORD conv = val & maskBits(from);
 
-	if (diff_bits > 0)		{ return (DWORD) ((val << diff_bits) | (val >> (from - diff_bits))); }
-	else if (diff_bits < 0)	{ return (DWORD) RSHIFT(val, -diff_bits); }
-	return val;
+	if (diff_bits > 0)		{ conv = (val << diff_bits) | (val >> (from - diff_bits)); }
+	else if (diff_bits < 0)	{ conv = RSHIFT(val, -diff_bits); }
+	return conv;
 }
 
 

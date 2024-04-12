@@ -22,17 +22,22 @@
 **/
 __INLINE DWORD HexToBCD(const DWORD hex)
 {
-	if (hex > 99999999)		{ return (DWORD) -1; }
-
 	DWORD res = 0;
 
-	div_t tmp;
-	tmp.quot = hex;
-
-	for (uintCPU_t i = 0 ; i < 8 ; i++)
+	if (hex > 99999999U)
 	{
-		tmp = div(tmp.quot, 10);
-		res |= LSHIFT(tmp.rem, (4 * i));
+		res = (DWORD) -1;
+	}
+	else
+	{
+		div_t tmp;
+		tmp.quot = hex;
+
+		for (uintCPU_t i = 0 ; i < 8U ; i++)
+		{
+			tmp = div(tmp.quot, 10);
+			res |= LSHIFT(tmp.rem, (4U * i));
+		}
 	}
 
 	return res;
@@ -48,11 +53,15 @@ __INLINE DWORD BCDToHex(const DWORD bcd)
 {
 	DWORD res = 0, mult = 1;
 
-	for (uintCPU_t i = 0 ; i < 8 ; i++, mult *= 10)
+	for (uintCPU_t i = 0 ; i < 8U ; i++, mult *= 10)
 	{
-		const BYTE single = RSHIFT(bcd, (4 * i)) & 0x0F;
+		const BYTE single = (BYTE) (RSHIFT(bcd, (4U * i)) & 0x0FU);
 
-		if (single > 9)		{ return (DWORD) -1; }
+		if (single > 9U)
+		{
+			res = (DWORD) -1;
+			break;
+		}
 
 		res += single * mult;
 	}

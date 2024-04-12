@@ -92,11 +92,13 @@ __INLINE eEndian testEndian_basic(void)
 {
 	const WORD x = 0x100;
 
-	return (*(BYTE *) (&x)) ? Endian_big : Endian_little;
+	return (*(const BYTE *) (&x)) ? Endian_big : Endian_little;
 }
 
 
 /*!\brief Test Core endian (full, recognizing mid endian too)
+** \MISRA function deviation granted for:\n
+**		\b Rule-15.5 - \b Advisory: single point of exit (misra-c2012-15.5)\n
 ** \return Endian type
 **/
 __INLINE eEndian testEndian_full(void)
@@ -108,11 +110,11 @@ __INLINE eEndian testEndian_full(void)
 
 	switch (tst.dword)
 	{
-		default:			return Endian_unknown;
-		case 0x01020304UL:	return Endian_big;
-		case 0x04030201UL:	return Endian_little;
-		case 0x03040102UL:	return Endian_mid_big;
-		case 0x02010403UL:	return Endian_mid_little;
+		default:			return Endian_unknown;		// cppcheck-suppress misra-c2012-15.5
+		case 0x01020304UL:	return Endian_big;			// cppcheck-suppress misra-c2012-15.5
+		case 0x04030201UL:	return Endian_little;		// cppcheck-suppress misra-c2012-15.5
+		case 0x03040102UL:	return Endian_mid_big;		// cppcheck-suppress misra-c2012-15.5
+		case 0x02010403UL:	return Endian_mid_little;	// cppcheck-suppress misra-c2012-15.5
 	}
 }
 

@@ -26,6 +26,8 @@ typedef struct sCoord2D {
 
 /*!\brief 2D Coordinates rotation
 ** \note Counter clockwise rotation
+** \MISRA function deviation granted for:\n
+**		\b Rule-15.5 - \b Advisory: single point of exit (misra-c2012-15.5)\n
 ** \param[in] c - Coordinates to rotate
 ** \param[in] angle - Rotation angle (in degrees, counter clockwise)
 ** \return Rotated coordinates
@@ -41,14 +43,14 @@ __INLINE sCoord2D rotate_2D(const sCoord2D c, const SWORD angle)
 	{
 		default:
 		{
-			const float rad = deg * M_PI_180;
+			const float rad = (float) deg * M_PI_180;
 			r.x = (SDWORD) ((c.x * cos(rad)) - (c.y * sin(rad)));
 			r.y = (SDWORD) ((c.x * sin(rad)) + (c.y * cos(rad)));
 		}
 		break;
 
 		case 0:
-			return c;
+			return c;	// cppcheck-suppress misra-c2012-15.5
 
 		case 45:
 		case 90 + 45:
@@ -61,15 +63,15 @@ __INLINE sCoord2D rotate_2D(const sCoord2D c, const SWORD angle)
 
 		case 90:
 			// Return only if 90°, otherwise, continue
-			if (deg == 90)	{ return (sCoord2D) { -r.y, r.x }; }
+			if (deg == 90)	{ return (sCoord2D) { -r.y, r.x }; }	// cppcheck-suppress misra-c2012-15.5
 
 		case 180:
 			// Return only if 180°, otherwise, continue
-			if (deg == 180)	{ return (sCoord2D) { -r.x, -r.y }; }
+			if (deg == 180)	{ return (sCoord2D) { -r.x, -r.y }; }	// cppcheck-suppress misra-c2012-15.5
 
 		case 270:
 			// Return only if 270°, otherwise, continue
-			if (deg == 270)	{ return (sCoord2D) { r.y, -r.x }; }
+			if (deg == 270)	{ return (sCoord2D) { r.y, -r.x }; }	// cppcheck-suppress misra-c2012-15.5
 	}
 
 	return r;

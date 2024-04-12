@@ -277,7 +277,8 @@ ALIASES                = "issue=\xrefitem issue \"Issue\" \"Issues List\"" \
                          "isr=\xrefitem isr \"Interrupt\" \"ISR List\"" \
                          "weak=\xrefitem weak \"Weak Functions\" \"Weak Functions List\"" \
                          "strong=\xrefitem strong \"Strong Functions\" \"Strong Functions List\"" \
-                         "attribute=\xrefitem attribute \"GCC Attributes\" \"GCC Attributes List\""
+                         "attribute=\xrefitem attribute \"GCC Attributes\" \"GCC Attributes List\"" \
+                         "MISRA=\xrefitem MISRA \"MISRA C:2012 Deviations\" \"MISRA C:2012 Deviations List\""
 
 # Set the OPTIMIZE_OUTPUT_FOR_C tag to YES if your project consists of C sources
 # only. Doxygen will then generate output that is more tailored for C. For

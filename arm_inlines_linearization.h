@@ -46,12 +46,12 @@ typedef struct sLinearFlexArray {
 **/
 __INLINE SDWORD NONNULL__ linearization_eval(const SDWORD array[][2], const DWORD nb, const SDWORD val)
 {
-	DWORD idxMin = 0, idxMax = nb - 1;
+	DWORD idxMin = 0, idxMax = nb - 1U;
 
 	// Find indexes
-	while (idxMax > idxMin + 1)
+	while (idxMax > (idxMin + 1U))
 	{
-		const DWORD idx = ((idxMax - idxMin) / 2 + idxMin);
+		const DWORD idx = (((idxMax - idxMin) / 2U) + idxMin);
 
 		if (val < array[idx][0])	{ idxMax = idx; }
 		else						{ idxMin = idx; }
