@@ -54,7 +54,7 @@ __INLINE DWORD get_fp_dec(const double f, const BYTE nb)
 /*!\brief Convert floating point representation to sIntFrac integers representation
 ** \param[in,out] pIntFrac - Pointer to result structure
 ** \param[in] f - floating point value to convert
-** \param[in] nb - Number of decimal to get after floating point (limited to 9 internally for proper result on 32b return type)
+** \param[in] nb_frac - Number of decimal to get after floating point (limited to 9 internally for proper result on 32b return type)
 **/
 __INLINE void NONNULL__ float2sIntFrac(sIntFrac * const pIntFrac, const double f, const uint8_t nb_frac)
 {
