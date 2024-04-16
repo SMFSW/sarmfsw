@@ -3,10 +3,15 @@
 ** \copyright MIT (c) 2017-2024, SMFSW
 ** \brief ARM common macros
 ** \note If used CPU only handles single shifts, you may define SINGLE_SHIFT_ONLY_OPCODE at project level (see \ref LSHIFT & \ref RSHIFT)
+** \MISRA header deviation has been granted for following rules:\n
+** 		\b Rule-1.2 - \b Advisory: Language extensions (misra-c2012-1.2)\n
+** 		\b Rule-20.5 - \b Advisory: #undef (misra-c2012-20.5)\n
+** 		\b Rule-20.10 - \b Advisory: # and ## preprocessor operators (misra-c2012-20.10)\n
 */
+// cppcheck-suppress-begin [misra-c2012-1.2, misra-c2012-20.5, misra-c2012-20.10]
 /****************************************************************/
-#ifndef __ARM_MACROS_H
-	#define __ARM_MACROS_H
+#ifndef ARM_MACROS_H_
+	#define ARM_MACROS_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -18,7 +23,7 @@
 
 #define Null				(0)				//!< Null Value
 #define pNull				((void *) 0)	//!< Null pointer -> same as NULL in stdlib.h
-#define	charNull			'\0'			//!< Null Char
+#define	charNull			('\0')			//!< Null Char
 
 
 #ifndef True
@@ -48,16 +53,14 @@
 #if defined(SINGLE_SHIFT_ONLY_OPCODE)
 
 //!\warning this macro is optimized only when \b n is a static value
-#define LSHIFT_CAST(t, v, n)	(t) ((t) (v) * ((t) 1U << (n)))
+#define LSHIFT_CAST(t, v, n)	((t) ((t) (v) * ((t) 1 << (n))))
 //!\warning this macro is optimized only when \b n is a static value
-#define RSHIFT_CAST(t, v, n)	(t) ((t) (v) / ((t) 1U << (n)))
+#define RSHIFT_CAST(t, v, n)	((t) ((t) (v) / ((t) 1 << (n))))
 
 //!\warning this macro is optimized only when \b n is a static value
-//!\note sarmfsw library being optimized for 32b architecture, default shifting behavior set to 32b
-#define LSHIFT(v, n)			(DWORD) ((v) * (1UL << (n)))	//!< Shift \b v \b n bits left
+#define LSHIFT(v, n)			((v) * (1U << (n)))				//!< Shift \b v \b n bits left
 //!\warning this macro is optimized only when \b n is a static value
-//!\note sarmfsw library being optimized for 32b architecture, default shifting behavior set to 32b
-#define RSHIFT(v, n)			(DWORD) ((v) / (1UL << (n)))	//!< Shift \b v \b n bits right
+#define RSHIFT(v, n)			((v) / (1U << (n)))				//!< Shift \b v \b n bits right
 
 //!\warning this macro is optimized only when \b n is a static value
 #define LSHIFT8(v, n)			LSHIFT_CAST(BYTE, v, n)			//!< Shift \b v \b n bits left (up to 7b)
@@ -81,22 +84,20 @@
 
 #else
 
-//!\note sarmfsw library being optimized for 32b architecture, default shifting behavior set to 32b
-#define LSHIFT(v, n)			(DWORD) ((DWORD) (v) << (n))	//!< Shift \b v \b n bits left
-//!\note sarmfsw library being optimized for 32b architecture, default shifting behavior set to 32b
-#define RSHIFT(v, n)			(DWORD) ((DWORD) (v) >> (n))	//!< Shift \b v \b n bits right
+#define LSHIFT(v, n)			((v) << (n))					//!< Shift \b v \b n bits left
+#define RSHIFT(v, n)			((v) >> (n))					//!< Shift \b v \b n bits right
 
-#define LSHIFT8(v, n)			(BYTE) ((BYTE) (v) << (n))		//!< Shift \b v \b n bits left (up to 7b)
-#define RSHIFT8(v, n)			(BYTE) ((BYTE) (v) >> (n))		//!< Shift \b v \b n bits right (up to 7b)
+#define LSHIFT8(v, n)			((BYTE) ((BYTE) (v) << (n)))	//!< Shift \b v \b n bits left (up to 7b)
+#define RSHIFT8(v, n)			((BYTE) ((BYTE) (v) >> (n)))	//!< Shift \b v \b n bits right (up to 7b)
 
-#define LSHIFT16(v, n)			(WORD) ((WORD) (v) << (n))		//!< Shift \b v \b n bits left (up to 15b)
-#define RSHIFT16(v, n)			(WORD) ((WORD) (v) >> (n))		//!< Shift \b v \b n bits right (up to 15b)
+#define LSHIFT16(v, n)			((WORD) ((WORD) (v) << (n)))	//!< Shift \b v \b n bits left (up to 15b)
+#define RSHIFT16(v, n)			((WORD) ((WORD) (v) >> (n)))	//!< Shift \b v \b n bits right (up to 15b)
 
-#define LSHIFT32(v, n)			(DWORD) ((DWORD) (v) << (n))	//!< Shift \b v \b n bits left (up to 31b)
-#define RSHIFT32(v, n)			(DWORD) ((DWORD) (v) >> (n))	//!< Shift \b v \b n bits right (up to 31b)
+#define LSHIFT32(v, n)			((DWORD) ((DWORD) (v) << (n)))	//!< Shift \b v \b n bits left (up to 31b)
+#define RSHIFT32(v, n)			((DWORD) ((DWORD) (v) >> (n)))	//!< Shift \b v \b n bits right (up to 31b)
 
-#define LSHIFT64(v, n)			(LWORD) ((LWORD) (v) << (n))	//!< Shift \b v \b n bits left (up to 63b)
-#define RSHIFT64(v, n)			(LWORD) ((LWORD) (v) >> (n))	//!< Shift \b v \b n bits right (up to 63b)
+#define LSHIFT64(v, n)			((LWORD) ((LWORD) (v) << (n)))	//!< Shift \b v \b n bits left (up to 63b)
+#define RSHIFT64(v, n)			((LWORD) ((LWORD) (v) >> (n)))	//!< Shift \b v \b n bits right (up to 63b)
 
 #endif
 
@@ -159,6 +160,7 @@
 #undef MIN		//!\note Undefine MIN if already defined in some other library
 #endif
 #define min					MIN								//!< \b min alias for \b MIN
+// cppcheck-suppress-macro misra-c2012-1.2
 #define MIN(a, b)			({	__TYPEOF(a) _a = (a);	\
 								__TYPEOF(b) _b = (b);	\
 								(_a <= _b) ? _a : _b; })	//!< Returns min value between \b a and \b b
@@ -170,6 +172,7 @@
 #undef MAX		//!\note Undefine MAX if already defined in some other library
 #endif
 #define max					MAX								//!< \b max alias for \b MAX
+// cppcheck-suppress-macro misra-c2012-1.2
 #define MAX(a, b)			({	__TYPEOF(a) _a = (a);	\
 								__TYPEOF(b) _b = (b);	\
 								(_a >= _b) ? _a : _b; })	//!< Returns max value between \b a and \b b
@@ -181,6 +184,7 @@
 #undef MIN3		//!\note Undefine MIN3 if already defined in some other library
 #endif
 #define min3				MIN3							//!< \b min3 alias for \b MIN3
+// cppcheck-suppress-macro misra-c2012-1.2
 #define	MIN3(a, b, c)		({	__TYPEOF(a) _a = (a);	\
 								__TYPEOF(b) _b = (b);	\
 								__TYPEOF(c) _c = (c);	\
@@ -193,6 +197,7 @@
 #undef MAX3		//!\note Undefine MAX3 if already defined in some other library
 #endif
 #define max3				MAX3							//!< \b max3 alias for \b MAX3
+// cppcheck-suppress-macro misra-c2012-1.2
 #define	MAX3(a, b, c)		({	__TYPEOF(a) _a = (a);	\
 								__TYPEOF(b) _b = (b);	\
 								__TYPEOF(c) _c = (c);	\
@@ -205,6 +210,7 @@
 #undef CLAMP	//!\note Undefine CLAMP if already defined in some other library
 #endif
 #define clamp				CLAMP							//!< \b clamp alias for \b CLAMP
+// cppcheck-suppress-macro misra-c2012-1.2
 #define CLAMP(v, mn, mx)	({	__TYPEOF(v) _v = (v);		\
 								__TYPEOF(mn) _mn = (mn);	\
 								__TYPEOF(mx) _mx = (mx);	\
@@ -212,10 +218,11 @@
 
 
 //! \warning OVF_DIFF only works with unsigned integers
+// cppcheck-suppress-macro misra-c2012-1.2
 #define OVF_DIFF(a, b)		({	__TYPEOF(a) _a = (a);	\
 								__TYPEOF(b) _b = (b);	\
 								__TYPEOF(a) _max = -1;	\
-								(_a >= _b) ? (_a - _b) : (_max - _b) + _a + 1; })	//!< Returns difference of unsigned \b a and \b b (with potential overflow handliing)
+								(_a >= _b) ? (_a - _b) : (_max - _b) + _a + 1; })	//!< Returns difference of unsigned \b a and \b b (with potential overflow handling)
 
 
 //! \warning SCALE_VAL does not check types and is limited to MCU register size computation, for larger scales, use \ref SCALE_VAL_T or \ref scaleValue instead
@@ -246,5 +253,6 @@
 	}
 #endif
 
-#endif /* __ARM_MACROS_H */
+#endif /* ARM_MACROS_H_ */
+// cppcheck-suppress-end [misra-c2012-1.2, misra-c2012-20.5, misra-c2012-20.10]
 /****************************************************************/

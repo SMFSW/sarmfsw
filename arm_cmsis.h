@@ -13,10 +13,14 @@
 ** 				- PIC_FAMILY pic(xx)
 ** 			- for Other families (TI...):
 ** 				- not implemented yet
+** \MISRA header derogation to following rules:\n
+** 		\b Rule-21.1 - \b Required: #define and #undef on reserved identifiers (misra-c2012-21.1)\n
+**		Justification: define generic CMSIS IO macros in case not already defined
 */
+// cppcheck-suppress-begin [misra-c2012-21.1]
 /****************************************************************/
-#ifndef __ARM_CMSIS_H
-	#define __ARM_CMSIS_H
+#ifndef ARM_CMSIS_H_
+	#define ARM_CMSIS_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -734,6 +738,10 @@
 
 
 /*** arm_inlines_ticks.h needs a generic definition of HALTicks & HAL_MS_TICKS_FACTOR ***/
+//!\MISRA local derogation authorized for:\n
+//! \b Rule-20.7 - \b Required: macros expansion enclosing (misra-c2012-20.7)\n
+//! Justification: func paramater shall be a function name; raising error otherwise is intended\n
+// cppcheck-suppress misra-c2012-20.7
 #define HALTICKS_PROTOTYPE(func)	uint32_t func(void)		//!< External definition of Ticks getter that shall be implemented in project
 
 // In case chip headers don't include specific HALTicks symbol, define generic one and its external prototype
@@ -745,7 +753,7 @@ HALTICKS_PROTOTYPE(HALTicks);		//!< External definition of Ticks getter to check
 #endif
 
 #ifndef HAL_MS_TICKS_FACTOR
-#define HAL_MS_TICKS_FACTOR	1		//!< HAL milliseconds multiplier (depending tick counter frequency)
+#define HAL_MS_TICKS_FACTOR	1U		//!< HAL milliseconds multiplier (depending tick counter frequency)
 #endif
 
 
@@ -790,5 +798,6 @@ HALTICKS_PROTOTYPE(HALTicks);		//!< External definition of Ticks getter to check
 	}
 #endif
 
-#endif /* __ARM_CMSIS_H */
+#endif /* ARM_CMSIS_H_ */
+// cppcheck-suppress-end [misra-c2012-21.1]
 /****************************************************************/

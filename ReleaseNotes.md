@@ -22,10 +22,10 @@ SOFTWARE.
 
 ## v3.7
 
+* Partial MISRA C2012 compliance
 * arm_inlines_var_test: inTolerance fix for negative reference values
 * arm_cmsis: SARMFSW_NO_CHIP_HAL symbol implementation
 * arm_cmsis & arm_chip_xxx: HALTicks symbol refactoring and checks added for provided function declaration consitency
-* arm_macros: reviewed operators precedence used in macros to comply with MISRA rule 12.1
 * arm_macros: TEST_BITS_VAL & TEST_MASK_VAL macros added
 * arm_macros: Register intended macros (such as GET_BITS...) encloses tested variable/register/values in parenthesis
 * arm_macros: OVF_DIFF fix, thanks to @Simben

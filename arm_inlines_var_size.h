@@ -4,8 +4,8 @@
 ** \brief Variables size conversion inlines
 */
 /****************************************************************/
-#ifndef __ARM_INLINES_VAR_SIZE_H
-	#define __ARM_INLINES_VAR_SIZE_H
+#ifndef ARM_INLINES_VAR_SIZE_H_
+	#define ARM_INLINES_VAR_SIZE_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -29,7 +29,7 @@ __INLINE BYTE INLINE__ conv16to8Bits(const WORD val)
 **/
 __INLINE WORD INLINE__ conv8to16Bits(const BYTE val)
 {
-	return (WORD) (LSHIFT(val, 8) | val);
+	return LSHIFT16(val, 8U) | val;
 }
 
 
@@ -39,7 +39,7 @@ __INLINE WORD INLINE__ conv8to16Bits(const BYTE val)
 **/
 __INLINE WORD INLINE__ conv32to16Bits(const DWORD val)
 {
-	return (WORD) RSHIFT(val, 16);
+	return (WORD) RSHIFT(val, 16U);
 }
 
 
@@ -49,7 +49,7 @@ __INLINE WORD INLINE__ conv32to16Bits(const DWORD val)
 **/
 __INLINE DWORD INLINE__ conv16to32Bits(const WORD val)
 {
-	return (DWORD) (LSHIFT(val, 16) | val);
+	return LSHIFT32(val, 16U) | val;
 }
 
 
@@ -59,7 +59,7 @@ __INLINE DWORD INLINE__ conv16to32Bits(const WORD val)
 **/
 __INLINE DWORD INLINE__ conv64to32Bits(const LWORD val)
 {
-	return (DWORD) RSHIFT64(val, 32);
+	return (DWORD) RSHIFT64(val, 32U);
 }
 
 
@@ -69,7 +69,7 @@ __INLINE DWORD INLINE__ conv64to32Bits(const LWORD val)
 **/
 __INLINE LWORD INLINE__ conv32to64Bits(const DWORD val)
 {
-	return (LWORD) (LSHIFT64(val, 32) | val);
+	return LSHIFT64(val, 32U) | val;
 }
 
 
@@ -82,7 +82,8 @@ __INLINE LWORD INLINE__ conv32to64Bits(const DWORD val)
 **/
 __INLINE WORD conv8upto16Bits(const BYTE val, const BYTE nb)
 {
-	return (WORD) (((WORD) val << nb) | (val >> (8U - nb)));
+	const uintCPU_t rem = 8U - (uintCPU_t) nb;
+	return LSHIFT16(val, nb) | RSHIFT16(val, rem);
 }
 
 
@@ -95,7 +96,8 @@ __INLINE WORD conv8upto16Bits(const BYTE val, const BYTE nb)
 **/
 __INLINE DWORD conv16upto32Bits(const WORD val, const BYTE nb)
 {
-	return (DWORD) (((DWORD) val << nb) | (val >> (16U - nb)));
+	const uintCPU_t rem = 16U - (uintCPU_t) nb;
+	return LSHIFT32(val, nb) | RSHIFT32(val, rem);
 }
 
 
@@ -108,7 +110,8 @@ __INLINE DWORD conv16upto32Bits(const WORD val, const BYTE nb)
 **/
 __INLINE LWORD conv32upto64Bits(const DWORD val, const BYTE nb)
 {
-	return (LWORD) (((LWORD) val << nb) | (val >> (32U - nb)));
+	const uintCPU_t rem = 32U - (uintCPU_t) nb;
+	return LSHIFT64(val, nb) | RSHIFT64(val, rem);
 }
 
 
@@ -122,11 +125,13 @@ __INLINE LWORD conv32upto64Bits(const DWORD val, const BYTE nb)
 **/
 __INLINE DWORD convXtoYBits(const DWORD val, const BYTE from, const BYTE to)
 {
-	const intCPU_t diff_bits = MIN(32, to) - MIN(32, from);
+	const intCPU_t diff_bits = MIN(32U, to) - MIN(32U, from);
+	const uintCPU_t shift = abs(diff_bits);
 	DWORD conv = val & maskBits(from);
 
-	if (diff_bits > 0)		{ conv = (val << diff_bits) | (val >> (from - diff_bits)); }
-	else if (diff_bits < 0)	{ conv = RSHIFT(val, -diff_bits); }
+	if (diff_bits > 0)		{ conv = LSHIFT(val, shift) | RSHIFT(val, from - shift); }
+	else if (diff_bits < 0)	{ conv = RSHIFT(val, shift); }
+
 	return conv;
 }
 
@@ -150,5 +155,5 @@ __INLINE SLWORD scaleValue(const SLWORD val, const SLWORD from_min, const SLWORD
 	}
 #endif
 
-#endif /* __ARM_INLINES_VAR_SIZE_H */
+#endif /* ARM_INLINES_VAR_SIZE_H_ */
 /****************************************************************/

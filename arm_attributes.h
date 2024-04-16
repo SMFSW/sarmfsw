@@ -4,10 +4,18 @@
 ** \brief ARM common compilers attributes
 ** \details Set attributes following compiler
 ** \warning Cosmic compiler for STM32 attributes not implemented
+** \MISRA header deviation has been granted for following rules:\n
+** 		\b Rule-20.5 - \b Advisory: #undef (misra-c2012-20.5)\n
+** 		\b Rule-20.10 - \b Advisory: # and ## preprocessor operators (misra-c2012-20.10)\n
+** \MISRA header derogation to following rules:\n
+** 		\b Rule-21.1 - \b Required: #define and #undef on reserved identifiers (misra-c2012-21.1)\n
+**		Justification: define generic reserved identifiers for attributes
 */
+// cppcheck-suppress-begin [misra-c2012-20.5, misra-c2012-20.10]
+// cppcheck-suppress-begin [misra-c2012-21.1]
 /****************************************************************/
-#ifndef __ARM_ATTRIBUTES_H
-	#define __ARM_ATTRIBUTES_H
+#ifndef ARM_ATTRIBUTES_H_
+	#define ARM_ATTRIBUTES_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -292,5 +300,7 @@
 	}
 #endif
 
-#endif /* __ARM_ATTRIBUTES_H */
+#endif /* ARM_ATTRIBUTES_H_ */
+// cppcheck-suppress-end [misra-c2012-20.5, misra-c2012-20.10]
+// cppcheck-suppress-end [misra-c2012-21.1]
 /****************************************************************/

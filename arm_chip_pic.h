@@ -13,10 +13,12 @@
 ** #include <stdint.h>
 ** uint32_t HAL_GetTick(void);
 ** \endcode
+** \MISRA header deviation has been granted for following rules:\n
+** 		\b Rule-20.5 - \b Advisory: #undef (misra-c2012-20.5)\n
 */
 /****************************************************************/
-#ifndef __ARM_CHIP_PIC_H
-	#define __ARM_CHIP_PIC_H
+#ifndef ARM_CHIP_PIC_H_
+	#define ARM_CHIP_PIC_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -27,8 +29,8 @@
 
 
 /*** Define Enable/Disable interrupts macros ***/
-#undef diInterrupts
-#undef enInterrupts
+#undef diInterrupts		// cppcheck-suppress misra-c2012-20.5
+#undef enInterrupts		// cppcheck-suppress misra-c2012-20.5
 #if defined(__XC8)
 	#define diInterrupts()		di()							//!< Disable interruptions macro
 	#define enInterrupts()		en()							//!< Enable interruptions macro
@@ -85,5 +87,5 @@ static inline FctERR HALERRtoFCTERR(const SDWORD status)
 	}
 #endif
 
-#endif /* __ARM_CHIP_PIC_H */
+#endif /* ARM_CHIP_PIC_H_ */
 /****************************************************************/

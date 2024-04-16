@@ -4,8 +4,8 @@
 ** \brief Variables test inlines
 */
 /****************************************************************/
-#ifndef __ARM_INLINES_VAR_TEST_H
-	#define __ARM_INLINES_VAR_TEST_H
+#ifndef ARM_INLINES_VAR_TEST_H_
+	#define ARM_INLINES_VAR_TEST_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -47,5 +47,5 @@ __INLINE BOOL INLINE__ inRange(const SDWORD val, const SDWORD low, const SDWORD 
 	}
 #endif
 
-#endif /* __ARM_INLINES_VAR_TEST_H */
+#endif /* ARM_INLINES_VAR_TEST_H_ */
 /****************************************************************/

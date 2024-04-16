@@ -4,8 +4,8 @@
 ** \brief Gray code conversion inlines
 */
 /****************************************************************/
-#ifndef __ARM_INLINES_GRAY_H
-	#define __ARM_INLINES_GRAY_H
+#ifndef ARM_INLINES_GRAY_H_
+	#define ARM_INLINES_GRAY_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -32,7 +32,10 @@ __INLINE DWORD gray2bin(const DWORD gray)
 	uintCPU_t	bits = 32;
 	DWORD		tmp = gray;
 
-	while (bits >>= 1)	{ tmp ^= (tmp >> bits); }
+	while ((bits >>= 1) != 0U)
+	{
+		tmp ^= (tmp >> bits);
+	}
 
 	return tmp;
 }
@@ -43,5 +46,5 @@ __INLINE DWORD gray2bin(const DWORD gray)
 	}
 #endif
 
-#endif /* __ARM_INLINES_GRAY_H */
+#endif /* ARM_INLINES_GRAY_H_ */
 /****************************************************************/

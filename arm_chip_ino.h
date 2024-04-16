@@ -3,10 +3,12 @@
 ** \copyright MIT (c) 2017-2024, SMFSW
 ** \brief Common macros for Arduino
 ** \warning Do not use macros for function qualifiers in this file
+** \MISRA header deviation has been granted for following rules:\n
+** 		\b Rule-20.5 - \b Advisory: #undef (misra-c2012-20.5)\n
 */
 /****************************************************************/
-#ifndef __ARM_CHIP_INO_H
-	#define __ARM_CHIP_INO_H
+#ifndef ARM_CHIP_INO_H_
+	#define ARM_CHIP_INO_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -22,8 +24,8 @@
 
 
 /*** Define Enable/Disable interrupts macros ***/
-#undef diInterrupts
-#undef enInterrupts
+#undef diInterrupts		// cppcheck-suppress misra-c2012-20.5
+#undef enInterrupts		// cppcheck-suppress misra-c2012-20.5
 #define diInterrupts()		noInterrupts()		//!< Disable interruptions macro
 #define enInterrupts()		interrupts()		//!< Enable interruptions macro
 
@@ -75,5 +77,5 @@ static inline FctERR HALERRtoFCTERR(const SDWORD status)
 	}
 #endif
 
-#endif /* __ARM_CHIP_INO_H */
+#endif /* ARM_CHIP_INO_H_ */
 /****************************************************************/

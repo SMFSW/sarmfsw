@@ -4,8 +4,8 @@
 ** \brief BCD code conversion inlines
 */
 /****************************************************************/
-#ifndef __ARM_INLINES_BCD_H
-	#define __ARM_INLINES_BCD_H
+#ifndef ARM_INLINES_BCD_H_
+	#define ARM_INLINES_BCD_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -75,5 +75,5 @@ __INLINE DWORD BCDToHex(const DWORD bcd)
 	}
 #endif
 
-#endif /* __ARM_INLINES_BCD_H */
+#endif /* ARM_INLINES_BCD_H_ */
 /****************************************************************/

@@ -4,8 +4,8 @@
 ** \brief sarmfsw (ARM) common headers
 */
 /****************************************************************/
-#ifndef __SARMFSW_H
-	#define __SARMFSW_H
+#ifndef SARMFSW_H_
+	#define SARMFSW_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -44,5 +44,5 @@ typedef enum PACK__ FW_target {
 	}
 #endif
 
-#endif /* __SARMFSW_H */
+#endif /* SARMFSW_H_ */
 /****************************************************************/

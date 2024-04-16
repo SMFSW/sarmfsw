@@ -4,8 +4,8 @@
 ** \brief ASCII code conversion inlines
 */
 /****************************************************************/
-#ifndef __ARM_INLINES_ASCII_H
-	#define __ARM_INLINES_ASCII_H
+#ifndef ARM_INLINES_ASCII_H_
+	#define ARM_INLINES_ASCII_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -81,8 +81,8 @@ __INLINE CHAR toUpperCase(const CHAR ascii) {
 **/
 __INLINE CHAR INLINE__ HexToASCII(const BYTE hex)
 {
-	const BYTE h = hex & 0x0F;
-	return (h < 0x0A ? 0x30 : 0x37) + h;
+	const BYTE h = hex & 0x0FU;
+	return (CHAR) (h + ((h < 0x0AU) ? 0x30U : 0x37U));
 }
 
 
@@ -92,10 +92,14 @@ __INLINE CHAR INLINE__ HexToASCII(const BYTE hex)
 **/
 __INLINE BYTE ASCIIToHex(const CHAR ascii)
 {
-	if ((ascii >= '0') && (ascii <= '9'))			{ return ascii - 0x30; }
-	else if ((ascii >= 'A') && (ascii <= 'F'))		{ return ascii - 0x37; }
-	else if ((ascii >= 'a') && (ascii <= 'f'))		{ return ascii - 0x57; }
-	else											{ return 0xFF; }
+	BYTE h = (BYTE) ascii;
+	
+	if ((ascii >= '0') && (ascii <= '9'))		{ h -= 0x30U; }
+	else if ((ascii >= 'A') && (ascii <= 'F'))	{ h -= 0x37U; }
+	else if ((ascii >= 'a') && (ascii <= 'f'))	{ h -= 0x57U; }
+	else										{ h = 0xFFU; }
+	
+	return h;
 }
 
 /*!\brief ASCII decimal string to 32bit unsigned integer
@@ -107,9 +111,9 @@ __INLINE DWORD NONNULL__ strDecToInt(const CHAR * const pASCII, const BYTE len)
 {
 	DWORD dec = 0;
 
-	for (intCPU_t i = len - 1, mult = 1 ; i >= 0 ; i--, mult *= 10)
+	for (uintCPU_t i = len, mult = 1U ; i > 0U ; i--, mult *= 10U)
 	{
-		const BYTE single = ASCIIToHex(pASCII[i]);
+		const BYTE single = ASCIIToHex(pASCII[i - 1U]);
 
 		if (single > 9U)	{ break; }
 
@@ -129,9 +133,9 @@ __INLINE DWORD NONNULL__ strHexToInt(const CHAR * const pASCII, const BYTE len)
 {
 	DWORD hex = 0;
 
-	for (intCPU_t i = len - 1, shift = 0 ; i >= 0 ; i--, shift += 4)
+	for (uintCPU_t i = len, shift = 0U ; i > 0U ; i--, shift += 4U)
 	{
-		const BYTE nybble = ASCIIToHex(pASCII[i]);
+		const BYTE nybble = ASCIIToHex(pASCII[i - 1U]);
 
 		if (nybble == 0xFFU)	{ break; }
 
@@ -147,5 +151,5 @@ __INLINE DWORD NONNULL__ strHexToInt(const CHAR * const pASCII, const BYTE len)
 	}
 #endif
 
-#endif /* __ARM_INLINES_ASCII_H */
+#endif /* ARM_INLINES_ASCII_H_ */
 /****************************************************************/

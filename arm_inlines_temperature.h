@@ -4,8 +4,8 @@
 ** \brief Temperature conversion inlines
 */
 /****************************************************************/
-#ifndef __ARM_INLINES_TEMPERATURE_H
-	#define __ARM_INLINES_TEMPERATURE_H
+#ifndef ARM_INLINES_TEMPERATURE_H_
+	#define ARM_INLINES_TEMPERATURE_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -82,5 +82,5 @@ __INLINE float kelvin2fahrenheit(const float kel)
 	}
 #endif
 
-#endif /* __ARM_INLINES_TEMPERATURE_H */
+#endif /* ARM_INLINES_TEMPERATURE_H_ */
 /****************************************************************/

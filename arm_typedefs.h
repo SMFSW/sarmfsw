@@ -14,10 +14,17 @@
 ** 			instead of using derived defines from Arduino binary.h
 ** \note	STDBOOL_NDEF can be defined at project level if stdint.h doesn't exist for target compiler
 ** \note	STDINT_NDEF can be defined at project level if stdint.h doesn't exist for target compiler
+** \MISRA header deviation has been granted for following rules:\n
+** 		\b Rule-19.2 - \b Advisory: Union keyword (misra-c2012-19.2)\n
+** \MISRA header derogation to following rules:\n
+** 		\b Rule-21.1 - \b Required: #define and #undef on reserved identifiers (misra-c2012-21.1)\n
+**		Justification: define library specific reserved identifiers
 */
+// cppcheck-suppress-begin [misra-c2012-19.2]
+// cppcheck-suppress-begin [misra-c2012-21.1]
 /****************************************************************/
-#ifndef __ARM_TYPEDEFS_H
-	#define __ARM_TYPEDEFS_H
+#ifndef ARM_TYPEDEFS_H_
+	#define ARM_TYPEDEFS_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -547,5 +554,7 @@ typedef union uLWord {
 	}
 #endif
 
-#endif /* __ARM_TYPEDEFS_H */
+#endif /* ARM_TYPEDEFS_H_ */
+// cppcheck-suppress-end [misra-c2012-19.2]
+// cppcheck-suppress-end [misra-c2012-21.1]
 /****************************************************************/

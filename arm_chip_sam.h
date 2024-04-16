@@ -33,8 +33,8 @@
 ** Please note TIMER_0_start() shall be called at init.
 */
 /****************************************************************/
-#ifndef __ARM_CHIP_SAM_H
-	#define __ARM_CHIP_SAM_H
+#ifndef ARM_CHIP_SAM_H_
+	#define ARM_CHIP_SAM_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -124,5 +124,5 @@ static inline FctERR HALERRtoFCTERR(const SDWORD status)
 	}
 #endif
 
-#endif /* __ARM_CHIP_SAM_H */
+#endif /* ARM_CHIP_SAM_H_ */
 /****************************************************************/

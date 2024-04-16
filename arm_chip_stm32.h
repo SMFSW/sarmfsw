@@ -5,8 +5,8 @@
 ** \warning Do not use macros for function qualifiers in this file
 */
 /****************************************************************/
-#ifndef __ARM_CHIP_STM32_H
-	#define __ARM_CHIP_STM32_H
+#ifndef ARM_CHIP_STM32_H_
+	#define ARM_CHIP_STM32_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -116,5 +116,5 @@ static inline FctERR HALERRtoFCTERR(const HAL_StatusTypeDef status)
 	}
 #endif
 
-#endif /* __ARM_CHIP_STM32_H */
+#endif /* ARM_CHIP_STM32_H_ */
 /****************************************************************/

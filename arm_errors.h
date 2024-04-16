@@ -4,8 +4,8 @@
 ** \brief ARM user errors
 **/
 /****************************************************************/
-#ifndef __ARM_ERROR_H
-	#define __ARM_ERROR_H
+#ifndef ARM_ERRORS_H_
+	#define ARM_ERRORS_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -59,5 +59,5 @@ typedef enum FctERR {
 	}
 #endif
 
-#endif /* __ARM_ERROR_H */
+#endif /* ARM_ERRORS_H_ */
 /****************************************************************/

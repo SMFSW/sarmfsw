@@ -4,8 +4,8 @@
 ** \brief Averaging inlines
 */
 /****************************************************************/
-#ifndef __ARM_INLINES_AVERAGE_H
-	#define __ARM_INLINES_AVERAGE_H
+#ifndef ARM_INLINES_AVERAGE_H_
+	#define ARM_INLINES_AVERAGE_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -16,24 +16,32 @@
 #define	RESTRICTED_AVERAGE(typ_t, sum_t)													\
 __INLINE typ_t RestrictedAverage_##typ_t(volatile const typ_t pArray[], const uint8_t nb)	\
 {																							\
-	if (nb <= 2)	{ return 0; }															\
+	const typ_t n = (typ_t) nb - (typ_t) 2;													\
+	typ_t average = (typ_t) 0;																\
 																							\
-	/* Array copy (memcpy not used as copy by byte and pTab may be volatile) */				\
-	typ_t array[nb];																		\
-	for (uintCPU_t i = 0 ; i < nb ; i++)	{ array[i] = pArray[i]; }						\
-																							\
-	/* Sum and min/max recording */															\
-	typ_t min_val = pArray[0], max_val = pArray[0];											\
-	sum_t sum = 0;																			\
-	for (uintCPU_t i = 0 ; i < nb ; i++)													\
+	if (nb > 2U)																			\
 	{																						\
-		sum += array[i];																	\
-		if (array[i] > max_val)	{ max_val = array[i]; }										\
-		if (array[i] < min_val)	{ min_val = array[i]; }										\
+		/* Array copy (memcpy not used as copy by byte and pTab may be volatile) */			\
+		typ_t array[nb];																	\
+		for (uintCPU_t i = 0 ; i < nb ; i++)	{ array[i] = pArray[i]; }					\
+																							\
+		/* Sum and min/max recording */														\
+		sum_t min_val = pArray[0], max_val = pArray[0];										\
+		sum_t sum = (typ_t) 0;																\
+		for (uintCPU_t i = 0 ; i < nb ; i++)												\
+		{																					\
+			sum += array[i];																\
+			if (array[i] > max_val)	{ max_val = array[i]; }									\
+			if (array[i] < min_val)	{ min_val = array[i]; }									\
+		}																					\
+																							\
+		/* Averaging */																		\
+		sum -= min_val + max_val;															\
+		sum /= n;																			\
+		average = (typ_t) (sum);															\
 	}																						\
 																							\
-	/* Averaging */																			\
-	return ((sum - min_val - max_val) / (nb - 2));											\
+	return average;																			\
 }
 
 
@@ -134,5 +142,5 @@ RESTRICTED_AVERAGE(double, double);
 	}
 #endif
 
-#endif /* __ARM_INLINES_AVERAGE_H */
+#endif /* ARM_INLINES_AVERAGE_H_ */
 /****************************************************************/

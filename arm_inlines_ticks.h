@@ -4,8 +4,8 @@
 ** \brief Ticks related inlines
 */
 /****************************************************************/
-#ifndef __ARM_INLINES_TICKS_H
-	#define __ARM_INLINES_TICKS_H
+#ifndef ARM_INLINES_TICKS_H_
+	#define ARM_INLINES_TICKS_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -52,5 +52,5 @@ __INLINE BOOL INLINE__ TPSINF_MS(const DWORD prev, const DWORD time)
 	}
 #endif
 
-#endif /* __ARM_INLINES_TICKS_H */
+#endif /* ARM_INLINES_TICKS_H_ */
 /****************************************************************/

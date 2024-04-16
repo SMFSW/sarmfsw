@@ -4,8 +4,8 @@
 ** \brief Angle conversion inlines
 */
 /****************************************************************/
-#ifndef __ARM_INLINES_ANGLE_H
-	#define __ARM_INLINES_ANGLE_H
+#ifndef ARM_INLINES_ANGLE_H_
+	#define ARM_INLINES_ANGLE_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -100,7 +100,7 @@ __INLINE float RAD_TO_FLOAT(const float rad)
 **/
 __INLINE float FLOAT_TO_RAD(const float val)
 {
-	return (val - (intCPU_t) val) * M_TWOPI;
+	return (val - (float) ((intCPU_t) val)) * M_TWOPI;
 }
 
 
@@ -119,7 +119,7 @@ __INLINE float DEG_TO_FLOAT(const float deg)
 **/
 __INLINE float FLOAT_TO_DEG(const float val)
 {
-	return (val - (intCPU_t) val) * 360.0f;
+	return (val - (float) ((intCPU_t) val)) * 360.0f;
 }
 
 
@@ -128,5 +128,5 @@ __INLINE float FLOAT_TO_DEG(const float val)
 	}
 #endif
 
-#endif /* __ARM_INLINES_ANGLE_H */
+#endif /* ARM_INLINES_ANGLE_H_ */
 /****************************************************************/

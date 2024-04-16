@@ -5,8 +5,8 @@
 ** \brief ARM HAL peripheral includes
 */
 /****************************************************************/
-#ifndef __ARM_HAL_PERIPHERAL_H
-	#define __ARM_HAL_PERIPHERAL_H
+#ifndef ARM_HAL_PERIPHERAL_H_
+	#define ARM_HAL_PERIPHERAL_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -230,5 +230,5 @@
 	}
 #endif
 
-#endif /* __ARM_HAL_PERIPHERAL_H */
+#endif /* ARM_HAL_PERIPHERAL_H_ */
 /****************************************************************/

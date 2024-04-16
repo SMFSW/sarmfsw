@@ -4,8 +4,8 @@
 ** \brief Rotation inlines
 */
 /****************************************************************/
-#ifndef __ARM_INLINES_ROTATION_H
-	#define __ARM_INLINES_ROTATION_H
+#ifndef ARM_INLINES_ROTATION_H_
+	#define ARM_INLINES_ROTATION_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -83,5 +83,5 @@ __INLINE sCoord2D rotate_2D(const sCoord2D c, const SWORD angle)
 	}
 #endif
 
-#endif /* __ARM_INLINES_ROTATION_H */
+#endif /* ARM_INLINES_ROTATION_H_ */
 /****************************************************************/

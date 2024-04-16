@@ -4,8 +4,8 @@
 ** \brief ARM common standard c library wrapper macros
 */
 /****************************************************************/
-#ifndef __ARM_STDCLIB_H
-	#define __ARM_STDCLIB_H
+#ifndef ARM_STDCLIB_H_
+	#define ARM_STDCLIB_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -39,5 +39,5 @@
 	}
 #endif
 
-#endif /* __ARM_STDCLIB_H */
+#endif /* ARM_STDCLIB_H_ */
 /****************************************************************/

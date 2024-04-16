@@ -4,8 +4,8 @@
 ** \brief ARM common inlines
 */
 /****************************************************************/
-#ifndef __ARM_INLINES_H
-	#define __ARM_INLINES_H
+#ifndef ARM_INLINES_H_
+	#define ARM_INLINES_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -81,5 +81,5 @@
 	}
 #endif
 
-#endif /* __ARM_INLINES_H */
+#endif /* ARM_INLINES_H_ */
 /****************************************************************/

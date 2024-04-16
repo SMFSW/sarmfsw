@@ -4,8 +4,8 @@
 ** \brief Floating point manipulation inlines
 */
 /****************************************************************/
-#ifndef __ARM_INLINES_FLOAT_H
-	#define __ARM_INLINES_FLOAT_H
+#ifndef ARM_INLINES_FLOAT_H_
+	#define ARM_INLINES_FLOAT_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -44,7 +44,10 @@ __INLINE DWORD get_fp_dec(const double f, const BYTE nb)
 
 	while (digits-- > 0) 	{ mul *= 10; }
 
-	return (DWORD) (fabs(f - (SDWORD) f) * mul);
+	double dec = fabs(f);
+	dec -= (double) ((DWORD) f);
+	
+	return (DWORD) (dec * (double) mul);
 }
 
 
@@ -82,5 +85,5 @@ __INLINE void NONNULL__ sIntFrac2float(double * const pFloat, const sIntFrac * c
 	}
 #endif
 
-#endif /* __ARM_INLINES_FLOAT_H */
+#endif /* ARM_INLINES_FLOAT_H_ */
 /****************************************************************/

@@ -4,8 +4,8 @@
 ** \brief Endian conversion and testing inlines
 */
 /****************************************************************/
-#ifndef __ARM_INLINES_ENDIAN_H
-	#define __ARM_INLINES_ENDIAN_H
+#ifndef ARM_INLINES_ENDIAN_H_
+	#define ARM_INLINES_ENDIAN_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -41,7 +41,7 @@ __INLINE WORD SWAP_END16B(const WORD w)
 **/
 __INLINE DWORD SWAP_END32B(const DWORD d)
 {
-	return (DWORD) (LSHIFT(SWAP_END16B(d & 0xFFFFUL), 16) | SWAP_END16B(RSHIFT((d & 0xFFFF0000UL), 16)));
+	return (DWORD) (LSHIFT(SWAP_END16B(d & 0xFFFFU), 16) | SWAP_END16B(RSHIFT((d & 0xFFFF0000U), 16)));
 }
 
 
@@ -124,5 +124,5 @@ __INLINE eEndian testEndian_full(void)
 	}
 #endif
 
-#endif /* __ARM_INLINES_ENDIAN_H */
+#endif /* ARM_INLINES_ENDIAN_H_ */
 /****************************************************************/

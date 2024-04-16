@@ -4,8 +4,8 @@
 ** \brief Binary manipulation inlines
 */
 /****************************************************************/
-#ifndef __ARM_INLINES_BINARY_H
-	#define __ARM_INLINES_BINARY_H
+#ifndef ARM_INLINES_BINARY_H_
+	#define ARM_INLINES_BINARY_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -26,7 +26,7 @@ __INLINE DWORD maskBits(const BYTE bits)
 
 	for (uintCPU_t i = 0 ; i < nb ; i++)
 	{
-		mask |= 1UL << i;
+		mask |= LSHIFT((DWORD) 1, i);
 	}
 
 	return mask;
@@ -48,13 +48,18 @@ __INLINE BYTE nbBitsState(const DWORD val, const BYTE bits, const BOOL state)
 
 	for (uintCPU_t i = 0 ; i < nb ; i++)
 	{
-		if (val & (1UL << i))
+		if ((val & LSHIFT((DWORD) 1, i)) != 0U)
 		{
 			ret++;
 		}
 	}
 
-	return state ? ret : (nb - ret);
+	if (!state)
+	{
+		ret = (BYTE) nb - ret;
+	}
+	
+	return ret;
 }
 
 
@@ -67,14 +72,15 @@ __INLINE BYTE nbBitsState(const DWORD val, const BYTE bits, const BOOL state)
 **/
 __INLINE SDWORD getMSBitSet(const DWORD val)
 {
-	const intCPU_t nb_bits = 32;
-	intCPU_t ret = -1;
+	const uintCPU_t nb_bits = 32;
+	SDWORD ret = -1;
 
-	for (intCPU_t i = nb_bits - 1 ; i >= 0 ; i--)
+	for (uintCPU_t i = nb_bits ; i > 0U ; i--)
 	{
-		if (val & (1UL << i))
+		const uintCPU_t bit = i - 1U;
+		if ((val & LSHIFT((DWORD) 1, bit)) != 0U)
 		{
-			ret = i;
+			ret = (SDWORD) bit;
 			break;
 		}
 	}
@@ -91,15 +97,16 @@ __INLINE SDWORD getMSBitSet(const DWORD val)
 **/
 __INLINE DWORD swapBits(const DWORD val, const BYTE bits)
 {
-	const intCPU_t	nb_bits = 32;
-	const intCPU_t	nb = MIN(bits, nb_bits) - 1;
+	const uintCPU_t	nb_bits = 32;
+	const uintCPU_t	nb = MIN(bits, nb_bits) - 1U;
 	DWORD			swap = 0;
 
-	for (intCPU_t i = nb ; i >= 0 ; i--)
+	for (uintCPU_t i = nb + 1U ; i > 0U ; i--)
 	{
-		if (val & (1UL << i))
+		const uintCPU_t bit = i - 1U;
+		if ((val & LSHIFT((DWORD) 1, bit)) != 0U)
 		{
-			swap |= 1UL << (nb - i);
+			swap |= LSHIFT((DWORD) 1, (nb - bit));
 		}
 	}
 
@@ -112,5 +119,5 @@ __INLINE DWORD swapBits(const DWORD val, const BYTE bits)
 	}
 #endif
 
-#endif /* __ARM_INLINES_BINARY_H */
+#endif /* ARM_INLINES_BINARY_H_ */
 /****************************************************************/

@@ -4,8 +4,8 @@
 ** \brief Linearization inlines
 */
 /****************************************************************/
-#ifndef __ARM_INLINES_LINEARIZATION_H
-	#define __ARM_INLINES_LINEARIZATION_H
+#ifndef ARM_INLINES_LINEARIZATION_H_
+	#define ARM_INLINES_LINEARIZATION_H_
 
 #ifdef __cplusplus
 	extern "C" {
@@ -84,5 +84,5 @@ __INLINE SDWORD NONNULL_INLINE__ linearization_eval_flex(const sLinearFlexArray 
 	}
 #endif
 
-#endif /* __ARM_INLINES_LINEARIZATION_H */
+#endif /* ARM_INLINES_LINEARIZATION_H_ */
 /****************************************************************/
