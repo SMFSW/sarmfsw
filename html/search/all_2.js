@@ -78,8 +78,10 @@ var searchData=
   ['bineval_75',['binEval',['../arm__macros_8h.html#a4bcc263075d1521213cd7db6d08dd23c',1,'arm_macros.h']]],
   ['bits_76',['Bits',['../unionu_byte.html#af4e065d638abcfb8465721afc052e89a',1,'uByte::Bits'],['../unionu_word.html#a2ff3dbb8138be6260f0c7ae81edee7da',1,'uWord::Bits'],['../unionu_d_word.html#a8cf24a3275e456d68d815acb67cc294c',1,'uDWord::Bits'],['../unionu_l_word.html#a7faacc76997e606d3a2ae66c0ab23729',1,'uLWord::Bits']]],
   ['bool_77',['BOOL',['../arm__typedefs_8h.html#ab40a1f154aa44511af7f97b88296f7d3',1,'arm_typedefs.h']]],
-  ['byte_78',['Byte',['../unionu_byte.html#a18bcb841a3af9e7c5ad95bb94f39017e',1,'uByte::Byte'],['../unionu_word.html#a3b63db52b39cbff8c92fc0eeb0093c5b',1,'uWord::Byte'],['../unionu_d_word.html#af2c5e9d0bac3f52838a0c08466dba11e',1,'uDWord::Byte'],['../unionu_l_word.html#a9187147f485912e80cb8db7a4a447bad',1,'uLWord::Byte']]],
-  ['byte_79',['BYTE',['../arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b',1,'arm_typedefs.h']]],
-  ['byte_5fto_5fperc_80',['BYTE_TO_PERC',['../arm__macros_8h.html#abfe9c2ca6f52ac26d50f91ae9b727ef0',1,'arm_macros.h']]],
-  ['bytes_81',['Bytes',['../unionu_word.html#aa069de459e6325c4b06038e12005e011',1,'uWord::Bytes'],['../unionu_d_word.html#aa01bb60014cb43fb7ccafaa8f526d8eb',1,'uDWord::Bytes'],['../unionu_l_word.html#a104b35f1cee1661bedb7606b5c8c30ed',1,'uLWord::Bytes']]]
+  ['branch_20master_20alt_20build_20status_20a_78',['sarmfsw &lt;a href=&quot;https://app.travis-ci.com/SMFSW/sarmfsw&quot; &gt;&lt;img src=&quot;https://app.travis-ci.com/SMFSW/sarmfsw.svg?branch=master&quot; alt=&quot;Build Status&quot;/&gt;&lt;/a&gt;',['../index.html',1,'']]],
+  ['build_20status_20a_79',['sarmfsw &lt;a href=&quot;https://app.travis-ci.com/SMFSW/sarmfsw&quot; &gt;&lt;img src=&quot;https://app.travis-ci.com/SMFSW/sarmfsw.svg?branch=master&quot; alt=&quot;Build Status&quot;/&gt;&lt;/a&gt;',['../index.html',1,'']]],
+  ['byte_80',['Byte',['../unionu_byte.html#a18bcb841a3af9e7c5ad95bb94f39017e',1,'uByte::Byte'],['../unionu_word.html#a3b63db52b39cbff8c92fc0eeb0093c5b',1,'uWord::Byte'],['../unionu_d_word.html#af2c5e9d0bac3f52838a0c08466dba11e',1,'uDWord::Byte'],['../unionu_l_word.html#a9187147f485912e80cb8db7a4a447bad',1,'uLWord::Byte']]],
+  ['byte_81',['BYTE',['../arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b',1,'arm_typedefs.h']]],
+  ['byte_5fto_5fperc_82',['BYTE_TO_PERC',['../arm__macros_8h.html#abfe9c2ca6f52ac26d50f91ae9b727ef0',1,'arm_macros.h']]],
+  ['bytes_83',['Bytes',['../unionu_word.html#aa069de459e6325c4b06038e12005e011',1,'uWord::Bytes'],['../unionu_d_word.html#aa01bb60014cb43fb7ccafaa8f526d8eb',1,'uDWord::Bytes'],['../unionu_l_word.html#a104b35f1cee1661bedb7606b5c8c30ed',1,'uLWord::Bytes']]]
 ];

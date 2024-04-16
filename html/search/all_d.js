@@ -10,5 +10,6 @@ var searchData=
   ['nonnullx_5f_5f_7',['NONNULLX__',['../arm__attributes_8h.html#a6b4cb05def851e19a35c1f46ca6e3d0d',1,'arm_attributes.h']]],
   ['nopull_8',['NoPull',['../arm__typedefs_8h.html#a3f0dbc3f4a4dbf70e1b9822bfea9397fa7d5d901e8c5e9faa4dbeff0345f0cbe0',1,'arm_typedefs.h']]],
   ['noreturn_5f_5f_9',['NORETURN__',['../arm__attributes_8h.html#ae4128af39b8daeaf59d5600936433e08',1,'arm_attributes.h']]],
-  ['null_10',['Null',['../arm__macros_8h.html#aaa8b54751ff9c56e4405bea260e336eb',1,'arm_macros.h']]]
+  ['notes_10',['sarmfsw (release notes)',['../md__release_notes.html',1,'']]],
+  ['null_11',['Null',['../arm__macros_8h.html#aaa8b54751ff9c56e4405bea260e336eb',1,'arm_macros.h']]]
 ];

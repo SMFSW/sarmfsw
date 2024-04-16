@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sarmfsw: SMFSW Toolbox (for ARM &amp; compatible with Arduino platform): Main Page</title>
+<title>sarmfsw: SMFSW Toolbox (for ARM &amp; compatible with Arduino platform): sarmfsw &lt;a href=&quot;https://app.travis-ci.com/SMFSW/sarmfsw&quot; &gt;&lt;img src=&quot;https://app.travis-ci.com/SMFSW/sarmfsw.svg?branch=master&quot; alt=&quot;Build Status&quot;/&gt;&lt;/a&gt;</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,10 +71,52 @@ $(function() {
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">sarmfsw: SMFSW Toolbox (for ARM &amp; compatible with Arduino platform) Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">sarmfsw <a href="https://app.travis-ci.com/SMFSW/sarmfsw"><img src="https://app.travis-ci.com/SMFSW/sarmfsw.svg?branch=master" alt="Build Status" style="pointer-events: none;" class="inline"/></a> </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a> ARM based common headers</p>
+<p>Basic yet useful typedefs/macros/inlines for any ARM CMSIS based project</p>
+<p>Library has been updated to become compatible with Arduino &amp; other 8/16bit platforms (not only ARM cores, yet less optimized for 8/16bit cores)</p>
+<h1>Library handled symbols (to be defined if needed, at project level)</h1>
+<ul>
+<li><code>STM_FAMILY</code>: Define with proper family name if your STM32 MCU is not automatically recognized (in case of warning message displayed)</li>
+<li><code>SAM_FAMILY</code>: Define with proper family name if your ATMEL SAM MCU is not automatically recognized (in case of warning message displayed)</li>
+<li><code>SARMFSW_NO_CHIP_HAL</code>: No includes and definitions of HAL chip files (can be useful to use sarmfsw for static libraries code generation)</li>
+<li><code>HALTicks</code>: can be defined with a function name to use ticks getter function already implemented under the form <code>uint32_t func(void)</code></li>
+<li><code>HAL_MAX_TICKS</code> val: Define with custom max value in project if tick max value is not using 32b variable full scale</li>
+<li><code>HAL_MS_TICKS_FACTOR</code>: Define with custom multiplier in project if tick period is not 1ms</li>
+<li><code>HAL_INC_DISABLE</code>: Define this symbol at project level to disable inclusion of all HAL headers</li>
+<li><code>HAL_XXX_INC_DISABLE</code>: Define this symbol at project level (replacing <code>XXX</code> by peripheral name) to disable inclusion of corresponding HAL header</li>
+<li><code>BIG_ENDIAN</code>: Define this symbol when using big endian target architecture if not automatically recognized (in case of warning message displayed)</li>
+<li><code>LITTLE_ENDIAN</code>: Define this symbol when using little endian target architecture if not automatically recognized (in case of warning message displayed)</li>
+<li><code>REVERSE_BITFIELD</code>: By default bitfields are stored from lsb to msb; if not the case with used compiler, use a pragma or define this symbol</li>
+<li><code>STDBOOL_NDEF</code>: define this symbol in case used compiler doesn't have stdbool.h header</li>
+<li><code>STDINT_NDEF</code>: define this symbol in case used compiler doesn't have stdint.h header</li>
+<li><code>I_FIND_BINARY_HEADER_USEFUL</code>: For Arduino platform, if using defines from binary.h, define this symbol (not recommended, use 0bxxx for binary instead)</li>
+<li><code>SINGLE_SHIFT_ONLY_OPCODE</code>: If used CPU only handles single shifts opcode, define this symbol to optimize use of LSHIFTx &amp; RSHIFTx with constants</li>
+<li><code>NO_STATIC_FUNC</code> or <code>UNITY_TESTING</code>: using __STATIC keyword, functions will always be visible by linker if set (useful for unit testing)</li>
+</ul>
+<h1>Help would be appreciated:</h1>
+<ul>
+<li>Cosmic compiler users: attributes aliases implementation (or related documentation)</li>
+<li>Texas Instruments chips users: defining families &amp; sub-families for chips in <a class="el" href="arm__cmsis_8h.html" title="ARM link with CMSIS files.">arm_cmsis.h</a> &amp; peripheral includes (if available)</li>
+<li>Any ARM chip provider users: defining families &amp; sub-families for chips in <a class="el" href="arm__cmsis_8h.html" title="ARM link with CMSIS files.">arm_cmsis.h</a> &amp; peripheral includes (if available)</li>
+<li>Atmel SAM users: defining new families &amp; sub-families for chips &amp; rationalization of peripheral includes (arm_peripherals.h)</li>
+<li>Arduino platform users: miscellaneous improvements (not related to &lt;32b optimizations, ARM core being the main focus of sarmfsw library)</li>
+<li>No redeeming ARM users: improvements &amp; optimizations, additions and bug fixes are welcome as long as it still remains in the spirit of C header helpers</li>
+</ul>
+<h1>Notes</h1>
+<p>Macros/Inlines name standardization (case) not always respected for backward compatibility with older versions:</p><ul>
+<li>For new users: sorry for this apparent nonsense (aliases may be implemented sooner, later, bust most likely never)!</li>
+<li>For former users: you're welcome (except some special cases, backward compatibility should still be handled)!</li>
+</ul>
+<h1>Documentation</h1>
+<p>Doxygen doc can be generated using "Doxyfile"</p>
+<p>See <a href="https://smfsw.github.io/sarmfsw/">generated documentation</a></p>
+<h1>Release Notes</h1>
+<p>See <a class="el" href="md__release_notes.html">release notes</a> </p>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"/>
 </div><!-- contents -->
 <!-- start footer part -->
