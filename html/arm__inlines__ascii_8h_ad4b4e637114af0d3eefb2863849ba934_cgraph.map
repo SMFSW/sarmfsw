@@ -1,3 +1,5 @@
 <map id="toLowerCase" name="toLowerCase">
-<area shape="rect" id="node2" href="$arm__inlines__ascii_8h.html#a7dce9c7ee2e5d3f62aa2421e7b8cb4ed" title="test for upper case alphabetic char " alt="" coords="157,5,260,32"/>
+<area shape="rect" id="Node000001" title="Convert upper case alphabetic char to lower case." alt="" coords="5,5,104,32"/>
+<area shape="rect" id="Node000002" href="$arm__inlines__ascii_8h.html#a7dce9c7ee2e5d3f62aa2421e7b8cb4ed" title="test for upper case alphabetic char" alt="" coords="152,5,249,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,16,137,16,137,21,104,21"/>
 </map>

@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['hal_5fgettick',['HAL_GetTick',['../arm__chip__pic_8h.html#af2c4f03d53e997a54e1fd5e80daa55c4',1,'HAL_GetTick(void):&#160;arm_chip_pic.h'],['../arm__chip__sam_8h.html#af2c4f03d53e997a54e1fd5e80daa55c4',1,'HAL_GetTick(void):&#160;arm_chip_sam.h'],['../arm__chip__stm32_8h.html#af2c4f03d53e997a54e1fd5e80daa55c4',1,'HAL_GetTick(void):&#160;arm_chip_stm32.h']]],
-  ['hal_5fresetsource',['HAL_ResetSource',['../arm__chip__ino_8h.html#afd1b57d0c23eee7e4e777f12233b5b9b',1,'HAL_ResetSource(void):&#160;arm_chip_ino.h'],['../arm__chip__pic_8h.html#afd1b57d0c23eee7e4e777f12233b5b9b',1,'HAL_ResetSource(void):&#160;arm_chip_pic.h'],['../arm__chip__sam_8h.html#afd1b57d0c23eee7e4e777f12233b5b9b',1,'HAL_ResetSource(void):&#160;arm_chip_sam.h']]],
-  ['halerrtofcterr',['HALERRtoFCTERR',['../arm__chip__ino_8h.html#a6bc1886e713db1fc285bdeeb34802694',1,'HALERRtoFCTERR(const SDWORD status):&#160;arm_chip_ino.h'],['../arm__chip__pic_8h.html#a6bc1886e713db1fc285bdeeb34802694',1,'HALERRtoFCTERR(const SDWORD status):&#160;arm_chip_pic.h'],['../arm__chip__sam_8h.html#a6bc1886e713db1fc285bdeeb34802694',1,'HALERRtoFCTERR(const SDWORD status):&#160;arm_chip_sam.h'],['../arm__chip__stm32_8h.html#a79caeb50ac17444729ac729582b752a4',1,'HALERRtoFCTERR(const HAL_StatusTypeDef status):&#160;arm_chip_stm32.h']]],
-  ['hextoascii',['HexToASCII',['../arm__inlines__ascii_8h.html#a7d02d8bd9630f8b4a5dbaf6bfdbe547c',1,'arm_inlines_ascii.h']]],
-  ['hextobcd',['HexToBCD',['../arm__inlines__bcd_8h.html#a68b92f79d710d733985e18d34713e1cb',1,'arm_inlines_bcd.h']]]
+  ['halticks_5fprototype_0',['HALTICKS_PROTOTYPE',['../arm__cmsis_8h.html#a65ced2913da496bac48d4707c48582fb',1,'arm_cmsis.h']]],
+  ['hextoascii_1',['HexToASCII',['../arm__inlines__ascii_8h.html#a7d02d8bd9630f8b4a5dbaf6bfdbe547c',1,'arm_inlines_ascii.h']]],
+  ['hextobcd_2',['HexToBCD',['../arm__inlines__bcd_8h.html#a68b92f79d710d733985e18d34713e1cb',1,'arm_inlines_bcd.h']]]
 ];

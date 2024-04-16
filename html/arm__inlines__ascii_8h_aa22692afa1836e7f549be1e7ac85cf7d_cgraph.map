@@ -1,4 +1,7 @@
 <map id="isAlpha" name="isAlpha">
-<area shape="rect" id="node2" href="$arm__inlines__ascii_8h.html#a4a41d8164c75c1a5217ad5164a617a70" title="test for lower case alphabetic char " alt="" coords="122,5,223,32"/>
-<area shape="rect" id="node3" href="$arm__inlines__ascii_8h.html#a7dce9c7ee2e5d3f62aa2421e7b8cb4ed" title="test for upper case alphabetic char " alt="" coords="121,56,224,83"/>
+<area shape="rect" id="Node000001" title="test for alphabetic char" alt="" coords="5,31,70,57"/>
+<area shape="rect" id="Node000002" href="$arm__inlines__ascii_8h.html#a4a41d8164c75c1a5217ad5164a617a70" title="test for lower case alphabetic char" alt="" coords="118,5,215,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,35,103,28,104,34,71,40"/>
+<area shape="rect" id="Node000003" href="$arm__inlines__ascii_8h.html#a7dce9c7ee2e5d3f62aa2421e7b8cb4ed" title="test for upper case alphabetic char" alt="" coords="118,56,215,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="71,48,104,54,103,60,69,53"/>
 </map>

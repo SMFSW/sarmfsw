@@ -1,4 +1,7 @@
 <map id="ASCIIToHex" name="ASCIIToHex">
-<area shape="rect" id="node2" href="$arm__inlines__ascii_8h.html#ad776f83d1f57d3dd5ab24c9988ad6537" title="ASCII decimal string to 32bit unsigned integer. " alt="" coords="147,5,240,32"/>
-<area shape="rect" id="node3" href="$arm__inlines__ascii_8h.html#a9efdb2427de10516e4fcb9b8bb4321d3" title="ASCII hexadecimal string to 32bit unsigned integer. " alt="" coords="147,56,240,83"/>
+<area shape="rect" id="Node000001" title="Converts ASCII char to hexadecimal." alt="" coords="143,31,238,57"/>
+<area shape="rect" id="Node000002" href="$arm__inlines__ascii_8h.html#ad776f83d1f57d3dd5ab24c9988ad6537" title="ASCII decimal string to 32bit unsigned integer." alt="" coords="5,5,95,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,35,95,29,96,24,128,30"/>
+<area shape="rect" id="Node000003" href="$arm__inlines__ascii_8h.html#a9efdb2427de10516e4fcb9b8bb4321d3" title="ASCII hexadecimal string to 32bit unsigned integer." alt="" coords="5,56,95,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="128,58,96,64,95,59,127,53"/>
 </map>

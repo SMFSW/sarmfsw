@@ -1,0 +1,5 @@
+<map id="convXtoYBits" name="convXtoYBits">
+<area shape="rect" id="Node000001" title="convert x bits variable to y bits (32bits max)" alt="" coords="5,5,107,32"/>
+<area shape="rect" id="Node000002" href="$arm__inlines__binary_8h.html#a22d29769e5b7873a1683e1a8dbc8bc80" title="Create specified number of bits mask." alt="" coords="155,5,231,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,16,140,16,140,21,107,21"/>
+</map>

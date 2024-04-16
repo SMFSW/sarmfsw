@@ -1,4 +1,7 @@
 <map id="arm_inlines_rotation.h" name="arm_inlines_rotation.h">
-<area shape="rect" id="node2" href="$arm__inlines_8h.html" title="ARM common inlines. " alt="" coords="34,80,141,107"/>
-<area shape="rect" id="node3" href="$sarmfsw_8h.html" title="sarmfsw (ARM) common headers " alt="" coords="44,155,131,181"/>
+<area shape="rect" id="Node000001" title="Rotation inlines." alt="" coords="5,5,154,32"/>
+<area shape="rect" id="Node000002" href="$arm__inlines_8h.html" title="ARM common inlines." alt="" coords="30,80,129,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,47,82,80,77,80,77,47"/>
+<area shape="rect" id="Node000003" href="$sarmfsw_8h.html" title="sarmfsw (ARM) common headers" alt="" coords="39,155,120,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="82,122,82,154,77,154,77,122"/>
 </map>

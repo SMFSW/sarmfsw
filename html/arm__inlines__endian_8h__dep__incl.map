@@ -1,4 +1,7 @@
 <map id="arm_inlines_endian.h" name="arm_inlines_endian.h">
-<area shape="rect" id="node2" href="$arm__inlines_8h.html" title="ARM common inlines. " alt="" coords="31,80,137,107"/>
-<area shape="rect" id="node3" href="$sarmfsw_8h.html" title="sarmfsw (ARM) common headers " alt="" coords="41,155,127,181"/>
+<area shape="rect" id="Node000001" title="Endian conversion and testing inlines." alt="" coords="5,5,149,32"/>
+<area shape="rect" id="Node000002" href="$arm__inlines_8h.html" title="ARM common inlines." alt="" coords="28,80,126,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,47,80,80,74,80,74,47"/>
+<area shape="rect" id="Node000003" href="$sarmfsw_8h.html" title="sarmfsw (ARM) common headers" alt="" coords="36,155,118,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="80,122,80,154,74,154,74,122"/>
 </map>

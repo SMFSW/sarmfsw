@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lword',['LWord',['../unionu_l_word.html#a416e725d93dea4a48ca1fbd0d98a5fde',1,'uLWord']]]
+  ['fractionnal_0',['fractionnal',['../structs_int_frac.html#a45c7fe6086600f415d84f8ca6ac93942',1,'sIntFrac']]]
 ];

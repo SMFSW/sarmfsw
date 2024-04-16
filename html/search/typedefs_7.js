@@ -1,13 +1,14 @@
 var searchData=
 [
-  ['sbitfield16',['sBitfield16',['../arm__typedefs_8h.html#a1d5d4a78659a91105f2be002b70a6f4a',1,'arm_typedefs.h']]],
-  ['sbitfield32',['sBitfield32',['../arm__typedefs_8h.html#a43f588932901e7dc95def55a72668c20',1,'arm_typedefs.h']]],
-  ['sbitfield64',['sBitfield64',['../arm__typedefs_8h.html#ac7ac6c80aae21315e82ec581a9a4740b',1,'arm_typedefs.h']]],
-  ['sbitfield8',['sBitfield8',['../arm__typedefs_8h.html#a36fccd1a22320671dbdf71f4e9ba2e42',1,'arm_typedefs.h']]],
-  ['sbyte',['SBYTE',['../arm__typedefs_8h.html#a0b0ec08cb12c90f493f131cffb432638',1,'arm_typedefs.h']]],
-  ['scoord2d',['sCoord2D',['../arm__inlines__rotation_8h.html#ad11b856930f0e493cc6b7bf36191f194',1,'arm_inlines_rotation.h']]],
-  ['sdword',['SDWORD',['../arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013',1,'arm_typedefs.h']]],
-  ['slinearflexarray',['sLinearFlexArray',['../arm__inlines__linearization_8h.html#a702f02d228d64bae487af2f21558009d',1,'arm_inlines_linearization.h']]],
-  ['slword',['SLWORD',['../arm__typedefs_8h.html#afb75babc11ab7623115c59cdc4ba567a',1,'arm_typedefs.h']]],
-  ['sword',['SWORD',['../arm__typedefs_8h.html#a9beb1dcf5779f93653b7a57919d431e1',1,'arm_typedefs.h']]]
+  ['sbitfield16_0',['sBitfield16',['../arm__typedefs_8h.html#aa3b8dd42d5e51a139d911ffe8058ecc6',1,'arm_typedefs.h']]],
+  ['sbitfield32_1',['sBitfield32',['../arm__typedefs_8h.html#a3695e58eb2bfaf343e92cf073b81c606',1,'arm_typedefs.h']]],
+  ['sbitfield64_2',['sBitfield64',['../arm__typedefs_8h.html#ad2f620184d412d3b0db7e034699bd1d8',1,'arm_typedefs.h']]],
+  ['sbitfield8_3',['sBitfield8',['../arm__typedefs_8h.html#a40ef9f46f43d9a050872083a87fa437b',1,'arm_typedefs.h']]],
+  ['sbyte_4',['SBYTE',['../arm__typedefs_8h.html#a0b0ec08cb12c90f493f131cffb432638',1,'arm_typedefs.h']]],
+  ['scoord2d_5',['sCoord2D',['../arm__inlines__rotation_8h.html#a10f9b49ef96707460d2092beb864af78',1,'arm_inlines_rotation.h']]],
+  ['sdword_6',['SDWORD',['../arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013',1,'arm_typedefs.h']]],
+  ['sintfrac_7',['sIntFrac',['../arm__inlines__float_8h.html#a9f29bcbeed6108455bd1d8454da16bb3',1,'arm_inlines_float.h']]],
+  ['slinearflexarray_8',['sLinearFlexArray',['../arm__inlines__linearization_8h.html#a35343f4e64df397e61cb75020b075231',1,'arm_inlines_linearization.h']]],
+  ['slword_9',['SLWORD',['../arm__typedefs_8h.html#afb75babc11ab7623115c59cdc4ba567a',1,'arm_typedefs.h']]],
+  ['sword_10',['SWORD',['../arm__typedefs_8h.html#a9beb1dcf5779f93653b7a57919d431e1',1,'arm_typedefs.h']]]
 ];

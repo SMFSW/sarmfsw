@@ -1,3 +1,5 @@
 <map id="DEG_TO_FLOAT" name="DEG_TO_FLOAT">
-<area shape="rect" id="node2" href="$arm__inlines__angle_8h.html#a2fe3b8e43b755ce206990fb2c7bb9ac1" title="Degrees normalization (normalize angle to single rotation) " alt="" coords="173,5,269,32"/>
+<area shape="rect" id="Node000001" title="Degrees to 0&#45;1 scaled float conversion." alt="" coords="5,5,129,32"/>
+<area shape="rect" id="Node000002" href="$arm__inlines__angle_8h.html#a336b9c0dcbf3738c4e415e651648ead6" title="Degrees normalization (normalize angle to single rotation)" alt="" coords="177,5,275,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,16,162,16,162,21,129,21"/>
 </map>

@@ -1,6 +1,11 @@
 <map id="isAlphaNum" name="isAlphaNum">
-<area shape="rect" id="node2" href="$arm__inlines__ascii_8h.html#adfe2a4efd24acdf5ba637874b79b845a" title="test for numeric char " alt="" coords="155,5,217,32"/>
-<area shape="rect" id="node3" href="$arm__inlines__ascii_8h.html#aa22692afa1836e7f549be1e7ac85cf7d" title="test for alphabetic char " alt="" coords="152,56,220,83"/>
-<area shape="rect" id="node4" href="$arm__inlines__ascii_8h.html#a4a41d8164c75c1a5217ad5164a617a70" title="test for lower case alphabetic char " alt="" coords="269,31,370,57"/>
-<area shape="rect" id="node5" href="$arm__inlines__ascii_8h.html#a7dce9c7ee2e5d3f62aa2421e7b8cb4ed" title="test for upper case alphabetic char " alt="" coords="268,81,371,108"/>
+<area shape="rect" id="Node000001" title="test for alphanumeric char" alt="" coords="5,56,98,83"/>
+<area shape="rect" id="Node000002" href="$arm__inlines__ascii_8h.html#aa22692afa1836e7f549be1e7ac85cf7d" title="test for alphabetic char" alt="" coords="146,31,210,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,57,130,51,132,56,99,63"/>
+<area shape="rect" id="Node000005" href="$arm__inlines__ascii_8h.html#adfe2a4efd24acdf5ba637874b79b845a" title="test for numeric char" alt="" coords="148,81,208,108"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="99,76,134,83,133,88,98,81"/>
+<area shape="rect" id="Node000003" href="$arm__inlines__ascii_8h.html#a4a41d8164c75c1a5217ad5164a617a70" title="test for lower case alphabetic char" alt="" coords="258,5,355,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="210,35,243,28,244,34,211,40"/>
+<area shape="rect" id="Node000004" href="$arm__inlines__ascii_8h.html#a7dce9c7ee2e5d3f62aa2421e7b8cb4ed" title="test for upper case alphabetic char" alt="" coords="258,56,355,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="211,48,244,54,243,60,210,53"/>
 </map>

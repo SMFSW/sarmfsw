@@ -1,5 +1,9 @@
 <map id="SWAP_END32B" name="SWAP_END32B">
-<area shape="rect" id="node2" href="$arm__inlines__endian_8h.html#a95adbe3363102aee10caf3bc78a4f54c" title="Swap content endian of a 64b value (little &#45;&gt; big, big &#45;&gt; little) " alt="" coords="187,5,306,32"/>
-<area shape="rect" id="node4" href="$arm__inlines__endian_8h.html#a161604654481ab2144d50f962a9eea98" title="Swap endian of a 32b tab (little &#45;&gt; big, big &#45;&gt; little) " alt="" coords="172,56,321,83"/>
-<area shape="rect" id="node3" href="$arm__inlines__endian_8h.html#a7febd655a73137b8e588f1bc116e35b4" title="Swap endian of a 64b tab (little &#45;&gt; big, big &#45;&gt; little) " alt="" coords="369,5,519,32"/>
+<area shape="rect" id="Node000001" title="Swap content endian of a 32b value (little &#45;&gt; big, big &#45;&gt; little)" alt="" coords="404,31,523,57"/>
+<area shape="rect" id="Node000002" href="$arm__inlines__endian_8h.html#a161604654481ab2144d50f962a9eea98" title="Swap endian of a 32b tab (little &#45;&gt; big, big &#45;&gt; little)" alt="" coords="205,5,356,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="389,36,356,32,357,27,390,31"/>
+<area shape="rect" id="Node000003" href="$arm__inlines__endian_8h.html#a95adbe3363102aee10caf3bc78a4f54c" title="Swap content endian of a 64b value (little &#45;&gt; big, big &#45;&gt; little)" alt="" coords="221,56,340,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="390,57,341,64,340,58,389,52"/>
+<area shape="rect" id="Node000004" href="$arm__inlines__endian_8h.html#a7febd655a73137b8e588f1bc116e35b4" title="Swap endian of a 64b tab (little &#45;&gt; big, big &#45;&gt; little)" alt="" coords="5,56,157,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="206,72,157,72,157,67,206,67"/>
 </map>

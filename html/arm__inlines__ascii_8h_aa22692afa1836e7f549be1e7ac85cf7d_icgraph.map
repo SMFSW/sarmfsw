@@ -1,3 +1,5 @@
 <map id="isAlpha" name="isAlpha">
-<area shape="rect" id="node2" href="$arm__inlines__ascii_8h.html#a5c5a4db36aec5b7fb9cc24373e2d739b" title="test for alphanumeric char " alt="" coords="121,5,220,32"/>
+<area shape="rect" id="Node000001" title="test for alphabetic char" alt="" coords="146,5,210,32"/>
+<area shape="rect" id="Node000002" href="$arm__inlines__ascii_8h.html#a5c5a4db36aec5b7fb9cc24373e2d739b" title="test for alphanumeric char" alt="" coords="5,5,98,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,21,98,21,98,16,131,16"/>
 </map>

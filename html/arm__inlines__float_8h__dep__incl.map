@@ -1,4 +1,7 @@
 <map id="arm_inlines_float.h" name="arm_inlines_float.h">
-<area shape="rect" id="node2" href="$arm__inlines_8h.html" title="ARM common inlines. " alt="" coords="23,80,130,107"/>
-<area shape="rect" id="node3" href="$sarmfsw_8h.html" title="sarmfsw (ARM) common headers " alt="" coords="33,155,120,181"/>
+<area shape="rect" id="Node000001" title="Floating point manipulation inlines." alt="" coords="5,5,136,32"/>
+<area shape="rect" id="Node000002" href="$arm__inlines_8h.html" title="ARM common inlines." alt="" coords="21,80,120,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,47,73,80,68,80,68,47"/>
+<area shape="rect" id="Node000003" href="$sarmfsw_8h.html" title="sarmfsw (ARM) common headers" alt="" coords="30,155,111,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="73,122,73,154,68,154,68,122"/>
 </map>

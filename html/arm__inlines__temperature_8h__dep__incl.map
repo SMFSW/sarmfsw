@@ -1,4 +1,7 @@
 <map id="arm_inlines_temperature.h" name="arm_inlines_temperature.h">
-<area shape="rect" id="node2" href="$arm__inlines_8h.html" title="ARM common inlines. " alt="" coords="49,80,156,107"/>
-<area shape="rect" id="node3" href="$sarmfsw_8h.html" title="sarmfsw (ARM) common headers " alt="" coords="59,155,146,181"/>
+<area shape="rect" id="Node000001" title="Temperature conversion inlines." alt="" coords="5,5,180,32"/>
+<area shape="rect" id="Node000002" href="$arm__inlines_8h.html" title="ARM common inlines." alt="" coords="43,80,142,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,47,95,80,90,80,90,47"/>
+<area shape="rect" id="Node000003" href="$sarmfsw_8h.html" title="sarmfsw (ARM) common headers" alt="" coords="52,155,133,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="95,122,95,154,90,154,90,122"/>
 </map>

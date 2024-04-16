@@ -1,2 +1,7 @@
 <map id="arm_chip_stm32.h" name="arm_chip_stm32.h">
+<area shape="rect" id="Node000001" title="ARM common macros for STM32." alt="" coords="31,5,160,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,66,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,34,57,70,53,67,83,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="89,80,222,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="108,31,138,67,134,70,104,34"/>
 </map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y',['y',['../structs_coord2_d.html#aae455d3331583c8f32bbb2e01c54c8bb',1,'sCoord2D']]]
+  ['sign_0',['sign',['../structs_int_frac.html#add2c326f8d91d6a52c24b04e8dcc35f7',1,'sIntFrac']]]
 ];

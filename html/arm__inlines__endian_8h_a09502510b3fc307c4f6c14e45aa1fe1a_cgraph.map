@@ -1,3 +1,5 @@
 <map id="SWAP_END16B_TAB" name="SWAP_END16B_TAB">
-<area shape="rect" id="node2" href="$arm__inlines__endian_8h.html#aee4cd55d7169d1fbf0eaff78a9fa81e4" title="Swap content endian of a 16b value (little &#45;&gt; big, big &#45;&gt; little) " alt="" coords="203,5,321,32"/>
+<area shape="rect" id="Node000001" title="Swap endian of a 16b tab (little &#45;&gt; big, big &#45;&gt; little)" alt="" coords="5,5,157,32"/>
+<area shape="rect" id="Node000002" href="$arm__inlines__endian_8h.html#aee4cd55d7169d1fbf0eaff78a9fa81e4" title="Swap content endian of a 16b value (little &#45;&gt; big, big &#45;&gt; little)" alt="" coords="205,5,324,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,16,190,16,190,21,157,21"/>
 </map>

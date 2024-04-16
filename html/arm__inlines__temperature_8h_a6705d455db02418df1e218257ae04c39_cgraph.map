@@ -1,4 +1,7 @@
 <map id="kelvin2fahrenheit" name="kelvin2fahrenheit">
-<area shape="rect" id="node2" href="$arm__inlines__temperature_8h.html#aa9c4144ad3c12dea516892a55f67246e" title="Convert degrees Celsius to Fahrenheit. " alt="" coords="184,5,323,32"/>
-<area shape="rect" id="node3" href="$arm__inlines__temperature_8h.html#ab4ad197d5bc7768ab4863d2dd839cb59" title="Convert degrees Kelvin to Celsius. " alt="" coords="199,56,308,83"/>
+<area shape="rect" id="Node000001" title="Convert degrees Kelvin to Fahrenheit." alt="" coords="5,31,125,57"/>
+<area shape="rect" id="Node000002" href="$arm__inlines__temperature_8h.html#aa9c4144ad3c12dea516892a55f67246e" title="Convert degrees Celsius to Fahrenheit." alt="" coords="173,5,299,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,33,157,28,158,33,126,38"/>
+<area shape="rect" id="Node000003" href="$arm__inlines__temperature_8h.html#ab4ad197d5bc7768ab4863d2dd839cb59" title="Convert degrees Kelvin to Celsius." alt="" coords="184,56,288,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="126,50,170,57,169,62,125,55"/>
 </map>

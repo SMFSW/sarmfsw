@@ -1,0 +1,5 @@
+<map id="float2sIntFrac" name="float2sIntFrac">
+<area shape="rect" id="Node000001" title="Convert floating point representation to sIntFrac integers representation." alt="" coords="5,5,107,32"/>
+<area shape="rect" id="Node000002" href="$arm__inlines__float_8h.html#a4c187a8ec491bec9a69970e298cdaf73" title="Get floating point number decimal part (as absolute value)" alt="" coords="155,5,240,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,16,140,16,140,21,107,21"/>
+</map>
