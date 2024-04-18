@@ -740,7 +740,7 @@
 /*** arm_inlines_ticks.h needs a generic definition of HALTicks & HAL_MS_TICKS_FACTOR ***/
 //!\MISRA Local derogation authorized for:\n
 //! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
-//! \a Justification: func paramater shall be a function name; raising error otherwise is intended.\n
+//! \a Justification: \p func paramater shall be a function name; raising error otherwise is intended.\n
 // cppcheck-suppress-macro misra-c2012-20.7
 #define HALTICKS_PROTOTYPE(func)	uint32_t func(void)		//!< External definition of Ticks getter that shall be implemented in project
 

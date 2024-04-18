@@ -120,7 +120,7 @@
 
 //!\MISRA Local legitimate use derogation authorized for:\n
 //! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
-//! \a Justification: \b typ parameter would be cast instead of type declaration (thus raising error); other parameters shall be variable names, raising error otherwise is intended.\n
+//! \a Justification: \p typ parameter would be cast instead of type declaration (thus raising error); other parameters shall be variable names, raising error otherwise is intended.\n
 // cppcheck-suppress-macro misra-c2012-20.7
 #define	SWAP_TYPE(a, b, typ)	({ typ c = a; a = b; b = c; })		//!< Swap two variable type \p typ \p a \& \p b
 #define	SWAP_BYTE(a, b)			SWAP_TYPE(a, b, BYTE)				//!< Swap two \c BYTE \p a \& \p b
@@ -133,51 +133,51 @@
 
 //!\MISRA Local legitimate use derogation authorized for:\n
 //! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
-//! \a Justification: \b typ parameter would be cast instead of type.\n
+//! \a Justification: \p typ parameter would be cast instead of type.\n
 // cppcheck-suppress-macro misra-c2012-20.7
 #define VAL_AT(addr, typ)		(*(typ *) (addr))										//!< Get the type \p typ content of address \p addr
 
 //!\MISRA local derogation authorized for:\n
 //! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
-//! \a Justification: Parenthesis doesn't make sense as parameter \b arr shall be an instance of type; raising error otherwise is intended.\n
+//! \a Justification: Parenthesis doesn't make sense as parameter \p arr shall be an instance of type; raising error otherwise is intended.\n
 // cppcheck-suppress-macro misra-c2012-20.7
 #define SZ_ARRAY(arr)			((size_t) (sizeof(arr) / sizeof(arr[0])))				//!< Computes the number of array elements in \p arr
 
 //!\MISRA Local legitimate use derogation authorized for:\n
 //! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
-//! \a Justification: \b obj parameter can be a type instead of an istance of type.\n
-//! \a Justification: \b typ parameter would be cast instead of type.\n
+//! \a Justification: \p obj parameter can be a type instead of an istance of type.\n
+//! \a Justification: \p typ parameter would be cast instead of type.\n
 // cppcheck-suppress-macro misra-c2012-20.7
 #define SZ_OBJ(obj, typ)		((size_t) (sizeof(obj) / sizeof(typ)))					//!< Computes the number of elements in \p obj of type \p typ
 
 //!\MISRA Local legitimate use derogation authorized for:\n
 //! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
-//! \a Justification: \b typ parameter would be cast instead of type.\n
-//! \a Justification: \b mbr parameter shall be a structure member; will in any way raise an error in case not.\n
+//! \a Justification: \p typ parameter would be cast instead of type.\n
+//! \a Justification: \p mbr parameter shall be a structure member; will in any way raise an error in case not.\n
 // cppcheck-suppress-macro misra-c2012-20.7
 #define SZ_TYP_MBR(typ, mbr)	((size_t) sizeof(((typ *)0)->mbr))						//!< Computes the size of member \p mbr in struct type \p typ
 
 //!\MISRA Local legitimate use derogation authorized for:\n
 //! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
-//! \a Justification: \b typ parameter would be cast instead of type.\n
-//! \a Justification: \b mbr parameter shall be a structure member; will in any way raise an error in case not.\n
+//! \a Justification: \p typ parameter would be cast instead of type.\n
+//! \a Justification: \p mbr parameter shall be a structure member; will in any way raise an error in case not.\n
 // cppcheck-suppress-macro misra-c2012-20.7
 #define TYP_MBR(typ, mbr)		(((typ *)0)->mbr)										//!< Get member \p mbr from a struct type \p typ
 
 //! \warning use with caution, C language typeof extension works well with native types, yet can be the cause of big (experienced) issues with more complex ones
-//! \note \b typeof C language extension should only be used to get a compiler native known type
+//! \note \c typeof C language extension should only be used to get a compiler native known type
 #define TYP_MBR_TYP(typ, mbr)	typeof(TYP_MBR(typ, mbr))								//!< Get typeof member \p mbr from a struct type \p typ
 
 //!\MISRA Local legitimate use derogation authorized for:\n
 //! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
-//! \a Justification: \b typ parameter would be cast instead of type.\n
-//! \a Justification: \b mbr parameter shall be a structure member; will in any way raise an error in case not.\n
+//! \a Justification: \p typ parameter would be cast instead of type.\n
+//! \a Justification: \p mbr parameter shall be a structure member; will in any way raise an error in case not.\n
 // cppcheck-suppress-macro misra-c2012-20.7
 #define OFFSET_OF(typ, mbr)		((size_t) &(((typ *)0)->mbr))							//!< Computes the offset member \p mbr from struct type \p typ
 
 //!\MISRA Local legitimate use derogation authorized for:\n
 //! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
-//! \a Justification: \b mbr parameter shall be a structure member; will in any way raise an error in case not.\n
+//! \a Justification: \p mbr parameter shall be a structure member; will in any way raise an error in case not.\n
 // cppcheck-suppress-macro misra-c2012-20.7
 #define ROOT_OF(ptr, typ, mbr)	((typ *) (((uint8_t *) (ptr)) - OFFSET_OF(typ, mbr)))	//!< Computes the address of parent struct \p typ of \p ptr from member \p mbr
 

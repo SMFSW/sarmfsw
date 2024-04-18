@@ -18,7 +18,7 @@
 ** 		\b Rule-19.2 - \b Advisory: \c union keyword (misra-c2012-19.2)\n
 ** \MISRA Header scope legitimate use derogation authorized for:\n
 ** 		\b Rule-21.1 - \b Required: \c #define and \c #undef on reserved identifiers (misra-c2012-21.1)\n
-**		\a Justification: define library specific reserved identifiers.\n
+**		\a Justification: \c #define are library specific reserved identifiers.\n
 */
 // cppcheck-suppress-begin [misra-c2012-19.2]
 // cppcheck-suppress-begin [misra-c2012-21.1]
