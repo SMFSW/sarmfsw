@@ -16,7 +16,7 @@
 
 
 //!< \warning Sign does not work for values between 0 and -1 (sign is lost)
-#define SPLIT_FLOAT_TO_INTS(val, nb_frac)	(SDWORD) (val), get_fp_dec((val), (nb_frac))	//!< Split float value \b val into 2 integers with \b nb_frac fractional part digits
+#define SPLIT_FLOAT_TO_INTS(val, nb_frac)	(SDWORD) (val), get_fp_dec((val), (nb_frac))	//!< Split float value \p val into 2 integers with \b nb_frac fractional part digits
 
 
 /*!\struct sIntFrac

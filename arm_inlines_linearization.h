@@ -19,7 +19,7 @@
 #define	LINEAR_TAB(name, nbElem)	typedef struct sLinear##name {	\
 										DWORD	nb;					\
 										SDWORD	array[nbElem][2];	\
-									} sLinear##name;	//!< Pattern tab typedef declaration with \b name catenation and \b nbElem max array elements
+									} sLinear##name;	//!< Pattern tab typedef declaration with \p name catenation and \p nbElem max array elements
 
 /*********************************************/
 /*** Flexible member array type definition ***/

@@ -14,11 +14,11 @@
 ** 			instead of using derived defines from Arduino binary.h
 ** \note	STDBOOL_NDEF can be defined at project level if stdint.h doesn't exist for target compiler
 ** \note	STDINT_NDEF can be defined at project level if stdint.h doesn't exist for target compiler
-** \MISRA header deviation has been granted for following rules:\n
-** 		\b Rule-19.2 - \b Advisory: Union keyword (misra-c2012-19.2)\n
-** \MISRA header derogation to following rules:\n
-** 		\b Rule-21.1 - \b Required: #define and #undef on reserved identifiers (misra-c2012-21.1)\n
-**		Justification: define library specific reserved identifiers
+** \MISRA Header scope deviation has been granted for following rules:\n
+** 		\b Rule-19.2 - \b Advisory: \c union keyword (misra-c2012-19.2)\n
+** \MISRA Header scope legitimate use derogation authorized for:\n
+** 		\b Rule-21.1 - \b Required: \c #define and \c #undef on reserved identifiers (misra-c2012-21.1)\n
+**		\a Justification: define library specific reserved identifiers.\n
 */
 // cppcheck-suppress-begin [misra-c2012-19.2]
 // cppcheck-suppress-begin [misra-c2012-21.1]

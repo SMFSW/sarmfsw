@@ -3,10 +3,10 @@
 ** \copyright MIT (c) 2017-2024, SMFSW
 ** \brief ARM common macros
 ** \note If used CPU only handles single shifts, you may define SINGLE_SHIFT_ONLY_OPCODE at project level (see \ref LSHIFT & \ref RSHIFT)
-** \MISRA header deviation has been granted for following rules:\n
+** \MISRA Header scope deviation has been granted for following rules:\n
 ** 		\b Rule-1.2 - \b Advisory: Language extensions (misra-c2012-1.2)\n
-** 		\b Rule-20.5 - \b Advisory: #undef (misra-c2012-20.5)\n
-** 		\b Rule-20.10 - \b Advisory: # and ## preprocessor operators (misra-c2012-20.10)\n
+** 		\b Rule-20.5 - \b Advisory: \c #undef (misra-c2012-20.5)\n
+** 		\b Rule-20.10 - \b Advisory: \c # and \c ## preprocessor operators (misra-c2012-20.10)\n
 */
 // cppcheck-suppress-begin [misra-c2012-1.2, misra-c2012-20.5, misra-c2012-20.10]
 /****************************************************************/
@@ -27,194 +27,234 @@
 
 
 #ifndef True
-	#define	True			true			//!< \b True alias for \b true
+	#define	True			true			//!< \c True alias for \c true
 #endif
 #ifndef False
-	#define	False			false			//!< \b False alias for \b false
+	#define	False			false			//!< \c False alias for \c false
 #endif
 #ifndef TRUE
-	#define	TRUE			true			//!< \b TRUE alias for \b true
+	#define	TRUE			true			//!< \c TRUE alias for \c true
 #endif
 #ifndef FALSE
-	#define	FALSE			false			//!< \b FALSE alias for \b false
+	#define	FALSE			false			//!< \c FALSE alias for \c false
 #endif
 
 
-#define GET_BITS(v, b)			((v) & (b))						//!< Get bits from mask \b b of variable \b v
-#define SET_BITS(v, b)			((v) |= (b))					//!< Set bits \b b of variable \b v
-#define CLR_BITS(v, b)			((v) &= ~(b))					//!< Clear bits \b b of variable \b v
-#define INV_BITS(v, b)			((v) ^= (b))					//!< Invert bits \b b of variable \b v
+#define GET_BITS(v, b)			((v) & (b))						//!< Get bits from mask \p b of variable \p v
+#define SET_BITS(v, b)			((v) |= (b))					//!< Set bits \p b of variable \p v
+#define CLR_BITS(v, b)			((v) &= ~(b))					//!< Clear bits \p b of variable \p v
+#define INV_BITS(v, b)			((v) ^= (b))					//!< Invert bits \p b of variable \p v
 
-#define SET_BITS_VAL(v, c, s)	((v) = (((v) & ~(c)) | (s)))	//!< Set variable \b v with clear mask \b c to set mask \b s
-#define TEST_BITS_VAL(v, b)		(((v) & (b)) == (b))			//!< Test variable \b v with bits \b b
-#define TEST_MASK_VAL(v, m, r)	(((v) & (m)) == (r))			//!< Test variable \b v with bits mask \b m is equal to \b r
+#define SET_BITS_VAL(v, c, s)	((v) = (((v) & ~(c)) | (s)))	//!< Set variable \p v with clear mask \p c to set mask \p s
+#define TEST_BITS_VAL(v, b)		(((v) & (b)) == (b))			//!< Test variable \p v with bits \p b
+#define TEST_MASK_VAL(v, m, r)	(((v) & (m)) == (r))			//!< Test variable \p v with bits mask \p m is equal to \p r
 
 
 #if defined(SINGLE_SHIFT_ONLY_OPCODE)
 
-//!\warning this macro is optimized only when \b n is a static value
+//!\warning this macro is optimized only when \p n is a static value
 #define LSHIFT_CAST(t, v, n)	((t) ((t) (v) * ((t) 1 << (n))))
-//!\warning this macro is optimized only when \b n is a static value
+//!\warning this macro is optimized only when \p n is a static value
 #define RSHIFT_CAST(t, v, n)	((t) ((t) (v) / ((t) 1 << (n))))
 
-//!\warning this macro is optimized only when \b n is a static value
-#define LSHIFT(v, n)			((v) * (1U << (n)))				//!< Shift \b v \b n bits left
-//!\warning this macro is optimized only when \b n is a static value
-#define RSHIFT(v, n)			((v) / (1U << (n)))				//!< Shift \b v \b n bits right
+//!\warning this macro is optimized only when \p n is a static value
+#define LSHIFT(v, n)			((v) * (1U << (n)))				//!< Shift \p v \p n bits left
+//!\warning this macro is optimized only when \p n is a static value
+#define RSHIFT(v, n)			((v) / (1U << (n)))				//!< Shift \p v \p n bits right
 
-//!\warning this macro is optimized only when \b n is a static value
-#define LSHIFT8(v, n)			LSHIFT_CAST(BYTE, v, n)			//!< Shift \b v \b n bits left (up to 7b)
-//!\warning this macro is optimized only when \b n is a static value
-#define RSHIFT8(v, n)			RSHIFT_CAST(BYTE, v, n)			//!< Shift \b v \b n bits right (up to 7b)
+//!\warning this macro is optimized only when \p n is a static value
+#define LSHIFT8(v, n)			LSHIFT_CAST(BYTE, v, n)			//!< Shift \p v \p n bits left (up to 7b)
+//!\warning this macro is optimized only when \p n is a static value
+#define RSHIFT8(v, n)			RSHIFT_CAST(BYTE, v, n)			//!< Shift \p v \p n bits right (up to 7b)
 
-//!\warning this macro is optimized only when \b n is a static value
-#define LSHIFT16(v, n)			LSHIFT_CAST(WORD, v, n)			//!< Shift \b v \b n bits left (up to 15b)
-//!\warning this macro is optimized only when \b n is a static value
-#define RSHIFT16(v, n)			RSHIFT_CAST(WORD, v, n)			//!< Shift \b v \b n bits right (up to 15b)
+//!\warning this macro is optimized only when \p n is a static value
+#define LSHIFT16(v, n)			LSHIFT_CAST(WORD, v, n)			//!< Shift \p v \p n bits left (up to 15b)
+//!\warning this macro is optimized only when \p n is a static value
+#define RSHIFT16(v, n)			RSHIFT_CAST(WORD, v, n)			//!< Shift \p v \p n bits right (up to 15b)
 
-//!\warning this macro is optimized only when \b n is a static value
-#define LSHIFT32(v, n)			LSHIFT_CAST(DWORD, v, n)		//!< Shift \b v \b n bits left (up to 31b)
-//!\warning this macro is optimized only when \b n is a static value
-#define RSHIFT32(v, n)			RSHIFT_CAST(DWORD, v, n)		//!< Shift \b v \b n bits right (up to 31b)
+//!\warning this macro is optimized only when \p n is a static value
+#define LSHIFT32(v, n)			LSHIFT_CAST(DWORD, v, n)		//!< Shift \p v \p n bits left (up to 31b)
+//!\warning this macro is optimized only when \p n is a static value
+#define RSHIFT32(v, n)			RSHIFT_CAST(DWORD, v, n)		//!< Shift \p v \p n bits right (up to 31b)
 
-//!\warning this macro is optimized only when \b n is a static value
-#define LSHIFT64(v, n)			LSHIFT_CAST(LWORD, v, n)		//!< Shift \b v \b n bits left (up to 63b)
-//!\warning this macro is optimized only when \b n is a static value
-#define RSHIFT64(v, n)			RSHIFT_CAST(LWORD, v, n)		//!< Shift \b v \b n bits right (up to 63b)
+//!\warning this macro is optimized only when \p n is a static value
+#define LSHIFT64(v, n)			LSHIFT_CAST(LWORD, v, n)		//!< Shift \p v \p n bits left (up to 63b)
+//!\warning this macro is optimized only when \p n is a static value
+#define RSHIFT64(v, n)			RSHIFT_CAST(LWORD, v, n)		//!< Shift \p v \p n bits right (up to 63b)
 
 #else
 
-#define LSHIFT(v, n)			((v) << (n))					//!< Shift \b v \b n bits left
-#define RSHIFT(v, n)			((v) >> (n))					//!< Shift \b v \b n bits right
+#define LSHIFT(v, n)			((v) << (n))					//!< Shift \p v \p n bits left
+#define RSHIFT(v, n)			((v) >> (n))					//!< Shift \p v \p n bits right
 
-#define LSHIFT8(v, n)			((BYTE) ((BYTE) (v) << (n)))	//!< Shift \b v \b n bits left (up to 7b)
-#define RSHIFT8(v, n)			((BYTE) ((BYTE) (v) >> (n)))	//!< Shift \b v \b n bits right (up to 7b)
+#define LSHIFT8(v, n)			((BYTE) ((BYTE) (v) << (n)))	//!< Shift \p v \p n bits left (up to 7b)
+#define RSHIFT8(v, n)			((BYTE) ((BYTE) (v) >> (n)))	//!< Shift \p v \p n bits right (up to 7b)
 
-#define LSHIFT16(v, n)			((WORD) ((WORD) (v) << (n)))	//!< Shift \b v \b n bits left (up to 15b)
-#define RSHIFT16(v, n)			((WORD) ((WORD) (v) >> (n)))	//!< Shift \b v \b n bits right (up to 15b)
+#define LSHIFT16(v, n)			((WORD) ((WORD) (v) << (n)))	//!< Shift \p v \p n bits left (up to 15b)
+#define RSHIFT16(v, n)			((WORD) ((WORD) (v) >> (n)))	//!< Shift \p v \p n bits right (up to 15b)
 
-#define LSHIFT32(v, n)			((DWORD) ((DWORD) (v) << (n)))	//!< Shift \b v \b n bits left (up to 31b)
-#define RSHIFT32(v, n)			((DWORD) ((DWORD) (v) >> (n)))	//!< Shift \b v \b n bits right (up to 31b)
+#define LSHIFT32(v, n)			((DWORD) ((DWORD) (v) << (n)))	//!< Shift \p v \p n bits left (up to 31b)
+#define RSHIFT32(v, n)			((DWORD) ((DWORD) (v) >> (n)))	//!< Shift \p v \p n bits right (up to 31b)
 
-#define LSHIFT64(v, n)			((LWORD) ((LWORD) (v) << (n)))	//!< Shift \b v \b n bits left (up to 63b)
-#define RSHIFT64(v, n)			((LWORD) ((LWORD) (v) >> (n)))	//!< Shift \b v \b n bits right (up to 63b)
+#define LSHIFT64(v, n)			((LWORD) ((LWORD) (v) << (n)))	//!< Shift \p v \p n bits left (up to 63b)
+#define RSHIFT64(v, n)			((LWORD) ((LWORD) (v) >> (n)))	//!< Shift \p v \p n bits right (up to 63b)
 
 #endif
 
 
-#define MAKEWORD(lsb, msb)		((WORD) (((BYTE) (lsb)) | LSHIFT(((WORD) (msb)), 8)))		//!< Make WORD from \b lsb and \b msb
-#define MAKELONG(lsw, msw)		((DWORD) (((WORD) (lsw)) | LSHIFT(((DWORD) (msw)), 16)))	//!< Make LONG from \b lsw and \b msw
+#define MAKEWORD(lsb, msb)		((WORD) (((BYTE) (lsb)) | LSHIFT(((WORD) (msb)), 8)))		//!< Make \c WORD from \p lsb and \p msb
+#define MAKELONG(lsw, msw)		((DWORD) (((WORD) (lsw)) | LSHIFT(((DWORD) (msw)), 16)))	//!< Make \c LONG from \p lsw and \p msw
 
 #ifdef LOBYTE
-#undef LOBYTE	//!\note Undefine LOBYTE if already defined in some other library
+#undef LOBYTE	//!\note Undefine \c LOBYTE if already defined in some other library
 #endif
 
 #ifdef HIBYTE
-#undef HIBYTE	//!\note Undefine HIBYTE if already defined in some other library
+#undef HIBYTE	//!\note Undefine \c HIBYTE if already defined in some other library
 #endif
 
-#define LOBYTE(w)				((BYTE) (w))						//!< Get BYTE LSB from WORD \b w
-#define HIBYTE(w)				((BYTE) RSHIFT((WORD) (w), 8))		//!< Get BYTE MSB from WORD \b w
-#define LOWORD(l)				((WORD) (l))						//!< Get WORD LSW from LONG \b l
-#define HIWORD(l)				((WORD) RSHIFT((DWORD) (l), 16))	//!< Get WORD MSW from LONG \b l
+#define LOBYTE(w)				((BYTE) (w))						//!< Get \c BYTE LSB from \c WORD \p w
+#define HIBYTE(w)				((BYTE) RSHIFT((WORD) (w), 8))		//!< Get \c BYTE MSB from \c WORD \p w
+#define LOWORD(l)				((WORD) (l))						//!< Get \c WORD LSW from \c LONG \p l
+#define HIWORD(l)				((WORD) RSHIFT((DWORD) (l), 16))	//!< Get \c WORD MSW from \c LONG \p l
 
-#define	SWAP_TYPE(a, b, typ)	({ typ c = a; a = b; b = c; })		//!< Swap type \b typ \b a \& \b b
-#define	SWAP_BYTE(a, b)			SWAP_TYPE(a, b, BYTE)				//!< Swap BYTEs \b a \& \b b
-#define	SWAP_WORD(a, b)			SWAP_TYPE(a, b, WORD)				//!< Swap WORDs \b a \& \b b
-#define	SWAP_DWORD(a, b)		SWAP_TYPE(a, b, DWORD)				//!< Swap DWORDs \b a \& \b b
-#define	SWAP_LWORD(a, b)		SWAP_TYPE(a, b, LWORD)				//!< Swap LWORDs \b a \& \b b
-#define	SWAP_FLOAT(a, b)		SWAP_TYPE(a, b, float)				//!< Swap floats \b a \& \b b
-#define	SWAP_DOUBLE(a, b)		SWAP_TYPE(a, b, double)				//!< Swap doubles \b a \& \b b
+//!\MISRA Local legitimate use derogation authorized for:\n
+//! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
+//! \a Justification: \b typ parameter would be cast instead of type declaration (thus raising error); other parameters shall be variable names, raising error otherwise is intended.\n
+// cppcheck-suppress-macro misra-c2012-20.7
+#define	SWAP_TYPE(a, b, typ)	({ typ c = a; a = b; b = c; })		//!< Swap two variable type \p typ \p a \& \p b
+#define	SWAP_BYTE(a, b)			SWAP_TYPE(a, b, BYTE)				//!< Swap two \c BYTE \p a \& \p b
+#define	SWAP_WORD(a, b)			SWAP_TYPE(a, b, WORD)				//!< Swap two \c WORD \p a \& \p b
+#define	SWAP_DWORD(a, b)		SWAP_TYPE(a, b, DWORD)				//!< Swap two \c DWORD \p a \& \p b
+#define	SWAP_LWORD(a, b)		SWAP_TYPE(a, b, LWORD)				//!< Swap two \c LWORD \p a \& \p b
+#define	SWAP_FLOAT(a, b)		SWAP_TYPE(a, b, float)				//!< Swap two \c float \p a \& \p b
+#define	SWAP_DOUBLE(a, b)		SWAP_TYPE(a, b, double)				//!< Swap two \c double \p a \& \p b
 
 
-#define VAL_AT(addr, typ)		(*(typ *) (addr))										//!< Get the type \b typ content of address \b addr
+//!\MISRA Local legitimate use derogation authorized for:\n
+//! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
+//! \a Justification: \b typ parameter would be cast instead of type.\n
+// cppcheck-suppress-macro misra-c2012-20.7
+#define VAL_AT(addr, typ)		(*(typ *) (addr))										//!< Get the type \p typ content of address \p addr
 
-#define SZ_ARRAY(arr)			((size_t) (sizeof(arr) / sizeof(arr[0])))				//!< Computes the number of array elements in \b arr
-#define SZ_OBJ(obj, typ)		((size_t) (sizeof(obj) / sizeof(typ)))					//!< Computes the number of elements in \b obj of type \b typ
-#define SZ_TYP_MBR(typ, mbr)	((size_t) sizeof(((typ *)0)->mbr))						//!< Computes the size of member \b mbr in struct type \b typ
+//!\MISRA local derogation authorized for:\n
+//! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
+//! \a Justification: Parenthesis doesn't make sense as parameter \b arr shall be an instance of type; raising error otherwise is intended.\n
+// cppcheck-suppress-macro misra-c2012-20.7
+#define SZ_ARRAY(arr)			((size_t) (sizeof(arr) / sizeof(arr[0])))				//!< Computes the number of array elements in \p arr
 
-#define TYP_MBR(typ, mbr)		(((typ *)0)->mbr)										//!< Get member \b mbr from a struct type \b typ
+//!\MISRA Local legitimate use derogation authorized for:\n
+//! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
+//! \a Justification: \b obj parameter can be a type instead of an istance of type.\n
+//! \a Justification: \b typ parameter would be cast instead of type.\n
+// cppcheck-suppress-macro misra-c2012-20.7
+#define SZ_OBJ(obj, typ)		((size_t) (sizeof(obj) / sizeof(typ)))					//!< Computes the number of elements in \p obj of type \p typ
+
+//!\MISRA Local legitimate use derogation authorized for:\n
+//! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
+//! \a Justification: \b typ parameter would be cast instead of type.\n
+//! \a Justification: \b mbr parameter shall be a structure member; will in any way raise an error in case not.\n
+// cppcheck-suppress-macro misra-c2012-20.7
+#define SZ_TYP_MBR(typ, mbr)	((size_t) sizeof(((typ *)0)->mbr))						//!< Computes the size of member \p mbr in struct type \p typ
+
+//!\MISRA Local legitimate use derogation authorized for:\n
+//! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
+//! \a Justification: \b typ parameter would be cast instead of type.\n
+//! \a Justification: \b mbr parameter shall be a structure member; will in any way raise an error in case not.\n
+// cppcheck-suppress-macro misra-c2012-20.7
+#define TYP_MBR(typ, mbr)		(((typ *)0)->mbr)										//!< Get member \p mbr from a struct type \p typ
+
 //! \warning use with caution, C language typeof extension works well with native types, yet can be the cause of big (experienced) issues with more complex ones
 //! \note \b typeof C language extension should only be used to get a compiler native known type
-#define TYP_MBR_TYP(typ, mbr)	typeof(TYP_MBR(typ, mbr))								//!< Get typeof member \b mbr from a struct type \b typ (no () as it wouldn't work for pointers to member type)
+#define TYP_MBR_TYP(typ, mbr)	typeof(TYP_MBR(typ, mbr))								//!< Get typeof member \p mbr from a struct type \p typ
 
-#define OFFSET_OF(typ, mbr)		((size_t) &(((typ *)0)->mbr))							//!< Computes the offset member \b mbr from struct type \b typ
-#define ROOT_OF(ptr, typ, mbr)	((typ *) (((uint8_t *) ptr) - OFFSET_OF(typ, mbr)))		//!< Computes the address of parent struct \b typ of \b ptr from member \b mbr
+//!\MISRA Local legitimate use derogation authorized for:\n
+//! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
+//! \a Justification: \b typ parameter would be cast instead of type.\n
+//! \a Justification: \b mbr parameter shall be a structure member; will in any way raise an error in case not.\n
+// cppcheck-suppress-macro misra-c2012-20.7
+#define OFFSET_OF(typ, mbr)		((size_t) &(((typ *)0)->mbr))							//!< Computes the offset member \p mbr from struct type \p typ
+
+//!\MISRA Local legitimate use derogation authorized for:\n
+//! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
+//! \a Justification: \b mbr parameter shall be a structure member; will in any way raise an error in case not.\n
+// cppcheck-suppress-macro misra-c2012-20.7
+#define ROOT_OF(ptr, typ, mbr)	((typ *) (((uint8_t *) (ptr)) - OFFSET_OF(typ, mbr)))	//!< Computes the address of parent struct \p typ of \p ptr from member \p mbr
 
 
 //! \warning No nesting possible, use \ref XCAT instead (unless there is a good reason not to use \ref XCAT)
-#define	CAT(a, b)			a##b			//!< Preprocessor Name catenation (use of \ref XCAT is highly recommended for any need)
-#define XCAT(a, b)			CAT(a, b)		//!< Preprocessor Name catenation (possible nesting)
+#define	CAT(a, b)			a##b			//!< Preprocessor Name catenation of \c a and \c b (use of \ref XCAT is highly recommended for any need)
+#define XCAT(a, b)			CAT(a, b)		//!< Preprocessor Name catenation of \c a and \c b (nesting possibility)
 
-#define STR(s)				#s				//!< Stringify an expression
-#define XSTR(s)				STR(s)			//!< Stringify the result of an expression (use for stringification of a macro expansion)
+#define STR(s)				#s				//!< Stringify \c s expression
+#define XSTR(s)				STR(s)			//!< Stringify the result of \c s expression expansion (stringification of a macro expansion)
 
-#define binEval(exp)		((exp) ? true : false)		//!< boolean evaluation of expression \b exp
-#define nbinEval(exp)		(!binEval(exp))				//!< complemented boolean evaluation of expression \b exp
+#define binEval(exp)		((exp) ? true : false)		//!< boolean evaluation of expression \p exp
+#define nbinEval(exp)		(!binEval(exp))				//!< complemented boolean evaluation of expression \p exp
 
 
 #ifdef min
-#undef min		//!\note Undefine min if already defined in some other library
+#undef min		//!\note Undefine \c min if already defined in some other library
 #endif
 #ifdef MIN
-#undef MIN		//!\note Undefine MIN if already defined in some other library
+#undef MIN		//!\note Undefine \c MIN if already defined in some other library
 #endif
-#define min					MIN								//!< \b min alias for \b MIN
+#define min					MIN								//!< \c min alias for \c MIN
 // cppcheck-suppress-macro misra-c2012-1.2
 #define MIN(a, b)			({	__TYPEOF(a) _a = (a);	\
 								__TYPEOF(b) _b = (b);	\
-								(_a <= _b) ? _a : _b; })	//!< Returns min value between \b a and \b b
+								(_a <= _b) ? _a : _b; })	//!< Returns min value between \p a and \p b
 
 #ifdef max
-#undef max		//!\note Undefine max if already defined in some other library
+#undef max		//!\note Undefine \c max if already defined in some other library
 #endif
 #ifdef MAX
-#undef MAX		//!\note Undefine MAX if already defined in some other library
+#undef MAX		//!\note Undefine \c MAX if already defined in some other library
 #endif
-#define max					MAX								//!< \b max alias for \b MAX
+#define max					MAX								//!< \c max alias for \c MAX
 // cppcheck-suppress-macro misra-c2012-1.2
 #define MAX(a, b)			({	__TYPEOF(a) _a = (a);	\
 								__TYPEOF(b) _b = (b);	\
-								(_a >= _b) ? _a : _b; })	//!< Returns max value between \b a and \b b
+								(_a >= _b) ? _a : _b; })	//!< Returns max value between \p a and \p b
 
 #ifdef min3
-#undef min3		//!\note Undefine min3 if already defined in some other library
+#undef min3		//!\note Undefine \c min3 if already defined in some other library
 #endif
 #ifdef MIN3
-#undef MIN3		//!\note Undefine MIN3 if already defined in some other library
+#undef MIN3		//!\note Undefine \c MIN3 if already defined in some other library
 #endif
-#define min3				MIN3							//!< \b min3 alias for \b MIN3
+#define min3				MIN3							//!< \c min3 alias for \c MIN3
 // cppcheck-suppress-macro misra-c2012-1.2
 #define	MIN3(a, b, c)		({	__TYPEOF(a) _a = (a);	\
 								__TYPEOF(b) _b = (b);	\
 								__TYPEOF(c) _c = (c);	\
-								(_b <= _c) ? ((_a <= _b) ? _a : _b) : ((_a <= _c) ? _a : _c); })	//!< Returns min value between \b a, \b b and \b c
+								(_b <= _c) ? ((_a <= _b) ? _a : _b) : ((_a <= _c) ? _a : _c); })	//!< Returns min value between \p a, \p b and \p c
 
 #ifdef max3
-#undef max3		//!\note Undefine max3 if already defined in some other library
+#undef max3		//!\note Undefine \c max3 if already defined in some other library
 #endif
 #ifdef MAX3
-#undef MAX3		//!\note Undefine MAX3 if already defined in some other library
+#undef MAX3		//!\note Undefine \c MAX3 if already defined in some other library
 #endif
-#define max3				MAX3							//!< \b max3 alias for \b MAX3
+#define max3				MAX3							//!< \c max3 alias for \c MAX3
 // cppcheck-suppress-macro misra-c2012-1.2
 #define	MAX3(a, b, c)		({	__TYPEOF(a) _a = (a);	\
 								__TYPEOF(b) _b = (b);	\
 								__TYPEOF(c) _c = (c);	\
-								(_b >= _c) ? ((_a >= _b) ? _a : _b) : ((_a >= _c) ? _a : _c); })	//!< Returns max value between \b a, \b b and \b c
+								(_b >= _c) ? ((_a >= _b) ? _a : _b) : ((_a >= _c) ? _a : _c); })	//!< Returns max value between \p a, \p b and \p c
 
 #ifdef clamp
-#undef clamp	//!\note Undefine clamp if already defined in some other library
+#undef clamp	//!\note Undefine \c clamp if already defined in some other library
 #endif
 #ifdef CLAMP
-#undef CLAMP	//!\note Undefine CLAMP if already defined in some other library
+#undef CLAMP	//!\note Undefine \c CLAMP if already defined in some other library
 #endif
-#define clamp				CLAMP							//!< \b clamp alias for \b CLAMP
+#define clamp				CLAMP							//!< \c clamp alias for \c CLAMP
 // cppcheck-suppress-macro misra-c2012-1.2
 #define CLAMP(v, mn, mx)	({	__TYPEOF(v) _v = (v);		\
 								__TYPEOF(mn) _mn = (mn);	\
 								__TYPEOF(mx) _mx = (mx);	\
-								(_v < _mn) ? _mn : ((_v > _mx) ? _mx : _v); })	//!< Returns the value between \b mn and \b mx from \b val
+								(_v < _mn) ? _mn : ((_v > _mx) ? _mx : _v); })	//!< Returns the value between \p mn and \p mx from \p val
 
 
 //! \warning OVF_DIFF only works with unsigned integers
@@ -222,21 +262,23 @@
 #define OVF_DIFF(a, b)		({	__TYPEOF(a) _a = (a);	\
 								__TYPEOF(b) _b = (b);	\
 								__TYPEOF(a) _max = -1;	\
-								(_a >= _b) ? (_a - _b) : (_max - _b) + _a + 1; })	//!< Returns difference of unsigned \b a and \b b (with potential overflow handling)
+								(_a >= _b) ? (_a - _b) : (_max - _b) + _a + 1; })	//!< Returns difference of unsigned \p a and \p b (with potential overflow handling)
 
 
 //! \warning SCALE_VAL does not check types and is limited to MCU register size computation, for larger scales, use \ref SCALE_VAL_T or \ref scaleValue instead
 #define SCALE_VAL(v, from_min, from_max, to_min, to_max)				\
 					(((((v) - (from_min)) * ((to_max) - (to_min))) /	\
-					((from_max) - (from_min))) + (to_min))						//!< Scale value \b v from range \b from_min:from_max to range \b to_min:to_max
+					((from_max) - (from_min))) + (to_min))						//!< Scale value \p v from range \p from_min:from_max to range \p to_min:to_max
 
 #define SCALE_VAL_T(typ, v, from_min, from_max, to_min, to_max)									\
 					(((((typ) (v) - (typ) (from_min)) * ((typ) (to_max) - (typ) (to_min))) /	\
-					((typ) (from_max) - (typ) (from_min))) + (typ) (to_min))	//!< Scale typed \b typ value \b v from range \b from_min:from_max to range \b to_min:to_max
+					((typ) (from_max) - (typ) (from_min))) + (typ) (to_min))	//!< Scale typed \p typ value \p v from range \p from_min:from_max to range \p to_min:to_max
 
 
-#define BYTE_TO_PERC(b)		((BYTE) ((MIN((b), 255) * 100) / 255))	//!< Converts a BYTE \b b (0-255) to percent (0-100)
-#define PERC_TO_BYTE(p)		((BYTE) ((MIN((p), 100) * 255) / 100))	//!< Converts a BYTE \b p percentage (0-100) to BYTE (0-255) with max checking
+//! \warning This macro doesn't prevent from double evaluation; otherwise it couldn't be used as pre-processing initializer macro
+#define BYTE_TO_PERC(b)		((BYTE) ((((b) > 255U ? 255U : (b)) * 100U) / 255U))	//!< Converts a \c BYTE \p b (0-255) to percent (0-100)
+//! \warning This macro doesn't prevent from double evaluation; otherwise it couldn't be used as pre-processing initializer macro
+#define PERC_TO_BYTE(p)		((BYTE) ((((p) > 100U ? 100U : (p)) * 255U) / 100U))	//!< Converts a \p p percentage (0-100) to \c BYTE (0-255) with max checking
 
 
 /*** Constants ***/
@@ -245,7 +287,7 @@
 
 
 /*** Test Macros ***/
-#define malloc_assert(x)	((x) = malloc(sizeof(*x)), assert(x))	//!< Asserted malloc
+#define malloc_assert(x)	((x) = malloc(sizeof(*(x))), assert((x)))	//!< Asserted malloc
 
 
 /****************************************************************/

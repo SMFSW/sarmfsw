@@ -46,8 +46,8 @@
 /****************************************************************/
 
 
-#define SAM_HEADER(f)		XCAT(<hri_, f).h>					//!< concatenate <hri_(f).h> name following sam family \b f
-#define SAM_CONF_HEADER(f)	<sam.h>								//!< <sam.h> name following sam family \b f
+#define SAM_HEADER(f)		XCAT(<hri_, f).h>					//!< concatenate \c <hri_(f).h> name following sam family \p f
+#define SAM_CONF_HEADER(f)	<sam.h>								//!< \c <sam.h> name following sam family \p f
 
 #define ARM_CMSIS_INC		SAM_HEADER(SAM_FAMILY)				//!< Alias for SAM CMSIS include
 #define ARM_HAL_CFG			SAM_CONF_HEADER(SAM_FAMILY)			//!< Alias for SAM HAL config include

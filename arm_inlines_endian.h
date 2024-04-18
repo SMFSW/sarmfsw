@@ -97,7 +97,7 @@ __INLINE eEndian testEndian_basic(void)
 
 
 /*!\brief Test Core endian (full, recognizing mid endian too)
-** \MISRA function deviation granted for:\n
+** \MISRA Function scope deviation granted for:\n
 **		\b Rule-15.5 - \b Advisory: single point of exit (misra-c2012-15.5)\n
 ** \return Endian type
 **/

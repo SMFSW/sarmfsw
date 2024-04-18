@@ -26,7 +26,7 @@ typedef struct sCoord2D {
 
 /*!\brief 2D Coordinates rotation
 ** \note Counter clockwise rotation
-** \MISRA function deviation granted for:\n
+** \MISRA Function scope deviation granted for:\n
 **		\b Rule-15.5 - \b Advisory: single point of exit (misra-c2012-15.5)\n
 ** \param[in] c - Coordinates to rotate
 ** \param[in] angle - Rotation angle (in degrees, counter clockwise)

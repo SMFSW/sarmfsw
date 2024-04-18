@@ -16,8 +16,8 @@
 /****************************************************************/
 
 
-#define STM_HEADER(f)		XCAT(<stm32, XCAT(f, xx.h>))		//!< concatenate <stm32(f)xx.h> name following stm family \b f
-#define STM_CONF_HEADER(f)	XCAT(<stm32, XCAT(f, xx_hal.h>))	//!< concatenate <stm32(f)xx_hal.h> name following stm family \b f
+#define STM_HEADER(f)		XCAT(<stm32, XCAT(f, xx.h>))		//!< concatenate \c <stm32(f)xx.h> name following stm family \p f
+#define STM_CONF_HEADER(f)	XCAT(<stm32, XCAT(f, xx_hal.h>))	//!< concatenate \c <stm32(f)xx_hal.h> name following stm family \p f
 
 #define ARM_CMSIS_INC		STM_HEADER(STM_FAMILY)				//!< Alias for STM32 CMSIS include
 #define ARM_HAL_CFG			STM_CONF_HEADER(STM_FAMILY)			//!< Alias for STM32 HAL config include
@@ -30,12 +30,12 @@
 
 
 /*** TIM Channel name wrapper ***/
-//!\note Shall define mnemonic \b Tim corresponding to what's defined in CubeMX as Tim (for consistency with STM32 HAL)
-#define	stm_timer(mnem)		XCAT(mnem, _Tim)					//!< Wrapper for TIM Alias
-//!\note Shall define mnemonic \b Chan corresponding to what's defined in CubeMX as Chan (for consistency with STM32 HAL)
-#define	stm_channel(mnem)	XCAT(mnem, _Chan)					//!< Wrapper for TIM Channel Alias
-//!\note Shall define mnemonic \b Tim/Chan corresponding to what's defined in CubeMX as Tim/Chan (for consistency with STM32 HAL)
-#define	TIM(mnem)			stm_timer(mnem), stm_channel(mnem)	//!< Wrapper for TIM/CHAN Alias (when using HAL_TIM_PWM_Start for example)
+//!\note Shall define mnemonic \p mnem name corresponding to TIMER instance defined in CubeMX (for consistency with STM32 HAL)
+#define	stm_timer(mnem)		XCAT(mnem, _Tim)					//!< Wrapper for \c mnem TIM Alias
+//!\note Shall define mnemonic \p mnem name corresponding to TIMER instance defined in CubeMX (for consistency with STM32 HAL)
+#define	stm_channel(mnem)	XCAT(mnem, _Chan)					//!< Wrapper for \c mnem TIM Channel Alias
+//!\note Shall define mnemonic \p mnem name corresponding to TIMER instance defined in CubeMX (for consistency with STM32 HAL)
+#define	TIM(mnem)			stm_timer(mnem), stm_channel(mnem)	//!< Wrapper for \c mnem TIM/CHAN Alias (when using HAL_TIM_PWM_Start for example)
 
 
 /*** STM32 Special Registers ***/

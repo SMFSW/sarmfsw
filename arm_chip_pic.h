@@ -13,8 +13,8 @@
 ** #include <stdint.h>
 ** uint32_t HAL_GetTick(void);
 ** \endcode
-** \MISRA header deviation has been granted for following rules:\n
-** 		\b Rule-20.5 - \b Advisory: #undef (misra-c2012-20.5)\n
+** \MISRA Header scope deviation has been granted for following rules:\n
+** 		\b Rule-20.5 - \b Advisory: \c #undef (misra-c2012-20.5)\n
 */
 /****************************************************************/
 #ifndef ARM_CHIP_PIC_H_

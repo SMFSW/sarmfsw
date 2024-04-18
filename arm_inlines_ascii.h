@@ -18,7 +18,7 @@
 /*!\brief test for lower case alphabetic char
 ** \param[in] ascii - ASCII char to check
 ** \return true if lower case, false otherwise
-** \warning You probably should ensure \b ascii is alphabetic char first (false will be always returned in case non alphabetic char)
+** \warning You probably should ensure \p ascii is alphabetic char first (false will be always returned in case non alphabetic char)
 **/
 __INLINE BOOL isLowerCase(const CHAR ascii) {
 	return binEval((ascii >= 'a') && (ascii <= 'z')); }
@@ -27,7 +27,7 @@ __INLINE BOOL isLowerCase(const CHAR ascii) {
 /*!\brief test for upper case alphabetic char
 ** \param[in] ascii - ASCII char to check
 ** \return true if upper case, false otherwise
-** \warning You probably should ensure \b ascii is alphabetic char first (false will be always returned in case non alphabetic char)
+** \warning You probably should ensure \p ascii is alphabetic char first (false will be always returned in case non alphabetic char)
 **/
 __INLINE BOOL isUpperCase(const CHAR ascii) {
 	return binEval((ascii >= 'A') && (ascii <= 'Z')); }
@@ -60,7 +60,7 @@ __INLINE BOOL isAlphaNum(const CHAR ascii) {
 /*!\brief Convert upper case alphabetic char to lower case
 ** \param[in] ascii - ASCII char to convert
 ** \return Lower case char, same value otherwise
-** \warning You probably should ensure \b ascii is alphabetic char first
+** \warning You probably should ensure \p ascii is alphabetic char first
 **/
 __INLINE CHAR toLowerCase(const CHAR ascii) {
 	return binEval(isUpperCase(ascii)) ? (ascii + ('a' - 'A')) : ascii; }
@@ -69,7 +69,7 @@ __INLINE CHAR toLowerCase(const CHAR ascii) {
 /*!\brief Convert lower case alphabetic char to upper case
 ** \param[in] ascii - ASCII char to convert
 ** \return Upper case char, same value otherwise
-** \warning You probably should ensure \b ascii is alphabetic char first
+** \warning You probably should ensure \p ascii is alphabetic char first
 **/
 __INLINE CHAR toUpperCase(const CHAR ascii) {
 	return binEval(isLowerCase(ascii)) ? (ascii - ('a' - 'A')) : ascii; }
