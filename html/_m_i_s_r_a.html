@@ -84,7 +84,7 @@ $(function() {
 <p class="interdd"></p>
 <p class="enddd">Header scope legitimate use derogation authorized for:<br  />
  <b>Rule-21.1</b> - <b>Required:</b> <code>#define</code> and <code>#undef</code> on reserved identifiers (misra-c2012-21.1)<br  />
- <em>Justification:</em> define generic reserved identifiers for attributes.<br  />
+ <em>Justification:</em> <code>#define</code> are generic reserved identifiers for attributes.<br  />
   </p>
 </dd>
 <dt>File <a class="el" href="arm__chip__ino_8h.html">arm_chip_ino.h</a>  </dt>
@@ -113,24 +113,24 @@ $(function() {
 <p class="interdd"></p>
 <p class="enddd">Header scope legitimate use derogation authorized for:<br  />
  <b>Rule-21.1</b> - <b>Required:</b> <code>#define</code> and <code>#undef</code> on reserved identifiers (misra-c2012-21.1)<br  />
- <em>Justification:</em> define library specific reserved identifiers.<br  />
+ <em>Justification:</em> <code>#define</code> are library specific reserved identifiers.<br  />
   </p>
 </dd>
 <dt>Global <a class="el" href="arm__cmsis_8h.html#aa67f149d61e1210d8ba04c5f97aa9308">HALTICKS_PROTOTYPE</a>  (func)</dt>
 <dd><a class="anchor" id="_MISRA000005"></a> Local derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
- <em>Justification:</em> func paramater shall be a function name; raising error otherwise is intended.<br  />
+ <em>Justification:</em> <code>func</code> paramater shall be a function name; raising error otherwise is intended.<br  />
   </dd>
 <dt>Global <a class="el" href="arm__macros_8h.html#a4ca80befacab1cf54e976f05f625f32c">OFFSET_OF</a>  (typ, mbr)</dt>
 <dd><a class="anchor" id="_MISRA000015"></a> Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
- <em>Justification:</em> <b>typ</b> parameter would be cast instead of type.<br  />
- <em>Justification:</em> <b>mbr</b> parameter shall be a structure member; will in any way raise an error in case not.<br  />
+ <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
+ <em>Justification:</em> <code>mbr</code> parameter shall be a structure member; will in any way raise an error in case not.<br  />
   </dd>
 <dt>Global <a class="el" href="arm__macros_8h.html#a32c119f1bd8155fc34ea0a798cc2f2c3">ROOT_OF</a>  (ptr, typ, mbr)</dt>
 <dd><a class="anchor" id="_MISRA000016"></a> Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
- <em>Justification:</em> <b>mbr</b> parameter shall be a structure member; will in any way raise an error in case not.<br  />
+ <em>Justification:</em> <code>mbr</code> parameter shall be a structure member; will in any way raise an error in case not.<br  />
   </dd>
 <dt>Global <a class="el" href="arm__inlines__rotation_8h.html#aac13b21600a35f5d3f488a535ce9c4db">rotate_2D</a>  (const <a class="el" href="structs_coord2_d.html" title="2D coordinates structure">sCoord2D</a> c, const SWORD angle)</dt>
 <dd><a class="anchor" id="_MISRA000007"></a> Function scope deviation granted for:<br  />
@@ -139,24 +139,24 @@ $(function() {
 <dt>Global <a class="el" href="arm__macros_8h.html#a0878b994fac8d6563664edba349c7f70">SWAP_TYPE</a>  (a, b, typ)</dt>
 <dd><a class="anchor" id="_MISRA000009"></a> Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
- <em>Justification:</em> <b>typ</b> parameter would be cast instead of type declaration (thus raising error); other parameters shall be variable names, raising error otherwise is intended.<br  />
+ <em>Justification:</em> <code>typ</code> parameter would be cast instead of type declaration (thus raising error); other parameters shall be variable names, raising error otherwise is intended.<br  />
   </dd>
 <dt>Global <a class="el" href="arm__macros_8h.html#a2b5ec466595a0483322b2c3c924996c4">SZ_ARRAY</a>  (arr)</dt>
 <dd><a class="anchor" id="_MISRA000011"></a> local derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
- <em>Justification:</em> Parenthesis doesn't make sense as parameter <b>arr</b> shall be an instance of type; raising error otherwise is intended.<br  />
+ <em>Justification:</em> Parenthesis doesn't make sense as parameter <code>arr</code> shall be an instance of type; raising error otherwise is intended.<br  />
   </dd>
 <dt>Global <a class="el" href="arm__macros_8h.html#ae222ed5e4821c01c4d5fc924673d844d">SZ_OBJ</a>  (obj, typ)</dt>
 <dd><a class="anchor" id="_MISRA000012"></a> Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
- <em>Justification:</em> <b>obj</b> parameter can be a type instead of an istance of type.<br  />
- <em>Justification:</em> <b>typ</b> parameter would be cast instead of type.<br  />
+ <em>Justification:</em> <code>obj</code> parameter can be a type instead of an istance of type.<br  />
+ <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
   </dd>
 <dt>Global <a class="el" href="arm__macros_8h.html#a44a11b5d464b3d6837a0e6136c367abb">SZ_TYP_MBR</a>  (typ, mbr)</dt>
 <dd><a class="anchor" id="_MISRA000013"></a> Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
- <em>Justification:</em> <b>typ</b> parameter would be cast instead of type.<br  />
- <em>Justification:</em> <b>mbr</b> parameter shall be a structure member; will in any way raise an error in case not.<br  />
+ <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
+ <em>Justification:</em> <code>mbr</code> parameter shall be a structure member; will in any way raise an error in case not.<br  />
   </dd>
 <dt>Global <a class="el" href="arm__inlines__endian_8h.html#a8893c965376eecdcd9c55b156eada6bd">testEndian_full</a>  (void)</dt>
 <dd><a class="anchor" id="_MISRA000006"></a> Function scope deviation granted for:<br  />
@@ -165,13 +165,13 @@ $(function() {
 <dt>Global <a class="el" href="arm__macros_8h.html#a945f756368ec4c5e11befc58b4b91dc1">TYP_MBR</a>  (typ, mbr)</dt>
 <dd><a class="anchor" id="_MISRA000014"></a> Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
- <em>Justification:</em> <b>typ</b> parameter would be cast instead of type.<br  />
- <em>Justification:</em> <b>mbr</b> parameter shall be a structure member; will in any way raise an error in case not.<br  />
+ <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
+ <em>Justification:</em> <code>mbr</code> parameter shall be a structure member; will in any way raise an error in case not.<br  />
   </dd>
 <dt>Global <a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>  (addr, typ)</dt>
 <dd><a class="anchor" id="_MISRA000010"></a> Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
- <em>Justification:</em> <b>typ</b> parameter would be cast instead of type.<br  />
+ <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
  </dd>
 </dl>
 </div></div><!-- contents -->
