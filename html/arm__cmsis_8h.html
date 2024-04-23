@@ -118,8 +118,11 @@ Macros</h2></td></tr>
 <tr class="memdesc:a12c03261686c24d3f3607b9c3643c8f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">HAL milliseconds multiplier (depending tick counter frequency)  <br /></td></tr>
 <tr class="separator:a12c03261686c24d3f3607b9c3643c8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bc306171da085f4c7df2c66d2ff8e47" id="r_a6bc306171da085f4c7df2c66d2ff8e47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bc306171da085f4c7df2c66d2ff8e47">UNUSED</a>(X)&#160;&#160;&#160;(void) (X)</td></tr>
-<tr class="memdesc:a6bc306171da085f4c7df2c66d2ff8e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">To avoid gcc/g++ warnings.  <br /></td></tr>
+<tr class="memdesc:a6bc306171da085f4c7df2c66d2ff8e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unused parameter <code>X</code> (to avoid gcc/g++ warnings)  <br /></td></tr>
 <tr class="separator:a6bc306171da085f4c7df2c66d2ff8e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a043d1cd6633a6bd80d29a3bf3e5d842f" id="r_a043d1cd6633a6bd80d29a3bf3e5d842f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a043d1cd6633a6bd80d29a3bf3e5d842f">UNUSED_RET</a>&#160;&#160;&#160;(void)</td></tr>
+<tr class="memdesc:a043d1cd6633a6bd80d29a3bf3e5d842f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly ignore function return (MISRA compliance)  <br /></td></tr>
+<tr class="separator:a043d1cd6633a6bd80d29a3bf3e5d842f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -299,7 +302,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>To avoid gcc/g++ warnings. </p>
+<p>Unused parameter <code>X</code> (to avoid gcc/g++ warnings) </p>
+
+</div>
+</div>
+<a id="a043d1cd6633a6bd80d29a3bf3e5d842f" name="a043d1cd6633a6bd80d29a3bf3e5d842f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a043d1cd6633a6bd80d29a3bf3e5d842f">&#9670;&#160;</a></span>UNUSED_RET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNUSED_RET&#160;&#160;&#160;(void)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Explicitly ignore function return (MISRA compliance) </p>
 
 </div>
 </div>

@@ -853,15 +853,19 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00792" name="l00792"></a><span class="lineno"><a class="line" href="arm__cmsis_8h.html#a6bc306171da085f4c7df2c66d2ff8e47">  792</a></span><span class="preprocessor">#define UNUSED(X)   (void) (X)      </span></div>
 <div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span> </div>
-<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span> </div>
-<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span><span class="comment">/****************************************************************/</span></div>
-<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span>    }</div>
-<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span> </div>
-<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span><span class="preprocessor">#endif </span><span class="comment">/* ARM_CMSIS_H_ */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span><span class="comment">// cppcheck-suppress-end [misra-c2012-21.1]</span></div>
-<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span><span class="comment">/****************************************************************/</span></div>
+<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span><span class="preprocessor">#ifndef UNUSED_RET</span></div>
+<div class="line"><a id="l00796" name="l00796"></a><span class="lineno"><a class="line" href="arm__cmsis_8h.html#a043d1cd6633a6bd80d29a3bf3e5d842f">  796</a></span><span class="preprocessor">#define UNUSED_RET  (void)          </span></div>
+<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span> </div>
+<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span> </div>
+<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span><span class="comment">/****************************************************************/</span></div>
+<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>    }</div>
+<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span> </div>
+<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span><span class="preprocessor">#endif </span><span class="comment">/* ARM_CMSIS_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span><span class="comment">// cppcheck-suppress-end [misra-c2012-21.1]</span></div>
+<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span><span class="comment">/****************************************************************/</span></div>
 <div class="ttc" id="aarm__chip__ino_8h_html"><div class="ttname"><a href="arm__chip__ino_8h.html">arm_chip_ino.h</a></div><div class="ttdoc">Common macros for Arduino.</div></div>
 <div class="ttc" id="aarm__chip__pic_8h_html"><div class="ttname"><a href="arm__chip__pic_8h.html">arm_chip_pic.h</a></div><div class="ttdoc">Common macros for PIC.</div></div>
 <div class="ttc" id="aarm__chip__sam_8h_html"><div class="ttname"><a href="arm__chip__sam_8h.html">arm_chip_sam.h</a></div><div class="ttdoc">ARM common macros for Atmel SAM families.</div></div>

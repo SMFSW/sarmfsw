@@ -310,7 +310,7 @@ Macros</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>SMFSW </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2024, SMFSW </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If used CPU only handles single shifts, you may define SINGLE_SHIFT_ONLY_OPCODE at project level (see <a class="el" href="#ac67c4dbfe2f188872a0ac531c73e2821">LSHIFT</a> &amp; <a class="el" href="#abf5b4d01be517fa611eb7d1cb3378d25">RSHIFT</a>) </dd></dl>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000008">MISRA C:2012 Deviations</a></b></dt><dd>Header scope deviation has been granted for following rules:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000012">MISRA C:2012 Deviations</a></b></dt><dd>Header scope deviation has been granted for following rules:<br  />
  <b>Rule-1.2</b> - <b>Advisory:</b> Language extensions (misra-c2012-1.2)<br  />
  <b>Rule-20.5</b> - <b>Advisory:</b> <code>#undef</code> (misra-c2012-20.5)<br  />
  <b>Rule-20.10</b> - <b>Advisory:</b> <code>#</code> and <code>##</code> preprocessor operators (misra-c2012-20.10)<br  />
@@ -1066,7 +1066,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes the offset member <code>mbr</code> from struct type <code>typ</code>. </p>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000015">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000019">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
  <em>Justification:</em> <code>mbr</code> parameter shall be a structure member; will in any way raise an error in case not.<br  />
@@ -1163,7 +1163,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes the address of parent struct <code>typ</code> of <code>ptr</code> from member <code>mbr</code>. </p>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000016">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000020">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>mbr</code> parameter shall be a structure member; will in any way raise an error in case not.<br  />
  </dd></dl>
@@ -1581,7 +1581,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Swap two variable type <code>typ</code> <code>a</code> &amp; <code>b</code>. </p>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000009">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000013">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type declaration (thus raising error); other parameters shall be variable names, raising error otherwise is intended.<br  />
  </dd></dl>
@@ -1627,7 +1627,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes the number of array elements in <code>arr</code>. </p>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000011">MISRA C:2012 Deviations</a></b></dt><dd>local derogation authorized for:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000015">MISRA C:2012 Deviations</a></b></dt><dd>local derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> Parenthesis doesn't make sense as parameter <code>arr</code> shall be an instance of type; raising error otherwise is intended.<br  />
  </dd></dl>
@@ -1654,7 +1654,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes the number of elements in <code>obj</code> of type <code>typ</code>. </p>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000012">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000016">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>obj</code> parameter can be a type instead of an istance of type.<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
@@ -1682,7 +1682,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes the size of member <code>mbr</code> in struct type <code>typ</code>. </p>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000013">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000017">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
  <em>Justification:</em> <code>mbr</code> parameter shall be a structure member; will in any way raise an error in case not.<br  />
@@ -1793,7 +1793,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get member <code>mbr</code> from a struct type <code>typ</code>. </p>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000014">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000018">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
  <em>Justification:</em> <code>mbr</code> parameter shall be a structure member; will in any way raise an error in case not.<br  />
@@ -1862,7 +1862,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the type <code>typ</code> content of address <code>addr</code>. </p>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000010">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000014">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
  </dd></dl>

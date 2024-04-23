@@ -122,33 +122,35 @@ $(function() { codefold.init(0); });
 <div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="arm__inlines__bcd_8h.html#aa19b68757f5406b4f3556a50f8d7955c">   52</a></span><a class="code hl_define" href="arm__attributes_8h.html#ade2d8d7118f8ff49547f60aa0c3382bb">__INLINE</a> <a class="code hl_typedef" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a> <a class="code hl_function" href="arm__inlines__bcd_8h.html#aa19b68757f5406b4f3556a50f8d7955c">BCDToHex</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a> bcd)</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_typedef" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a> res = 0, mult = 1;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">for</span> (<a class="code hl_typedef" href="arm__typedefs_8h.html#ac78fad3d8bf59eb44161d6fb5f4c73f8">uintCPU_t</a> i = 0 ; i &lt; 8U ; i++, mult *= 10)</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a> single = (<a class="code hl_typedef" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (<a class="code hl_define" href="arm__macros_8h.html#abf5b4d01be517fa611eb7d1cb3378d25">RSHIFT</a>(bcd, (4U * i)) &amp; 0x0FU);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">if</span> (single &gt; 9U)</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            res = (<a class="code hl_typedef" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) -1;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        res += single * mult;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">return</span> res;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_typedef" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a> res = 0;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_typedef" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a> mult = 1U;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">for</span> (<a class="code hl_typedef" href="arm__typedefs_8h.html#ac78fad3d8bf59eb44161d6fb5f4c73f8">uintCPU_t</a> i = 0 ; i &lt; 8U ; i++)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a> single = (<a class="code hl_typedef" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (<a class="code hl_define" href="arm__macros_8h.html#abf5b4d01be517fa611eb7d1cb3378d25">RSHIFT</a>(bcd, (4U * i)) &amp; 0x0FU);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">if</span> (single &gt; 9U)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            res = (<a class="code hl_typedef" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) -1;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        res += single * mult;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        mult *= 10;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
 </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">/****************************************************************/</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#endif </span><span class="comment">/* ARM_INLINES_BCD_H_ */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">/****************************************************************/</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">/****************************************************************/</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#endif </span><span class="comment">/* ARM_INLINES_BCD_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">/****************************************************************/</span></div>
 <div class="ttc" id="aarm__attributes_8h_html_ade2d8d7118f8ff49547f60aa0c3382bb"><div class="ttname"><a href="arm__attributes_8h.html#ade2d8d7118f8ff49547f60aa0c3382bb">__INLINE</a></div><div class="ttdeci">#define __INLINE</div><div class="ttdoc">inline attribute alias</div><div class="ttdef"><b>Definition</b> arm_attributes.h:278</div></div>
 <div class="ttc" id="aarm__inlines__bcd_8h_html_a68b92f79d710d733985e18d34713e1cb"><div class="ttname"><a href="arm__inlines__bcd_8h.html#a68b92f79d710d733985e18d34713e1cb">HexToBCD</a></div><div class="ttdeci">DWORD HexToBCD(const DWORD hex)</div><div class="ttdoc">Converts hexadecimal value to BCD.</div><div class="ttdef"><b>Definition</b> arm_inlines_bcd.h:23</div></div>
 <div class="ttc" id="aarm__inlines__bcd_8h_html_aa19b68757f5406b4f3556a50f8d7955c"><div class="ttname"><a href="arm__inlines__bcd_8h.html#aa19b68757f5406b4f3556a50f8d7955c">BCDToHex</a></div><div class="ttdeci">DWORD BCDToHex(const DWORD bcd)</div><div class="ttdoc">Converts BCD value to hexadecimal.</div><div class="ttdef"><b>Definition</b> arm_inlines_bcd.h:52</div></div>
