@@ -4,7 +4,7 @@
 ** \brief Common macros for Arduino
 ** \warning Do not use macros for function qualifiers in this file
 ** \MISRA Header scope deviation has been granted for following rules:\n
-** 		\b Rule-20.5 - \b Advisory: \c #undef (misra-c2012-20.5)\n
+** 	\b Rule-20.5 - \b Advisory: \c \#undef (misra-c2012-20.5)\n
 */
 /****************************************************************/
 #ifndef ARM_CHIP_INO_H_

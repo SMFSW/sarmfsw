@@ -13,6 +13,15 @@
 /****************************************************************/
 
 
+//!\MISRA Function scope deviation granted for:\n
+//!	\b Rule-20.10 - \b Advisory: \c # and \c ## preprocessor operators (misra-c2012-20.10)\n
+//! Local legitimate use derogation authorized for:\n
+//! \b Rule-18.8 - \b Required: Var-length array types (misra-c2012-18.8)\n
+//! \a Justification: \p pArray is used as array, makes sense to declare it in the same manner.\n
+//! \a Justification: copy \c array needs to have a size and is always used in conjunction with \p nb.\n
+//! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
+//! \a Justification: \p typ_t parameter would be always be used as cast and wouldn't name concatenate.\n
+// cppcheck-suppress-macro [misra-c2012-18.8, misra-c2012-20.7, misra-c2012-20.10]
 #define	RESTRICTED_AVERAGE(typ_t, sum_t)													\
 __INLINE typ_t RestrictedAverage_##typ_t(volatile const typ_t pArray[], const uint8_t nb)	\
 {																							\
@@ -26,7 +35,8 @@ __INLINE typ_t RestrictedAverage_##typ_t(volatile const typ_t pArray[], const ui
 		for (uintCPU_t i = 0 ; i < nb ; i++)	{ array[i] = pArray[i]; }					\
 																							\
 		/* Sum and min/max recording */														\
-		sum_t min_val = pArray[0], max_val = pArray[0];										\
+		sum_t min_val = pArray[0];															\
+		sum_t max_val = pArray[0];															\
 		sum_t sum = (typ_t) 0;																\
 		for (uintCPU_t i = 0 ; i < nb ; i++)												\
 		{																					\
@@ -38,7 +48,7 @@ __INLINE typ_t RestrictedAverage_##typ_t(volatile const typ_t pArray[], const ui
 		/* Averaging */																		\
 		sum -= min_val + max_val;															\
 		sum /= n;																			\
-		average = (typ_t) (sum);															\
+		average = (typ_t) sum;																\
 	}																						\
 																							\
 	return average;																			\

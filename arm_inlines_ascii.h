@@ -82,7 +82,7 @@ __INLINE CHAR toUpperCase(const CHAR ascii) {
 __INLINE CHAR INLINE__ HexToASCII(const BYTE hex)
 {
 	const BYTE h = hex & 0x0FU;
-	return (CHAR) (h + ((h < 0x0AU) ? 0x30U : 0x37U));
+	return (CHAR) (h) + ((h < 0x0AU) ? 0x30 : 0x37);
 }
 
 
@@ -110,14 +110,15 @@ __INLINE BYTE ASCIIToHex(const CHAR ascii)
 __INLINE DWORD NONNULL__ strDecToInt(const CHAR * const pASCII, const BYTE len)
 {
 	DWORD dec = 0;
+	DWORD mult = 1U;
 
-	for (uintCPU_t i = len, mult = 1U ; i > 0U ; i--, mult *= 10U)
+	for (uintCPU_t i = len ; i > 0U ; i--)
 	{
 		const BYTE single = ASCIIToHex(pASCII[i - 1U]);
-
 		if (single > 9U)	{ break; }
 
 		dec += single * mult;
+		mult *= 10U;
 	}
 
 	return dec;
@@ -132,14 +133,15 @@ __INLINE DWORD NONNULL__ strDecToInt(const CHAR * const pASCII, const BYTE len)
 __INLINE DWORD NONNULL__ strHexToInt(const CHAR * const pASCII, const BYTE len)
 {
 	DWORD hex = 0;
+	DWORD shift = 0;
 
-	for (uintCPU_t i = len, shift = 0U ; i > 0U ; i--, shift += 4U)
+	for (uintCPU_t i = len ; i > 0U ; i--)
 	{
 		const BYTE nybble = ASCIIToHex(pASCII[i - 1U]);
-
 		if (nybble == 0xFFU)	{ break; }
 
 		hex |= LSHIFT(nybble, shift);
+		shift += 4U;
 	}
 
 	return hex;

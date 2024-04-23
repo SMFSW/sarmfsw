@@ -4,9 +4,9 @@
 ** \brief ARM common macros
 ** \note If used CPU only handles single shifts, you may define SINGLE_SHIFT_ONLY_OPCODE at project level (see \ref LSHIFT & \ref RSHIFT)
 ** \MISRA Header scope deviation has been granted for following rules:\n
-** 		\b Rule-1.2 - \b Advisory: Language extensions (misra-c2012-1.2)\n
-** 		\b Rule-20.5 - \b Advisory: \c #undef (misra-c2012-20.5)\n
-** 		\b Rule-20.10 - \b Advisory: \c # and \c ## preprocessor operators (misra-c2012-20.10)\n
+** 	\b Rule-1.2 - \b Advisory: Language extensions (misra-c2012-1.2)\n
+** 	\b Rule-20.5 - \b Advisory: \c \#undef (misra-c2012-20.5)\n
+** 	\b Rule-20.10 - \b Advisory: \c # and \c ## preprocessor operators (misra-c2012-20.10)\n
 */
 // cppcheck-suppress-begin [misra-c2012-1.2, misra-c2012-20.5, misra-c2012-20.10]
 /****************************************************************/

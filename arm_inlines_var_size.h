@@ -129,8 +129,8 @@ __INLINE DWORD convXtoYBits(const DWORD val, const BYTE from, const BYTE to)
 	const uintCPU_t shift = abs(diff_bits);
 	DWORD conv = val & maskBits(from);
 
-	if (diff_bits > 0)		{ conv = LSHIFT(val, shift) | RSHIFT(val, from - shift); }
-	else if (diff_bits < 0)	{ conv = RSHIFT(val, shift); }
+	if (diff_bits > 0)	{ conv = LSHIFT(val, shift) | RSHIFT(val, from - shift); }
+	if (diff_bits < 0)	{ conv = RSHIFT(val, shift); }
 
 	return conv;
 }

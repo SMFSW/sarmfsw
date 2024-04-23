@@ -98,24 +98,29 @@ __INLINE eEndian testEndian_basic(void)
 
 /*!\brief Test Core endian (full, recognizing mid endian too)
 ** \MISRA Function scope deviation granted for:\n
-**		\b Rule-15.5 - \b Advisory: single point of exit (misra-c2012-15.5)\n
+**	\b Rule-15.5 - \b Advisory: single point of exit (misra-c2012-15.5)\n
+** 	\b Rule-19.2 - \b Advisory: \c union keyword (misra-c2012-19.2)\n
 ** \return Endian type
 **/
 __INLINE eEndian testEndian_full(void)
 {
+	// cppcheck-suppress-begin misra-c2012-19.2
 	const union {
 		DWORD	dword;
 		BYTE	byte[sizeof(DWORD)];
 	} tst = { .byte = { 1, 2, 3, 4 } };
+	// cppcheck-suppress-end misra-c2012-19.2
 
+	// cppcheck-suppress-begin misra-c2012-15.5
 	switch (tst.dword)
 	{
-		default:			return Endian_unknown;		// cppcheck-suppress misra-c2012-15.5
-		case 0x01020304UL:	return Endian_big;			// cppcheck-suppress misra-c2012-15.5
-		case 0x04030201UL:	return Endian_little;		// cppcheck-suppress misra-c2012-15.5
-		case 0x03040102UL:	return Endian_mid_big;		// cppcheck-suppress misra-c2012-15.5
-		case 0x02010403UL:	return Endian_mid_little;	// cppcheck-suppress misra-c2012-15.5
+		default:			return Endian_unknown;
+		case 0x01020304UL:	return Endian_big;
+		case 0x04030201UL:	return Endian_little;
+		case 0x03040102UL:	return Endian_mid_big;
+		case 0x02010403UL:	return Endian_mid_little;
 	}
+	// cppcheck-suppress-end misra-c2012-15.5
 }
 
 

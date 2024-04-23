@@ -51,9 +51,10 @@ __INLINE DWORD HexToBCD(const DWORD hex)
 **/
 __INLINE DWORD BCDToHex(const DWORD bcd)
 {
-	DWORD res = 0, mult = 1;
+	DWORD res = 0;
+	DWORD mult = 1U;
 
-	for (uintCPU_t i = 0 ; i < 8U ; i++, mult *= 10)
+	for (uintCPU_t i = 0 ; i < 8U ; i++)
 	{
 		const BYTE single = (BYTE) (RSHIFT(bcd, (4U * i)) & 0x0FU);
 
@@ -64,6 +65,7 @@ __INLINE DWORD BCDToHex(const DWORD bcd)
 		}
 
 		res += single * mult;
+		mult *= 10;
 	}
 
 	return res;

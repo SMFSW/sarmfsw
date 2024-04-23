@@ -27,7 +27,7 @@ typedef struct sCoord2D {
 /*!\brief 2D Coordinates rotation
 ** \note Counter clockwise rotation
 ** \MISRA Function scope deviation granted for:\n
-**		\b Rule-15.5 - \b Advisory: single point of exit (misra-c2012-15.5)\n
+**	\b Rule-15.5 - \b Advisory: single point of exit (misra-c2012-15.5)\n
 ** \param[in] c - Coordinates to rotate
 ** \param[in] angle - Rotation angle (in degrees, counter clockwise)
 ** \return Rotated coordinates
@@ -44,8 +44,10 @@ __INLINE sCoord2D rotate_2D(const sCoord2D c, const SWORD angle)
 		default:
 		{
 			const float rad = (float) deg * M_PI_180;
-			r.x = (SDWORD) ((c.x * cos(rad)) - (c.y * sin(rad)));
-			r.y = (SDWORD) ((c.x * sin(rad)) + (c.y * cos(rad)));
+			const float cos_rad = cos(rad);
+			const float sin_rad = sin(rad);
+			r.x = (SDWORD) ((c.x * cos_rad) - (c.y * sin_rad));
+			r.y = (SDWORD) ((c.x * sin_rad) + (c.y * cos_rad));
 		}
 		break;
 

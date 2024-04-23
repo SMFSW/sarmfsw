@@ -15,10 +15,10 @@
 ** \note	STDBOOL_NDEF can be defined at project level if stdint.h doesn't exist for target compiler
 ** \note	STDINT_NDEF can be defined at project level if stdint.h doesn't exist for target compiler
 ** \MISRA Header scope deviation has been granted for following rules:\n
-** 		\b Rule-19.2 - \b Advisory: \c union keyword (misra-c2012-19.2)\n
+** 	\b Rule-19.2 - \b Advisory: \c union keyword (misra-c2012-19.2)\n
 ** \MISRA Header scope legitimate use derogation authorized for:\n
-** 		\b Rule-21.1 - \b Required: \c #define and \c #undef on reserved identifiers (misra-c2012-21.1)\n
-**		\a Justification: \c #define are library specific reserved identifiers.\n
+** 	\b Rule-21.1 - \b Required: \c \#define and \c \#undef on reserved identifiers (misra-c2012-21.1)\n
+**	\a Justification: \c \#define are library specific reserved identifiers.\n
 */
 // cppcheck-suppress-begin [misra-c2012-19.2]
 // cppcheck-suppress-begin [misra-c2012-21.1]
@@ -104,39 +104,39 @@ typedef	int64_t			SLWORD;		//!< Signed lWord typedef (64bits)
 #endif
 
 
-/*!\enum eState
+/*!\enum eState_i
 ** \brief Activation state On, Off
 **/
-typedef enum eState {
+typedef enum eState_i {
 	Off = 0U,	//!< Off / Reset
 	On = 1U		//!< On / Set
 } eState;
 
 
-/*!\enum eEdge
+/*!\enum eEdge_i
 ** \brief Signal Edges
 **/
-typedef enum eEdge {
+typedef enum eEdge_i {
 	NoEdge = 0,	//!< No change
 	Rising,		//!< Rising edge
 	Falling		//!< Falling edge
 } eEdge;
 
 
-/*!\enum eGPIOState
+/*!\enum eGPIOState_i
 ** \brief GPIO possible states/actions enumeration
 **/
-typedef enum eGPIOState {
+typedef enum eGPIOState_i {
 	Reset = 0,	//!< Reset State
 	Set,		//!< Set State
 	Toggle		//!< Toggle Output
 	//! \note Toggle is only GPIO output related
 } eGPIOState;
 
-/*!\enum eGPIOPull
+/*!\enum eGPIOPull_i
 ** \brief GPIO possible pull resistor configuration
 **/
-typedef enum eGPIOPull {
+typedef enum eGPIOPull_i {
 	PullDown = 0,	//!< GPIO with pull down
 	PullUp,			//!< GPIO with pull up
 	NoPull			//!< GPIO without pull
@@ -146,7 +146,7 @@ typedef enum eGPIOPull {
 /*!\struct sBitfield8
 ** \brief Bitfield 8b
 **/
-typedef struct sBitfield8 {
+typedef struct sBitfield8_i {
 	#ifndef REVERSE_BITFIELD
 		BYTE	b0	:1;	//!< Bit 0 (LSB)
 		BYTE	b1	:1;	//!< Bit 1
@@ -171,7 +171,7 @@ typedef struct sBitfield8 {
 /*!\struct sBitfield16
 ** \brief Bitfield 16b
 **/
-typedef struct sBitfield16 {
+typedef struct sBitfield16_i {
 	#ifndef REVERSE_BITFIELD
 		WORD	b0	:1;	//!< Bit 0 (LSB)
 		WORD	b1	:1;	//!< Bit 1
@@ -212,7 +212,7 @@ typedef struct sBitfield16 {
 /*!\struct sBitfield32
 ** \brief Bitfield 32b
 **/
-typedef struct sBitfield32 {
+typedef struct sBitfield32_i {
 	#ifndef REVERSE_BITFIELD
 		DWORD	b0	:1;	//!< Bit 0 (LSB)
 		DWORD	b1	:1;	//!< Bit 1
@@ -285,7 +285,7 @@ typedef struct sBitfield32 {
 /*!\struct sBitfield64
 ** \brief Bitfield 64b
 **/
-typedef struct sBitfield64 {
+typedef struct sBitfield64_i {
 	#ifndef REVERSE_BITFIELD
 		LWORD	b0	:1;	//!< Bit 0 (LSB)
 		LWORD	b1	:1;	//!< Bit 1
@@ -430,7 +430,7 @@ typedef struct sBitfield64 {
 /*!\union uByte
 ** \brief Union for BYTE
 **/
-typedef union uByte {
+typedef union uByte_i {
 	BYTE		Byte;	//!< BYTE
 	sBitfield8	Bits;	//!< Bits
 } uByte;
@@ -438,7 +438,7 @@ typedef union uByte {
 /*!\union uWord
 ** \brief Union for WORD
 **/
-typedef union uWord {
+typedef union uWord_i {
 	WORD			Word;		//!< 16b
 	BYTE			Byte[2];	//!< Bytes tab
 	struct {
@@ -456,7 +456,7 @@ typedef union uWord {
 /*!\union uDWord
 ** \brief Union for DWORD
 **/
-typedef union uDWord {
+typedef union uDWord_i {
 	DWORD			DWord;		//!< 32b
 	WORD			Word[2];	//!< Words tab
 	BYTE			Byte[4];	//!< Bytes tab
@@ -488,7 +488,7 @@ typedef union uDWord {
 /*!\union uLWord
 ** \brief Union for LWORD
 **/
-typedef union uLWord {
+typedef union uLWord_i {
 	LWORD			LWord;		//!< 64b
 	DWORD			DWord[2];	//!< DWords tab
 	WORD			Word[4];	//!< Words tab

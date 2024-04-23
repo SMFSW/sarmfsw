@@ -14,8 +14,8 @@
 ** 			- for Other families (TI...):
 ** 				- not implemented yet
 ** \MISRA Header scope derogation to following rules:\n
-** 		\b Rule-21.1 - \b Required: \c #define and \c #undef on reserved identifiers (misra-c2012-21.1)\n
-**		\a Justification: define generic CMSIS IO macros in case not already defined.\n
+** 	\b Rule-21.1 - \b Required: \c \#define and \c \#undef on reserved identifiers (misra-c2012-21.1)\n
+**	\a Justification: define generic CMSIS IO macros in case not already defined.\n
 */
 // cppcheck-suppress-begin [misra-c2012-21.1]
 /****************************************************************/
@@ -789,7 +789,11 @@ HALTICKS_PROTOTYPE(HALTicks);		//!< External definition of Ticks getter to check
 
 
 #ifndef UNUSED
-#define UNUSED(X)	(void) (X)		//!< To avoid gcc/g++ warnings
+#define UNUSED(X)	(void) (X)		//!< Unused parameter \p X (to avoid gcc/g++ warnings)
+#endif
+
+#ifndef UNUSED_RET
+#define UNUSED_RET	(void)			//!< Explicitly ignore function return (MISRA compliance)
 #endif
 
 

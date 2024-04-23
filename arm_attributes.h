@@ -5,11 +5,11 @@
 ** \details Set attributes following compiler
 ** \warning Cosmic compiler for STM32 attributes not implemented
 ** \MISRA Header scope deviation has been granted for following rules:\n
-** 		\b Rule-20.5 - \b Advisory: \c #undef (misra-c2012-20.5)\n
-** 		\b Rule-20.10 - \b Advisory: \c # and \c ## preprocessor operators (misra-c2012-20.10)\n
+** 	\b Rule-20.5 - \b Advisory: \c \#undef (misra-c2012-20.5)\n
+** 	\b Rule-20.10 - \b Advisory: \c # and \c ## preprocessor operators (misra-c2012-20.10)\n
 ** \MISRA Header scope legitimate use derogation authorized for:\n
-** 		\b Rule-21.1 - \b Required: \c #define and \c #undef on reserved identifiers (misra-c2012-21.1)\n
-**		\a Justification: \c #define are generic reserved identifiers for attributes.\n
+** 	\b Rule-21.1 - \b Required: \c \#define and \c \#undef on reserved identifiers (misra-c2012-21.1)\n
+**	\a Justification: \c \#define are generic reserved identifiers for attributes.\n
 */
 // cppcheck-suppress-begin [misra-c2012-20.5, misra-c2012-20.10]
 // cppcheck-suppress-begin [misra-c2012-21.1]
