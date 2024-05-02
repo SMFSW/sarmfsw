@@ -31,7 +31,7 @@ typedef enum eEndian {
 **/
 __INLINE WORD SWAP_END16B(const WORD w)
 {
-	return (WORD) (LSHIFT((w & 0xFFU), 8) | RSHIFT((w & 0xFF00U), 8));
+	return (WORD) (LSHIFT16((w & 0xFFU), 8) | RSHIFT16((w & 0xFF00U), 8));
 }
 
 
@@ -41,7 +41,7 @@ __INLINE WORD SWAP_END16B(const WORD w)
 **/
 __INLINE DWORD SWAP_END32B(const DWORD d)
 {
-	return (DWORD) (LSHIFT(SWAP_END16B(d & 0xFFFFU), 16) | SWAP_END16B(RSHIFT((d & 0xFFFF0000U), 16)));
+	return (DWORD) (LSHIFT32(SWAP_END16B(d & 0xFFFFUL), 16) | SWAP_END16B(RSHIFT32((d & 0xFFFF0000UL), 16)));
 }
 
 
@@ -104,12 +104,11 @@ __INLINE eEndian testEndian_basic(void)
 **/
 __INLINE eEndian testEndian_full(void)
 {
-	// cppcheck-suppress-begin misra-c2012-19.2
-	const union {
+	
+	const union {						// cppcheck-suppress misra-c2012-19.2
 		DWORD	dword;
 		BYTE	byte[sizeof(DWORD)];
-	} tst = { .byte = { 1, 2, 3, 4 } };
-	// cppcheck-suppress-end misra-c2012-19.2
+	} tst = { .byte = { 1, 2, 3, 4 } };	// cppcheck-suppress misra-c2012-19.2
 
 	// cppcheck-suppress-begin misra-c2012-15.5
 	switch (tst.dword)

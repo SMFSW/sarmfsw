@@ -19,7 +19,7 @@
 **/
 __INLINE DWORD INLINE__ bin2gray(const DWORD bin)
 {
-	return (RSHIFT(bin, 1) ^ bin);
+	return (RSHIFT(bin, 1U) ^ bin);
 }
 
 
@@ -32,7 +32,7 @@ __INLINE DWORD gray2bin(const DWORD gray)
 	uintCPU_t	bits = 32;
 	DWORD		tmp = gray;
 
-	while ((bits >>= 1) != 0U)
+	while ((bits >>= 1U) != 0U)
 	{
 		tmp ^= (tmp >> bits);
 	}

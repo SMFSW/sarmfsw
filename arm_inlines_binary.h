@@ -26,7 +26,7 @@ __INLINE DWORD maskBits(const BYTE bits)
 
 	for (uintCPU_t i = 0 ; i < nb ; i++)
 	{
-		mask |= LSHIFT((DWORD) 1, i);
+		mask |= LSHIFT(1UL, i);
 	}
 
 	return mask;
@@ -48,7 +48,7 @@ __INLINE BYTE nbBitsState(const DWORD val, const BYTE bits, const BOOL state)
 
 	for (uintCPU_t i = 0 ; i < nb ; i++)
 	{
-		if ((val & LSHIFT((DWORD) 1, i)) != 0U)
+		if ((val & LSHIFT(1UL, i)) != 0U)
 		{
 			ret++;
 		}
@@ -58,7 +58,7 @@ __INLINE BYTE nbBitsState(const DWORD val, const BYTE bits, const BOOL state)
 	{
 		ret = (BYTE) nb - ret;
 	}
-	
+
 	return ret;
 }
 
@@ -78,7 +78,7 @@ __INLINE SDWORD getMSBitSet(const DWORD val)
 	for (uintCPU_t i = nb_bits ; i > 0U ; i--)
 	{
 		const uintCPU_t bit = i - 1U;
-		if ((val & LSHIFT((DWORD) 1, bit)) != 0U)
+		if ((val & LSHIFT(1UL, bit)) != 0U)
 		{
 			ret = (SDWORD) bit;
 			break;
@@ -104,9 +104,9 @@ __INLINE DWORD swapBits(const DWORD val, const BYTE bits)
 	for (uintCPU_t i = nb + 1U ; i > 0U ; i--)
 	{
 		const uintCPU_t bit = i - 1U;
-		if ((val & LSHIFT((DWORD) 1, bit)) != 0U)
+		if ((val & LSHIFT(1UL, bit)) != 0U)
 		{
-			swap |= LSHIFT((DWORD) 1, (nb - bit));
+			swap |= LSHIFT(1UL, (nb - bit));
 		}
 	}
 

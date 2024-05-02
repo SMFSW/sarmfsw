@@ -19,7 +19,7 @@
 **/
 __INLINE BYTE INLINE__ conv16to8Bits(const WORD val)
 {
-	return (BYTE) RSHIFT(val, 8);
+	return (BYTE) RSHIFT16(val, 8);
 }
 
 
@@ -39,7 +39,7 @@ __INLINE WORD INLINE__ conv8to16Bits(const BYTE val)
 **/
 __INLINE WORD INLINE__ conv32to16Bits(const DWORD val)
 {
-	return (WORD) RSHIFT(val, 16U);
+	return (WORD) RSHIFT32(val, 16U);
 }
 
 
@@ -82,7 +82,7 @@ __INLINE LWORD INLINE__ conv32to64Bits(const DWORD val)
 **/
 __INLINE WORD conv8upto16Bits(const BYTE val, const BYTE nb)
 {
-	const uintCPU_t rem = 8U - (uintCPU_t) nb;
+	const BYTE rem = 8U - nb;
 	return LSHIFT16(val, nb) | RSHIFT16(val, rem);
 }
 
@@ -96,7 +96,7 @@ __INLINE WORD conv8upto16Bits(const BYTE val, const BYTE nb)
 **/
 __INLINE DWORD conv16upto32Bits(const WORD val, const BYTE nb)
 {
-	const uintCPU_t rem = 16U - (uintCPU_t) nb;
+	const BYTE rem = 16U - nb;
 	return LSHIFT32(val, nb) | RSHIFT32(val, rem);
 }
 
@@ -110,7 +110,7 @@ __INLINE DWORD conv16upto32Bits(const WORD val, const BYTE nb)
 **/
 __INLINE LWORD conv32upto64Bits(const DWORD val, const BYTE nb)
 {
-	const uintCPU_t rem = 32U - (uintCPU_t) nb;
+	const BYTE rem = 32U - nb;
 	return LSHIFT64(val, nb) | RSHIFT64(val, rem);
 }
 
@@ -125,12 +125,12 @@ __INLINE LWORD conv32upto64Bits(const DWORD val, const BYTE nb)
 **/
 __INLINE DWORD convXtoYBits(const DWORD val, const BYTE from, const BYTE to)
 {
-	const intCPU_t diff_bits = MIN(32U, to) - MIN(32U, from);
-	const uintCPU_t shift = abs(diff_bits);
+	const SBYTE diff_bits = MIN(32U, to) - MIN(32U, from);
+	const BYTE shift = abs(diff_bits);
 	DWORD conv = val & maskBits(from);
 
-	if (diff_bits > 0)	{ conv = LSHIFT(val, shift) | RSHIFT(val, from - shift); }
-	if (diff_bits < 0)	{ conv = RSHIFT(val, shift); }
+	if (diff_bits > 0)	{ conv = LSHIFT32(conv, shift) | RSHIFT32(conv, (BYTE) (from - shift)); }
+	if (diff_bits < 0)	{ conv = RSHIFT32(conv, shift); }
 
 	return conv;
 }
