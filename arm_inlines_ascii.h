@@ -93,12 +93,12 @@ __INLINE CHAR INLINE__ HexToASCII(const BYTE hex)
 __INLINE BYTE ASCIIToHex(const CHAR ascii)
 {
 	BYTE h = (BYTE) ascii;
-	
+
 	if ((ascii >= '0') && (ascii <= '9'))		{ h -= 0x30U; }
 	else if ((ascii >= 'A') && (ascii <= 'F'))	{ h -= 0x37U; }
 	else if ((ascii >= 'a') && (ascii <= 'f'))	{ h -= 0x57U; }
 	else										{ h = 0xFFU; }
-	
+
 	return h;
 }
 
@@ -137,10 +137,10 @@ __INLINE DWORD NONNULL__ strHexToInt(const CHAR * const pASCII, const BYTE len)
 
 	for (uintCPU_t i = len ; i > 0U ; i--)
 	{
-		const BYTE nybble = ASCIIToHex(pASCII[i - 1U]);
+		const DWORD nybble = ASCIIToHex(pASCII[i - 1U]);
 		if (nybble == 0xFFU)	{ break; }
 
-		hex |= LSHIFT(nybble, shift);
+		hex |= LSHIFT32(nybble, shift);
 		shift += 4U;
 	}
 
