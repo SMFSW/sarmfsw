@@ -16,8 +16,9 @@ var searchData=
   ['tpsinf_5fms_13',['TPSINF_MS',['../arm__inlines__ticks_8h.html#a5ba90b95ab9aad46c8cf196dbdf843cd',1,'arm_inlines_ticks.h']]],
   ['tpssup_5fms_14',['TPSSUP_MS',['../arm__inlines__ticks_8h.html#a72196af91b2f117d8e208fdbae0173a9',1,'arm_inlines_ticks.h']]],
   ['travis_20ci_20com_20smfsw_20sarmfsw_20img_20src_20https_3a_20app_20travis_20ci_20com_20smfsw_20sarmfsw_20svg_20branch_20master_20alt_20build_20status_20a_15',['sarmfsw &lt;a href=&quot;https://app.travis-ci.com/SMFSW/sarmfsw&quot; &gt;&lt;img src=&quot;https://app.travis-ci.com/SMFSW/sarmfsw.svg?branch=master&quot; alt=&quot;Build Status&quot;/&gt;&lt;/a&gt;',['../index.html',1,'']]],
-  ['true_16',['TRUE',['../arm__macros_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d',1,'arm_macros.h']]],
-  ['true_17',['True',['../arm__macros_8h.html#add3ca9eefe3b5b754426f51d3043e579',1,'arm_macros.h']]],
-  ['typ_5fmbr_18',['TYP_MBR',['../arm__macros_8h.html#a945f756368ec4c5e11befc58b4b91dc1',1,'arm_macros.h']]],
-  ['typ_5fmbr_5ftyp_19',['TYP_MBR_TYP',['../arm__macros_8h.html#a26bc59a26ebb159518e4717ffa37cc6d',1,'arm_macros.h']]]
+  ['travis_20ci_20com_20smfsw_20sarmfsw_20svg_20branch_20master_20alt_20build_20status_20a_16',['sarmfsw &lt;a href=&quot;https://app.travis-ci.com/SMFSW/sarmfsw&quot; &gt;&lt;img src=&quot;https://app.travis-ci.com/SMFSW/sarmfsw.svg?branch=master&quot; alt=&quot;Build Status&quot;/&gt;&lt;/a&gt;',['../index.html',1,'']]],
+  ['true_17',['TRUE',['../arm__macros_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d',1,'arm_macros.h']]],
+  ['true_18',['True',['../arm__macros_8h.html#add3ca9eefe3b5b754426f51d3043e579',1,'arm_macros.h']]],
+  ['typ_5fmbr_19',['TYP_MBR',['../arm__macros_8h.html#a945f756368ec4c5e11befc58b4b91dc1',1,'arm_macros.h']]],
+  ['typ_5fmbr_5ftyp_20',['TYP_MBR_TYP',['../arm__macros_8h.html#a26bc59a26ebb159518e4717ffa37cc6d',1,'arm_macros.h']]]
 ];

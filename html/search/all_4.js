@@ -8,7 +8,7 @@ var searchData=
   ['deprecated_5f_5f_5',['DEPRECATED__',['../arm__attributes_8h.html#aee733f0755af9ea7f7559b9be45def05',1,'arm_attributes.h']]],
   ['deviations_20list_6',['MISRA C:2012 Deviations List',['../_m_i_s_r_a.html',1,'']]],
   ['diinterrupts_7',['diInterrupts',['../arm__chip__ino_8h.html#aeadc423c6937709ec2bbfbb3e3c68e3a',1,'diInterrupts:&#160;arm_chip_ino.h'],['../arm__chip__pic_8h.html#aeadc423c6937709ec2bbfbb3e3c68e3a',1,'diInterrupts:&#160;arm_chip_pic.h'],['../arm__cmsis_8h.html#aeadc423c6937709ec2bbfbb3e3c68e3a',1,'diInterrupts:&#160;arm_cmsis.h']]],
-  ['dword_8',['DWord',['../unionu_d_word__i.html#ae6629d5249fab79c97271c9a381ebed3',1,'uDWord_i::DWord'],['../unionu_l_word__i.html#ac0a0d4ccb44ae1635e089913f44f369d',1,'uLWord_i::DWord']]],
-  ['dword_9',['DWORD',['../arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2',1,'arm_typedefs.h']]],
+  ['dword_8',['DWORD',['../arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2',1,'arm_typedefs.h']]],
+  ['dword_9',['DWord',['../unionu_d_word__i.html#ae6629d5249fab79c97271c9a381ebed3',1,'uDWord_i::DWord'],['../unionu_l_word__i.html#ac0a0d4ccb44ae1635e089913f44f369d',1,'uLWord_i::DWord']]],
   ['dwords_10',['DWords',['../unionu_l_word__i.html#a7a19e2e4cca82f7fee50c9d8323d5950',1,'uLWord_i']]]
 ];

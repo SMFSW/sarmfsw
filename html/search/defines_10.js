@@ -6,7 +6,7 @@ var searchData=
   ['scale_5fval_5ft_3',['SCALE_VAL_T',['../arm__macros_8h.html#a76f53cb67bc7f1e4c885b87335e7b662',1,'arm_macros.h']]],
   ['section_5f_5f_4',['SECTION__',['../arm__attributes_8h.html#adef3770cc970cb5e7bd47c58224149f8',1,'arm_attributes.h']]],
   ['set_5fbits_5',['SET_BITS',['../arm__macros_8h.html#a32e12cdc4515de294c7f3005d3c770f9',1,'arm_macros.h']]],
-  ['set_5fbits_5fval_6',['SET_BITS_VAL',['../arm__macros_8h.html#a36f8749a10d3021f66f0fbf0676f76d4',1,'arm_macros.h']]],
+  ['set_5fbits_5fval_6',['SET_BITS_VAL',['../arm__macros_8h.html#a05e8f9600a919a32cf8092b8b8acb828',1,'arm_macros.h']]],
   ['split_5ffloat_5fto_5fints_7',['SPLIT_FLOAT_TO_INTS',['../arm__inlines__float_8h.html#a8bcb82043226dbf64a6e957bcc1e9c63',1,'arm_inlines_float.h']]],
   ['sso_8',['SSO',['../arm__attributes_8h.html#a9e148fd5aac0a0fdc9fbcae871216121',1,'arm_attributes.h']]],
   ['stm32_5fflashsize_9',['STM32_FLASHSIZE',['../arm__chip__stm32_8h.html#a0389f0023fe941b7977d3faf862e8c4a',1,'arm_chip_stm32.h']]],

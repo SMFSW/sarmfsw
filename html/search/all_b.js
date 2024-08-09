@@ -13,6 +13,6 @@ var searchData=
   ['lshift32_10',['LSHIFT32',['../arm__macros_8h.html#a517ef11743e8eb0b1a90c7ed81a41902',1,'arm_macros.h']]],
   ['lshift64_11',['LSHIFT64',['../arm__macros_8h.html#a8746d881d2ecbb2c9caabe0745ba7595',1,'arm_macros.h']]],
   ['lshift8_12',['LSHIFT8',['../arm__macros_8h.html#a5071b3f74d26c901f48d60e53a1b01eb',1,'arm_macros.h']]],
-  ['lword_13',['LWord',['../unionu_l_word__i.html#ad2071c0bcb12c962005addc4b77f0902',1,'uLWord_i']]],
-  ['lword_14',['LWORD',['../arm__typedefs_8h.html#a53ce154ee4efa73480bde2c7fff08da3',1,'arm_typedefs.h']]]
+  ['lword_13',['LWORD',['../arm__typedefs_8h.html#a53ce154ee4efa73480bde2c7fff08da3',1,'arm_typedefs.h']]],
+  ['lword_14',['LWord',['../unionu_l_word__i.html#ad2071c0bcb12c962005addc4b77f0902',1,'uLWord_i']]]
 ];
