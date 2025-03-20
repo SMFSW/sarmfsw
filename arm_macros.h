@@ -1,6 +1,6 @@
 /*!\file arm_macros.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2024, SMFSW
+** \copyright MIT (c) 2017-2025, SMFSW
 ** \brief ARM common macros
 ** \note If used CPU only handles single shifts, you may define SINGLE_SHIFT_ONLY_OPCODE at project level (see \ref LSHIFT & \ref RSHIFT)
 ** \MISRA Header scope deviation has been granted for following rules:\n
@@ -192,6 +192,11 @@
 #define binEval(exp)		((exp) ? true : false)		//!< boolean evaluation of expression \p exp
 #define nbinEval(exp)		(!binEval(exp))				//!< complemented boolean evaluation of expression \p exp
 
+#define isNull(p)			((p) == pNull)				//!< Test is \p p is null
+#define isNotNull(p)		((p) != pNull)				//!< Test is \p p is not null
+
+#define isOdd(v)			(((v) & 1) == 1)			//!< Test is \p v is odd
+#define isEven(v)			(((v) & 1) == 0)			//!< Test is \p v is even
 
 #ifdef min
 #undef min		//!\note Undefine \c min if already defined in some other library
@@ -254,7 +259,7 @@
 #define CLAMP(v, mn, mx)	({	__TYPEOF(v) _v = (v);		\
 								__TYPEOF(mn) _mn = (mn);	\
 								__TYPEOF(mx) _mx = (mx);	\
-								(_v < _mn) ? _mn : ((_v > _mx) ? _mx : _v); })	//!< Returns the value between \p mn and \p mx from \p val
+								(_v < _mn) ? _mn : ((_v > _mx) ? _mx : _v); })	//!< Returns the value between \p mn and \p mx from \p v
 
 
 //! \warning OVF_DIFF only works with unsigned integers

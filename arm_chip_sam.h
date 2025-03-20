@@ -1,6 +1,6 @@
 /*!\file arm_chip_sam.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2024, SMFSW
+** \copyright MIT (c) 2017-2025, SMFSW
 ** \brief ARM common macros for Atmel SAM families
 ** \warning Do not use macros for function qualifiers in this file
 ** \attention	On SAM families you should configure a timer to count for ms.

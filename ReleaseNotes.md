@@ -2,7 +2,7 @@
 
 The MIT License (MIT)
 
-Copyright (c) 2017-2024 SMFSW (Sebastien Bizien)
+Copyright (c) 2017-2025 SMFSW (Sebastien Bizien)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,8 @@ SOFTWARE.
 ## v3.7
 
 * Partial MISRA C2012 compliance
+* arm_macros: isNull & isNotNull added
+* arm_macros: isOdd & isEven added
 * arm_macros: SET_BITS_VAL also applies mask on given value to apply
 * arm_inlines_ascii: strHexToInt fix for 8b/16b platforms
 * arm_inlines_var_test: inTolerance fix for negative reference values

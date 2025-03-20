@@ -1,6 +1,6 @@
 /*!\file arm_chip_pic.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2024, SMFSW
+** \copyright MIT (c) 2017-2025, SMFSW
 ** \brief Common macros for PIC
 ** \warning Do not use macros for function qualifiers in this file
 ** \attention	On PIC families you should configure a timer to count for ms.

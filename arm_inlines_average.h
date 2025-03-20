@@ -1,6 +1,6 @@
 /*!\file arm_inlines_average.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2024, SMFSW
+** \copyright MIT (c) 2017-2025, SMFSW
 ** \brief Averaging inlines
 */
 /****************************************************************/

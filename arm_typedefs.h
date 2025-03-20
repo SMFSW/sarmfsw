@@ -1,6 +1,6 @@
 /*!\file arm_typedefs.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2024, SMFSW
+** \copyright MIT (c) 2017-2025, SMFSW
 ** \brief ARM common typedefs
 ** \warning	Endianness for unions shall be checked following target / compiler to avoid potential headaches!
 ** \warning sBitfieldXX are defined from lsb to msb as most compiler does by default; if it's not the case,
