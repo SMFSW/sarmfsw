@@ -22,6 +22,7 @@ SOFTWARE.
 
 ## v3.7
 
+* arm_cmsis: update for STM32 families (also added H7RS, MP2, MP13, N6, WB0 families)
 * Partial MISRA C2012 compliance
 * arm_macros: isNull & isNotNull added
 * arm_macros: isOdd & isEven added
