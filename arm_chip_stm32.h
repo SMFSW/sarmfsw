@@ -41,7 +41,9 @@
 /*** STM32 Special Registers ***/
 #define STM32_OPTION_BYTES	(VAL_AT(OB_BASE, uint64_t))			//!< Option Bytes register address content
 #define STM32_FLASHSIZE		(VAL_AT(FLASHSIZE_BASE, uint16_t))	//!< Flash size register address content
-#define STM32_UNIQUE_ID		(VAL_AT(FLASHSIZE_UID, uint32_t))	//!< Unique ID register address content
+#define STM32_UNIQUE_ID1	(VAL_AT(UID_BASE, uint32_t))		//!< Unique ID 1 register address content
+#define STM32_UNIQUE_ID2	(VAL_AT(UID_BASE+4, uint32_t))		//!< Unique ID 2 register address content
+#define STM32_UNIQUE_ID3	(VAL_AT(UID_BASE+8, uint32_t))		//!< Unique ID 3 register address content
 
 
 /*** Flash size ***/

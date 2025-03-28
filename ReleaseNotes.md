@@ -22,15 +22,17 @@ SOFTWARE.
 
 ## v3.7
 
-* arm_cmsis: update for STM32 families (also added H7RS, MP2, MP13, N6, WB0 families)
 * Partial MISRA C2012 compliance
+* arm_chip_stm32: STM32_UNIQUE_ID split to get 3 different parts of unique ID
+* arm_inlines_float: get_fp_dec fix for negative values
+* arm_cmsis: update for STM32 families (also added H7RS, MP2, MP13, N6, WB0 families)
 * arm_macros: isNull & isNotNull added
 * arm_macros: isOdd & isEven added
 * arm_macros: SET_BITS_VAL also applies mask on given value to apply
 * arm_inlines_ascii: strHexToInt fix for 8b/16b platforms
 * arm_inlines_var_test: inTolerance fix for negative reference values
 * arm_cmsis: SARMFSW_NO_CHIP_HAL symbol implementation
-* arm_cmsis & arm_chip_xxx: HALTicks symbol refactoring and checks added for provided function declaration consitency
+* arm_cmsis & arm_chip_xxx: HALTicks symbol refactoring and checks added for provided function declaration consistency
 * arm_macros: TEST_BITS_VAL & TEST_MASK_VAL macros added
 * arm_macros: Register intended macros (such as GET_BITS...) encloses tested variable/register/values in parenthesis
 * arm_macros: OVF_DIFF fix, thanks to @Simben

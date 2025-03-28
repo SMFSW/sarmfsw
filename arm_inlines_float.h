@@ -45,8 +45,8 @@ __INLINE DWORD get_fp_dec(const double f, const BYTE nb)
 	while (digits-- > 0) 	{ mul *= 10; }
 
 	double dec = fabs(f);
-	dec -= (double) ((DWORD) f);
-	
+	dec -= (double) ((DWORD) dec);
+
 	return (DWORD) (dec * (double) mul);
 }
 
