@@ -146,9 +146,15 @@ Macros</h2></td></tr>
 <tr class="memitem:a0389f0023fe941b7977d3faf862e8c4a" id="r_a0389f0023fe941b7977d3faf862e8c4a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0389f0023fe941b7977d3faf862e8c4a">STM32_FLASHSIZE</a>&#160;&#160;&#160;(<a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>(FLASHSIZE_BASE, uint16_t))</td></tr>
 <tr class="memdesc:a0389f0023fe941b7977d3faf862e8c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flash size register address content.  <br /></td></tr>
 <tr class="separator:a0389f0023fe941b7977d3faf862e8c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16d4383fc683b8798160a1409edacb91" id="r_a16d4383fc683b8798160a1409edacb91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16d4383fc683b8798160a1409edacb91">STM32_UNIQUE_ID</a>&#160;&#160;&#160;(<a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>(FLASHSIZE_UID, uint32_t))</td></tr>
-<tr class="memdesc:a16d4383fc683b8798160a1409edacb91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique ID register address content.  <br /></td></tr>
-<tr class="separator:a16d4383fc683b8798160a1409edacb91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad684fd2a7af6d137f1164cc5b0eda1e6" id="r_ad684fd2a7af6d137f1164cc5b0eda1e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad684fd2a7af6d137f1164cc5b0eda1e6">STM32_UNIQUE_ID1</a>&#160;&#160;&#160;(<a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>(UID_BASE, uint32_t))</td></tr>
+<tr class="memdesc:ad684fd2a7af6d137f1164cc5b0eda1e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique ID 1 register address content.  <br /></td></tr>
+<tr class="separator:ad684fd2a7af6d137f1164cc5b0eda1e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb598ebac2a71aeea7bbd091d596bc37" id="r_acb598ebac2a71aeea7bbd091d596bc37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb598ebac2a71aeea7bbd091d596bc37">STM32_UNIQUE_ID2</a>&#160;&#160;&#160;(<a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>(UID_BASE+4, uint32_t))</td></tr>
+<tr class="memdesc:acb598ebac2a71aeea7bbd091d596bc37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique ID 2 register address content.  <br /></td></tr>
+<tr class="separator:acb598ebac2a71aeea7bbd091d596bc37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace14f3e06b82d448d7d117ec17f60931" id="r_ace14f3e06b82d448d7d117ec17f60931"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace14f3e06b82d448d7d117ec17f60931">STM32_UNIQUE_ID3</a>&#160;&#160;&#160;(<a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>(UID_BASE+8, uint32_t))</td></tr>
+<tr class="memdesc:ace14f3e06b82d448d7d117ec17f60931"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique ID 3 register address content.  <br /></td></tr>
+<tr class="separator:ace14f3e06b82d448d7d117ec17f60931"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae69620948dea1b76e0ab7843ab719db7" id="r_ae69620948dea1b76e0ab7843ab719db7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae69620948dea1b76e0ab7843ab719db7">FLASH_SIZE</a>&#160;&#160;&#160;(<a class="el" href="#a0389f0023fe941b7977d3faf862e8c4a">STM32_FLASHSIZE</a> * 1024)</td></tr>
 <tr class="memdesc:ae69620948dea1b76e0ab7843ab719db7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flash size in bytes.  <br /></td></tr>
 <tr class="separator:ae69620948dea1b76e0ab7843ab719db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -354,19 +360,51 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="a16d4383fc683b8798160a1409edacb91" name="a16d4383fc683b8798160a1409edacb91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16d4383fc683b8798160a1409edacb91">&#9670;&#160;</a></span>STM32_UNIQUE_ID</h2>
+<a id="ad684fd2a7af6d137f1164cc5b0eda1e6" name="ad684fd2a7af6d137f1164cc5b0eda1e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad684fd2a7af6d137f1164cc5b0eda1e6">&#9670;&#160;</a></span>STM32_UNIQUE_ID1</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define STM32_UNIQUE_ID&#160;&#160;&#160;(<a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>(FLASHSIZE_UID, uint32_t))</td>
+          <td class="memname">#define STM32_UNIQUE_ID1&#160;&#160;&#160;(<a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>(UID_BASE, uint32_t))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Unique ID register address content. </p>
+<p>Unique ID 1 register address content. </p>
+
+</div>
+</div>
+<a id="acb598ebac2a71aeea7bbd091d596bc37" name="acb598ebac2a71aeea7bbd091d596bc37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb598ebac2a71aeea7bbd091d596bc37">&#9670;&#160;</a></span>STM32_UNIQUE_ID2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STM32_UNIQUE_ID2&#160;&#160;&#160;(<a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>(UID_BASE+4, uint32_t))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unique ID 2 register address content. </p>
+
+</div>
+</div>
+<a id="ace14f3e06b82d448d7d117ec17f60931" name="ace14f3e06b82d448d7d117ec17f60931"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace14f3e06b82d448d7d117ec17f60931">&#9670;&#160;</a></span>STM32_UNIQUE_ID3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STM32_UNIQUE_ID3&#160;&#160;&#160;(<a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>(UID_BASE+8, uint32_t))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unique ID 3 register address content. </p>
 
 </div>
 </div>

@@ -94,13 +94,16 @@ $(function(){ initResizable(false); });
 <h1>v3.7</h1>
 <ul>
 <li>Partial MISRA C2012 compliance</li>
+<li>arm_chip_stm32: STM32_UNIQUE_ID split to get 3 different parts of unique ID</li>
+<li>arm_inlines_float: get_fp_dec fix for negative values</li>
+<li>arm_cmsis: update for STM32 families (also added H7RS, MP2, MP13, N6, WB0 families)</li>
 <li>arm_macros: isNull &amp; isNotNull added</li>
 <li>arm_macros: isOdd &amp; isEven added</li>
 <li>arm_macros: SET_BITS_VAL also applies mask on given value to apply</li>
 <li>arm_inlines_ascii: strHexToInt fix for 8b/16b platforms</li>
 <li>arm_inlines_var_test: inTolerance fix for negative reference values</li>
 <li>arm_cmsis: SARMFSW_NO_CHIP_HAL symbol implementation</li>
-<li>arm_cmsis &amp; arm_chip_xxx: HALTicks symbol refactoring and checks added for provided function declaration consitency</li>
+<li>arm_cmsis &amp; arm_chip_xxx: HALTicks symbol refactoring and checks added for provided function declaration consistency</li>
 <li>arm_macros: TEST_BITS_VAL &amp; TEST_MASK_VAL macros added</li>
 <li>arm_macros: Register intended macros (such as GET_BITS...) encloses tested variable/register/values in parenthesis</li>
 <li>arm_macros: OVF_DIFF fix, thanks to @Simben</li>
