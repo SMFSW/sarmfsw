@@ -23,6 +23,7 @@ SOFTWARE.
 ## v3.7
 
 * Partial MISRA C2012 compliance
+* arm_errors: error codes added
 * arm_chip_stm32: STM32_UNIQUE_ID split to get 3 different parts of unique ID
 * arm_inlines_float: get_fp_dec fix for negative values
 * arm_cmsis: update for STM32 families (also added H7RS, MP2, MP13, N6, WB0 families)
