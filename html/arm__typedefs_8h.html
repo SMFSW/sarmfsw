@@ -245,8 +245,8 @@ Enumerations</h2></td></tr>
 <dd>
 sBitfieldXX are defined from lsb to msb as most compiler does by default; if it's not the case, try to find a compiler directive or pragma to reverse bitfield order; if not available, define REVERSE_BITFIELD symbol at project level. </dd>
 <dd>
-For Arduino platform, some binary.h definitions needs to be undefined. If you find them useful, define I_FIND_BINARY_HEADER_USEFUL in project to redefine them. Please note, B0 &amp; B1 Bytes sub-structures of sBitfieldXX will not be available anymore (please refer to following note) </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>For Arduino platform, prefer ANSI-C(pp) 0b notation for binary representation, instead of using derived defines from Arduino binary.h </dd>
+For Arduino platform, some binary.h definitions needs to be undefined. If you find them useful, define USE_INO_BINARY_HEADER before including <a class="el" href="sarmfsw_8h.html" title="sarmfsw (ARM) common headers">sarmfsw.h</a> to keep them defined. Please note, B0 &amp; B1 Bytes sub-structures of unions defined hereafter will not be available in this case. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>For Arduino platform, prefer ANSI-C(pp) 0b notation for binary representation, instead of using defines from Arduino binary.h </dd>
 <dd>
 STDBOOL_NDEF can be defined at project level if stdint.h doesn't exist for target compiler </dd>
 <dd>

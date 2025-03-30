@@ -107,18 +107,9 @@ $(function(){ initResizable(false); });
 <li><code>REVERSE_BITFIELD</code>: By default bitfields are stored from lsb to msb; if not the case with used compiler, use a pragma or define this symbol</li>
 <li><code>STDBOOL_NDEF</code>: define this symbol in case used compiler doesn't have stdbool.h header</li>
 <li><code>STDINT_NDEF</code>: define this symbol in case used compiler doesn't have stdint.h header</li>
-<li><code>I_FIND_BINARY_HEADER_USEFUL</code>: For Arduino platform, if using defines from binary.h, define this symbol (not recommended, use 0bxxx for binary instead)</li>
+<li><code>USE_INO_BINARY_HEADER</code>: For Arduino platform, some binary.h definitions needs to be undefined. If you find them useful, define USE_INO_BINARY_HEADER before including <a class="el" href="sarmfsw_8h.html" title="sarmfsw (ARM) common headers">sarmfsw.h</a> to keep them defined. Please note, B0 &amp; B1 Bytes sub-structures of unions defined hereafter will not be available in this case. (0bxxx notation can be used for binary instead)</li>
 <li><code>SINGLE_SHIFT_ONLY_OPCODE</code>: If used CPU only handles single shifts opcode, define this symbol to optimize use of LSHIFTx &amp; RSHIFTx with constants</li>
 <li><code>NO_STATIC_FUNC</code> or <code>UNITY_TESTING</code>: using __STATIC keyword, functions will always be visible by linker if set (useful for unit testing)</li>
-</ul>
-<h1>Help would be appreciated:</h1>
-<ul>
-<li>Cosmic compiler users: attributes aliases implementation (or related documentation)</li>
-<li>Texas Instruments chips users: defining families &amp; sub-families for chips in <a class="el" href="arm__cmsis_8h.html" title="ARM link with CMSIS files.">arm_cmsis.h</a> &amp; peripheral includes (if available)</li>
-<li>Any ARM chip provider users: defining families &amp; sub-families for chips in <a class="el" href="arm__cmsis_8h.html" title="ARM link with CMSIS files.">arm_cmsis.h</a> &amp; peripheral includes (if available)</li>
-<li>Atmel SAM users: defining new families &amp; sub-families for chips &amp; rationalization of peripheral includes (arm_peripherals.h)</li>
-<li>Arduino platform users: miscellaneous improvements (not related to &lt;32b optimizations, ARM core being the main focus of sarmfsw library)</li>
-<li>No redeeming ARM users: improvements &amp; optimizations, additions and bug fixes are welcome as long as it still remains in the spirit of C header helpers</li>
 </ul>
 <h1>Notes</h1>
 <p>Macros/Inlines name standardization (case) not always respected for backward compatibility with older versions:</p><ul>
