@@ -7,11 +7,10 @@
 **			try to find a compiler directive or pragma to reverse bitfield order;
 **			if not available, define REVERSE_BITFIELD symbol at project level.
 ** \warning	For Arduino platform, some binary.h definitions needs to be undefined.
-**			If you find them useful, define I_FIND_BINARY_HEADER_USEFUL in project to redefine them.
-**			Please note, B0 & B1 Bytes sub-structures of sBitfieldXX will not be available anymore
-**			(please refer to following note)
+**			If you find them useful, define USE_INO_BINARY_HEADER before including sarmfsw.h to keep them defined.
+**			Please note, B0 & B1 Bytes sub-structures of unions defined hereafter will not be available in this case.
 ** \note	For Arduino platform, prefer ANSI-C(pp) 0b notation for binary representation,
-** 			instead of using derived defines from Arduino binary.h
+** 			instead of using defines from Arduino binary.h
 ** \note	STDBOOL_NDEF can be defined at project level if stdint.h doesn't exist for target compiler
 ** \note	STDINT_NDEF can be defined at project level if stdint.h doesn't exist for target compiler
 ** \MISRA Header scope deviation has been granted for following rules:\n
@@ -426,7 +425,6 @@ typedef struct sBitfield64_i {
 	#undef B1
 #endif /* defined(ARDUINO) */
 
-
 /*!\union uByte
 ** \brief Union for BYTE
 **/
@@ -538,15 +536,6 @@ typedef union uLWord_i {
 	} Bytes;
 	sBitfield64		Bits;		//!< Bits
 } uLWord;
-
-
-#if defined(ARDUINO)
-#if defined(I_FIND_BINARY_HEADER_USEFUL)
-	// Redefine binary.h definitions used here
-	#define B0 0
-	#define B1 1
-#endif /* defined(I_FIND_BINARY_HEADER_USEFULL) */
-#endif /* defined(ARDUINO) */
 
 
 /****************************************************************/

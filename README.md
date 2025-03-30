@@ -28,20 +28,14 @@ Library has been updated to become compatible with Arduino & other 8/16bit platf
 
 * `STDBOOL_NDEF`: define this symbol in case used compiler doesn't have stdbool.h header
 * `STDINT_NDEF`: define this symbol in case used compiler doesn't have stdint.h header
-* `I_FIND_BINARY_HEADER_USEFUL`: For Arduino platform, if using defines from binary.h, define this symbol (not recommended, use 0bxxx for binary instead)
+* `USE_INO_BINARY_HEADER`: For Arduino platform, some binary.h definitions needs to be undefined.
+	If you find them useful, define USE_INO_BINARY_HEADER before including sarmfsw.h to keep them defined.
+	Please note, B0 & B1 Bytes sub-structures of unions defined hereafter will not be available in this case.
+	(0bxxx notation can be used for binary instead)
 
 * `SINGLE_SHIFT_ONLY_OPCODE`: If used CPU only handles single shifts opcode, define this symbol to optimize use of LSHIFTx & RSHIFTx with constants
 
 * `NO_STATIC_FUNC` or `UNITY_TESTING`: using __STATIC keyword, functions will always be visible by linker if set (useful for unit testing)
-
-## Help would be appreciated:
-
-* Cosmic compiler users: attributes aliases implementation (or related documentation)
-* Texas Instruments chips users: defining families & sub-families for chips in arm_cmsis.h & peripheral includes (if available)
-* Any ARM chip provider users: defining families & sub-families for chips in arm_cmsis.h & peripheral includes (if available)
-* Atmel SAM users: defining new families & sub-families for chips & rationalization of peripheral includes (arm_peripherals.h)
-* Arduino platform users: miscellaneous improvements (not related to <32b optimizations, ARM core being the main focus of sarmfsw library)
-* No redeeming ARM users: improvements & optimizations, additions and bug fixes are welcome as long as it still remains in the spirit of C header helpers
 
 ## Notes
 

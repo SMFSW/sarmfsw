@@ -44,6 +44,16 @@
 #endif
 
 
+#if !defined(USE_INO_BINARY_HEADER)
+// Undefine binary.h definitions used by \file arm_typedefs.h included from Arduino.h
+#undef B0
+#undef B1
+#else
+#define B0 0
+#define B1 1
+#endif
+
+
 /*!\enum eResetSource
 ** \brief Source of last reset
 **/
