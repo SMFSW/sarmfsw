@@ -50,9 +50,9 @@ typedef struct sLinearFlexArray {
 
 /*!\brief 2 dimensional linearization
 **
-** \param [in] array - pointer to 2 dimensional array
-** \param [in] nb - Number of items of the array
-** \param [in] val - Value to evaluate
+** \param[in] array - pointer to 2 dimensional array
+** \param[in] nb - Number of items of the array
+** \param[in] val - Value to evaluate
 ** \return Evaluated value in regard of val
 **/
 __INLINE SDWORD NONNULL__ linearization_eval(const SDWORD array[][2], const DWORD nb, const SDWORD val)
@@ -83,8 +83,8 @@ __INLINE SDWORD NONNULL__ linearization_eval(const SDWORD array[][2], const DWOR
 
 /*!\brief 2 dimensional linearization (flexible member array)
 **
-** \param [in] pArray - pointer to flexible member array structure
-** \param [in] val - Value to evaluate
+** \param[in] pArray - pointer to flexible member array structure
+** \param[in] val - Value to evaluate
 ** \return Evaluated value in regard of val
 **/
 __INLINE SDWORD NONNULL_INLINE__ linearization_eval_flex(const sLinearFlexArray * const pArray, const SDWORD val) {

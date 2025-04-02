@@ -23,6 +23,8 @@ SOFTWARE.
 ## v3.7
 
 * Partial MISRA C2012 compliance
+* arm_stdclib: renamed to arm_inlines_stdclib, total refactoring and inlines added
+* arm_attributes: PRINTF__ & FMT__ attributes added (+ some compilers attributes review)
 * I_FIND_BINARY_HEADER_USEFUL symbol renamed to USE_INO_BINARY_HEADER
 * arm_typedefs & arm_chip_ino: fix for USE_INO_BINARY_HEADER (re-define B0 & B1)
 * arm_errors: error codes added

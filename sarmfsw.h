@@ -16,7 +16,6 @@
 #include "arm_typedefs.h"		// Common typedefs
 
 #include "arm_macros.h"			// Common macros
-#include "arm_stdclib.h"		// Common standard c library wrapper macros
 
 #include "arm_cmsis.h"			// HAL & Drivers (following defined platform)
 #include "arm_hal_peripheral.h"	// HAL peripherals includes (following defined platform)

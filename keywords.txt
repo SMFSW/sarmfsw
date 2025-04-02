@@ -131,21 +131,31 @@ SCALE_VAL_T	KEYWORD2
 BYTE_TO_PERC	KEYWORD2
 PERC_TO_BYTE	KEYWORD2
 
-malloc_assert	KEYWORD2
-
 HALTicks	KEYWORD2
 HALERRtoFCTERR	KEYWORD2
 
-str_clr	KEYWORD2
-str_clr_safe	KEYWORD2
+malloc_assert	KEYWORD2
+_get_current_heap_address	KEYWORD2
+get_current_heap_address	KEYWORD2
+strclr_full	KEYWORD2
+printExpr	KEYWORD2
+sprintExpr	KEYWORD2
+verbInstr	KEYWORD2
+sverbInstr	KEYWORD2
+verbInc	KEYWORD2
+verbDec	KEYWORD2
+strappend	KEYWORD2
+strnappend	KEYWORD2
+strncat_sz	KEYWORD2
+strclr	KEYWORD2
 str_add_tab	KEYWORD2
 str_add_cr	KEYWORD2
 str_add_lf	KEYWORD2
 str_add_crlf	KEYWORD2
-printExpr	KEYWORD2
-verbInstr	KEYWORD2
-verbInc	KEYWORD2
-verbDec	KEYWORD2
+strn_add_tab	KEYWORD2
+strn_add_cr	KEYWORD2
+strn_add_lf	KEYWORD2
+strn_add_crlf	KEYWORD2
 
 TPSSUP_MS	KEYWORD2
 TPSINF_MS	KEYWORD2

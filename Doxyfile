@@ -2424,6 +2424,7 @@ PREDEFINED             = DOXY=1 \
                          PURE__= \
                          USED__= \
                          NONNULL_INLINE__= \
+                         PRINTF__(...)= \
                          __IO=volatile \
                          __O=volatile \
                          "__I=volatile const" \

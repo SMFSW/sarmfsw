@@ -291,10 +291,6 @@
 #define M_2_3				(2.0 / 3.0)		//!< 2/3 constant approximation
 
 
-/*** Test Macros ***/
-#define malloc_assert(x)	((x) = malloc(sizeof(*(x))), assert((x)))	//!< Asserted malloc
-
-
 /****************************************************************/
 #ifdef __cplusplus
 	}
