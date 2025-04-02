@@ -9,5 +9,6 @@ var searchData=
   ['_5f_5fstdbool_5fdef_6',['__STDBOOL_DEF',['../arm__typedefs_8h.html#a1b225b356e36e42cda8f2408a287c243',1,'arm_typedefs.h']]],
   ['_5f_5fstdint_5fdef_7',['__STDINT_DEF',['../arm__typedefs_8h.html#a3028be9b9d540095fd0a787b4c2bd02b',1,'arm_typedefs.h']]],
   ['_5f_5ftypeof_8',['__TYPEOF',['../arm__attributes_8h.html#a2043c1327d10d27f2afa53d50ab2841c',1,'arm_attributes.h']]],
-  ['_5f_5fweak_9',['__WEAK',['../arm__attributes_8h.html#ac607bf387b29162be6a9b77fc7999539',1,'arm_attributes.h']]]
+  ['_5f_5fweak_9',['__WEAK',['../arm__attributes_8h.html#ac607bf387b29162be6a9b77fc7999539',1,'arm_attributes.h']]],
+  ['_5fget_5fcurrent_5fheap_5faddress_10',['_get_current_heap_address',['../arm__inlines__stdclib_8h.html#a6f85b640ca96872445e5b717a3fb27e3',1,'arm_inlines_stdclib.h']]]
 ];

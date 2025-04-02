@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['halticks_5fprototype_0',['HALTICKS_PROTOTYPE',['../arm__cmsis_8h.html#a65ced2913da496bac48d4707c48582fb',1,'arm_cmsis.h']]],
-  ['hextoascii_1',['HexToASCII',['../arm__inlines__ascii_8h.html#a7d02d8bd9630f8b4a5dbaf6bfdbe547c',1,'arm_inlines_ascii.h']]],
-  ['hextobcd_2',['HexToBCD',['../arm__inlines__bcd_8h.html#a68b92f79d710d733985e18d34713e1cb',1,'arm_inlines_bcd.h']]]
+  ['get_5fcurrent_5fheap_5faddress_0',['get_current_heap_address',['../arm__inlines__stdclib_8h.html#ab86f6bbf523cef86376fb4866e5e4149',1,'arm_inlines_stdclib.h']]],
+  ['get_5ffp_5fdec_1',['get_fp_dec',['../arm__inlines__float_8h.html#a4c187a8ec491bec9a69970e298cdaf73',1,'arm_inlines_float.h']]],
+  ['getmsbitset_2',['getMSBitSet',['../arm__inlines__binary_8h.html#ae8003c8dfb572ebe26a6b5b439dcc19c',1,'arm_inlines_binary.h']]],
+  ['gray2bin_3',['gray2bin',['../arm__inlines__gray_8h.html#a75b2d190a8d80294c31477c0324e970c',1,'arm_inlines_gray.h']]]
 ];

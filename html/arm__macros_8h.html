@@ -324,9 +324,6 @@ Macros</h2></td></tr>
 <tr class="memitem:a1a7a7c8a5273bbd42ceddcfcb6648daa" id="r_a1a7a7c8a5273bbd42ceddcfcb6648daa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a7a7c8a5273bbd42ceddcfcb6648daa">M_2_3</a>&#160;&#160;&#160;(2.0 / 3.0)</td></tr>
 <tr class="memdesc:a1a7a7c8a5273bbd42ceddcfcb6648daa"><td class="mdescLeft">&#160;</td><td class="mdescRight">2/3 constant approximation  <br /></td></tr>
 <tr class="separator:a1a7a7c8a5273bbd42ceddcfcb6648daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1577b5e78439185f691c545b7fe1e529" id="r_a1577b5e78439185f691c545b7fe1e529"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1577b5e78439185f691c545b7fe1e529">malloc_assert</a>(x)</td></tr>
-<tr class="memdesc:a1577b5e78439185f691c545b7fe1e529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserted malloc.  <br /></td></tr>
-<tr class="separator:a1577b5e78439185f691c545b7fe1e529"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ARM common macros. </p>
@@ -447,7 +444,7 @@ Macros</h2></td></tr>
 <div class="line">                                __TYPEOF(mn) _mn = (mn);    \</div>
 <div class="line">                                __TYPEOF(mx) _mx = (mx);    \</div>
 <div class="line">                                (_v &lt; _mn) ? _mn : ((_v &gt; _mx) ? _mx : _v); })</div>
-<div class="ttc" id="aarm__attributes_8h_html_a2043c1327d10d27f2afa53d50ab2841c"><div class="ttname"><a href="arm__attributes_8h.html#a2043c1327d10d27f2afa53d50ab2841c">__TYPEOF</a></div><div class="ttdeci">#define __TYPEOF</div><div class="ttdoc">typeof keyword alias (</div><div class="ttdef"><b>Definition</b> arm_attributes.h:255</div></div>
+<div class="ttc" id="aarm__attributes_8h_html_a2043c1327d10d27f2afa53d50ab2841c"><div class="ttname"><a href="arm__attributes_8h.html#a2043c1327d10d27f2afa53d50ab2841c">__TYPEOF</a></div><div class="ttdeci">#define __TYPEOF</div><div class="ttdoc">typeof keyword alias (</div><div class="ttdef"><b>Definition</b> arm_attributes.h:278</div></div>
 </div><!-- fragment -->
 <p>Returns the value between <code>mn</code> and <code>mx</code> from <code>v</code>. </p>
 
@@ -936,26 +933,6 @@ Macros</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">((<a class="code hl_typedef" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (((<a class="code hl_typedef" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) (lsb)) | <a class="code hl_define" href="#ac67c4dbfe2f188872a0ac531c73e2821">LSHIFT</a>(((<a class="code hl_typedef" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (msb)), 8)))</div>
 </div><!-- fragment -->
 <p>Make <code>WORD</code> from <code>lsb</code> and <code>msb</code>. </p>
-
-</div>
-</div>
-<a id="a1577b5e78439185f691c545b7fe1e529" name="a1577b5e78439185f691c545b7fe1e529"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1577b5e78439185f691c545b7fe1e529">&#9670;&#160;</a></span>malloc_assert</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define malloc_assert</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">((x) = malloc(<span class="keyword">sizeof</span>(*(x))), assert((x)))</div>
-</div><!-- fragment -->
-<p>Asserted malloc. </p>
 
 </div>
 </div>

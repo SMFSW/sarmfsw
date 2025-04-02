@@ -11,7 +11,7 @@ var searchData=
   ['m_5ftwopi_8',['M_TWOPI',['../arm__inlines__angle_8h.html#a333b8c19e9861e0819243b069999f0d3',1,'arm_inlines_angle.h']]],
   ['makelong_9',['MAKELONG',['../arm__macros_8h.html#af6ac9f11b19f6a2c508b3b216eca9cc0',1,'arm_macros.h']]],
   ['makeword_10',['MAKEWORD',['../arm__macros_8h.html#a9a54665fc1a9138ee101d6d83288177a',1,'arm_macros.h']]],
-  ['malloc_5fassert_11',['malloc_assert',['../arm__macros_8h.html#a1577b5e78439185f691c545b7fe1e529',1,'arm_macros.h']]],
+  ['malloc_5fassert_11',['malloc_assert',['../arm__inlines__stdclib_8h.html#a1577b5e78439185f691c545b7fe1e529',1,'arm_inlines_stdclib.h']]],
   ['maskbits_12',['maskBits',['../arm__inlines__binary_8h.html#a22d29769e5b7873a1683e1a8dbc8bc80',1,'arm_inlines_binary.h']]],
   ['master_20alt_20build_20status_20a_13',['sarmfsw &lt;a href=&quot;https://app.travis-ci.com/SMFSW/sarmfsw&quot; &gt;&lt;img src=&quot;https://app.travis-ci.com/SMFSW/sarmfsw.svg?branch=master&quot; alt=&quot;Build Status&quot;/&gt;&lt;/a&gt;',['../index.html',1,'']]],
   ['max_14',['MAX',['../arm__macros_8h.html#afa99ec4acc4ecb2dc3c2d05da15d0e3f',1,'arm_macros.h']]],

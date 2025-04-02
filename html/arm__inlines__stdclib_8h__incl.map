@@ -1,0 +1,11 @@
+<map id="arm_inlines_stdclib.h" name="arm_inlines_stdclib.h">
+<area shape="rect" id="Node000001" title="ARM common standard c library inlines and wrapper macros." alt="" coords="95,5,238,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,69,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,35,74,75,71,70,143,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="92,80,153,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="161,34,140,69,135,66,156,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="176,80,245,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="176,31,198,66,193,69,172,34"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="269,80,333,107"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="191,30,266,70,263,75,189,35"/>
+</map>

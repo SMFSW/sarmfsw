@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['bcdtohex_0',['BCDToHex',['../arm__inlines__bcd_8h.html#aa19b68757f5406b4f3556a50f8d7955c',1,'arm_inlines_bcd.h']]],
-  ['bin2gray_1',['bin2gray',['../arm__inlines__gray_8h.html#aee206254162ddfdff686ab038b20fb75',1,'arm_inlines_gray.h']]]
+  ['asciitohex_0',['ASCIIToHex',['../arm__inlines__ascii_8h.html#a09bb0ae00bea03c71052f5e3b61c47b4',1,'arm_inlines_ascii.h']]]
 ];

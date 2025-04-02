@@ -154,6 +154,12 @@ Macros</h2></td></tr>
 <tr class="memitem:a2f63acee5b85bc2a8d4d13b8ca41f9b6" id="r_a2f63acee5b85bc2a8d4d13b8ca41f9b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f63acee5b85bc2a8d4d13b8ca41f9b6">NONNULL_INLINE__</a>&#160;&#160;&#160;<a class="el" href="#a4928d9d5681585f8bc21560cd30ef83d">ATTR__</a>(nonnull, always_inline)</td></tr>
 <tr class="memdesc:a2f63acee5b85bc2a8d4d13b8ca41f9b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non <code>null</code> and Always <code>inline</code> attributes.  <br /></td></tr>
 <tr class="separator:a2f63acee5b85bc2a8d4d13b8ca41f9b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7da62b3cc20aec0d16831367da14e6a" id="r_ad7da62b3cc20aec0d16831367da14e6a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7da62b3cc20aec0d16831367da14e6a">PRINTF__</a>(x,  y)</td></tr>
+<tr class="memdesc:ad7da62b3cc20aec0d16831367da14e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Printf format attribute.  <br /></td></tr>
+<tr class="separator:ad7da62b3cc20aec0d16831367da14e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb24f20f7bc76dad34b0973d12d37704" id="r_aeb24f20f7bc76dad34b0973d12d37704"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb24f20f7bc76dad34b0973d12d37704">FMT_ARG__</a>(x)</td></tr>
+<tr class="memdesc:aeb24f20f7bc76dad34b0973d12d37704"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format argument attribute.  <br /></td></tr>
+<tr class="separator:aeb24f20f7bc76dad34b0973d12d37704"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e148fd5aac0a0fdc9fbcae871216121" id="r_a9e148fd5aac0a0fdc9fbcae871216121"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e148fd5aac0a0fdc9fbcae871216121">SSO</a>(o)</td></tr>
 <tr class="memdesc:a9e148fd5aac0a0fdc9fbcae871216121"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for Scalar Storage Order.  <br /></td></tr>
 <tr class="separator:a9e148fd5aac0a0fdc9fbcae871216121"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -438,6 +444,26 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="aeb24f20f7bc76dad34b0973d12d37704" name="aeb24f20f7bc76dad34b0973d12d37704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb24f20f7bc76dad34b0973d12d37704">&#9670;&#160;</a></span>FMT_ARG__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FMT_ARG__</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">__attribute__((format_arg(x)))</div>
+</div><!-- fragment -->
+<p>Format argument attribute. </p>
+
+</div>
+</div>
 <a id="a6a519d2b9df8fdfa8ed20c326b195804" name="a6a519d2b9df8fdfa8ed20c326b195804"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6a519d2b9df8fdfa8ed20c326b195804">&#9670;&#160;</a></span>HOT__</h2>
 
@@ -567,6 +593,30 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Packed attribute. </p>
+
+</div>
+</div>
+<a id="ad7da62b3cc20aec0d16831367da14e6a" name="ad7da62b3cc20aec0d16831367da14e6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7da62b3cc20aec0d16831367da14e6a">&#9670;&#160;</a></span>PRINTF__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PRINTF__</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">__attribute__((format(printf, x, y)))</div>
+</div><!-- fragment -->
+<p>Printf format attribute. </p>
 
 </div>
 </div>

@@ -19,11 +19,11 @@ var searchData=
   ['arm_5finlines_5fgray_2eh_16',['arm_inlines_gray.h',['../arm__inlines__gray_8h.html',1,'']]],
   ['arm_5finlines_5flinearization_2eh_17',['arm_inlines_linearization.h',['../arm__inlines__linearization_8h.html',1,'']]],
   ['arm_5finlines_5frotation_2eh_18',['arm_inlines_rotation.h',['../arm__inlines__rotation_8h.html',1,'']]],
-  ['arm_5finlines_5ftemperature_2eh_19',['arm_inlines_temperature.h',['../arm__inlines__temperature_8h.html',1,'']]],
-  ['arm_5finlines_5fticks_2eh_20',['arm_inlines_ticks.h',['../arm__inlines__ticks_8h.html',1,'']]],
-  ['arm_5finlines_5fvar_5fsize_2eh_21',['arm_inlines_var_size.h',['../arm__inlines__var__size_8h.html',1,'']]],
-  ['arm_5finlines_5fvar_5ftest_2eh_22',['arm_inlines_var_test.h',['../arm__inlines__var__test_8h.html',1,'']]],
-  ['arm_5fmacros_2eh_23',['arm_macros.h',['../arm__macros_8h.html',1,'']]],
-  ['arm_5fstdclib_2eh_24',['arm_stdclib.h',['../arm__stdclib_8h.html',1,'']]],
+  ['arm_5finlines_5fstdclib_2eh_19',['arm_inlines_stdclib.h',['../arm__inlines__stdclib_8h.html',1,'']]],
+  ['arm_5finlines_5ftemperature_2eh_20',['arm_inlines_temperature.h',['../arm__inlines__temperature_8h.html',1,'']]],
+  ['arm_5finlines_5fticks_2eh_21',['arm_inlines_ticks.h',['../arm__inlines__ticks_8h.html',1,'']]],
+  ['arm_5finlines_5fvar_5fsize_2eh_22',['arm_inlines_var_size.h',['../arm__inlines__var__size_8h.html',1,'']]],
+  ['arm_5finlines_5fvar_5ftest_2eh_23',['arm_inlines_var_test.h',['../arm__inlines__var__test_8h.html',1,'']]],
+  ['arm_5fmacros_2eh_24',['arm_macros.h',['../arm__macros_8h.html',1,'']]],
   ['arm_5ftypedefs_2eh_25',['arm_typedefs.h',['../arm__typedefs_8h.html',1,'']]]
 ];

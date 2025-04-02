@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['maskbits_0',['maskBits',['../arm__inlines__binary_8h.html#a22d29769e5b7873a1683e1a8dbc8bc80',1,'arm_inlines_binary.h']]]
+  ['linearization_5feval_0',['linearization_eval',['../arm__inlines__linearization_8h.html#abb47fc0c16796affd5b3a9dfd665b186',1,'arm_inlines_linearization.h']]],
+  ['linearization_5feval_5fflex_1',['linearization_eval_flex',['../arm__inlines__linearization_8h.html#a54325f205c7d2fe43ed694f0472998f3',1,'arm_inlines_linearization.h']]]
 ];

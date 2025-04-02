@@ -1,9 +1,26 @@
 var searchData=
 [
-  ['testendian_5fbasic_0',['testEndian_basic',['../arm__inlines__endian_8h.html#afa1b6b7ef9a7e70e5e8dca5798019178',1,'arm_inlines_endian.h']]],
-  ['testendian_5ffull_1',['testEndian_full',['../arm__inlines__endian_8h.html#a8893c965376eecdcd9c55b156eada6bd',1,'arm_inlines_endian.h']]],
-  ['tolowercase_2',['toLowerCase',['../arm__inlines__ascii_8h.html#ad4b4e637114af0d3eefb2863849ba934',1,'arm_inlines_ascii.h']]],
-  ['touppercase_3',['toUpperCase',['../arm__inlines__ascii_8h.html#af647b1753e3ff9364df5f841489a6587',1,'arm_inlines_ascii.h']]],
-  ['tpsinf_5fms_4',['TPSINF_MS',['../arm__inlines__ticks_8h.html#a5ba90b95ab9aad46c8cf196dbdf843cd',1,'arm_inlines_ticks.h']]],
-  ['tpssup_5fms_5',['TPSSUP_MS',['../arm__inlines__ticks_8h.html#a72196af91b2f117d8e208fdbae0173a9',1,'arm_inlines_ticks.h']]]
+  ['scalevalue_0',['scaleValue',['../arm__inlines__var__size_8h.html#ab7a4ed95964c912e64242d8aa2f19764',1,'arm_inlines_var_size.h']]],
+  ['sintfrac2float_1',['sIntFrac2float',['../arm__inlines__float_8h.html#a2ab730f25653b9b8a3bf47716af611c9',1,'arm_inlines_float.h']]],
+  ['str_5fadd_5fcr_2',['str_add_cr',['../arm__inlines__stdclib_8h.html#a1ab5724cb8ade18e2a5d1f2065b55bdd',1,'arm_inlines_stdclib.h']]],
+  ['str_5fadd_5fcrlf_3',['str_add_crlf',['../arm__inlines__stdclib_8h.html#ae91c6981bb429e518293fb43c9313784',1,'arm_inlines_stdclib.h']]],
+  ['str_5fadd_5flf_4',['str_add_lf',['../arm__inlines__stdclib_8h.html#a0280a1043c0eb064de966af5ca40c270',1,'arm_inlines_stdclib.h']]],
+  ['str_5fadd_5ftab_5',['str_add_tab',['../arm__inlines__stdclib_8h.html#a2c63bbbf9da0dc4fa2f8729486f7d147',1,'arm_inlines_stdclib.h']]],
+  ['strappend_6',['strappend',['../arm__inlines__stdclib_8h.html#a5649ea242b7898cf9164a2b2b8872b80',1,'arm_inlines_stdclib.h']]],
+  ['strclr_7',['strclr',['../arm__inlines__stdclib_8h.html#a30c8ea08d88d2c2fcff448f0d3ca705f',1,'arm_inlines_stdclib.h']]],
+  ['strdectoint_8',['strDecToInt',['../arm__inlines__ascii_8h.html#ad776f83d1f57d3dd5ab24c9988ad6537',1,'arm_inlines_ascii.h']]],
+  ['strhextoint_9',['strHexToInt',['../arm__inlines__ascii_8h.html#a9efdb2427de10516e4fcb9b8bb4321d3',1,'arm_inlines_ascii.h']]],
+  ['strn_5fadd_5fcr_10',['strn_add_cr',['../arm__inlines__stdclib_8h.html#a95fb47e43ccebe3a7260e87a5fec3c9a',1,'arm_inlines_stdclib.h']]],
+  ['strn_5fadd_5fcrlf_11',['strn_add_crlf',['../arm__inlines__stdclib_8h.html#a9d337e9b2c42cf70a88bfc12154bb2b6',1,'arm_inlines_stdclib.h']]],
+  ['strn_5fadd_5flf_12',['strn_add_lf',['../arm__inlines__stdclib_8h.html#a9cbd1b454be93d3cfe49c75a2eec3ba9',1,'arm_inlines_stdclib.h']]],
+  ['strn_5fadd_5ftab_13',['strn_add_tab',['../arm__inlines__stdclib_8h.html#ac301f838949512a99cec4b8b68e63c8c',1,'arm_inlines_stdclib.h']]],
+  ['strnappend_14',['strnappend',['../arm__inlines__stdclib_8h.html#aa4beaf347322410a05eccb0cf86297cd',1,'arm_inlines_stdclib.h']]],
+  ['strncat_5fsz_15',['strncat_sz',['../arm__inlines__stdclib_8h.html#a169c2e12df938a766fe8e23358972c08',1,'arm_inlines_stdclib.h']]],
+  ['swap_5fend16b_16',['SWAP_END16B',['../arm__inlines__endian_8h.html#aee4cd55d7169d1fbf0eaff78a9fa81e4',1,'arm_inlines_endian.h']]],
+  ['swap_5fend16b_5ftab_17',['SWAP_END16B_TAB',['../arm__inlines__endian_8h.html#a09502510b3fc307c4f6c14e45aa1fe1a',1,'arm_inlines_endian.h']]],
+  ['swap_5fend32b_18',['SWAP_END32B',['../arm__inlines__endian_8h.html#a33178bfe2a44506a79e74e63b745c359',1,'arm_inlines_endian.h']]],
+  ['swap_5fend32b_5ftab_19',['SWAP_END32B_TAB',['../arm__inlines__endian_8h.html#a161604654481ab2144d50f962a9eea98',1,'arm_inlines_endian.h']]],
+  ['swap_5fend64b_20',['SWAP_END64B',['../arm__inlines__endian_8h.html#a95adbe3363102aee10caf3bc78a4f54c',1,'arm_inlines_endian.h']]],
+  ['swap_5fend64b_5ftab_21',['SWAP_END64B_TAB',['../arm__inlines__endian_8h.html#a7febd655a73137b8e588f1bc116e35b4',1,'arm_inlines_endian.h']]],
+  ['swapbits_22',['swapBits',['../arm__inlines__binary_8h.html#a23b972350ec16fb505c3ccc4624db242',1,'arm_inlines_binary.h']]]
 ];
