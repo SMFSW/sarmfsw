@@ -15,11 +15,12 @@
 ** \note	STDINT_NDEF can be defined at project level if stdint.h doesn't exist for target compiler
 ** \MISRA Header scope deviation has been granted for following rules:\n
 ** 	\b Rule-19.2 - \b Advisory: \c union keyword (misra-c2012-19.2)\n
+** 	\b Rule-20.5 - \b Advisory: \c \#undef (misra-c2012-20.5)\n
 ** \MISRA Header scope legitimate use derogation authorized for:\n
 ** 	\b Rule-21.1 - \b Required: \c \#define and \c \#undef on reserved identifiers (misra-c2012-21.1)\n
 **	\a Justification: \c \#define are library specific reserved identifiers.\n
 */
-// cppcheck-suppress-begin [misra-c2012-19.2]
+// cppcheck-suppress-begin [misra-c2012-19.2, misra-c2012-20.5]
 // cppcheck-suppress-begin [misra-c2012-21.1]
 /****************************************************************/
 #ifndef ARM_TYPEDEFS_H_
@@ -60,19 +61,38 @@ typedef long long signed int	int64_t;	//!< int64_t typedef
 #include <stdint.h>		//!< Include stdint.h
 #endif
 
-typedef int				intCPU_t;	//!< Signed integer typedef
-typedef unsigned int	uintCPU_t;	//!< Unsigned integer typedef
+typedef int					intCPU_t;	//!< Signed integer typedef
+typedef unsigned int		uintCPU_t;	//!< Unsigned integer typedef
 
-typedef	bool			BOOL;		//!< boolean typedef (1bit, for stdbool.h handling compilers)
-typedef char			CHAR;		//!< Char typedef (8bits)
-typedef	uint8_t			BYTE;		//!< Unsigned Byte typedef (8bits)
-typedef	uint16_t		WORD;		//!< Unsigned Word typedef (16bits)
-typedef	uint32_t		DWORD;		//!< Unsigned dWord typedef (32bits)
-typedef	uint64_t		LWORD;		//!< Unsigned lWord typedef (64bits)
-typedef	int8_t			SBYTE;		//!< Signed Byte typedef (8bits)
-typedef	int16_t			SWORD;		//!< Signed Word typedef (16bits)
-typedef	int32_t			SDWORD;		//!< Signed dWord typedef (32bits)
-typedef	int64_t			SLWORD;		//!< Signed lWord typedef (64bits)
+#if defined(__UINTPTR_TYPE__) && defined(__INTPTR_TYPE__)
+typedef __INTPTR_TYPE__		intPTR_t;	//!< Signed integer pointer address typedef
+typedef __UINTPTR_TYPE__	uintPTR_t;	//!< Unsigned integer pointer address typedef
+#elif defined(__SIZEOF_POINTER__) && defined (__SIZEOF_INT__) && (__SIZEOF_POINTER__ == __SIZEOF_INT__)
+typedef intCPU_t			intPTR_t;	//!< Signed integer pointer address typedef
+typedef uintCPU_t			uintPTR_t;	//!< Unsigned integer pointer address typedef
+#elif defined(__SIZEOF_POINTER__) && (__SIZEOF_POINTER__ <= 2)
+typedef int16_t				intPTR_t;	//!< Signed integer pointer address typedef
+typedef uint16_t			uintPTR_t;	//!< Unsigned integer pointer address typedef
+#elif defined(__SIZEOF_POINTER__) && (__SIZEOF_POINTER__ <= 4)
+typedef int32_t				intPTR_t;	//!< Signed integer pointer address typedef
+typedef uint32_t			uintPTR_t;	//!< Unsigned integer pointer address typedef
+#elif defined(__SIZEOF_POINTER__) && (__SIZEOF_POINTER__ <= 8)
+typedef int64_t				intPTR_t;	//!< Signed integer pointer address typedef
+typedef uint64_t			uintPTR_t;	//!< Unsigned integer pointer address typedef
+#else
+#error "Not able to automatically define pointer size, __SIZEOF_POINTER__ define needed with size in bytes"
+#endif
+
+typedef	bool				BOOL;		//!< boolean typedef (1bit, for stdbool.h handling compilers)
+typedef char				CHAR;		//!< Char typedef (8bits)
+typedef	uint8_t				BYTE;		//!< Unsigned Byte typedef (8bits)
+typedef	uint16_t			WORD;		//!< Unsigned Word typedef (16bits)
+typedef	uint32_t			DWORD;		//!< Unsigned dWord typedef (32bits)
+typedef	uint64_t			LWORD;		//!< Unsigned lWord typedef (64bits)
+typedef	int8_t				SBYTE;		//!< Signed Byte typedef (8bits)
+typedef	int16_t				SWORD;		//!< Signed Word typedef (16bits)
+typedef	int32_t				SDWORD;		//!< Signed dWord typedef (32bits)
+typedef	int64_t				SLWORD;		//!< Signed lWord typedef (64bits)
 
 
 #if 	defined(__BYTE_ORDER) && (__BYTE_ORDER == __BIG_ENDIAN) ||								\
@@ -544,6 +564,6 @@ typedef union uLWord_i {
 #endif
 
 #endif /* ARM_TYPEDEFS_H_ */
-// cppcheck-suppress-end [misra-c2012-19.2]
+// cppcheck-suppress-end [misra-c2012-19.2, misra-c2012-20.5]
 // cppcheck-suppress-end [misra-c2012-21.1]
 /****************************************************************/

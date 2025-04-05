@@ -23,6 +23,10 @@ SOFTWARE.
 ## v3.7
 
 * Partial MISRA C2012 compliance
+* arm_preprocess: added (for pre-processing macros and directives needed to be defined at the beginning of sarmfsw)
+* arm_macros: CAT, XCAT, STR & XSTR moved to arm_preprocess
+* sarmfsw: arm_preprocess added & arm_macros moved
+* arm_typedefs: uintPTR_t & intPTR_t added
 * arm_stdclib: renamed to arm_inlines_stdclib, total refactoring and inlines added
 * arm_attributes: PRINTF__ & FMT__ attributes added (+ some compilers attributes review)
 * I_FIND_BINARY_HEADER_USEFUL symbol renamed to USE_INO_BINARY_HEADER

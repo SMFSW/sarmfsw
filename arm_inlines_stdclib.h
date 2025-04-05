@@ -2,7 +2,16 @@
 ** \author SMFSW
 ** \copyright MIT (c) 2017-2025, SMFSW
 ** \brief ARM common standard c library inlines and wrapper macros
+** \MISRA Header scope deviation has been granted for following rules:\n
+**	\b Rule-18.4 - \b Advisory: +/- operators on pointer type (misra-c2012-18.4)\n
+** \MISRA Header scope legitimate use derogation authorized for:\n
+** 	\b Rule-21.6 - \b Required: Use of \c <stdio.h> (misra-c2012-21.6)\n
+**	\a Justification: Some of the following functions are \c sprintf like oriented extensions to standard library.\n
+** 	\b Rule-17.1 - \b Required: Use of \c <starg.h> (misra-c2012-17.1)\n
+**	\a Justification: Legitimate use of variadic parameters received, passed to \c printf like function call.\n
 */
+// cppcheck-suppress-begin misra-c2012-18.4
+// cppcheck-suppress-begin [misra-c2012-21.6, misra-c2012-17.1]
 /****************************************************************/
 #ifndef ARM_STDCLIB_H_
 	#define ARM_STDCLIB_H_
@@ -27,24 +36,36 @@
 /*!\brief Get current heap address
 ** \note Address is returned as integer (returning released pointer value would cause a warning from compiler)
 ** 		 Use \ref get_current_heap_address to get current heap address under the form of \c void* pointer
+** \MISRA Local legitimate use derogation authorized for:\n
+**	\b Rule-11.6 - \b Required: pointer to void cast to arithmetic (misra-c2012-11.6)\n
+**	\b Rule-21.3 - \b Required: dynamic allocation (misra-c2012-21.3)\n
+**	\a Justification: Intended to identify potential memory leaks in case of dynamic allocation use.\n
 ** \return Integer value of current heap address
 **/
-__INLINE uintCPU_t _get_current_heap_address(void)
+__INLINE uintPTR_t get_current_heap_address_int(void)
 {
-	void * p = malloc(0);					// Allocate dummy memory
-	const uintCPU_t addr = (uintCPU_t) p;	// Save heap current address as integer to avoid warning about possible use of freed p
-	free(p);								// Free dummy allocated memory
-	return addr;							// Return address as integer
+	/*** Allocate dummy memory ***/
+	void * p = malloc(0);					// cppcheck-suppress misra-c2012-21.3
+	/*** Save heap current address as integer to avoid warning about possible use of freed allocated memory ***/
+	const uintPTR_t addr = (uintPTR_t) p;	// cppcheck-suppress misra-c2012-11.6
+	/*** Free dummy allocated memory ***/
+	free(p);								// cppcheck-suppress misra-c2012-21.3
+
+	return addr;	// Return address as integer
 }
 
 /*!\brief Get current heap address pointer
 ** \note Can be useful to get heap value when testing for potential memory leaks
+** \MISRA Local legitimate use derogation authorized for:\n
+**	\b Rule-11.6 - \b Required: pointer to void cast to arithmetic (misra-c2012-11.6)\n
+**	\a Justification: Intended to identify potential memory leaks in case of dynamic allocation use.\n
 ** \warning Shall not cast returned value to \c void* (allowing to write anything to the pointed content)
 ** \return Pointer to current heap address
 **/
 __INLINE const void * INLINE__ get_current_heap_address(void)
 {
-	return (const void *) _get_current_heap_address();	// Return integer value with cast to pointer type
+	/*** Return integer value with cast to pointer type ***/
+	return (const void *) get_current_heap_address_int();	// cppcheck-suppress misra-c2012-11.6
 }
 
 
@@ -122,8 +143,8 @@ __INLINE intCPU_t PRINTF__(3, 4) strnappend(CHAR * const s, const size_t len, co
 ** \return Pointer to resulting string (char array)
 **/
 __INLINE CHAR * strncat_sz(CHAR * const s, const CHAR * const s2, const size_t size) {
-	const intCPU_t sz = size - strlen(s) - 1;
-	return (sz <= 0) ? s : strncat(s, s2, sz); }
+	const size_t sz = size - strlen(s) - 1;
+	return (sz > size) ? s : strncat(s, s2, sz); }
 
 
 /*!\brief Fast clear string (char array)
@@ -213,4 +234,6 @@ __INLINE CHAR * INLINE__ strn_add_crlf(CHAR * const s, const size_t len) {
 #endif
 
 #endif /* ARM_STDCLIB_H_ */
+// cppcheck-suppress-end misra-c2012-18.4
+// cppcheck-suppress-end [misra-c2012-21.6, misra-c2012-17.1]
 /****************************************************************/

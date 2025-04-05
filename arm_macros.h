@@ -6,9 +6,8 @@
 ** \MISRA Header scope deviation has been granted for following rules:\n
 ** 	\b Rule-1.2 - \b Advisory: Language extensions (misra-c2012-1.2)\n
 ** 	\b Rule-20.5 - \b Advisory: \c \#undef (misra-c2012-20.5)\n
-** 	\b Rule-20.10 - \b Advisory: \c # and \c ## preprocessor operators (misra-c2012-20.10)\n
 */
-// cppcheck-suppress-begin [misra-c2012-1.2, misra-c2012-20.5, misra-c2012-20.10]
+// cppcheck-suppress-begin [misra-c2012-1.2, misra-c2012-20.5]
 /****************************************************************/
 #ifndef ARM_MACROS_H_
 	#define ARM_MACROS_H_
@@ -182,13 +181,6 @@
 #define ROOT_OF(ptr, typ, mbr)	((typ *) (((uint8_t *) (ptr)) - OFFSET_OF(typ, mbr)))	//!< Computes the address of parent struct \p typ of \p ptr from member \p mbr
 
 
-//! \warning No nesting possible, use \ref XCAT instead (unless there is a good reason not to use \ref XCAT)
-#define	CAT(a, b)			a##b			//!< Preprocessor Name catenation of \c a and \c b (use of \ref XCAT is highly recommended for any need)
-#define XCAT(a, b)			CAT(a, b)		//!< Preprocessor Name catenation of \c a and \c b (nesting possibility)
-
-#define STR(s)				#s				//!< Stringify \c s expression
-#define XSTR(s)				STR(s)			//!< Stringify the result of \c s expression expansion (stringification of a macro expansion)
-
 #define binEval(exp)		((exp) ? true : false)		//!< boolean evaluation of expression \p exp
 #define nbinEval(exp)		(!binEval(exp))				//!< complemented boolean evaluation of expression \p exp
 
@@ -297,5 +289,5 @@
 #endif
 
 #endif /* ARM_MACROS_H_ */
-// cppcheck-suppress-end [misra-c2012-1.2, misra-c2012-20.5, misra-c2012-20.10]
+// cppcheck-suppress-end [misra-c2012-1.2, misra-c2012-20.5]
 /****************************************************************/

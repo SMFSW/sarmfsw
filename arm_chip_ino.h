@@ -46,8 +46,8 @@
 
 #if !defined(USE_INO_BINARY_HEADER)
 // Undefine binary.h definitions used by \file arm_typedefs.h included from Arduino.h
-#undef B0
-#undef B1
+#undef B0		// cppcheck-suppress misra-c2012-20.5
+#undef B1		// cppcheck-suppress misra-c2012-20.5
 #else
 #define B0 0
 #define B1 1

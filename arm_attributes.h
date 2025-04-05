@@ -23,7 +23,7 @@
 /****************************************************************/
 
 
-#if defined (__CC_ARM)
+#if defined(__CC_ARM)
 	/*** ARM REAL VIEW ***/
 	// Declared as qualifier
 	#define __WEAK				__weak										//!< Weak attribute
@@ -83,7 +83,7 @@
 	#define __NOOPT__														//!< No Optimizations attribute
 	#endif
 
-#elif defined (__XC__)	// Defined prior to __GNUC__ as also defined for some __XC__ compilers
+#elif defined(__XC__)	// Defined prior to __GNUC__ as also defined for some __XC__ compilers
 	/*** Microchip XC ***/
 	// Declared as qualifier
 	#define __WEAK				__attribute__((weak))						//!< Weak attribute
@@ -113,7 +113,7 @@
 	#define __NOOPT__														//!< No Optimizations attribute
 	#endif
 
-#elif defined (__GNUC__)
+#elif defined(__GNUC__)
 	/*** GCC ***/
 	// Declared as qualifier
 	#define __WEAK				__attribute__((weak))						//!< Weak attribute
@@ -148,7 +148,7 @@
 	#define __NOOPT__														//!< No Optimizations attribute
 	#endif
 
-#elif defined (__ICCARM__)
+#elif defined(__ICCARM__)
 	/*** IAR ***/
 	// Declared as qualifier
 	#define __WEAK				__weak										//!< Weak attribute
@@ -176,7 +176,7 @@
 
 	//#define __NOOPT__														//!< No Optimizations attribute not identified on IAR toolchain
 
-#elif defined (__TI_ARM__)
+#elif defined(__TI_ARM__)
 	/*** TEXAS INSTRUMENTS ***/
 	// Declared as qualifier
 	#define __WEAK				__attribute__((weak))						//!< Weak attribute only through \c #pragma weak(symbol)
@@ -207,7 +207,7 @@
 	#define __STATIC_FORCEINLINE	static inline							//!< Static \c inline attribute alias when \c __NOOPT__ defined
 	#endif
 
-#elif defined (__TASKING__)
+#elif defined(__TASKING__)
 	/*** TASKING ***/
 	// Declared as qualifier
 	#define __WEAK				__attribute__((weak))						//!< Weak attribute
@@ -238,7 +238,7 @@
 	#define __STATIC_FORCEINLINE	static inline							//!< Static \c inline attribute alias when \c __NOOPT__ defined
 	#endif
 
-#elif defined (__CSMC__)
+#elif defined(__CSMC__)
 	/*** GCC ***/
 	// Declared as qualifier
 	#define __WEAK				__weak										//!< Weak attribute
@@ -255,6 +255,37 @@
 	#define NONNULLX__(...)
 	#define NORETURN__
 	#define PACK__				@packed										//!< Packed attribute
+	#define PURE__
+	#define SECTION__(s)
+	#define USED__
+	// Common mixed attributes
+	#define NONNULL_INLINE__
+
+	#define PRINTF__(x, y)
+	#define FMT_ARG__(x)
+
+	#if (!defined(__OPTIMIZE__))
+	#define __NOOPT__														//!< No Optimizations attribute
+	#define __STATIC_FORCEINLINE	static inline							//!< Static \c inline attribute alias when \c __NOOPT__ defined
+	#endif
+
+#elif defined(__cppcheck__)
+	/*** Cppcheck ***/
+	// Declared as qualifier
+	#define __WEAK
+	#define __IRQ
+	// Declared as attribute
+	#define ATTR__(...)
+
+	#define ALIGN__(n)
+	#define COLD__
+	#define DEPRECATED__
+	#define HOT__
+	#define INLINE__
+	#define NONNULL__
+	#define NONNULLX__(...)
+	#define NORETURN__
+	#define PACK__
 	#define PURE__
 	#define SECTION__(s)
 	#define USED__
