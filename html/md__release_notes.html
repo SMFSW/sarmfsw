@@ -94,6 +94,10 @@ $(function(){ initResizable(false); });
 <h1>v3.7</h1>
 <ul>
 <li>Partial MISRA C2012 compliance</li>
+<li>arm_preprocess: added (for pre-processing macros and directives needed to be defined at the beginning of sarmfsw)</li>
+<li>arm_macros: CAT, XCAT, STR &amp; XSTR moved to arm_preprocess</li>
+<li>sarmfsw: arm_preprocess added &amp; arm_macros moved</li>
+<li>arm_typedefs: uintPTR_t &amp; intPTR_t added</li>
 <li>arm_stdclib: renamed to arm_inlines_stdclib, total refactoring and inlines added</li>
 <li>arm_attributes: PRINTF__ &amp; FMT__ attributes added (+ some compilers attributes review)</li>
 <li>I_FIND_BINARY_HEADER_USEFUL symbol renamed to USE_INO_BINARY_HEADER</li>

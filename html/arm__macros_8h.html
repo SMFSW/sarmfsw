@@ -244,18 +244,6 @@ Macros</h2></td></tr>
 <tr class="memitem:a32c119f1bd8155fc34ea0a798cc2f2c3" id="r_a32c119f1bd8155fc34ea0a798cc2f2c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32c119f1bd8155fc34ea0a798cc2f2c3">ROOT_OF</a>(ptr,  typ,  mbr)</td></tr>
 <tr class="memdesc:a32c119f1bd8155fc34ea0a798cc2f2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the address of parent struct <code>typ</code> of <code>ptr</code> from member <code>mbr</code>.  <br /></td></tr>
 <tr class="separator:a32c119f1bd8155fc34ea0a798cc2f2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9404439ed46dc67d489a7d4ec2853e8f" id="r_a9404439ed46dc67d489a7d4ec2853e8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9404439ed46dc67d489a7d4ec2853e8f">CAT</a>(a,  b)</td></tr>
-<tr class="memdesc:a9404439ed46dc67d489a7d4ec2853e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preprocessor Name catenation of <code>a</code> and <code>b</code> (use of <a class="el" href="#acc44cb41b0818b28b4d2b9c4d46ee3c6">XCAT</a> is highly recommended for any need)  <br /></td></tr>
-<tr class="separator:a9404439ed46dc67d489a7d4ec2853e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc44cb41b0818b28b4d2b9c4d46ee3c6" id="r_acc44cb41b0818b28b4d2b9c4d46ee3c6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc44cb41b0818b28b4d2b9c4d46ee3c6">XCAT</a>(a,  b)</td></tr>
-<tr class="memdesc:acc44cb41b0818b28b4d2b9c4d46ee3c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preprocessor Name catenation of <code>a</code> and <code>b</code> (nesting possibility)  <br /></td></tr>
-<tr class="separator:acc44cb41b0818b28b4d2b9c4d46ee3c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6388870e639eee9c0a69446876f1f8cc" id="r_a6388870e639eee9c0a69446876f1f8cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6388870e639eee9c0a69446876f1f8cc">STR</a>(s)</td></tr>
-<tr class="memdesc:a6388870e639eee9c0a69446876f1f8cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stringify <code>s</code> expression.  <br /></td></tr>
-<tr class="separator:a6388870e639eee9c0a69446876f1f8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03943706e48069237cd57f2d35ca987e" id="r_a03943706e48069237cd57f2d35ca987e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03943706e48069237cd57f2d35ca987e">XSTR</a>(s)</td></tr>
-<tr class="memdesc:a03943706e48069237cd57f2d35ca987e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stringify the result of <code>s</code> expression expansion (stringification of a macro expansion)  <br /></td></tr>
-<tr class="separator:a03943706e48069237cd57f2d35ca987e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bcc263075d1521213cd7db6d08dd23c" id="r_a4bcc263075d1521213cd7db6d08dd23c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4bcc263075d1521213cd7db6d08dd23c">binEval</a>(exp)</td></tr>
 <tr class="memdesc:a4bcc263075d1521213cd7db6d08dd23c"><td class="mdescLeft">&#160;</td><td class="mdescRight">boolean evaluation of expression <code>exp</code>  <br /></td></tr>
 <tr class="separator:a4bcc263075d1521213cd7db6d08dd23c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -330,10 +318,9 @@ Macros</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>SMFSW </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2025, SMFSW </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If used CPU only handles single shifts, you may define SINGLE_SHIFT_ONLY_OPCODE at project level (see <a class="el" href="#ac67c4dbfe2f188872a0ac531c73e2821">LSHIFT</a> &amp; <a class="el" href="#abf5b4d01be517fa611eb7d1cb3378d25">RSHIFT</a>) </dd></dl>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000012">MISRA C:2012 Deviations</a></b></dt><dd>Header scope deviation has been granted for following rules:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000015">MISRA C:2012 Deviations</a></b></dt><dd>Header scope deviation has been granted for following rules:<br  />
  <b>Rule-1.2</b> - <b>Advisory:</b> Language extensions (misra-c2012-1.2)<br  />
  <b>Rule-20.5</b> - <b>Advisory:</b> <code>#undef</code> (misra-c2012-20.5)<br  />
- <b>Rule-20.10</b> - <b>Advisory:</b> <code>#</code> and <code>##</code> preprocessor operators (misra-c2012-20.10)<br  />
  </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a4bcc263075d1521213cd7db6d08dd23c" name="a4bcc263075d1521213cd7db6d08dd23c"></a>
@@ -371,33 +358,8 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">((<a class="code hl_typedef" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) ((((b) &gt; 255U ? 255U : (b)) * 100U) / 255U))</div>
-<div class="ttc" id="aarm__typedefs_8h_html_aae9749d96e15ccb4f482dd5f55d98f9b"><div class="ttname"><a href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a></div><div class="ttdeci">uint8_t BYTE</div><div class="ttdoc">Unsigned Byte typedef (8bits)</div><div class="ttdef"><b>Definition</b> arm_typedefs.h:68</div></div>
+<div class="ttc" id="aarm__typedefs_8h_html_aae9749d96e15ccb4f482dd5f55d98f9b"><div class="ttname"><a href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a></div><div class="ttdeci">uint8_t BYTE</div><div class="ttdoc">Unsigned Byte typedef (8bits)</div><div class="ttdef"><b>Definition</b> arm_typedefs.h:88</div></div>
 </div><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>This macro doesn't prevent from double evaluation; otherwise it couldn't be used as pre-processing initializer macro Converts a <code>BYTE</code> <code>b</code> (0-255) to percent (0-100) </dd></dl>
-
-</div>
-</div>
-<a id="a9404439ed46dc67d489a7d4ec2853e8f" name="a9404439ed46dc67d489a7d4ec2853e8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9404439ed46dc67d489a7d4ec2853e8f">&#9670;&#160;</a></span>CAT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CAT</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">a##b</div>
-</div><!-- fragment -->
-<p>Preprocessor Name catenation of <code>a</code> and <code>b</code> (use of <a class="el" href="#acc44cb41b0818b28b4d2b9c4d46ee3c6">XCAT</a> is highly recommended for any need) </p>
-<dl class="section warning"><dt>Warning</dt><dd>No nesting possible, use <a class="el" href="#acc44cb41b0818b28b4d2b9c4d46ee3c6">XCAT</a> instead (unless there is a good reason not to use <a class="el" href="#acc44cb41b0818b28b4d2b9c4d46ee3c6">XCAT</a>) </dd></dl>
 
 </div>
 </div>
@@ -444,7 +406,7 @@ Macros</h2></td></tr>
 <div class="line">                                __TYPEOF(mn) _mn = (mn);    \</div>
 <div class="line">                                __TYPEOF(mx) _mx = (mx);    \</div>
 <div class="line">                                (_v &lt; _mn) ? _mn : ((_v &gt; _mx) ? _mx : _v); })</div>
-<div class="ttc" id="aarm__attributes_8h_html_a2043c1327d10d27f2afa53d50ab2841c"><div class="ttname"><a href="arm__attributes_8h.html#a2043c1327d10d27f2afa53d50ab2841c">__TYPEOF</a></div><div class="ttdeci">#define __TYPEOF</div><div class="ttdoc">typeof keyword alias (</div><div class="ttdef"><b>Definition</b> arm_attributes.h:278</div></div>
+<div class="ttc" id="aarm__attributes_8h_html_a2043c1327d10d27f2afa53d50ab2841c"><div class="ttname"><a href="arm__attributes_8h.html#a2043c1327d10d27f2afa53d50ab2841c">__TYPEOF</a></div><div class="ttdeci">#define __TYPEOF</div><div class="ttdoc">typeof keyword alias (</div><div class="ttdef"><b>Definition</b> arm_attributes.h:309</div></div>
 </div><!-- fragment -->
 <p>Returns the value between <code>mn</code> and <code>mx</code> from <code>v</code>. </p>
 
@@ -561,8 +523,8 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">((<a class="code hl_typedef" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>) <a class="code hl_define" href="#abf5b4d01be517fa611eb7d1cb3378d25">RSHIFT</a>((<a class="code hl_typedef" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (w), 8))</div>
-<div class="ttc" id="aarm__macros_8h_html_abf5b4d01be517fa611eb7d1cb3378d25"><div class="ttname"><a href="#abf5b4d01be517fa611eb7d1cb3378d25">RSHIFT</a></div><div class="ttdeci">#define RSHIFT(v, n)</div><div class="ttdoc">Shift v n bits right.</div><div class="ttdef"><b>Definition</b> arm_macros.h:88</div></div>
-<div class="ttc" id="aarm__typedefs_8h_html_ab24077addd3b7b13e086987ff296552c"><div class="ttname"><a href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a></div><div class="ttdeci">uint16_t WORD</div><div class="ttdoc">Unsigned Word typedef (16bits)</div><div class="ttdef"><b>Definition</b> arm_typedefs.h:69</div></div>
+<div class="ttc" id="aarm__macros_8h_html_abf5b4d01be517fa611eb7d1cb3378d25"><div class="ttname"><a href="#abf5b4d01be517fa611eb7d1cb3378d25">RSHIFT</a></div><div class="ttdeci">#define RSHIFT(v, n)</div><div class="ttdoc">Shift v n bits right.</div><div class="ttdef"><b>Definition</b> arm_macros.h:87</div></div>
+<div class="ttc" id="aarm__typedefs_8h_html_ab24077addd3b7b13e086987ff296552c"><div class="ttname"><a href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a></div><div class="ttdeci">uint16_t WORD</div><div class="ttdoc">Unsigned Word typedef (16bits)</div><div class="ttdef"><b>Definition</b> arm_typedefs.h:89</div></div>
 </div><!-- fragment -->
 <p>Get <code>BYTE</code> MSB from <code>WORD</code> <code>w</code>. </p>
 
@@ -583,7 +545,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">((<a class="code hl_typedef" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) <a class="code hl_define" href="#abf5b4d01be517fa611eb7d1cb3378d25">RSHIFT</a>((<a class="code hl_typedef" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (l), 16))</div>
-<div class="ttc" id="aarm__typedefs_8h_html_af483253b2143078cede883fc3c111ad2"><div class="ttname"><a href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a></div><div class="ttdeci">uint32_t DWORD</div><div class="ttdoc">Unsigned dWord typedef (32bits)</div><div class="ttdef"><b>Definition</b> arm_typedefs.h:70</div></div>
+<div class="ttc" id="aarm__typedefs_8h_html_af483253b2143078cede883fc3c111ad2"><div class="ttname"><a href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a></div><div class="ttdeci">uint32_t DWORD</div><div class="ttdoc">Unsigned dWord typedef (32bits)</div><div class="ttdef"><b>Definition</b> arm_typedefs.h:90</div></div>
 </div><!-- fragment -->
 <p>Get <code>WORD</code> MSW from <code>LONG</code> <code>l</code>. </p>
 
@@ -648,7 +610,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">((p) != <a class="code hl_define" href="#a12b0812248f8d20ac8202105b1d537b0">pNull</a>)</div>
-<div class="ttc" id="aarm__macros_8h_html_a12b0812248f8d20ac8202105b1d537b0"><div class="ttname"><a href="#a12b0812248f8d20ac8202105b1d537b0">pNull</a></div><div class="ttdeci">#define pNull</div><div class="ttdoc">Null pointer -&gt; same as NULL in stdlib.h.</div><div class="ttdef"><b>Definition</b> arm_macros.h:25</div></div>
+<div class="ttc" id="aarm__macros_8h_html_a12b0812248f8d20ac8202105b1d537b0"><div class="ttname"><a href="#a12b0812248f8d20ac8202105b1d537b0">pNull</a></div><div class="ttdeci">#define pNull</div><div class="ttdoc">Null pointer -&gt; same as NULL in stdlib.h.</div><div class="ttdef"><b>Definition</b> arm_macros.h:24</div></div>
 </div><!-- fragment -->
 <p>Test is <code>p</code> is not null. </p>
 
@@ -825,7 +787,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">((<a class="code hl_typedef" href="arm__typedefs_8h.html#a53ce154ee4efa73480bde2c7fff08da3">LWORD</a>) ((<a class="code hl_typedef" href="arm__typedefs_8h.html#a53ce154ee4efa73480bde2c7fff08da3">LWORD</a>) (v) &lt;&lt; (n)))</div>
-<div class="ttc" id="aarm__typedefs_8h_html_a53ce154ee4efa73480bde2c7fff08da3"><div class="ttname"><a href="arm__typedefs_8h.html#a53ce154ee4efa73480bde2c7fff08da3">LWORD</a></div><div class="ttdeci">uint64_t LWORD</div><div class="ttdoc">Unsigned lWord typedef (64bits)</div><div class="ttdef"><b>Definition</b> arm_typedefs.h:71</div></div>
+<div class="ttc" id="aarm__typedefs_8h_html_a53ce154ee4efa73480bde2c7fff08da3"><div class="ttname"><a href="arm__typedefs_8h.html#a53ce154ee4efa73480bde2c7fff08da3">LWORD</a></div><div class="ttdeci">uint64_t LWORD</div><div class="ttdoc">Unsigned lWord typedef (64bits)</div><div class="ttdef"><b>Definition</b> arm_typedefs.h:91</div></div>
 </div><!-- fragment -->
 <p>Shift <code>v</code> <code>n</code> bits left (up to 63b) </p>
 
@@ -906,7 +868,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">((<a class="code hl_typedef" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (((<a class="code hl_typedef" href="arm__typedefs_8h.html#ab24077addd3b7b13e086987ff296552c">WORD</a>) (lsw)) | <a class="code hl_define" href="#ac67c4dbfe2f188872a0ac531c73e2821">LSHIFT</a>(((<a class="code hl_typedef" href="arm__typedefs_8h.html#af483253b2143078cede883fc3c111ad2">DWORD</a>) (msw)), 16)))</div>
-<div class="ttc" id="aarm__macros_8h_html_ac67c4dbfe2f188872a0ac531c73e2821"><div class="ttname"><a href="#ac67c4dbfe2f188872a0ac531c73e2821">LSHIFT</a></div><div class="ttdeci">#define LSHIFT(v, n)</div><div class="ttdoc">Shift v n bits left.</div><div class="ttdef"><b>Definition</b> arm_macros.h:87</div></div>
+<div class="ttc" id="aarm__macros_8h_html_ac67c4dbfe2f188872a0ac531c73e2821"><div class="ttname"><a href="#ac67c4dbfe2f188872a0ac531c73e2821">LSHIFT</a></div><div class="ttdeci">#define LSHIFT(v, n)</div><div class="ttdoc">Shift v n bits left.</div><div class="ttdef"><b>Definition</b> arm_macros.h:86</div></div>
 </div><!-- fragment -->
 <p>Make <code>LONG</code> from <code>lsw</code> and <code>msw</code>. </p>
 
@@ -1131,7 +1093,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">(!<a class="code hl_define" href="#a4bcc263075d1521213cd7db6d08dd23c">binEval</a>(exp))</div>
-<div class="ttc" id="aarm__macros_8h_html_a4bcc263075d1521213cd7db6d08dd23c"><div class="ttname"><a href="#a4bcc263075d1521213cd7db6d08dd23c">binEval</a></div><div class="ttdeci">#define binEval(exp)</div><div class="ttdoc">boolean evaluation of expression exp</div><div class="ttdef"><b>Definition</b> arm_macros.h:192</div></div>
+<div class="ttc" id="aarm__macros_8h_html_a4bcc263075d1521213cd7db6d08dd23c"><div class="ttname"><a href="#a4bcc263075d1521213cd7db6d08dd23c">binEval</a></div><div class="ttdeci">#define binEval(exp)</div><div class="ttdoc">boolean evaluation of expression exp</div><div class="ttdef"><b>Definition</b> arm_macros.h:184</div></div>
 </div><!-- fragment -->
 <p>complemented boolean evaluation of expression <code>exp</code> </p>
 
@@ -1174,7 +1136,7 @@ Macros</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">((size_t) &amp;(((typ *)0)-&gt;mbr))</div>
 </div><!-- fragment -->
 <p>Computes the offset member <code>mbr</code> from struct type <code>typ</code>. </p>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000019">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000022">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
  <em>Justification:</em> <code>mbr</code> parameter shall be a structure member; will in any way raise an error in case not.<br  />
@@ -1271,10 +1233,10 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">((typ *) (((uint8_t *) (ptr)) - <a class="code hl_define" href="#a4ca80befacab1cf54e976f05f625f32c">OFFSET_OF</a>(typ, mbr)))</div>
-<div class="ttc" id="aarm__macros_8h_html_a4ca80befacab1cf54e976f05f625f32c"><div class="ttname"><a href="#a4ca80befacab1cf54e976f05f625f32c">OFFSET_OF</a></div><div class="ttdeci">#define OFFSET_OF(typ, mbr)</div><div class="ttdoc">Computes the offset member mbr from struct type typ.</div><div class="ttdef"><b>Definition</b> arm_macros.h:176</div></div>
+<div class="ttc" id="aarm__macros_8h_html_a4ca80befacab1cf54e976f05f625f32c"><div class="ttname"><a href="#a4ca80befacab1cf54e976f05f625f32c">OFFSET_OF</a></div><div class="ttdeci">#define OFFSET_OF(typ, mbr)</div><div class="ttdoc">Computes the offset member mbr from struct type typ.</div><div class="ttdef"><b>Definition</b> arm_macros.h:175</div></div>
 </div><!-- fragment -->
 <p>Computes the address of parent struct <code>typ</code> of <code>ptr</code> from member <code>mbr</code>. </p>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000020">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000023">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>mbr</code> parameter shall be a structure member; will in any way raise an error in case not.<br  />
  </dd></dl>
@@ -1540,26 +1502,6 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a6388870e639eee9c0a69446876f1f8cc" name="a6388870e639eee9c0a69446876f1f8cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6388870e639eee9c0a69446876f1f8cc">&#9670;&#160;</a></span>STR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define STR</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="preprocessor">#s</span></div>
-</div><!-- fragment -->
-<p>Stringify <code>s</code> expression. </p>
-
-</div>
-</div>
 <a id="a3892367cf34d164b4eeb63c73aca3369" name="a3892367cf34d164b4eeb63c73aca3369"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3892367cf34d164b4eeb63c73aca3369">&#9670;&#160;</a></span>SWAP_BYTE</h2>
 
@@ -1579,7 +1521,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a0878b994fac8d6563664edba349c7f70">SWAP_TYPE</a>(a, b, <a class="code hl_typedef" href="arm__typedefs_8h.html#aae9749d96e15ccb4f482dd5f55d98f9b">BYTE</a>)</div>
-<div class="ttc" id="aarm__macros_8h_html_a0878b994fac8d6563664edba349c7f70"><div class="ttname"><a href="#a0878b994fac8d6563664edba349c7f70">SWAP_TYPE</a></div><div class="ttdeci">#define SWAP_TYPE(a, b, typ)</div><div class="ttdoc">Swap two variable type typ a &amp; b.</div><div class="ttdef"><b>Definition</b> arm_macros.h:125</div></div>
+<div class="ttc" id="aarm__macros_8h_html_a0878b994fac8d6563664edba349c7f70"><div class="ttname"><a href="#a0878b994fac8d6563664edba349c7f70">SWAP_TYPE</a></div><div class="ttdeci">#define SWAP_TYPE(a, b, typ)</div><div class="ttdoc">Swap two variable type typ a &amp; b.</div><div class="ttdef"><b>Definition</b> arm_macros.h:124</div></div>
 </div><!-- fragment -->
 <p>Swap two <code>BYTE</code> <code>a</code> &amp; <code>b</code>. </p>
 
@@ -1707,7 +1649,7 @@ Macros</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">({ typ c = a; a = b; b = c; })</div>
 </div><!-- fragment -->
 <p>Swap two variable type <code>typ</code> <code>a</code> &amp; <code>b</code>. </p>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000013">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000016">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type declaration (thus raising error); other parameters shall be variable names, raising error otherwise is intended.<br  />
  </dd></dl>
@@ -1755,7 +1697,7 @@ Macros</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">((size_t) (<span class="keyword">sizeof</span>(arr) / <span class="keyword">sizeof</span>(arr[0])))</div>
 </div><!-- fragment -->
 <p>Computes the number of array elements in <code>arr</code>. </p>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000015">MISRA C:2012 Deviations</a></b></dt><dd>local derogation authorized for:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000018">MISRA C:2012 Deviations</a></b></dt><dd>local derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> Parenthesis doesn't make sense as parameter <code>arr</code> shall be an instance of type; raising error otherwise is intended.<br  />
  </dd></dl>
@@ -1783,7 +1725,7 @@ Macros</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">((size_t) (<span class="keyword">sizeof</span>(obj) / <span class="keyword">sizeof</span>(typ)))</div>
 </div><!-- fragment -->
 <p>Computes the number of elements in <code>obj</code> of type <code>typ</code>. </p>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000016">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000019">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>obj</code> parameter can be a type instead of an istance of type.<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
@@ -1812,7 +1754,7 @@ Macros</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">((size_t) <span class="keyword">sizeof</span>(((typ *)0)-&gt;mbr))</div>
 </div><!-- fragment -->
 <p>Computes the size of member <code>mbr</code> in struct type <code>typ</code>. </p>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000017">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000020">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
  <em>Justification:</em> <code>mbr</code> parameter shall be a structure member; will in any way raise an error in case not.<br  />
@@ -1926,7 +1868,7 @@ Macros</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">(((typ *)0)-&gt;mbr)</div>
 </div><!-- fragment -->
 <p>Get member <code>mbr</code> from a struct type <code>typ</code>. </p>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000018">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000021">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
  <em>Justification:</em> <code>mbr</code> parameter shall be a structure member; will in any way raise an error in case not.<br  />
@@ -1953,7 +1895,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">typeof(<a class="code hl_define" href="#a945f756368ec4c5e11befc58b4b91dc1">TYP_MBR</a>(typ, mbr))</div>
-<div class="ttc" id="aarm__macros_8h_html_a945f756368ec4c5e11befc58b4b91dc1"><div class="ttname"><a href="#a945f756368ec4c5e11befc58b4b91dc1">TYP_MBR</a></div><div class="ttdeci">#define TYP_MBR(typ, mbr)</div><div class="ttdoc">Get member mbr from a struct type typ.</div><div class="ttdef"><b>Definition</b> arm_macros.h:165</div></div>
+<div class="ttc" id="aarm__macros_8h_html_a945f756368ec4c5e11befc58b4b91dc1"><div class="ttname"><a href="#a945f756368ec4c5e11befc58b4b91dc1">TYP_MBR</a></div><div class="ttdeci">#define TYP_MBR(typ, mbr)</div><div class="ttdoc">Get member mbr from a struct type typ.</div><div class="ttdef"><b>Definition</b> arm_macros.h:164</div></div>
 </div><!-- fragment -->
 <p>Get typeof member <code>mbr</code> from a struct type <code>typ</code>. </p>
 <dl class="section warning"><dt>Warning</dt><dd>use with caution, C language typeof extension works well with native types, yet can be the cause of big (experienced) issues with more complex ones </dd></dl>
@@ -1998,56 +1940,10 @@ Macros</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">(*(typ *) (addr))</div>
 </div><!-- fragment -->
 <p>Get the type <code>typ</code> content of address <code>addr</code>. </p>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000014">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000017">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
  </dd></dl>
-
-</div>
-</div>
-<a id="acc44cb41b0818b28b4d2b9c4d46ee3c6" name="acc44cb41b0818b28b4d2b9c4d46ee3c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc44cb41b0818b28b4d2b9c4d46ee3c6">&#9670;&#160;</a></span>XCAT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define XCAT</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a9404439ed46dc67d489a7d4ec2853e8f">CAT</a>(a, b)</div>
-<div class="ttc" id="aarm__macros_8h_html_a9404439ed46dc67d489a7d4ec2853e8f"><div class="ttname"><a href="#a9404439ed46dc67d489a7d4ec2853e8f">CAT</a></div><div class="ttdeci">#define CAT(a, b)</div><div class="ttdoc">Preprocessor Name catenation of a and b (use of XCAT is highly recommended for any need)</div><div class="ttdef"><b>Definition</b> arm_macros.h:186</div></div>
-</div><!-- fragment -->
-<p>Preprocessor Name catenation of <code>a</code> and <code>b</code> (nesting possibility) </p>
-
-</div>
-</div>
-<a id="a03943706e48069237cd57f2d35ca987e" name="a03943706e48069237cd57f2d35ca987e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03943706e48069237cd57f2d35ca987e">&#9670;&#160;</a></span>XSTR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define XSTR</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a6388870e639eee9c0a69446876f1f8cc">STR</a>(s)</div>
-<div class="ttc" id="aarm__macros_8h_html_a6388870e639eee9c0a69446876f1f8cc"><div class="ttname"><a href="#a6388870e639eee9c0a69446876f1f8cc">STR</a></div><div class="ttdeci">#define STR(s)</div><div class="ttdoc">Stringify s expression.</div><div class="ttdef"><b>Definition</b> arm_macros.h:189</div></div>
-</div><!-- fragment -->
-<p>Stringify the result of <code>s</code> expression expansion (stringification of a macro expansion) </p>
 
 </div>
 </div>

@@ -156,9 +156,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6f85b640ca96872445e5b717a3fb27e3" id="r_a6f85b640ca96872445e5b717a3fb27e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="arm__typedefs_8h.html#ac78fad3d8bf59eb44161d6fb5f4c73f8">uintCPU_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f85b640ca96872445e5b717a3fb27e3">_get_current_heap_address</a> (void)</td></tr>
-<tr class="memdesc:a6f85b640ca96872445e5b717a3fb27e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current heap address.  <br /></td></tr>
-<tr class="separator:a6f85b640ca96872445e5b717a3fb27e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a285df87b898da497a1d6f356116f1346" id="r_a285df87b898da497a1d6f356116f1346"><td class="memItemLeft" align="right" valign="top">uintPTR_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a285df87b898da497a1d6f356116f1346">get_current_heap_address_int</a> (void)</td></tr>
+<tr class="memdesc:a285df87b898da497a1d6f356116f1346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current heap address.  <br /></td></tr>
+<tr class="separator:a285df87b898da497a1d6f356116f1346"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab86f6bbf523cef86376fb4866e5e4149" id="r_ab86f6bbf523cef86376fb4866e5e4149"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab86f6bbf523cef86376fb4866e5e4149">get_current_heap_address</a> (void)</td></tr>
 <tr class="memdesc:ab86f6bbf523cef86376fb4866e5e4149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current heap address pointer.  <br /></td></tr>
 <tr class="separator:ab86f6bbf523cef86376fb4866e5e4149"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -203,6 +203,16 @@ Functions</h2></td></tr>
 <div class="textblock"><p>ARM common standard c library inlines and wrapper macros. </p>
 <dl class="section author"><dt>Author</dt><dd>SMFSW </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2025, SMFSW </dd></dl>
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000012">MISRA C:2012 Deviations</a></b></dt><dd><p class="startdd">Header scope deviation has been granted for following rules:<br  />
+ <b>Rule-18.4</b> - <b>Advisory:</b> +/- operators on pointer type (misra-c2012-18.4)<br  />
+ </p>
+<p class="enddd">Header scope legitimate use derogation authorized for:<br  />
+ <b>Rule-21.6</b> - <b>Required:</b> Use of <code>&lt;stdio.h&gt;</code> (misra-c2012-21.6)<br  />
+ <em>Justification:</em> Some of the following functions are <code>sprintf</code> like oriented extensions to standard library.<br  />
+ <b>Rule-17.1</b> - <b>Required:</b> Use of <code>&lt;starg.h&gt;</code> (misra-c2012-17.1)<br  />
+ <em>Justification:</em> Legitimate use of variadic parameters received, passed to <code>printf</code> like function call.<br  />
+ </p>
+</dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a1577b5e78439185f691c545b7fe1e529" name="a1577b5e78439185f691c545b7fe1e529"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1577b5e78439185f691c545b7fe1e529">&#9670;&#160;</a></span>malloc_assert</h2>
@@ -238,8 +248,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(printf(<span class="stringliteral">&quot;%s = %d\r\n&quot;</span>, <a class="code hl_define" href="arm__macros_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(e), (e)))</div>
-<div class="ttc" id="aarm__macros_8h_html_a6388870e639eee9c0a69446876f1f8cc"><div class="ttname"><a href="arm__macros_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a></div><div class="ttdeci">#define STR(s)</div><div class="ttdoc">Stringify s expression.</div><div class="ttdef"><b>Definition</b> arm_macros.h:189</div></div>
+<b>Value:</b><div class="fragment"><div class="line">(printf(<span class="stringliteral">&quot;%s = %d\r\n&quot;</span>, <a class="code hl_define" href="arm__preprocess_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(e), (e)))</div>
+<div class="ttc" id="aarm__preprocess_8h_html_a6388870e639eee9c0a69446876f1f8cc"><div class="ttname"><a href="arm__preprocess_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a></div><div class="ttdeci">#define STR(s)</div><div class="ttdoc">Stringify s expression.</div><div class="ttdef"><b>Definition</b> arm_preprocess.h:23</div></div>
 </div><!-- fragment -->
 <p>Print expression <code>e</code> and it's result <code>e</code> using <code>printf</code>. </p>
 
@@ -263,7 +273,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(sprintf(s, <span class="stringliteral">&quot;%s = %d\r\n&quot;</span>, <a class="code hl_define" href="arm__macros_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(e), (e)))</div>
+<b>Value:</b><div class="fragment"><div class="line">(sprintf(s, <span class="stringliteral">&quot;%s = %d\r\n&quot;</span>, <a class="code hl_define" href="arm__preprocess_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(e), (e)))</div>
 </div><!-- fragment -->
 <p>Print expression <code>e</code> and it's result <code>e</code> to <code>s</code> string. </p>
 
@@ -284,7 +294,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">(memset(s, <a class="code hl_define" href="arm__macros_8h.html#ace955bbe2a2f83133bc0f701e22c08a5">charNull</a>, <span class="keyword">sizeof</span>(s)))</div>
-<div class="ttc" id="aarm__macros_8h_html_ace955bbe2a2f83133bc0f701e22c08a5"><div class="ttname"><a href="arm__macros_8h.html#ace955bbe2a2f83133bc0f701e22c08a5">charNull</a></div><div class="ttdeci">#define charNull</div><div class="ttdoc">Null Char.</div><div class="ttdef"><b>Definition</b> arm_macros.h:26</div></div>
+<div class="ttc" id="aarm__macros_8h_html_ace955bbe2a2f83133bc0f701e22c08a5"><div class="ttname"><a href="arm__macros_8h.html#ace955bbe2a2f83133bc0f701e22c08a5">charNull</a></div><div class="ttdeci">#define charNull</div><div class="ttdoc">Null Char.</div><div class="ttdef"><b>Definition</b> arm_macros.h:25</div></div>
 </div><!-- fragment -->
 <p>Clear string <code>s</code> (full content) </p>
 <dl class="section warning"><dt>Warning</dt><dd>Only works with char arrays, do not use on pointer to char array </dd></dl>
@@ -309,7 +319,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(sprintf(s, <a class="code hl_define" href="arm__macros_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(i)), (i))</div>
+<b>Value:</b><div class="fragment"><div class="line">(sprintf(s, <a class="code hl_define" href="arm__preprocess_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(i)), (i))</div>
 </div><!-- fragment -->
 <p>Print instruction <code>i</code> to <code>s</code> string and execute it. </p>
 
@@ -329,7 +339,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(puts(<span class="stringliteral">&quot;Decrementing &quot;</span> <a class="code hl_define" href="arm__macros_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(x)), (x)--)</div>
+<b>Value:</b><div class="fragment"><div class="line">(puts(<span class="stringliteral">&quot;Decrementing &quot;</span> <a class="code hl_define" href="arm__preprocess_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(x)), (x)--)</div>
 </div><!-- fragment -->
 <p>Decrement example on <code>x</code> using <code>puts</code>. </p>
 
@@ -349,7 +359,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(puts(<span class="stringliteral">&quot;Incrementing &quot;</span> <a class="code hl_define" href="arm__macros_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(x)), (x)++)</div>
+<b>Value:</b><div class="fragment"><div class="line">(puts(<span class="stringliteral">&quot;Incrementing &quot;</span> <a class="code hl_define" href="arm__preprocess_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(x)), (x)++)</div>
 </div><!-- fragment -->
 <p>Increment example on <code>x</code> using <code>puts</code>. </p>
 
@@ -369,52 +379,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(printf(<a class="code hl_define" href="arm__macros_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(i)), (i))</div>
+<b>Value:</b><div class="fragment"><div class="line">(printf(<a class="code hl_define" href="arm__preprocess_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(i)), (i))</div>
 </div><!-- fragment -->
 <p>Print instruction <code>i</code> using <code>printf</code> and execute it. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a6f85b640ca96872445e5b717a3fb27e3" name="a6f85b640ca96872445e5b717a3fb27e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f85b640ca96872445e5b717a3fb27e3">&#9670;&#160;</a></span>_get_current_heap_address()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="arm__typedefs_8h.html#ac78fad3d8bf59eb44161d6fb5f4c73f8">uintCPU_t</a> _get_current_heap_address </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get current heap address. </p>
-<dl class="section note"><dt>Note</dt><dd>Address is returned as integer (returning released pointer value would cause a warning from compiler) Use <a class="el" href="#ab86f6bbf523cef86376fb4866e5e4149">get_current_heap_address</a> to get current heap address under the form of <code>void*</code> pointer </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>Integer value of current heap address </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="arm__inlines__stdclib_8h_a6f85b640ca96872445e5b717a3fb27e3_icgraph.png" border="0" usemap="#aarm__inlines__stdclib_8h_a6f85b640ca96872445e5b717a3fb27e3_icgraph" alt=""/></div>
-<map name="aarm__inlines__stdclib_8h_a6f85b640ca96872445e5b717a3fb27e3_icgraph" id="aarm__inlines__stdclib_8h_a6f85b640ca96872445e5b717a3fb27e3_icgraph">
-<area shape="rect" title="Get current heap address." alt="" coords="228,5,409,32"/>
-<area shape="rect" href="arm__inlines__stdclib_8h.html#ab86f6bbf523cef86376fb4866e5e4149" title="Get current heap address pointer." alt="" coords="5,5,180,32"/>
-<area shape="poly" title=" " alt="" coords="213,21,180,21,180,16,213,16"/>
-</map>
-</div>
-
-</div>
-</div>
 <a id="ab86f6bbf523cef86376fb4866e5e4149" name="ab86f6bbf523cef86376fb4866e5e4149"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab86f6bbf523cef86376fb4866e5e4149">&#9670;&#160;</a></span>get_current_heap_address()</h2>
 
@@ -440,6 +411,10 @@ Here is the caller graph for this function:</div>
 
 <p>Get current heap address pointer. </p>
 <dl class="section note"><dt>Note</dt><dd>Can be useful to get heap value when testing for potential memory leaks </dd></dl>
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000014">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
+ <b>Rule-11.6</b> - <b>Required:</b> pointer to void cast to arithmetic (misra-c2012-11.6)<br  />
+ <em>Justification:</em> Intended to identify potential memory leaks in case of dynamic allocation use.<br  />
+</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Shall not cast returned value to <code>void*</code> (allowing to write anything to the pointed content) </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to current heap address </dd></dl>
 <div class="dynheader">
@@ -448,8 +423,52 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="arm__inlines__stdclib_8h_ab86f6bbf523cef86376fb4866e5e4149_cgraph.png" border="0" usemap="#aarm__inlines__stdclib_8h_ab86f6bbf523cef86376fb4866e5e4149_cgraph" alt=""/></div>
 <map name="aarm__inlines__stdclib_8h_ab86f6bbf523cef86376fb4866e5e4149_cgraph" id="aarm__inlines__stdclib_8h_ab86f6bbf523cef86376fb4866e5e4149_cgraph">
 <area shape="rect" title="Get current heap address pointer." alt="" coords="5,5,180,32"/>
-<area shape="rect" href="arm__inlines__stdclib_8h.html#a6f85b640ca96872445e5b717a3fb27e3" title="Get current heap address." alt="" coords="228,5,409,32"/>
+<area shape="rect" href="arm__inlines__stdclib_8h.html#a285df87b898da497a1d6f356116f1346" title="Get current heap address." alt="" coords="228,5,423,32"/>
 <area shape="poly" title=" " alt="" coords="180,16,213,16,213,21,180,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a285df87b898da497a1d6f356116f1346" name="a285df87b898da497a1d6f356116f1346"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a285df87b898da497a1d6f356116f1346">&#9670;&#160;</a></span>get_current_heap_address_int()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uintPTR_t get_current_heap_address_int </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get current heap address. </p>
+<dl class="section note"><dt>Note</dt><dd>Address is returned as integer (returning released pointer value would cause a warning from compiler) Use <a class="el" href="#ab86f6bbf523cef86376fb4866e5e4149">get_current_heap_address</a> to get current heap address under the form of <code>void*</code> pointer </dd></dl>
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000013">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
+ <b>Rule-11.6</b> - <b>Required:</b> pointer to void cast to arithmetic (misra-c2012-11.6)<br  />
+ <b>Rule-21.3</b> - <b>Required:</b> dynamic allocation (misra-c2012-21.3)<br  />
+ <em>Justification:</em> Intended to identify potential memory leaks in case of dynamic allocation use.<br  />
+</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Integer value of current heap address </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="arm__inlines__stdclib_8h_a285df87b898da497a1d6f356116f1346_icgraph.png" border="0" usemap="#aarm__inlines__stdclib_8h_a285df87b898da497a1d6f356116f1346_icgraph" alt=""/></div>
+<map name="aarm__inlines__stdclib_8h_a285df87b898da497a1d6f356116f1346_icgraph" id="aarm__inlines__stdclib_8h_a285df87b898da497a1d6f356116f1346_icgraph">
+<area shape="rect" title="Get current heap address." alt="" coords="228,5,423,32"/>
+<area shape="rect" href="arm__inlines__stdclib_8h.html#ab86f6bbf523cef86376fb4866e5e4149" title="Get current heap address pointer." alt="" coords="5,5,180,32"/>
+<area shape="poly" title=" " alt="" coords="213,21,180,21,180,16,213,16"/>
 </map>
 </div>
 

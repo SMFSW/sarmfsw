@@ -1,7 +1,7 @@
 var searchData=
 [
   ['c_3a2012_20deviations_20list_0',['MISRA C:2012 Deviations List',['../_m_i_s_r_a.html',1,'']]],
-  ['cat_1',['CAT',['../arm__macros_8h.html#a9404439ed46dc67d489a7d4ec2853e8f',1,'arm_macros.h']]],
+  ['cat_1',['CAT',['../arm__preprocess_8h.html#a9404439ed46dc67d489a7d4ec2853e8f',1,'arm_preprocess.h']]],
   ['celsius2fahrenheit_2',['celsius2fahrenheit',['../arm__inlines__temperature_8h.html#aa9c4144ad3c12dea516892a55f67246e',1,'arm_inlines_temperature.h']]],
   ['celsius2kelvin_3',['celsius2kelvin',['../arm__inlines__temperature_8h.html#a7f8e8571f3a41a6cfebffaf5ecbf173e',1,'arm_inlines_temperature.h']]],
   ['char_4',['CHAR',['../arm__typedefs_8h.html#aebb9e13210d88d43e32e735ada43a425',1,'arm_typedefs.h']]],

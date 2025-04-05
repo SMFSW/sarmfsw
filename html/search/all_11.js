@@ -48,7 +48,7 @@ var searchData=
   ['stm_5fpin_45',['stm_pin',['../arm__chip__stm32_8h.html#a4db3f9dc43bc143a47a9cc43bb41dbd8',1,'arm_chip_stm32.h']]],
   ['stm_5fport_46',['stm_port',['../arm__chip__stm32_8h.html#a7bb84d904ba6fd78aa89bc26335898f9',1,'arm_chip_stm32.h']]],
   ['stm_5ftimer_47',['stm_timer',['../arm__chip__stm32_8h.html#aafa8b498b5b19820bf871c31ea214837',1,'arm_chip_stm32.h']]],
-  ['str_48',['STR',['../arm__macros_8h.html#a6388870e639eee9c0a69446876f1f8cc',1,'arm_macros.h']]],
+  ['str_48',['STR',['../arm__preprocess_8h.html#a6388870e639eee9c0a69446876f1f8cc',1,'arm_preprocess.h']]],
   ['str_5fadd_5fcr_49',['str_add_cr',['../arm__inlines__stdclib_8h.html#a1ab5724cb8ade18e2a5d1f2065b55bdd',1,'arm_inlines_stdclib.h']]],
   ['str_5fadd_5fcrlf_50',['str_add_crlf',['../arm__inlines__stdclib_8h.html#ae91c6981bb429e518293fb43c9313784',1,'arm_inlines_stdclib.h']]],
   ['str_5fadd_5flf_51',['str_add_lf',['../arm__inlines__stdclib_8h.html#a0280a1043c0eb064de966af5ca40c270',1,'arm_inlines_stdclib.h']]],
