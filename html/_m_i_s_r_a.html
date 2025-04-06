@@ -100,10 +100,6 @@ $(function(){ initResizable(false); });
  <em>Justification:</em> <code>#define</code> are generic reserved identifiers for attributes.<br  />
   </p>
 </dd>
-<dt>File <a class="el" href="arm__chip__ino_8h.html">arm_chip_ino.h</a>  </dt>
-<dd><a class="anchor" id="_MISRA000002"></a> Header scope deviation has been granted for following rules:<br  />
- <b>Rule-20.5</b> - <b>Advisory:</b> <code>#undef</code> (misra-c2012-20.5)<br  />
-  </dd>
 <dt>File <a class="el" href="arm__chip__pic_8h.html">arm_chip_pic.h</a>  </dt>
 <dd><a class="anchor" id="_MISRA000003"></a> Header scope deviation has been granted for following rules:<br  />
  <b>Rule-20.5</b> - <b>Advisory:</b> <code>#undef</code> (misra-c2012-20.5)<br  />
@@ -123,6 +119,8 @@ $(function(){ initResizable(false); });
  <em>Justification:</em> Some of the following functions are <code>sprintf</code> like oriented extensions to standard library.<br  />
  <b>Rule-17.1</b> - <b>Required:</b> Use of <code>&lt;starg.h&gt;</code> (misra-c2012-17.1)<br  />
  <em>Justification:</em> Legitimate use of variadic parameters received, passed to <code>printf</code> like function call.<br  />
+ <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
+ <em>Justification:</em> <code>Use</code> of <a class="el" href="arm__preprocess_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a> catenate macro in macros expansion.<br  />
   </p>
 </dd>
 <dt>File <a class="el" href="arm__macros_8h.html">arm_macros.h</a>  </dt>
@@ -137,7 +135,6 @@ $(function(){ initResizable(false); });
 <dt>File <a class="el" href="arm__typedefs_8h.html">arm_typedefs.h</a>  </dt>
 <dd><p class="startdd"><a class="anchor" id="_MISRA000025"></a> Header scope deviation has been granted for following rules:<br  />
  <b>Rule-19.2</b> - <b>Advisory:</b> <code>union</code> keyword (misra-c2012-19.2)<br  />
- <b>Rule-20.5</b> - <b>Advisory:</b> <code>#undef</code> (misra-c2012-20.5)<br  />
  </p>
 <p class="interdd"></p>
 <p class="enddd">Header scope legitimate use derogation authorized for:<br  />
@@ -145,6 +142,10 @@ $(function(){ initResizable(false); });
  <em>Justification:</em> <code>#define</code> are library specific reserved identifiers.<br  />
   </p>
 </dd>
+<dt>Global <a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900">eResetSource</a>  </dt>
+<dd><a class="anchor" id="_MISRA000002"></a> Local deviation has been granted for following rules:<br  />
+ <b>Rule-20.5</b> - <b>Advisory:</b> <code>#undef</code> (misra-c2012-20.5)<br  />
+  </dd>
 <dt>Global <a class="el" href="arm__inlines__stdclib_8h.html#ab86f6bbf523cef86376fb4866e5e4149">get_current_heap_address</a>  (void)</dt>
 <dd><a class="anchor" id="_MISRA000014"></a> Local legitimate use derogation authorized for:<br  />
  <b>Rule-11.6</b> - <b>Required:</b> pointer to void cast to arithmetic (misra-c2012-11.6)<br  />
@@ -232,6 +233,10 @@ $(function(){ initResizable(false); });
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
  <em>Justification:</em> <code>mbr</code> parameter shall be a structure member; will in any way raise an error in case not.<br  />
+  </dd>
+<dt>Union <a class="el" href="unionu_byte.html">uByte</a>  </dt>
+<dd><a class="anchor" id="_MISRA000026"></a> Local deviation has been granted for following rules:<br  />
+ <b>Rule-20.5</b> - <b>Advisory:</b> <code>#undef</code> (misra-c2012-20.5)<br  />
   </dd>
 <dt>Global <a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>  (addr, typ)</dt>
 <dd><a class="anchor" id="_MISRA000017"></a> Local legitimate use derogation authorized for:<br  />

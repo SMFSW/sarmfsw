@@ -5,7 +5,7 @@ var searchData=
   ['pnull_2',['pNull',['../arm__macros_8h.html#a12b0812248f8d20ac8202105b1d537b0',1,'arm_macros.h']]],
   ['printexpr_3',['printExpr',['../arm__inlines__stdclib_8h.html#abdb35fe5009818050f272c96997f495a',1,'arm_inlines_stdclib.h']]],
   ['printf_5f_5f_4',['PRINTF__',['../arm__attributes_8h.html#ad7da62b3cc20aec0d16831367da14e6a',1,'arm_attributes.h']]],
-  ['pulldown_5',['PullDown',['../arm__typedefs_8h.html#a236dccf84e72f987577efcc6ff334564ac71cd2b9d40cca631e53f37874c53f5f',1,'arm_typedefs.h']]],
-  ['pullup_6',['PullUp',['../arm__typedefs_8h.html#a236dccf84e72f987577efcc6ff334564a3be493d0479ea10ea2b1fdcd7b33ec3b',1,'arm_typedefs.h']]],
+  ['pulldown_5',['PullDown',['../arm__typedefs_8h.html#a9940361f0c6b378a04958eaba4884784ac71cd2b9d40cca631e53f37874c53f5f',1,'arm_typedefs.h']]],
+  ['pullup_6',['PullUp',['../arm__typedefs_8h.html#a9940361f0c6b378a04958eaba4884784a3be493d0479ea10ea2b1fdcd7b33ec3b',1,'arm_typedefs.h']]],
   ['pure_5f_5f_7',['PURE__',['../arm__attributes_8h.html#a9c7791b7a2a45b5c433743fdadc52df3',1,'arm_attributes.h']]]
 ];

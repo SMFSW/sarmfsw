@@ -141,12 +141,20 @@ Macros</h2></td></tr>
 <tr class="memitem:ab777844dc3b266f05baed9b15b06247a" id="r_ab777844dc3b266f05baed9b15b06247a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab777844dc3b266f05baed9b15b06247a">sprintExpr</a>(s,  e)</td></tr>
 <tr class="memdesc:ab777844dc3b266f05baed9b15b06247a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print expression <code>e</code> and it's result <code>e</code> to <code>s</code> string.  <br /></td></tr>
 <tr class="separator:ab777844dc3b266f05baed9b15b06247a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc15a66ae68370955affecbe09fbbd25" id="r_acc15a66ae68370955affecbe09fbbd25"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc15a66ae68370955affecbe09fbbd25">snprintExpr</a>(s,  n,  e)</td></tr>
+<tr class="memdesc:acc15a66ae68370955affecbe09fbbd25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print expression <code>e</code> and it's result <code>e</code> with max <br  />
+ characters to <code>s</code> string.  <br /></td></tr>
+<tr class="separator:acc15a66ae68370955affecbe09fbbd25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a0958004718cacfebd15dee4a047b58" id="r_a7a0958004718cacfebd15dee4a047b58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a0958004718cacfebd15dee4a047b58">verbInstr</a>(i)</td></tr>
 <tr class="memdesc:a7a0958004718cacfebd15dee4a047b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print instruction <code>i</code> using <code>printf</code> and execute it.  <br /></td></tr>
 <tr class="separator:a7a0958004718cacfebd15dee4a047b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70e621a556e34f7b92fb0a886dfa7de8" id="r_a70e621a556e34f7b92fb0a886dfa7de8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70e621a556e34f7b92fb0a886dfa7de8">sverbInstr</a>(s,  i)</td></tr>
 <tr class="memdesc:a70e621a556e34f7b92fb0a886dfa7de8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print instruction <code>i</code> to <code>s</code> string and execute it.  <br /></td></tr>
 <tr class="separator:a70e621a556e34f7b92fb0a886dfa7de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaf16cff1e59cf5529e558c7554ec160" id="r_aeaf16cff1e59cf5529e558c7554ec160"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeaf16cff1e59cf5529e558c7554ec160">snverbInstr</a>(s,  n,  i)</td></tr>
+<tr class="memdesc:aeaf16cff1e59cf5529e558c7554ec160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print instruction <code>i</code> to <code>s</code> string with max <br  />
+ characters and execute it.  <br /></td></tr>
+<tr class="separator:aeaf16cff1e59cf5529e558c7554ec160"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a679dacf2212f2c67dcf07cc246a79b0c" id="r_a679dacf2212f2c67dcf07cc246a79b0c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a679dacf2212f2c67dcf07cc246a79b0c">verbInc</a>(x)</td></tr>
 <tr class="memdesc:a679dacf2212f2c67dcf07cc246a79b0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment example on <code>x</code> using <code>puts</code>.  <br /></td></tr>
 <tr class="separator:a679dacf2212f2c67dcf07cc246a79b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -211,6 +219,8 @@ Functions</h2></td></tr>
  <em>Justification:</em> Some of the following functions are <code>sprintf</code> like oriented extensions to standard library.<br  />
  <b>Rule-17.1</b> - <b>Required:</b> Use of <code>&lt;starg.h&gt;</code> (misra-c2012-17.1)<br  />
  <em>Justification:</em> Legitimate use of variadic parameters received, passed to <code>printf</code> like function call.<br  />
+ <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
+ <em>Justification:</em> <code>Use</code> of <a class="el" href="arm__preprocess_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a> catenate macro in macros expansion.<br  />
  </p>
 </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -255,6 +265,66 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="acc15a66ae68370955affecbe09fbbd25" name="acc15a66ae68370955affecbe09fbbd25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc15a66ae68370955affecbe09fbbd25">&#9670;&#160;</a></span>snprintExpr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define snprintExpr</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(snprintf((s), (n), <span class="stringliteral">&quot;%s = %d\r\n&quot;</span>, <a class="code hl_define" href="arm__preprocess_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(e), (e)))</div>
+</div><!-- fragment -->
+<p>Print expression <code>e</code> and it's result <code>e</code> with max <br  />
+ characters to <code>s</code> string. </p>
+
+</div>
+</div>
+<a id="aeaf16cff1e59cf5529e558c7554ec160" name="aeaf16cff1e59cf5529e558c7554ec160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaf16cff1e59cf5529e558c7554ec160">&#9670;&#160;</a></span>snverbInstr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define snverbInstr</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>i</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(snprintf((s), (n), <a class="code hl_define" href="arm__preprocess_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(i)), (i))</div>
+</div><!-- fragment -->
+<p>Print instruction <code>i</code> to <code>s</code> string with max <br  />
+ characters and execute it. </p>
+
+</div>
+</div>
 <a id="ab777844dc3b266f05baed9b15b06247a" name="ab777844dc3b266f05baed9b15b06247a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab777844dc3b266f05baed9b15b06247a">&#9670;&#160;</a></span>sprintExpr</h2>
 
@@ -273,7 +343,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(sprintf(s, <span class="stringliteral">&quot;%s = %d\r\n&quot;</span>, <a class="code hl_define" href="arm__preprocess_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(e), (e)))</div>
+<b>Value:</b><div class="fragment"><div class="line">(sprintf((s), <span class="stringliteral">&quot;%s = %d\r\n&quot;</span>, <a class="code hl_define" href="arm__preprocess_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(e), (e)))</div>
 </div><!-- fragment -->
 <p>Print expression <code>e</code> and it's result <code>e</code> to <code>s</code> string. </p>
 
@@ -319,7 +389,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(sprintf(s, <a class="code hl_define" href="arm__preprocess_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(i)), (i))</div>
+<b>Value:</b><div class="fragment"><div class="line">(sprintf((s), <a class="code hl_define" href="arm__preprocess_8h.html#a6388870e639eee9c0a69446876f1f8cc">STR</a>(i)), (i))</div>
 </div><!-- fragment -->
 <p>Print instruction <code>i</code> to <code>s</code> string and execute it. </p>
 

@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['sbitfield16_0',['sBitfield16',['../arm__typedefs_8h.html#ae583a8e6d08309b4c66796b55a746883',1,'arm_typedefs.h']]],
-  ['sbitfield32_1',['sBitfield32',['../arm__typedefs_8h.html#a059f9d7c71790fc0db2cc42e644ddb4e',1,'arm_typedefs.h']]],
-  ['sbitfield64_2',['sBitfield64',['../arm__typedefs_8h.html#abd657801c57d27d391b1238fa1c90251',1,'arm_typedefs.h']]],
-  ['sbitfield8_3',['sBitfield8',['../arm__typedefs_8h.html#a9c2b31c9bb26961c8b102a7a3f9da2e6',1,'arm_typedefs.h']]],
+  ['sbitfield16_0',['sBitfield16',['../arm__typedefs_8h.html#a8e5bc368bf706b66529e3c65d52bfe76',1,'arm_typedefs.h']]],
+  ['sbitfield32_1',['sBitfield32',['../arm__typedefs_8h.html#ae5fb166bdebf02e6577947e19c04ef04',1,'arm_typedefs.h']]],
+  ['sbitfield64_2',['sBitfield64',['../arm__typedefs_8h.html#a4dc5d3c432749c8a878dcfedbe8cd68c',1,'arm_typedefs.h']]],
+  ['sbitfield8_3',['sBitfield8',['../arm__typedefs_8h.html#a26910a5988520589dbee1fa18a0cde96',1,'arm_typedefs.h']]],
   ['sbyte_4',['SBYTE',['../arm__typedefs_8h.html#a0b0ec08cb12c90f493f131cffb432638',1,'arm_typedefs.h']]],
   ['scoord2d_5',['sCoord2D',['../arm__inlines__rotation_8h.html#a10f9b49ef96707460d2092beb864af78',1,'arm_inlines_rotation.h']]],
   ['sdword_6',['SDWORD',['../arm__typedefs_8h.html#a3119cd3f198b5e533a6a415156ddf013',1,'arm_typedefs.h']]],

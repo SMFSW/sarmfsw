@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['ubyte_0',['uByte',['../unionu_byte.html',1,'']]],
-  ['ubyte_5fi_1',['uByte_i',['../unionu_byte__i.html',1,'']]],
-  ['udword_2',['uDWord',['../unionu_d_word.html',1,'']]],
-  ['udword_5fi_3',['uDWord_i',['../unionu_d_word__i.html',1,'']]],
-  ['ulword_4',['uLWord',['../unionu_l_word.html',1,'']]],
-  ['ulword_5fi_5',['uLWord_i',['../unionu_l_word__i.html',1,'']]],
-  ['uword_6',['uWord',['../unionu_word.html',1,'']]],
-  ['uword_5fi_7',['uWord_i',['../unionu_word__i.html',1,'']]]
+  ['sbitfield16_0',['sBitfield16',['../structs_bitfield16.html',1,'']]],
+  ['sbitfield32_1',['sBitfield32',['../structs_bitfield32.html',1,'']]],
+  ['sbitfield64_2',['sBitfield64',['../structs_bitfield64.html',1,'']]],
+  ['sbitfield8_3',['sBitfield8',['../structs_bitfield8.html',1,'']]],
+  ['scoord2d_4',['sCoord2D',['../structs_coord2_d.html',1,'']]],
+  ['sintfrac_5',['sIntFrac',['../structs_int_frac.html',1,'']]],
+  ['slinearflexarray_6',['sLinearFlexArray',['../structs_linear_flex_array.html',1,'']]]
 ];
