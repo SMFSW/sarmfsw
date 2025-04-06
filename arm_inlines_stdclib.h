@@ -9,9 +9,11 @@
 **	\a Justification: Some of the following functions are \c sprintf like oriented extensions to standard library.\n
 ** 	\b Rule-17.1 - \b Required: Use of \c <starg.h> (misra-c2012-17.1)\n
 **	\a Justification: Legitimate use of variadic parameters received, passed to \c printf like function call.\n
+**	\b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
+**	\a Justification: \p Use of \ref STR catenate macro in macros expansion.\n
 */
 // cppcheck-suppress-begin misra-c2012-18.4
-// cppcheck-suppress-begin [misra-c2012-21.6, misra-c2012-17.1]
+// cppcheck-suppress-begin [misra-c2012-21.6, misra-c2012-17.1, misra-c2012-20.7]
 /****************************************************************/
 #ifndef ARM_STDCLIB_H_
 	#define ARM_STDCLIB_H_
@@ -74,16 +76,18 @@ __INLINE const void * INLINE__ get_current_heap_address(void)
 /*************************/
 
 //! \warning Only works with char arrays, do not use on pointer to char array
-#define strclr_full(s)		(memset(s, charNull, sizeof(s)))			//!< Clear string \p s (full content)
+#define strclr_full(s)			(memset(s, charNull, sizeof(s)))					//!< Clear string \p s (full content)
 
-#define printExpr(e)		(printf("%s = %d\r\n", STR(e), (e)))		//!< Print expression \p e and it's result \p e using \c printf
-#define sprintExpr(s, e)	(sprintf(s, "%s = %d\r\n", STR(e), (e)))	//!< Print expression \p e and it's result \p e to \p s string
+#define printExpr(e)			(printf("%s = %d\r\n", STR(e), (e)))				//!< Print expression \p e and it's result \p e using \c printf
+#define sprintExpr(s, e)		(sprintf((s), "%s = %d\r\n", STR(e), (e)))			//!< Print expression \p e and it's result \p e to \p s string
+#define snprintExpr(s, n, e)	(snprintf((s), (n), "%s = %d\r\n", STR(e), (e)))	//!< Print expression \p e and it's result \p e with max \n characters to \p s string
 
-#define verbInstr(i)		(printf(STR(i)), (i))						//!< Print instruction \p i using \c printf and execute it
-#define sverbInstr(s, i)	(sprintf(s, STR(i)), (i))					//!< Print instruction \p i to \p s string and execute it
+#define verbInstr(i)			(printf(STR(i)), (i))								//!< Print instruction \p i using \c printf and execute it
+#define sverbInstr(s, i)		(sprintf((s), STR(i)), (i))							//!< Print instruction \p i to \p s string and execute it
+#define snverbInstr(s, n, i)	(snprintf((s), (n), STR(i)), (i))					//!< Print instruction \p i to \p s string with max \n characters and execute it
 
-#define verbInc(x)			(puts("Incrementing " STR(x)), (x)++)		//!< Increment example on \p x using \c puts
-#define verbDec(x)			(puts("Decrementing " STR(x)), (x)--)		//!< Decrement example on \p x using \c puts
+#define verbInc(x)				(puts("Incrementing " STR(x)), (x)++)				//!< Increment example on \p x using \c puts
+#define verbDec(x)				(puts("Decrementing " STR(x)), (x)--)				//!< Decrement example on \p x using \c puts
 
 
 /*!\brief Append formatted content at the end of string (char array)
@@ -235,5 +239,5 @@ __INLINE CHAR * INLINE__ strn_add_crlf(CHAR * const s, const size_t len) {
 
 #endif /* ARM_STDCLIB_H_ */
 // cppcheck-suppress-end misra-c2012-18.4
-// cppcheck-suppress-end [misra-c2012-21.6, misra-c2012-17.1]
+// cppcheck-suppress-end [misra-c2012-21.6, misra-c2012-17.1, misra-c2012-20.7]
 /****************************************************************/

@@ -15,12 +15,11 @@
 ** \note	STDINT_NDEF can be defined at project level if stdint.h doesn't exist for target compiler
 ** \MISRA Header scope deviation has been granted for following rules:\n
 ** 	\b Rule-19.2 - \b Advisory: \c union keyword (misra-c2012-19.2)\n
-** 	\b Rule-20.5 - \b Advisory: \c \#undef (misra-c2012-20.5)\n
 ** \MISRA Header scope legitimate use derogation authorized for:\n
 ** 	\b Rule-21.1 - \b Required: \c \#define and \c \#undef on reserved identifiers (misra-c2012-21.1)\n
 **	\a Justification: \c \#define are library specific reserved identifiers.\n
 */
-// cppcheck-suppress-begin [misra-c2012-19.2, misra-c2012-20.5]
+// cppcheck-suppress-begin [misra-c2012-19.2]
 // cppcheck-suppress-begin [misra-c2012-21.1]
 /****************************************************************/
 #ifndef ARM_TYPEDEFS_H_
@@ -123,39 +122,39 @@ typedef	int64_t				SLWORD;		//!< Signed lWord typedef (64bits)
 #endif
 
 
-/*!\enum eState_i
+/*!\enum _eState
 ** \brief Activation state On, Off
 **/
-typedef enum eState_i {
+typedef enum _eState {
 	Off = 0U,	//!< Off / Reset
 	On = 1U		//!< On / Set
 } eState;
 
 
-/*!\enum eEdge_i
+/*!\enum _eEdge
 ** \brief Signal Edges
 **/
-typedef enum eEdge_i {
+typedef enum _eEdge {
 	NoEdge = 0,	//!< No change
 	Rising,		//!< Rising edge
 	Falling		//!< Falling edge
 } eEdge;
 
 
-/*!\enum eGPIOState_i
+/*!\enum _eGPIOState
 ** \brief GPIO possible states/actions enumeration
 **/
-typedef enum eGPIOState_i {
+typedef enum _eGPIOState {
 	Reset = 0,	//!< Reset State
 	Set,		//!< Set State
 	Toggle		//!< Toggle Output
 	//! \note Toggle is only GPIO output related
 } eGPIOState;
 
-/*!\enum eGPIOPull_i
+/*!\enum _eGPIOPull
 ** \brief GPIO possible pull resistor configuration
 **/
-typedef enum eGPIOPull_i {
+typedef enum _eGPIOPull {
 	PullDown = 0,	//!< GPIO with pull down
 	PullUp,			//!< GPIO with pull up
 	NoPull			//!< GPIO without pull
@@ -165,7 +164,7 @@ typedef enum eGPIOPull_i {
 /*!\struct sBitfield8
 ** \brief Bitfield 8b
 **/
-typedef struct sBitfield8_i {
+typedef struct _sBitfield8 {
 	#ifndef REVERSE_BITFIELD
 		BYTE	b0	:1;	//!< Bit 0 (LSB)
 		BYTE	b1	:1;	//!< Bit 1
@@ -190,7 +189,7 @@ typedef struct sBitfield8_i {
 /*!\struct sBitfield16
 ** \brief Bitfield 16b
 **/
-typedef struct sBitfield16_i {
+typedef struct _sBitfield16 {
 	#ifndef REVERSE_BITFIELD
 		WORD	b0	:1;	//!< Bit 0 (LSB)
 		WORD	b1	:1;	//!< Bit 1
@@ -231,7 +230,7 @@ typedef struct sBitfield16_i {
 /*!\struct sBitfield32
 ** \brief Bitfield 32b
 **/
-typedef struct sBitfield32_i {
+typedef struct _sBitfield32 {
 	#ifndef REVERSE_BITFIELD
 		DWORD	b0	:1;	//!< Bit 0 (LSB)
 		DWORD	b1	:1;	//!< Bit 1
@@ -304,7 +303,7 @@ typedef struct sBitfield32_i {
 /*!\struct sBitfield64
 ** \brief Bitfield 64b
 **/
-typedef struct sBitfield64_i {
+typedef struct _sBitfield64 {
 	#ifndef REVERSE_BITFIELD
 		LWORD	b0	:1;	//!< Bit 0 (LSB)
 		LWORD	b1	:1;	//!< Bit 1
@@ -439,16 +438,20 @@ typedef struct sBitfield64_i {
 } sBitfield64;
 
 
-#if defined(ARDUINO)
-	// Undefine binary.h definitions used here
-	#undef B0
-	#undef B1
-#endif /* defined(ARDUINO) */
+// Undefine binary.h definitions used here
+//!\MISRA Local deviation has been granted for following rules:\n
+//!	\b Rule-20.5 - \b Advisory: \c \#undef (misra-c2012-20.5)\n
+#if defined(B0)
+#undef B0	// cppcheck-suppress misra-c2012-20.5
+#endif
+#if defined(B1)
+#undef B1	// cppcheck-suppress misra-c2012-20.5
+#endif
 
 /*!\union uByte
 ** \brief Union for BYTE
 **/
-typedef union uByte_i {
+typedef union _uByte {
 	BYTE		Byte;	//!< BYTE
 	sBitfield8	Bits;	//!< Bits
 } uByte;
@@ -456,7 +459,7 @@ typedef union uByte_i {
 /*!\union uWord
 ** \brief Union for WORD
 **/
-typedef union uWord_i {
+typedef union _uWord {
 	WORD			Word;		//!< 16b
 	BYTE			Byte[2];	//!< Bytes tab
 	struct {
@@ -474,7 +477,7 @@ typedef union uWord_i {
 /*!\union uDWord
 ** \brief Union for DWORD
 **/
-typedef union uDWord_i {
+typedef union _uDWord {
 	DWORD			DWord;		//!< 32b
 	WORD			Word[2];	//!< Words tab
 	BYTE			Byte[4];	//!< Bytes tab
@@ -506,7 +509,7 @@ typedef union uDWord_i {
 /*!\union uLWord
 ** \brief Union for LWORD
 **/
-typedef union uLWord_i {
+typedef union _uLWord {
 	LWORD			LWord;		//!< 64b
 	DWORD			DWord[2];	//!< DWords tab
 	WORD			Word[4];	//!< Words tab
@@ -564,6 +567,6 @@ typedef union uLWord_i {
 #endif
 
 #endif /* ARM_TYPEDEFS_H_ */
-// cppcheck-suppress-end [misra-c2012-19.2, misra-c2012-20.5]
+// cppcheck-suppress-end [misra-c2012-19.2]
 // cppcheck-suppress-end [misra-c2012-21.1]
 /****************************************************************/

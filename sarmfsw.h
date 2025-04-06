@@ -25,11 +25,11 @@
 #include "arm_macros.h"			// Common macros
 #include "arm_inlines.h"		// Common inlines (after all includes, some inlines needs to access HAL code)
 
-/*!\enum FW_target_i
+/*!\enum _FW_target
 ** \brief Firmware target types
 ** \note A variable has to be defined in project using FW_target enum to be meaningful
 **/
-typedef enum PACK__ FW_target_i {
+typedef enum PACK__ _FW_target {
 	target_Special = 0,		//!< Special FW target
 	target_Debug,			//!< Debug FW target
 	target_Release,			//!< Release FW target (No debug information)

@@ -142,8 +142,10 @@ get_current_heap_address	KEYWORD2
 strclr_full	KEYWORD2
 printExpr	KEYWORD2
 sprintExpr	KEYWORD2
+snprintExpr	KEYWORD2
 verbInstr	KEYWORD2
 sverbInstr	KEYWORD2
+snverbInstr	KEYWORD2
 verbInc	KEYWORD2
 verbDec	KEYWORD2
 strappend	KEYWORD2

@@ -13,10 +13,10 @@
 /****************************************************************/
 
 
-/*!\enum eEndian
+/*!\enum _eEndian
 ** \brief Core endian
 **/
-typedef enum eEndian {
+typedef enum _eEndian {
 	Endian_little = 0,		//!< Little endian configured MCU
 	Endian_big,				//!< Big endian configured MCU
 	Endian_mid_little,		//!< Middle little endian configured MCU (PDP-11)
@@ -104,7 +104,7 @@ __INLINE eEndian testEndian_basic(void)
 **/
 __INLINE eEndian testEndian_full(void)
 {
-	
+
 	const union {						// cppcheck-suppress misra-c2012-19.2
 		DWORD	dword;
 		BYTE	byte[sizeof(DWORD)];

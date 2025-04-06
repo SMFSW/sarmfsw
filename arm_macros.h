@@ -120,7 +120,7 @@
 //!\MISRA Local legitimate use derogation authorized for:\n
 //! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
 //! \a Justification: \p typ parameter would be cast instead of type declaration (thus raising error); other parameters shall be variable names, raising error otherwise is intended.\n
-// cppcheck-suppress-macro misra-c2012-20.7
+// cppcheck-suppress-begin misra-c2012-20.7
 #define	SWAP_TYPE(a, b, typ)	({ typ c = a; a = b; b = c; })		//!< Swap two variable type \p typ \p a \& \p b
 #define	SWAP_BYTE(a, b)			SWAP_TYPE(a, b, BYTE)				//!< Swap two \c BYTE \p a \& \p b
 #define	SWAP_WORD(a, b)			SWAP_TYPE(a, b, WORD)				//!< Swap two \c WORD \p a \& \p b
@@ -128,6 +128,7 @@
 #define	SWAP_LWORD(a, b)		SWAP_TYPE(a, b, LWORD)				//!< Swap two \c LWORD \p a \& \p b
 #define	SWAP_FLOAT(a, b)		SWAP_TYPE(a, b, float)				//!< Swap two \c float \p a \& \p b
 #define	SWAP_DOUBLE(a, b)		SWAP_TYPE(a, b, double)				//!< Swap two \c double \p a \& \p b
+// cppcheck-suppress-end misra-c2012-20.7
 
 
 //!\MISRA Local legitimate use derogation authorized for:\n

@@ -3,8 +3,6 @@
 ** \copyright MIT (c) 2017-2025, SMFSW
 ** \brief Common macros for Arduino
 ** \warning Do not use macros for function qualifiers in this file
-** \MISRA Header scope deviation has been granted for following rules:\n
-** 	\b Rule-20.5 - \b Advisory: \c \#undef (misra-c2012-20.5)\n
 */
 /****************************************************************/
 #ifndef ARM_CHIP_INO_H_
@@ -46,11 +44,13 @@
 
 #if !defined(USE_INO_BINARY_HEADER)
 // Undefine binary.h definitions used by \file arm_typedefs.h included from Arduino.h
-#undef B0		// cppcheck-suppress misra-c2012-20.5
-#undef B1		// cppcheck-suppress misra-c2012-20.5
+//!\MISRA Local deviation has been granted for following rules:\n
+//!	\b Rule-20.5 - \b Advisory: \c \#undef (misra-c2012-20.5)\n
+#undef	B0		// cppcheck-suppress misra-c2012-20.5
+#undef	B1		// cppcheck-suppress misra-c2012-20.5
 #else
-#define B0 0
-#define B1 1
+#define B0	0
+#define B1	1
 #endif
 
 
