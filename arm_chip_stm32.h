@@ -3,7 +3,14 @@
 ** \copyright MIT (c) 2017-2025, SMFSW
 ** \brief ARM common macros for STM32
 ** \warning Do not use macros for function qualifiers in this file
+** \MISRA Header scope legitimate use derogation authorized for:\n
+** 	\b Rule-5.6 - \b Required: unique \c typedef name (misra-c2012-5.6)\n
+** 	\b Rule-5.7 - \b Required: unique tag name (misra-c2012-5.7)\n
+** 	\b Rule-5.9 - \b Advisory: internal linkage unique function name (misra-c2012-5.9)\n
+**	\a Justification: tag and \c typedefs name are only defined once (other arm_chip_xxx files are not included at the same time).\n
 */
+// cppcheck-suppress-begin [misra-c2012-5.9]
+// cppcheck-suppress-begin [misra-c2012-5.6, misra-c2012-5.7]
 /****************************************************************/
 #ifndef ARM_CHIP_STM32_H_
 	#define ARM_CHIP_STM32_H_
@@ -21,6 +28,10 @@
 
 #define ARM_CMSIS_INC		STM_HEADER(STM_FAMILY)				//!< Alias for STM32 CMSIS include
 #define ARM_HAL_CFG			STM_CONF_HEADER(STM_FAMILY)			//!< Alias for STM32 HAL config include
+
+/*** GLOBAL CMSIS & HAL includes ***/
+#include ARM_CMSIS_INC	// CMSIS includes
+// #include ARM_HAL_CFG	// HAL configuration includes (already included by ARM_CMSIS_INC)
 
 
 /*** GPIO pin name wrapper (from CubeMX pin names) ***/
@@ -68,10 +79,10 @@
 #endif
 
 
-/*!\enum eResetSource
+/*!\enum _eResetSource
 ** \brief Source of last reset
 **/
-typedef enum eResetSource {
+typedef enum _eResetSource {
 	RST_POR = 1,		//!< Power On Reset
 	RST_BOR,			//!< Brown Out Reset (H7)
 	RST_PIN,			//!< Pin Reset (External Reset)
@@ -84,11 +95,6 @@ typedef enum eResetSource {
 	RST_FW,				//!< Firewall Reset (L4)
 	RST_UNKNOWN = 0xFF	//!< Unknown Reset Source
 } eResetSource;
-
-
-/*** GLOBAL CMSIS & HAL includes ***/
-#include ARM_CMSIS_INC	// CMSIS includes
-// #include ARM_HAL_CFG	// HAL configuration includes (already included by ARM_CMSIS_INC)
 
 
 /*!\brief Get STM32 Reset Source
@@ -105,11 +111,15 @@ typedef enum eResetSource {
 **/
 static inline FctERR HALERRtoFCTERR(const HAL_StatusTypeDef status)
 {
-	if		(status == HAL_OK)			return ERROR_OK;
-	else if (status == HAL_ERROR)		return ERROR_FAULT;
-	else if (status == HAL_BUSY)		return ERROR_BUSY;
-	else if (status == HAL_TIMEOUT)		return ERROR_TIMEOUT;
-	else 								return ERROR_COMMON;
+	FctERR err;
+
+	if		(status == HAL_OK)			{ err = ERROR_OK; }
+	else if (status == HAL_ERROR)		{ err = ERROR_FAULT; }
+	else if (status == HAL_BUSY)		{ err = ERROR_BUSY; }
+	else if (status == HAL_TIMEOUT)		{ err = ERROR_TIMEOUT; }
+	else 								{ err = ERROR_COMMON; }
+
+	return err;
 }
 
 
@@ -119,4 +129,6 @@ static inline FctERR HALERRtoFCTERR(const HAL_StatusTypeDef status)
 #endif
 
 #endif /* ARM_CHIP_STM32_H_ */
+// cppcheck-suppress-end [misra-c2012-5.9]
+// cppcheck-suppress-end [misra-c2012-5.6, misra-c2012-5.7]
 /****************************************************************/

@@ -3,6 +3,12 @@
 ** \copyright MIT (c) 2017-2025, SMFSW
 ** \brief Common macros for PIC
 ** \warning Do not use macros for function qualifiers in this file
+** \MISRA Header scope legitimate use derogation authorized for:\n
+** 	\b Rule-5.6 - \b Required: unique \c typedef name (misra-c2012-5.6)\n
+** 	\b Rule-5.7 - \b Required: unique tag name (misra-c2012-5.7)\n
+** 	\b Rule-5.9 - \b Advisory: internal linkage unique function name (misra-c2012-5.9)\n
+**	\a Justification: tag and \c typedefs name are only defined once (other arm_chip_xxx files are not included at the same time).\n
+**
 ** \attention	On PIC families you should configure a timer to count for ms.
 **				A TIM peripheral shall be configured in MCC or Harmony (with a period of 1ms).
 **
@@ -16,6 +22,8 @@
 ** \MISRA Header scope deviation has been granted for following rules:\n
 ** 	\b Rule-20.5 - \b Advisory: \c \#undef (misra-c2012-20.5)\n
 */
+// cppcheck-suppress-begin [misra-c2012-5.9]
+// cppcheck-suppress-begin [misra-c2012-5.6, misra-c2012-5.7]
 /****************************************************************/
 #ifndef ARM_CHIP_PIC_H_
 	#define ARM_CHIP_PIC_H_
@@ -54,10 +62,10 @@
 // Use common definition of HALTicks in arm_cmsis.h
 #endif
 
-/*!\enum eResetSource
+/*!\enum _eResetSource
 ** \brief Source of last reset
 **/
-typedef enum eResetSource {
+typedef enum _eResetSource {
 	RST_POR = 1,		//!< Power On Reset
 	RST_UNKNOWN = 0xFF	//!< Unknown Reset Source
 } eResetSource;
@@ -77,8 +85,12 @@ static inline eResetSource HAL_ResetSource(void) {
 **/
 static inline FctERR HALERRtoFCTERR(const SDWORD status)
 {
-	if (status == 0)	return ERROR_OK;
-	else				return ERROR_COMMON;
+	FctERR err;
+
+	if (status == 0)	{ err = ERROR_OK; }
+	else				{ err = ERROR_COMMON; }
+
+	return err;
 }
 
 
@@ -88,4 +100,6 @@ static inline FctERR HALERRtoFCTERR(const SDWORD status)
 #endif
 
 #endif /* ARM_CHIP_PIC_H_ */
+// cppcheck-suppress-end [misra-c2012-5.9]
+// cppcheck-suppress-end [misra-c2012-5.6, misra-c2012-5.7]
 /****************************************************************/

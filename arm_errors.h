@@ -13,10 +13,10 @@
 /****************************************************************/
 
 
-/*!\enum FctERR
+/*!\enum _FctERR
 ** \brief Enum of low/mid level functions return state
 **/
-typedef enum FctERR {
+typedef enum _FctERR {
 	ERROR_OK				= 0,	//!< OK
 	ERROR_SPEED				= -1,	//!< This device does not work in the active speed mode.
 	ERROR_RANGE				= -2,	//!< Parameter out of range.

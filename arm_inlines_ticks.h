@@ -17,16 +17,16 @@
 ** \warning For SAM families, no ms base time counter is implemented in HAL,
 **			please refer to arm_chip_sam.h for an implementation example.
 ** \note	Define custom HAL_MS_TICKS_FACTOR at project level if tick period is not 1ms
-** \param[in] prev - previously stored time value
+** \param[in] start_tick - previously stored time value
 ** \param[in] lapse - time lapse (in ms)
 ** \return true if time elapsed
 **/
-__INLINE BOOL INLINE__ TPSSUP_MS(const DWORD prev, const DWORD lapse)
+__INLINE BOOL INLINE__ TPSSUP_MS(const DWORD start_tick, const DWORD lapse)
 {
 	const DWORD scaled_time = lapse * HAL_MS_TICKS_FACTOR;
-	const DWORD diff = OVF_DIFF(HALTicks(), prev);
+	const DWORD time_diff = OVF_DIFF(HALTicks(), start_tick);
 
-	return binEval(diff >= scaled_time);
+	return binEval(time_diff >= scaled_time);
 }
 
 
@@ -34,16 +34,16 @@ __INLINE BOOL INLINE__ TPSSUP_MS(const DWORD prev, const DWORD lapse)
 ** \warning For SAM families, no ms base time counter is implemented in HAL,
 **			please refer to arm_chip_sam.h for an implementation example.
 ** \note	Define custom HAL_MS_TICKS_FACTOR at project level if tick period is not 1ms
-** \param[in] prev - previously stored time value
+** \param[in] start_tick - previously stored time value
 ** \param[in] lapse - time lapse (in ms)
 ** \return true if time not elapsed
 **/
-__INLINE BOOL INLINE__ TPSINF_MS(const DWORD prev, const DWORD lapse)
+__INLINE BOOL INLINE__ TPSINF_MS(const DWORD start_tick, const DWORD lapse)
 {
-	const DWORD diff = OVF_DIFF(HALTicks(), prev);
 	const DWORD scaled_time = lapse * HAL_MS_TICKS_FACTOR;
+	const DWORD time_diff = OVF_DIFF(HALTicks(), start_tick);
 
-	return binEval(diff < scaled_time);
+	return binEval(time_diff < scaled_time);
 }
 
 

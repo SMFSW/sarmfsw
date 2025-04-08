@@ -3,6 +3,12 @@
 ** \copyright MIT (c) 2017-2025, SMFSW
 ** \brief ARM common macros for Atmel SAM families
 ** \warning Do not use macros for function qualifiers in this file
+** \MISRA Header scope legitimate use derogation authorized for:\n
+** 	\b Rule-5.6 - \b Required: unique \c typedef name (misra-c2012-5.6)\n
+** 	\b Rule-5.7 - \b Required: unique tag name (misra-c2012-5.7)\n
+** 	\b Rule-5.9 - \b Advisory: internal linkage unique function name (misra-c2012-5.9)\n
+**	\a Justification: tag and \c typedefs name are only defined once (other arm_chip_xxx files are not included at the same time).\n
+**
 ** \attention	On SAM families you should configure a timer to count for ms.
 **				A TIM peripheral shall be configured in ATMEL START (with a period of 1ms).
 **				Using driver examples from ATMEL START generated code,
@@ -32,6 +38,8 @@
 **
 ** Please note TIMER_0_start() shall be called at init.
 */
+// cppcheck-suppress-begin [misra-c2012-5.9]
+// cppcheck-suppress-begin [misra-c2012-5.6, misra-c2012-5.7]
 /****************************************************************/
 #ifndef ARM_CHIP_SAM_H_
 	#define ARM_CHIP_SAM_H_
@@ -52,6 +60,10 @@
 #define ARM_CMSIS_INC		SAM_HEADER(SAM_FAMILY)				//!< Alias for SAM CMSIS include
 #define ARM_HAL_CFG			SAM_CONF_HEADER(SAM_FAMILY)			//!< Alias for SAM HAL config include
 
+/*** GLOBAL CMSIS & HAL includes ***/
+#include ARM_CMSIS_INC	// CMSIS includes
+// #include ARM_HAL_CFG	// HAL configuration includes (already included by ARM_CMSIS_INC)
+
 
 /*** Flash size ***/
 // FLASH_SIZE (in bytes) is already defined in controller header, thus not requiring to define it here
@@ -71,10 +83,10 @@
 #endif
 
 
-/*!\enum eResetSource
+/*!\enum _eResetSource
 ** \brief Source of last reset
 **/
-typedef enum eResetSource {
+typedef enum _eResetSource {
 	RST_POR = RESET_REASON_POR,				//!< Power On Reset
 	RST_BODCORE = RESET_REASON_BODCORE,		//!< Brown Out Reset
 	RST_BODVDD = RESET_REASON_BODVDD,		//!
@@ -83,11 +95,6 @@ typedef enum eResetSource {
 	RST_SYST = RESET_REASON_SYST,			//!< Software Reset
 	RST_UNKNOWN = 0xFF						//!< Unknown Reset Source
 } eResetSource;
-
-
-/*** GLOBAL CMSIS & HAL includes ***/
-#include ARM_CMSIS_INC	// CMSIS includes
-// #include ARM_HAL_CFG	// HAL configuration includes (already included by ARM_CMSIS_INC)
 
 
 /*!\brief Get and convert ATMEL Reset Source to eResetSource
@@ -104,18 +111,22 @@ static inline eResetSource HAL_ResetSource(void) {
 **/
 static inline FctERR HALERRtoFCTERR(const SDWORD status)
 {
-	if		(status == ERR_NONE)									return ERROR_OK;
-	else if (status == ERR_INVALID_DATA)							return ERROR_VALUE;
-	else if ((status == ERR_BUSY) || (status == ERR_NOT_READY))		return ERROR_BUSY;
-	else if (status == ERR_TIMEOUT)									return ERROR_TIMEOUT;
-	else if (status == ERR_NO_MEMORY)								return ERROR_MEMORY;
-	else if (status == ERR_BAD_FRQ)									return ERROR_SPEED;
-	else if (status == ERR_DENIED)									return ERROR_PROTECT;
-	else if (status == ERR_OVERFLOW)								return ERROR_OVERFLOW;
-	else if (status == ERR_NOT_INITIALIZED)							return ERROR_NOTAVAIL;
-	else if (status == ERR_PACKET_COLLISION)						return ERROR_ARBITR;
-	else if (status == ERR_UNSUPPORTED_OP)							return ERROR_CMD;
-	else 															return ERROR_COMMON;
+	FctERR err;
+
+	if		(status == ERR_NONE)									{ err = ERROR_OK; }
+	else if (status == ERR_INVALID_DATA)							{ err = ERROR_VALUE; }
+	else if ((status == ERR_BUSY) || (status == ERR_NOT_READY))		{ err = ERROR_BUSY; }
+	else if (status == ERR_TIMEOUT)									{ err = ERROR_TIMEOUT; }
+	else if (status == ERR_NO_MEMORY)								{ err = ERROR_MEMORY; }
+	else if (status == ERR_BAD_FRQ)									{ err = ERROR_SPEED; }
+	else if (status == ERR_DENIED)									{ err = ERROR_PROTECT; }
+	else if (status == ERR_OVERFLOW)								{ err = ERROR_OVERFLOW; }
+	else if (status == ERR_NOT_INITIALIZED)							{ err = ERROR_NOTAVAIL; }
+	else if (status == ERR_PACKET_COLLISION)						{ err = ERROR_ARBITR; }
+	else if (status == ERR_UNSUPPORTED_OP)							{ err = ERROR_CMD; }
+	else 															{ err = ERROR_COMMON; }
+
+	return err;
 }
 
 
@@ -125,4 +136,6 @@ static inline FctERR HALERRtoFCTERR(const SDWORD status)
 #endif
 
 #endif /* ARM_CHIP_SAM_H_ */
+// cppcheck-suppress-end [misra-c2012-5.9]
+// cppcheck-suppress-end [misra-c2012-5.6, misra-c2012-5.7]
 /****************************************************************/

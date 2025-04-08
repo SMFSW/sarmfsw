@@ -23,7 +23,7 @@ SOFTWARE.
 ## v3.7
 
 * Partial MISRA C2012 compliance
-* Anonymous enums, unions, structs names change
+* enums, unions, structs tag names change (now with leading _)
 * arm_preprocess: added (for pre-processing macros and directives needed to be defined at the beginning of sarmfsw)
 * arm_macros: CAT, XCAT, STR & XSTR moved to arm_preprocess
 * sarmfsw: arm_preprocess added & arm_macros moved
