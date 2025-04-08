@@ -89,6 +89,10 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><dl class="reflist">
+<dt>Global <a class="el" href="arm__chip__ino_8h.html#a78250afbe5d7bfdc3c8d94ff12e56e80">_eResetSource</a>  </dt>
+<dd><a class="anchor" id="_MISRA000003"></a> Local deviation has been granted for following rules:<br  />
+ <b>Rule-20.5</b> - <b>Advisory:</b> <code>#undef</code> (misra-c2012-20.5)<br  />
+  </dd>
 <dt>File <a class="el" href="arm__attributes_8h.html">arm_attributes.h</a>  </dt>
 <dd><p class="startdd"><a class="anchor" id="_MISRA000001"></a> Header scope deviation has been granted for following rules:<br  />
  <b>Rule-20.5</b> - <b>Advisory:</b> <code>#undef</code> (misra-c2012-20.5)<br  />
@@ -100,17 +104,45 @@ $(function(){ initResizable(false); });
  <em>Justification:</em> <code>#define</code> are generic reserved identifiers for attributes.<br  />
   </p>
 </dd>
+<dt>File <a class="el" href="arm__chip__ino_8h.html">arm_chip_ino.h</a>  </dt>
+<dd><a class="anchor" id="_MISRA000002"></a> Header scope legitimate use derogation authorized for:<br  />
+ <b>Rule-5.6</b> - <b>Required:</b> unique <code>typedef</code> name (misra-c2012-5.6)<br  />
+ <b>Rule-5.7</b> - <b>Required:</b> unique tag name (misra-c2012-5.7)<br  />
+ <b>Rule-5.9</b> - <b>Advisory:</b> internal linkage unique function name (misra-c2012-5.9)<br  />
+ <em>Justification:</em> tag and <code>typedefs</code> name are only defined once (other arm_chip_xxx files are not included at the same time).<br  />
+  </dd>
 <dt>File <a class="el" href="arm__chip__pic_8h.html">arm_chip_pic.h</a>  </dt>
-<dd><a class="anchor" id="_MISRA000003"></a> Header scope deviation has been granted for following rules:<br  />
+<dd><p class="startdd"><a class="anchor" id="_MISRA000004"></a> Header scope legitimate use derogation authorized for:<br  />
+ <b>Rule-5.6</b> - <b>Required:</b> unique <code>typedef</code> name (misra-c2012-5.6)<br  />
+ <b>Rule-5.7</b> - <b>Required:</b> unique tag name (misra-c2012-5.7)<br  />
+ <b>Rule-5.9</b> - <b>Advisory:</b> internal linkage unique function name (misra-c2012-5.9)<br  />
+ <em>Justification:</em> tag and <code>typedefs</code> name are only defined once (other arm_chip_xxx files are not included at the same time).<br  />
+</p>
+<p class="enddd"><a class="anchor" id="_MISRA000005"></a> Header scope deviation has been granted for following rules:<br  />
  <b>Rule-20.5</b> - <b>Advisory:</b> <code>#undef</code> (misra-c2012-20.5)<br  />
+  </p>
+</dd>
+<dt>File <a class="el" href="arm__chip__sam_8h.html">arm_chip_sam.h</a>  </dt>
+<dd><a class="anchor" id="_MISRA000006"></a> Header scope legitimate use derogation authorized for:<br  />
+ <b>Rule-5.6</b> - <b>Required:</b> unique <code>typedef</code> name (misra-c2012-5.6)<br  />
+ <b>Rule-5.7</b> - <b>Required:</b> unique tag name (misra-c2012-5.7)<br  />
+ <b>Rule-5.9</b> - <b>Advisory:</b> internal linkage unique function name (misra-c2012-5.9)<br  />
+ <em>Justification:</em> tag and <code>typedefs</code> name are only defined once (other arm_chip_xxx files are not included at the same time).<br  />
+ </dd>
+<dt>File <a class="el" href="arm__chip__stm32_8h.html">arm_chip_stm32.h</a>  </dt>
+<dd><a class="anchor" id="_MISRA000007"></a> Header scope legitimate use derogation authorized for:<br  />
+ <b>Rule-5.6</b> - <b>Required:</b> unique <code>typedef</code> name (misra-c2012-5.6)<br  />
+ <b>Rule-5.7</b> - <b>Required:</b> unique tag name (misra-c2012-5.7)<br  />
+ <b>Rule-5.9</b> - <b>Advisory:</b> internal linkage unique function name (misra-c2012-5.9)<br  />
+ <em>Justification:</em> tag and <code>typedefs</code> name are only defined once (other arm_chip_xxx files are not included at the same time).<br  />
   </dd>
 <dt>File <a class="el" href="arm__cmsis_8h.html">arm_cmsis.h</a>  </dt>
-<dd><a class="anchor" id="_MISRA000004"></a> Header scope derogation to following rules:<br  />
+<dd><a class="anchor" id="_MISRA000008"></a> Header scope derogation to following rules:<br  />
  <b>Rule-21.1</b> - <b>Required:</b> <code>#define</code> and <code>#undef</code> on reserved identifiers (misra-c2012-21.1)<br  />
  <em>Justification:</em> define generic CMSIS IO macros in case not already defined.<br  />
   </dd>
 <dt>File <a class="el" href="arm__inlines__stdclib_8h.html">arm_inlines_stdclib.h</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_MISRA000012"></a> Header scope deviation has been granted for following rules:<br  />
+<dd><p class="startdd"><a class="anchor" id="_MISRA000016"></a> Header scope deviation has been granted for following rules:<br  />
  <b>Rule-18.4</b> - <b>Advisory:</b> +/- operators on pointer type (misra-c2012-18.4)<br  />
  </p>
 <p class="interdd"></p>
@@ -124,16 +156,16 @@ $(function(){ initResizable(false); });
   </p>
 </dd>
 <dt>File <a class="el" href="arm__macros_8h.html">arm_macros.h</a>  </dt>
-<dd><a class="anchor" id="_MISRA000015"></a> Header scope deviation has been granted for following rules:<br  />
+<dd><a class="anchor" id="_MISRA000019"></a> Header scope deviation has been granted for following rules:<br  />
  <b>Rule-1.2</b> - <b>Advisory:</b> Language extensions (misra-c2012-1.2)<br  />
  <b>Rule-20.5</b> - <b>Advisory:</b> <code>#undef</code> (misra-c2012-20.5)<br  />
   </dd>
 <dt>File <a class="el" href="arm__preprocess_8h.html">arm_preprocess.h</a>  </dt>
-<dd><a class="anchor" id="_MISRA000024"></a> Header scope deviation has been granted for following rules:<br  />
+<dd><a class="anchor" id="_MISRA000028"></a> Header scope deviation has been granted for following rules:<br  />
  <b>Rule-20.10</b> - <b>Advisory:</b> <code>#</code> and <code>##</code> preprocessor operators (misra-c2012-20.10)<br  />
   </dd>
 <dt>File <a class="el" href="arm__typedefs_8h.html">arm_typedefs.h</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_MISRA000025"></a> Header scope deviation has been granted for following rules:<br  />
+<dd><p class="startdd"><a class="anchor" id="_MISRA000029"></a> Header scope deviation has been granted for following rules:<br  />
  <b>Rule-19.2</b> - <b>Advisory:</b> <code>union</code> keyword (misra-c2012-19.2)<br  />
  </p>
 <p class="interdd"></p>
@@ -142,43 +174,39 @@ $(function(){ initResizable(false); });
  <em>Justification:</em> <code>#define</code> are library specific reserved identifiers.<br  />
   </p>
 </dd>
-<dt>Global <a class="el" href="arm__chip__ino_8h.html#a54c1cd171722e4b22b2ee97d084f7900">eResetSource</a>  </dt>
-<dd><a class="anchor" id="_MISRA000002"></a> Local deviation has been granted for following rules:<br  />
- <b>Rule-20.5</b> - <b>Advisory:</b> <code>#undef</code> (misra-c2012-20.5)<br  />
-  </dd>
 <dt>Global <a class="el" href="arm__inlines__stdclib_8h.html#ab86f6bbf523cef86376fb4866e5e4149">get_current_heap_address</a>  (void)</dt>
-<dd><a class="anchor" id="_MISRA000014"></a> Local legitimate use derogation authorized for:<br  />
+<dd><a class="anchor" id="_MISRA000018"></a> Local legitimate use derogation authorized for:<br  />
  <b>Rule-11.6</b> - <b>Required:</b> pointer to void cast to arithmetic (misra-c2012-11.6)<br  />
  <em>Justification:</em> Intended to identify potential memory leaks in case of dynamic allocation use.<br  />
  </dd>
 <dt>Global <a class="el" href="arm__inlines__stdclib_8h.html#a285df87b898da497a1d6f356116f1346">get_current_heap_address_int</a>  (void)</dt>
-<dd><a class="anchor" id="_MISRA000013"></a> Local legitimate use derogation authorized for:<br  />
+<dd><a class="anchor" id="_MISRA000017"></a> Local legitimate use derogation authorized for:<br  />
  <b>Rule-11.6</b> - <b>Required:</b> pointer to void cast to arithmetic (misra-c2012-11.6)<br  />
  <b>Rule-21.3</b> - <b>Required:</b> dynamic allocation (misra-c2012-21.3)<br  />
  <em>Justification:</em> Intended to identify potential memory leaks in case of dynamic allocation use.<br  />
  </dd>
 <dt>Global <a class="el" href="arm__cmsis_8h.html#aa67f149d61e1210d8ba04c5f97aa9308">HALTICKS_PROTOTYPE</a>  (func)</dt>
-<dd><a class="anchor" id="_MISRA000005"></a> Local derogation authorized for:<br  />
+<dd><a class="anchor" id="_MISRA000009"></a> Local derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>func</code> paramater shall be a function name; raising error otherwise is intended.<br  />
   </dd>
 <dt>Global <a class="el" href="arm__inlines__linearization_8h.html#a2433dd8390ea4e7d97e827c66dfcb10e">LINEAR_EVAL</a>  (name, val)</dt>
-<dd><a class="anchor" id="_MISRA000010"></a> Local legitimate use derogation authorized for:<br  />
+<dd><a class="anchor" id="_MISRA000014"></a> Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> Result expansion of <code>name</code> wouldn't produce the desired structured access expansion.<br  />
   </dd>
 <dt>Global <a class="el" href="arm__inlines__linearization_8h.html#a06fbd5b88ba1075d22c01506ef5f8d04">LINEAR_TAB</a>  (name, nbElem)</dt>
-<dd><a class="anchor" id="_MISRA000008"></a> Local deviation has been granted for following rules:<br  />
+<dd><a class="anchor" id="_MISRA000012"></a> Local deviation has been granted for following rules:<br  />
  <b>Rule-20.10</b> - <b>Advisory:</b> <code>#</code> and <code>##</code> preprocessor operators (misra-c2012-20.10)<br  />
   </dd>
 <dt>Global <a class="el" href="arm__macros_8h.html#a4ca80befacab1cf54e976f05f625f32c">OFFSET_OF</a>  (typ, mbr)</dt>
-<dd><a class="anchor" id="_MISRA000022"></a> Local legitimate use derogation authorized for:<br  />
+<dd><a class="anchor" id="_MISRA000026"></a> Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
  <em>Justification:</em> <code>mbr</code> parameter shall be a structure member; will in any way raise an error in case not.<br  />
   </dd>
 <dt>Global <a class="el" href="arm__inlines__average_8h.html#a1e1965e310ddad5163f2d880e4a8b43d">RESTRICTED_AVERAGE</a>  (typ_t, sum_t)</dt>
-<dd><a class="anchor" id="_MISRA000006"></a> Function scope deviation granted for:<br  />
+<dd><a class="anchor" id="_MISRA000010"></a> Function scope deviation granted for:<br  />
  <b>Rule-20.10</b> - <b>Advisory:</b> <code>#</code> and <code>##</code> preprocessor operators (misra-c2012-20.10)<br  />
  Local legitimate use derogation authorized for:<br  />
  <b>Rule-18.8</b> - <b>Required:</b> Var-length array types (misra-c2012-18.8)<br  />
@@ -188,58 +216,58 @@ $(function(){ initResizable(false); });
  <em>Justification:</em> <code>typ_t</code> parameter would always be used as cast and wouldn't catenate name.<br  />
   </dd>
 <dt>Global <a class="el" href="arm__macros_8h.html#a32c119f1bd8155fc34ea0a798cc2f2c3">ROOT_OF</a>  (ptr, typ, mbr)</dt>
-<dd><a class="anchor" id="_MISRA000023"></a> Local legitimate use derogation authorized for:<br  />
+<dd><a class="anchor" id="_MISRA000027"></a> Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>mbr</code> parameter shall be a structure member; will in any way raise an error in case not.<br  />
   </dd>
 <dt>Global <a class="el" href="arm__inlines__rotation_8h.html#aac13b21600a35f5d3f488a535ce9c4db">rotate_2D</a>  (const <a class="el" href="structs_coord2_d.html" title="2D coordinates structure">sCoord2D</a> c, const SWORD angle)</dt>
-<dd><a class="anchor" id="_MISRA000011"></a> Function scope deviation granted for:<br  />
+<dd><a class="anchor" id="_MISRA000015"></a> Function scope deviation granted for:<br  />
  <b>Rule-15.5</b> - <b>Advisory:</b> single point of exit (misra-c2012-15.5)<br  />
  </dd>
 <dt>Struct <a class="el" href="structs_linear_flex_array.html">sLinearFlexArray</a>  </dt>
-<dd><a class="anchor" id="_MISRA000009"></a> Function scope derogation authorized for:<br  />
+<dd><a class="anchor" id="_MISRA000013"></a> Function scope derogation authorized for:<br  />
  <b>Rule-18.7</b> - <b>Required:</b> flexible array members (misra-c2012-18.7)<br  />
  <em>Justification:</em> <code>array</code> being an array of array, this is a rather legitimate representation of object than a pointer.<br  />
   </dd>
 <dt>Global <a class="el" href="arm__macros_8h.html#a0878b994fac8d6563664edba349c7f70">SWAP_TYPE</a>  (a, b, typ)</dt>
-<dd><a class="anchor" id="_MISRA000016"></a> Local legitimate use derogation authorized for:<br  />
+<dd><a class="anchor" id="_MISRA000020"></a> Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type declaration (thus raising error); other parameters shall be variable names, raising error otherwise is intended.<br  />
   </dd>
 <dt>Global <a class="el" href="arm__macros_8h.html#a2b5ec466595a0483322b2c3c924996c4">SZ_ARRAY</a>  (arr)</dt>
-<dd><a class="anchor" id="_MISRA000018"></a> local derogation authorized for:<br  />
+<dd><a class="anchor" id="_MISRA000022"></a> local derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> Parenthesis doesn't make sense as parameter <code>arr</code> shall be an instance of type; raising error otherwise is intended.<br  />
   </dd>
 <dt>Global <a class="el" href="arm__macros_8h.html#ae222ed5e4821c01c4d5fc924673d844d">SZ_OBJ</a>  (obj, typ)</dt>
-<dd><a class="anchor" id="_MISRA000019"></a> Local legitimate use derogation authorized for:<br  />
+<dd><a class="anchor" id="_MISRA000023"></a> Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>obj</code> parameter can be a type instead of an istance of type.<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
   </dd>
 <dt>Global <a class="el" href="arm__macros_8h.html#a44a11b5d464b3d6837a0e6136c367abb">SZ_TYP_MBR</a>  (typ, mbr)</dt>
-<dd><a class="anchor" id="_MISRA000020"></a> Local legitimate use derogation authorized for:<br  />
+<dd><a class="anchor" id="_MISRA000024"></a> Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
  <em>Justification:</em> <code>mbr</code> parameter shall be a structure member; will in any way raise an error in case not.<br  />
   </dd>
 <dt>Global <a class="el" href="arm__inlines__endian_8h.html#a8893c965376eecdcd9c55b156eada6bd">testEndian_full</a>  (void)</dt>
-<dd><a class="anchor" id="_MISRA000007"></a> Function scope deviation granted for:<br  />
+<dd><a class="anchor" id="_MISRA000011"></a> Function scope deviation granted for:<br  />
  <b>Rule-15.5</b> - <b>Advisory:</b> single point of exit (misra-c2012-15.5)<br  />
  <b>Rule-19.2</b> - <b>Advisory:</b> <code>union</code> keyword (misra-c2012-19.2)<br  />
  </dd>
 <dt>Global <a class="el" href="arm__macros_8h.html#a945f756368ec4c5e11befc58b4b91dc1">TYP_MBR</a>  (typ, mbr)</dt>
-<dd><a class="anchor" id="_MISRA000021"></a> Local legitimate use derogation authorized for:<br  />
+<dd><a class="anchor" id="_MISRA000025"></a> Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
  <em>Justification:</em> <code>mbr</code> parameter shall be a structure member; will in any way raise an error in case not.<br  />
   </dd>
 <dt>Union <a class="el" href="unionu_byte.html">uByte</a>  </dt>
-<dd><a class="anchor" id="_MISRA000026"></a> Local deviation has been granted for following rules:<br  />
+<dd><a class="anchor" id="_MISRA000030"></a> Local deviation has been granted for following rules:<br  />
  <b>Rule-20.5</b> - <b>Advisory:</b> <code>#undef</code> (misra-c2012-20.5)<br  />
   </dd>
 <dt>Global <a class="el" href="arm__macros_8h.html#a638d917776f76f7f41be5875d9305f50">VAL_AT</a>  (addr, typ)</dt>
-<dd><a class="anchor" id="_MISRA000017"></a> Local legitimate use derogation authorized for:<br  />
+<dd><a class="anchor" id="_MISRA000021"></a> Local legitimate use derogation authorized for:<br  />
  <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
  <em>Justification:</em> <code>typ</code> parameter would be cast instead of type.<br  />
  </dd>

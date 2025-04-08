@@ -211,7 +211,7 @@ Functions</h2></td></tr>
 <div class="textblock"><p>ARM common standard c library inlines and wrapper macros. </p>
 <dl class="section author"><dt>Author</dt><dd>SMFSW </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>MIT (c) 2017-2025, SMFSW </dd></dl>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000012">MISRA C:2012 Deviations</a></b></dt><dd><p class="startdd">Header scope deviation has been granted for following rules:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000016">MISRA C:2012 Deviations</a></b></dt><dd><p class="startdd">Header scope deviation has been granted for following rules:<br  />
  <b>Rule-18.4</b> - <b>Advisory:</b> +/- operators on pointer type (misra-c2012-18.4)<br  />
  </p>
 <p class="enddd">Header scope legitimate use derogation authorized for:<br  />
@@ -481,7 +481,7 @@ Functions</h2></td></tr>
 
 <p>Get current heap address pointer. </p>
 <dl class="section note"><dt>Note</dt><dd>Can be useful to get heap value when testing for potential memory leaks </dd></dl>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000014">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000018">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
  <b>Rule-11.6</b> - <b>Required:</b> pointer to void cast to arithmetic (misra-c2012-11.6)<br  />
  <em>Justification:</em> Intended to identify potential memory leaks in case of dynamic allocation use.<br  />
 </dd></dl>
@@ -525,7 +525,7 @@ Here is the call graph for this function:</div>
 
 <p>Get current heap address. </p>
 <dl class="section note"><dt>Note</dt><dd>Address is returned as integer (returning released pointer value would cause a warning from compiler) Use <a class="el" href="#ab86f6bbf523cef86376fb4866e5e4149">get_current_heap_address</a> to get current heap address under the form of <code>void*</code> pointer </dd></dl>
-<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000013">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000017">MISRA C:2012 Deviations</a></b></dt><dd>Local legitimate use derogation authorized for:<br  />
  <b>Rule-11.6</b> - <b>Required:</b> pointer to void cast to arithmetic (misra-c2012-11.6)<br  />
  <b>Rule-21.3</b> - <b>Required:</b> dynamic allocation (misra-c2012-21.3)<br  />
  <em>Justification:</em> Intended to identify potential memory leaks in case of dynamic allocation use.<br  />
