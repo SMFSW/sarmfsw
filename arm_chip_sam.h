@@ -2,7 +2,6 @@
 ** \author SMFSW
 ** \copyright MIT (c) 2017-2025, SMFSW
 ** \brief ARM common macros for Atmel SAM families
-** \warning Do not use macros for function qualifiers in this file
 ** \MISRA Header scope legitimate use derogation authorized for:\n
 ** 	\b Rule-5.6 - \b Required: unique \c typedef name (misra-c2012-5.6)\n
 ** 	\b Rule-5.7 - \b Required: unique tag name (misra-c2012-5.7)\n
@@ -75,7 +74,7 @@
 #endif
 #ifndef HAL_MS_TICKS_FACTOR
 //!\note Define HAL_MS_TICKS_FACTOR with custom multiplier in project if tick period is not 1ms
-#define HAL_MS_TICKS_FACTOR	1					//!< HAL milliseconds multiplier (depending tick counter frequency)
+#define HAL_MS_TICKS_FACTOR	1U					//!< HAL milliseconds multiplier (depending tick counter frequency)
 #endif
 
 #ifndef HALTicks

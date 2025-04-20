@@ -39,6 +39,15 @@
 #endif
 
 
+#ifndef UNUSED
+	#define UNUSED(X)		(void) (X)		//!< Unused parameter \p X (to avoid gcc/g++ warnings)
+#endif
+
+#ifndef UNUSED_RET
+	#define UNUSED_RET		(void)			//!< Explicitly ignore function return (MISRA compliance)
+#endif
+
+
 #define GET_BITS(v, b)			((v) & (b))								//!< Get bits from mask \p b of variable \p v
 #define SET_BITS(v, b)			((v) |= (b))							//!< Set bits \p b of variable \p v
 #define CLR_BITS(v, b)			((v) &= ~(b))							//!< Clear bits \p b of variable \p v
@@ -150,11 +159,13 @@
 // cppcheck-suppress-macro misra-c2012-20.7
 #define SZ_OBJ(obj, typ)		((size_t) (sizeof(obj) / sizeof(typ)))					//!< Computes the number of elements in \p obj of type \p typ
 
-//!\MISRA Local legitimate use derogation authorized for:\n
+//!\MISRA Local deviation has been granted for following rules:\n
+//!	\b Rule-11.4 - \b Advisory: pointer to integer conversion (misra-c2012-11.4)\n
+//! Local legitimate use derogation authorized for:\n
 //! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
 //! \a Justification: \p typ parameter would be cast instead of type.\n
 //! \a Justification: \p mbr parameter shall be a structure member; will in any way raise an error in case not.\n
-// cppcheck-suppress-macro misra-c2012-20.7
+// cppcheck-suppress-macro [misra-c2012-11.4, misra-c2012-20.7]
 #define SZ_TYP_MBR(typ, mbr)	((size_t) sizeof(((typ *)0)->mbr))						//!< Computes the size of member \p mbr in struct type \p typ
 
 //!\MISRA Local legitimate use derogation authorized for:\n
@@ -168,11 +179,14 @@
 //! \note \c typeof C language extension should only be used to get a compiler native known type
 #define TYP_MBR_TYP(typ, mbr)	typeof(TYP_MBR(typ, mbr))								//!< Get typeof member \p mbr from a struct type \p typ
 
-//!\MISRA Local legitimate use derogation authorized for:\n
+//!\MISRA Local deviation has been granted for following rules:\n
+//!	\b Rule-11.4 - \b Advisory: pointer to integer conversion (misra-c2012-11.4)\n
+//! Local legitimate use derogation authorized for:\n
 //! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
 //! \a Justification: \p typ parameter would be cast instead of type.\n
 //! \a Justification: \p mbr parameter shall be a structure member; will in any way raise an error in case not.\n
-// cppcheck-suppress-macro misra-c2012-20.7
+// cppcheck-suppress-macro [misra-c2012-11.4, misra-c2012-20.7]
+
 #define OFFSET_OF(typ, mbr)		((size_t) &(((typ *)0)->mbr))							//!< Computes the offset member \p mbr from struct type \p typ
 
 //!\MISRA Local legitimate use derogation authorized for:\n
@@ -188,7 +202,16 @@
 #define isNull(p)			((p) == pNull)				//!< Test is \p p is null
 #define isNotNull(p)		((p) != pNull)				//!< Test is \p p is not null
 
+//!\MISRA Local legitimate use derogation authorized for:\n
+//! \b Rule-10.4 - \b Required: same essential type category (misra-c2012-10.4)\n
+//! \a Justification: \c signed or \c unsigned use will produce the same result.\n
+// cppcheck-suppress-macro misra-c2012-10.4
 #define isOdd(v)			(((v) & 1) == 1)			//!< Test is \p v is odd
+
+//!\MISRA Local legitimate use derogation authorized for:\n
+//! \b Rule-10.4 - \b Required: same essential type category (misra-c2012-10.4)\n
+//! \a Justification: \c signed or \c unsigned use will produce the same result.\n
+// cppcheck-suppress-macro misra-c2012-10.4
 #define isEven(v)			(((v) & 1) == 0)			//!< Test is \p v is even
 
 #ifdef min

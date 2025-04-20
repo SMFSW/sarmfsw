@@ -13,6 +13,7 @@
 /****************************************************************/
 
 #include "arm_preprocess.h"		// Common pre-processing directives
+#include "arm_attributes.h"		// Common attributes (following compiler)
 
 #include "arm_errors.h"			// Common errors
 #include "arm_typedefs.h"		// Common typedefs
@@ -20,8 +21,7 @@
 #include "arm_cmsis.h"			// HAL & Drivers (following defined platform)
 #include "arm_hal_peripheral.h"	// HAL peripherals includes (following defined platform)
 
-// Keep arm_attributes included after arm_cmsis, otherwise can cause warnings with older cmsis versions
-#include "arm_attributes.h"		// Common attributes (following compiler)
+#include "arm_keywords.h"		// Common C keywords aliases
 #include "arm_macros.h"			// Common macros
 #include "arm_inlines.h"		// Common inlines (after all includes, some inlines needs to access HAL code)
 

@@ -21,7 +21,11 @@
 //! \a Justification: copy \c array needs to have a size and is always used in conjunction with \p nb.\n
 //! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
 //! \a Justification: \p typ_t parameter would always be used as cast and wouldn't catenate name.\n
-// cppcheck-suppress-macro [misra-c2012-18.8, misra-c2012-20.7, misra-c2012-20.10]
+//! \b Rule-20.12 - \b Required: A macro parameter used as an operand to the # or ## operators,
+//!						which is itself subject to further macro replacement,
+//!						shall only be used as an operand to these operators (misra-c2012-20.12)\n
+//! \a Justification: compliant use.\n
+// cppcheck-suppress-macro [misra-c2012-18.8, misra-c2012-20.7, misra-c2012-20.10, misra-c2012-20.12]
 #define	RESTRICTED_AVERAGE(typ_t, sum_t)													\
 __INLINE typ_t RestrictedAverage_##typ_t(volatile const typ_t pArray[], const uint8_t nb)	\
 {																							\

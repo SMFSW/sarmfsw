@@ -82,7 +82,8 @@ __INLINE CHAR toUpperCase(const CHAR ascii) {
 __INLINE CHAR INLINE__ HexToASCII(const BYTE hex)
 {
 	const BYTE h = hex & 0x0FU;
-	return (CHAR) (h + ((h < 0x0AU) ? 0x30U : 0x37U));
+	const BYTE c = h + ((h < 0x0AU) ? 0x30U : 0x37U);
+	return (CHAR) c;
 }
 
 

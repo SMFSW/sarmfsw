@@ -43,11 +43,13 @@ __INLINE sCoord2D rotate_2D(const sCoord2D c, const SWORD angle)
 	{
 		default:
 		{
-			const float rad = (float) deg * M_PI_180;
+			const float rad = (float) deg * (float) M_PI_180;
 			const float cos_rad = cos(rad);
 			const float sin_rad = sin(rad);
-			r.x = (SDWORD) ((c.x * cos_rad) - (c.y * sin_rad));
-			r.y = (SDWORD) ((c.x * sin_rad) + (c.y * cos_rad));
+			const float x = ((float) c.x * cos_rad) - ((float) c.y * sin_rad);
+			const float y = ((float) c.x * sin_rad) + ((float) c.y * cos_rad);
+			r.x = (SDWORD) x;
+			r.y = (SDWORD) y;
 		}
 		break;
 
@@ -62,18 +64,22 @@ __INLINE sCoord2D rotate_2D(const sCoord2D c, const SWORD angle)
 			r.y = (SDWORD) ((c.x + c.y) / M_SQRT2);
 			deg -= 45;
 			//break;	// No break, may still need to rotate by a multiple of 90°
+			// fall through
 
 		case 90:
 			// Return only if 90°, otherwise, continue
 			if (deg == 90)	{ return (sCoord2D) { -r.y, r.x }; }	// cppcheck-suppress misra-c2012-15.5
+			// fall through
 
 		case 180:
 			// Return only if 180°, otherwise, continue
 			if (deg == 180)	{ return (sCoord2D) { -r.x, -r.y }; }	// cppcheck-suppress misra-c2012-15.5
+			// fall through
 
 		case 270:
 			// Return only if 270°, otherwise, continue
 			if (deg == 270)	{ return (sCoord2D) { r.y, -r.x }; }	// cppcheck-suppress misra-c2012-15.5
+			// fall through
 	}
 
 	return r;

@@ -80,11 +80,11 @@ __INLINE const void * INLINE__ get_current_heap_address(void)
 
 #define printExpr(e)			(printf("%s = %d\r\n", STR(e), (e)))				//!< Print expression \p e and it's result \p e using \c printf
 #define sprintExpr(s, e)		(sprintf((s), "%s = %d\r\n", STR(e), (e)))			//!< Print expression \p e and it's result \p e to \p s string
-#define snprintExpr(s, n, e)	(snprintf((s), (n), "%s = %d\r\n", STR(e), (e)))	//!< Print expression \p e and it's result \p e with max \n characters to \p s string
+#define snprintExpr(s, n, e)	(snprintf((s), (n), "%s = %d\r\n", STR(e), (e)))	//!< Print expression \p e and it's result \p e with max \p n characters to \p s string
 
 #define verbInstr(i)			(printf(STR(i)), (i))								//!< Print instruction \p i using \c printf and execute it
 #define sverbInstr(s, i)		(sprintf((s), STR(i)), (i))							//!< Print instruction \p i to \p s string and execute it
-#define snverbInstr(s, n, i)	(snprintf((s), (n), STR(i)), (i))					//!< Print instruction \p i to \p s string with max \n characters and execute it
+#define snverbInstr(s, n, i)	(snprintf((s), (n), STR(i)), (i))					//!< Print instruction \p i to \p s string with max \p n characters and execute it
 
 #define verbInc(x)				(puts("Incrementing " STR(x)), (x)++)				//!< Increment example on \p x using \c puts
 #define verbDec(x)				(puts("Decrementing " STR(x)), (x)--)				//!< Decrement example on \p x using \c puts
@@ -101,7 +101,7 @@ __INLINE const void * INLINE__ get_current_heap_address(void)
 ** \return Number of characters that would have been written to string
 ** \retval Negative number in case of encoding error
 **/
-__INLINE intCPU_t PRINTF__(2, 3) strappend(CHAR * const s, const CHAR * const fmt, ...)
+__NEVER_INLINE intCPU_t PRINTF__(2, 3) strappend(CHAR * const __RESTRICT s, const CHAR * const __RESTRICT fmt, ...)
 {
 	va_list args;
 	va_start(args, fmt);
@@ -122,7 +122,7 @@ __INLINE intCPU_t PRINTF__(2, 3) strappend(CHAR * const s, const CHAR * const fm
 ** \return Number of characters that would have been written to string
 ** \retval Negative number in case of encoding error
 **/
-__INLINE intCPU_t PRINTF__(3, 4) strnappend(CHAR * const s, const size_t len, const CHAR * const fmt, ...)
+__NEVER_INLINE intCPU_t PRINTF__(3, 4) strnappend(CHAR * const __RESTRICT s, const size_t len, const CHAR * const __RESTRICT fmt, ...)
 {
 	const size_t slen = strlen(s);
 	intCPU_t ret = 0;
@@ -146,8 +146,8 @@ __INLINE intCPU_t PRINTF__(3, 4) strnappend(CHAR * const s, const size_t len, co
 ** \param[in] size - Length of char array \p s
 ** \return Pointer to resulting string (char array)
 **/
-__INLINE CHAR * strncat_sz(CHAR * const s, const CHAR * const s2, const size_t size) {
-	const size_t sz = size - strlen(s) - 1;
+__INLINE CHAR * strncat_sz(CHAR * const __RESTRICT s, const CHAR * const __RESTRICT s2, const size_t size) {
+	const size_t sz = size - strlen(s) - 1U;
 	return (sz > size) ? s : strncat(s, s2, sz); }
 
 
@@ -164,7 +164,7 @@ __INLINE void INLINE__ strclr(CHAR * const s) {
 ** \param[in,out] s - Pointer to char array
 ** \return Pointer to resulting string (char array)
 **/
-__INLINE CHAR * INLINE__ str_add_tab(CHAR * const s) {
+__INLINE CHAR * INLINE__ str_add_tab(CHAR * const __RESTRICT s) {
 	return strcat(s, "\t"); }
 
 /*!\brief Append carriage return char at the end of string (char array)
@@ -173,7 +173,7 @@ __INLINE CHAR * INLINE__ str_add_tab(CHAR * const s) {
 ** \param[in,out] s - Pointer to char array
 ** \return Pointer to resulting string (char array)
 **/
-__INLINE CHAR * INLINE__ str_add_cr(CHAR * const s) {
+__INLINE CHAR * INLINE__ str_add_cr(CHAR * const __RESTRICT s) {
 	return strcat(s, "\r"); }
 
 /*!\brief Append line feed char at the end of string (char array)
@@ -182,7 +182,7 @@ __INLINE CHAR * INLINE__ str_add_cr(CHAR * const s) {
 ** \param[in,out] s - Pointer to char array
 ** \return Pointer to resulting string (char array)
 **/
-__INLINE CHAR * INLINE__ str_add_lf(CHAR * const s) {
+__INLINE CHAR * INLINE__ str_add_lf(CHAR * const __RESTRICT s) {
 	return strcat(s, "\n"); }
 
 /*!\brief Append carriage return and line feed chars at the end of string (char array)
@@ -191,7 +191,7 @@ __INLINE CHAR * INLINE__ str_add_lf(CHAR * const s) {
 ** \param[in,out] s - Pointer to char array
 ** \return Pointer to resulting string (char array)
 **/
-__INLINE CHAR * INLINE__ str_add_crlf(CHAR * const s) {
+__INLINE CHAR * INLINE__ str_add_crlf(CHAR * const __RESTRICT s) {
 	return strcat(s, "\r\n"); }
 
 
@@ -201,7 +201,7 @@ __INLINE CHAR * INLINE__ str_add_crlf(CHAR * const s) {
 ** \param[in] len - Length of char array \p s
 ** \return Pointer to resulting string (char array)
 **/
-__INLINE CHAR * INLINE__ strn_add_tab(CHAR * const s, const size_t len) {
+__INLINE CHAR * INLINE__ strn_add_tab(CHAR * const __RESTRICT s, const size_t len) {
 	return strncat_sz(s, "\t", len); }
 
 /*!\brief Append carriage return char at the end of sized string (char array)
@@ -210,7 +210,7 @@ __INLINE CHAR * INLINE__ strn_add_tab(CHAR * const s, const size_t len) {
 ** \param[in] len - Length of char array \p s
 ** \return Pointer to resulting string (char array)
 **/
-__INLINE CHAR * INLINE__ strn_add_cr(CHAR * const s, const size_t len) {
+__INLINE CHAR * INLINE__ strn_add_cr(CHAR * const __RESTRICT s, const size_t len) {
 	return strncat_sz(s, "\r", len); }
 
 /*!\brief Append line feed char at the end of sized string (char array)
@@ -219,7 +219,7 @@ __INLINE CHAR * INLINE__ strn_add_cr(CHAR * const s, const size_t len) {
 ** \param[in] len - Length of char array \p s
 ** \return Pointer to resulting string (char array)
 **/
-__INLINE CHAR * INLINE__ strn_add_lf(CHAR * const s, const size_t len) {
+__INLINE CHAR * INLINE__ strn_add_lf(CHAR * const __RESTRICT s, const size_t len) {
 	return strncat_sz(s, "\n", len); }
 
 /*!\brief Append carriage return and line feed chars at the end of sized string (char array)
@@ -228,7 +228,7 @@ __INLINE CHAR * INLINE__ strn_add_lf(CHAR * const s, const size_t len) {
 ** \param[in] len - Length of char array \p s
 ** \return Pointer to resulting string (char array)
 **/
-__INLINE CHAR * INLINE__ strn_add_crlf(CHAR * const s, const size_t len) {
+__INLINE CHAR * INLINE__ strn_add_crlf(CHAR * const __RESTRICT s, const size_t len) {
 	return strncat_sz(s, "\r\n", len); }
 
 

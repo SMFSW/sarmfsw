@@ -14,13 +14,19 @@
 ** \note	STDBOOL_NDEF can be defined at project level if stdint.h doesn't exist for target compiler
 ** \note	STDINT_NDEF can be defined at project level if stdint.h doesn't exist for target compiler
 ** \MISRA Header scope deviation has been granted for following rules:\n
+** 	\b Rule-2.3 - \b Advisory: \c unused type (misra-c2012-2.3)\n
+** 	\b Rule-2.4 - \b Advisory: \c unused tag (misra-c2012-2.3)\n
 ** 	\b Rule-19.2 - \b Advisory: \c union keyword (misra-c2012-19.2)\n
-** \MISRA Header scope legitimate use derogation authorized for:\n
+**	\b Rule-20.5 - \b Advisory: \c \#undef (misra-c2012-20.5)\n
+** \MISRA Header scope derogation authorized for:\n
+**	\b Rule-5.5 - \b Required: Identifiers shall be distinct from macro name (misra-c2012-5.5)\n
+**	\a Justification: Replacing B0 & B1 macro only for arduino platform.\n
+
 ** 	\b Rule-21.1 - \b Required: \c \#define and \c \#undef on reserved identifiers (misra-c2012-21.1)\n
 **	\a Justification: \c \#define are library specific reserved identifiers.\n
 */
-// cppcheck-suppress-begin [misra-c2012-19.2]
-// cppcheck-suppress-begin [misra-c2012-21.1]
+// cppcheck-suppress-begin [misra-c2012-2.3, misra-c2012-2.4, misra-c2012-19.2, misra-c2012-20.5]
+// cppcheck-suppress-begin [misra-c2012-5.5, misra-c2012-21.1]
 /****************************************************************/
 #ifndef ARM_TYPEDEFS_H_
 	#define ARM_TYPEDEFS_H_
@@ -439,13 +445,11 @@ typedef struct _sBitfield64 {
 
 
 // Undefine binary.h definitions used here
-//!\MISRA Local deviation has been granted for following rules:\n
-//!	\b Rule-20.5 - \b Advisory: \c \#undef (misra-c2012-20.5)\n
 #if defined(B0)
-#undef B0	// cppcheck-suppress misra-c2012-20.5
+#undef B0
 #endif
 #if defined(B1)
-#undef B1	// cppcheck-suppress misra-c2012-20.5
+#undef B1
 #endif
 
 /*!\union uByte
@@ -567,6 +571,6 @@ typedef union _uLWord {
 #endif
 
 #endif /* ARM_TYPEDEFS_H_ */
-// cppcheck-suppress-end [misra-c2012-19.2]
-// cppcheck-suppress-end [misra-c2012-21.1]
+// cppcheck-suppress-end [misra-c2012-2.3, misra-c2012-2.4, misra-c2012-19.2, misra-c2012-20.5]
+// cppcheck-suppress-end [misra-c2012-5.5, misra-c2012-21.1]
 /****************************************************************/

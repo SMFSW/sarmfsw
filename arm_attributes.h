@@ -304,50 +304,6 @@
 	#error Unknown compiler. Attributes will not be recognized.
 #endif
 
-/*** C extensions keywords ***/
-#ifndef __TYPEOF
-#define __TYPEOF			__typeof__			//!< \c typeof keyword alias (\note so that it may prior be set to other expansion following compiler)
-#endif
-
-#ifndef __ASM
-#define __ASM				__asm__				//!< \c asm keyword alias (\note so that it may prior be set to other expansion following compiler)
-#endif
-
-
-/*** C standard keywords ***/
-#ifdef __STATIC
-#undef __STATIC
-#endif
-#if defined(NO_STATIC_FUNC) || defined(UNITY_TESTING)
-#define __STATIC								//!< \c static alias when functions visibility may be required (__INLINE remaining static)
-#else
-#define __STATIC			static				//!< \c static alias when functions visibility may be required (__INLINE remaining static)
-#endif
-
-
-#ifdef __INLINE
-#undef __INLINE
-#endif
-//!\note Doesn't optimize code size much (when generated as functions) as code will be static to each file and hidden from others (leading to code duplicates)
-#define __INLINE			static inline		//!< \c inline attribute alias
-
-#ifndef __STATIC_INLINE
-#define __STATIC_INLINE		static inline		//!< \c static \c inline attribute alias
-#endif
-
-/*** INLINES WORKAROUND WHEN OPTIMIZATION LEVEL SET TO NONE (GCC like toolchains) ***/
-#if defined(__NOOPT__)
-#undef __INLINE
-#undef __STATIC_INLINE
-
-#ifdef __STATIC_FORCEINLINE
-#define __INLINE			__STATIC_FORCEINLINE							//!< \c inline attribute alias when \c __NOOPT__ defined
-#define __STATIC_INLINE		__STATIC_FORCEINLINE							//!< \c static \c inline attribute alias when \c __NOOPT__ defined
-#else
-#define __INLINE			__attribute__((always_inline)) static inline	//!< \c inline attribute alias when \c __NOOPT__ defined
-#define __STATIC_INLINE		__attribute__((always_inline)) static inline	//!< \c static \c inline attribute alias when \c __NOOPT__ defined
-#endif
-#endif
 
 /****************************************************************/
 #ifdef __cplusplus

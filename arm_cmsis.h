@@ -5,19 +5,17 @@
 ** \warning Latest ARM chips might now be recognized; if not, define at project level:
 ** 			- for STM32 families (STMicroelectronics):
 ** 				- STM_FAMILY xy:
-** 					- x : c/f/h/l/mp/u/wb/wl
+** 					- x : c/f/h/l/mp/n/u/wb/wl
 ** 					- y : sub-family number
 ** 			- for SAM families (Atmel):
 ** 				- SAM_FAMILY xy(yy)
 ** 			- for PIC families (Microchip):
 ** 				- PIC_FAMILY pic(xx)
+** 			- for INO families:
+** 				- INO_FAMILY arduino (any device)
 ** 			- for Other families (TI...):
 ** 				- not implemented yet
-** \MISRA Header scope derogation to following rules:\n
-** 	\b Rule-21.1 - \b Required: \c \#define and \c \#undef on reserved identifiers (misra-c2012-21.1)\n
-**	\a Justification: define generic CMSIS IO macros in case not already defined.\n
 */
-// cppcheck-suppress-begin [misra-c2012-21.1]
 /****************************************************************/
 #ifndef ARM_CMSIS_H_
 	#define ARM_CMSIS_H_
@@ -826,51 +824,10 @@ HALTICKS_PROTOTYPE(HALTicks);		//!< External definition of Ticks getter to check
 #endif
 
 
-/* IO definitions (access restrictions to peripheral registers) */
-#ifndef __I
-#ifdef __cplusplus
-#define __I			volatile		//!< Defines 'read only' permissions
-#else
-#define __I			volatile const	//!< Defines 'read only' permissions
-#endif
-#endif
-
-#ifndef __O
-#define __O			volatile		//!< Defines 'write only' permissions
-#endif
-
-#ifndef __IO
-#define __IO		volatile		//!< Defines 'read / write' permissions
-#endif
-
-/* following defines should be used for structure members */
-#ifndef __IM
-#define __IM		volatile const	//!< Defines 'read only' structure member permissions
-#endif
-
-#ifndef __OM
-#define __OM		volatile		//!< Defines 'write only' structure member permissions
-#endif
-
-#ifndef __IOM
-#define __IOM		volatile		//!< Defines 'read / write' structure member permissions
-#endif
-
-
-#ifndef UNUSED
-#define UNUSED(X)	(void) (X)		//!< Unused parameter \p X (to avoid gcc/g++ warnings)
-#endif
-
-#ifndef UNUSED_RET
-#define UNUSED_RET	(void)			//!< Explicitly ignore function return (MISRA compliance)
-#endif
-
-
 /****************************************************************/
 #ifdef __cplusplus
 	}
 #endif
 
 #endif /* ARM_CMSIS_H_ */
-// cppcheck-suppress-end [misra-c2012-21.1]
 /****************************************************************/

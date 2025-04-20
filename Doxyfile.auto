@@ -2417,6 +2417,7 @@ INCLUDE_FILE_PATTERNS  = *.h
 PREDEFINED             = DOXY=1 \
                          __INLINE=inline \
                          "__STATIC_INLINE=static inline" \
+                         "__NEVER_INLINE=static inline" \
                          __WEAK= \
                          ATTR__(...)= \
                          ALIGN__(a)= \
