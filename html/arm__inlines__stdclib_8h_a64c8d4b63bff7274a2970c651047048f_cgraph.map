@@ -1,0 +1,5 @@
+<map id="strn_add_cr" name="strn_add_cr">
+<area shape="rect" id="Node000001" title="Append carriage return char at the end of sized string (char array)" alt="" coords="5,5,95,32"/>
+<area shape="rect" id="Node000002" href="$arm__inlines__stdclib_8h.html#adcf5967052a712ea479dd5251ecd23e7" title="Append string at the end of sized string (char array)" alt="" coords="143,5,225,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,16,128,16,128,21,95,21"/>
+</map>

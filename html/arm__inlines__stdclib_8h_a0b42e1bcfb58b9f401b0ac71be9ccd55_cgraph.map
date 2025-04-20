@@ -1,0 +1,5 @@
+<map id="strn_add_lf" name="strn_add_lf">
+<area shape="rect" id="Node000001" title="Append line feed char at the end of sized string (char array)" alt="" coords="5,5,91,32"/>
+<area shape="rect" id="Node000002" href="$arm__inlines__stdclib_8h.html#adcf5967052a712ea479dd5251ecd23e7" title="Append string at the end of sized string (char array)" alt="" coords="139,5,221,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,16,124,16,124,21,91,21"/>
+</map>
