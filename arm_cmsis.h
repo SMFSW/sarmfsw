@@ -16,6 +16,7 @@
 ** 			- for Other families (TI...):
 ** 				- not implemented yet
 */
+// cppcheck-suppress-begin [misra-c2012-20.7] macros warnings
 /****************************************************************/
 #ifndef ARM_CMSIS_H_
 	#define ARM_CMSIS_H_
@@ -804,12 +805,13 @@
 #endif /* SARMFSW_NO_CHIP_HAL */
 
 
-/*** arm_inlines_ticks.h needs a generic definition of HALTicks & HAL_MS_TICKS_FACTOR ***/
-//!\MISRA Local derogation authorized for:\n
-//! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
-//! \a Justification: \p func paramater shall be a function name; raising error otherwise is intended.\n
-// cppcheck-suppress-macro misra-c2012-20.7
-#define HALTICKS_PROTOTYPE(func)	uint32_t func(void)		//!< External definition of Ticks getter that shall be implemented in project
+/*!\brief External definition of Ticks getter that shall be implemented in project
+** \note \ref arm_inlines_ticks.h needs a generic definition of \ref HALTicks & \ref HAL_MS_TICKS_FACTOR
+** \MISRA Local derogation authorized for:\n
+** \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
+** \a Justification: \p func paramater shall be a function name; raising error otherwise is intended.\n
+**/
+#define HALTICKS_PROTOTYPE(func)	uint32_t func(void)		// cppcheck-suppress-macro misra-c2012-20.7
 
 // In case chip headers don't include specific HALTicks symbol, define generic one and its external prototype
 #ifndef HALTicks
@@ -830,4 +832,5 @@ HALTICKS_PROTOTYPE(HALTicks);		//!< External definition of Ticks getter to check
 #endif
 
 #endif /* ARM_CMSIS_H_ */
+// cppcheck-suppress-end [misra-c2012-20.7] macros warnings
 /****************************************************************/

@@ -16,13 +16,14 @@
 /*************************************************/
 /*** Non Flexible member array type definition ***/
 /*************************************************/
-//!\MISRA Local deviation has been granted for following rules:\n
-//!	\b Rule-20.10 - \b Advisory: \c # and \c ## preprocessor operators (misra-c2012-20.10)\n
-// cppcheck-suppress misra-c2012-20.10
+/*!\brief Pattern tab typedef declaration with \p name catenation and \p nbElem max array elements
+** \MISRA Local deviation has been granted for following rules:\n
+**	\b Rule-20.10 - \b Advisory: \c # and \c ## preprocessor operators (misra-c2012-20.10)\n
+**/
 #define	LINEAR_TAB(name, nbElem)	typedef struct sLinear##name {	\
 										DWORD	nb;					\
 										SDWORD	array[nbElem][2];	\
-									} sLinear##name;	//!< Pattern tab typedef declaration with \p name catenation and \p nbElem max array elements
+									} sLinear##name;	// cppcheck-suppress misra-c2012-20.10
 
 /*********************************************/
 /*** Flexible member array type definition ***/
@@ -41,11 +42,12 @@ typedef struct sLinearFlexArray {
 } sLinearFlexArray;
 
 
-//!\MISRA Local legitimate use derogation authorized for:\n
-//! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
-//! \a Justification: Result expansion of \p name wouldn't produce the desired structured access expansion.\n
-// cppcheck-suppress-macro misra-c2012-20.7
-#define LINEAR_EVAL(name, val)		linearization_eval(name.array, name.nb, (val))	//!< Macro to call linearization on a LINEAR_TAB or sLinearFlexArray typedef
+/*!\brief Macro to call linearization on a LINEAR_TAB or sLinearFlexArray typedef
+** \MISRA Local legitimate use derogation authorized for:\n
+** \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
+** \a Justification: Result expansion of \p name wouldn't produce the desired structured access expansion.\n
+**/
+#define LINEAR_EVAL(name, val)		linearization_eval(name.array, name.nb, (val))	// cppcheck-suppress misra-c2012-20.7
 
 
 /*!\brief 2 dimensional linearization

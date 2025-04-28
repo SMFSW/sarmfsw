@@ -37,7 +37,7 @@
 **/
 __INLINE float RAD_NORM(const float rad)
 {
-	const float val = (rad < 0.0f) ? M_TWOPI : -M_TWOPI;
+	const float val = (float) ((rad < 0.0f) ? M_TWOPI : -M_TWOPI);
 	float r = rad;
 
 	while (fabs(r) > M_TWOPI)	{ r += val; }

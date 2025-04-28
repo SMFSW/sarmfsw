@@ -23,6 +23,8 @@ SOFTWARE.
 ## v3.7
 
 * Partial MISRA C2012 compliance
+* arm_macros.h: BYTE_TO_PERC test >= 255 which doesn't raise warning when given BYTE parameter
+* arm_macros.h: re-enabled TEST_BITS_SET & TEST_BITS_CLR macros (TEST_BITS_VAL set to be alias of TEST_BITS_SET)
 * arm_keywords.h: \__NEVER_INLINE symbol added
 * arm_keywords.h: moved keywords aliases from arm_cmsis.h to arm_keywords.h
 * arm_preprocess.h: definition of symbols following used C standard

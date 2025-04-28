@@ -3,6 +3,7 @@
 ** \copyright MIT (c) 2017-2025, SMFSW
 ** \brief Averaging inlines
 */
+// cppcheck-suppress-begin [misra-c2012-18.8] macro warning
 /****************************************************************/
 #ifndef ARM_INLINES_AVERAGE_H_
 	#define ARM_INLINES_AVERAGE_H_
@@ -13,19 +14,18 @@
 /****************************************************************/
 
 
-//!\MISRA Function scope deviation granted for:\n
-//!	\b Rule-20.10 - \b Advisory: \c # and \c ## preprocessor operators (misra-c2012-20.10)\n
-//! Local legitimate use derogation authorized for:\n
-//! \b Rule-18.8 - \b Required: Var-length array types (misra-c2012-18.8)\n
-//! \a Justification: \p pArray is used as array, makes sense to declare it in the same manner.\n
-//! \a Justification: copy \c array needs to have a size and is always used in conjunction with \p nb.\n
-//! \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
-//! \a Justification: \p typ_t parameter would always be used as cast and wouldn't catenate name.\n
-//! \b Rule-20.12 - \b Required: A macro parameter used as an operand to the # or ## operators,
-//!						which is itself subject to further macro replacement,
-//!						shall only be used as an operand to these operators (misra-c2012-20.12)\n
-//! \a Justification: compliant use.\n
-// cppcheck-suppress-macro [misra-c2012-18.8, misra-c2012-20.7, misra-c2012-20.10, misra-c2012-20.12]
+/*!\brief Get average value of tab excluding most extreme values
+** \MISRA Function scope deviation granted for:\n
+**	\b Rule-20.10 - \b Advisory: \c # and \c ## preprocessor operators (misra-c2012-20.10)\n
+** Local legitimate use derogation authorized for:\n
+** \b Rule-18.8 - \b Required: Var-length array types (misra-c2012-18.8)\n
+** \a Justification: \p pArray is used as array, makes sense to declare it in the same manner.\n
+** \a Justification: copy \c array needs to have a size and is always used in conjunction with \p nb.\n
+** \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
+** \a Justification: \p typ_t parameter would always be used as cast and wouldn't catenate name.\n
+** \b Rule-20.12 - \b Required: macro parameter operand to # or ## (misra-c2012-20.12)\n
+** \a Justification: compliant use.\n
+**/
 #define	RESTRICTED_AVERAGE(typ_t, sum_t)													\
 __INLINE typ_t RestrictedAverage_##typ_t(volatile const typ_t pArray[], const uint8_t nb)	\
 {																							\
@@ -56,7 +56,7 @@ __INLINE typ_t RestrictedAverage_##typ_t(volatile const typ_t pArray[], const ui
 	}																						\
 																							\
 	return average;																			\
-}
+}	// cppcheck-suppress [misra-c2012-18.8, misra-c2012-20.7, misra-c2012-20.10, misra-c2012-20.12]
 
 
 /*!\brief Get average value of tab excluding most extreme values (BYTE)
@@ -157,4 +157,5 @@ RESTRICTED_AVERAGE(double, double);
 #endif
 
 #endif /* ARM_INLINES_AVERAGE_H_ */
+// cppcheck-suppress-end [misra-c2012-18.8] macro warning
 /****************************************************************/
