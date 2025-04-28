@@ -26,5 +26,6 @@ var searchData=
   ['_5fubyte_23',['_uByte',['../union__u_byte.html',1,'']]],
   ['_5fudword_24',['_uDWord',['../union__u_d_word.html',1,'']]],
   ['_5fulword_25',['_uLWord',['../union__u_l_word.html',1,'']]],
-  ['_5fuword_26',['_uWord',['../union__u_word.html',1,'']]]
+  ['_5fuword_26',['_uWord',['../union__u_word.html',1,'']]],
+  ['_5fx_5f_27',['_x_',['../arm__macros_8h.html#a4a62296d82c84d1fb999c833be8a77cd',1,'arm_macros.h']]]
 ];

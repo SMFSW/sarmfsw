@@ -1,5 +1,0 @@
-<map id="strn_add_tab" name="strn_add_tab">
-<area shape="rect" id="Node000001" title="Append tab char at the end of sized string (char array)" alt="" coords="5,5,102,32"/>
-<area shape="rect" id="Node000002" href="$arm__inlines__stdclib_8h.html#a169c2e12df938a766fe8e23358972c08" title="Append string at the end of sized string (char array)" alt="" coords="150,5,232,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,16,135,16,135,21,102,21"/>
-</map>

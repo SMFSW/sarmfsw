@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sarmfsw: SMFSW Toolbox (for ARM &amp; compatible with Arduino platform): arm_inlines_average.h File Reference</title>
+<title>sarmfsw: SMFSW Toolbox (for ARM &amp;amp; compatible with Arduino platform): arm_inlines_average.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sarmfsw: SMFSW Toolbox (for ARM &amp; compatible with Arduino platform)<span id="projectnumber">&#160;3.7</span>
+   <div id="projectname">sarmfsw: SMFSW Toolbox (for ARM &amp;amp; compatible with Arduino platform)<span id="projectnumber">&#160;3.7</span>
    </div>
-   <div id="projectbrief">SMFSW collection of miscellaneous functions &amp; macros (for ARM &amp; compatible with Arduino platform)</div>
+   <div id="projectbrief">SMFSW collection of miscellaneous functions &amp;amp; macros (for ARM &amp;amp; compatible with Arduino platform)</div>
   </td>
  </tr>
  </tbody>
@@ -110,6 +110,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a1e1965e310ddad5163f2d880e4a8b43d" id="r_a1e1965e310ddad5163f2d880e4a8b43d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e1965e310ddad5163f2d880e4a8b43d">RESTRICTED_AVERAGE</a>(typ_t,  sum_t)</td></tr>
+<tr class="memdesc:a1e1965e310ddad5163f2d880e4a8b43d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get average value of tab excluding most extreme values.  <br /></td></tr>
 <tr class="separator:a1e1965e310ddad5163f2d880e4a8b43d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -194,16 +195,18 @@ Functions</h2></td></tr>
 <div class="line">}</div>
 <div class="ttc" id="aarm__keywords_8h_html_ade2d8d7118f8ff49547f60aa0c3382bb"><div class="ttname"><a href="arm__keywords_8h.html#ade2d8d7118f8ff49547f60aa0c3382bb">__INLINE</a></div><div class="ttdeci">#define __INLINE</div><div class="ttdoc">inline attribute alias</div><div class="ttdef"><b>Definition</b> arm_keywords.h:82</div></div>
 <div class="ttc" id="aarm__typedefs_8h_html_ac78fad3d8bf59eb44161d6fb5f4c73f8"><div class="ttname"><a href="arm__typedefs_8h.html#ac78fad3d8bf59eb44161d6fb5f4c73f8">uintCPU_t</a></div><div class="ttdeci">unsigned int uintCPU_t</div><div class="ttdoc">Unsigned integer typedef.</div><div class="ttdef"><b>Definition</b> arm_typedefs.h:70</div></div>
-</div><!-- fragment --><dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000009">MISRA C:2012 Deviations</a></b></dt><dd>Function scope deviation granted for:<br  />
+</div><!-- fragment -->
+<p>Get average value of tab excluding most extreme values. </p>
+<dl class="MISRA"><dt><b><a class="el" href="_m_i_s_r_a.html#_MISRA000009">MISRA C:2012 Deviations</a></b></dt><dd>Function scope deviation granted for:<br  />
  <b>Rule-20.10</b> - <b>Advisory:</b> <code>#</code> and <code>##</code> preprocessor operators (misra-c2012-20.10)<br  />
- Local legitimate use derogation authorized for:<br  />
- <b>Rule-18.8</b> - <b>Required:</b> Var-length array types (misra-c2012-18.8)<br  />
- <em class="arg">Justification:</em> <code class="param">pArray</code> is used as array, makes sense to declare it in the same manner.<br  />
- <em class="arg">Justification:</em> copy <code>array</code> needs to have a size and is always used in conjunction with <code class="param">nb</code>.<br  />
- <b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
- <em class="arg">Justification:</em> <code class="param">typ_t</code> parameter would always be used as cast and wouldn't catenate name.<br  />
- <b>Rule-20.12</b> - <b>Required:</b> A macro parameter used as an operand to the # or ## operators, which is itself subject to further macro replacement, shall only be used as an operand to these operators (misra-c2012-20.12)<br  />
- <em class="arg">Justification:</em> compliant use.<br  />
+Local legitimate use derogation authorized for:<br  />
+<b>Rule-18.8</b> - <b>Required:</b> Var-length array types (misra-c2012-18.8)<br  />
+<em class="arg">Justification:</em> <code class="param">pArray</code> is used as array, makes sense to declare it in the same manner.<br  />
+<em class="arg">Justification:</em> copy <code>array</code> needs to have a size and is always used in conjunction with <code class="param">nb</code>.<br  />
+<b>Rule-20.7</b> - <b>Required:</b> Enclosed macro parameters expansion (misra-c2012-20.7)<br  />
+<em class="arg">Justification:</em> <code class="param">typ_t</code> parameter would always be used as cast and wouldn't catenate name.<br  />
+<b>Rule-20.12</b> - <b>Required:</b> macro parameter operand to # or ## (misra-c2012-20.12)<br  />
+<em class="arg">Justification:</em> compliant use.<br  />
  </dd></dl>
 
 </div>
