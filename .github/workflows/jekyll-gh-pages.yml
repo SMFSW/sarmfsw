@@ -1,10 +1,10 @@
 # Sample workflow for building and deploying a Doxygen site to GitHub Pages
-name: Deploy Doxygen with GitHub Pages dependencies preinstalled
+name: Deploy Doxygen docs to gh-pages branch
 
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ["master"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -31,7 +31,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Run Doxygen
-        uses: smfsw/mattnotmitt_doxygen-action@v1.9.5
+        uses: mattnotmitt/doxygen-action@edge
         with:
           # working-directory: '/doxygen'
           doxyfile-path: 'Doxyfile.auto'
