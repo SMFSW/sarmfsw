@@ -2,7 +2,7 @@
 ** \author SMFSW
 ** \copyright MIT (c) 2017-2025, SMFSW
 ** \brief ARM common macros
-** \note If used CPU only handles single shifts, you may define SINGLE_SHIFT_ONLY_OPCODE at project level (see \ref LSHIFT & \ref RSHIFT)
+** \note If used CPU only handles single shifts, you may define \c SINGLE_SHIFT_ONLY_OPCODE at project level (see \ref LSHIFT & \ref RSHIFT)
 ** \MISRA Header scope deviation has been granted for following rules:\n
 ** 	\b Rule-1.2 - \b Advisory: Language extensions (misra-c2012-1.2)\n
 ** 	\b Rule-20.5 - \b Advisory: \c \#undef (misra-c2012-20.5)\n

@@ -5,14 +5,14 @@
 ** \warning	Endianness for unions shall be checked following target / compiler to avoid potential headaches!
 ** \warning sBitfieldXX are defined from lsb to msb as most compiler does by default; if it's not the case,
 **			try to find a compiler directive or pragma to reverse bitfield order;
-**			if not available, define REVERSE_BITFIELD symbol at project level.
+**			if not available, define \c REVERSE_BITFIELD symbol at project level.
 ** \warning	For Arduino platform, some binary.h definitions needs to be undefined.
-**			If you find them useful, define USE_INO_BINARY_HEADER before including sarmfsw.h to keep them defined.
+**			If you find them useful, define \c USE_INO_BINARY_HEADER before including \ref sarmfsw.h to keep them defined.
 **			Please note, B0 & B1 Bytes sub-structures of unions defined hereafter will not be available in this case.
 ** \note	For Arduino platform, prefer ANSI-C(pp) 0b notation for binary representation,
 ** 			instead of using defines from Arduino binary.h
-** \note	STDBOOL_NDEF can be defined at project level if stdint.h doesn't exist for target compiler
-** \note	STDINT_NDEF can be defined at project level if stdint.h doesn't exist for target compiler
+** \note	\c STDBOOL_NDEF can be defined at project level if \c stdint.h doesn't exist for target compiler
+** \note	\c STDINT_NDEF can be defined at project level if \c stdint.h doesn't exist for target compiler
 ** \MISRA Header scope deviation has been granted for following rules:\n
 ** 	\b Rule-2.3 - \b Advisory: \c unused type (misra-c2012-2.3)\n
 ** 	\b Rule-2.4 - \b Advisory: \c unused tag (misra-c2012-2.3)\n

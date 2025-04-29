@@ -12,7 +12,7 @@
 ** \attention	On PIC families you should configure a timer to count for ms.
 **				A TIM peripheral shall be configured in MCC or Harmony (with a period of 1ms).
 **
-** HAL_GetTick shall be known to sarmfsw.
+** \c HAL_GetTick shall be known to sarmfsw.
 ** As no specific project header is included yet in this file, external definition is provided.
 **
 ** \code

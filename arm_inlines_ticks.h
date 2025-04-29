@@ -16,7 +16,7 @@
 /*!\brief Tests if stored time value has reached time lapse in ms
 ** \warning For SAM families, no ms base time counter is implemented in HAL,
 **			please refer to arm_chip_sam.h for an implementation example.
-** \note	Define custom HAL_MS_TICKS_FACTOR at project level if tick period is not 1ms
+** \note	Define custom \c HAL_MS_TICKS_FACTOR at project level if tick period is not 1ms
 ** \param[in] start_tick - previously stored time value
 ** \param[in] lapse - time lapse (in ms)
 ** \return true if time elapsed
@@ -33,7 +33,7 @@ __INLINE BOOL INLINE__ TPSSUP_MS(const DWORD start_tick, const DWORD lapse)
 /*!\brief Tests if stored time value has not reached time lapse in ms
 ** \warning For SAM families, no ms base time counter is implemented in HAL,
 **			please refer to arm_chip_sam.h for an implementation example.
-** \note	Define custom HAL_MS_TICKS_FACTOR at project level if tick period is not 1ms
+** \note	Define custom \c HAL_MS_TICKS_FACTOR at project level if tick period is not 1ms
 ** \param[in] start_tick - previously stored time value
 ** \param[in] lapse - time lapse (in ms)
 ** \return true if time not elapsed
