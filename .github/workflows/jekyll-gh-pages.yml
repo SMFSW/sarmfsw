@@ -31,7 +31,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Run Doxygen
-        uses: mattnotmitt/doxygen-action@v1.9.5
+        uses: smfsw/mattnotmitt_doxygen-action@v1.9.5
         with:
           # working-directory: '/doxygen'
           doxyfile-path: 'Doxyfile.auto'
