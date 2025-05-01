@@ -1,8 +1,6 @@
 name: Mirror Github repository to BitBucket
 
-on:
-  push:
-    branches: [ "master" ]
+on: [push]
 
 jobs:
 
