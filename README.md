@@ -1,4 +1,4 @@
-# sarmfsw
+# sarmfsw [![CodeFactor](https://www.codefactor.io/repository/github/smfsw/sarmfsw/badge)](https://www.codefactor.io/repository/github/smfsw/sarmfsw)
 
 ARM based common headers
 
