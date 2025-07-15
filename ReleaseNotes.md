@@ -20,9 +20,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## v3.7
+## v3.7 -> 4.0rc
 
 * Partial MISRA C2012 compliance
+* Moved from TravisCI to Github workflows
 * arm_macros.h: BYTE_TO_PERC test >= 255 which doesn't raise warning when given BYTE parameter
 * arm_macros.h: re-enabled TEST_BITS_SET & TEST_BITS_CLR macros (TEST_BITS_VAL set to be alias of TEST_BITS_SET)
 * arm_keywords.h: \__NEVER_INLINE symbol added

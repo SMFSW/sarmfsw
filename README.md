@@ -1,4 +1,17 @@
-# sarmfsw [![CodeFactor](https://www.codefactor.io/repository/github/smfsw/sarmfsw/badge)](https://www.codefactor.io/repository/github/smfsw/sarmfsw)
+# sarmfsw
+
+[![author](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/SMFSW/a9a2b2a02fda1b33461d53ddfe69d649/raw/auth_SMFSW.json)](https://github.com/SMFSW)
+![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/SMFSW/a9a2b2a02fda1b33461d53ddfe69d649/raw/sarmfsw_status_badge.json)
+[![license](https://img.shields.io/badge/License-MIT-darkred.svg)](LICENSE)
+[![CodeFactor](https://www.codefactor.io/repository/github/smfsw/sarmfsw/badge)](https://www.codefactor.io/repository/github/smfsw/sarmfsw)
+
+![platform](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/SMFSW/a9a2b2a02fda1b33461d53ddfe69d649/raw/platform_ARM.json)
+![platform](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/SMFSW/a9a2b2a02fda1b33461d53ddfe69d649/raw/platform_INO.json)
+
+[![doxy](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/SMFSW/a9a2b2a02fda1b33461d53ddfe69d649/raw/tool_DOXY.json)](https://smfsw.github.io/sarmfsw)
+[![re_note](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/SMFSW/a9a2b2a02fda1b33461d53ddfe69d649/raw/tool_RN.json)](ReleaseNotes.md)
+
+![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/SMFSW/a9a2b2a02fda1b33461d53ddfe69d649/raw/sarmfsw_custom_repo_badge.json)
 
 ARM based common headers
 
@@ -42,13 +55,3 @@ Library has been updated to become compatible with Arduino & other 8/16bit platf
 Macros/Inlines name standardization (case) not always respected for backward compatibility with older versions:
 - For new users: sorry for this apparent nonsense (aliases may be implemented sooner, later, bust most likely never)!
 - For former users: you're welcome (except some special cases, backward compatibility should still be handled)!
- 
-## Documentation
-
-Doxygen doc can be generated using "Doxyfile"
-
-See [generated documentation](https://smfsw.github.io/sarmfsw/)
-
-## Release Notes
-
-See [release notes](ReleaseNotes.md)
