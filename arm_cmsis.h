@@ -806,16 +806,18 @@
 
 
 /*!\brief External definition of Ticks getter that shall be implemented in project
+** \warning Ensure tick counter implementation counts towards full 32b resolution
 ** \note \ref arm_inlines_ticks.h needs a generic definition of \ref HALTicks & \ref HAL_MS_TICKS_FACTOR
 ** \MISRA Local derogation authorized for:\n
 ** \b Rule-20.7 - \b Required: Enclosed macro parameters expansion (misra-c2012-20.7)\n
-** \a Justification: \p func paramater shall be a function name; raising error otherwise is intended.\n
+** \a Justification: \p func parameter shall be a function name; raising error otherwise is intended.\n
+** \return Current tick (unsigned 32b)
 **/
 #define HALTICKS_PROTOTYPE(func)	uint32_t func(void)		// cppcheck-suppress-macro misra-c2012-20.7
 
 // In case chip headers don't include specific HALTicks symbol, define generic one and its external prototype
 #ifndef HALTicks
-HALTICKS_PROTOTYPE(HAL_GetTick);	//!< External definition of HAL_GetTick that shall be defined in project
+HALTICKS_PROTOTYPE(HAL_GetTick);	//!< External definition of HAL_GetTick that shall be defined in project (32b counter)
 #define HALTicks	HAL_GetTick		//!< Alias for HAL get ticks function
 #else
 HALTICKS_PROTOTYPE(HALTicks);		//!< External definition of Ticks getter to check for prototype validity

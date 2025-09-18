@@ -326,15 +326,6 @@
 								(_v < _mn) ? _mn : ((_v > _mx) ? _mx : _v); })	// cppcheck-suppress-macro misra-c2012-1.2
 
 
-/*!\brief Returns difference of unsigned \p a and \p b (with potential overflow handling)
-** \warning OVF_DIFF only works with unsigned integers
-**/
-#define OVF_DIFF(a, b)		({	__TYPEOF(a) _a = (a);	\
-								__TYPEOF(b) _b = (b);	\
-								__TYPEOF(a) _max = -1;	\
-								(_a >= _b) ? (_a - _b) : (_max - _b) + _a + 1; })	// cppcheck-suppress-macro misra-c2012-1.2
-
-
 /*!\brief Scale value \p v from range \p from_min:from_max to range \p to_min:to_max
 ** \warning SCALE_VAL does not check types and is limited to MCU register size computation, for larger scales, use \ref SCALE_VAL_T or \ref scaleValue instead
 **/

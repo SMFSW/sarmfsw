@@ -24,7 +24,7 @@
 __INLINE BOOL INLINE__ TPSSUP_MS(const DWORD start_tick, const DWORD lapse)
 {
 	const DWORD scaled_time = lapse * HAL_MS_TICKS_FACTOR;
-	const DWORD time_diff = OVF_DIFF(HALTicks(), start_tick);
+	const DWORD time_diff = HALTicks() - start_tick;	// Underflow computation will give the same result for unsigned type
 
 	return binEval(time_diff >= scaled_time);
 }
@@ -41,7 +41,7 @@ __INLINE BOOL INLINE__ TPSSUP_MS(const DWORD start_tick, const DWORD lapse)
 __INLINE BOOL INLINE__ TPSINF_MS(const DWORD start_tick, const DWORD lapse)
 {
 	const DWORD scaled_time = lapse * HAL_MS_TICKS_FACTOR;
-	const DWORD time_diff = OVF_DIFF(HALTicks(), start_tick);
+	const DWORD time_diff = HALTicks() - start_tick;	// Underflow computation will give the same result for unsigned type
 
 	return binEval(time_diff < scaled_time);
 }
