@@ -22,6 +22,7 @@ SOFTWARE.
 
 ## v3.7 -> 4.0rc
 
+* sarmfsw_version.h: __SARMFSW_VERSION symbol added
 * Partial MISRA C2012 compliance
 * Moved from TravisCI to Github workflows
 * OVF_DIFF removal

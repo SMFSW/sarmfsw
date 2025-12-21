@@ -12,6 +12,8 @@
 #endif
 /****************************************************************/
 
+#include "sarmfsw_version.h"	// sarmfsw version
+
 #include "arm_preprocess.h"		// Common pre-processing directives
 #include "arm_attributes.h"		// Common attributes (following compiler)
 

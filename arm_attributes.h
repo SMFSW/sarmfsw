@@ -300,7 +300,7 @@
 	#endif
 
 #else
-	#error Unknown compiler. Attributes will not be recognized.
+	#error "Unknown compiler. Attributes will not be recognized."
 #endif
 
 
