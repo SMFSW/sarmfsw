@@ -12,7 +12,7 @@ exec cppcheck \
   --suppress=missingIncludeSystem \
   --suppressions-list=./.cppcheck/cppcheck.suppress \
   --error-exitcode=1 \
-  --platform=mips32 \
+  --platform=arm32-wchar_t2 \
   '-D__cppcheck__' \
   '-D__GNUC__' \
   '-DNONNULLX__(...)=""' \
