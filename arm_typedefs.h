@@ -37,17 +37,19 @@
 /****************************************************************/
 
 
-#ifndef STDBOOL_NDEF // TODO: maybe find proper pre-processing directive for compilers not handling stdbool.h
+#if !defined(STDBOOL_NDEF)
 #define __STDBOOL_DEF
+#include <stdbool.h>	//!< Include stdbool.h
 #else
-// If not possible to include header, types defined as symbols here
+// If not possible to include header, types defined here
 typedef unsigned char			bool;		//!< pseudo bool typedef
 #endif
 
-#ifndef STDINT_NDEF // TODO: maybe find proper pre-processing directive for compilers not handling stdint.h
+#if !defined(STDINT_NDEF) && !defined(__cppcheck__)
 #define __STDINT_DEF
+#include <stdint.h>		//!< Include stdint.h
 #else
-// If not possible to include header, types defined as symbols here
+// If not possible to include header (or running cppcheck), types defined here
 typedef unsigned char			uint8_t;	//!< uint8_t typedef
 typedef short unsigned int		uint16_t;	//!< uint16_t typedef
 typedef long unsigned int		uint32_t;	//!< uint32_t typedef
@@ -58,16 +60,8 @@ typedef long signed int			int32_t;	//!< int32_t typedef
 typedef long long signed int	int64_t;	//!< int64_t typedef
 #endif
 
-
-#ifdef __STDBOOL_DEF
-#include <stdbool.h>	//!< Include stdbool.h
-#endif
-#ifdef __STDINT_DEF
-#include <stdint.h>		//!< Include stdint.h
-#endif
-
-typedef int					intCPU_t;	//!< Signed integer typedef
-typedef unsigned int		uintCPU_t;	//!< Unsigned integer typedef
+typedef int						intCPU_t;	//!< Signed integer typedef
+typedef unsigned int			uintCPU_t;	//!< Unsigned integer typedef
 
 #if defined(__UINTPTR_TYPE__) && defined(__INTPTR_TYPE__)
 typedef __INTPTR_TYPE__		intPTR_t;	//!< Signed integer pointer address typedef
