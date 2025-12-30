@@ -12,13 +12,14 @@
 #endif
 /****************************************************************/
 
-/* sarmfsw Version definitions */
-#define __SARMFSW_DEBUG			(true)										/*!< [31:31] sarmfsw debug version */
-#define __SARMFSW_VERSION_MAIN	(3U)										/*!< [30:16] sarmfsw main version */
-#define __SARMFSW_VERSION_SUB	(7U)										/*!< [15:0]  sarmfsw sub version */
-#define __SARMFSW_VERSION		(	(__SARMFSW_DEBUG << 31U) |			\
-									(__SARMFSW_VERSION_MAIN << 16U) |	\
-									(__SARMFSW_VERSION_SUB))				/*!< sarmfsw version number */
+
+#define __SARMFSW_RELEASE		(false)										//!< [31:31] sarmfsw debug version
+#define __SARMFSW_VERSION_MAIN	(3U)										//!< [30:16] sarmfsw main version
+#define __SARMFSW_VERSION_SUB	(7U)										//!< [15:0]  sarmfsw sub version
+
+#define __SARMFSW_VERSION		(	((DWORD) (~__SARMFSW_RELEASE) << 31U) |		\
+									((DWORD) __SARMFSW_VERSION_MAIN << 16U) |	\
+									((DWORD) __SARMFSW_VERSION_SUB))		//!< sarmfsw version number
 
 
 /****************************************************************/
