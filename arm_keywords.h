@@ -1,6 +1,6 @@
 /*!\file arm_keywords.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief Common keywords aliases
 ** \MISRA Header scope deviation has been granted for following rules:\n
 ** 	\b Rule-20.5 - \b Advisory: \c \#undef (misra-c2012-20.5)\n

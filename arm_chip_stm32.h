@@ -1,15 +1,14 @@
 /*!\file arm_chip_stm32.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief ARM common macros for STM32
 ** \MISRA Header scope legitimate use derogation authorized for:\n
 ** 	\b Rule-5.6 - \b Required: unique \c typedef name (misra-c2012-5.6)\n
-** 	\b Rule-5.7 - \b Required: unique tag name (misra-c2012-5.7)\n
 ** 	\b Rule-5.9 - \b Advisory: internal linkage unique function name (misra-c2012-5.9)\n
-**	\a Justification: tag and \c typedefs name are only defined once (other arm_chip_xxx files are not included at the same time).\n
+**	\a Justification: \c typedefs name are only defined once (other arm_chip_xxx files are not included at the same time).\n
 */
 // cppcheck-suppress-begin [misra-c2012-5.9]
-// cppcheck-suppress-begin [misra-c2012-5.6, misra-c2012-5.7]
+// cppcheck-suppress-begin [misra-c2012-5.6]
 /****************************************************************/
 #ifndef ARM_CHIP_STM32_H_
 	#define ARM_CHIP_STM32_H_
@@ -18,7 +17,7 @@
 	extern "C" {
 #endif
 /****************************************************************/
-#include "main.h"				// Project pins & constants definitions
+#include "main.h"		// Project pins & constants definitions
 /****************************************************************/
 
 
@@ -78,11 +77,11 @@
 #endif
 
 
-/*!\enum _eResetSource
+/*!\enum eResetSource
 ** \brief Source of last reset
 **/
-typedef enum _eResetSource {
-	RST_POR = 1,		//!< Power On Reset
+typedef enum {
+	RST_POR = 1U,		//!< Power On Reset
 	RST_BOR,			//!< Brown Out Reset (H7)
 	RST_PIN,			//!< Pin Reset (External Reset)
 	RST_SW,				//!< Software Reset
@@ -92,7 +91,7 @@ typedef enum _eResetSource {
 	RST_OBL,			//!< Option Byte Load Reset
 	RST_V18PWR,			//!< 1.8V Domain Power Reset (F3)
 	RST_FW,				//!< Firewall Reset (L4)
-	RST_UNKNOWN = 0xFF	//!< Unknown Reset Source
+	RST_UNKNOWN = 0xFFU	//!< Unknown Reset Source
 } eResetSource;
 
 
@@ -129,5 +128,5 @@ static inline FctERR HALERRtoFCTERR(const HAL_StatusTypeDef status)
 
 #endif /* ARM_CHIP_STM32_H_ */
 // cppcheck-suppress-end [misra-c2012-5.9]
-// cppcheck-suppress-end [misra-c2012-5.6, misra-c2012-5.7]
+// cppcheck-suppress-end [misra-c2012-5.6]
 /****************************************************************/

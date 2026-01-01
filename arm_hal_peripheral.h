@@ -1,7 +1,7 @@
 /*!\file arm_hal_peripheral.h
 ** \warning for STM32, HAL shall be configured to generate as pairs of h/c files
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief ARM HAL peripheral includes
 */
 /****************************************************************/

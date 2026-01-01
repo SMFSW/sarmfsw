@@ -1,6 +1,6 @@
 /*!\file arm_inlines_average.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief Averaging inlines
 */
 // cppcheck-suppress-begin [misra-c2012-18.8] macro warning

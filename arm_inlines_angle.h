@@ -1,6 +1,6 @@
 /*!\file arm_inlines_angle.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief Angle conversion inlines
 */
 /****************************************************************/
@@ -40,7 +40,7 @@ __INLINE float RAD_NORM(const float rad)
 	const float val = (float) ((rad < 0.0f) ? M_TWOPI : -M_TWOPI);
 	float r = rad;
 
-	while (fabs(r) > M_TWOPI)	{ r += val; }
+	while (fabs(r) > (float) M_TWOPI)	{ r += val; }
 
 	return r;
 }
@@ -69,7 +69,7 @@ __INLINE float DEG_NORM(const float deg)
 **/
 __INLINE float RAD_TO_DEG(const float rad)
 {
-	return RAD_NORM(rad) * M_180_PI;
+	return RAD_NORM(rad) * (float) M_180_PI;
 }
 
 
@@ -80,7 +80,7 @@ __INLINE float RAD_TO_DEG(const float rad)
 **/
 __INLINE float DEG_TO_RAD(const float deg)
 {
-	return DEG_NORM(deg) * M_PI_180;
+	return DEG_NORM(deg) * (float) M_PI_180;
 }
 #endif
 
@@ -91,7 +91,7 @@ __INLINE float DEG_TO_RAD(const float deg)
 **/
 __INLINE float RAD_TO_FLOAT(const float rad)
 {
-	return RAD_NORM(rad) / M_TWOPI;
+	return RAD_NORM(rad) / (float) M_TWOPI;
 }
 
 /*!\brief 0-1 scaled float to radians conversion
@@ -100,7 +100,7 @@ __INLINE float RAD_TO_FLOAT(const float rad)
 **/
 __INLINE float FLOAT_TO_RAD(const float val)
 {
-	return (val - (float) ((intCPU_t) val)) * M_TWOPI;
+	return (val - (float) ((intCPU_t) val)) * (float) M_TWOPI;
 }
 
 

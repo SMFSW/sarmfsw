@@ -1,6 +1,6 @@
 /*!\file arm_inlines_stdclib.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief ARM common standard c library inlines and wrapper macros
 ** \MISRA Header scope deviation has been granted for following rules:\n
 **	\b Rule-18.4 - \b Advisory: +/- operators on pointer type (misra-c2012-18.4)\n

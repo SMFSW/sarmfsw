@@ -1,6 +1,6 @@
 /*!\file arm_typedefs.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief ARM common typedefs
 ** \warning	Endianness for unions shall be checked following target / compiler to avoid potential headaches!
 ** \warning sBitfieldXX are defined from lsb to msb as most compiler does by default; if it's not the case,
@@ -15,7 +15,6 @@
 ** \note	\c STDINT_NDEF can be defined at project level if \c stdint.h doesn't exist for target compiler
 ** \MISRA Header scope deviation has been granted for following rules:\n
 ** 	\b Rule-2.3 - \b Advisory: \c unused type (misra-c2012-2.3)\n
-** 	\b Rule-2.4 - \b Advisory: \c unused tag (misra-c2012-2.3)\n
 ** 	\b Rule-19.2 - \b Advisory: \c union keyword (misra-c2012-19.2)\n
 **	\b Rule-20.5 - \b Advisory: \c \#undef (misra-c2012-20.5)\n
 ** \MISRA Header scope derogation authorized for:\n
@@ -25,7 +24,7 @@
 ** 	\b Rule-21.1 - \b Required: \c \#define and \c \#undef on reserved identifiers (misra-c2012-21.1)\n
 **	\a Justification: \c \#define are library specific reserved identifiers.\n
 */
-// cppcheck-suppress-begin [misra-c2012-2.3, misra-c2012-2.4, misra-c2012-19.2, misra-c2012-20.5]
+// cppcheck-suppress-begin [misra-c2012-2.3, misra-c2012-19.2, misra-c2012-20.5]
 // cppcheck-suppress-begin [misra-c2012-5.5, misra-c2012-21.1]
 /****************************************************************/
 #ifndef ARM_TYPEDEFS_H_
@@ -64,34 +63,34 @@ typedef int						intCPU_t;	//!< Signed integer typedef
 typedef unsigned int			uintCPU_t;	//!< Unsigned integer typedef
 
 #if defined(__UINTPTR_TYPE__) && defined(__INTPTR_TYPE__)
-typedef __INTPTR_TYPE__		intPTR_t;	//!< Signed integer pointer address typedef
-typedef __UINTPTR_TYPE__	uintPTR_t;	//!< Unsigned integer pointer address typedef
-#elif defined(__SIZEOF_POINTER__) && defined (__SIZEOF_INT__) && (__SIZEOF_POINTER__ == __SIZEOF_INT__)
-typedef intCPU_t			intPTR_t;	//!< Signed integer pointer address typedef
-typedef uintCPU_t			uintPTR_t;	//!< Unsigned integer pointer address typedef
+typedef __INTPTR_TYPE__			intPTR_t;	//!< Signed integer pointer address typedef
+typedef __UINTPTR_TYPE__		uintPTR_t;	//!< Unsigned integer pointer address typedef
+#elif defined(__SIZEOF_POINTER__) && defined(__SIZEOF_INT__) && (__SIZEOF_POINTER__ == __SIZEOF_INT__)
+typedef intCPU_t				intPTR_t;	//!< Signed integer pointer address typedef
+typedef uintCPU_t				uintPTR_t;	//!< Unsigned integer pointer address typedef
 #elif defined(__SIZEOF_POINTER__) && (__SIZEOF_POINTER__ <= 2)
-typedef int16_t				intPTR_t;	//!< Signed integer pointer address typedef
-typedef uint16_t			uintPTR_t;	//!< Unsigned integer pointer address typedef
+typedef int16_t					intPTR_t;	//!< Signed integer pointer address typedef
+typedef uint16_t				uintPTR_t;	//!< Unsigned integer pointer address typedef
 #elif defined(__SIZEOF_POINTER__) && (__SIZEOF_POINTER__ <= 4)
-typedef int32_t				intPTR_t;	//!< Signed integer pointer address typedef
-typedef uint32_t			uintPTR_t;	//!< Unsigned integer pointer address typedef
+typedef int32_t					intPTR_t;	//!< Signed integer pointer address typedef
+typedef uint32_t				uintPTR_t;	//!< Unsigned integer pointer address typedef
 #elif defined(__SIZEOF_POINTER__) && (__SIZEOF_POINTER__ <= 8)
-typedef int64_t				intPTR_t;	//!< Signed integer pointer address typedef
-typedef uint64_t			uintPTR_t;	//!< Unsigned integer pointer address typedef
+typedef int64_t					intPTR_t;	//!< Signed integer pointer address typedef
+typedef uint64_t				uintPTR_t;	//!< Unsigned integer pointer address typedef
 #else
 #error "Not able to automatically define pointer size, __SIZEOF_POINTER__ define needed with size in bytes"
 #endif
 
-typedef	bool				BOOL;		//!< boolean typedef (1bit, for stdbool.h handling compilers)
-typedef char				CHAR;		//!< Char typedef (8bits)
-typedef	uint8_t				BYTE;		//!< Unsigned Byte typedef (8bits)
-typedef	uint16_t			WORD;		//!< Unsigned Word typedef (16bits)
-typedef	uint32_t			DWORD;		//!< Unsigned dWord typedef (32bits)
-typedef	uint64_t			LWORD;		//!< Unsigned lWord typedef (64bits)
-typedef	int8_t				SBYTE;		//!< Signed Byte typedef (8bits)
-typedef	int16_t				SWORD;		//!< Signed Word typedef (16bits)
-typedef	int32_t				SDWORD;		//!< Signed dWord typedef (32bits)
-typedef	int64_t				SLWORD;		//!< Signed lWord typedef (64bits)
+typedef	bool					BOOL;		//!< boolean typedef (1bit, for stdbool.h handling compilers)
+typedef char					CHAR;		//!< Char typedef (8bits)
+typedef	uint8_t					BYTE;		//!< Unsigned Byte typedef (8bits)
+typedef	uint16_t				WORD;		//!< Unsigned Word typedef (16bits)
+typedef	uint32_t				DWORD;		//!< Unsigned dWord typedef (32bits)
+typedef	uint64_t				LWORD;		//!< Unsigned lWord typedef (64bits)
+typedef	int8_t					SBYTE;		//!< Signed Byte typedef (8bits)
+typedef	int16_t					SWORD;		//!< Signed Word typedef (16bits)
+typedef	int32_t					SDWORD;		//!< Signed dWord typedef (32bits)
+typedef	int64_t					SLWORD;		//!< Signed lWord typedef (64bits)
 
 
 #if 	defined(__BYTE_ORDER) && (__BYTE_ORDER == __BIG_ENDIAN) ||								\
@@ -113,48 +112,48 @@ typedef	int64_t				SLWORD;		//!< Signed lWord typedef (64bits)
 		#define __LITTLE_ENDIAN__	//!< Little-endian target
 	#endif
 #elif	defined(__BYTE_ORDER) && (__BYTE_ORDER == __PDP_ENDIAN)
-	#warning "Unfortunately, easy-access typedefs for PDP Endian not handled by the sarmfw library!"
+	#warning "Easy-access typedefs for PDP Endian are not handled by sarmfw library!"
 	#ifndef __PDP_ENDIAN__
 		#define __PDP_ENDIAN__		//!< Little-endian (word swapped) target
 	#endif
 #else
-	#warning "Unknown endianness, please define LITTLE_ENDIAN or BIG_ENDIAN symbol to ensure behavior!"
+	#warning "Unknown endianness, please define LITTLE_ENDIAN or BIG_ENDIAN symbol to ensure proper behavior!"
 #endif
 
 
-/*!\enum _eState
+/*!\enum eState
 ** \brief Activation state On, Off
 **/
-typedef enum _eState {
+typedef enum {
 	Off = 0U,	//!< Off / Reset
 	On = 1U		//!< On / Set
 } eState;
 
 
-/*!\enum _eEdge
+/*!\enum eEdge
 ** \brief Signal Edges
 **/
-typedef enum _eEdge {
+typedef enum {
 	NoEdge = 0,	//!< No change
 	Rising,		//!< Rising edge
 	Falling		//!< Falling edge
 } eEdge;
 
 
-/*!\enum _eGPIOState
+/*!\enum eGPIOState
 ** \brief GPIO possible states/actions enumeration
 **/
-typedef enum _eGPIOState {
+typedef enum {
 	Reset = 0,	//!< Reset State
 	Set,		//!< Set State
 	Toggle		//!< Toggle Output
 	//! \note Toggle is only GPIO output related
 } eGPIOState;
 
-/*!\enum _eGPIOPull
+/*!\enum eGPIOPull
 ** \brief GPIO possible pull resistor configuration
 **/
-typedef enum _eGPIOPull {
+typedef enum {
 	PullDown = 0,	//!< GPIO with pull down
 	PullUp,			//!< GPIO with pull up
 	NoPull			//!< GPIO without pull
@@ -164,7 +163,7 @@ typedef enum _eGPIOPull {
 /*!\struct sBitfield8
 ** \brief Bitfield 8b
 **/
-typedef struct _sBitfield8 {
+typedef struct sBitfield8 {
 	#ifndef REVERSE_BITFIELD
 		BYTE	b0	:1;	//!< Bit 0 (LSB)
 		BYTE	b1	:1;	//!< Bit 1
@@ -189,7 +188,7 @@ typedef struct _sBitfield8 {
 /*!\struct sBitfield16
 ** \brief Bitfield 16b
 **/
-typedef struct _sBitfield16 {
+typedef struct {
 	#ifndef REVERSE_BITFIELD
 		WORD	b0	:1;	//!< Bit 0 (LSB)
 		WORD	b1	:1;	//!< Bit 1
@@ -230,7 +229,7 @@ typedef struct _sBitfield16 {
 /*!\struct sBitfield32
 ** \brief Bitfield 32b
 **/
-typedef struct _sBitfield32 {
+typedef struct {
 	#ifndef REVERSE_BITFIELD
 		DWORD	b0	:1;	//!< Bit 0 (LSB)
 		DWORD	b1	:1;	//!< Bit 1
@@ -303,7 +302,7 @@ typedef struct _sBitfield32 {
 /*!\struct sBitfield64
 ** \brief Bitfield 64b
 **/
-typedef struct _sBitfield64 {
+typedef struct {
 	#ifndef REVERSE_BITFIELD
 		LWORD	b0	:1;	//!< Bit 0 (LSB)
 		LWORD	b1	:1;	//!< Bit 1
@@ -449,7 +448,7 @@ typedef struct _sBitfield64 {
 /*!\union uByte
 ** \brief Union for BYTE
 **/
-typedef union _uByte {
+typedef union {
 	BYTE		Byte;	//!< BYTE
 	sBitfield8	Bits;	//!< Bits
 } uByte;
@@ -457,7 +456,7 @@ typedef union _uByte {
 /*!\union uWord
 ** \brief Union for WORD
 **/
-typedef union _uWord {
+typedef union {
 	WORD			Word;		//!< 16b
 	BYTE			Byte[2];	//!< Bytes tab
 	struct {
@@ -475,7 +474,7 @@ typedef union _uWord {
 /*!\union uDWord
 ** \brief Union for DWORD
 **/
-typedef union _uDWord {
+typedef union {
 	DWORD			DWord;		//!< 32b
 	WORD			Word[2];	//!< Words tab
 	BYTE			Byte[4];	//!< Bytes tab
@@ -507,7 +506,7 @@ typedef union _uDWord {
 /*!\union uLWord
 ** \brief Union for LWORD
 **/
-typedef union _uLWord {
+typedef union {
 	LWORD			LWord;		//!< 64b
 	DWORD			DWord[2];	//!< DWords tab
 	WORD			Word[4];	//!< Words tab
@@ -565,6 +564,6 @@ typedef union _uLWord {
 #endif
 
 #endif /* ARM_TYPEDEFS_H_ */
-// cppcheck-suppress-end [misra-c2012-2.3, misra-c2012-2.4, misra-c2012-19.2, misra-c2012-20.5]
+// cppcheck-suppress-end [misra-c2012-2.3, misra-c2012-19.2, misra-c2012-20.5]
 // cppcheck-suppress-end [misra-c2012-5.5, misra-c2012-21.1]
 /****************************************************************/

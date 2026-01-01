@@ -1,11 +1,11 @@
 /*!\file arm_cmsis.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief ARM link with CMSIS files
 ** \warning Latest ARM chips might now be recognized; if not, define at project level:
 ** 			- for STM32 families (STMicroelectronics):
 ** 				- STM_FAMILY xy:
-** 					- x : c/f/h/l/mp/n/u/wb/wl
+** 					- x : c/f/g/h/l/mp/n/u/wb/wl
 ** 					- y : sub-family number
 ** 			- for SAM families (Atmel):
 ** 				- SAM_FAMILY xy(yy)
@@ -13,7 +13,7 @@
 ** 				- PIC_FAMILY pic(xx)
 ** 			- for INO families:
 ** 				- INO_FAMILY arduino (any device)
-** 			- for Other families (TI...):
+** 			- for Other families (TI ...):
 ** 				- not implemented yet
 */
 // cppcheck-suppress-begin [misra-c2012-20.7] macros warnings
@@ -767,10 +767,6 @@
 	#endif
 	#define XXXxxxx												//!< XXXxxxx family generic define
 */
-#elif !defined(INO_FAMILY) && !defined(STM_FAMILY) && !defined(SAM_FAMILY) && !defined(PIC_FAMILY)
-	#error "You should add the CMSIS base include following chip used & comment this error."
-	#error "If working with STM32 and chip is not in the list, try add STM_FAMILY=(c/f/h/l/mp/u/wb/wl)x in project defines."
-	#error "If working with ATMEL SAM and chip is not in the list, try add SAM_FAMILY=(b/c/d/e/g/h/l/r/s/v)xx in project defines."
 #endif
 
 
@@ -787,7 +783,7 @@
 	#include "arm_chip_stm32.h"
 
 	#if !defined(USE_HAL_DRIVER)
-		#error "This library is intended to be used with chip vendor supplied HAL, please enable it!"
+		#warning "This library is intended for use with chip vendor supplied HAL, define SARMFSW_NO_CHIP_HAL as global symbol to disable this warning!"
 	#endif
 
 #elif defined(SAM_FAMILY)
@@ -799,7 +795,15 @@
 	// #include "arm_fam_XXX.h"
 
 #else
-	#error "You will have to define your own CMSIS_INC & CMSIS_CFG file names with <> around manually (for specified vendor chip before including sarmfsw.h)."
+	/*** Automatically disable HAL includes ***/
+	#ifndef HAL_INC_DISABLE
+	#define HAL_INC_DISABLE
+	#endif
+
+	#warning "Unknown chip family, disabling chip related inlcudes and HAL access!"
+	#warning "If working with STM32 and chip is not in the list, add STM_FAMILY=(c/f/g/h/l/mp/n/u/wb/wl)x as global symbol."
+	#warning "If working with ATMEL SAM and chip is not in the list, try add SAM_FAMILY=(b/c/d/e/g/h/l/r/s/v)xx as global symbol."
+	#warning "Otherwise, define SARMFSW_NO_CHIP_HAL as global symbol to disable warning!"
 #endif
 
 #endif /* SARMFSW_NO_CHIP_HAL */

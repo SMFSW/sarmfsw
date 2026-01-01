@@ -1,6 +1,6 @@
 /*!\file arm_inlines_endian.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief Endian conversion and testing inlines
 */
 /****************************************************************/
@@ -13,10 +13,10 @@
 /****************************************************************/
 
 
-/*!\enum _eEndian
+/*!\enum eEndian
 ** \brief Core endian
 **/
-typedef enum _eEndian {
+typedef enum eEndian {
 	Endian_little = 0,		//!< Little endian configured MCU
 	Endian_big,				//!< Big endian configured MCU
 	Endian_mid_little,		//!< Middle little endian configured MCU (PDP-11)

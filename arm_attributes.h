@@ -1,6 +1,6 @@
 /*!\file arm_attributes.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief ARM common compilers attributes
 ** \details Set attributes following compiler
 ** \MISRA Header scope deviation has been granted for following rules:\n

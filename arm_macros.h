@@ -1,6 +1,6 @@
 /*!\file arm_macros.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief ARM common macros
 ** \note If used CPU only handles single shifts, you may define \c SINGLE_SHIFT_ONLY_OPCODE at project level (see \ref LSHIFT & \ref RSHIFT)
 ** \MISRA Header scope deviation has been granted for following rules:\n
@@ -19,35 +19,35 @@
 /****************************************************************/
 
 
-#define	Undefined			(-1)			//!< Undefined value
+#define	Undefined		(-1)			//!< Undefined value
 
-#define Null				(0)				//!< Null Value
-#define pNull				((void *) 0)	//!< Null pointer -> same as NULL in stdlib.h
-#define	charNull			('\0')			//!< Null Char
+#define Null			(0)				//!< Null Value
+#define pNull			((void *) 0)	//!< Null pointer -> same as NULL in stdlib.h
+#define	charNull		('\0')			//!< Null Char
 
 
 #ifndef True
-#define	True				true			//!< \c True alias for \c true
+#define	True			true			//!< \c True alias for \c true
 #endif
 #ifndef False
-#define	False				false			//!< \c False alias for \c false
+#define	False			false			//!< \c False alias for \c false
 #endif
 #ifndef TRUE
-#define	TRUE				true			//!< \c TRUE alias for \c true
+#define	TRUE			true			//!< \c TRUE alias for \c true
 #endif
 #ifndef FALSE
-#define	FALSE				false			//!< \c FALSE alias for \c false
+#define	FALSE			false			//!< \c FALSE alias for \c false
 #endif
 
 
 #ifndef UNUSED
-#define UNUSED(X)			(void) (X)		//!< Unused parameter \p X (to avoid gcc/g++ warnings)
+#define UNUSED(X)		(void) (X)		//!< Unused parameter \p X (to avoid gcc/g++ warnings)
 #endif
 
 #ifndef UNUSED_RET
-#define UNUSED_RET			(void)			//!< Explicitly ignore function return (MISRA compliance)
+#define UNUSED_RET		(void)			//!< Explicitly ignore function return (MISRA compliance)
 #endif
-#define _x_					UNUSED_RET		//!< Short alias for \ref UNUSED_RET
+#define _x_				UNUSED_RET		//!< Short alias for \ref UNUSED_RET
 
 
 #define GET_BITS(v, b)			((v) & (b))								//!< Get bits from mask \p b of variable \p v

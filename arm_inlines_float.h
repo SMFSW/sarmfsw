@@ -1,6 +1,6 @@
 /*!\file arm_inlines_float.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief Floating point manipulation inlines
 */
 /****************************************************************/
@@ -22,7 +22,7 @@
 /*!\struct sIntFrac
 ** \brief Float representation on integers
 **/
-typedef struct sIntFrac {
+typedef struct {
 	DWORD	integer;		//!< Integer part
 	DWORD	fractionnal;	//!< Fractional part
 	BYTE	nb_frac;		//!< Number of fractional digits
@@ -39,10 +39,10 @@ typedef struct sIntFrac {
 **/
 __INLINE DWORD get_fp_dec(const double f, const BYTE nb)
 {
-	BYTE digits = MIN(9, nb);	// Limit to 9 digits
-	DWORD mul = 1;
+	BYTE digits = MIN(9U, nb);	// Limit to 9 digits
+	DWORD mul = 1U;
 
-	while (digits-- > 0) 	{ mul *= 10; }
+	while (digits-- > 0) 	{ mul *= 10U; }
 
 	double dec = fabs(f);
 	dec -= (double) ((DWORD) dec);
@@ -58,7 +58,7 @@ __INLINE DWORD get_fp_dec(const double f, const BYTE nb)
 **/
 __INLINE void NONNULL__ float2sIntFrac(sIntFrac * const pIntFrac, const double f, const uint8_t nb_frac)
 {
-	pIntFrac->nb_frac = MIN(9, nb_frac);	// Limit to 9 digits
+	pIntFrac->nb_frac = MIN(9U, nb_frac);	// Limit to 9 digits
 	pIntFrac->sign = binEval(f < 0.0);
 	pIntFrac->integer = (DWORD) (f);
 	pIntFrac->fractionnal = get_fp_dec(f, nb_frac);

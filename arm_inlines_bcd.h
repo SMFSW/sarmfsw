@@ -1,6 +1,6 @@
 /*!\file arm_inlines_bcd.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief BCD code conversion inlines
 */
 /****************************************************************/
@@ -16,7 +16,7 @@
 
 
 /*!\brief Converts hexadecimal value to BCD
-** \note Returns 0xFFFFFFFF if Hex value can't be represented on a BCD BYTE
+** \note Returns 0xFFFFFFFFU if Hex value can't be represented on a BCD BYTE
 ** \param[in] hex - Hexadecimal value to convert
 ** \return BCD value
 **/
@@ -45,7 +45,7 @@ __INLINE DWORD HexToBCD(const DWORD hex)
 
 
 /*!\brief Converts BCD value to hexadecimal
-** \note Returns 0xFFFFFFFF if BCD value is inconsistent
+** \note Returns 0xFFFFFFFFU if BCD value is inconsistent
 ** \param[in] bcd - BCD value to convert
 ** \return Hexadecimal value
 **/

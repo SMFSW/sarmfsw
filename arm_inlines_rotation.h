@@ -1,6 +1,6 @@
 /*!\file arm_inlines_rotation.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief Rotation inlines
 */
 /****************************************************************/
@@ -18,7 +18,7 @@
 /*!\struct sCoord2D
 ** \brief 2D coordinates structure
 **/
-typedef struct sCoord2D {
+typedef struct {
 	SDWORD	x;	//!< x coordinate
 	SDWORD	y;	//!< y coordinate
 } sCoord2D;

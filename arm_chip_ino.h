@@ -1,16 +1,14 @@
 /*!\file arm_chip_ino.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief Common macros for Arduino
 ** \MISRA Header scope legitimate use derogation authorized for:\n
-** 	\b Rule-5.5 - \b Required: distinct identifier and macro name (misra-c2012-5.5)\n
 ** 	\b Rule-5.6 - \b Required: unique \c typedef name (misra-c2012-5.6)\n
-** 	\b Rule-5.7 - \b Required: unique tag name (misra-c2012-5.7)\n
 ** 	\b Rule-5.9 - \b Advisory: internal linkage unique function name (misra-c2012-5.9)\n
-**	\a Justification: tag and \c typedefs name are only defined once (other arm_chip_xxx files are not included at the same time).\n
+**	\a Justification: \c typedefs name are only defined once (other arm_chip_xxx files are not included at the same time).\n
 */
 // cppcheck-suppress-begin [misra-c2012-5.9]
-// cppcheck-suppress-begin [misra-c2012-5.5, misra-c2012-5.6, misra-c2012-5.7]
+// cppcheck-suppress-begin [misra-c2012-5.6]
 /****************************************************************/
 #ifndef ARM_CHIP_INO_H_
 	#define ARM_CHIP_INO_H_
@@ -61,12 +59,12 @@
 #endif
 
 
-/*!\enum _eResetSource
+/*!\enum eResetSource
 ** \brief Source of last reset
 **/
-typedef enum _eResetSource {
-	RST_POR = 1,		//!< Power On Reset
-	RST_UNKNOWN = 0xFF	//!< Unknown Reset Source
+typedef enum {
+	RST_POR = 1U,		//!< Power On Reset
+	RST_UNKNOWN = 0xFFU	//!< Unknown Reset Source
 } eResetSource;
 
 
@@ -100,5 +98,5 @@ static inline FctERR HALERRtoFCTERR(const SDWORD status)
 
 #endif /* ARM_CHIP_INO_H_ */
 // cppcheck-suppress-end [misra-c2012-5.9]
-// cppcheck-suppress-end [misra-c2012-5.5, misra-c2012-5.6, misra-c2012-5.7]
+// cppcheck-suppress-end [misra-c2012-5.6]
 /****************************************************************/

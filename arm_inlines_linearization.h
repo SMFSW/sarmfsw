@@ -1,6 +1,6 @@
 /*!\file arm_inlines_linearization.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief Linearization inlines
 */
 /****************************************************************/
@@ -35,7 +35,7 @@
 **	\b Rule-18.7 - \b Required: flexible array members (misra-c2012-18.7)\n
 **	\a Justification: \c array being an array of array, this is a rather legitimate representation of object than a pointer.\n
 **/
-typedef struct sLinearFlexArray {
+typedef struct {
 	DWORD	nb;						//!< Number of items
 	// cppcheck-suppress misra-c2012-18.7
 	SDWORD	array[/*flexible*/][2];	//!< Flexible 2 dimensional array member

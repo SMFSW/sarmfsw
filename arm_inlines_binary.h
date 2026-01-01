@@ -1,6 +1,6 @@
 /*!\file arm_inlines_binary.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief Binary manipulation inlines
 */
 /****************************************************************/

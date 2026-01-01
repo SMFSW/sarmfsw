@@ -1,7 +1,7 @@
 /*!\file sarmfsw.c
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
-** \brief sarmfsw include (for cppcheck purpose)
+** \copyright MIT (c) 2017-2026, SMFSW
+** \brief sarmfsw include (for code checkers triggering purpose)
 */
 /****************************************************************/
 

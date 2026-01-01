@@ -1,6 +1,6 @@
 /*!\file arm_inlines_ascii.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief ASCII code conversion inlines
 */
 /****************************************************************/
@@ -116,7 +116,7 @@ __INLINE DWORD NONNULL__ strDecToInt(const CHAR * const pASCII, const BYTE len)
 	for (uintCPU_t i = len ; i > 0U ; i--)
 	{
 		const BYTE single = ASCIIToHex(pASCII[i - 1U]);
-		if (single > 9U)	{ break; }
+		if (single > 9U)	{ break; }	// Avoid possible overflow
 
 		dec += single * mult;
 		mult *= 10U;

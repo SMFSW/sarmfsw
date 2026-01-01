@@ -1,6 +1,6 @@
 /*!\file arm_inlines_gray.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief Gray code conversion inlines
 */
 /****************************************************************/
@@ -29,7 +29,7 @@ __INLINE DWORD INLINE__ bin2gray(const DWORD bin)
 **/
 __INLINE DWORD gray2bin(const DWORD gray)
 {
-	uintCPU_t	bits = 32;
+	uintCPU_t	bits = 32U;
 	DWORD		tmp = gray;
 
 	while ((bits >>= 1U) != 0U)

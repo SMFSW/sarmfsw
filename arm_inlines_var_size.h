@@ -1,6 +1,6 @@
 /*!\file arm_inlines_var_size.h
 ** \author SMFSW
-** \copyright MIT (c) 2017-2025, SMFSW
+** \copyright MIT (c) 2017-2026, SMFSW
 ** \brief Variables size conversion inlines
 */
 /****************************************************************/
@@ -19,7 +19,7 @@
 **/
 __INLINE BYTE INLINE__ conv16to8Bits(const WORD val)
 {
-	return (BYTE) RSHIFT16(val, 8);
+	return (BYTE) RSHIFT16(val, 8U);
 }
 
 

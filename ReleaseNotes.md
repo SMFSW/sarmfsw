@@ -2,7 +2,7 @@
 
 The MIT License (MIT)
 
-Copyright (c) 2017-2025 SMFSW (Sebastien Bizien)
+Copyright (c) 2017-2026 SMFSW (Sebastien Bizien)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,8 +22,12 @@ SOFTWARE.
 
 ## v3.7 -> 4.0rc
 
+* keywords.txt: update
+* enums, unions, structs tags removed (useless in sarmfsw context)
+* arm_inlines_angle.h: avoid promotion to double for test in RAD_NORM
+* arm_cmsis.h: refactoring \#error directives to \#warning (with updated explanations)
 * arm_typedefs.h: force cppcheck to use explicit types for stdint
-* sarmfsw_version.h: __SARMFSW_VERSION symbol added
+* sarmfsw_version.h: SARMFSW_VERSION symbol added
 * Partial MISRA C2012 compliance
 * Moved from TravisCI to Github workflows
 * OVF_DIFF removal
@@ -35,7 +39,6 @@ SOFTWARE.
 * arm_inlines_stdclib.h: strappend & strnappend use \__NEVER_INLINE instead of \__INLINE
 * arm_cmsis.h, arm_macros.h: UNUSED & UNUSED_RET moved to arm_macros.h
 * sarmfsw.h, arm_cmsis.h, arm_chip_xxx.h: arm_attributes.h included before arm_cmsis.h (some symbols needed to be moved from arm_attributes.h to arm_cmsis.h)
-* enums, unions, structs tag names change (now with leading _)
 * arm_preprocess.h: added (for pre-processing macros and directives needed to be defined at the beginning of sarmfsw)
 * arm_macros.h: CAT, XCAT, STR & XSTR moved to arm_preprocess.h
 * sarmfsw.h: arm_preprocess.h added & arm_macros.h moved
@@ -58,7 +61,6 @@ SOFTWARE.
 * arm_macros.h: TEST_BITS_VAL & TEST_MASK_VAL macros added
 * arm_macros.h: Register intended macros (such as GET_BITS...) encloses tested variable/register/values in parentheses
 * arm_macros.h: OVF_DIFF fix, thanks to [\@Simben](https://github.com/Simben)
-* keywords.txt: update
 * arm_inlines_float.h: SPLIT_FLOAT_TO_INTS added
 * arm_inlines_float.h: sIntFrac struct and associated float2sIntFrac and sIntFrac2float functions added
 * arm_cmsis.h: Some CMSIS alias macros added
