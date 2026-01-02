@@ -85,8 +85,16 @@ static inline FctERR HALERRtoFCTERR(const SDWORD status)
 {
 	FctERR err;
 
-	if (status == 0)	{ err = ERROR_OK; }
-	else				{ err = ERROR_COMMON; }
+	switch (status)
+	{
+		case 0:
+			err = ERROR_OK;
+			break;
+
+		default:
+			err = ERROR_COMMON;
+			break;
+	}
 
 	return err;
 }

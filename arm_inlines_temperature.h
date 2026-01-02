@@ -13,8 +13,8 @@
 /****************************************************************/
 
 
-#define M_5_9	(5.0 / 9.0)		//!< 5/9 constant approximation
-#define M_9_5	(9.0 / 5.0)		//!< 9/5 constant approximation
+#define M_5_9	(5.0F / 9.0F)	//!< 5/9 constant approximation
+#define M_9_5	(9.0F / 5.0F)	//!< 9/5 constant approximation
 
 
 /*!\brief Convert degrees Celsius to Kelvin
@@ -23,7 +23,7 @@
 **/
 __INLINE float celsius2kelvin(const float cel)
 {
-	return (cel + 273.15f);
+	return (cel + 273.15F);
 }
 
 
@@ -33,7 +33,7 @@ __INLINE float celsius2kelvin(const float cel)
 **/
 __INLINE float kelvin2celsius(const float kel)
 {
-	return (kel - 273.15f);
+	return (kel - 273.15F);
 }
 
 
@@ -43,7 +43,7 @@ __INLINE float kelvin2celsius(const float kel)
 **/
 __INLINE float celsius2fahrenheit(const float cel)
 {
-	return (cel * M_9_5) + 32.0f;
+	return (cel * M_9_5) + 32.0F;
 }
 
 
@@ -53,7 +53,7 @@ __INLINE float celsius2fahrenheit(const float cel)
 **/
 __INLINE float fahrenheit2celsius(const float fah)
 {
-	return ((fah - 32.0f) * M_5_9);
+	return ((fah - 32.0F) * M_5_9);
 }
 
 

@@ -111,18 +111,57 @@ static inline FctERR HALERRtoFCTERR(const SDWORD status)
 {
 	FctERR err;
 
-	if		(status == ERR_NONE)									{ err = ERROR_OK; }
-	else if (status == ERR_INVALID_DATA)							{ err = ERROR_VALUE; }
-	else if ((status == ERR_BUSY) || (status == ERR_NOT_READY))		{ err = ERROR_BUSY; }
-	else if (status == ERR_TIMEOUT)									{ err = ERROR_TIMEOUT; }
-	else if (status == ERR_NO_MEMORY)								{ err = ERROR_MEMORY; }
-	else if (status == ERR_BAD_FRQ)									{ err = ERROR_SPEED; }
-	else if (status == ERR_DENIED)									{ err = ERROR_PROTECT; }
-	else if (status == ERR_OVERFLOW)								{ err = ERROR_OVERFLOW; }
-	else if (status == ERR_NOT_INITIALIZED)							{ err = ERROR_NOTAVAIL; }
-	else if (status == ERR_PACKET_COLLISION)						{ err = ERROR_ARBITR; }
-	else if (status == ERR_UNSUPPORTED_OP)							{ err = ERROR_CMD; }
-	else 															{ err = ERROR_COMMON; }
+	switch (status)
+	{
+		case ERR_NONE:
+			err = ERROR_OK;
+			break;
+
+		case ERR_INVALID_DATA:
+			err = ERROR_VALUE;
+			break;
+
+		case ERR_BUSY:
+		case ERR_NOT_READY:
+			err = ERROR_BUSY;
+			break;
+
+		case ERR_TIMEOUT:
+			err = ERROR_TIMEOUT;
+			break;
+
+		case ERR_NO_MEMORY:
+			err = ERROR_MEMORY;
+			break;
+
+		case ERR_BAD_FRQ:
+			err = ERROR_SPEED;
+			break;
+
+		case ERR_DENIED:
+			err = ERROR_PROTECT;
+			break;
+
+		case ERR_OVERFLOW:
+			err = ERROR_OVERFLOW;
+			break;
+
+		case ERR_NOT_INITIALIZED:
+			err = ERROR_NOTAVAIL;
+			break;
+
+		case ERR_PACKET_COLLISION:
+			err = ERROR_ARBITR;
+			break;
+
+		case ERR_UNSUPPORTED_OP:
+			err = ERROR_CMD;
+			break;
+
+		default:
+			err = ERROR_COMMON;
+			break;
+	}
 
 	return err;
 }

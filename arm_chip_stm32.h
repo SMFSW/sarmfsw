@@ -111,11 +111,28 @@ static inline FctERR HALERRtoFCTERR(const HAL_StatusTypeDef status)
 {
 	FctERR err;
 
-	if		(status == HAL_OK)			{ err = ERROR_OK; }
-	else if (status == HAL_ERROR)		{ err = ERROR_FAULT; }
-	else if (status == HAL_BUSY)		{ err = ERROR_BUSY; }
-	else if (status == HAL_TIMEOUT)		{ err = ERROR_TIMEOUT; }
-	else 								{ err = ERROR_COMMON; }
+	switch (status)
+	{
+		case HAL_OK:
+			err = ERROR_OK;
+			break;
+
+		case HAL_ERROR:
+			err = ERROR_FAULT;
+			break;
+
+		case HAL_BUSY:
+			err = ERROR_BUSY;
+			break;
+
+		case HAL_TIMEOUT:
+			err = ERROR_TIMEOUT;
+			break;
+
+		default:
+			err = ERROR_COMMON;
+			break;
+	}
 
 	return err;
 }

@@ -23,7 +23,9 @@ SOFTWARE.
 ## v3.7 -> 4.0rc
 
 * keywords.txt: update
+* Upper case litteral suffix
 * enums, unions, structs tags removed (useless in sarmfsw context)
+* arm_chip_ino.h, arm_chip_pic.h, arm_chip_sam.h, arm_chip_stm32.h: HALERRtoFCTERR to use switch instead of if/else if construct
 * arm_inlines_angle.h: avoid promotion to double for test in RAD_NORM
 * arm_cmsis.h: refactoring \#error directives to \#warning (with updated explanations)
 * arm_typedefs.h: force cppcheck to use explicit types for stdint
