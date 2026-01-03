@@ -13,7 +13,7 @@
 /****************************************************************/
 
 
-#define SARMFSW_RELEASE			(false)								//!< [31:31] sarmfsw release status
+#define SARMFSW_RELEASE			(true)								//!< [31:31] sarmfsw release status
 #define SARMFSW_VERSION_MAIN	(4U)								//!< [30:16] sarmfsw main version
 #define SARMFSW_VERSION_SUB		(0U)								//!< [15:0]  sarmfsw sub version
 
